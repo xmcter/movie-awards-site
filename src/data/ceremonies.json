@@ -1,0 +1,144 @@
+[
+  {
+    "id": "oscars-97",
+    "orgId": "oscars",
+    "name": "第97届奥斯卡金像奖",
+    "nameEn": "97th Academy Awards",
+    "year": 2025,
+    "date": "2025-03-02",
+    "location": "好莱坞杜比剧院",
+    "nominations": [
+      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "anora", "result": "won" },
+      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "the-brutalist", "result": "nominated" },
+      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "conclave", "result": "nominated" },
+      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "emilia-perez", "result": "nominated" },
+      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "wicked", "result": "nominated" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "anora", "personNames": ["肖恩·贝克"], "result": "won" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "the-brutalist", "personNames": ["布雷迪·科贝特"], "result": "nominated" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "emilia-perez", "personNames": ["雅克·欧迪亚"], "result": "nominated" },
+      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "anora", "personNames": ["米琪·麦迪逊"], "result": "won" },
+      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "emilia-perez", "personNames": ["卡拉·索菲娅·加斯科恩"], "result": "nominated" },
+      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "wicked", "personNames": ["辛西娅·埃里沃"], "result": "nominated" },
+      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "the-brutalist", "personNames": ["阿德里安·布洛迪"], "result": "won" },
+      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "conclave", "personNames": ["拉尔夫·费因斯"], "result": "nominated" },
+      { "categoryId": "best-supporting-actress", "categoryName": "最佳女配角", "filmId": "emilia-perez", "personNames": ["佐伊·索尔达娜"], "result": "won" },
+      { "categoryId": "best-supporting-actor", "categoryName": "最佳男配角", "filmId": "a-real-pain", "personNames": ["基兰·卡尔金"], "result": "won" },
+      { "categoryId": "best-international", "categoryName": "最佳国际影片", "filmId": "emilia-perez", "result": "nominated" },
+      { "categoryId": "best-adapted-screenplay", "categoryName": "最佳改编剧本", "filmId": "conclave", "result": "won" },
+      { "categoryId": "best-original-screenplay", "categoryName": "最佳原创剧本", "filmId": "anora", "result": "won" }
+    ]
+  },
+  {
+    "id": "golden-globes-82",
+    "orgId": "golden-globes",
+    "name": "第82届金球奖",
+    "nameEn": "82nd Golden Globe Awards",
+    "year": 2025,
+    "date": "2025-01-05",
+    "location": "比佛利山庄",
+    "nominations": [
+      { "categoryId": "drama-picture", "categoryName": "剧情类最佳影片", "filmId": "the-brutalist", "result": "won" },
+      { "categoryId": "drama-picture", "categoryName": "剧情类最佳影片", "filmId": "conclave", "result": "nominated" },
+      { "categoryId": "musical-picture", "categoryName": "音乐/喜剧类最佳影片", "filmId": "emilia-perez", "result": "won" },
+      { "categoryId": "musical-picture", "categoryName": "音乐/喜剧类最佳影片", "filmId": "wicked", "result": "nominated" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "the-brutalist", "personNames": ["布雷迪·科贝特"], "result": "won" },
+      { "categoryId": "best-actress-drama", "categoryName": "剧情类最佳女主角", "filmId": "anora", "personNames": ["米琪·麦迪逊"], "result": "nominated" },
+      { "categoryId": "best-actor-drama", "categoryName": "剧情类最佳男主角", "filmId": "the-brutalist", "personNames": ["阿德里安·布洛迪"], "result": "won" }
+    ]
+  },
+  {
+    "id": "cannes-2024",
+    "orgId": "cannes",
+    "name": "第77届戛纳电影节",
+    "nameEn": "77th Cannes Film Festival",
+    "year": 2024,
+    "date": "2024-05-25",
+    "location": "法国戛纳",
+    "nominations": [
+      { "categoryId": "palme-dor", "categoryName": "金棕榈奖", "filmId": "anora", "result": "won" },
+      { "categoryId": "grand-prix", "categoryName": "评审团大奖", "filmId": "emilia-perez", "result": "won" },
+      { "categoryId": "un-certain-regard", "categoryName": "一种关注大奖", "filmId": "black-dog", "result": "won" },
+      { "categoryId": "best-actress", "categoryName": "最佳女演员", "filmId": "emilia-perez", "personNames": ["佐伊·索尔达娜", "卡拉·索菲娅·加斯科恩", "塞尔玛·海耶克"], "result": "won" },
+      { "categoryId": "best-actor", "categoryName": "最佳男演员", "filmId": "anora", "personNames": ["尤拉·鲍利索夫"], "result": "nominated" }
+    ]
+  },
+  {
+    "id": "venice-2023",
+    "orgId": "venice",
+    "name": "第80届威尼斯电影节",
+    "nameEn": "80th Venice Film Festival",
+    "year": 2023,
+    "date": "2023-09-09",
+    "location": "意大利威尼斯",
+    "nominations": [
+      { "categoryId": "golden-lion", "categoryName": "金狮奖", "filmId": "poor-things", "result": "won" },
+      { "categoryId": "silver-lion", "categoryName": "银狮奖（最佳导演）", "filmId": "poor-things", "personNames": ["约戈斯·兰西莫斯"], "result": "nominated" }
+    ]
+  },
+  {
+    "id": "berlin-2024",
+    "orgId": "berlin",
+    "name": "第74届柏林电影节",
+    "nameEn": "74th Berlin International Film Festival",
+    "year": 2024,
+    "date": "2024-02-24",
+    "location": "德国柏林",
+    "nominations": [
+      { "categoryId": "golden-bear", "categoryName": "金熊奖", "filmId": "the-zone-of-interest", "result": "nominated" },
+      { "categoryId": "silver-bear", "categoryName": "银熊奖", "filmId": "black-dog", "result": "nominated" }
+    ]
+  },
+  {
+    "id": "golden-horse-61",
+    "orgId": "golden-horse",
+    "name": "第61届金马奖",
+    "nameEn": "61st Golden Horse Awards",
+    "year": 2024,
+    "date": "2024-11-23",
+    "location": "台北",
+    "nominations": [
+      { "categoryId": "best-picture", "categoryName": "最佳剧情片", "filmId": "all-shall-be-well", "result": "won" },
+      { "categoryId": "best-picture", "categoryName": "最佳剧情片", "filmId": "black-dog", "result": "nominated" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "all-shall-be-well", "personNames": ["袁永绰"], "result": "won" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "black-dog", "personNames": ["管虎"], "result": "nominated" },
+      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "all-shall-be-well", "personNames": ["鲍起静"], "result": "won" },
+      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "black-dog", "personNames": ["彭于晏"], "result": "nominated" },
+      { "categoryId": "best-supporting-actress", "categoryName": "最佳女配角", "filmId": "all-shall-be-well", "personNames": ["惠英红"], "result": "nominated" }
+    ]
+  },
+  {
+    "id": "hkfa-43",
+    "orgId": "hkfa",
+    "name": "第43届香港电影金像奖",
+    "nameEn": "43rd Hong Kong Film Awards",
+    "year": 2025,
+    "date": "2025-04-27",
+    "location": "香港文化中心",
+    "nominations": [
+      { "categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "twilight-of-the-warriors", "result": "won" },
+      { "categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "all-shall-be-well", "result": "nominated" },
+      { "categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "table-for-six-2", "result": "nominated" },
+      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "twilight-of-the-warriors", "personNames": ["郑保瑞"], "result": "won" },
+      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "twilight-of-the-warriors", "personNames": ["古天乐"], "result": "nominated" },
+      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "yo-yo-girl-cop", "personNames": ["甄子丹"], "result": "nominated" },
+      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "all-shall-be-well", "personNames": ["鲍起静"], "result": "won" },
+      { "categoryId": "best-action", "categoryName": "最佳动作设计", "filmId": "twilight-of-the-warriors", "result": "won" }
+    ]
+  },
+  {
+    "id": "huabiao-20",
+    "orgId": "huabiao",
+    "name": "第20届华表奖",
+    "nameEn": "20th Huabiao Awards",
+    "year": 2025,
+    "date": "2025-05-20",
+    "location": "北京",
+    "nominations": [
+      { "categoryId": "outstanding-film", "categoryName": "优秀故事片", "filmId": "successor", "result": "won" },
+      { "categoryId": "outstanding-film", "categoryName": "优秀故事片", "filmId": "black-dog", "result": "nominated" },
+      { "categoryId": "best-actor", "categoryName": "优秀男演员", "filmId": "successor", "personNames": ["张译"], "result": "won" },
+      { "categoryId": "best-actor", "categoryName": "优秀男演员", "filmId": "black-dog", "personNames": ["彭于晏"], "result": "nominated" },
+      { "categoryId": "best-actress", "categoryName": "优秀女演员", "filmId": "successor", "personNames": ["周冬雨"], "result": "nominated" }
+    ]
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "oscars",
+    "name": "奥斯卡金像奖",
+    "nameEn": "Academy Awards",
+    "description": "美国电影艺术与科学学院颁发的年度最高荣誉，涵盖最佳影片、导演、表演及各项技术奖。",
+    "country": "美国",
+    "founded": 1929,
+    "accentColor": "#c9a227"
+  },
+  {
+    "id": "golden-globes",
+    "name": "金球奖",
+    "nameEn": "Golden Globe Awards",
+    "description": "好莱坞外国记者协会评选，剧情与音乐/喜剧分轨，是奥斯卡季重要风向标。",
+    "country": "美国",
+    "founded": 1944,
+    "accentColor": "#d4a574"
+  },
+  {
+    "id": "cannes",
+    "name": "戛纳电影节",
+    "nameEn": "Cannes Film Festival",
+    "description": "世界三大电影节之一，金棕榈奖代表艺术电影最高荣誉。",
+    "country": "法国",
+    "founded": 1946,
+    "accentColor": "#e11d48"
+  },
+  {
+    "id": "venice",
+    "name": "威尼斯电影节",
+    "nameEn": "Venice Film Festival",
+    "description": "历史最悠久的国际电影节，金狮奖备受影迷与影评人推崇。",
+    "country": "意大利",
+    "founded": 1932,
+    "accentColor": "#f59e0b"
+  },
+  {
+    "id": "berlin",
+    "name": "柏林电影节",
+    "nameEn": "Berlin International Film Festival",
+    "description": "三大电影节之一，金熊奖注重社会议题与艺术探索。",
+    "country": "德国",
+    "founded": 1951,
+    "accentColor": "#38bdf8"
+  },
+  {
+    "id": "golden-horse",
+    "name": "金马奖",
+    "nameEn": "Golden Horse Awards",
+    "description": "华语电影最高荣誉之一，表彰两岸三地及全球华语影人创作。",
+    "country": "中国台湾",
+    "founded": 1962,
+    "accentColor": "#a78bfa"
+  },
+  {
+    "id": "hkfa",
+    "name": "香港电影金像奖",
+    "nameEn": "Hong Kong Film Awards",
+    "description": "香港影坛年度盛典，见证港片黄金年代与当代复兴。",
+    "country": "中国香港",
+    "founded": 1982,
+    "accentColor": "#f472b6"
+  },
+  {
+    "id": "huabiao",
+    "name": "华表奖",
+    "nameEn": "Huabiao Awards",
+    "description": "中国官方电影奖项，表彰优秀国产影片与影人。",
+    "country": "中国大陆",
+    "founded": 1994,
+    "accentColor": "#ef4444"
+  }
+]

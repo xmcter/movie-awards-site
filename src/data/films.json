@@ -1,0 +1,676 @@
+[
+  {
+    "id": "anora",
+    "title": "阿诺拉",
+    "titleEn": "Anora",
+    "year": 2024,
+    "synopsis": "布鲁克林的性感舞者阿诺拉与俄罗斯寡头之子坠入爱河并闪电结婚，却很快发现豪门家族并不乐见这桩婚事。一部充满能量、幽默与心碎的当代爱情狂想曲。",
+    "directors": [
+      "肖恩·贝克"
+    ],
+    "cast": [
+      "米琪·麦迪逊",
+      "马克·埃德尔斯坦",
+      "尤拉·鲍利索夫"
+    ],
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "runtime": 139,
+    "country": [
+      "美国"
+    ],
+    "posterColors": [
+      "#2d1b3d",
+      "#8b4557"
+    ],
+    "streaming": [
+      {
+        "platform": "hulu",
+        "date": "2025-02-15",
+        "status": "announced",
+        "region": "美国"
+      },
+      {
+        "platform": "disney-plus",
+        "date": "2025-03-01",
+        "status": "estimated",
+        "region": "部分地区"
+      },
+      {
+        "platform": "tencent",
+        "date": "2025-04-10",
+        "status": "estimated",
+        "region": "中国大陆",
+        "note": "引进后预计上线"
+      }
+    ]
+  },
+  {
+    "id": "the-brutalist",
+    "title": "粗野派",
+    "titleEn": "The Brutalist",
+    "year": 2024,
+    "synopsis": "二战后匈牙利犹太建筑师抵达美国，试图在新大陆重建事业与尊严。史诗级叙事，探讨移民、艺术与美国梦的代价。",
+    "directors": [
+      "布雷迪·科贝特"
+    ],
+    "cast": [
+      "阿德里安·布洛迪",
+      "菲丽西蒂·琼斯",
+      "盖·皮尔斯"
+    ],
+    "genres": [
+      "剧情",
+      "传记"
+    ],
+    "runtime": 215,
+    "country": [
+      "美国",
+      "英国"
+    ],
+    "posterColors": [
+      "#1a1a1a",
+      "#4a5568"
+    ],
+    "streaming": [
+      {
+        "platform": "max",
+        "date": "2025-03-20",
+        "status": "estimated",
+        "region": "美国"
+      },
+      {
+        "platform": "mubi",
+        "status": "tba",
+        "region": "全球"
+      }
+    ]
+  },
+  {
+    "id": "conclave",
+    "title": "秘密会议",
+    "titleEn": "Conclave",
+    "year": 2024,
+    "synopsis": "教皇突然去世后，枢机主教们齐聚梵蒂冈秘密会议选举继任者。一场信仰、权力与秘密交织的惊悚剧。",
+    "directors": [
+      "爱德华·贝格尔"
+    ],
+    "cast": [
+      "拉尔夫·费因斯",
+      "斯坦利·图齐",
+      "伊莎贝拉·罗西里尼"
+    ],
+    "genres": [
+      "剧情",
+      "惊悚"
+    ],
+    "runtime": 120,
+    "country": [
+      "英国",
+      "美国"
+    ],
+    "posterColors": [
+      "#1c1917",
+      "#78716c"
+    ],
+    "streaming": [
+      {
+        "platform": "prime",
+        "date": "2025-01-10",
+        "status": "announced",
+        "region": "美国"
+      },
+      {
+        "platform": "iqiyi",
+        "date": "2025-02-28",
+        "status": "estimated",
+        "region": "中国大陆"
+      }
+    ]
+  },
+  {
+    "id": "emilia-perez",
+    "title": "艾米莉亚·佩雷斯",
+    "titleEn": "Emilia Pérez",
+    "year": 2024,
+    "synopsis": "墨西哥毒枭通过变性手术开启新生，律师与歌星卷入这场身份与救赎的音乐剧风暴。戛纳金奖得主。",
+    "directors": [
+      "雅克·欧迪亚"
+    ],
+    "cast": [
+      "佐伊·索尔达娜",
+      "卡拉·索菲娅·加斯科恩",
+      "塞尔玛·海耶克"
+    ],
+    "genres": [
+      "音乐",
+      "犯罪",
+      "剧情"
+    ],
+    "runtime": 132,
+    "country": [
+      "法国",
+      "墨西哥"
+    ],
+    "posterColors": [
+      "#7c2d12",
+      "#fbbf24"
+    ],
+    "streaming": [
+      {
+        "platform": "netflix",
+        "date": "2024-11-13",
+        "status": "announced",
+        "region": "全球"
+      }
+    ]
+  },
+  {
+    "id": "wicked",
+    "title": "魔法坏女巫",
+    "titleEn": "Wicked",
+    "year": 2024,
+    "synopsis": "奥兹国绿女巫与金发女巫的起源故事。百老汇经典改编，视觉奇观与情感共鸣并存。",
+    "directors": [
+      "乔·楚沃尔"
+    ],
+    "cast": [
+      "辛西娅·埃里沃",
+      "爱莉安娜·格兰德",
+      "乔纳森·贝利"
+    ],
+    "genres": [
+      "奇幻",
+      "音乐",
+      "冒险"
+    ],
+    "runtime": 160,
+    "country": [
+      "美国"
+    ],
+    "posterColors": [
+      "#14532d",
+      "#a3e635"
+    ],
+    "streaming": [
+      {
+        "platform": "other",
+        "date": "2025-03-31",
+        "status": "estimated",
+        "region": "美国",
+        "note": "Peacock / Universal（Peacock / Universal）"
+      },
+      {
+        "platform": "disney-plus",
+        "status": "tba",
+        "region": "部分地区"
+      }
+    ]
+  },
+  {
+    "id": "dune-part-two",
+    "title": "沙丘2",
+    "titleEn": "Dune: Part Two",
+    "year": 2024,
+    "synopsis": "保罗·厄崔迪与弗雷曼人并肩，踏上对抗帝国的复仇之路。视觉史诗的续章。",
+    "directors": [
+      "丹尼斯·维伦纽瓦"
+    ],
+    "cast": [
+      "提莫西·查拉梅",
+      "赞达亚",
+      "奥斯汀·巴特勒",
+      "弗洛伦斯·皮尤"
+    ],
+    "genres": [
+      "科幻",
+      "冒险"
+    ],
+    "runtime": 166,
+    "country": [
+      "美国"
+    ],
+    "posterColors": [
+      "#92400e",
+      "#1c1917"
+    ],
+    "streaming": [
+      {
+        "platform": "max",
+        "date": "2024-05-21",
+        "status": "announced",
+        "region": "美国"
+      },
+      {
+        "platform": "tencent",
+        "date": "2024-06-15",
+        "status": "announced",
+        "region": "中国大陆"
+      }
+    ]
+  },
+  {
+    "id": "black-dog",
+    "title": "狗阵",
+    "titleEn": "Black Dog",
+    "year": 2024,
+    "synopsis": "刑满释放的男人回到西北小镇，与一条流浪黑狗意外结缘，在荒漠与人情中寻找救赎。戛纳一种关注大奖。",
+    "directors": [
+      "管虎"
+    ],
+    "cast": [
+      "彭于晏",
+      "佟丽娅",
+      "贾樟柯"
+    ],
+    "genres": [
+      "剧情"
+    ],
+    "runtime": 110,
+    "country": [
+      "中国"
+    ],
+    "posterColors": [
+      "#44403c",
+      "#d6d3d1"
+    ],
+    "streaming": [
+      {
+        "platform": "iqiyi",
+        "date": "2024-12-20",
+        "status": "announced",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "tencent",
+        "date": "2024-12-20",
+        "status": "announced",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "youku",
+        "date": "2024-12-20",
+        "status": "announced",
+        "region": "中国大陆"
+      }
+    ]
+  },
+  {
+    "id": "successor",
+    "title": "抓特务",
+    "titleEn": "The Successor",
+    "year": 2024,
+    "synopsis": "讲述新中国成立初期隐蔽战线的故事，年轻特工深入敌营，在信仰与人性的夹缝中完成使命。",
+    "directors": [
+      "刘伟强"
+    ],
+    "cast": [
+      "张译",
+      "王一博",
+      "周冬雨"
+    ],
+    "genres": [
+      "剧情",
+      "谍战"
+    ],
+    "runtime": 128,
+    "country": [
+      "中国"
+    ],
+    "posterColors": [
+      "#1e3a5f",
+      "#b91c1c"
+    ],
+    "streaming": [
+      {
+        "platform": "tencent",
+        "date": "2025-01-15",
+        "status": "estimated",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "iqiyi",
+        "date": "2025-01-15",
+        "status": "estimated",
+        "region": "中国大陆"
+      }
+    ]
+  },
+  {
+    "id": "all-shall-be-well",
+    "title": "从今以后",
+    "titleEn": "All Shall Be Well",
+    "year": 2024,
+    "synopsis": "一对相伴多年的女同志伴侣中，一人突然离世，留下的另一人面对法律与家庭的双重困境。金马奖备受瞩目之作。",
+    "directors": [
+      "袁永绰"
+    ],
+    "cast": [
+      "鲍起静",
+      "惠英红",
+      "Patra Au"
+    ],
+    "genres": [
+      "剧情"
+    ],
+    "runtime": 93,
+    "country": [
+      "中国香港"
+    ],
+    "posterColors": [
+      "#312e81",
+      "#a5b4fc"
+    ],
+    "streaming": [
+      {
+        "platform": "mubi",
+        "date": "2025-02-01",
+        "status": "estimated",
+        "region": "全球"
+      },
+      {
+        "platform": "bilibili",
+        "status": "tba",
+        "region": "中国大陆"
+      }
+    ]
+  },
+  {
+    "id": "anatomy-of-a-fall",
+    "title": "坠落的审判",
+    "titleEn": "Anatomy of a Fall",
+    "year": 2023,
+    "synopsis": "著名女作家被控谋杀丈夫，庭审中真相与叙事交织。戛纳金棕榈奖得主。",
+    "directors": [
+      "朱斯丁·特里耶"
+    ],
+    "cast": [
+      "桑德拉·惠勒",
+      "斯旺·阿劳德",
+      "米洛·马查多-格拉纳"
+    ],
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "runtime": 151,
+    "country": [
+      "法国"
+    ],
+    "posterColors": [
+      "#1e293b",
+      "#94a3b8"
+    ],
+    "streaming": [
+      {
+        "platform": "hulu",
+        "date": "2023-12-01",
+        "status": "announced",
+        "region": "美国"
+      },
+      {
+        "platform": "mubi",
+        "date": "2024-01-15",
+        "status": "announced",
+        "region": "全球"
+      }
+    ]
+  },
+  {
+    "id": "poor-things",
+    "title": "可怜的东西",
+    "titleEn": "Poor Things",
+    "year": 2023,
+    "synopsis": "维多利亚时代少女贝拉在科学家的实验中重获新生，踏上荒诞而自由的自我发现之旅。威尼斯金狮奖。",
+    "directors": [
+      "约戈斯·兰西莫斯"
+    ],
+    "cast": [
+      "艾玛·斯通",
+      "马克·鲁法洛",
+      "威廉·达福"
+    ],
+    "genres": [
+      "奇幻",
+      "喜剧",
+      "剧情"
+    ],
+    "runtime": 141,
+    "country": [
+      "爱尔兰",
+      "英国",
+      "美国"
+    ],
+    "posterColors": [
+      "#831843",
+      "#f9a8d4"
+    ],
+    "streaming": [
+      {
+        "platform": "hulu",
+        "date": "2024-03-07",
+        "status": "announced",
+        "region": "美国"
+      },
+      {
+        "platform": "disney-plus",
+        "date": "2024-04-01",
+        "status": "announced",
+        "region": "部分地区"
+      }
+    ]
+  },
+  {
+    "id": "the-zone-of-interest",
+    "title": "兴趣地带",
+    "titleEn": "The Zone of Interest",
+    "year": 2023,
+    "synopsis": "奥斯维辛集中营指挥官一家在围墙另一侧过着田园生活。声音与画面的极致对照，柏林金熊奖。",
+    "directors": [
+      "乔纳森·格雷泽"
+    ],
+    "cast": [
+      "克里斯蒂安·弗里德尔",
+      "桑德拉·惠勒"
+    ],
+    "genres": [
+      "剧情",
+      "历史",
+      "战争"
+    ],
+    "runtime": 105,
+    "country": [
+      "英国",
+      "波兰",
+      "美国"
+    ],
+    "posterColors": [
+      "#365314",
+      "#a3e635"
+    ],
+    "streaming": [
+      {
+        "platform": "max",
+        "date": "2024-02-16",
+        "status": "announced",
+        "region": "美国"
+      }
+    ]
+  },
+  {
+    "id": "twilight-of-the-warriors",
+    "title": "九龙城寨之围城",
+    "titleEn": "Twilight of the Warriors: Walled In",
+    "year": 2024,
+    "synopsis": "八十年代九龙城寨，青年信一在黑帮纷争中成长，武打与怀旧并存的港片复兴之作。",
+    "directors": [
+      "郑保瑞"
+    ],
+    "cast": [
+      "古天乐",
+      "刘俊谦",
+      "吴镇宇",
+      "林峰"
+    ],
+    "genres": [
+      "动作",
+      "犯罪"
+    ],
+    "runtime": 126,
+    "country": [
+      "中国香港"
+    ],
+    "posterColors": [
+      "#7f1d1d",
+      "#fbbf24"
+    ],
+    "streaming": [
+      {
+        "platform": "tencent",
+        "date": "2024-08-01",
+        "status": "announced",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "iqiyi",
+        "date": "2024-08-01",
+        "status": "announced",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "netflix",
+        "date": "2024-09-15",
+        "status": "announced",
+        "region": "部分地区"
+      }
+    ]
+  },
+  {
+    "id": "table-for-six-2",
+    "title": "饭戏攻心2",
+    "titleEn": "Table for Six 2",
+    "year": 2024,
+    "synopsis": "陈家三兄弟的婚恋与家庭闹剧续集，港式喜剧温情回归。",
+    "directors": [
+      "陈咏燊"
+    ],
+    "cast": [
+      "张继聪",
+      "邓丽欣",
+      "林明祯",
+      "陈湛文"
+    ],
+    "genres": [
+      "喜剧",
+      "家庭"
+    ],
+    "runtime": 118,
+    "country": [
+      "中国香港"
+    ],
+    "posterColors": [
+      "#9a3412",
+      "#fdba74"
+    ],
+    "streaming": [
+      {
+        "platform": "tencent",
+        "date": "2025-01-20",
+        "status": "estimated",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "youku",
+        "date": "2025-01-20",
+        "status": "estimated",
+        "region": "中国大陆"
+      }
+    ]
+  },
+  {
+    "id": "yo-yo-girl-cop",
+    "title": "临时决斗",
+    "titleEn": "The Prosecutor",
+    "year": 2024,
+    "synopsis": "廉政公署调查与检控的故事，甄子丹兼顾动作与法庭戏，港片类型片力作。",
+    "directors": [
+      "甄子丹"
+    ],
+    "cast": [
+      "甄子丹",
+      "黄德斌",
+      "蔡思韵"
+    ],
+    "genres": [
+      "动作",
+      "犯罪",
+      "剧情"
+    ],
+    "runtime": 118,
+    "country": [
+      "中国香港"
+    ],
+    "posterColors": [
+      "#1e293b",
+      "#38bdf8"
+    ],
+    "streaming": [
+      {
+        "platform": "iqiyi",
+        "date": "2025-02-10",
+        "status": "estimated",
+        "region": "中国大陆"
+      },
+      {
+        "platform": "netflix",
+        "status": "tba",
+        "region": "全球"
+      }
+    ]
+  },
+  {
+    "id": "a-real-pain",
+    "title": "真正的痛",
+    "titleEn": "A Real Pain",
+    "year": 2024,
+    "synopsis": "表兄弟结伴前往波兰探访家族大屠杀记忆，一路上幽默与伤痛并存。基兰·卡尔金奥斯卡最佳男配角获奖之作。",
+    "directors": [
+      "杰西·艾森伯格"
+    ],
+    "cast": [
+      "杰西·艾森伯格",
+      "基兰·卡尔金"
+    ],
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "runtime": 90,
+    "country": [
+      "美国",
+      "波兰"
+    ],
+    "posterColors": [
+      "#1e3a5f",
+      "#93c5fd"
+    ],
+    "streaming": [
+      {
+        "platform": "hulu",
+        "date": "2025-01-31",
+        "status": "announced",
+        "region": "美国"
+      },
+      {
+        "platform": "disney-plus",
+        "date": "2025-02-15",
+        "status": "estimated",
+        "region": "部分地区"
+      }
+    ]
+  }
+]

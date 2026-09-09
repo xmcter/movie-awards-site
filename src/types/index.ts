@@ -73,6 +73,8 @@ export interface CategoryNomination {
   personIds?: string[];
   personNames?: string[];
   result: AwardResult;
+  /** ISO date of the news/event (announcement or award night). Overrides ceremony.date. Never deploy time. */
+  date?: string;
 }
 
 export interface AwardCeremony {

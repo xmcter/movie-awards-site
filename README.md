@@ -39,6 +39,8 @@ npm run build   # 输出到 out/
 
 时间线事件由 `src/lib/data.ts` 的 `getTimelineEvents()` 从上述种子派生。
 
+`ceremonies[].date` / 可选的 `nominations[].date` 是**消息 / 事件发生日**（颁奖夜、片单公布日、荣誉奖宣布日等），不是页面部署或刷新时间。下拉刷新只会重新加载静态页，不会改写这些日期。
+
 `result`：`nominated`（入围）或 `won`（获奖）。`streaming[].status`：`announced` / `estimated` / `tba`。不确定的流媒体日期一律 TBA/estimated，禁止编造已官宣日期。
 
 ## 部署

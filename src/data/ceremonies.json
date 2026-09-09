@@ -15,7 +15,8 @@
         "personNames": [
           "丹尼·博伊尔"
         ],
-        "result": "nominated"
+        "result": "nominated",
+        "date": "2026-09-02"
       },
       {
         "categoryId": "competition",
@@ -24,7 +25,8 @@
         "personNames": [
           "维尔纳·赫尔佐格"
         ],
-        "result": "nominated"
+        "result": "nominated",
+        "date": "2026-07-23"
       },
       {
         "categoryId": "competition",
@@ -33,7 +35,8 @@
         "personNames": [
           "马丁·麦克多纳"
         ],
-        "result": "nominated"
+        "result": "nominated",
+        "date": "2026-07-23"
       },
       {
         "categoryId": "honorary-lion",
@@ -42,7 +45,8 @@
         "personNames": [
           "乔治·克鲁尼"
         ],
-        "result": "won"
+        "result": "won",
+        "date": "2026-07-06"
       },
       {
         "categoryId": "honorary-lion",
@@ -51,7 +55,8 @@
         "personNames": [
           "艾伦·伯斯汀"
         ],
-        "result": "won"
+        "result": "won",
+        "date": "2026-07-14"
       },
       {
         "categoryId": "jury-president",
@@ -60,7 +65,8 @@
         "personNames": [
           "玛吉·吉伦哈尔"
         ],
-        "result": "nominated"
+        "result": "nominated",
+        "date": "2026-04-23"
       }
     ]
   },

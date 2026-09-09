@@ -32,14 +32,15 @@ export function getTimelineEvents(): TimelineEvent[] {
 
   for (const ceremony of ceremonies) {
     const org = getOrg(ceremony.orgId);
-    const date = ceremony.date || `${ceremony.year}-01-01`;
-    const dateLabel = ceremony.date
-      ? formatDate(ceremony.date)
-      : `${ceremony.year}年`;
 
     for (const nom of ceremony.nominations) {
       const film = getFilm(nom.filmId);
       if (!film) continue;
+
+      // News/event date (announcement or award night), never page-update/deploy time.
+      const sourceDate = nom.date || ceremony.date;
+      const date = sourceDate || `${ceremony.year}-01-01`;
+      const dateLabel = sourceDate ? formatDate(sourceDate) : `${ceremony.year}年`;
 
       const isWin = nom.result === "won";
       const person =

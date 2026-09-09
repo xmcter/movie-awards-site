@@ -51,7 +51,7 @@ function EventPoster({
           alt={event.filmTitle}
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-contain"
+          className="h-full w-full object-cover object-center"
           onError={() => setFailed(true)}
         />
       ) : (
@@ -144,7 +144,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
               />
               <article className="overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30">
                 <div className="flex flex-row items-stretch">
-                  {/* Portrait 2/3 frame + object-contain so faces/posters aren't cropped */}
+                  {/* Portrait 2/3 frame filled with object-cover (no letterbox bars) */}
                   <EventPoster
                     event={event}
                     className="m-3 mr-0 aspect-[2/3] w-[100px] shrink-0 overflow-hidden rounded-lg sm:m-4 sm:mr-0 sm:w-[112px]"
@@ -152,6 +152,11 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                   <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                     <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
                       <time dateTime={event.date || undefined}>{event.dateLabel}</time>
+                      {event.date ? (
+                        <span className="text-[10px] tracking-wide text-cinema-muted/45">
+                          消息时间
+                        </span>
+                      ) : null}
                       <TypeBadge type={event.type} />
                     </div>
                     <h2 className="mt-2 font-display text-lg text-cinema-text">

@@ -93,7 +93,7 @@
     "title": "乔治·克鲁尼",
     "titleEn": "George Clooney",
     "year": 2026,
-    "synopsis": "第83届威尼斯电影节授予荣誉金狮，表彰其演员与导演生涯成就。",
+    "synopsis": "第83届威尼斯电影节授予荣誉金狮，表彰其演员与导演生涯成就。剧照取自《十一罗汉》。",
     "directors": [],
     "cast": [
       "乔治·克鲁尼"
@@ -105,8 +105,8 @@
       "美国"
     ],
     "posterColors": [
-      "#1e293b",
-      "#ca8a04"
+      "#9a3412",
+      "#ea580c"
     ],
     "streaming": [],
     "poster": "/posters/honorary-clooney.jpg"
@@ -116,7 +116,7 @@
     "title": "艾伦·伯斯汀",
     "titleEn": "Ellen Burstyn",
     "year": 2026,
-    "synopsis": "第83届威尼斯电影节授予荣誉金狮，表彰其跨越数十年的表演成就。",
+    "synopsis": "第83届威尼斯电影节授予荣誉金狮，表彰其跨越数十年的表演成就。剧照取自《驱魔人》。",
     "directors": [],
     "cast": [
       "艾伦·伯斯汀"
@@ -128,8 +128,8 @@
       "美国"
     ],
     "posterColors": [
-      "#1e293b",
-      "#a16207"
+      "#111827",
+      "#4b5563"
     ],
     "streaming": [],
     "poster": "/posters/honorary-burstyn.jpg"
@@ -139,7 +139,7 @@
     "title": "玛吉·吉伦哈尔",
     "titleEn": "Maggie Gyllenhaal",
     "year": 2026,
-    "synopsis": "美国演员、导演玛吉·吉伦哈尔出任第83届威尼斯电影节主竞赛评委主席。",
+    "synopsis": "美国演员、导演玛吉·吉伦哈尔出任第83届威尼斯电影节主竞赛评委主席。剧照取自《秘书》。",
     "directors": [],
     "cast": [
       "玛吉·吉伦哈尔"
@@ -151,8 +151,8 @@
       "美国"
     ],
     "posterColors": [
-      "#312e81",
-      "#6366f1"
+      "#431407",
+      "#7c2d12"
     ],
     "streaming": [],
     "poster": "/posters/venice-jury-2026.jpg"

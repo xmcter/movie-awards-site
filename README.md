@@ -49,6 +49,13 @@ npm run build   # 输出到 out/
 
 默认 rsync `out/` → `root@8.134.173.91:/var/www/movie-awards-site/`（密钥 `~/.ssh/aliyun_movieupdate`）。域名：http://news.readcine.com
 
+
+## 海报图片
+
+时间线卡片使用 `public/posters/{filmId}.jpg` 本地海报（由影片 `poster` 字段引用）。站点为静态导出，**运行时不依赖 API Key**。
+
+海报仅供个人 / 编辑性展示；若许可要求，请替换为自有授权素材。来源多为公开宣传图（如 TMDB 可公开访问的海报路径），不保证可商用再分发。
+
 ## 许可
 
 MIT

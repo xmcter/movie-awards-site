@@ -32,7 +32,8 @@
         "region": "美国 / 拉美",
         "note": "片方公布 Netflix 拥有美国与拉美权益；上线日待定"
       }
-    ]
+    ],
+    "poster": "/posters/ink.jpg"
   },
   {
     "id": "bucking-fastard",
@@ -57,7 +58,8 @@
       "#0f172a",
       "#334155"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/bucking-fastard.jpg"
   },
   {
     "id": "wild-horse-nine",
@@ -83,7 +85,8 @@
       "#1c1917",
       "#78716c"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/wild-horse-nine.jpg"
   },
   {
     "id": "honorary-clooney",
@@ -105,7 +108,8 @@
       "#1e293b",
       "#ca8a04"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/honorary-clooney.jpg"
   },
   {
     "id": "honorary-burstyn",
@@ -127,7 +131,8 @@
       "#1e293b",
       "#a16207"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/honorary-burstyn.jpg"
   },
   {
     "id": "venice-jury-2026",
@@ -149,7 +154,8 @@
       "#312e81",
       "#6366f1"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/venice-jury-2026.jpg"
   },
   {
     "id": "fjord",
@@ -184,7 +190,8 @@
         "region": "部分地区",
         "note": "金棕榈后预计登陆艺术院线流媒体；具体日期待定"
       }
-    ]
+    ],
+    "poster": "/posters/fjord.jpg"
   },
   {
     "id": "minotaur",
@@ -207,7 +214,8 @@
       "#1a1a1a",
       "#7f1d1d"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/minotaur.jpg"
   },
   {
     "id": "the-dreamed-adventure",
@@ -229,7 +237,8 @@
       "#14532d",
       "#365314"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/the-dreamed-adventure.jpg"
   },
   {
     "id": "the-black-ball",
@@ -252,7 +261,8 @@
       "#111827",
       "#374151"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/the-black-ball.jpg"
   },
   {
     "id": "fatherland",
@@ -275,7 +285,8 @@
       "#1e3a5f",
       "#334155"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/fatherland.jpg"
   },
   {
     "id": "all-of-a-sudden",
@@ -299,7 +310,8 @@
       "#4c1d95",
       "#7c3aed"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/all-of-a-sudden.jpg"
   },
   {
     "id": "coward",
@@ -322,7 +334,8 @@
       "#422006",
       "#92400e"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/coward.jpg"
   },
   {
     "id": "our-redemption",
@@ -345,7 +358,8 @@
       "#1e293b",
       "#475569"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/our-redemption.jpg"
   },
   {
     "id": "yellow-letters",
@@ -380,7 +394,8 @@
         "region": "部分地区",
         "note": "金熊后预计登陆艺术院线流媒体；具体日期待定"
       }
-    ]
+    ],
+    "poster": "/posters/yellow-letters.jpg"
   },
   {
     "id": "two-seasons-two-strangers",
@@ -405,7 +420,8 @@
       "#134e4a",
       "#0f766e"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/two-seasons-two-strangers.jpg"
   },
   {
     "id": "los-domingos",
@@ -428,7 +444,8 @@
       "#1e1b4b",
       "#4338ca"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/los-domingos.jpg"
   },
   {
     "id": "black-red-yellow",
@@ -450,7 +467,8 @@
       "#7f1d1d",
       "#ca8a04"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/black-red-yellow.jpg"
   },
   {
     "id": "palestine-36",
@@ -474,7 +492,8 @@
       "#14532d",
       "#166534"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/palestine-36.jpg"
   },
   {
     "id": "gloaming-in-luomu",
@@ -497,6 +516,7 @@
       "#422006",
       "#78350f"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/gloaming-in-luomu.jpg"
   }
 ]

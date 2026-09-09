@@ -13,6 +13,56 @@ const FILTERS: { key: FilterKey; label: string }[] = [
   { key: "streaming", label: "流媒体" },
 ];
 
+function initials(title: string): string {
+  const trimmed = title.trim();
+  if (!trimmed) return "?";
+  const latin = trimmed.match(/[A-Za-z]+/g);
+  if (latin && latin.length > 0) {
+    return latin
+      .slice(0, 2)
+      .map((w) => w[0]!.toUpperCase())
+      .join("");
+  }
+  return trimmed.slice(0, 2);
+}
+
+function EventPoster({
+  event,
+  className,
+}: {
+  event: TimelineEvent;
+  className?: string;
+}) {
+  const [failed, setFailed] = useState(false);
+  const colors = event.posterColors || ["#1a1a2e", "#334155"];
+  const showImg = Boolean(event.poster) && !failed;
+
+  return (
+    <div
+      className={className}
+      style={{
+        background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+      }}
+    >
+      {showImg ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={event.poster}
+          alt={event.filmTitle}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+          onError={() => setFailed(true)}
+        />
+      ) : (
+        <div className="flex h-full w-full items-center justify-center px-1 text-center font-display text-xl tracking-wide text-white/80">
+          {initials(event.filmTitleEn || event.filmTitle)}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [filter, setFilter] = useState<FilterKey>("all");
   const [query, setQuery] = useState("");
@@ -92,28 +142,37 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         : "#34d399",
                 }}
               />
-              <article className="rounded-xl border border-cinema-border bg-cinema-card p-4 transition hover:border-cinema-gold/30 sm:p-5">
-                <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-                  <time dateTime={event.date || undefined}>{event.dateLabel}</time>
-                  <TypeBadge type={event.type} />
+              <article className="overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30">
+                <div className="flex flex-col sm:flex-row">
+                  {/* Mobile: full-bleed top strip; desktop: left poster */}
+                  <EventPoster
+                    event={event}
+                    className="h-36 w-full shrink-0 overflow-hidden sm:m-4 sm:mr-0 sm:h-[140px] sm:w-[105px] sm:rounded-lg"
+                  />
+                  <div className="min-w-0 flex-1 p-4 sm:p-5 sm:pl-4">
+                    <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
+                      <time dateTime={event.date || undefined}>{event.dateLabel}</time>
+                      <TypeBadge type={event.type} />
+                    </div>
+                    <h2 className="mt-2 font-display text-lg text-cinema-text">
+                      {event.filmTitle}
+                      {event.filmYear ? (
+                        <span className="ml-2 text-sm font-sans font-normal text-cinema-muted">
+                          {event.filmYear}
+                        </span>
+                      ) : null}
+                    </h2>
+                    {event.filmTitleEn ? (
+                      <p className="text-xs text-cinema-muted/80">{event.filmTitleEn}</p>
+                    ) : null}
+                    <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
+                      {event.summary}
+                    </p>
+                    {event.detail ? (
+                      <p className="mt-1 text-xs text-cinema-muted/70">{event.detail}</p>
+                    ) : null}
+                  </div>
                 </div>
-                <h2 className="mt-2 font-display text-lg text-cinema-text">
-                  {event.filmTitle}
-                  {event.filmYear ? (
-                    <span className="ml-2 text-sm font-sans font-normal text-cinema-muted">
-                      {event.filmYear}
-                    </span>
-                  ) : null}
-                </h2>
-                {event.filmTitleEn ? (
-                  <p className="text-xs text-cinema-muted/80">{event.filmTitleEn}</p>
-                ) : null}
-                <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
-                  {event.summary}
-                </p>
-                {event.detail ? (
-                  <p className="mt-1 text-xs text-cinema-muted/70">{event.detail}</p>
-                ) : null}
               </article>
             </li>
           ))}

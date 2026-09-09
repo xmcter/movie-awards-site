@@ -55,6 +55,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmTitle: film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
+        poster: film.poster,
+        posterColors: film.posterColors,
         summary: `${ceremony.name} · ${nom.categoryName}${person}`,
         detail: org
           ? `A类电影节 · ${org.name}${ceremony.location ? ` · ${ceremony.location}` : ""}`
@@ -86,6 +88,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmTitle: film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
+        poster: film.poster,
+        posterColors: film.posterColors,
         summary: `${platform} · ${statusLabel} ${datePart}${region}`,
         detail: note || undefined,
         badge: "流媒体",

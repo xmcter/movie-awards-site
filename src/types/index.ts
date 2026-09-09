@@ -59,6 +59,8 @@ export interface Film {
   genres: string[];
   runtime?: number;
   country?: string[];
+  /** 本地海报路径，如 /posters/{id}.jpg */
+  poster?: string;
   /** 海报色渐变用，如 ["#1a1a2e", "#16213e"] */
   posterColors?: [string, string];
   streaming: StreamingRelease[];
@@ -106,6 +108,10 @@ export interface TimelineEvent {
   filmTitle: string;
   filmTitleEn?: string;
   filmYear?: number;
+  /** 本地海报路径 */
+  poster?: string;
+  /** 海报缺失时的渐变色 */
+  posterColors?: [string, string];
   summary: string;
   detail?: string;
   /** 入围 / 获奖 / 流媒体 */

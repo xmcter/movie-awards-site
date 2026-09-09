@@ -30,13 +30,6 @@ export type AwardOrgId =
   | "hkfa"
   | "huabiao";
 
-export interface Person {
-  id: string;
-  name: string;
-  nameEn?: string;
-  role?: string;
-}
-
 export interface StreamingRelease {
   platform: StreamingPlatform;
   /** ISO date YYYY-MM-DD，tba 时可省略 */
@@ -66,7 +59,6 @@ export interface CategoryNomination {
   categoryId: string;
   categoryName: string;
   filmId: string;
-  /** 相关人物，如演员、导演 */
   personIds?: string[];
   personNames?: string[];
   result: AwardResult;
@@ -93,10 +85,21 @@ export interface AwardOrg {
   accentColor: string;
 }
 
-export interface SearchResult {
-  type: "film" | "person" | "award";
+/** 时间线事件类型 */
+export type TimelineEventType = "nomination" | "win" | "streaming";
+
+export interface TimelineEvent {
   id: string;
-  title: string;
-  subtitle?: string;
-  href: string;
+  type: TimelineEventType;
+  /** 排序用 ISO 日期；待定用空字符串 */
+  date: string;
+  dateLabel: string;
+  filmTitle: string;
+  filmTitleEn?: string;
+  filmYear?: number;
+  summary: string;
+  detail?: string;
+  /** 提名 / 获奖 / 流媒体 */
+  badge: string;
+  accentColor?: string;
 }

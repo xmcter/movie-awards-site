@@ -1,224 +1,104 @@
 import filmsData from "@/data/films.json";
 import orgsData from "@/data/orgs.json";
 import ceremoniesData from "@/data/ceremonies.json";
-import peopleData from "@/data/people.json";
 import type {
   AwardCeremony,
   AwardOrg,
-  AwardOrgId,
   Film,
-  Person,
-  SearchResult,
-  StreamingRelease,
+  TimelineEvent,
 } from "@/types";
+import {
+  PLATFORM_LABELS,
+  RELEASE_STATUS_LABELS,
+  formatDate,
+  formatYearMonth,
+} from "@/lib/labels";
 
 export const films = filmsData as Film[];
 export const orgs = orgsData as AwardOrg[];
 export const ceremonies = ceremoniesData as AwardCeremony[];
-export const people = peopleData as Person[];
 
-export function getFilm(id: string): Film | undefined {
-  return films.find((f) => f.id === id);
-}
-
-export function getOrg(id: AwardOrgId | string): AwardOrg | undefined {
+function getOrg(id: string): AwardOrg | undefined {
   return orgs.find((o) => o.id === id);
 }
 
-export function getCeremony(id: string): AwardCeremony | undefined {
-  return ceremonies.find((c) => c.id === id);
+function getFilm(id: string): Film | undefined {
+  return films.find((f) => f.id === id);
 }
 
-export function getCeremoniesByOrg(orgId: string): AwardCeremony[] {
-  return ceremonies
-    .filter((c) => c.orgId === orgId)
-    .sort((a, b) => b.year - a.year);
-}
-
-export function getFilmAwards(filmId: string) {
-  const records: {
-    ceremony: AwardCeremony;
-    org: AwardOrg;
-    categoryName: string;
-    result: "nominated" | "won";
-    personNames?: string[];
-  }[] = [];
+/** 从提名 / 获奖 / 流媒体种子数据派生时间线事件（最新在前） */
+export function getTimelineEvents(): TimelineEvent[] {
+  const events: TimelineEvent[] = [];
 
   for (const ceremony of ceremonies) {
     const org = getOrg(ceremony.orgId);
-    if (!org) continue;
+    const date = ceremony.date || `${ceremony.year}-01-01`;
+    const dateLabel = ceremony.date
+      ? formatDate(ceremony.date)
+      : `${ceremony.year}年`;
+
     for (const nom of ceremony.nominations) {
-      if (nom.filmId === filmId) {
-        records.push({
-          ceremony,
-          org,
-          categoryName: nom.categoryName,
-          result: nom.result,
-          personNames: nom.personNames,
-        });
-      }
-    }
-  }
-  return records;
-}
-
-export function getRecentWinners(limit = 8) {
-  const winners: {
-    film: Film;
-    ceremony: AwardCeremony;
-    org: AwardOrg;
-    categoryName: string;
-  }[] = [];
-
-  const sorted = [...ceremonies].sort((a, b) => {
-    const da = a.date || `${a.year}-01-01`;
-    const db = b.date || `${b.year}-01-01`;
-    return db.localeCompare(da);
-  });
-
-  for (const ceremony of sorted) {
-    const org = getOrg(ceremony.orgId);
-    if (!org) continue;
-    for (const nom of ceremony.nominations) {
-      if (nom.result !== "won") continue;
       const film = getFilm(nom.filmId);
       if (!film) continue;
-      winners.push({ film, ceremony, org, categoryName: nom.categoryName });
-      if (winners.length >= limit) return winners;
+
+      const isWin = nom.result === "won";
+      const person =
+        nom.personNames && nom.personNames.length > 0
+          ? ` · ${nom.personNames.join("、")}`
+          : "";
+
+      events.push({
+        id: `${ceremony.id}-${nom.categoryId}-${nom.filmId}-${nom.result}`,
+        type: isWin ? "win" : "nomination",
+        date,
+        dateLabel,
+        filmTitle: film.title,
+        filmTitleEn: film.titleEn,
+        filmYear: film.year,
+        summary: `${ceremony.name} · ${nom.categoryName}${isWin ? "获奖" : "提名"}${person}`,
+        detail: org
+          ? `${org.name}${ceremony.location ? ` · ${ceremony.location}` : ""}`
+          : undefined,
+        badge: isWin ? "获奖" : "提名",
+        accentColor: org?.accentColor,
+      });
     }
   }
-  return winners;
-}
 
-export function getUpcomingCeremonies(limit = 4) {
-  const today = "2025-01-01";
-  return [...ceremonies]
-    .filter((c) => !c.date || c.date >= today || c.year >= 2025)
-    .sort((a, b) => (a.date || "").localeCompare(b.date || ""))
-    .slice(0, limit)
-    .map((c) => ({ ceremony: c, org: getOrg(c.orgId)! }))
-    .filter((x) => x.org);
-}
-
-export interface StreamingEntry {
-  film: Film;
-  release: StreamingRelease;
-}
-
-export function getAllStreamingReleases(): StreamingEntry[] {
-  const entries: StreamingEntry[] = [];
   for (const film of films) {
     for (const release of film.streaming) {
-      entries.push({ film, release });
+      const platform = PLATFORM_LABELS[release.platform] || release.platform;
+      const statusLabel = RELEASE_STATUS_LABELS[release.status];
+      const datePart = release.date
+        ? release.status === "estimated"
+          ? formatYearMonth(release.date)
+          : formatDate(release.date)
+        : "待定";
+
+      const region = release.region ? ` · ${release.region}` : "";
+      const note = release.note ? `（${release.note}）` : "";
+
+      events.push({
+        id: `stream-${film.id}-${release.platform}-${release.date || "tba"}`,
+        type: "streaming",
+        date: release.date || "",
+        dateLabel: release.date ? formatDate(release.date) : "待定",
+        filmTitle: film.title,
+        filmTitleEn: film.titleEn,
+        filmYear: film.year,
+        summary: `${platform} · ${statusLabel} ${datePart}${region}`,
+        detail: note || undefined,
+        badge: "流媒体",
+      });
     }
   }
-  return entries.sort((a, b) => {
-    const da = a.release.date || "9999-99-99";
-    const db = b.release.date || "9999-99-99";
-    return da.localeCompare(db);
+
+  return events.sort((a, b) => {
+    const da = a.date || "0000-00-00";
+    const db = b.date || "0000-00-00";
+    if (da !== db) return db.localeCompare(da);
+    // 同日：获奖 > 提名 > 流媒体
+    const order = { win: 0, nomination: 1, streaming: 2 } as const;
+    return order[a.type] - order[b.type];
   });
-}
-
-export function getSoonOnStreaming(limit = 6): StreamingEntry[] {
-  const today = "2024-12-01";
-  return getAllStreamingReleases()
-    .filter((e) => !e.release.date || e.release.date >= today)
-    .slice(0, limit);
-}
-
-export function searchAll(query: string): SearchResult[] {
-  const q = query.trim().toLowerCase();
-  if (!q) return [];
-
-  const results: SearchResult[] = [];
-
-  for (const film of films) {
-    const hay = [
-      film.title,
-      film.titleEn,
-      ...film.directors,
-      ...film.cast,
-      ...film.genres,
-    ]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    if (hay.includes(q)) {
-      results.push({
-        type: "film",
-        id: film.id,
-        title: film.title,
-        subtitle: `${film.year}${film.titleEn ? ` · ${film.titleEn}` : ""}`,
-        href: `/films/${film.id}`,
-      });
-    }
-  }
-
-  for (const person of people) {
-    const hay = [person.name, person.nameEn, person.role]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    if (hay.includes(q)) {
-      results.push({
-        type: "person",
-        id: person.id,
-        title: person.name,
-        subtitle: person.nameEn || person.role,
-        href: `/search?q=${encodeURIComponent(person.name)}`,
-      });
-    }
-  }
-
-  for (const org of orgs) {
-    const hay = [org.name, org.nameEn, org.description]
-      .join(" ")
-      .toLowerCase();
-    if (hay.includes(q)) {
-      results.push({
-        type: "award",
-        id: org.id,
-        title: org.name,
-        subtitle: org.nameEn,
-        href: `/awards/${org.id}`,
-      });
-    }
-  }
-
-  for (const ceremony of ceremonies) {
-    const hay = [ceremony.name, ceremony.nameEn, String(ceremony.year)]
-      .filter(Boolean)
-      .join(" ")
-      .toLowerCase();
-    if (hay.includes(q)) {
-      results.push({
-        type: "award",
-        id: ceremony.id,
-        title: ceremony.name,
-        subtitle: ceremony.nameEn,
-        href: `/awards/${ceremony.orgId}/${ceremony.id}`,
-      });
-    }
-  }
-
-  return results.slice(0, 40);
-}
-
-export function groupNominationsByCategory(ceremony: AwardCeremony) {
-  const map = new Map<
-    string,
-    { categoryId: string; categoryName: string; items: typeof ceremony.nominations }
-  >();
-  for (const nom of ceremony.nominations) {
-    const key = nom.categoryId;
-    if (!map.has(key)) {
-      map.set(key, {
-        categoryId: nom.categoryId,
-        categoryName: nom.categoryName,
-        items: [],
-      });
-    }
-    map.get(key)!.items.push(nom);
-  }
-  return Array.from(map.values());
 }

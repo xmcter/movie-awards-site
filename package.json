@@ -1,7 +1,7 @@
 {
   "name": "movie-awards-site",
   "version": "1.0.0",
-  "description": "电影获奖资讯：提名、获奖与流媒体上线时间。",
+  "description": "电影奖讯时间线：提名、获奖与流媒体上线。",
   "private": true,
   "scripts": {
     "dev": "next dev",

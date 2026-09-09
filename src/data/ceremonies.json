@@ -1,144 +1,273 @@
 [
   {
-    "id": "oscars-97",
-    "orgId": "oscars",
-    "name": "第97届奥斯卡金像奖",
-    "nameEn": "97th Academy Awards",
-    "year": 2025,
-    "date": "2025-03-02",
-    "location": "好莱坞杜比剧院",
-    "nominations": [
-      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "anora", "result": "won" },
-      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "the-brutalist", "result": "nominated" },
-      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "conclave", "result": "nominated" },
-      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "emilia-perez", "result": "nominated" },
-      { "categoryId": "best-picture", "categoryName": "最佳影片", "filmId": "wicked", "result": "nominated" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "anora", "personNames": ["肖恩·贝克"], "result": "won" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "the-brutalist", "personNames": ["布雷迪·科贝特"], "result": "nominated" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "emilia-perez", "personNames": ["雅克·欧迪亚"], "result": "nominated" },
-      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "anora", "personNames": ["米琪·麦迪逊"], "result": "won" },
-      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "emilia-perez", "personNames": ["卡拉·索菲娅·加斯科恩"], "result": "nominated" },
-      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "wicked", "personNames": ["辛西娅·埃里沃"], "result": "nominated" },
-      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "the-brutalist", "personNames": ["阿德里安·布洛迪"], "result": "won" },
-      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "conclave", "personNames": ["拉尔夫·费因斯"], "result": "nominated" },
-      { "categoryId": "best-supporting-actress", "categoryName": "最佳女配角", "filmId": "emilia-perez", "personNames": ["佐伊·索尔达娜"], "result": "won" },
-      { "categoryId": "best-supporting-actor", "categoryName": "最佳男配角", "filmId": "a-real-pain", "personNames": ["基兰·卡尔金"], "result": "won" },
-      { "categoryId": "best-international", "categoryName": "最佳国际影片", "filmId": "emilia-perez", "result": "nominated" },
-      { "categoryId": "best-adapted-screenplay", "categoryName": "最佳改编剧本", "filmId": "conclave", "result": "won" },
-      { "categoryId": "best-original-screenplay", "categoryName": "最佳原创剧本", "filmId": "anora", "result": "won" }
-    ]
-  },
-  {
-    "id": "golden-globes-82",
-    "orgId": "golden-globes",
-    "name": "第82届金球奖",
-    "nameEn": "82nd Golden Globe Awards",
-    "year": 2025,
-    "date": "2025-01-05",
-    "location": "比佛利山庄",
-    "nominations": [
-      { "categoryId": "drama-picture", "categoryName": "剧情类最佳影片", "filmId": "the-brutalist", "result": "won" },
-      { "categoryId": "drama-picture", "categoryName": "剧情类最佳影片", "filmId": "conclave", "result": "nominated" },
-      { "categoryId": "musical-picture", "categoryName": "音乐/喜剧类最佳影片", "filmId": "emilia-perez", "result": "won" },
-      { "categoryId": "musical-picture", "categoryName": "音乐/喜剧类最佳影片", "filmId": "wicked", "result": "nominated" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "the-brutalist", "personNames": ["布雷迪·科贝特"], "result": "won" },
-      { "categoryId": "best-actress-drama", "categoryName": "剧情类最佳女主角", "filmId": "anora", "personNames": ["米琪·麦迪逊"], "result": "nominated" },
-      { "categoryId": "best-actor-drama", "categoryName": "剧情类最佳男主角", "filmId": "the-brutalist", "personNames": ["阿德里安·布洛迪"], "result": "won" }
-    ]
-  },
-  {
-    "id": "cannes-2024",
-    "orgId": "cannes",
-    "name": "第77届戛纳电影节",
-    "nameEn": "77th Cannes Film Festival",
-    "year": 2024,
-    "date": "2024-05-25",
-    "location": "法国戛纳",
-    "nominations": [
-      { "categoryId": "palme-dor", "categoryName": "金棕榈奖", "filmId": "anora", "result": "won" },
-      { "categoryId": "grand-prix", "categoryName": "评审团大奖", "filmId": "emilia-perez", "result": "won" },
-      { "categoryId": "un-certain-regard", "categoryName": "一种关注大奖", "filmId": "black-dog", "result": "won" },
-      { "categoryId": "best-actress", "categoryName": "最佳女演员", "filmId": "emilia-perez", "personNames": ["佐伊·索尔达娜", "卡拉·索菲娅·加斯科恩", "塞尔玛·海耶克"], "result": "won" },
-      { "categoryId": "best-actor", "categoryName": "最佳男演员", "filmId": "anora", "personNames": ["尤拉·鲍利索夫"], "result": "nominated" }
-    ]
-  },
-  {
-    "id": "venice-2023",
+    "id": "venice-83",
     "orgId": "venice",
-    "name": "第80届威尼斯电影节",
-    "nameEn": "80th Venice Film Festival",
-    "year": 2023,
-    "date": "2023-09-09",
-    "location": "意大利威尼斯",
+    "name": "第83届威尼斯电影节",
+    "nameEn": "83rd Venice Film Festival",
+    "year": 2026,
+    "date": "2026-09-02",
+    "location": "意大利威尼斯利多岛（进行中，闭幕 9/12）",
     "nominations": [
-      { "categoryId": "golden-lion", "categoryName": "金狮奖", "filmId": "poor-things", "result": "won" },
-      { "categoryId": "silver-lion", "categoryName": "银狮奖（最佳导演）", "filmId": "poor-things", "personNames": ["约戈斯·兰西莫斯"], "result": "nominated" }
+      {
+        "categoryId": "opening-competition",
+        "categoryName": "开幕片（主竞赛）",
+        "filmId": "ink",
+        "personNames": [
+          "丹尼·博伊尔"
+        ],
+        "result": "nominated"
+      },
+      {
+        "categoryId": "competition",
+        "categoryName": "主竞赛入围",
+        "filmId": "bucking-fastard",
+        "personNames": [
+          "维尔纳·赫尔佐格"
+        ],
+        "result": "nominated"
+      },
+      {
+        "categoryId": "competition",
+        "categoryName": "主竞赛入围",
+        "filmId": "wild-horse-nine",
+        "personNames": [
+          "马丁·麦克多纳"
+        ],
+        "result": "nominated"
+      },
+      {
+        "categoryId": "honorary-lion",
+        "categoryName": "荣誉金狮",
+        "filmId": "honorary-clooney",
+        "personNames": [
+          "乔治·克鲁尼"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "honorary-lion",
+        "categoryName": "荣誉金狮",
+        "filmId": "honorary-burstyn",
+        "personNames": [
+          "艾伦·伯斯汀"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "jury-president",
+        "categoryName": "评委主席",
+        "filmId": "venice-jury-2026",
+        "personNames": [
+          "玛吉·吉伦哈尔"
+        ],
+        "result": "nominated"
+      }
     ]
   },
   {
-    "id": "berlin-2024",
+    "id": "cannes-79",
+    "orgId": "cannes",
+    "name": "第79届戛纳电影节",
+    "nameEn": "79th Cannes Film Festival",
+    "year": 2026,
+    "date": "2026-05-23",
+    "location": "法国戛纳（5月12–23日）",
+    "nominations": [
+      {
+        "categoryId": "palme-dor",
+        "categoryName": "金棕榈",
+        "filmId": "fjord",
+        "personNames": [
+          "克里斯蒂安·蒙吉"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "grand-prix",
+        "categoryName": "评审团大奖",
+        "filmId": "minotaur",
+        "personNames": [
+          "安德烈·萨金塞夫"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "jury-prize",
+        "categoryName": "评审团奖",
+        "filmId": "the-dreamed-adventure",
+        "personNames": [
+          "瓦莱斯卡·格里策巴赫"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演（并列）",
+        "filmId": "the-black-ball",
+        "personNames": [
+          "哈维尔·安布罗希",
+          "哈维尔·卡尔沃"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演（并列）",
+        "filmId": "fatherland",
+        "personNames": [
+          "帕维乌·帕夫利科夫斯基"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "best-actress",
+        "categoryName": "最佳女演员（并列）",
+        "filmId": "all-of-a-sudden",
+        "personNames": [
+          "维尔日妮·埃菲拉",
+          "冈本多绪"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "best-actor",
+        "categoryName": "最佳男演员（并列）",
+        "filmId": "coward",
+        "personNames": [
+          "伊曼纽尔·马基亚",
+          "瓦伦丁·坎帕涅"
+        ],
+        "result": "won"
+      },
+      {
+        "categoryId": "best-screenplay",
+        "categoryName": "最佳编剧",
+        "filmId": "our-redemption",
+        "personNames": [
+          "伊曼努尔·马雷"
+        ],
+        "result": "won"
+      }
+    ]
+  },
+  {
+    "id": "berlin-76",
     "orgId": "berlin",
-    "name": "第74届柏林电影节",
-    "nameEn": "74th Berlin International Film Festival",
-    "year": 2024,
-    "date": "2024-02-24",
-    "location": "德国柏林",
+    "name": "第76届柏林电影节",
+    "nameEn": "76th Berlin International Film Festival",
+    "year": 2026,
+    "date": "2026-02-21",
+    "location": "德国柏林（2月12–22日）",
     "nominations": [
-      { "categoryId": "golden-bear", "categoryName": "金熊奖", "filmId": "the-zone-of-interest", "result": "nominated" },
-      { "categoryId": "silver-bear", "categoryName": "银熊奖", "filmId": "black-dog", "result": "nominated" }
+      {
+        "categoryId": "golden-bear",
+        "categoryName": "金熊奖",
+        "filmId": "yellow-letters",
+        "personNames": [
+          "伊尔克·恰塔克"
+        ],
+        "result": "won"
+      }
     ]
   },
   {
-    "id": "golden-horse-61",
-    "orgId": "golden-horse",
-    "name": "第61届金马奖",
-    "nameEn": "61st Golden Horse Awards",
-    "year": 2024,
-    "date": "2024-11-23",
-    "location": "台北",
-    "nominations": [
-      { "categoryId": "best-picture", "categoryName": "最佳剧情片", "filmId": "all-shall-be-well", "result": "won" },
-      { "categoryId": "best-picture", "categoryName": "最佳剧情片", "filmId": "black-dog", "result": "nominated" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "all-shall-be-well", "personNames": ["袁永绰"], "result": "won" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "black-dog", "personNames": ["管虎"], "result": "nominated" },
-      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "all-shall-be-well", "personNames": ["鲍起静"], "result": "won" },
-      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "black-dog", "personNames": ["彭于晏"], "result": "nominated" },
-      { "categoryId": "best-supporting-actress", "categoryName": "最佳女配角", "filmId": "all-shall-be-well", "personNames": ["惠英红"], "result": "nominated" }
-    ]
-  },
-  {
-    "id": "hkfa-43",
-    "orgId": "hkfa",
-    "name": "第43届香港电影金像奖",
-    "nameEn": "43rd Hong Kong Film Awards",
+    "id": "san-sebastian-73",
+    "orgId": "san-sebastian",
+    "name": "第73届圣塞巴斯蒂安电影节",
+    "nameEn": "73rd San Sebastián Film Festival",
     "year": 2025,
-    "date": "2025-04-27",
-    "location": "香港文化中心",
+    "date": "2025-09-27",
+    "location": "西班牙圣塞巴斯蒂安",
     "nominations": [
-      { "categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "twilight-of-the-warriors", "result": "won" },
-      { "categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "all-shall-be-well", "result": "nominated" },
-      { "categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "table-for-six-2", "result": "nominated" },
-      { "categoryId": "best-director", "categoryName": "最佳导演", "filmId": "twilight-of-the-warriors", "personNames": ["郑保瑞"], "result": "won" },
-      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "twilight-of-the-warriors", "personNames": ["古天乐"], "result": "nominated" },
-      { "categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "yo-yo-girl-cop", "personNames": ["甄子丹"], "result": "nominated" },
-      { "categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "all-shall-be-well", "personNames": ["鲍起静"], "result": "won" },
-      { "categoryId": "best-action", "categoryName": "最佳动作设计", "filmId": "twilight-of-the-warriors", "result": "won" }
+      {
+        "categoryId": "golden-shell",
+        "categoryName": "金贝壳",
+        "filmId": "los-domingos",
+        "personNames": [
+          "Alauda Ruiz de Azúa"
+        ],
+        "result": "won"
+      }
     ]
   },
   {
-    "id": "huabiao-20",
-    "orgId": "huabiao",
-    "name": "第20届华表奖",
-    "nameEn": "20th Huabiao Awards",
+    "id": "locarno-78",
+    "orgId": "locarno",
+    "name": "第78届洛迦诺电影节",
+    "nameEn": "78th Locarno Film Festival",
     "year": 2025,
-    "date": "2025-05-20",
-    "location": "北京",
+    "date": "2025-08-16",
+    "location": "瑞士洛迦诺",
     "nominations": [
-      { "categoryId": "outstanding-film", "categoryName": "优秀故事片", "filmId": "successor", "result": "won" },
-      { "categoryId": "outstanding-film", "categoryName": "优秀故事片", "filmId": "black-dog", "result": "nominated" },
-      { "categoryId": "best-actor", "categoryName": "优秀男演员", "filmId": "successor", "personNames": ["张译"], "result": "won" },
-      { "categoryId": "best-actor", "categoryName": "优秀男演员", "filmId": "black-dog", "personNames": ["彭于晏"], "result": "nominated" },
-      { "categoryId": "best-actress", "categoryName": "优秀女演员", "filmId": "successor", "personNames": ["周冬雨"], "result": "nominated" }
+      {
+        "categoryId": "golden-leopard",
+        "categoryName": "金豹奖",
+        "filmId": "two-seasons-two-strangers",
+        "personNames": [
+          "三宅唱"
+        ],
+        "result": "won"
+      }
+    ]
+  },
+  {
+    "id": "shanghai-27",
+    "orgId": "shanghai",
+    "name": "第27届上海国际电影节",
+    "nameEn": "27th Shanghai International Film Festival",
+    "year": 2025,
+    "date": "2025-06-21",
+    "location": "中国上海",
+    "nominations": [
+      {
+        "categoryId": "golden-goblet",
+        "categoryName": "金爵奖最佳影片",
+        "filmId": "black-red-yellow",
+        "personNames": [
+          "阿克坦·阿雷姆·库巴特"
+        ],
+        "result": "won"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-38",
+    "orgId": "tokyo",
+    "name": "第38届东京国际电影节",
+    "nameEn": "38th Tokyo International Film Festival",
+    "year": 2025,
+    "date": "2025-11-05",
+    "location": "日本东京",
+    "nominations": [
+      {
+        "categoryId": "tokyo-grand-prix",
+        "categoryName": "东京大奖",
+        "filmId": "palestine-36",
+        "personNames": [
+          "安玛丽·贾西尔"
+        ],
+        "result": "won"
+      }
+    ]
+  },
+  {
+    "id": "busan-30",
+    "orgId": "busan",
+    "name": "第30届釜山国际电影节",
+    "nameEn": "30th Busan International Film Festival",
+    "year": 2025,
+    "date": "2025-09-26",
+    "location": "韩国釜山",
+    "nominations": [
+      {
+        "categoryId": "busan-award",
+        "categoryName": "釜山奖最佳影片",
+        "filmId": "gloaming-in-luomu",
+        "personNames": [
+          "张律"
+        ],
+        "result": "won"
+      }
     ]
   }
 ]

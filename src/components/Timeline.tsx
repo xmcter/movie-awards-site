@@ -8,8 +8,8 @@ type FilterKey = "all" | TimelineEventType;
 
 const FILTERS: { key: FilterKey; label: string }[] = [
   { key: "all", label: "全部" },
-  { key: "nomination", label: "提名" },
   { key: "win", label: "获奖" },
+  { key: "nomination", label: "入围" },
   { key: "streaming", label: "流媒体" },
 ];
 
@@ -67,7 +67,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="搜索影片 / 奖项…"
+            placeholder="搜索影片 / 电影节…"
             className="w-full rounded-full border border-cinema-border bg-cinema-card px-4 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus:outline-none"
           />
         </label>

@@ -26,7 +26,7 @@ function getFilm(id: string): Film | undefined {
   return films.find((f) => f.id === id);
 }
 
-/** 从提名 / 获奖 / 流媒体种子数据派生时间线事件（最新在前） */
+/** 从入围 / 获奖 / 流媒体种子数据派生时间线事件（最新在前） */
 export function getTimelineEvents(): TimelineEvent[] {
   const events: TimelineEvent[] = [];
 
@@ -55,11 +55,11 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmTitle: film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
-        summary: `${ceremony.name} · ${nom.categoryName}${isWin ? "获奖" : "提名"}${person}`,
+        summary: `${ceremony.name} · ${nom.categoryName}${person}`,
         detail: org
-          ? `${org.name}${ceremony.location ? ` · ${ceremony.location}` : ""}`
+          ? `A类电影节 · ${org.name}${ceremony.location ? ` · ${ceremony.location}` : ""}`
           : undefined,
-        badge: isWin ? "获奖" : "提名",
+        badge: isWin ? "获奖" : "入围",
         accentColor: org?.accentColor,
       });
     }
@@ -97,7 +97,7 @@ export function getTimelineEvents(): TimelineEvent[] {
     const da = a.date || "0000-00-00";
     const db = b.date || "0000-00-00";
     if (da !== db) return db.localeCompare(da);
-    // 同日：获奖 > 提名 > 流媒体
+    // 同日：获奖 > 入围 > 流媒体
     const order = { win: 0, nomination: 1, streaming: 2 } as const;
     return order[a.type] - order[b.type];
   });

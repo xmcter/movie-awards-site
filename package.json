@@ -1,7 +1,7 @@
 {
   "name": "movie-awards-site",
   "version": "1.0.0",
-  "description": "电影奖讯时间线：提名、获奖与流媒体上线。",
+  "description": "FIAPF A类电影节时间线：入围、获奖与相关流媒体上线。",
   "private": true,
   "scripts": {
     "dev": "next dev",

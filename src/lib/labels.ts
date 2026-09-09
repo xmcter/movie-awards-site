@@ -22,7 +22,7 @@ export const RELEASE_STATUS_LABELS: Record<ReleaseStatus, string> = {
 };
 
 export const AWARD_RESULT_LABELS: Record<AwardResult, string> = {
-  nominated: "提名",
+  nominated: "入围",
   won: "获奖",
 };
 

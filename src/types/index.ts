@@ -16,19 +16,28 @@ export type StreamingPlatform =
 /** 上线日期状态：已公布 / 预计 / 待定 */
 export type ReleaseStatus = "announced" | "estimated" | "tba";
 
-/** 奖项结果：提名 / 获奖 */
+/** 奖项结果：入围 / 获奖 */
 export type AwardResult = "nominated" | "won";
 
-/** 奖项组织标识 */
+/** FIAPF A 类电影节组织标识 */
 export type AwardOrgId =
-  | "oscars"
-  | "golden-globes"
   | "cannes"
   | "venice"
   | "berlin"
-  | "golden-horse"
-  | "hkfa"
-  | "huabiao";
+  | "locarno"
+  | "san-sebastian"
+  | "shanghai"
+  | "tokyo"
+  | "busan"
+  | "toronto"
+  | "karlovy-vary"
+  | "warsaw"
+  | "tallinn"
+  | "cairo"
+  | "mar-del-plata"
+  | "iffi"
+  | "annecy"
+  | "clermont-ferrand";
 
 export interface StreamingRelease {
   platform: StreamingPlatform;
@@ -99,7 +108,7 @@ export interface TimelineEvent {
   filmYear?: number;
   summary: string;
   detail?: string;
-  /** 提名 / 获奖 / 流媒体 */
+  /** 入围 / 获奖 / 流媒体 */
   badge: string;
   accentColor?: string;
 }

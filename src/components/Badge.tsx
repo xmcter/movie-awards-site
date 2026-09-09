@@ -7,7 +7,7 @@ const STYLES: Record<TimelineEventType, string> = {
 };
 
 const LABELS: Record<TimelineEventType, string> = {
-  nomination: "提名",
+  nomination: "入围",
   win: "获奖",
   streaming: "流媒体",
 };

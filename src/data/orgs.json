@@ -1,74 +1,74 @@
 [
   {
-    "id": "oscars",
-    "name": "奥斯卡金像奖",
-    "nameEn": "Academy Awards",
-    "description": "美国电影艺术与科学学院颁发的年度最高荣誉，涵盖最佳影片、导演、表演及各项技术奖。",
-    "country": "美国",
-    "founded": 1929,
-    "accentColor": "#c9a227"
-  },
-  {
-    "id": "golden-globes",
-    "name": "金球奖",
-    "nameEn": "Golden Globe Awards",
-    "description": "好莱坞外国记者协会评选，剧情与音乐/喜剧分轨，是奥斯卡季重要风向标。",
-    "country": "美国",
-    "founded": 1944,
-    "accentColor": "#d4a574"
-  },
-  {
     "id": "cannes",
-    "name": "戛纳电影节",
+    "name": "戛纳",
     "nameEn": "Cannes Film Festival",
-    "description": "世界三大电影节之一，金棕榈奖代表艺术电影最高荣誉。",
+    "description": "FIAPF A类电影节。世界三大电影节之一，金棕榈代表艺术电影最高荣誉。",
     "country": "法国",
     "founded": 1946,
     "accentColor": "#e11d48"
   },
   {
     "id": "venice",
-    "name": "威尼斯电影节",
+    "name": "威尼斯",
     "nameEn": "Venice Film Festival",
-    "description": "历史最悠久的国际电影节，金狮奖备受影迷与影评人推崇。",
+    "description": "FIAPF A类电影节。历史最悠久的国际电影节，金狮奖备受推崇。",
     "country": "意大利",
     "founded": 1932,
     "accentColor": "#f59e0b"
   },
   {
     "id": "berlin",
-    "name": "柏林电影节",
+    "name": "柏林",
     "nameEn": "Berlin International Film Festival",
-    "description": "三大电影节之一，金熊奖注重社会议题与艺术探索。",
+    "description": "FIAPF A类电影节。三大电影节之一，金熊奖注重社会议题与艺术探索。",
     "country": "德国",
     "founded": 1951,
     "accentColor": "#38bdf8"
   },
   {
-    "id": "golden-horse",
-    "name": "金马奖",
-    "nameEn": "Golden Horse Awards",
-    "description": "华语电影最高荣誉之一，表彰两岸三地及全球华语影人创作。",
-    "country": "中国台湾",
-    "founded": 1962,
+    "id": "locarno",
+    "name": "洛迦诺",
+    "nameEn": "Locarno Film Festival",
+    "description": "FIAPF A类电影节。以金豹奖著称，发掘作者电影与新生力量。",
+    "country": "瑞士",
+    "founded": 1946,
     "accentColor": "#a78bfa"
   },
   {
-    "id": "hkfa",
-    "name": "香港电影金像奖",
-    "nameEn": "Hong Kong Film Awards",
-    "description": "香港影坛年度盛典，见证港片黄金年代与当代复兴。",
-    "country": "中国香港",
-    "founded": 1982,
+    "id": "san-sebastian",
+    "name": "圣塞巴斯蒂安",
+    "nameEn": "San Sebastián International Film Festival",
+    "description": "FIAPF A类电影节。金贝壳奖是西班牙语世界最具影响力的电影节大奖之一。",
+    "country": "西班牙",
+    "founded": 1953,
+    "accentColor": "#34d399"
+  },
+  {
+    "id": "shanghai",
+    "name": "上海",
+    "nameEn": "Shanghai International Film Festival",
+    "description": "FIAPF A类电影节。中国内地最具国际影响力的竞赛型电影节，金爵奖为最高荣誉。",
+    "country": "中国",
+    "founded": 1993,
     "accentColor": "#f472b6"
   },
   {
-    "id": "huabiao",
-    "name": "华表奖",
-    "nameEn": "Huabiao Awards",
-    "description": "中国官方电影奖项，表彰优秀国产影片与影人。",
-    "country": "中国大陆",
-    "founded": 1994,
-    "accentColor": "#ef4444"
+    "id": "tokyo",
+    "name": "东京",
+    "nameEn": "Tokyo International Film Festival",
+    "description": "FIAPF A类电影节。亚洲重要竞赛电影节，东京大奖奖励年度最佳影片。",
+    "country": "日本",
+    "founded": 1985,
+    "accentColor": "#fb7185"
+  },
+  {
+    "id": "busan",
+    "name": "釜山",
+    "nameEn": "Busan International Film Festival",
+    "description": "FIAPF A类电影节。亚洲电影工业重要窗口，近年设立主竞赛「釜山奖」。",
+    "country": "韩国",
+    "founded": 1996,
+    "accentColor": "#60a5fa"
   }
 ]

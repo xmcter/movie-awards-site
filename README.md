@@ -1,8 +1,8 @@
-# 银幕奖讯 · 电影奖讯时间线
+# 银幕奖讯 · A类电影节时间线
 
-中文默认的电影奖项资讯站：一条**时间线**追踪提名、获奖与流媒体预计上线时间。
+中文默认的 **FIAPF A 类电影节** 资讯站：一条时间线追踪入围、获奖与相关流媒体预计上线。
 
-覆盖奖项：奥斯卡、金球奖、戛纳、威尼斯、柏林、金马奖、香港金像奖、华表奖。
+**只覆盖 A 类电影节**（优先三大：戛纳、威尼斯、柏林；亦可含洛迦诺、圣塞巴斯蒂安、上海、东京、釜山等）。**不收录**奥斯卡、金球、金马、金像、华表等。
 
 ## 技术栈
 
@@ -27,46 +27,27 @@ npm run build   # 输出到 out/
 
 ## 页面
 
-单一主页：**时间线**（最新在前）。顶部可按「全部 / 提名 / 获奖 / 流媒体」筛选，并支持轻量搜索。
+单一主页：**时间线**（最新在前）。顶部可按「全部 / 获奖 / 入围 / 流媒体」筛选，并支持轻量搜索。
 
 ## 数据
 
 | 文件 | 说明 |
 |------|------|
 | `src/data/films.json` | 影片与流媒体日程 |
-| `src/data/ceremonies.json` | 典礼与提名 / 获奖 |
-| `src/data/orgs.json` | 奖项组织 |
+| `src/data/ceremonies.json` | 电影节典礼与入围 / 获奖 |
+| `src/data/orgs.json` | A 类电影节组织 |
 
 时间线事件由 `src/lib/data.ts` 的 `getTimelineEvents()` 从上述种子派生。
 
-### 扩展示例
-
-在 `films.json` 追加影片（含 `streaming`），或在 `ceremonies.json` 追加提名：
-
-```json
-{
-  "categoryId": "best-picture",
-  "categoryName": "最佳影片",
-  "filmId": "your-film-id",
-  "result": "nominated"
-}
-```
-
-`result`：`nominated`（提名）或 `won`（获奖）。`streaming[].status`：`announced` / `estimated` / `tba`。
+`result`：`nominated`（入围）或 `won`（获奖）。`streaming[].status`：`announced` / `estimated` / `tba`。不确定的流媒体日期一律 TBA/estimated，禁止编造已官宣日期。
 
 ## 部署
-
-静态文件部署到阿里云 nginx：
 
 ```bash
 ./deploy/deploy.sh
 ```
 
 默认 rsync `out/` → `root@8.134.173.91:/var/www/movie-awards-site/`（密钥 `~/.ssh/aliyun_movieupdate`）。域名：http://news.readcine.com
-
-## 设计
-
-深色影院风格，中文 UI，移动端友好。
 
 ## 许可
 

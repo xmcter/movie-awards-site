@@ -2,7 +2,23 @@
 
 中文默认的 **FIAPF A 类电影节** 资讯站：一条时间线追踪入围、获奖与相关流媒体预计上线。
 
-**只覆盖 A 类电影节**（优先三大：戛纳、威尼斯、柏林；亦可含洛迦诺、圣塞巴斯蒂安、上海、东京、釜山等）。**不收录**奥斯卡、金球、金马、金像、华表等。
+**只覆盖 A 类电影节**（优先三大：曙纳、威尼斯、柏林；亦可含洛迦诺、圣塞巴斯蒂安、上海、东京、釜山等）。**不收录**奥斯卡、金球、金马、金像、华表等。
+
+## 线上访问（重要）
+
+`http://news.readcine.com` 指向阿里云广州 ECS（`8.134.173.91`）。域名未在工信部备案 / 未在阿里云接入备案，阿里云 Beaver 会返回 **403 备案阻断**，HTTPS 443 未开。
+
+解法：改到海外托管。仓库已加 [`.github/workflows/pages.yml`](.github/workflows/pages.yml)，构建已通过。
+
+**你需要点一次**（代码权限无法代开 GitHub Pages）：
+
+1. 打开 [Settings → Pages](https://github.com/xmcter/movie-awards-site/settings/pages)
+2. Build and deployment → Source 选 **GitHub Actions**
+3. 打开 [Actions 失败的那次跑](https://github.com/xmcter/movie-awards-site/actions/workflows/pages.yml) → Re-run jobs
+
+上线后地址：**https://xmcter.github.io/movie-awards-site/**
+
+要恢复 `news.readcine.com`：把 DNS 从 `8.134.173.91` 改成 GitHub Pages（`CNAME` → `xmcter.github.io`），再在仓库根目录加 `CNAME` 文件写 `news.readcine.com`，并把 `GITHUB_PAGES` 基路径改回空（自定义域名不需要 `/movie-awards-site` prefix）。
 
 ## 技术栈
 
@@ -43,14 +59,13 @@ npm run build   # 输出到 out/
 
 `result`：`nominated`（入围）或 `won`（获奖）。`streaming[].status`：`announced` / `estimated` / `tba`。不确定的流媒体日期一律 TBA/estimated，禁止编造已官宣日期。
 
-## 部署
+## 旧版：阿里云 rsync（被备案拦，仅留档）
 
 ```bash
 ./deploy/deploy.sh
 ```
 
-默认 rsync `out/` → `root@8.134.173.91:/var/www/movie-awards-site/`（密钥 `~/.ssh/aliyun_movieupdate`）。域名：http://news.readcine.com
-
+默认 rsync `out/` → `root@8.134.173.91:/var/www/movie-awards-site/`。未备案域名不要再指这台国内机器。
 
 ## 海报图片
 

@@ -18,6 +18,13 @@ export const films = filmsData as Film[];
 export const orgs = orgsData as AwardOrg[];
 export const ceremonies = ceremoniesData as AwardCeremony[];
 
+const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function withBase(path?: string): string | undefined {
+  if (!path) return undefined;
+  return `${assetBase}${path}`;
+}
+
 function getOrg(id: string): AwardOrg | undefined {
   return orgs.find((o) => o.id === id);
 }
@@ -56,7 +63,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmTitle: film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
-        poster: film.poster,
+        poster: withBase(film.poster),
         posterColors: film.posterColors,
         summary: `${ceremony.name} · ${nom.categoryName}${person}`,
         detail: org
@@ -89,7 +96,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmTitle: film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
-        poster: film.poster,
+        poster: withBase(film.poster),
         posterColors: film.posterColors,
         summary: `${platform} · ${statusLabel} ${datePart}${region}`,
         detail: note || undefined,

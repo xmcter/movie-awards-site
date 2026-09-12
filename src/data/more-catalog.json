@@ -1,0 +1,68 @@
+{
+  "films": [
+    {"id":"look-back","title":"蓖然回首","titleEn":"Look Back","year":2026,"synopsis":"是枝裕和执导的漫画改编真人电影。第83届威尼斯主竞赛。","directors":["是枝裕和"],"cast":["出口夏希","菫田彩珠"],"genres":["剧情"],"country":["日本"],"posterColors":["#1e293b","#64748b"],"streaming":[]},
+    {"id":"possible-love","title":"可能的爱","titleEn":"Possible Love","year":2026,"synopsis":"李沧东新作。第83届威尼斯主竞赛。","directors":["李沧东"],"cast":["全度妍","薛景求"],"genres":["剧情"],"country":["韩国"],"posterColors":["#3b0764","#a78bfa"],"streaming":[]},
+    {"id":"tonight-will-happen","title":"必将今夜发生","titleEn":"Succederà questa notte","year":2026,"synopsis":"南尼·莫莱蒂新作。第83届威尼斯主竞赛。","directors":["南尼·莫莱蒂"],"cast":[],"genres":["剧情"],"country":["意大利"],"posterColors":["#14532d","#4ade80"],"streaming":[]},
+    {"id":"mr-nelson","title":"尼尔森先生，你杀人了吗？","titleEn":"Mr. Nelson, Did You Kill People?","year":2026,"synopsis":"冢本晋也执导。第83届威尼斯主竞赛。","directors":["冢本晋也"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#111827","#9ca3af"],"streaming":[]},
+    {"id":"bunker","title":"地堡","titleEn":"Bunker","year":2026,"synopsis":"弗洛里安·泽勒执导，佩内洛普·克鲁兹与哈维尔·巴登姆主演。第83届威尼斯主竞赛。","directors":["弗洛里安·泽勒"],"cast":["佩内洛普·克鲁兹","哈维尔·巴登姆"],"genres":["惊悚"],"country":["法国"],"posterColors":["#1c1917","#57534e"],"streaming":[]},
+    {"id":"naza","title":"NAZA","titleEn":"NAZA","year":2026,"synopsis":"优瓦尔·亚伯拉罕、蕾切尔·索尔执导的纪录片，直接进主竞赛。","directors":["优瓦尔·亚伯拉罕","蕾切尔·索尔"],"cast":[],"genres":["纪录"],"country":["英国"],"posterColors":["#365314","#a3e635"],"streaming":[]},
+    {"id":"company","title":"Company","titleEn":"Company","year":2026,"synopsis":"卡西·阿弗莱克执导。第83届威尼斯主竞赛。","directors":["卡西·阿弗莱克"],"cast":[],"genres":["恐怖"],"country":["美国","加拿大"],"posterColors":["#3f1d0f","#b45309"],"streaming":[]},
+    {"id":"primetime","title":"实境诱捕","titleEn":"Primetime","year":2026,"synopsis":"兰斯·奥本海姆首部剧情长片。第83届威尼斯主竞赛。","directors":["兰斯·奥本海姆"],"cast":[],"genres":["剧情"],"country":["美国"],"posterColors":["#0f172a","#38bdf8"],"streaming":[]},
+    {"id":"place-to-heal","title":"疗愈之地","titleEn":"A Place to Heal","year":2026,"synopsis":"塞德里克·康执导。第83届威尼斯主竞赛。","directors":["塞德里克·康"],"cast":[],"genres":["剧情"],"country":["法国"],"posterColors":["#164e63","#67e8f9"],"streaming":[]},
+    {"id":"dau","title":"Dau","titleEn":"Dau","year":2026,"synopsis":"伊利亚·赫尔扎诺夫斯基执导。第83届威尼斯主竞赛。","directors":["伊利亚·赫尔扎诺夫斯基"],"cast":[],"genres":["剧情"],"country":["俄罗斯"],"posterColors":["#7f1d1d","#fca5a5"],"streaming":[]},
+    {"id":"good-little-soldier","title":"乘小兵","titleEn":"Un bon petit soldat","year":2026,"synopsis":"史蒂芬·布里泽执导。第83届威尼斯主竞赛。","directors":["史蒂芬·布里泽"],"cast":[],"genres":["剧情"],"country":["法国"],"posterColors":["#1e3a5f","#93c5fd"],"streaming":[]},
+    {"id":"fire-inside","title":"你心中的火","titleEn":"Il fuoco che ti porti dentro","year":2026,"synopsis":"艾多阿尔多·德·安杰利斯执导。第83届威尼斯主竞赛。","directors":["艾多阿尔多·德·安杰利斯"],"cast":[],"genres":["剧情"],"country":["意大利"],"posterColors":["#7c2d12","#fdba74"],"streaming":[]},
+    {"id":"woman-unknown","title":"女人，未知","titleEn":"Woman Unknown","year":2026,"synopsis":"梅·埃尔-图希执导。第83届威尼斯主竞赛。","directors":["梅·埃尔-图希"],"cast":[],"genres":["剧情"],"country":["丹麦"],"posterColors":["#4c0519","#fb7185"],"streaming":[]},
+    {"id":"one-battle","title":"一战再战","titleEn":"One Battle After Another","year":2025,"synopsis":"保罗·托马斯·安德森执导。第98届奥斯卡最佳影片、最佳导演。","directors":["保罗·托马斯·安德森"],"cast":["莱昂纳多·迪卡普里奥","西恩·潘"],"genres":["剧情"],"country":["美国"],"posterColors":["#7c2d12","#f59e0b"],"streaming":[]},
+    {"id":"sinners","title":"罪人","titleEn":"Sinners","year":2025,"synopsis":"瑞安·库格勒执导。第98届奥斯卡最佳男主角、最佳原创剧本、最佳摄影。","directors":["瑞安·库格勒"],"cast":["迈克尔·B·乔丹"],"genres":["悬疑"],"country":["美国"],"posterColors":["#111827","#dc2626"],"streaming":[]},
+    {"id":"hamnet","title":"哈姆奈特","titleEn":"Hamnet","year":2025,"synopsis":"赵婷执导。杰西·巴克利获第98届奥斯卡最佳女主角。","directors":["赵婷"],"cast":["杰西·巴克利"],"genres":["剧情"],"country":["英国","美国"],"posterColors":["#1e1b4b","#c4b5fd"],"streaming":[]},
+    {"id":"weapons","title":"凶器","titleEn":"Weapons","year":2025,"synopsis":"埃米·马迪根获第98届奥斯卡最佳女配角。","directors":[],"cast":["埃米·马迪根"],"genres":["惊悚"],"country":["美国"],"posterColors":["#450a0a","#f87171"],"streaming":[]},
+    {"id":"sentimental-value","title":"情感价值","titleEn":"Sentimental Value","year":2025,"synopsis":"约阿希姆·特里尔执导。第98届奥斯卡最佳国际影片。","directors":["约阿希姆·特里尔"],"cast":["雷娜特·赖恩斯维"],"genres":["剧情"],"country":["挪威"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
+    {"id":"kpop-demon-hunters","title":"K-POP：猎魔女团","titleEn":"KPop Demon Hunters","year":2025,"synopsis":"第98届奥斯卡最佳动画长片、最佳原创歌曲。","directors":[],"cast":[],"genres":["动画"],"country":["美国","韩国"],"posterColors":["#831843","#f472b6"],"streaming":[]}
+  ],
+  "ceremonies": [
+    {
+      "id": "venice-83-lineup",
+      "orgId": "venice",
+      "name": "第83届威尼斯电影节",
+      "nameEn": "83rd Venice Film Festival",
+      "year": 2026,
+      "date": "2026-07-23",
+      "location": "意大利威尼斯丽都岛",
+      "nominations": [
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"look-back","personNames":["是枝裕和"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"possible-love","personNames":["李沧东"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"tonight-will-happen","personNames":["南尼·莫莱蒂"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"mr-nelson","personNames":["冢本晋也"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"bunker","personNames":["弗洛里安·泽勒"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"naza","personNames":["优瓦尔·亚伯拉罕","蕾切尔·索尔"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"company","personNames":["卡西·阿弗莱克"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"primetime","personNames":["兰斯·奥本海姆"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"place-to-heal","personNames":["塞德里克·康"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"dau","personNames":["伊利亚·赫尔扎诺夫斯基"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"good-little-soldier","personNames":["史蒂芬·布里泽"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"fire-inside","personNames":["艾多阿尔多·德·安杰利斯"],"result":"nominated","date":"2026-07-23"},
+        {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"woman-unknown","personNames":["梅·埃尔-图希"],"result":"nominated","date":"2026-07-23"}
+      ]
+    },
+    {
+      "id": "oscars-98",
+      "orgId": "oscars",
+      "name": "第98届奥斯卡",
+      "nameEn": "98th Academy Awards",
+      "year": 2026,
+      "date": "2026-03-15",
+      "location": "洛杉矶杜比剧院",
+      "nominations": [
+        {"categoryId":"best-picture","categoryName":"最佳影片","filmId":"one-battle","personNames":["保罗·托马斯·安德森"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-director","categoryName":"最佳导演","filmId":"one-battle","personNames":["保罗·托马斯·安德森"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-actor","categoryName":"最佳男主角","filmId":"sinners","personNames":["迈克尔·B·乔丹"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-actress","categoryName":"最佳女主角","filmId":"hamnet","personNames":["杰西·巴克利"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-supporting-actress","categoryName":"最佳女配角","filmId":"weapons","personNames":["埃米·马迪根"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-supporting-actor","categoryName":"最佳男配角","filmId":"one-battle","personNames":["西恩·潘"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-international","categoryName":"最佳国际影片","filmId":"sentimental-value","personNames":["约阿希姆·特里尔"],"result":"won","date":"2026-03-15"},
+        {"categoryId":"best-animated","categoryName":"最佳动画长片","filmId":"kpop-demon-hunters","result":"won","date":"2026-03-15"}
+      ]
+    }
+  ]
+}

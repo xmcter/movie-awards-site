@@ -3,6 +3,7 @@ import orgsData from "@/data/orgs.json";
 import ceremoniesData from "@/data/ceremonies.json";
 import auteurNewsData from "@/data/auteur-news.json";
 import majorAwardsData from "@/data/major-awards.json";
+import moreCatalogData from "@/data/more-catalog.json";
 import type {
   AwardCeremony,
   AwardOrg,
@@ -17,17 +18,25 @@ import {
   formatYearMonth,
 } from "@/lib/labels";
 
-const major = majorAwardsData as unknown as {
-  orgs: AwardOrg[];
+type CatalogSlice = {
+  orgs?: AwardOrg[];
   films: Film[];
   ceremonies: AwardCeremony[];
 };
 
-export const films = [...(filmsData as Film[]), ...major.films];
-export const orgs = [...(orgsData as AwardOrg[]), ...major.orgs];
+const major = majorAwardsData as unknown as CatalogSlice;
+const extra = moreCatalogData as unknown as CatalogSlice;
+
+export const films = [
+  ...(filmsData as Film[]),
+  ...major.films,
+  ...extra.films,
+];
+export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [
   ...(ceremoniesData as AwardCeremony[]),
   ...major.ceremonies,
+  ...extra.ceremonies,
 ];
 export const auteurNews = auteurNewsData as AuteurNews[];
 
@@ -57,7 +66,6 @@ const A_CLASS = new Set([
   "busan",
 ]);
 
-/** YYYY-MM-DD in local calendar. Future dates stay in data but do not publish. */
 export function todayISO(now = new Date()): string {
   const y = now.getFullYear();
   const m = String(now.getMonth() + 1).padStart(2, "0");

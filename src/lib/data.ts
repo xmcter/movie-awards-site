@@ -2,6 +2,7 @@ import filmsData from "@/data/films.json";
 import orgsData from "@/data/orgs.json";
 import ceremoniesData from "@/data/ceremonies.json";
 import auteurNewsData from "@/data/auteur-news.json";
+import majorAwardsData from "@/data/major-awards.json";
 import type {
   AwardCeremony,
   AwardOrg,
@@ -16,9 +17,18 @@ import {
   formatYearMonth,
 } from "@/lib/labels";
 
-export const films = filmsData as Film[];
-export const orgs = orgsData as AwardOrg[];
-export const ceremonies = ceremoniesData as AwardCeremony[];
+const major = majorAwardsData as {
+  orgs: AwardOrg[];
+  films: Film[];
+  ceremonies: AwardCeremony[];
+};
+
+export const films = [...(filmsData as Film[]), ...major.films];
+export const orgs = [...(orgsData as AwardOrg[]), ...major.orgs];
+export const ceremonies = [
+  ...(ceremoniesData as AwardCeremony[]),
+  ...major.ceremonies,
+];
 export const auteurNews = auteurNewsData as AuteurNews[];
 
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -36,7 +46,17 @@ function getFilm(id: string): Film | undefined {
   return films.find((f) => f.id === id);
 }
 
-/** 从入围 / 获奖 / 流媒体 / 作者影讯种子派生时间线事件（最新在前） */
+const A_CLASS = new Set([
+  "cannes",
+  "venice",
+  "berlin",
+  "locarno",
+  "san-sebastian",
+  "shanghai",
+  "tokyo",
+  "busan",
+]);
+
 export function getTimelineEvents(): TimelineEvent[] {
   const events: TimelineEvent[] = [];
 
@@ -47,7 +67,6 @@ export function getTimelineEvents(): TimelineEvent[] {
       const film = getFilm(nom.filmId);
       if (!film) continue;
 
-      // News/event date (announcement or award night), never page-update/deploy time.
       const sourceDate = nom.date || ceremony.date;
       const date = sourceDate || `${ceremony.year}-01-01`;
       const dateLabel = sourceDate ? formatDate(sourceDate) : `${ceremony.year}年`;
@@ -57,6 +76,12 @@ export function getTimelineEvents(): TimelineEvent[] {
         nom.personNames && nom.personNames.length > 0
           ? ` · ${nom.personNames.join("、")}`
           : "";
+
+      const scope = org
+        ? A_CLASS.has(org.id)
+          ? `A类电影节 · ${org.name}`
+          : `${org.name}`
+        : undefined;
 
       events.push({
         id: `${ceremony.id}-${nom.categoryId}-${nom.filmId}-${nom.result}`,
@@ -69,8 +94,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         poster: withBase(film.poster),
         posterColors: film.posterColors,
         summary: `${ceremony.name} · ${nom.categoryName}${person}`,
-        detail: org
-          ? `A类电影节 · ${org.name}${ceremony.location ? ` · ${ceremony.location}` : ""}`
+        detail: scope
+          ? `${scope}${ceremony.location ? ` · ${ceremony.location}` : ""}`
           : undefined,
         badge: isWin ? "获奖" : "入围",
         accentColor: org?.accentColor,
@@ -87,7 +112,6 @@ export function getTimelineEvents(): TimelineEvent[] {
           ? formatYearMonth(release.date)
           : formatDate(release.date)
         : "待定";
-
       const region = release.region ? ` · ${release.region}` : "";
       const note = release.note ? `（${release.note}）` : "";
 
@@ -111,7 +135,6 @@ export function getTimelineEvents(): TimelineEvent[] {
   for (const news of auteurNews) {
     const film = getFilm(news.filmId);
     if (!film) continue;
-
     events.push({
       id: `auteur-${news.id}`,
       type: "auteur",
@@ -133,7 +156,6 @@ export function getTimelineEvents(): TimelineEvent[] {
     const da = a.date || "0000-00-00";
     const db = b.date || "0000-00-00";
     if (da !== db) return db.localeCompare(da);
-    // 同日：获奖 > 入围 > 作者 > 流媒体
     const order = { win: 0, nomination: 1, auteur: 2, streaming: 3 } as const;
     return order[a.type] - order[b.type];
   });

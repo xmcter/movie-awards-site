@@ -13,13 +13,9 @@ export type StreamingPlatform =
   | "mubi"
   | "other";
 
-/** 上线日期状态：已公布 / 预计 / 待定 */
 export type ReleaseStatus = "announced" | "estimated" | "tba";
-
-/** 奖项结果：入围 / 获奖 */
 export type AwardResult = "nominated" | "won";
 
-/** FIAPF A 类电影节组织标识 */
 export type AwardOrgId =
   | "cannes"
   | "venice"
@@ -37,11 +33,14 @@ export type AwardOrgId =
   | "mar-del-plata"
   | "iffi"
   | "annecy"
-  | "clermont-ferrand";
+  | "clermont-ferrand"
+  | "oscars"
+  | "golden-globes"
+  | "golden-horse"
+  | "hkfa";
 
 export interface StreamingRelease {
   platform: StreamingPlatform;
-  /** ISO date YYYY-MM-DD，tba 时可省略 */
   date?: string;
   status: ReleaseStatus;
   region?: string;
@@ -59,9 +58,7 @@ export interface Film {
   genres: string[];
   runtime?: number;
   country?: string[];
-  /** 本地海报路径，如 /posters/{id}.jpg */
   poster?: string;
-  /** 海报色渐变用，如 ["#1a1a2e", "#16213e"] */
   posterColors?: [string, string];
   streaming: StreamingRelease[];
 }
@@ -73,7 +70,6 @@ export interface CategoryNomination {
   personIds?: string[];
   personNames?: string[];
   result: AwardResult;
-  /** ISO date of the news/event (announcement or award night). Overrides ceremony.date. Never deploy time. */
   date?: string;
 }
 
@@ -98,25 +94,36 @@ export interface AwardOrg {
   accentColor: string;
 }
 
-/** 时间线事件类型 */
-export type TimelineEventType = "nomination" | "win" | "streaming";
+export type AuteurNewsKind =
+  | "trailer"
+  | "release"
+  | "box-office"
+  | "promo"
+  | "production";
+
+export interface AuteurNews {
+  id: string;
+  filmId: string;
+  date: string;
+  kind: AuteurNewsKind;
+  summary: string;
+  detail?: string;
+}
+
+export type TimelineEventType = "nomination" | "win" | "streaming" | "auteur";
 
 export interface TimelineEvent {
   id: string;
   type: TimelineEventType;
-  /** 排序用 ISO 日期；待定用空字符串 */
   date: string;
   dateLabel: string;
   filmTitle: string;
   filmTitleEn?: string;
   filmYear?: number;
-  /** 本地海报路径 */
   poster?: string;
-  /** 海报缺失时的渐变色 */
   posterColors?: [string, string];
   summary: string;
   detail?: string;
-  /** 入围 / 获奖 / 流媒体 */
   badge: string;
   accentColor?: string;
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "id": "digger-final-trailer",
+    "filmId": "digger",
+    "date": "2026-09-09",
+    "kind": "trailer",
+    "summary": "官方最终预告与新海报 · 阿利安德罗·冈萨雷斯·伊尼亚里图",
+    "detail": "作者向 · 全片 VistaVision 拍摄。未走第83届威尼斯主竞赛，直接进院线。国际 9/30 起、北美 10/2 上映。"
+  },
+  {
+    "id": "odyssey-korea-10m",
+    "filmId": "the-odyssey",
+    "date": "2026-09-06",
+    "kind": "box-office",
+    "summary": "韩国观影人次破千万 · 克里斯托弗·诺兰",
+    "detail": "作者向 · 院线长线。上映33天破千万，韩国影史第10部千万观众外国片；诺兰继《星际穿越》后第二部韩国千万作。未走三大竞赛。"
+  },
+  {
+    "id": "digger-mexico-promo",
+    "filmId": "digger",
+    "date": "2026-09-02",
+    "kind": "promo",
+    "summary": "墨西哥宣发会 · 伊尼亚里图、汤姆·克鲁斯",
+    "detail": "作者向 · 宣发。华纳兄弟确认二人 9月25–26日抵达墨西哥 Parque Toreo，配合墨西哥 10/1 上映。"
+  },
+  {
+    "id": "odyssey-china-release",
+    "filmId": "the-odyssey",
+    "date": "2026-08-14",
+    "kind": "release",
+    "summary": "中国大陆定档上映 · 克里斯托弗·诺兰",
+    "detail": "作者向 · 院线。北美 7/17、内地 8/14。全片 IMAX 70mm 胶片拍摄，未选三大竞赛。"
+  },
+  {
+    "id": "digger-skip-venice",
+    "filmId": "digger",
+    "date": "2026-07-23",
+    "kind": "production",
+    "summary": "未入第83届威尼斯版块 · 伊尼亚里图",
+    "detail": "作者向 · 制作。威尼斯版块公布日确认《挖掘者》不参展，改走 10 月全球院线。"
+  }
+]

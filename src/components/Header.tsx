@@ -12,7 +12,7 @@ export default function Header() {
             银幕奖讯
           </span>
         </Link>
-        <span className="text-xs tracking-wider text-cinema-muted">A类电影节</span>
+        <span className="text-xs tracking-wider text-cinema-muted">A类·四大奖·作者</span>
       </div>
     </header>
   );

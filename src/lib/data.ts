@@ -57,8 +57,22 @@ const A_CLASS = new Set([
   "busan",
 ]);
 
+/** YYYY-MM-DD in local calendar. Future dates stay in data but do not publish. */
+export function todayISO(now = new Date()): string {
+  const y = now.getFullYear();
+  const m = String(now.getMonth() + 1).padStart(2, "0");
+  const d = String(now.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
+}
+
+export function isPublished(date: string, today = todayISO()): boolean {
+  if (!date) return true;
+  return date <= today;
+}
+
 export function getTimelineEvents(): TimelineEvent[] {
   const events: TimelineEvent[] = [];
+  const today = todayISO();
 
   for (const ceremony of ceremonies) {
     const org = getOrg(ceremony.orgId);
@@ -69,14 +83,14 @@ export function getTimelineEvents(): TimelineEvent[] {
 
       const sourceDate = nom.date || ceremony.date;
       const date = sourceDate || `${ceremony.year}-01-01`;
-      const dateLabel = sourceDate ? formatDate(sourceDate) : `${ceremony.year}年`;
+      if (!isPublished(date, today)) continue;
 
+      const dateLabel = sourceDate ? formatDate(sourceDate) : `${ceremony.year}年`;
       const isWin = nom.result === "won";
       const person =
         nom.personNames && nom.personNames.length > 0
           ? ` · ${nom.personNames.join("、")}`
           : "";
-
       const scope = org
         ? A_CLASS.has(org.id)
           ? `A类电影节 · ${org.name}`
@@ -105,6 +119,7 @@ export function getTimelineEvents(): TimelineEvent[] {
 
   for (const film of films) {
     for (const release of film.streaming) {
+      if (release.date && !isPublished(release.date, today)) continue;
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = release.date
@@ -133,6 +148,7 @@ export function getTimelineEvents(): TimelineEvent[] {
   }
 
   for (const news of auteurNews) {
+    if (!isPublished(news.date, today)) continue;
     const film = getFilm(news.filmId);
     if (!film) continue;
     events.push({

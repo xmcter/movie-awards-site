@@ -43,7 +43,7 @@
       "title": "再见 UFO",
       "titleEn": "Goodbye UFO",
       "year": 2025,
-      "synopsis": "梁柏堅执导。第44届香港电影金像奖最佳电影、最佳导演、最佳编剧。",
+      "synopsis": "梁柏堅执导。第44届香港电影金像奖最佳电影、最佳导演。",
       "directors": ["梁柏堅"],
       "cast": [],
       "genres": ["剧情"],
@@ -56,7 +56,7 @@
       "title": "捕风追影",
       "titleEn": "The Shadow's Edge",
       "year": 2025,
-      "synopsis": "梁家辉凭本片获第44届金像奖最佳男主角，五度封帝。",
+      "synopsis": "梁家辉凭本片获第44届金像奖最佳男主角。",
       "directors": [],
       "cast": ["梁家辉"],
       "genres": ["动作"],
@@ -82,7 +82,7 @@
       "title": "第63届金马奖",
       "titleEn": "63rd Golden Horse Awards",
       "year": 2026,
-      "synopsis": "入围名单 2026年10月1日公布，颁奖典礼 11月22日在台北流行音乐中心举行。",
+      "synopsis": "长片报名 2026年7月已开启。入围名单、颁奖典礼尚未举行，不提前登时间线。",
       "directors": [],
       "cast": [],
       "genres": ["颁奖"],
@@ -94,26 +94,13 @@
       "id": "oscars-99",
       "title": "第99届奥斯卡",
       "titleEn": "99th Academy Awards",
-      "year": 2027,
-      "synopsis": "提名 2027年1月21日公布，颁奖典礼 3月14日在杜比剧院举行，柯南·奥布赖恨主持。",
+      "year": 2026,
+      "synopsis": "2026年4月7日公布日程：提名 2027年1月21日，典礼 3月14日。提名与颁奖夜尚未到，不提前登时间线。",
       "directors": [],
-      "cast": ["柯南·奥布赖恨"],
+      "cast": ["柯南·奥布赖恩"],
       "genres": ["颁奖"],
       "country": ["美国"],
       "posterColors": ["#422006", "#c9a227"],
-      "streaming": []
-    },
-    {
-      "id": "golden-globes-84",
-      "title": "第84届金球奖",
-      "titleEn": "84th Golden Globe Awards",
-      "year": 2027,
-      "synopsis": "提名预计 2026年12月7日公布，颁奖典礼 2027年1月10日。",
-      "directors": [],
-      "cast": [],
-      "genres": ["颁奖"],
-      "country": ["美国"],
-      "posterColors": ["#713f12", "#eab308"],
       "streaming": []
     }
   ],
@@ -167,47 +154,15 @@
       "name": "第63届金马奖",
       "nameEn": "63rd Golden Horse Awards",
       "year": 2026,
-      "date": "2026-11-22",
-      "location": "台北流行音乐中心",
+      "date": "2026-07-01",
+      "location": "台北",
       "nominations": [
         {
-          "categoryId": "noms-announcement",
-          "categoryName": "入围名单公布",
+          "categoryId": "feature-entry-opens",
+          "categoryName": "长片报名开启",
           "filmId": "golden-horse-63",
           "result": "nominated",
-          "date": "2026-10-01"
-        },
-        {
-          "categoryId": "ceremony",
-          "categoryName": "颁奖典礼",
-          "filmId": "golden-horse-63",
-          "result": "nominated",
-          "date": "2026-11-22"
-        }
-      ]
-    },
-    {
-      "id": "golden-globes-84",
-      "orgId": "golden-globes",
-      "name": "第84届金球奖",
-      "nameEn": "84th Golden Globe Awards",
-      "year": 2027,
-      "date": "2027-01-10",
-      "location": "洛杉矶",
-      "nominations": [
-        {
-          "categoryId": "noms-announcement",
-          "categoryName": "提名名单公布",
-          "filmId": "golden-globes-84",
-          "result": "nominated",
-          "date": "2026-12-07"
-        },
-        {
-          "categoryId": "ceremony",
-          "categoryName": "颁奖典礼",
-          "filmId": "golden-globes-84",
-          "result": "nominated",
-          "date": "2027-01-10"
+          "date": "2026-07-01"
         }
       ]
     },
@@ -216,24 +171,17 @@
       "orgId": "oscars",
       "name": "第99届奥斯卡",
       "nameEn": "99th Academy Awards",
-      "year": 2027,
-      "date": "2027-03-14",
+      "year": 2026,
+      "date": "2026-04-07",
       "location": "洛杉矶杜比剧院",
       "nominations": [
         {
-          "categoryId": "noms-announcement",
-          "categoryName": "提名名单公布",
+          "categoryId": "dates-announced",
+          "categoryName": "日程公布：提名 2027-01-21，典礼 2027-03-14",
           "filmId": "oscars-99",
+          "personNames": ["柯南·奥布赖恩"],
           "result": "nominated",
-          "date": "2027-01-21"
-        },
-        {
-          "categoryId": "ceremony",
-          "categoryName": "颁奖典礼",
-          "filmId": "oscars-99",
-          "personNames": ["柯南·奥布赖恨"],
-          "result": "nominated",
-          "date": "2027-03-14"
+          "date": "2026-04-07"
         }
       ]
     }

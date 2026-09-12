@@ -17,7 +17,7 @@ import {
   formatYearMonth,
 } from "@/lib/labels";
 
-const major = majorAwardsData as {
+const major = majorAwardsData as unknown as {
   orgs: AwardOrg[];
   films: Film[];
   ceremonies: AwardCeremony[];

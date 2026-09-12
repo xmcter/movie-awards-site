@@ -10,6 +10,7 @@ const FILTERS: { key: FilterKey; label: string }[] = [
   { key: "all", label: "全部" },
   { key: "win", label: "获奖" },
   { key: "nomination", label: "入围" },
+  { key: "auteur", label: "作者" },
   { key: "streaming", label: "流媒体" },
 ];
 
@@ -63,6 +64,13 @@ function EventPoster({
   );
 }
 
+function dotColor(type: TimelineEventType): string {
+  if (type === "win") return "#c9a227";
+  if (type === "nomination") return "#38bdf8";
+  if (type === "auteur") return "#a78bfa";
+  return "#34d399";
+}
+
 export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [filter, setFilter] = useState<FilterKey>("all");
   const [query, setQuery] = useState("");
@@ -81,7 +89,13 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   }, [events, filter, query]);
 
   const counts = useMemo(() => {
-    const c = { all: events.length, nomination: 0, win: 0, streaming: 0 };
+    const c: Record<FilterKey, number> = {
+      all: events.length,
+      nomination: 0,
+      win: 0,
+      streaming: 0,
+      auteur: 0,
+    };
     for (const e of events) c[e.type] += 1;
     return c;
   }, [events]);
@@ -117,7 +131,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="搜索影片 / 电影节…"
+            placeholder="搜索影片 / 导演 / 电影节…"
             className="w-full rounded-full border border-cinema-border bg-cinema-card px-4 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus:outline-none"
           />
         </label>
@@ -133,18 +147,10 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             <li key={event.id} className="relative pb-8 last:pb-0">
               <span
                 className="absolute -left-[1.55rem] top-1.5 h-3 w-3 rounded-full border-2 border-cinema-bg sm:-left-[2.05rem]"
-                style={{
-                  backgroundColor:
-                    event.type === "win"
-                      ? "#c9a227"
-                      : event.type === "nomination"
-                        ? "#38bdf8"
-                        : "#34d399",
-                }}
+                style={{ backgroundColor: dotColor(event.type) }}
               />
               <article className="overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30">
                 <div className="flex flex-row items-stretch">
-                  {/* Portrait 2/3 frame filled with object-cover (no letterbox bars) */}
                   <EventPoster
                     event={event}
                     className="m-3 mr-0 aspect-[2/3] w-[100px] shrink-0 overflow-hidden rounded-lg sm:m-4 sm:mr-0 sm:w-[112px]"

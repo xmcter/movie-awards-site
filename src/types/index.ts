@@ -98,8 +98,25 @@ export interface AwardOrg {
   accentColor: string;
 }
 
+/** 作者向影讯种类：预告 / 定档 / 票房 / 宣发 / 制作 */
+export type AuteurNewsKind =
+  | "trailer"
+  | "release"
+  | "box-office"
+  | "promo"
+  | "production";
+
+export interface AuteurNews {
+  id: string;
+  filmId: string;
+  date: string;
+  kind: AuteurNewsKind;
+  summary: string;
+  detail?: string;
+}
+
 /** 时间线事件类型 */
-export type TimelineEventType = "nomination" | "win" | "streaming";
+export type TimelineEventType = "nomination" | "win" | "streaming" | "auteur";
 
 export interface TimelineEvent {
   id: string;
@@ -116,7 +133,7 @@ export interface TimelineEvent {
   posterColors?: [string, string];
   summary: string;
   detail?: string;
-  /** 入围 / 获奖 / 流媒体 */
+  /** 入围 / 获奖 / 流媒体 / 作者 */
   badge: string;
   accentColor?: string;
 }

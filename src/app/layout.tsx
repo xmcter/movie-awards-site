@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "银幕奖讯 · A类电影节时间线",
+  title: "银幕奖讯 · A类电影节·作者向时间线",
   description:
-    "FIAPF A类电影节入围、获奖与流媒体上线时间线。覆盖戛纳、威尼斯、柏林、洛迦诺、圣塞巴斯蒂安、上海、东京、釜山等。",
+    "FIAPF A类电影节入围、获奖与作者向影讯时间线。覆盖曙纳、威尼斯、柏林等 A 类电影节，并收录诺兰、伊尼亚里图等作者导演的非竞赛影讯。",
 };
 
 export default function RootLayout({

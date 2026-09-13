@@ -64,6 +64,7 @@ const A_CLASS = new Set([
   "shanghai",
   "tokyo",
   "busan",
+  "karlovy-vary",
 ]);
 
 export function todayISO(now = new Date()): string {

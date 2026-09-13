@@ -1,7 +1,7 @@
 [
   {
     "id": "cannes",
-    "name": "戛纳",
+    "name": "暮纳",
     "nameEn": "Cannes Film Festival",
     "description": "FIAPF A类电影节。世界三大电影节之一，金棕榈代表艺术电影最高荣誉。",
     "country": "法国",
@@ -12,7 +12,7 @@
     "id": "venice",
     "name": "威尼斯",
     "nameEn": "Venice Film Festival",
-    "description": "FIAPF A类电影节。历史最悠久的国际电影节，金狮奖备受推崇。",
+    "description": "FIAPF A类电影节。历史最幽久的国际电影节，金狮奖备受推崇。",
     "country": "意大利",
     "founded": 1932,
     "accentColor": "#f59e0b"
@@ -70,5 +70,14 @@
     "country": "韩国",
     "founded": 1996,
     "accentColor": "#60a5fa"
+  },
+  {
+    "id": "karlovy-vary",
+    "name": "卡罗维发利",
+    "nameEn": "Karlovy Vary International Film Festival",
+    "description": "FIAPF A类电影节。中欧最重要的竞赛电影节，水晶球奖为最高荣誉。",
+    "country": "捷克",
+    "founded": 1946,
+    "accentColor": "#22d3ee"
   }
 ]

@@ -32,6 +32,14 @@
     "detail": "作者向 · 院线。北美 7/17、内地 8/14。全片 IMAX 70mm 胶片拍摄，未选三大竞赛。"
   },
   {
+    "id": "possible-love-netflix-date",
+    "filmId": "possible-love",
+    "date": "2026-07-27",
+    "kind": "release",
+    "summary": "Netflix 全球定档 11月6日 · 李沧东",
+    "detail": "作者向 · 流媒体定档。韩国院线 9/23，美英日澳 10月下旬，全球 Netflix 11/6。威尼斯主竞赛后转院线再上线。"
+  },
+  {
     "id": "digger-skip-venice",
     "filmId": "digger",
     "date": "2026-07-23",

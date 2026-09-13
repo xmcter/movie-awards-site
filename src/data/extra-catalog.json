@@ -1,13 +1,13 @@
 {
   "films": [
-    {"id":"sheep-in-the-box","title":"盒中羊","titleEn":"Sheep in the Box","year":2026,"synopsis":"是枝裕和新作。第79届暮纳电影节主竞赛入围。","directors":["是枝裕和"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#1e293b","#94a3b8"],"streaming":[]},
-    {"id":"nagi-notes","title":"凪日记","titleEn":"Nagi Notes","year":2026,"synopsis":"深田晃司执导。第79届暮纳电影节主竞赛入围。","directors":["深田晃司"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#164e63","#67e8f9"],"streaming":[]},
-    {"id":"hope-na","title":"希望","titleEn":"Hope","year":2026,"synopsis":"罗泓轼执导。第79届暮纳电影节主竞赛入围。","directors":["罗泓轼"],"cast":[],"genres":["剧情","惊悚"],"country":["韩国"],"posterColors":["#7f1d1d","#fca5a5"],"streaming":[]},
-    {"id":"bitter-christmas","title":"苦涩的圣诞节","titleEn":"Bitter Christmas","year":2026,"synopsis":"佩德罗·阿尔莫多瓦新作。第79届暮纳电影节主竞赛入围。","directors":["佩德罗·阿尔莫多瓦"],"cast":[],"genres":["剧情"],"country":["西班牙"],"posterColors":["#881337","#fb7185"],"streaming":[]},
-    {"id":"paper-tiger","title":"纸老虎","titleEn":"Paper Tiger","year":2026,"synopsis":"詹姆斯·格雷执导。第79届暮纳电影节主竞赛入围。","directors":["詹姆斯·格雷"],"cast":[],"genres":["剧情"],"country":["美国"],"posterColors":["#44403c","#a8a29e"],"streaming":[]},
-    {"id":"parallel-tales","title":"平行故事","titleEn":"Parallel Tales","year":2026,"synopsis":"阿斯哈·法哈蒂执导。第79届暮纳电影节主竞赛入围。","directors":["阿斯哈·法哈蒂"],"cast":[],"genres":["剧情"],"country":["伊朗"],"posterColors":["#14532d","#86efac"],"streaming":[]},
-    {"id":"moulin","title":"穆兰","titleEn":"Moulin","year":2026,"synopsis":"拉斯洛·奈迈施执导。第79届暮纳电影节主竞赛入围。","directors":["拉斯洛·奈迈施"],"cast":[],"genres":["剧情"],"country":["匈牙利"],"posterColors":["#1e1b4b","#818cf8"],"streaming":[]},
-    {"id":"the-beloved","title":"所爱之人","titleEn":"The Beloved","year":2026,"synopsis":"罗德里戈·索罗戈延执导。第79届暮纳电影节主竞赛入围。","directors":["罗德里戈·索罗戈延"],"cast":[],"genres":["剧情"],"country":["西班牙"],"posterColors":["#7c2d12","#fdba74"],"streaming":[]},
+    {"id":"sheep-in-the-box","title":"盒中羊","titleEn":"Sheep in the Box","year":2026,"synopsis":"是枝裕和新作。第79届暨纳电影节主竞赛入围。","directors":["是枝裕和"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#1e293b","#94a3b8"],"streaming":[]},
+    {"id":"nagi-notes","title":"凪日记","titleEn":"Nagi Notes","year":2026,"synopsis":"深田晃司执导。第79届暨纳电影节主竞赛入围。","directors":["深田晃司"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#164e63","#67e8f9"],"streaming":[]},
+    {"id":"hope-na","title":"希望","titleEn":"Hope","year":2026,"synopsis":"罗泓轼执导。第79届暨纳电影节主竞赛入围。","directors":["罗泓轼"],"cast":[],"genres":["剧情","惊悚"],"country":["韩国"],"posterColors":["#7f1d1d","#fca5a5"],"streaming":[]},
+    {"id":"bitter-christmas","title":"苦涩的圣诞节","titleEn":"Bitter Christmas","year":2026,"synopsis":"佩德罗·阿尔莫多瓦新作。第79届暨纳电影节主竞赛入围。","directors":["佩德罗·阿尔莫多瓦"],"cast":[],"genres":["剧情"],"country":["西班牙"],"posterColors":["#881337","#fb7185"],"streaming":[]},
+    {"id":"paper-tiger","title":"纸老虎","titleEn":"Paper Tiger","year":2026,"synopsis":"詹姆斯·格雷执导。第79届暨纳电影节主竞赛入围。","directors":["詹姆斯·格雷"],"cast":[],"genres":["剧情"],"country":["美国"],"posterColors":["#44403c","#a8a29e"],"streaming":[]},
+    {"id":"parallel-tales","title":"平行故事","titleEn":"Parallel Tales","year":2026,"synopsis":"阿斯哈·法哈蒂执导。第79届暨纳电影节主竞赛入围。","directors":["阿斯哈·法哈蒂"],"cast":[],"genres":["剧情"],"country":["伊朗"],"posterColors":["#14532d","#86efac"],"streaming":[]},
+    {"id":"moulin","title":"穆兰","titleEn":"Moulin","year":2026,"synopsis":"拉斯洛·奈迈施执导。第79届暨纳电影节主竞赛入围。","directors":["拉斯洛·奈迈施"],"cast":[],"genres":["剧情"],"country":["匈牙利"],"posterColors":["#1e1b4b","#818cf8"],"streaming":[]},
+    {"id":"the-beloved","title":"所爱之人","titleEn":"The Beloved","year":2026,"synopsis":"罗德里戈·索罗戈延执导。第79届暨纳电影节主竞赛入围。","directors":["罗德里戈·索罗戈延"],"cast":[],"genres":["剧情"],"country":["西班牙"],"posterColors":["#7c2d12","#fdba74"],"streaming":[]},
     {"id":"you-dont-belong-here","title":"你不属于这里","titleEn":"You Don't Belong Here","year":2026,"synopsis":"弗洛林·塞尔班执导。第79届洛迦诺电影节金豹奖。","directors":["弗洛林·塞尔班"],"cast":[],"genres":["剧情"],"country":["罗马尼亚"],"posterColors":["#1c1917","#a8a29e"],"streaming":[]},
     {"id":"nowhere-to-lay-eyes","title":"无处安放双眼","titleEn":"Nowhere to Lay My Eyes","year":2026,"synopsis":"洪常秀执导。第79届洛迦诺电影节最佳导演；金敏喜获最佳表演。","directors":["洪常秀"],"cast":["金敏喜"],"genres":["剧情"],"country":["韩国"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
     {"id":"the-riverbank","title":"河岸","titleEn":"The Riverbank","year":2026,"synopsis":"第79届洛迦诺电影节评审团特别奖。","directors":["马特乌·法里亚斯","埃诺克·卡瓦略"],"cast":[],"genres":["剧情"],"country":["巴西","德国"],"posterColors":["#14532d","#4ade80"],"streaming":[]},
@@ -27,14 +27,14 @@
     {"id":"secret-agent","title":"秘密特工","titleEn":"The Secret Agent","year":2025,"synopsis":"第83届金球奖剧情类男主角、最佳非英语片。","directors":[],"cast":["瓦格纳·莫拉"],"genres":["剧情"],"country":["巴西"],"posterColors":["#365314","#bef264"],"streaming":[]},
     {"id":"marty-supreme","title":"马蒂至上","titleEn":"Marty Supreme","year":2025,"synopsis":"蒂莫西·柴勒梅德获第83届金球奖音乐/喜剧类男主角。","directors":[],"cast":["蒂莫西·柴勒梅德"],"genres":["剧情"],"country":["美国"],"posterColors":["#7c2d12","#fbbf24"],"streaming":[]},
     {"id":"if-i-had-legs","title":"假如我有腿，就踢你","titleEn":"If I Had Legs I'd Kick You","year":2025,"synopsis":"罗丝·伯恩获第83届金球奖音乐/喜剧类女主角。","directors":[],"cast":["罗丝·伯恩"],"genres":["剧情"],"country":["美国"],"posterColors":["#4c0519","#fb7185"],"streaming":[]},
-    {"id":"a-foggy-tale","title":"大濱","titleEn":"A Foggy Tale","year":2025,"synopsis":"陈玉勋执导。第62届金驢奖最佳剧情片。","directors":["陈玉勋"],"cast":[],"genres":["剧情"],"country":["台湾"],"posterColors":["#44403c","#d6d3d1"],"streaming":[]},
-    {"id":"queerpanorama","title":"众生相","titleEn":"Queerpanorama","year":2025,"synopsis":"李骏硕获第62届金驢奖最佳导演。","directors":["李骏硕"],"cast":[],"genres":["剧情"],"country":["香港"],"posterColors":["#1e1b4b","#a78bfa"],"streaming":[]},
-    {"id":"lucky-lu","title":"幸福之路","titleEn":"Lucky Lu","year":2025,"synopsis":"张震获第62届金驢奖最佳男主角。","directors":["Lloyd Lee Choi"],"cast":["张震"],"genres":["剧情"],"country":["美国","台湾"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
-    {"id":"mother-bhumi","title":"地母","titleEn":"Mother Bhumi","year":2025,"synopsis":"范冰冰获第62届金驢奖最佳女主角。","directors":[],"cast":["范冰冰"],"genres":["剧情"],"country":["马来西亚"],"posterColors":["#365314","#a3e635"],"streaming":[]},
-    {"id":"family-matters","title":"我家的事","titleEn":"Family Matters","year":2025,"synopsis":"曾敬骊获第62届金驢奖最佳男配角。","directors":[],"cast":["曾敬骊"],"genres":["剧情"],"country":["台湾"],"posterColors":["#1c1917","#a8a29e"],"streaming":[]}
+    {"id":"a-foggy-tale","title":"大濱","titleEn":"A Foggy Tale","year":2025,"synopsis":"陈玉勋执导。第62届金马奖最佳剧情片。","directors":["陈玉勋"],"cast":[],"genres":["剧情"],"country":["台湾"],"posterColors":["#44403c","#d6d3d1"],"streaming":[]},
+    {"id":"queerpanorama","title":"众生相","titleEn":"Queerpanorama","year":2025,"synopsis":"李骏硕获第62届金马奖最佳导演。","directors":["李骏硕"],"cast":[],"genres":["剧情"],"country":["香港"],"posterColors":["#1e1b4b","#a78bfa"],"streaming":[]},
+    {"id":"lucky-lu","title":"幸福之路","titleEn":"Lucky Lu","year":2025,"synopsis":"张震获第62届金马奖最佳男主角。","directors":["Lloyd Lee Choi"],"cast":["张震"],"genres":["剧情"],"country":["美国","台湾"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
+    {"id":"mother-bhumi","title":"地母","titleEn":"Mother Bhumi","year":2025,"synopsis":"范冰冰获第62届金马奖最佳女主角。","directors":[],"cast":["范冰冰"],"genres":["剧情"],"country":["马来西亚"],"posterColors":["#365314","#a3e635"],"streaming":[]},
+    {"id":"family-matters","title":"我家的事","titleEn":"Family Matters","year":2025,"synopsis":"曾敬骊获第62届金马奖最佳男配角。","directors":[],"cast":["曾敬骊"],"genres":["剧情"],"country":["台湾"],"posterColors":["#1c1917","#a8a29e"],"streaming":[]}
   ],
   "ceremonies": [
-    {"id":"cannes-79-lineup","orgId":"cannes","name":"第79届暮纳电影节","nameEn":"79th Cannes Film Festival","year":2026,"date":"2026-04-09","location":"法国暮纳","nominations":[
+    {"id":"cannes-79-lineup","orgId":"cannes","name":"第79届暨纳电影节","nameEn":"79th Cannes Film Festival","year":2026,"date":"2026-04-09","location":"法国暨纳","nominations":[
       {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"sheep-in-the-box","personNames":["是枝裕和"],"result":"nominated","date":"2026-04-09"},
       {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"nagi-notes","personNames":["深田晃司"],"result":"nominated","date":"2026-04-09"},
       {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"hope-na","personNames":["罗泓轼"],"result":"nominated","date":"2026-04-09"},

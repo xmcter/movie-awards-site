@@ -3,6 +3,9 @@ name: Deploy GitHub Pages
 on:
   push:
     branches: [main]
+  schedule:
+    # 每天 00:30 CST，按当天日期切掉未发生事件
+    - cron: "30 16 * * *"
   workflow_dispatch:
 
 permissions:

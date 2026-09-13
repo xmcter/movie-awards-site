@@ -33,6 +33,9 @@ export async function generateMetadata({
       description: film.synopsis,
       url: `https://news.readcine.com/film/${film.id}`,
       type: "article",
+      images: film.poster
+        ? [{ url: film.poster, alt: film.title }]
+        : undefined,
     },
   };
 }

@@ -1,24 +1,31 @@
 {
   "films": [
-    {"id":"look-back","title":"蓖然回首","titleEn":"Look Back","year":2026,"synopsis":"是枝裕和执导的漫画改编真人电影。第83届威尼斯主竞赛。","directors":["是枝裕和"],"cast":["出口夏希","菫田彩珠"],"genres":["剧情"],"country":["日本"],"posterColors":["#1e293b","#64748b"],"streaming":[]},
-    {"id":"possible-love","title":"可能的爱","titleEn":"Possible Love","year":2026,"synopsis":"李沧东新作。第83届威尼斯主竞赛。","directors":["李沧东"],"cast":["全度妍","薛景求"],"genres":["剧情"],"country":["韩国"],"posterColors":["#3b0764","#a78bfa"],"streaming":[]},
+    {"id":"look-back","title":"蓬然回首","titleEn":"Look Back","year":2026,"synopsis":"是枝裕和执导的漫画改编真人电影。第83届威尼斯主竞赛；平行单元拿下多项影评人奖。","directors":["是枝裕和"],"cast":["出口夏希","葡田彩珠"],"genres":["剧情"],"country":["日本"],"posterColors":["#1e293b","#64748b"],"streaming":[]},
+    {"id":"possible-love","title":"可能的爱情","titleEn":"Possible Love","year":2026,"synopsis":"李沧东时隔八年新作。第83届威尼斯评审团大奖（银狮），并获主竞赛费比西奖。全度妉、薛景求主演。","directors":["李沧东"],"cast":["全度妉","薛景求"],"genres":["剧情"],"country":["韩国"],"posterColors":["#3b0764","#a78bfa"],"streaming":[]},
     {"id":"tonight-will-happen","title":"必将今夜发生","titleEn":"Succederà questa notte","year":2026,"synopsis":"南尼·莫莱蒂新作。第83届威尼斯主竞赛。","directors":["南尼·莫莱蒂"],"cast":[],"genres":["剧情"],"country":["意大利"],"posterColors":["#14532d","#4ade80"],"streaming":[]},
     {"id":"mr-nelson","title":"尼尔森先生，你杀人了吗？","titleEn":"Mr. Nelson, Did You Kill People?","year":2026,"synopsis":"冢本晋也执导。第83届威尼斯主竞赛。","directors":["冢本晋也"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#111827","#9ca3af"],"streaming":[]},
-    {"id":"bunker","title":"地堡","titleEn":"Bunker","year":2026,"synopsis":"弗洛里安·泽勒执导，佩内洛普·克鲁兹与哈维尔·巴登姆主演。第83届威尼斯主竞赛。","directors":["弗洛里安·泽勒"],"cast":["佩内洛普·克鲁兹","哈维尔·巴登姆"],"genres":["惊悚"],"country":["法国"],"posterColors":["#1c1917","#57534e"],"streaming":[]},
-    {"id":"naza","title":"NAZA","titleEn":"NAZA","year":2026,"synopsis":"优瓦尔·亚伯拉罕、蕾切尔·索尔执导的纪录片，直接进主竞赛。","directors":["优瓦尔·亚伯拉罕","蕾切尔·索尔"],"cast":[],"genres":["纪录"],"country":["英国"],"posterColors":["#365314","#a3e635"],"streaming":[]},
+    {"id":"bunker","title":"地堡","titleEn":"Bunker","year":2026,"synopsis":"弗洛里安·泽勒执导。第83届威尼斯主竞赛。","directors":["弗洛里安·泽勒"],"cast":["佩内洛普·克鲁兹","哈维尔·巴登姆"],"genres":["惊悚"],"country":["法国"],"posterColors":["#1c1917","#57534e"],"streaming":[]},
+    {"id":"naza","title":"NAZA","titleEn":"NAZA","year":2026,"synopsis":"优瓦尔·亚伯拉罕、蕾切尔·索尔纪录片。中文或译《附带伤亡》。第83届威尼斯评委会特别奖。流媒体日程未官宣。","directors":["优瓦尔·亚伯拉罕","蕾切尔·索尔"],"cast":[],"genres":["纪录"],"country":["英国"],"posterColors":["#365314","#a3e635"],"streaming":[{"platform":"mubi","status":"tba","region":"部分地区","note":"艺术院线/纪录片窗口待定，不编造上线日"}]},
     {"id":"company","title":"Company","titleEn":"Company","year":2026,"synopsis":"卡西·阿弗莱克执导。第83届威尼斯主竞赛。","directors":["卡西·阿弗莱克"],"cast":[],"genres":["恐怖"],"country":["美国","加拿大"],"posterColors":["#3f1d0f","#b45309"],"streaming":[]},
-    {"id":"primetime","title":"实境诱捕","titleEn":"Primetime","year":2026,"synopsis":"兰斯·奥本海姆首部剧情长片。第83届威尼斯主竞赛。","directors":["兰斯·奥本海姆"],"cast":[],"genres":["剧情"],"country":["美国"],"posterColors":["#0f172a","#38bdf8"],"streaming":[]},
-    {"id":"place-to-heal","title":"疗愈之地","titleEn":"A Place to Heal","year":2026,"synopsis":"塞德里克·康执导。第83届威尼斯主竞赛。","directors":["塞德里克·康"],"cast":[],"genres":["剧情"],"country":["法国"],"posterColors":["#164e63","#67e8f9"],"streaming":[]},
-    {"id":"dau","title":"Dau","titleEn":"Dau","year":2026,"synopsis":"伊利亚·赫尔扎诺夫斯基执导。第83届威尼斯主竞赛。","directors":["伊利亚·赫尔扎诺夫斯基"],"cast":[],"genres":["剧情"],"country":["俄罗斯"],"posterColors":["#7f1d1d","#fca5a5"],"streaming":[]},
-    {"id":"good-little-soldier","title":"乘小兵","titleEn":"Un bon petit soldat","year":2026,"synopsis":"史蒂芬·布里泽执导。第83届威尼斯主竞赛。","directors":["史蒂芬·布里泽"],"cast":[],"genres":["剧情"],"country":["法国"],"posterColors":["#1e3a5f","#93c5fd"],"streaming":[]},
+    {"id":"primetime","title":"实境诱捕","titleEn":"Primetime","year":2026,"synopsis":"兰斯·奥本海姆首部剧情长片。第83届威尼斯主竞赛。","directors":["兰斯·奥本海姆"],"cast":["罗伯特·帕丁森"],"genres":["剧情"],"country":["美国"],"posterColors":["#0f172a","#38bdf8"],"streaming":[]},
+    {"id":"place-to-heal","title":"疗愈之地","titleEn":"A Place to Heal / 15/18","year":2026,"synopsis":"塞德里克·康执导。玛卢·克比齐凭本片获马斯特罗亚尼奖。","directors":["塞德里克·康"],"cast":["玛卢·克比齐"],"genres":["剧情"],"country":["法国"],"posterColors":["#164e63","#67e8f9"],"streaming":[]},
+    {"id":"dau","title":"DAU","titleEn":"DAU / Lev Landau","year":2026,"synopsis":"伊利亚·赫尔扎诺夫斯基执导。中文或称《列夫·朗道》。第83届威尼斯最佳导演银狮。","directors":["伊利亚·赫尔扎诺夫斯基"],"cast":[],"genres":["剧情"],"country":["德国","法国","瑞典"],"posterColors":["#7f1d1d","#fca5a5"],"streaming":[]},
+    {"id":"good-little-soldier","title":"好小兵","titleEn":"Un bon petit soldat","year":2026,"synopsis":"史蒂芬·布里泽执导。第83届威尼斯最佳编剧。中文或译《优秀卒子》。","directors":["史蒂芬·布里泽"],"cast":[],"genres":["剧情"],"country":["法国"],"posterColors":["#1e3a5f","#93c5fd"],"streaming":[]},
     {"id":"fire-inside","title":"你心中的火","titleEn":"Il fuoco che ti porti dentro","year":2026,"synopsis":"艾多阿尔多·德·安杰利斯执导。第83届威尼斯主竞赛。","directors":["艾多阿尔多·德·安杰利斯"],"cast":[],"genres":["剧情"],"country":["意大利"],"posterColors":["#7c2d12","#fdba74"],"streaming":[]},
-    {"id":"woman-unknown","title":"女人，未知","titleEn":"Woman Unknown","year":2026,"synopsis":"梅·埃尔-图希执导。第83届威尼斯主竞赛。","directors":["梅·埃尔-图希"],"cast":[],"genres":["剧情"],"country":["丹麦"],"posterColors":["#4c0519","#fb7185"],"streaming":[]},
+    {"id":"woman-unknown","title":"女人，未知","titleEn":"Woman Unknown / Kvinde Ukendt","year":2026,"synopsis":"梅·埃尔-图希执导。二战后丹麦，保姆玛丽与雇主订婚，却藏着与德军士兵的往事。第83届威尼斯金狮奖，玛蒂尔德·阿塞尔同获沃尔皮杯影后。丹麦时隔 71 年再夺金狮。","directors":["梅·埃尔-图希"],"cast":["玛蒂尔德·阿塞尔"],"genres":["剧情"],"country":["丹麦","瑞典","拉脱维亚"],"posterColors":["#4c0519","#fb7185"],"streaming":[{"platform":"mubi","status":"tba","region":"部分地区","note":"金狮后艺术院线窗口待定，不编造上线日"}]},
+    {"id":"diane-in-the-loop","title":"绕道去找黛安","titleEn":"Diane in the Loop","year":2026,"synopsis":"安·西罗、拉斐尔·巴尔博尼执导。第83届威尼斯地平线最佳影片。","directors":["安·西罗","拉斐尔·巴尔博尼"],"cast":[],"genres":["剧情"],"country":["比利时","法国"],"posterColors":["#312e81","#818cf8"],"streaming":[]},
+    {"id":"jo-phaedra","title":"乔的一日：费德拉章","titleEn":"A Day in the Life of Jo: Chapter Phaedra","year":2026,"synopsis":"杰奎琳·伦楚执导。第83届威尼斯地平线最佳导演。","directors":["杰奎琳·伦楚"],"cast":[],"genres":["剧情"],"country":["希腊","德国","法国"],"posterColors":["#0f766e","#5eead4"],"streaming":[]},
+    {"id":"house-of-the-wind","title":"风之家","titleEn":"House of the Wind","year":2026,"synopsis":"第83届威尼斯地平线评委会特别奖，兼处女作奖。","directors":["奥古斯特·贝尔纳·库埃莫·扬胡"],"cast":[],"genres":["剧情"],"country":["喀麦隆","法国"],"posterColors":["#78350f","#fdba74"],"streaming":[]},
+    {"id":"children-of-the-monkey","title":"猴子的孩子们","titleEn":"The Children of the Monkey","year":2026,"synopsis":"第83届威尼斯地平线最佳男演员与最佳编剧。","directors":["托马索·兰杜奇"],"cast":["里卡尔多·斯卡马尔乔"],"genres":["剧情"],"country":["意大利"],"posterColors":["#1e293b","#fb923c"],"streaming":[]},
+    {"id":"falling-house","title":"倾颓之屋","titleEn":"Moragheb / Falling House","year":2026,"synopsis":"拉蕾·马尔兹班凭本片获地平线最佳女演员。","directors":[],"cast":["拉蕾·马尔兹班"],"genres":["剧情"],"country":["伊朗"],"posterColors":["#44403c","#a8a29e"],"streaming":[]},
+    {"id":"pigeon-ring","title":"鸽环","titleEn":"The Pigeon Ring","year":2026,"synopsis":"陶世欣、张妒琦执导中国 VR 短片。第83届威尼斯沉浸单元大奖。","directors":["陶世欣","张妒琦"],"cast":[],"genres":["沉浸","短片"],"country":["中国"],"posterColors":["#1e3a5f","#93c5fd"],"streaming":[]},
+    {"id":"i-matter","title":"我很重要","titleEn":"I Matter / Eu contez","year":2026,"synopsis":"阿林娜·塞尔班执导。第83届威尼斯观众奖。","directors":["阿林娜·塞尔班"],"cast":[],"genres":["剧情"],"country":["罗马尼亚"],"posterColors":["#831843","#f9a8d4"],"streaming":[]},
     {"id":"one-battle","title":"一战再战","titleEn":"One Battle After Another","year":2025,"synopsis":"保罗·托马斯·安德森执导。第98届奥斯卡最佳影片、最佳导演。","directors":["保罗·托马斯·安德森"],"cast":["莱昂纳多·迪卡普里奥","西恩·潘"],"genres":["剧情"],"country":["美国"],"posterColors":["#7c2d12","#f59e0b"],"streaming":[]},
-    {"id":"sinners","title":"罪人","titleEn":"Sinners","year":2025,"synopsis":"瑞安·库格勒执导。第98届奥斯卡最佳男主角、最佳原创剧本、最佳摄影。","directors":["瑞安·库格勒"],"cast":["迈克尔·B·乔丹"],"genres":["悬疑"],"country":["美国"],"posterColors":["#111827","#dc2626"],"streaming":[]},
+    {"id":"sinners","title":"罪人","titleEn":"Sinners","year":2025,"synopsis":"瑞安·库格勒执导。第98届奥斯卡最佳男主角。","directors":["瑞安·库格勒"],"cast":["迈克尔·B·乔丹"],"genres":["悬疑"],"country":["美国"],"posterColors":["#111827","#dc2626"],"streaming":[]},
     {"id":"hamnet","title":"哈姆奈特","titleEn":"Hamnet","year":2025,"synopsis":"赵婷执导。杰西·巴克利获第98届奥斯卡最佳女主角。","directors":["赵婷"],"cast":["杰西·巴克利"],"genres":["剧情"],"country":["英国","美国"],"posterColors":["#1e1b4b","#c4b5fd"],"streaming":[]},
     {"id":"weapons","title":"凶器","titleEn":"Weapons","year":2025,"synopsis":"埃米·马迪根获第98届奥斯卡最佳女配角。","directors":[],"cast":["埃米·马迪根"],"genres":["惊悚"],"country":["美国"],"posterColors":["#450a0a","#f87171"],"streaming":[]},
     {"id":"sentimental-value","title":"情感价值","titleEn":"Sentimental Value","year":2025,"synopsis":"约阿希姆·特里尔执导。第98届奥斯卡最佳国际影片。","directors":["约阿希姆·特里尔"],"cast":["雷娜特·赖恩斯维"],"genres":["剧情"],"country":["挪威"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
-    {"id":"kpop-demon-hunters","title":"K-POP：猎魔女团","titleEn":"KPop Demon Hunters","year":2025,"synopsis":"第98届奥斯卡最佳动画长片、最佳原创歌曲。","directors":[],"cast":[],"genres":["动画"],"country":["美国","韩国"],"posterColors":["#831843","#f472b6"],"streaming":[]}
+    {"id":"kpop-demon-hunters","title":"K-POP：猎魔女团","titleEn":"KPop Demon Hunters","year":2025,"synopsis":"第98届奥斯卡最佳动画长片。","directors":[],"cast":[],"genres":["动画"],"country":["美国","韩国"],"posterColors":["#831843","#f472b6"],"streaming":[]}
   ],
   "ceremonies": [
     {
@@ -28,7 +35,7 @@
       "nameEn": "83rd Venice Film Festival",
       "year": 2026,
       "date": "2026-07-23",
-      "location": "意大利威尼斯丽都岛",
+      "location": "意大利威尼斯利多岛",
       "nominations": [
         {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"look-back","personNames":["是枝裕和"],"result":"nominated","date":"2026-07-23"},
         {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"possible-love","personNames":["李沧东"],"result":"nominated","date":"2026-07-23"},
@@ -43,6 +50,35 @@
         {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"good-little-soldier","personNames":["史蒂芬·布里泽"],"result":"nominated","date":"2026-07-23"},
         {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"fire-inside","personNames":["艾多阿尔多·德·安杰利斯"],"result":"nominated","date":"2026-07-23"},
         {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"woman-unknown","personNames":["梅·埃尔-图希"],"result":"nominated","date":"2026-07-23"}
+      ]
+    },
+    {
+      "id": "venice-83-awards",
+      "orgId": "venice",
+      "name": "第83届威尼斯电影节",
+      "nameEn": "83rd Venice Film Festival",
+      "year": 2026,
+      "date": "2026-09-12",
+      "location": "意大利威尼斯利多岛（闭幕颁奖）",
+      "nominations": [
+        {"categoryId":"golden-lion","categoryName":"金狮奖最佳影片","filmId":"woman-unknown","personNames":["梅·埃尔-图希"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"grand-jury","categoryName":"评审团大奖","filmId":"possible-love","personNames":["李沧东"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"best-director","categoryName":"最佳导演银狮","filmId":"dau","personNames":["伊利亚·赫尔扎诺夫斯基"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"special-jury","categoryName":"评委会特别奖","filmId":"naza","personNames":["优瓦尔·亚伯拉罕","蕾切尔·索尔"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"best-screenplay","categoryName":"最佳编剧","filmId":"good-little-soldier","personNames":["史蒂芬·布里泽","科拉莉·阿梅迪奥","奥利维尔·戈尔斯"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"volpi-actress","categoryName":"沃尔皮杯最佳女演员","filmId":"woman-unknown","personNames":["玛蒂尔德·阿塞尔"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"volpi-actor","categoryName":"沃尔皮杯最佳男演员","filmId":"wild-horse-nine","personNames":["约翰·马尔科维奇"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"mastroianni","categoryName":"马斯特罗亚尼奖","filmId":"place-to-heal","personNames":["玛卢·克比齐"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"fipresci-competition","categoryName":"费比西奖（主竞赛）","filmId":"possible-love","personNames":["李沧东"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"orizzonti-film","categoryName":"地平线最佳影片","filmId":"diane-in-the-loop","personNames":["安·西罗","拉斐尔·巴尔博尼"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"orizzonti-director","categoryName":"地平线最佳导演","filmId":"jo-phaedra","personNames":["杰奎琳·伦楚"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"orizzonti-special","categoryName":"地平线评委会特别奖","filmId":"house-of-the-wind","personNames":["奥古斯特·贝尔纳·库埃莫·扬胡"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"orizzonti-actress","categoryName":"地平线最佳女演员","filmId":"falling-house","personNames":["拉蕾·马尔兹班"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"orizzonti-actor","categoryName":"地平线最佳男演员","filmId":"children-of-the-monkey","personNames":["里卡尔多·斯卡马尔乔"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"orizzonti-screenplay","categoryName":"地平线最佳编剧","filmId":"children-of-the-monkey","personNames":["托马索·兰杜奇","达米亚诺·费姆费特"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"debut-lion","categoryName":"露易吉·德·劳伦蒂斯处女作奖","filmId":"house-of-the-wind","personNames":["奥古斯特·贝尔纳·库埃莫·扬胡"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"audience-armani","categoryName":"Armani Beauty 观众奖","filmId":"i-matter","personNames":["阿林娜·塞尔班"],"result":"won","date":"2026-09-12"},
+        {"categoryId":"immersive-grand","categoryName":"沉浸单元大奖","filmId":"pigeon-ring","personNames":["陶世欣","张妒琦"],"result":"won","date":"2026-09-12"}
       ]
     },
     {

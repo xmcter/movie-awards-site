@@ -6,15 +6,13 @@
     "nameEn": "83rd Venice Film Festival",
     "year": 2026,
     "date": "2026-09-02",
-    "location": "意大利威尼斯利多岛（进行中，闭幕 9/12）",
+    "location": "意大利威尼斯利多岛（9/2–9/12，已闭幕）",
     "nominations": [
       {
         "categoryId": "opening-competition",
         "categoryName": "开幕片（主竞赛）",
         "filmId": "ink",
-        "personNames": [
-          "丹尼·博伊尔"
-        ],
+        "personNames": ["丹尼·博伊尔"],
         "result": "nominated",
         "date": "2026-09-02"
       },
@@ -22,9 +20,7 @@
         "categoryId": "competition",
         "categoryName": "主竞赛入围",
         "filmId": "bucking-fastard",
-        "personNames": [
-          "维尔纳·赫尔佐格"
-        ],
+        "personNames": ["维尔纳·赫尔佐格"],
         "result": "nominated",
         "date": "2026-07-23"
       },
@@ -32,9 +28,7 @@
         "categoryId": "competition",
         "categoryName": "主竞赛入围",
         "filmId": "wild-horse-nine",
-        "personNames": [
-          "马丁·麦克多纳"
-        ],
+        "personNames": ["马丁·麦克多纳"],
         "result": "nominated",
         "date": "2026-07-23"
       },
@@ -42,9 +36,7 @@
         "categoryId": "honorary-lion",
         "categoryName": "荣誉金狮",
         "filmId": "honorary-clooney",
-        "personNames": [
-          "乔治·克鲁尼"
-        ],
+        "personNames": ["乔治·克鲁尼"],
         "result": "won",
         "date": "2026-07-06"
       },
@@ -52,9 +44,7 @@
         "categoryId": "honorary-lion",
         "categoryName": "荣誉金狮",
         "filmId": "honorary-burstyn",
-        "personNames": [
-          "艾伦·伯斯汀"
-        ],
+        "personNames": ["艾伦·伯斯汀"],
         "result": "won",
         "date": "2026-07-14"
       },
@@ -62,9 +52,7 @@
         "categoryId": "jury-president",
         "categoryName": "评委主席",
         "filmId": "venice-jury-2026",
-        "personNames": [
-          "玛吉·吉伦哈尔"
-        ],
+        "personNames": ["玛吉·吉伦哈尔"],
         "result": "nominated",
         "date": "2026-04-23"
       }
@@ -73,85 +61,66 @@
   {
     "id": "cannes-79",
     "orgId": "cannes",
-    "name": "第79届戛纳电影节",
+    "name": "第79届暨纳电影节",
     "nameEn": "79th Cannes Film Festival",
     "year": 2026,
     "date": "2026-05-23",
-    "location": "法国戛纳（5月12–23日）",
+    "location": "法国暨纳（5月12–23日）",
     "nominations": [
       {
         "categoryId": "palme-dor",
         "categoryName": "金棕榈",
         "filmId": "fjord",
-        "personNames": [
-          "克里斯蒂安·蒙吉"
-        ],
+        "personNames": ["克里斯蒂安·蒙吉"],
         "result": "won"
       },
       {
         "categoryId": "grand-prix",
         "categoryName": "评审团大奖",
         "filmId": "minotaur",
-        "personNames": [
-          "安德烈·萨金塞夫"
-        ],
+        "personNames": ["安德烈·萨金塞夫"],
         "result": "won"
       },
       {
         "categoryId": "jury-prize",
         "categoryName": "评审团奖",
         "filmId": "the-dreamed-adventure",
-        "personNames": [
-          "瓦莱斯卡·格里策巴赫"
-        ],
+        "personNames": ["瓦莱斯卡·格里策巴赫"],
         "result": "won"
       },
       {
         "categoryId": "best-director",
         "categoryName": "最佳导演（并列）",
         "filmId": "the-black-ball",
-        "personNames": [
-          "哈维尔·安布罗希",
-          "哈维尔·卡尔沃"
-        ],
+        "personNames": ["哈维尔·安布罗希", "哈维尔·卡尔沃"],
         "result": "won"
       },
       {
         "categoryId": "best-director",
         "categoryName": "最佳导演（并列）",
         "filmId": "fatherland",
-        "personNames": [
-          "帕维乌·帕夫利科夫斯基"
-        ],
+        "personNames": ["帕维乌·帕夫利科夫斯基"],
         "result": "won"
       },
       {
         "categoryId": "best-actress",
         "categoryName": "最佳女演员（并列）",
         "filmId": "all-of-a-sudden",
-        "personNames": [
-          "维尔日妮·埃菲拉",
-          "冈本多绪"
-        ],
+        "personNames": ["维尔日妮·埃菲拉", "冈本多绪"],
         "result": "won"
       },
       {
         "categoryId": "best-actor",
         "categoryName": "最佳男演员（并列）",
         "filmId": "coward",
-        "personNames": [
-          "伊曼纽尔·马基亚",
-          "瓦伦丁·坎帕涅"
-        ],
+        "personNames": ["伊曼纽尔·马基亚", "瓦伦丁·坎帕涅"],
         "result": "won"
       },
       {
         "categoryId": "best-screenplay",
         "categoryName": "最佳编剧",
         "filmId": "our-redemption",
-        "personNames": [
-          "伊曼努尔·马雷"
-        ],
+        "personNames": ["伊曼努尔·马雷"],
         "result": "won"
       }
     ]
@@ -169,9 +138,7 @@
         "categoryId": "golden-bear",
         "categoryName": "金熊奖",
         "filmId": "yellow-letters",
-        "personNames": [
-          "伊尔克·恰塔克"
-        ],
+        "personNames": ["伊尔克·恰塔克"],
         "result": "won"
       }
     ]
@@ -189,9 +156,7 @@
         "categoryId": "golden-shell",
         "categoryName": "金贝壳",
         "filmId": "los-domingos",
-        "personNames": [
-          "Alauda Ruiz de Azúa"
-        ],
+        "personNames": ["Alauda Ruiz de Azúa"],
         "result": "won"
       }
     ]
@@ -209,9 +174,7 @@
         "categoryId": "golden-leopard",
         "categoryName": "金豹奖",
         "filmId": "two-seasons-two-strangers",
-        "personNames": [
-          "三宅唱"
-        ],
+        "personNames": ["三宅唱"],
         "result": "won"
       }
     ]
@@ -229,9 +192,7 @@
         "categoryId": "golden-goblet",
         "categoryName": "金爵奖最佳影片",
         "filmId": "black-red-yellow",
-        "personNames": [
-          "阿克坦·阿雷姆·库巴特"
-        ],
+        "personNames": ["阿克坦·阿雷姆·库巴特"],
         "result": "won"
       }
     ]
@@ -249,9 +210,7 @@
         "categoryId": "tokyo-grand-prix",
         "categoryName": "东京大奖",
         "filmId": "palestine-36",
-        "personNames": [
-          "安玛丽·贾西尔"
-        ],
+        "personNames": ["安玛丽·贾西尔"],
         "result": "won"
       }
     ]
@@ -269,9 +228,7 @@
         "categoryId": "busan-award",
         "categoryName": "釜山奖最佳影片",
         "filmId": "gloaming-in-luomu",
-        "personNames": [
-          "张律"
-        ],
+        "personNames": ["张律"],
         "result": "won"
       }
     ]

@@ -1,50 +1,429 @@
 {
   "orgs": [
-    {"id": "oscars", "name": "奥斯卡", "nameEn": "Academy Awards", "description": "美国电影艺术与科学学院颁发的年度影奖。", "country": "美国", "founded": 1929, "accentColor": "#c9a227"},
-    {"id": "golden-globes", "name": "金球", "nameEn": "Golden Globe Awards", "description": "女性电影记者协会颁发，领先颁奖季的影视综合奖。", "country": "美国", "founded": 1944, "accentColor": "#eab308"},
-    {"id": "golden-horse", "name": "金马", "nameEn": "Golden Horse Awards", "description": "台北金马影展执行委员会主办，华语电影年度盛事。", "country": "台湾", "founded": 1962, "accentColor": "#78716c"},
-    {"id": "hkfa", "name": "金像", "nameEn": "Hong Kong Film Awards", "description": "香港电影金像奖协会主办，香港电影年度颁奖。", "country": "香港", "founded": 1982, "accentColor": "#f43f5e"}
+    {
+      "id": "oscars",
+      "name": "奥斯卡",
+      "nameEn": "Academy Awards",
+      "description": "美国电影艺术与科学学院颁发的年度影奖。",
+      "country": "美国",
+      "founded": 1929,
+      "accentColor": "#c9a227"
+    },
+    {
+      "id": "golden-globes",
+      "name": "金球",
+      "nameEn": "Golden Globe Awards",
+      "description": "女性电影记者协会颁发，领先颁奖季的影视综合奖。",
+      "country": "美国",
+      "founded": 1944,
+      "accentColor": "#eab308"
+    },
+    {
+      "id": "golden-horse",
+      "name": "金马",
+      "nameEn": "Golden Horse Awards",
+      "description": "台北金马影展执行委员会主办，华语电影年度盛事。",
+      "country": "台湾",
+      "founded": 1962,
+      "accentColor": "#78716c"
+    },
+    {
+      "id": "hkfa",
+      "name": "金像",
+      "nameEn": "Hong Kong Film Awards",
+      "description": "香港电影金像奖协会主办，香港电影年度颁奖。",
+      "country": "香港",
+      "founded": 1982,
+      "accentColor": "#f43f5e"
+    }
   ],
   "films": [
-    {"id": "goodbye-ufo", "title": "再见 UFO", "titleEn": "Goodbye UFO", "year": 2025, "synopsis": "梁柏堅执导。第44届香港电影金像奖最佳电影、最佳导演。", "directors": ["梁柏堅"], "cast": [], "genres": ["剧情"], "country": ["香港"], "posterColors": ["#1e3a5f", "#38bdf8"], "streaming": []},
-    {"id": "catching-the-wind", "title": "捕风追影", "titleEn": "The Shadow's Edge", "year": 2025, "synopsis": "梁家辉凭本片获第44届金像奖最佳男主角。", "directors": [], "cast": ["梁家辉"], "genres": ["动作"], "country": ["香港"], "posterColors": ["#111827", "#334155"], "streaming": []},
-    {"id": "love-like-mine", "title": "像我这样的爱情", "titleEn": "A Love Like Mine", "year": 2025, "synopsis": "廖子妎凭本片获第44届金像奖最佳女主角。", "directors": [], "cast": ["廖子妎"], "genres": ["剧情"], "country": ["香港"], "posterColors": ["#4c1d95", "#c4b5fd"], "streaming": []},
-    {"id": "golden-horse-63", "title": "第63届金马奖", "titleEn": "63rd Golden Horse Awards", "year": 2026, "synopsis": "长片报名 2026年7月已开启。入围名单、颁奖典礼尚未举行，不提前登时间线。", "directors": [], "cast": [], "genres": ["颁奖"], "country": ["台湾"], "posterColors": ["#292524", "#a8a29e"], "streaming": []},
-    {"id": "oscars-99", "title": "第99届奥斯卡", "titleEn": "99th Academy Awards", "year": 2026, "synopsis": "2026年4月7日公布日程：提名 2027年1月21日，典礼 3月14日。提名与颁奖夜尚未到，不提前登时间线。", "directors": [], "cast": ["柯南·奥布赖恩"], "genres": ["颁奖"], "country": ["美国"], "posterColors": ["#422006", "#c9a227"], "streaming": []}
+    {
+      "id": "goodbye-ufo",
+      "title": "再见 UFO",
+      "titleEn": "Goodbye UFO",
+      "year": 2025,
+      "synopsis": "梁柏堅执导。第44届香港电影金像奖最佳电影、最佳导演。",
+      "directors": [
+        "梁柏堅"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "香港"
+      ],
+      "posterColors": [
+        "#1e3a5f",
+        "#38bdf8"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "catching-the-wind",
+      "title": "捕风追影",
+      "titleEn": "The Shadow's Edge",
+      "year": 2025,
+      "synopsis": "梁家辉凭本片获第44届金像奖最佳男主角。",
+      "directors": [],
+      "cast": [
+        "梁家辉"
+      ],
+      "genres": [
+        "动作"
+      ],
+      "country": [
+        "香港"
+      ],
+      "posterColors": [
+        "#111827",
+        "#334155"
+      ],
+      "streaming": [],
+      "poster": "/posters/catching-the-wind.jpg"
+    },
+    {
+      "id": "love-like-mine",
+      "title": "像我这样的爱情",
+      "titleEn": "A Love Like Mine",
+      "year": 2025,
+      "synopsis": "廖子妎凭本片获第44届金像奖最佳女主角。",
+      "directors": [],
+      "cast": [
+        "廖子妎"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "香港"
+      ],
+      "posterColors": [
+        "#4c1d95",
+        "#c4b5fd"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "golden-horse-63",
+      "title": "第63届金马奖",
+      "titleEn": "63rd Golden Horse Awards",
+      "year": 2026,
+      "synopsis": "长片报名 2026年7月已开启。入围名单、颁奖典礼尚未举行，不提前登时间线。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "颁奖"
+      ],
+      "country": [
+        "台湾"
+      ],
+      "posterColors": [
+        "#292524",
+        "#a8a29e"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "oscars-99",
+      "title": "第99届奥斯卡",
+      "titleEn": "99th Academy Awards",
+      "year": 2026,
+      "synopsis": "2026年4月7日公布日程：提名 2027年1月21日，典礼 3月14日。提名与颁奖夜尚未到，不提前登时间线。",
+      "directors": [],
+      "cast": [
+        "柯南·奥布赖恩"
+      ],
+      "genres": [
+        "颁奖"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#422006",
+        "#c9a227"
+      ],
+      "streaming": []
+    }
   ],
   "ceremonies": [
-    {"id": "hkfa-44", "orgId": "hkfa", "name": "第44届香港电影金像奖", "nameEn": "44th Hong Kong Film Awards", "year": 2026, "date": "2026-04-19", "location": "香港文化中心", "nominations": [
-      {"categoryId": "best-picture", "categoryName": "最佳电影", "filmId": "goodbye-ufo", "personNames": ["梁柏堅"], "result": "won", "date": "2026-04-19"},
-      {"categoryId": "best-director", "categoryName": "最佳导演", "filmId": "goodbye-ufo", "personNames": ["梁柏堅"], "result": "won", "date": "2026-04-19"},
-      {"categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "catching-the-wind", "personNames": ["梁家辉"], "result": "won", "date": "2026-04-19"},
-      {"categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "love-like-mine", "personNames": ["廖子妎"], "result": "won", "date": "2026-04-19"}
-    ]},
-    {"id": "golden-horse-63", "orgId": "golden-horse", "name": "第63届金马奖", "nameEn": "63rd Golden Horse Awards", "year": 2026, "date": "2026-07-01", "location": "台北", "nominations": [
-      {"categoryId": "feature-entry-opens", "categoryName": "长片报名开启", "filmId": "golden-horse-63", "result": "nominated", "date": "2026-07-01"}
-    ]},
-    {"id": "oscars-99", "orgId": "oscars", "name": "第99届奥斯卡", "nameEn": "99th Academy Awards", "year": 2026, "date": "2026-04-07", "location": "洛杉矶杜比剧院", "nominations": [
-      {"categoryId": "dates-announced", "categoryName": "日程公布：提名 2027-01-21，典礼 2027-03-14", "filmId": "oscars-99", "personNames": ["柯南·奥布赖恩"], "result": "nominated", "date": "2026-04-07"}
-    ]},
-    {"id": "golden-globes-83", "orgId": "golden-globes", "name": "第83届金球奖", "nameEn": "83rd Golden Globe Awards", "year": 2026, "date": "2026-01-11", "location": "美国贝弗利山庄希尔顿酒店", "nominations": [
-      {"categoryId": "best-drama", "categoryName": "剧情类最佳影片", "filmId": "hamnet", "personNames": ["赵婷"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-comedy", "categoryName": "音乐/喜剧类最佳影片", "filmId": "one-battle", "personNames": ["保罗·托马斯·安德森"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-director", "categoryName": "最佳导演", "filmId": "one-battle", "personNames": ["保罗·托马斯·安德森"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-screenplay", "categoryName": "最佳编剧", "filmId": "one-battle", "personNames": ["保罗·托马斯·安德森"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-actress-drama", "categoryName": "剧情类最佳女主角", "filmId": "hamnet", "personNames": ["杰西·巴克利"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-actor-drama", "categoryName": "剧情类最佳男主角", "filmId": "secret-agent", "personNames": ["瓦格纳·莫拉"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-non-english", "categoryName": "最佳非英语片", "filmId": "secret-agent", "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-supporting-actor", "categoryName": "最佳男配角", "filmId": "sentimental-value", "personNames": ["斯特兰·斯卡斯加德"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-supporting-actress", "categoryName": "最佳女配角", "filmId": "one-battle", "personNames": ["泰亚娜·泰勒"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-actor-comedy", "categoryName": "音乐/喜剧类最佳男主角", "filmId": "marty-supreme", "personNames": ["蒂莫西·柴勒梅德"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-actress-comedy", "categoryName": "音乐/喜剧类最佳女主角", "filmId": "if-i-had-legs", "personNames": ["罗丝·伯恩"], "result": "won", "date": "2026-01-11"},
-      {"categoryId": "best-animated", "categoryName": "最佳动画长片", "filmId": "kpop-demon-hunters", "result": "won", "date": "2026-01-11"}
-    ]},
-    {"id": "golden-horse-62", "orgId": "golden-horse", "name": "第62届金马奖", "nameEn": "62nd Golden Horse Awards", "year": 2025, "date": "2025-11-22", "location": "台北流行音乐中心", "nominations": [
-      {"categoryId": "best-picture", "categoryName": "最佳剧情片", "filmId": "a-foggy-tale", "personNames": ["陈玉勋"], "result": "won", "date": "2025-11-22"},
-      {"categoryId": "best-director", "categoryName": "最佳导演", "filmId": "queerpanorama", "personNames": ["李骏硕"], "result": "won", "date": "2025-11-22"},
-      {"categoryId": "best-actor", "categoryName": "最佳男主角", "filmId": "lucky-lu", "personNames": ["张震"], "result": "won", "date": "2025-11-22"},
-      {"categoryId": "best-actress", "categoryName": "最佳女主角", "filmId": "mother-bhumi", "personNames": ["范冰冰"], "result": "won", "date": "2025-11-22"},
-      {"categoryId": "best-supporting-actor", "categoryName": "最佳男配角", "filmId": "family-matters", "personNames": ["曾敬骊"], "result": "won", "date": "2025-11-22"}
-    ]}
+    {
+      "id": "hkfa-44",
+      "orgId": "hkfa",
+      "name": "第44届香港电影金像奖",
+      "nameEn": "44th Hong Kong Film Awards",
+      "year": 2026,
+      "date": "2026-04-19",
+      "location": "香港文化中心",
+      "nominations": [
+        {
+          "categoryId": "best-picture",
+          "categoryName": "最佳电影",
+          "filmId": "goodbye-ufo",
+          "personNames": [
+            "梁柏堅"
+          ],
+          "result": "won",
+          "date": "2026-04-19"
+        },
+        {
+          "categoryId": "best-director",
+          "categoryName": "最佳导演",
+          "filmId": "goodbye-ufo",
+          "personNames": [
+            "梁柏堅"
+          ],
+          "result": "won",
+          "date": "2026-04-19"
+        },
+        {
+          "categoryId": "best-actor",
+          "categoryName": "最佳男主角",
+          "filmId": "catching-the-wind",
+          "personNames": [
+            "梁家辉"
+          ],
+          "result": "won",
+          "date": "2026-04-19"
+        },
+        {
+          "categoryId": "best-actress",
+          "categoryName": "最佳女主角",
+          "filmId": "love-like-mine",
+          "personNames": [
+            "廖子妎"
+          ],
+          "result": "won",
+          "date": "2026-04-19"
+        }
+      ]
+    },
+    {
+      "id": "golden-horse-63",
+      "orgId": "golden-horse",
+      "name": "第63届金马奖",
+      "nameEn": "63rd Golden Horse Awards",
+      "year": 2026,
+      "date": "2026-07-01",
+      "location": "台北",
+      "nominations": [
+        {
+          "categoryId": "feature-entry-opens",
+          "categoryName": "长片报名开启",
+          "filmId": "golden-horse-63",
+          "result": "nominated",
+          "date": "2026-07-01"
+        }
+      ]
+    },
+    {
+      "id": "oscars-99",
+      "orgId": "oscars",
+      "name": "第99届奥斯卡",
+      "nameEn": "99th Academy Awards",
+      "year": 2026,
+      "date": "2026-04-07",
+      "location": "洛杉矶杜比剧院",
+      "nominations": [
+        {
+          "categoryId": "dates-announced",
+          "categoryName": "日程公布：提名 2027-01-21，典礼 2027-03-14",
+          "filmId": "oscars-99",
+          "personNames": [
+            "柯南·奥布赖恩"
+          ],
+          "result": "nominated",
+          "date": "2026-04-07"
+        }
+      ]
+    },
+    {
+      "id": "golden-globes-83",
+      "orgId": "golden-globes",
+      "name": "第83届金球奖",
+      "nameEn": "83rd Golden Globe Awards",
+      "year": 2026,
+      "date": "2026-01-11",
+      "location": "美国贝弗利山庄希尔顿酒店",
+      "nominations": [
+        {
+          "categoryId": "best-drama",
+          "categoryName": "剧情类最佳影片",
+          "filmId": "hamnet",
+          "personNames": [
+            "赵婷"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-comedy",
+          "categoryName": "音乐/喜剧类最佳影片",
+          "filmId": "one-battle",
+          "personNames": [
+            "保罗·托马斯·安德森"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-director",
+          "categoryName": "最佳导演",
+          "filmId": "one-battle",
+          "personNames": [
+            "保罗·托马斯·安德森"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-screenplay",
+          "categoryName": "最佳编剧",
+          "filmId": "one-battle",
+          "personNames": [
+            "保罗·托马斯·安德森"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-actress-drama",
+          "categoryName": "剧情类最佳女主角",
+          "filmId": "hamnet",
+          "personNames": [
+            "杰西·巴克利"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-actor-drama",
+          "categoryName": "剧情类最佳男主角",
+          "filmId": "secret-agent",
+          "personNames": [
+            "瓦格纳·莫拉"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-non-english",
+          "categoryName": "最佳非英语片",
+          "filmId": "secret-agent",
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-supporting-actor",
+          "categoryName": "最佳男配角",
+          "filmId": "sentimental-value",
+          "personNames": [
+            "斯特兰·斯卡斯加德"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-supporting-actress",
+          "categoryName": "最佳女配角",
+          "filmId": "one-battle",
+          "personNames": [
+            "泰亚娜·泰勒"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-actor-comedy",
+          "categoryName": "音乐/喜剧类最佳男主角",
+          "filmId": "marty-supreme",
+          "personNames": [
+            "蒂莫西·柴勒梅德"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-actress-comedy",
+          "categoryName": "音乐/喜剧类最佳女主角",
+          "filmId": "if-i-had-legs",
+          "personNames": [
+            "罗丝·伯恩"
+          ],
+          "result": "won",
+          "date": "2026-01-11"
+        },
+        {
+          "categoryId": "best-animated",
+          "categoryName": "最佳动画长片",
+          "filmId": "kpop-demon-hunters",
+          "result": "won",
+          "date": "2026-01-11"
+        }
+      ]
+    },
+    {
+      "id": "golden-horse-62",
+      "orgId": "golden-horse",
+      "name": "第62届金马奖",
+      "nameEn": "62nd Golden Horse Awards",
+      "year": 2025,
+      "date": "2025-11-22",
+      "location": "台北流行音乐中心",
+      "nominations": [
+        {
+          "categoryId": "best-picture",
+          "categoryName": "最佳剧情片",
+          "filmId": "a-foggy-tale",
+          "personNames": [
+            "陈玉勋"
+          ],
+          "result": "won",
+          "date": "2025-11-22"
+        },
+        {
+          "categoryId": "best-director",
+          "categoryName": "最佳导演",
+          "filmId": "queerpanorama",
+          "personNames": [
+            "李骏硕"
+          ],
+          "result": "won",
+          "date": "2025-11-22"
+        },
+        {
+          "categoryId": "best-actor",
+          "categoryName": "最佳男主角",
+          "filmId": "lucky-lu",
+          "personNames": [
+            "张震"
+          ],
+          "result": "won",
+          "date": "2025-11-22"
+        },
+        {
+          "categoryId": "best-actress",
+          "categoryName": "最佳女主角",
+          "filmId": "mother-bhumi",
+          "personNames": [
+            "范冰冰"
+          ],
+          "result": "won",
+          "date": "2025-11-22"
+        },
+        {
+          "categoryId": "best-supporting-actor",
+          "categoryName": "最佳男配角",
+          "filmId": "family-matters",
+          "personNames": [
+            "曾敬骊"
+          ],
+          "result": "won",
+          "date": "2025-11-22"
+        }
+      ]
+    }
   ]
 }

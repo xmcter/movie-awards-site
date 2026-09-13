@@ -45,9 +45,12 @@ export const metadata: Metadata = {
     description,
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title,
     description,
+  },
+  icons: {
+    icon: "/favicon.svg",
   },
 };
 
@@ -67,6 +70,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+      </head>
       <body className="flex min-h-screen flex-col">
         <script
           type="application/ld+json"

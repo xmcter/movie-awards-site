@@ -1,75 +1,1070 @@
 {
   "films": [
-    {"id":"sheep-in-the-box","title":"盒中羊","titleEn":"Sheep in the Box","year":2026,"synopsis":"是枝裕和新作。第79届暨纳电影节主竞赛入围。","directors":["是枝裕和"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#1e293b","#94a3b8"],"streaming":[]},
-    {"id":"nagi-notes","title":"凪日记","titleEn":"Nagi Notes","year":2026,"synopsis":"深田晃司执导。第79届暨纳电影节主竞赛入围。","directors":["深田晃司"],"cast":[],"genres":["剧情"],"country":["日本"],"posterColors":["#164e63","#67e8f9"],"streaming":[]},
-    {"id":"hope-na","title":"希望","titleEn":"Hope","year":2026,"synopsis":"罗泓轼执导。第79届暨纳电影节主竞赛入围。","directors":["罗泓轼"],"cast":[],"genres":["剧情","惊悚"],"country":["韩国"],"posterColors":["#7f1d1d","#fca5a5"],"streaming":[]},
-    {"id":"bitter-christmas","title":"苦涩的圣诞节","titleEn":"Bitter Christmas","year":2026,"synopsis":"佩德罗·阿尔莫多瓦新作。第79届暨纳电影节主竞赛入围。","directors":["佩德罗·阿尔莫多瓦"],"cast":[],"genres":["剧情"],"country":["西班牙"],"posterColors":["#881337","#fb7185"],"streaming":[]},
-    {"id":"paper-tiger","title":"纸老虎","titleEn":"Paper Tiger","year":2026,"synopsis":"詹姆斯·格雷执导。第79届暨纳电影节主竞赛入围。","directors":["詹姆斯·格雷"],"cast":[],"genres":["剧情"],"country":["美国"],"posterColors":["#44403c","#a8a29e"],"streaming":[]},
-    {"id":"parallel-tales","title":"平行故事","titleEn":"Parallel Tales","year":2026,"synopsis":"阿斯哈·法哈蒂执导。第79届暨纳电影节主竞赛入围。","directors":["阿斯哈·法哈蒂"],"cast":[],"genres":["剧情"],"country":["伊朗"],"posterColors":["#14532d","#86efac"],"streaming":[]},
-    {"id":"moulin","title":"穆兰","titleEn":"Moulin","year":2026,"synopsis":"拉斯洛·奈迈施执导。第79届暨纳电影节主竞赛入围。","directors":["拉斯洛·奈迈施"],"cast":[],"genres":["剧情"],"country":["匈牙利"],"posterColors":["#1e1b4b","#818cf8"],"streaming":[]},
-    {"id":"the-beloved","title":"所爱之人","titleEn":"The Beloved","year":2026,"synopsis":"罗德里戈·索罗戈延执导。第79届暨纳电影节主竞赛入围。","directors":["罗德里戈·索罗戈延"],"cast":[],"genres":["剧情"],"country":["西班牙"],"posterColors":["#7c2d12","#fdba74"],"streaming":[]},
-    {"id":"you-dont-belong-here","title":"你不属于这里","titleEn":"You Don't Belong Here","year":2026,"synopsis":"弗洛林·塞尔班执导。第79届洛迦诺电影节金豹奖。","directors":["弗洛林·塞尔班"],"cast":[],"genres":["剧情"],"country":["罗马尼亚"],"posterColors":["#1c1917","#a8a29e"],"streaming":[]},
-    {"id":"nowhere-to-lay-eyes","title":"无处安放双眼","titleEn":"Nowhere to Lay My Eyes","year":2026,"synopsis":"洪常秀执导。第79届洛迦诺电影节最佳导演；金敏喜获最佳表演。","directors":["洪常秀"],"cast":["金敏喜"],"genres":["剧情"],"country":["韩国"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
-    {"id":"the-riverbank","title":"河岸","titleEn":"The Riverbank","year":2026,"synopsis":"第79届洛迦诺电影节评审团特别奖。","directors":["马特乌·法里亚斯","埃诺克·卡瓦略"],"cast":[],"genres":["剧情"],"country":["巴西","德国"],"posterColors":["#14532d","#4ade80"],"streaming":[]},
-    {"id":"ketticè","title":"凯蒂切","titleEn":"Ketticè","year":2026,"synopsis":"莫妮卡·贝鲁奇凭本片获第79届洛迦诺电影节最佳表演。","directors":["乔瓦尼·托尔托里奇"],"cast":["莫妮卡·贝鲁奇"],"genres":["剧情"],"country":["意大利"],"posterColors":["#4c0519","#fb7185"],"streaming":[]},
-    {"id":"atlantic","title":"大西洋","titleEn":"Atlantic","year":2026,"synopsis":"钟凯峰执导。第28届上海国际电影节金爵奖最佳影片、最佳摄影。","directors":["钟凯峰"],"cast":["尹易","王一通","李雪琴"],"genres":["剧情"],"country":["中国"],"posterColors":["#0c4a6e","#38bdf8"],"streaming":[]},
-    {"id":"glimmer-girl","title":"微光女孩","titleEn":"Glimmer Girl","year":2026,"synopsis":"第28届上海国际电影节金爵奖评委会大奖。","directors":["尼古拉斯·林孔·吉耶"],"cast":[],"genres":["剧情"],"country":["比利时"],"posterColors":["#1e1b4b","#c4b5fd"],"streaming":[]},
-    {"id":"halima","title":"哈莉玛","titleEn":"Halima","year":2026,"synopsis":"第28届上海国际电影节金爵奖最佳导演、最佳女演员。","directors":["亚辛·伊德里西"],"cast":["哈迪贾·阿玛里"],"genres":["剧情"],"country":["摩洛哥"],"posterColors":["#365314","#a3e635"],"streaming":[]},
-    {"id":"box-mystery","title":"纸盒藏迷","titleEn":"Mystery in a Carton","year":2026,"synopsis":"张颂文凭本片获第28届上海国际电影节金爵奖最佳男演员。","directors":[],"cast":["张颂文"],"genres":["悬疑"],"country":["中国","香港"],"posterColors":["#111827","#9ca3af"],"streaming":[]},
-    {"id":"salvation","title":"救赎","titleEn":"Salvation","year":2026,"synopsis":"埃明·阿尔佩尔执导。第76届柏林电影节评审团大奖。","directors":["埃明·阿尔佩尔"],"cast":[],"genres":["剧情"],"country":["土耳其"],"posterColors":["#7c2d12","#fdba74"],"streaming":[]},
-    {"id":"queen-at-sea","title":"海上女王","titleEn":"Queen at Sea","year":2026,"synopsis":"第76届柏林电影节评审团奖。","directors":["兰斯·哈默"],"cast":["安娜·考尔德-马歇尔","汤姆·考特尼"],"genres":["剧情"],"country":["美国","英国"],"posterColors":["#0f172a","#38bdf8"],"streaming":[]},
-    {"id":"everybody-digs-bill-evans","title":"人人都懂比尔·埃文斯","titleEn":"Everybody Digs Bill Evans","year":2026,"synopsis":"格兰特·吉获第76届柏林电影节最佳导演。","directors":["格兰特·吉"],"cast":[],"genres":["纪录"],"country":["英国"],"posterColors":["#1e293b","#64748b"],"streaming":[]},
-    {"id":"rose-berlin","title":"罗丝","titleEn":"Rose","year":2026,"synopsis":"桑德拉·惠勒获第76届柏林电影节最佳主演。","directors":["马库斯·施莱因策"],"cast":["桑德拉·惠勒"],"genres":["剧情"],"country":["奥地利","德国"],"posterColors":["#4c1d95","#c4b5fd"],"streaming":[]},
-    {"id":"nina-roza","title":"尼娜·罗莎","titleEn":"Nina Roza","year":2026,"synopsis":"第76届柏林电影节最佳编剧。","directors":["热纳维耶芙·迪吕德-德塞勒"],"cast":[],"genres":["剧情"],"country":["加拿大"],"posterColors":["#134e4a","#5eead4"],"streaming":[]},
-    {"id":"honorary-yeoh","title":"杨紫琼","titleEn":"Michelle Yeoh","year":2026,"synopsis":"第76届柏林电影节荣誉金熊。","directors":[],"cast":["杨紫琼"],"genres":["荣誉"],"country":["马来西亚"],"posterColors":["#422006","#f59e0b"],"streaming":[]},
-    {"id":"fruit-gathering","title":"采果","titleEn":"Fruit Gathering","year":2026,"synopsis":"昂漂执导。第60届卡罗维发利电影节水晶球奖。","directors":["昂漂"],"cast":[],"genres":["剧情"],"country":["缅甸","捷克","法国"],"posterColors":["#14532d","#86efac"],"streaming":[]},
-    {"id":"the-guest-kv","title":"客人","titleEn":"The Guest","year":2026,"synopsis":"第60届卡罗维发利电影节评审团特别奖。","directors":["马兹·门格尔"],"cast":[],"genres":["剧情"],"country":["丹麦"],"posterColors":["#1e3a5f","#93c5fd"],"streaming":[]},
-    {"id":"secret-agent","title":"秘密特工","titleEn":"The Secret Agent","year":2025,"synopsis":"第83届金球奖剧情类男主角、最佳非英语片。","directors":[],"cast":["瓦格纳·莫拉"],"genres":["剧情"],"country":["巴西"],"posterColors":["#365314","#bef264"],"streaming":[]},
-    {"id":"marty-supreme","title":"马蒂至上","titleEn":"Marty Supreme","year":2025,"synopsis":"蒂莫西·柴勒梅德获第83届金球奖音乐/喜剧类男主角。","directors":[],"cast":["蒂莫西·柴勒梅德"],"genres":["剧情"],"country":["美国"],"posterColors":["#7c2d12","#fbbf24"],"streaming":[]},
-    {"id":"if-i-had-legs","title":"假如我有腿，就踢你","titleEn":"If I Had Legs I'd Kick You","year":2025,"synopsis":"罗丝·伯恩获第83届金球奖音乐/喜剧类女主角。","directors":[],"cast":["罗丝·伯恩"],"genres":["剧情"],"country":["美国"],"posterColors":["#4c0519","#fb7185"],"streaming":[]},
-    {"id":"a-foggy-tale","title":"大濱","titleEn":"A Foggy Tale","year":2025,"synopsis":"陈玉勋执导。第62届金马奖最佳剧情片。","directors":["陈玉勋"],"cast":[],"genres":["剧情"],"country":["台湾"],"posterColors":["#44403c","#d6d3d1"],"streaming":[]},
-    {"id":"queerpanorama","title":"众生相","titleEn":"Queerpanorama","year":2025,"synopsis":"李骏硕获第62届金马奖最佳导演。","directors":["李骏硕"],"cast":[],"genres":["剧情"],"country":["香港"],"posterColors":["#1e1b4b","#a78bfa"],"streaming":[]},
-    {"id":"lucky-lu","title":"幸福之路","titleEn":"Lucky Lu","year":2025,"synopsis":"张震获第62届金马奖最佳男主角。","directors":["Lloyd Lee Choi"],"cast":["张震"],"genres":["剧情"],"country":["美国","台湾"],"posterColors":["#0c4a6e","#7dd3fc"],"streaming":[]},
-    {"id":"mother-bhumi","title":"地母","titleEn":"Mother Bhumi","year":2025,"synopsis":"范冰冰获第62届金马奖最佳女主角。","directors":[],"cast":["范冰冰"],"genres":["剧情"],"country":["马来西亚"],"posterColors":["#365314","#a3e635"],"streaming":[]},
-    {"id":"family-matters","title":"我家的事","titleEn":"Family Matters","year":2025,"synopsis":"曾敬骊获第62届金马奖最佳男配角。","directors":[],"cast":["曾敬骊"],"genres":["剧情"],"country":["台湾"],"posterColors":["#1c1917","#a8a29e"],"streaming":[]}
+    {
+      "id": "sheep-in-the-box",
+      "title": "盒中羊",
+      "titleEn": "Sheep in the Box",
+      "year": 2026,
+      "synopsis": "是枝裕和新作。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "是枝裕和"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "日本"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#94a3b8"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "nagi-notes",
+      "title": "凪日记",
+      "titleEn": "Nagi Notes",
+      "year": 2026,
+      "synopsis": "深田晃司执导。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "深田晃司"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "日本"
+      ],
+      "posterColors": [
+        "#164e63",
+        "#67e8f9"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "hope-na",
+      "title": "希望",
+      "titleEn": "Hope",
+      "year": 2026,
+      "synopsis": "罗泓轼执导。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "罗泓轼"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情",
+        "惊悚"
+      ],
+      "country": [
+        "韩国"
+      ],
+      "posterColors": [
+        "#7f1d1d",
+        "#fca5a5"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "bitter-christmas",
+      "title": "苦涩的圣诞节",
+      "titleEn": "Bitter Christmas",
+      "year": 2026,
+      "synopsis": "佩德罗·阿尔莫多瓦新作。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "佩德罗·阿尔莫多瓦"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "西班牙"
+      ],
+      "posterColors": [
+        "#881337",
+        "#fb7185"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "paper-tiger",
+      "title": "纸老虎",
+      "titleEn": "Paper Tiger",
+      "year": 2026,
+      "synopsis": "詹姆斯·格雷执导。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "詹姆斯·格雷"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#44403c",
+        "#a8a29e"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "parallel-tales",
+      "title": "平行故事",
+      "titleEn": "Parallel Tales",
+      "year": 2026,
+      "synopsis": "阿斯哈·法哈蒂执导。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "阿斯哈·法哈蒂"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "伊朗"
+      ],
+      "posterColors": [
+        "#14532d",
+        "#86efac"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "moulin",
+      "title": "穆兰",
+      "titleEn": "Moulin",
+      "year": 2026,
+      "synopsis": "拉斯洛·奈迈施执导。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "拉斯洛·奈迈施"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "匈牙利"
+      ],
+      "posterColors": [
+        "#1e1b4b",
+        "#818cf8"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "the-beloved",
+      "title": "所爱之人",
+      "titleEn": "The Beloved",
+      "year": 2026,
+      "synopsis": "罗德里戈·索罗戈延执导。第79届暨纳电影节主竞赛入围。",
+      "directors": [
+        "罗德里戈·索罗戈延"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "西班牙"
+      ],
+      "posterColors": [
+        "#7c2d12",
+        "#fdba74"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "you-dont-belong-here",
+      "title": "你不属于这里",
+      "titleEn": "You Don't Belong Here",
+      "year": 2026,
+      "synopsis": "弗洛林·塞尔班执导。第79届洛迦诺电影节金豹奖。",
+      "directors": [
+        "弗洛林·塞尔班"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "罗马尼亚"
+      ],
+      "posterColors": [
+        "#1c1917",
+        "#a8a29e"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "nowhere-to-lay-eyes",
+      "title": "无处安放双眼",
+      "titleEn": "Nowhere to Lay My Eyes",
+      "year": 2026,
+      "synopsis": "洪常秀执导。第79届洛迦诺电影节最佳导演；金敏喜获最佳表演。",
+      "directors": [
+        "洪常秀"
+      ],
+      "cast": [
+        "金敏喜"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "韩国"
+      ],
+      "posterColors": [
+        "#0c4a6e",
+        "#7dd3fc"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "the-riverbank",
+      "title": "河岸",
+      "titleEn": "The Riverbank",
+      "year": 2026,
+      "synopsis": "第79届洛迦诺电影节评审团特别奖。",
+      "directors": [
+        "马特乌·法里亚斯",
+        "埃诺克·卡瓦略"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "巴西",
+        "德国"
+      ],
+      "posterColors": [
+        "#14532d",
+        "#4ade80"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "ketticè",
+      "title": "凯蒂切",
+      "titleEn": "Ketticè",
+      "year": 2026,
+      "synopsis": "莫妮卡·贝鲁奇凭本片获第79届洛迦诺电影节最佳表演。",
+      "directors": [
+        "乔瓦尼·托尔托里奇"
+      ],
+      "cast": [
+        "莫妮卡·贝鲁奇"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "意大利"
+      ],
+      "posterColors": [
+        "#4c0519",
+        "#fb7185"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "atlantic",
+      "title": "大西洋",
+      "titleEn": "Atlantic",
+      "year": 2026,
+      "synopsis": "钟凯峰执导。第28届上海国际电影节金爵奖最佳影片、最佳摄影。",
+      "directors": [
+        "钟凯峰"
+      ],
+      "cast": [
+        "尹易",
+        "王一通",
+        "李雪琴"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "中国"
+      ],
+      "posterColors": [
+        "#0c4a6e",
+        "#38bdf8"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "glimmer-girl",
+      "title": "微光女孩",
+      "titleEn": "Glimmer Girl",
+      "year": 2026,
+      "synopsis": "第28届上海国际电影节金爵奖评委会大奖。",
+      "directors": [
+        "尼古拉斯·林孔·吉耶"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "比利时"
+      ],
+      "posterColors": [
+        "#1e1b4b",
+        "#c4b5fd"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "halima",
+      "title": "哈莉玛",
+      "titleEn": "Halima",
+      "year": 2026,
+      "synopsis": "第28届上海国际电影节金爵奖最佳导演、最佳女演员。",
+      "directors": [
+        "亚辛·伊德里西"
+      ],
+      "cast": [
+        "哈迪贾·阿玛里"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "摩洛哥"
+      ],
+      "posterColors": [
+        "#365314",
+        "#a3e635"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "box-mystery",
+      "title": "纸盒藏迷",
+      "titleEn": "Mystery in a Carton",
+      "year": 2026,
+      "synopsis": "张颂文凭本片获第28届上海国际电影节金爵奖最佳男演员。",
+      "directors": [],
+      "cast": [
+        "张颂文"
+      ],
+      "genres": [
+        "悬疑"
+      ],
+      "country": [
+        "中国",
+        "香港"
+      ],
+      "posterColors": [
+        "#111827",
+        "#9ca3af"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "salvation",
+      "title": "救赎",
+      "titleEn": "Salvation",
+      "year": 2026,
+      "synopsis": "埃明·阿尔佩尔执导。第76届柏林电影节评审团大奖。",
+      "directors": [
+        "埃明·阿尔佩尔"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "土耳其"
+      ],
+      "posterColors": [
+        "#7c2d12",
+        "#fdba74"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "queen-at-sea",
+      "title": "海上女王",
+      "titleEn": "Queen at Sea",
+      "year": 2026,
+      "synopsis": "第76届柏林电影节评审团奖。",
+      "directors": [
+        "兰斯·哈默"
+      ],
+      "cast": [
+        "安娜·考尔德-马歇尔",
+        "汤姆·考特尼"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国",
+        "英国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#38bdf8"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "everybody-digs-bill-evans",
+      "title": "人人都懂比尔·埃文斯",
+      "titleEn": "Everybody Digs Bill Evans",
+      "year": 2026,
+      "synopsis": "格兰特·吉获第76届柏林电影节最佳导演。",
+      "directors": [
+        "格兰特·吉"
+      ],
+      "cast": [],
+      "genres": [
+        "纪录"
+      ],
+      "country": [
+        "英国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#64748b"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "rose-berlin",
+      "title": "罗丝",
+      "titleEn": "Rose",
+      "year": 2026,
+      "synopsis": "桑德拉·惠勒获第76届柏林电影节最佳主演。",
+      "directors": [
+        "马库斯·施莱因策"
+      ],
+      "cast": [
+        "桑德拉·惠勒"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "奥地利",
+        "德国"
+      ],
+      "posterColors": [
+        "#4c1d95",
+        "#c4b5fd"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "nina-roza",
+      "title": "尼娜·罗莎",
+      "titleEn": "Nina Roza",
+      "year": 2026,
+      "synopsis": "第76届柏林电影节最佳编剧。",
+      "directors": [
+        "热纳维耶芙·迪吕德-德塞勒"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "加拿大"
+      ],
+      "posterColors": [
+        "#134e4a",
+        "#5eead4"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "honorary-yeoh",
+      "title": "杨紫琼",
+      "titleEn": "Michelle Yeoh",
+      "year": 2026,
+      "synopsis": "第76届柏林电影节荣誉金熊。",
+      "directors": [],
+      "cast": [
+        "杨紫琼"
+      ],
+      "genres": [
+        "荣誉"
+      ],
+      "country": [
+        "马来西亚"
+      ],
+      "posterColors": [
+        "#422006",
+        "#f59e0b"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "fruit-gathering",
+      "title": "采果",
+      "titleEn": "Fruit Gathering",
+      "year": 2026,
+      "synopsis": "昂漂执导。第60届卡罗维发利电影节水晶球奖。",
+      "directors": [
+        "昂漂"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "缅甸",
+        "捷克",
+        "法国"
+      ],
+      "posterColors": [
+        "#14532d",
+        "#86efac"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "the-guest-kv",
+      "title": "客人",
+      "titleEn": "The Guest",
+      "year": 2026,
+      "synopsis": "第60届卡罗维发利电影节评审团特别奖。",
+      "directors": [
+        "马兹·门格尔"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "丹麦"
+      ],
+      "posterColors": [
+        "#1e3a5f",
+        "#93c5fd"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "secret-agent",
+      "title": "秘密特工",
+      "titleEn": "The Secret Agent",
+      "year": 2025,
+      "synopsis": "第83届金球奖剧情类男主角、最佳非英语片。",
+      "directors": [],
+      "cast": [
+        "瓦格纳·莫拉"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "巴西"
+      ],
+      "posterColors": [
+        "#365314",
+        "#bef264"
+      ],
+      "streaming": [],
+      "poster": "/posters/secret-agent.png"
+    },
+    {
+      "id": "marty-supreme",
+      "title": "马蒂至上",
+      "titleEn": "Marty Supreme",
+      "year": 2025,
+      "synopsis": "蒂莫西·柴勒梅德获第83届金球奖音乐/喜剧类男主角。",
+      "directors": [],
+      "cast": [
+        "蒂莫西·柴勒梅德"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#7c2d12",
+        "#fbbf24"
+      ],
+      "streaming": [],
+      "poster": "/posters/marty-supreme.jpg"
+    },
+    {
+      "id": "if-i-had-legs",
+      "title": "假如我有腿，就踢你",
+      "titleEn": "If I Had Legs I'd Kick You",
+      "year": 2025,
+      "synopsis": "罗丝·伯恩获第83届金球奖音乐/喜剧类女主角。",
+      "directors": [],
+      "cast": [
+        "罗丝·伯恩"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#4c0519",
+        "#fb7185"
+      ],
+      "streaming": [],
+      "poster": "/posters/if-i-had-legs.jpg"
+    },
+    {
+      "id": "a-foggy-tale",
+      "title": "大濱",
+      "titleEn": "A Foggy Tale",
+      "year": 2025,
+      "synopsis": "陈玉勋执导。第62届金马奖最佳剧情片。",
+      "directors": [
+        "陈玉勋"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "台湾"
+      ],
+      "posterColors": [
+        "#44403c",
+        "#d6d3d1"
+      ],
+      "streaming": [],
+      "poster": "/posters/a-foggy-tale.jpg"
+    },
+    {
+      "id": "queerpanorama",
+      "title": "众生相",
+      "titleEn": "Queerpanorama",
+      "year": 2025,
+      "synopsis": "李骏硕获第62届金马奖最佳导演。",
+      "directors": [
+        "李骏硕"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "香港"
+      ],
+      "posterColors": [
+        "#1e1b4b",
+        "#a78bfa"
+      ],
+      "streaming": [],
+      "poster": "/posters/queerpanorama.jpg"
+    },
+    {
+      "id": "lucky-lu",
+      "title": "幸福之路",
+      "titleEn": "Lucky Lu",
+      "year": 2025,
+      "synopsis": "张震获第62届金马奖最佳男主角。",
+      "directors": [
+        "Lloyd Lee Choi"
+      ],
+      "cast": [
+        "张震"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国",
+        "台湾"
+      ],
+      "posterColors": [
+        "#0c4a6e",
+        "#7dd3fc"
+      ],
+      "streaming": [],
+      "poster": "/posters/lucky-lu.jpg"
+    },
+    {
+      "id": "mother-bhumi",
+      "title": "地母",
+      "titleEn": "Mother Bhumi",
+      "year": 2025,
+      "synopsis": "范冰冰获第62届金马奖最佳女主角。",
+      "directors": [],
+      "cast": [
+        "范冰冰"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "马来西亚"
+      ],
+      "posterColors": [
+        "#365314",
+        "#a3e635"
+      ],
+      "streaming": [],
+      "poster": "/posters/mother-bhumi.jpg"
+    },
+    {
+      "id": "family-matters",
+      "title": "我家的事",
+      "titleEn": "Family Matters",
+      "year": 2025,
+      "synopsis": "曾敬骊获第62届金马奖最佳男配角。",
+      "directors": [],
+      "cast": [
+        "曾敬骊"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "台湾"
+      ],
+      "posterColors": [
+        "#1c1917",
+        "#a8a29e"
+      ],
+      "streaming": []
+    }
   ],
   "ceremonies": [
-    {"id":"cannes-79-lineup","orgId":"cannes","name":"第79届暨纳电影节","nameEn":"79th Cannes Film Festival","year":2026,"date":"2026-04-09","location":"法国暨纳","nominations":[
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"sheep-in-the-box","personNames":["是枝裕和"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"nagi-notes","personNames":["深田晃司"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"hope-na","personNames":["罗泓轼"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"bitter-christmas","personNames":["佩德罗·阿尔莫多瓦"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"paper-tiger","personNames":["詹姆斯·格雷"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"parallel-tales","personNames":["阿斯哈·法哈蒂"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"moulin","personNames":["拉斯洛·奈迈施"],"result":"nominated","date":"2026-04-09"},
-      {"categoryId":"competition","categoryName":"主竞赛入围","filmId":"the-beloved","personNames":["罗德里戈·索罗戈延"],"result":"nominated","date":"2026-04-09"}
-    ]},
-    {"id":"locarno-79","orgId":"locarno","name":"第79届洛迦诺电影节","nameEn":"79th Locarno Film Festival","year":2026,"date":"2026-08-15","location":"瑞士洛迦诺（8月5–15日）","nominations":[
-      {"categoryId":"golden-leopard","categoryName":"金豹奖","filmId":"you-dont-belong-here","personNames":["弗洛林·塞尔班"],"result":"won","date":"2026-08-15"},
-      {"categoryId":"special-jury","categoryName":"评审团特别奖","filmId":"the-riverbank","personNames":["马特乌·法里亚斯","埃诺克·卡瓦略"],"result":"won","date":"2026-08-15"},
-      {"categoryId":"best-director","categoryName":"最佳导演","filmId":"nowhere-to-lay-eyes","personNames":["洪常秀"],"result":"won","date":"2026-08-15"},
-      {"categoryId":"best-performance-kim","categoryName":"最佳表演","filmId":"nowhere-to-lay-eyes","personNames":["金敏喜"],"result":"won","date":"2026-08-15"},
-      {"categoryId":"best-performance-bellucci","categoryName":"最佳表演","filmId":"ketticè","personNames":["莫妮卡·贝鲁奇"],"result":"won","date":"2026-08-15"}
-    ]},
-    {"id":"shanghai-28","orgId":"shanghai","name":"第28届上海国际电影节","nameEn":"28th Shanghai International Film Festival","year":2026,"date":"2026-06-20","location":"中国上海大剧院","nominations":[
-      {"categoryId":"golden-goblet","categoryName":"金爵奖最佳影片","filmId":"atlantic","personNames":["钟凯峰"],"result":"won","date":"2026-06-20"},
-      {"categoryId":"jury-prize","categoryName":"评委会大奖","filmId":"glimmer-girl","personNames":["尼古拉斯·林孔·吉耶"],"result":"won","date":"2026-06-20"},
-      {"categoryId":"best-director","categoryName":"最佳导演","filmId":"halima","personNames":["亚辛·伊德里西"],"result":"won","date":"2026-06-20"},
-      {"categoryId":"best-actress","categoryName":"最佳女演员","filmId":"halima","personNames":["哈迪贾·阿玛里"],"result":"won","date":"2026-06-20"},
-      {"categoryId":"best-actor","categoryName":"最佳男演员","filmId":"box-mystery","personNames":["张颂文"],"result":"won","date":"2026-06-20"}
-    ]},
-    {"id":"berlin-76-more","orgId":"berlin","name":"第76届柏林电影节","nameEn":"76th Berlin International Film Festival","year":2026,"date":"2026-02-21","location":"德国柏林（2月12–22日）","nominations":[
-      {"categoryId":"grand-jury","categoryName":"评审团大奖（银熊）","filmId":"salvation","personNames":["埃明·阿尔佩尔"],"result":"won","date":"2026-02-21"},
-      {"categoryId":"jury-prize","categoryName":"评审团奖（银熊）","filmId":"queen-at-sea","personNames":["兰斯·哈默"],"result":"won","date":"2026-02-21"},
-      {"categoryId":"best-director","categoryName":"最佳导演（银熊）","filmId":"everybody-digs-bill-evans","personNames":["格兰特·吉"],"result":"won","date":"2026-02-21"},
-      {"categoryId":"best-lead","categoryName":"最佳主演（银熊）","filmId":"rose-berlin","personNames":["桑德拉·惠勒"],"result":"won","date":"2026-02-21"},
-      {"categoryId":"best-supporting","categoryName":"最佳配角（银熊）","filmId":"queen-at-sea","personNames":["安娜·考尔德-马歇尔","汤姆·考特尼"],"result":"won","date":"2026-02-21"},
-      {"categoryId":"best-screenplay","categoryName":"最佳编剧（银熊）","filmId":"nina-roza","personNames":["热纳维耶芙·迪吕德-德塞勒"],"result":"won","date":"2026-02-21"},
-      {"categoryId":"honorary-bear","categoryName":"荣誉金熊","filmId":"honorary-yeoh","personNames":["杨紫琼"],"result":"won","date":"2026-02-12"}
-    ]},
-    {"id":"kviff-60","orgId":"karlovy-vary","name":"第60届卡罗维发利电影节","nameEn":"60th Karlovy Vary International Film Festival","year":2026,"date":"2026-07-11","location":"捷克卡罗维发利（7月3–11日）","nominations":[
-      {"categoryId":"crystal-globe","categoryName":"水晶球奖","filmId":"fruit-gathering","personNames":["昂漂"],"result":"won","date":"2026-07-11"},
-      {"categoryId":"special-jury","categoryName":"评审团特别奖","filmId":"the-guest-kv","personNames":["马兹·门格尔"],"result":"won","date":"2026-07-11"}
-    ]}
+    {
+      "id": "cannes-79-lineup",
+      "orgId": "cannes",
+      "name": "第79届暨纳电影节",
+      "nameEn": "79th Cannes Film Festival",
+      "year": 2026,
+      "date": "2026-04-09",
+      "location": "法国暨纳",
+      "nominations": [
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "sheep-in-the-box",
+          "personNames": [
+            "是枝裕和"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "nagi-notes",
+          "personNames": [
+            "深田晃司"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "hope-na",
+          "personNames": [
+            "罗泓轼"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "bitter-christmas",
+          "personNames": [
+            "佩德罗·阿尔莫多瓦"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "paper-tiger",
+          "personNames": [
+            "詹姆斯·格雷"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "parallel-tales",
+          "personNames": [
+            "阿斯哈·法哈蒂"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "moulin",
+          "personNames": [
+            "拉斯洛·奈迈施"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        },
+        {
+          "categoryId": "competition",
+          "categoryName": "主竞赛入围",
+          "filmId": "the-beloved",
+          "personNames": [
+            "罗德里戈·索罗戈延"
+          ],
+          "result": "nominated",
+          "date": "2026-04-09"
+        }
+      ]
+    },
+    {
+      "id": "locarno-79",
+      "orgId": "locarno",
+      "name": "第79届洛迦诺电影节",
+      "nameEn": "79th Locarno Film Festival",
+      "year": 2026,
+      "date": "2026-08-15",
+      "location": "瑞士洛迦诺（8月5–15日）",
+      "nominations": [
+        {
+          "categoryId": "golden-leopard",
+          "categoryName": "金豹奖",
+          "filmId": "you-dont-belong-here",
+          "personNames": [
+            "弗洛林·塞尔班"
+          ],
+          "result": "won",
+          "date": "2026-08-15"
+        },
+        {
+          "categoryId": "special-jury",
+          "categoryName": "评审团特别奖",
+          "filmId": "the-riverbank",
+          "personNames": [
+            "马特乌·法里亚斯",
+            "埃诺克·卡瓦略"
+          ],
+          "result": "won",
+          "date": "2026-08-15"
+        },
+        {
+          "categoryId": "best-director",
+          "categoryName": "最佳导演",
+          "filmId": "nowhere-to-lay-eyes",
+          "personNames": [
+            "洪常秀"
+          ],
+          "result": "won",
+          "date": "2026-08-15"
+        },
+        {
+          "categoryId": "best-performance-kim",
+          "categoryName": "最佳表演",
+          "filmId": "nowhere-to-lay-eyes",
+          "personNames": [
+            "金敏喜"
+          ],
+          "result": "won",
+          "date": "2026-08-15"
+        },
+        {
+          "categoryId": "best-performance-bellucci",
+          "categoryName": "最佳表演",
+          "filmId": "ketticè",
+          "personNames": [
+            "莫妮卡·贝鲁奇"
+          ],
+          "result": "won",
+          "date": "2026-08-15"
+        }
+      ]
+    },
+    {
+      "id": "shanghai-28",
+      "orgId": "shanghai",
+      "name": "第28届上海国际电影节",
+      "nameEn": "28th Shanghai International Film Festival",
+      "year": 2026,
+      "date": "2026-06-20",
+      "location": "中国上海大剧院",
+      "nominations": [
+        {
+          "categoryId": "golden-goblet",
+          "categoryName": "金爵奖最佳影片",
+          "filmId": "atlantic",
+          "personNames": [
+            "钟凯峰"
+          ],
+          "result": "won",
+          "date": "2026-06-20"
+        },
+        {
+          "categoryId": "jury-prize",
+          "categoryName": "评委会大奖",
+          "filmId": "glimmer-girl",
+          "personNames": [
+            "尼古拉斯·林孔·吉耶"
+          ],
+          "result": "won",
+          "date": "2026-06-20"
+        },
+        {
+          "categoryId": "best-director",
+          "categoryName": "最佳导演",
+          "filmId": "halima",
+          "personNames": [
+            "亚辛·伊德里西"
+          ],
+          "result": "won",
+          "date": "2026-06-20"
+        },
+        {
+          "categoryId": "best-actress",
+          "categoryName": "最佳女演员",
+          "filmId": "halima",
+          "personNames": [
+            "哈迪贾·阿玛里"
+          ],
+          "result": "won",
+          "date": "2026-06-20"
+        },
+        {
+          "categoryId": "best-actor",
+          "categoryName": "最佳男演员",
+          "filmId": "box-mystery",
+          "personNames": [
+            "张颂文"
+          ],
+          "result": "won",
+          "date": "2026-06-20"
+        }
+      ]
+    },
+    {
+      "id": "berlin-76-more",
+      "orgId": "berlin",
+      "name": "第76届柏林电影节",
+      "nameEn": "76th Berlin International Film Festival",
+      "year": 2026,
+      "date": "2026-02-21",
+      "location": "德国柏林（2月12–22日）",
+      "nominations": [
+        {
+          "categoryId": "grand-jury",
+          "categoryName": "评审团大奖（银熊）",
+          "filmId": "salvation",
+          "personNames": [
+            "埃明·阿尔佩尔"
+          ],
+          "result": "won",
+          "date": "2026-02-21"
+        },
+        {
+          "categoryId": "jury-prize",
+          "categoryName": "评审团奖（银熊）",
+          "filmId": "queen-at-sea",
+          "personNames": [
+            "兰斯·哈默"
+          ],
+          "result": "won",
+          "date": "2026-02-21"
+        },
+        {
+          "categoryId": "best-director",
+          "categoryName": "最佳导演（银熊）",
+          "filmId": "everybody-digs-bill-evans",
+          "personNames": [
+            "格兰特·吉"
+          ],
+          "result": "won",
+          "date": "2026-02-21"
+        },
+        {
+          "categoryId": "best-lead",
+          "categoryName": "最佳主演（银熊）",
+          "filmId": "rose-berlin",
+          "personNames": [
+            "桑德拉·惠勒"
+          ],
+          "result": "won",
+          "date": "2026-02-21"
+        },
+        {
+          "categoryId": "best-supporting",
+          "categoryName": "最佳配角（银熊）",
+          "filmId": "queen-at-sea",
+          "personNames": [
+            "安娜·考尔德-马歇尔",
+            "汤姆·考特尼"
+          ],
+          "result": "won",
+          "date": "2026-02-21"
+        },
+        {
+          "categoryId": "best-screenplay",
+          "categoryName": "最佳编剧（银熊）",
+          "filmId": "nina-roza",
+          "personNames": [
+            "热纳维耶芙·迪吕德-德塞勒"
+          ],
+          "result": "won",
+          "date": "2026-02-21"
+        },
+        {
+          "categoryId": "honorary-bear",
+          "categoryName": "荣誉金熊",
+          "filmId": "honorary-yeoh",
+          "personNames": [
+            "杨紫琼"
+          ],
+          "result": "won",
+          "date": "2026-02-12"
+        }
+      ]
+    },
+    {
+      "id": "kviff-60",
+      "orgId": "karlovy-vary",
+      "name": "第60届卡罗维发利电影节",
+      "nameEn": "60th Karlovy Vary International Film Festival",
+      "year": 2026,
+      "date": "2026-07-11",
+      "location": "捷克卡罗维发利（7月3–11日）",
+      "nominations": [
+        {
+          "categoryId": "crystal-globe",
+          "categoryName": "水晶球奖",
+          "filmId": "fruit-gathering",
+          "personNames": [
+            "昂漂"
+          ],
+          "result": "won",
+          "date": "2026-07-11"
+        },
+        {
+          "categoryId": "special-jury",
+          "categoryName": "评审团特别奖",
+          "filmId": "the-guest-kv",
+          "personNames": [
+            "马兹·门格尔"
+          ],
+          "result": "won",
+          "date": "2026-07-11"
+        }
+      ]
+    }
   ]
 }

@@ -6,6 +6,9 @@ export default function Footer() {
         <p className="mt-1 text-sm text-cinema-muted">
           A类电影节 · 奥斯卡 / 金球 / 金马 / 金像 · 作者 · 流媒体
         </p>
+        <p className="mt-3 text-xs text-cinema-muted/70">
+          时间线只挂已发生的消息日；数据随仓库发布，非实时爬取。
+        </p>
       </div>
     </footer>
   );

@@ -47,6 +47,8 @@ export interface StreamingRelease {
   note?: string;
 }
 
+export type FilmKind = "film" | "honor" | "jury";
+
 export interface Film {
   id: string;
   title: string;
@@ -126,4 +128,7 @@ export interface TimelineEvent {
   detail?: string;
   badge: string;
   accentColor?: string;
+  awards?: string[];
+  directors?: string[];
+  filmKind?: FilmKind;
 }

@@ -9,7 +9,9 @@ import type {
   AwardCeremony,
   AwardOrg,
   AuteurNews,
+  CategoryNomination,
   Film,
+  FilmKind,
   TimelineEvent,
 } from "@/types";
 import {
@@ -59,6 +61,12 @@ function getFilm(id: string): Film | undefined {
   return films.find((f) => f.id === id);
 }
 
+function filmKindOf(film: Film): FilmKind {
+  if (film.genres.includes("荣誉")) return "honor";
+  if (film.genres.includes("评审")) return "jury";
+  return "film";
+}
+
 const A_CLASS = new Set([
   "cannes",
   "venice",
@@ -83,9 +91,27 @@ export function isPublished(date: string, today = todayISO()): boolean {
   return date <= today;
 }
 
+function awardLine(nom: CategoryNomination): string {
+  const person =
+    nom.personNames && nom.personNames.length > 0
+      ? `· ${nom.personNames.join("、")}`
+      : "";
+  return `${nom.categoryName}${person}`;
+}
+
+type CeremonyBucket = {
+  ceremony: AwardCeremony;
+  org?: AwardOrg;
+  film: Film;
+  date: string;
+  dateLabel: string;
+  noms: CategoryNomination[];
+};
+
 export function getTimelineEvents(): TimelineEvent[] {
   const events: TimelineEvent[] = [];
   const today = todayISO();
+  const buckets = new Map<string, CeremonyBucket>();
 
   for (const ceremony of ceremonies) {
     const org = getOrg(ceremony.orgId);
@@ -99,35 +125,60 @@ export function getTimelineEvents(): TimelineEvent[] {
       if (!isPublished(date, today)) continue;
 
       const dateLabel = sourceDate ? formatDate(sourceDate) : `${ceremony.year}年`;
-      const isWin = nom.result === "won";
-      const person =
-        nom.personNames && nom.personNames.length > 0
-          ? ` · ${nom.personNames.join("、")}`
-          : "";
-      const scope = org
-        ? A_CLASS.has(org.id)
-          ? `A类电影节 · ${org.name}`
-          : `${org.name}`
-        : undefined;
-
-      events.push({
-        id: `${ceremony.id}-${nom.categoryId}-${nom.filmId}-${nom.result}`,
-        type: isWin ? "win" : "nomination",
+      const key = `${ceremony.orgId}|${ceremony.year}|${film.id}|${date}`;
+      const existing = buckets.get(key);
+      if (existing) {
+        existing.noms.push(nom);
+        continue;
+      }
+      buckets.set(key, {
+        ceremony,
+        org,
+        film,
         date,
         dateLabel,
-        filmTitle: film.title,
-        filmTitleEn: film.titleEn,
-        filmYear: film.year,
-        poster: withBase(film.poster),
-        posterColors: film.posterColors,
-        summary: `${ceremony.name} · ${nom.categoryName}${person}`,
-        detail: scope
-          ? `${scope}${ceremony.location ? ` · ${ceremony.location}` : ""}`
-          : undefined,
-        badge: isWin ? "获奖" : "入围",
-        accentColor: org?.accentColor,
+        noms: [nom],
       });
     }
+  }
+
+  for (const bucket of buckets.values()) {
+    const { ceremony, org, film, date, dateLabel, noms } = bucket;
+    const kind = filmKindOf(film);
+    const wins = noms.filter((n) => n.result === "won");
+    const isWin = wins.length > 0;
+    const ordered = [...wins, ...noms.filter((n) => n.result !== "won")];
+    const awards = ordered.map(awardLine);
+    const scope = org
+      ? A_CLASS.has(org.id)
+        ? `A类电影节 · ${org.name}`
+        : `${org.name}`
+      : undefined;
+
+    let badge = isWin ? "获奖" : "入围";
+    if (kind === "honor") badge = "荣誉";
+    if (kind === "jury") badge = "评审";
+
+    events.push({
+      id: `${ceremony.orgId}-${ceremony.year}-${film.id}-${date}-${isWin ? "win" : "nom"}`,
+      type: isWin ? "win" : "nomination",
+      date,
+      dateLabel,
+      filmTitle: film.title,
+      filmTitleEn: film.titleEn,
+      filmYear: film.year,
+      poster: withBase(film.poster),
+      posterColors: film.posterColors,
+      summary: `${ceremony.name} · ${awards.join(" / ")}`,
+      detail: scope
+        ? `${scope}${ceremony.location ? ` · ${ceremony.location}` : ""}`
+        : undefined,
+      badge,
+      accentColor: org?.accentColor,
+      awards,
+      directors: film.directors,
+      filmKind: kind,
+    });
   }
 
   for (const film of films) {
@@ -156,6 +207,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         summary: `${platform} · ${statusLabel} ${datePart}${region}`,
         detail: note || undefined,
         badge: "流媒体",
+        directors: film.directors,
+        filmKind: filmKindOf(film),
       });
     }
   }
@@ -178,6 +231,8 @@ export function getTimelineEvents(): TimelineEvent[] {
       detail: news.detail,
       badge: "作者",
       accentColor: "#a78bfa",
+      directors: film.directors,
+      filmKind: filmKindOf(film),
     });
   }
 

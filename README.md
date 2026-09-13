@@ -1,30 +1,27 @@
 # 银幕奖讯 · A类电影节时间线
 
-中文默认的 **FIAPF A 类电影节** 资讯站：一条时间线追踪入围、获奖与相关流媒体预计上线。
+中文默认的电影节 / 奖项资讯站：一条时间线追踪入围、获奖与相关流媒体日程。
 
-**只覆盖 A 类电影节**（优先三大：曙纳、威尼斯、柏林；亦可含洛迦诺、圣塞巴斯蒂安、上海、东京、釜山等）。**不收录**奥斯卡、金球、金马、金像、华表等。
+**主跟 FIAPF A 类电影节**（优先三大：暨纳、威尼斯、柏林；亦可含洛迦诺、圣塞巴斯蒂安、上海、东京、釜山、卡罗维发利）。**同时收录**奥斯卡、金球、金马、金像，以及作者性明确、未走三大竞赛的导演影讯。**不收录**华表。
 
-## 线上访问（重要）
+时间线只挂「已发生」的消息日；未来典礼 / 提名日不进时间线。定档新闻挂官方公布日。
 
-`http://news.readcine.com` 指向阿里云广州 ECS（`8.134.173.91`）。域名未在工信部备案 / 未在阿里云接入备案，阿里云 Beaver 会返回 **403 备案阻断**，HTTPS 443 未开。
+## 线上访问
 
-解法：改到海外托管。仓库已加 [`.github/workflows/pages.yml`](.github/workflows/pages.yml)，构建已通过。
+- 站点：[https://news.readcine.com](https://news.readcine.com)
+- 仓库：[xmcter/movie-awards-site](https://github.com/xmcter/movie-awards-site)
+- 部署：GitHub Pages（Actions 构建 `out/`）+ 仓库根目录 / `public/CNAME` 写 `news.readcine.com`
+- 基路径为空（自定义域不要 `/movie-awards-site` prefix）
 
-**你需要点一次**（代码权限无法代开 GitHub Pages）：
+域名走 Cloudflare。DNS / 源站应指向 `xmcter.github.io`，不要再指国内 ECS（未备案会 403）。推送 `main` 后等 Actions 跑完，必要时在 Cloudflare 清缓存。
 
-1. 打开 [Settings → Pages](https://github.com/xmcter/movie-awards-site/settings/pages)
-2. Build and deployment → Source 选 **GitHub Actions**
-3. 打开 [Actions 失败的那次跑](https://github.com/xmcter/movie-awards-site/actions/workflows/pages.yml) → Re-run jobs
-
-上线后地址：**https://xmcter.github.io/movie-awards-site/**
-
-要恢复 `news.readcine.com`：把 DNS 从 `8.134.173.91` 改成 GitHub Pages（`CNAME` → `xmcter.github.io`），再在仓库根目录加 `CNAME` 文件写 `news.readcine.com`，并把 `GITHUB_PAGES` 基路径改回空（自定义域名不需要 `/movie-awards-site` prefix）。
+Pages 若未启用：Settings → Pages → Source 选 **GitHub Actions**。
 
 ## 技术栈
 
-- [Next.js](https://nextjs.org/) App Router + TypeScript（`output: 'export'` 静态导出）
+- Next.js App Router + TypeScript（`output: 'export'` 静态导出）
 - Tailwind CSS
-- 本地 JSON 种子数据（无需 API Key、无需登录）
+- 本地 JSON 种子（无 API Key、无登录、无线上爬虫）
 
 ## 本地运行
 
@@ -43,7 +40,11 @@ npm run build   # 输出到 out/
 
 ## 页面
 
-单一主页：**时间线**（最新在前）。顶部可按「全部 / 获奖 / 入围 / 流媒体」筛选，并支持轻量搜索。
+单一主页：**时间线**（最新在前）。可按「全部 / 获奖 / 入围 / 作者 / 流媒体」筛选，支持轻量搜索（含导演、奖项）。
+
+同一电影节、同一部片、同一消息日的多个奖项合成一张卡。荣誉奖 / 评委主席仍在时间线，徽章为「荣誉」「评审」，不当普通影片计。
+
+下拉刷新只重载当前静态包，不会爬新奖。新消息要改 JSON 并推送 `main`。
 
 ## 数据
 
@@ -52,26 +53,21 @@ npm run build   # 输出到 out/
 | `src/data/films.json` | 影片与流媒体日程 |
 | `src/data/ceremonies.json` | 电影节典礼与入围 / 获奖 |
 | `src/data/orgs.json` | A 类电影节组织 |
+| `src/data/major-awards.json` | 奥斯卡 / 金球 / 金马 / 金像 |
+| `src/data/more-catalog.json` / `extra-catalog.json` | 补充影片与典礼 |
+| `src/data/auteur-news.json` | 作者向已发生影讯 |
 
-时间线事件由 `src/lib/data.ts` 的 `getTimelineEvents()` 从上述种子派生。
+时间线由 `src/lib/data.ts` 的 `getTimelineEvents()` 从种子派生。构建时按当天日期切掉未来事件。
 
-`ceremonies[].date` / 可选的 `nominations[].date` 是**消息 / 事件发生日**（颁奖夜、片单公布日、荣誉奖宣布日等），不是页面部署或刷新时间。下拉刷新只会重新加载静态页，不会改写这些日期。
+`result`：`nominated` / `won`。`streaming[].status`：`announced` / `estimated` / `tba`。不确定的流媒体日期一律 TBA / estimated，禁止编造已官宣日期。
 
-`result`：`nominated`（入围）或 `won`（获奖）。`streaming[].status`：`announced` / `estimated` / `tba`。不确定的流媒体日期一律 TBA/estimated，禁止编造已官宣日期。
+影片 `genres` 含「荣誉」「评审」时视为人物荣誉 / 评审事件，不是普通影片。
 
-## 旧版：阿里云 rsync（被备案拦，仅留档）
+## 海报
 
-```bash
-./deploy/deploy.sh
-```
+时间线卡片使用 `public/posters/{filmId}.jpg`。站点为静态导出，**运行时不依赖 API Key**。
 
-默认 rsync `out/` → `root@8.134.173.91:/var/www/movie-awards-site/`。未备案域名不要再指这台国内机器。
-
-## 海报图片
-
-时间线卡片使用 `public/posters/{filmId}.jpg` 本地海报（由影片 `poster` 字段引用）。站点为静态导出，**运行时不依赖 API Key**。
-
-海报仅供个人 / 编辑性展示；若许可要求，请替换为自有授权素材。来源多为公开宣传图（如 TMDB 可公开访问的海报路径），不保证可商用再分发。
+海报仅供个人 / 编辑性展示。
 
 ## 许可
 

@@ -80,7 +80,15 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     return events.filter((e) => {
       if (filter !== "all" && e.type !== filter) return false;
       if (!q) return true;
-      const hay = [e.filmTitle, e.filmTitleEn, e.summary, e.detail, e.badge]
+      const hay = [
+        e.filmTitle,
+        e.filmTitleEn,
+        e.summary,
+        e.detail,
+        e.badge,
+        ...(e.directors ?? []),
+        ...(e.awards ?? []),
+      ]
         .filter(Boolean)
         .join(" ")
         .toLowerCase();
@@ -163,7 +171,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           消息时间
                         </span>
                       ) : null}
-                      <TypeBadge type={event.type} />
+                      <TypeBadge type={event.type} label={event.badge} />
                     </div>
                     <h2 className="mt-2 font-display text-lg text-cinema-text">
                       {event.filmTitle}
@@ -176,9 +184,17 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                     {event.filmTitleEn ? (
                       <p className="text-xs text-cinema-muted/80">{event.filmTitleEn}</p>
                     ) : null}
-                    <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
-                      {event.summary}
-                    </p>
+                    {event.awards && event.awards.length > 1 ? (
+                      <ul className="mt-2 space-y-0.5 text-sm leading-relaxed text-cinema-muted">
+                        {event.awards.map((line) => (
+                          <li key={line}>{line}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
+                        {event.summary}
+                      </p>
+                    )}
                     {event.detail ? (
                       <p className="mt-1 text-xs text-cinema-muted/70">{event.detail}</p>
                     ) : null}

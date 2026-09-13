@@ -57,7 +57,7 @@ function getOrg(id: string): AwardOrg | undefined {
   return orgs.find((o) => o.id === id);
 }
 
-function getFilm(id: string): Film | undefined {
+export function getFilm(id: string): Film | undefined {
   return films.find((f) => f.id === id);
 }
 
@@ -164,6 +164,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       type: isWin ? "win" : "nomination",
       date,
       dateLabel,
+      filmId: film.id,
       filmTitle: film.title,
       filmTitleEn: film.titleEn,
       filmYear: film.year,
@@ -199,6 +200,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         type: "streaming",
         date: release.date || "",
         dateLabel: release.date ? formatDate(release.date) : "待定",
+        filmId: film.id,
         filmTitle: film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
@@ -222,6 +224,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       type: "auteur",
       date: news.date,
       dateLabel: formatDate(news.date),
+      filmId: film.id,
       filmTitle: film.title,
       filmTitleEn: film.titleEn,
       filmYear: film.year,
@@ -243,4 +246,8 @@ export function getTimelineEvents(): TimelineEvent[] {
     const order = { win: 0, nomination: 1, auteur: 2, streaming: 3 } as const;
     return order[a.type] - order[b.type];
   });
+}
+
+export function getFilmEvents(filmId: string): TimelineEvent[] {
+  return getTimelineEvents().filter((e) => e.filmId === filmId);
 }

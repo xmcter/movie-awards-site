@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
 
@@ -174,7 +175,17 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                       <TypeBadge type={event.type} label={event.badge} />
                     </div>
                     <h2 className="mt-2 font-display text-lg text-cinema-text">
-                      {event.filmTitle}
+                      {event.filmId ? (
+                        <Link
+                          href={`/film/${event.filmId}`}
+                          prefetch={false}
+                          className="hover:text-cinema-gold"
+                        >
+                          {event.filmTitle}
+                        </Link>
+                      ) : (
+                        event.filmTitle
+                      )}
                       {event.filmYear ? (
                         <span className="ml-2 text-sm font-sans font-normal text-cinema-muted">
                           {event.filmYear}

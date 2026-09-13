@@ -119,6 +119,7 @@ export interface TimelineEvent {
   type: TimelineEventType;
   date: string;
   dateLabel: string;
+  filmId?: string;
   filmTitle: string;
   filmTitleEn?: string;
   filmYear?: number;

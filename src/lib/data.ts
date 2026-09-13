@@ -4,6 +4,7 @@ import ceremoniesData from "@/data/ceremonies.json";
 import auteurNewsData from "@/data/auteur-news.json";
 import majorAwardsData from "@/data/major-awards.json";
 import moreCatalogData from "@/data/more-catalog.json";
+import extraCatalogData from "@/data/extra-catalog.json";
 import type {
   AwardCeremony,
   AwardOrg,
@@ -26,17 +27,20 @@ type CatalogSlice = {
 
 const major = majorAwardsData as unknown as CatalogSlice;
 const extra = moreCatalogData as unknown as CatalogSlice;
+const moreExtra = extraCatalogData as unknown as CatalogSlice;
 
 export const films = [
   ...(filmsData as Film[]),
   ...major.films,
   ...extra.films,
+  ...moreExtra.films,
 ];
 export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [
   ...(ceremoniesData as AwardCeremony[]),
   ...major.ceremonies,
   ...extra.ceremonies,
+  ...moreExtra.ceremonies,
 ];
 export const auteurNews = auteurNewsData as AuteurNews[];
 

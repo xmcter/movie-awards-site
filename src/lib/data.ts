@@ -290,5 +290,5 @@ export function getTimelineEvents(): TimelineEvent[] {
 }
 
 export function getFilmEvents(filmId: string): TimelineEvent[] {
-  return getTimelineEvents().filter((e) => e.e.filmId === filmId);
+  return getTimelineEvents().filter((e) => e.filmId === filmId);
 }

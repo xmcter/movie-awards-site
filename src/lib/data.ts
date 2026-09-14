@@ -6,6 +6,7 @@ import majorAwardsData from "@/data/major-awards.json";
 import moreCatalogData from "@/data/more-catalog.json";
 import extraCatalogData from "@/data/extra-catalog.json";
 import densityPackData from "@/data/density-pack.json";
+import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
 import type {
   AwardCeremony,
@@ -37,6 +38,7 @@ const major = majorAwardsData as unknown as CatalogSlice;
 const extra = moreCatalogData as unknown as CatalogSlice;
 const moreExtra = extraCatalogData as unknown as CatalogSlice;
 const density = densityPackData as unknown as CatalogSlice;
+const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 
 function applyCopy(film: Film): Film {
@@ -63,7 +65,8 @@ export const ceremonies = [
   ...major.ceremonies,
   ...extra.ceremonies,
   ...moreExtra.ceremonies,
-  ...density.ceremonies,
+  ...(density.ceremonies || []),
+  ...densityCeremonies,
 ];
 export const auteurNews = auteurNewsData as AuteurNews[];
 

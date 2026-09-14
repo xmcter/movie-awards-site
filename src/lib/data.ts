@@ -8,6 +8,7 @@ import extraCatalogData from "@/data/extra-catalog.json";
 import densityPackData from "@/data/density-pack.json";
 import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
+import posterUrlsData from "@/data/poster-urls.json";
 import type {
   AwardCeremony,
   AwardOrg,
@@ -40,16 +41,65 @@ const moreExtra = extraCatalogData as unknown as CatalogSlice;
 const density = densityPackData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
+const posterUrls = posterUrlsData as Record<string, string>;
+
+const LOCAL_POSTER_IDS = new Set([
+  "a-foggy-tale",
+  "all-of-a-sudden",
+  "black-red-yellow",
+  "bucking-fastard",
+  "catching-the-wind",
+  "coward",
+  "fatherland",
+  "fjord",
+  "gloaming-in-luomu",
+  "hamnet",
+  "honorary-burstyn",
+  "honorary-clooney",
+  "if-i-had-legs",
+  "ink",
+  "kpop-demon-hunters",
+  "look-back",
+  "los-domingos",
+  "lucky-lu",
+  "marty-supreme",
+  "minotaur",
+  "mother-bhumi",
+  "one-battle",
+  "our-redemption",
+  "palestine-36",
+  "queerpanorama",
+  "sentimental-value",
+  "sinners",
+  "the-black-ball",
+  "the-dreamed-adventure",
+  "two-seasons-two-strangers",
+  "venice-jury-2026",
+  "weapons",
+  "wild-horse-nine",
+  "yellow-letters",
+]);
 
 function applyCopy(film: Film): Film {
   const extraCopy = filmCopy[film.id];
-  if (!extraCopy) return film;
-  return {
-    ...film,
-    ...extraCopy,
-    directors: extraCopy.directors ?? film.directors,
-    cast: extraCopy.cast ?? film.cast,
-  };
+  const mapped = posterUrls[film.id];
+  const local =
+    film.poster ||
+    mapped ||
+    (LOCAL_POSTER_IDS.has(film.id) ? `/posters/${film.id}.jpg` : undefined);
+  const merged: Film = extraCopy
+    ? {
+        ...film,
+        ...extraCopy,
+        directors: extraCopy.directors ?? film.directors,
+        cast: extraCopy.cast ?? film.cast,
+        poster: local,
+      }
+    : { ...film, poster: local };
+  if (film.id === "secret-agent" && !merged.poster) {
+    merged.poster = "/posters/secret-agent.png";
+  }
+  return merged;
 }
 
 export const films = [
@@ -74,6 +124,7 @@ const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 function withBase(path?: string): string | undefined {
   if (!path) return undefined;
+  if (/^https?:\/\//i.test(path)) return path;
   return `${assetBase}${path}`;
 }
 

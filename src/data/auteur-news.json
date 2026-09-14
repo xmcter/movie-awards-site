@@ -1,5 +1,13 @@
 [
   {
+    "id": "possible-love-oscar-netflix",
+    "filmId": "possible-love",
+    "date": "2026-09-14",
+    "kind": "release",
+    "summary": "韩国申奥 + Netflix 扩库 · 李沧东",
+    "detail": "作者向 · 《可能的爱情》成为韩国角逐第99届奥斯卡最佳国际影片候选。Netflix 同步扩大李沧东旧作全球上架。院线：韩国 9/23，英美日加澳 10/22–23，全球流媒体 11/6。"
+  },
+  {
     "id": "digger-final-trailer",
     "filmId": "digger",
     "date": "2026-09-09",
@@ -32,6 +40,22 @@
     "detail": "作者向 · 院线。北美 7/17、内地 8/14。全片 IMAX 70mm 胶片拍摄，未选三大竞赛。"
   },
   {
+    "id": "odyssey-china-screens",
+    "filmId": "the-odyssey",
+    "date": "2026-08-13",
+    "kind": "box-office",
+    "summary": "内地超两万块银幕开画 · 克里斯托弗·诺兰",
+    "detail": "作者向 · 宣发。预售加点映约 9100 万人民币。近九成 IMAX 场次给《奥德赛》。"
+  },
+  {
+    "id": "odyssey-beijing-premiere",
+    "filmId": "the-odyssey",
+    "date": "2026-07-30",
+    "kind": "promo",
+    "summary": "中国电影博物馆红毯首映 · 诺兰、马特·达蒙",
+    "detail": "作者向 · 宣发。诺兰、艾玛·托马斯、达蒙、查理兹·塞隆出席北京首映，为中国商业片首次在该馆铺红毯。"
+  },
+  {
     "id": "possible-love-netflix-date",
     "filmId": "possible-love",
     "date": "2026-07-27",
@@ -46,5 +70,13 @@
     "kind": "production",
     "summary": "未入第83届威尼斯版块 · 伊尼亚里图",
     "detail": "作者向 · 制作。威尼斯版块公布日确认《挖掘者》不参展，改走 10 月全球院线。"
+  },
+  {
+    "id": "digger-title-date",
+    "filmId": "digger",
+    "date": "2025-12-18",
+    "kind": "production",
+    "summary": "定名并锁定北美 10月2日 · 伊尼亚里图",
+    "detail": "作者向 · 制作。华纳 / Legendary 公布片名 Digger，北美 IMAX 10/2，国际 9/30 起。全片 VistaVision。"
   }
 ]

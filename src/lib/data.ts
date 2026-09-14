@@ -5,6 +5,7 @@ import auteurNewsData from "@/data/auteur-news.json";
 import majorAwardsData from "@/data/major-awards.json";
 import moreCatalogData from "@/data/more-catalog.json";
 import extraCatalogData from "@/data/extra-catalog.json";
+import filmCopyData from "@/data/film-copy.json";
 import type {
   AwardCeremony,
   AwardOrg,
@@ -27,16 +28,32 @@ type CatalogSlice = {
   ceremonies: AwardCeremony[];
 };
 
+type FilmCopy = Partial<
+  Pick<Film, "synopsis" | "background" | "directors" | "cast">
+>;
+
 const major = majorAwardsData as unknown as CatalogSlice;
 const extra = moreCatalogData as unknown as CatalogSlice;
 const moreExtra = extraCatalogData as unknown as CatalogSlice;
+const filmCopy = filmCopyData as Record<string, FilmCopy>;
+
+function applyCopy(film: Film): Film {
+  const extraCopy = filmCopy[film.id];
+  if (!extraCopy) return film;
+  return {
+    ...film,
+    ...extraCopy,
+    directors: extraCopy.directors ?? film.directors,
+    cast: extraCopy.cast ?? film.cast,
+  };
+}
 
 export const films = [
   ...(filmsData as Film[]),
   ...major.films,
   ...extra.films,
   ...moreExtra.films,
-];
+].map(applyCopy);
 export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [
   ...(ceremoniesData as AwardCeremony[]),
@@ -58,7 +75,9 @@ function getOrg(id: string): AwardOrg | undefined {
 }
 
 export function getFilm(id: string): Film | undefined {
-  return films.find((f) => f.id === id);
+  const film = films.find((f) => f.id === id);
+  if (!film) return undefined;
+  return { ...film, poster: withBase(film.poster) };
 }
 
 function filmKindOf(film: Film): FilmKind {
@@ -78,6 +97,24 @@ const A_CLASS = new Set([
   "busan",
   "karlovy-vary",
 ]);
+
+export const AWARD_ONLY =
+  /第\d+届|荣誉金狮|评委主席|日程公布|长片报名/;
+
+export function splitFilmCopy(film: Film): {
+  plot: string;
+  background: string;
+} {
+  const background = (film.background || "").trim();
+  const raw = (film.synopsis || "").trim();
+  if (background) {
+    return { plot: raw, background };
+  }
+  if (raw && AWARD_ONLY.test(raw)) {
+    return { plot: "", background: raw };
+  }
+  return { plot: raw, background: "" };
+}
 
 export function todayISO(now = new Date()): string {
   const y = now.getFullYear();

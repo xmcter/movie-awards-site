@@ -55,6 +55,8 @@ export interface Film {
   titleEn?: string;
   year: number;
   synopsis: string;
+  /** 创作背景：导演路径、改编依据、展映/定档等已发生的公开信息 */
+  background?: string;
   directors: string[];
   cast: string[];
   genres: string[];

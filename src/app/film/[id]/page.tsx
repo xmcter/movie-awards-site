@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
-import { films, getFilm, getFilmEvents } from "@/lib/data";
+import { films, getFilm, getFilmEvents, splitFilmCopy } from "@/lib/data";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -24,13 +24,15 @@ export async function generateMetadata({
   const film = getFilm(id);
   if (!film) return { title: "未找到" };
   const title = film.titleEn ? `${film.title} / ${film.titleEn}` : film.title;
+  const { plot, background } = splitFilmCopy(film);
+  const description = plot || background || film.synopsis;
   return {
     title,
-    description: film.synopsis,
+    description,
     alternates: { canonical: `/film/${film.id}` },
     openGraph: {
       title: `${film.title} · 银幕奖讯`,
-      description: film.synopsis,
+      description,
       url: `https://news.readcine.com/film/${film.id}`,
       type: "article",
       images: film.poster
@@ -53,6 +55,21 @@ function initials(title: string): string {
   return trimmed.slice(0, 2);
 }
 
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section>
+      <h2 className="font-display text-lg text-cinema-text">{title}</h2>
+      <div className="mt-3 text-sm leading-relaxed text-cinema-muted">{children}</div>
+    </section>
+  );
+}
+
 export default async function FilmPage({
   params,
 }: {
@@ -64,13 +81,29 @@ export default async function FilmPage({
 
   const events = getFilmEvents(film.id);
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
+  const { plot, background } = splitFilmCopy(film);
+  const people =
+    film.directors.length > 0
+      ? film.directors
+      : film.genres.includes("荣誉") || film.genres.includes("评审")
+        ? film.cast
+        : [];
+  const peopleLabel =
+    film.directors.length > 0
+      ? "导演"
+      : film.genres.includes("评审")
+        ? "评审"
+        : film.genres.includes("荣誉")
+          ? "致敬"
+          : "导演";
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Movie",
     name: film.title,
     alternateName: film.titleEn,
     dateCreated: String(film.year),
-    description: film.synopsis,
+    description: plot || background || film.synopsis,
     director: film.directors.map((name) => ({ "@type": "Person", name })),
     inLanguage: "zh-CN",
   };
@@ -121,27 +154,46 @@ export default async function FilmPage({
             {film.titleEn ? (
               <p className="mt-1 text-sm text-cinema-muted">{film.titleEn}</p>
             ) : null}
-            {film.directors.length > 0 ? (
-              <p className="mt-3 text-sm text-cinema-muted">
-                导演 {film.directors.join("、")}
-              </p>
-            ) : null}
-            {film.cast.length > 0 ? (
-              <p className="mt-1 text-sm text-cinema-muted">
-                主演 {film.cast.join("、")}
-              </p>
-            ) : null}
             {film.country && film.country.length > 0 ? (
-              <p className="mt-1 text-xs text-cinema-muted/70">
+              <p className="mt-3 text-xs text-cinema-muted/70">
                 {film.country.join(" / ")}
+                {film.runtime ? ` · ${film.runtime} 分钟` : ""}
               </p>
             ) : null}
-            <p className="mt-4 text-sm leading-relaxed text-cinema-muted">
-              {film.synopsis}
-            </p>
           </div>
         </div>
       </section>
+
+      <Section title={peopleLabel}>
+        {people.length > 0 ? (
+          <p className="text-cinema-text">{people.join("、")}</p>
+        ) : (
+          <p>尚无导演资料。时间线仍挂已发生的奖项。</p>
+        )}
+        {film.directors.length > 0 && film.cast.length > 0 ? (
+          <p className="mt-2 text-xs text-cinema-muted/70">
+            主演 {film.cast.join("、")}
+          </p>
+        ) : null}
+      </Section>
+
+      {plot ? (
+        <Section title="剧情简介">
+          <p>{plot}</p>
+        </Section>
+      ) : null}
+
+      {background ? (
+        <Section title="创作背景">
+          <p>{background}</p>
+        </Section>
+      ) : null}
+
+      {!plot && !background ? (
+        <Section title="创作背景">
+          <p>尚无公开剧情与创作资料，不编造。</p>
+        </Section>
+      ) : null}
 
       {film.streaming.length > 0 ? (
         <section>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
@@ -60,7 +61,7 @@ function Section({
   children,
 }: {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <section>

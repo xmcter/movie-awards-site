@@ -5,6 +5,7 @@ import auteurNewsData from "@/data/auteur-news.json";
 import majorAwardsData from "@/data/major-awards.json";
 import moreCatalogData from "@/data/more-catalog.json";
 import extraCatalogData from "@/data/extra-catalog.json";
+import densityPackData from "@/data/density-pack.json";
 import filmCopyData from "@/data/film-copy.json";
 import type {
   AwardCeremony,
@@ -35,6 +36,7 @@ type FilmCopy = Partial<
 const major = majorAwardsData as unknown as CatalogSlice;
 const extra = moreCatalogData as unknown as CatalogSlice;
 const moreExtra = extraCatalogData as unknown as CatalogSlice;
+const density = densityPackData as unknown as CatalogSlice;
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 
 function applyCopy(film: Film): Film {
@@ -53,6 +55,7 @@ export const films = [
   ...major.films,
   ...extra.films,
   ...moreExtra.films,
+  ...density.films,
 ].map(applyCopy);
 export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [
@@ -60,6 +63,7 @@ export const ceremonies = [
   ...major.ceremonies,
   ...extra.ceremonies,
   ...moreExtra.ceremonies,
+  ...density.ceremonies,
 ];
 export const auteurNews = auteurNewsData as AuteurNews[];
 
@@ -286,5 +290,5 @@ export function getTimelineEvents(): TimelineEvent[] {
 }
 
 export function getFilmEvents(filmId: string): TimelineEvent[] {
-  return getTimelineEvents().filter((e) => e.filmId === filmId);
+  return getTimelineEvents().filter((e) => e.e.filmId === filmId);
 }

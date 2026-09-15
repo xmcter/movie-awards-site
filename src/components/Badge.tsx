@@ -11,7 +11,7 @@ const LABELS: Record<TimelineEventType, string> = {
   nomination: "入围",
   win: "获奖",
   streaming: "流媒体",
-  auteur: "新品",
+  auteur: "新片",
 };
 
 export function TypeBadge({
@@ -21,11 +21,12 @@ export function TypeBadge({
   type: TimelineEventType;
   label?: string;
 }) {
+  const text = label === "新品" ? "新片" : label || LABELS[type];
   return (
     <span
       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STYLES[type]}`}
     >
-      {label || LABELS[type]}
+      {text}
     </span>
   );
 }

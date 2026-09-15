@@ -12,7 +12,7 @@ export default function Header() {
             银幕新讯
           </span>
         </Link>
-        <span className="text-xs tracking-wider text-cinema-muted">作者向新品·A类·奖讯</span>
+        <span className="text-xs tracking-wider text-cinema-muted">作者向新片·A类·奖讯</span>
       </div>
     </header>
   );

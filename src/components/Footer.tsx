@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <p className="font-display text-cinema-gold">银幕新讯</p>
         <p className="mt-1 text-sm text-cinema-muted">
-          作者向新品 · A类电影节 · 奥斯卡 / 金球 / 金马 / 金像 · 流媒体
+          作者向新片 · A类电影节 · 奥斯卡 / 金球 / 金马 / 金像 · 流媒体
         </p>
         <p className="mt-3 text-xs text-cinema-muted/70">
           不收爆米花。时间线只挂已发生的消息日；数据随仓库发布，非实时爬取。

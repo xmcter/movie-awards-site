@@ -95,8 +95,11 @@ export default async function EventPage({
       <article className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
         <div className="flex flex-row items-start">
           <div
-            className="m-3 mr-0 aspect-[2/3] w-[64px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:w-[72px]"
-            style={{ background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})` }}
+            className="m-3 mr-0 h-[120px] w-[80px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[144px] sm:w-[96px]"
+            style={{
+              background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+              aspectRatio: "2 / 3",
+            }}
           >
             {event.poster ? (
               // eslint-disable-next-line @next/next/no-img-element

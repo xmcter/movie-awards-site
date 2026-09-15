@@ -46,6 +46,7 @@ function EventPoster({
       className={className}
       style={{
         background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+        aspectRatio: "2 / 3",
       }}
     >
       {showImg ? (
@@ -133,7 +134,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 className={`rounded-full px-3.5 py-1.5 text-sm transition ${
                   active
                     ? "bg-cinema-gold text-cinema-bg"
-                    : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-gold/40 hover:text-cinema-text"
+                    : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
                 }`}
               >
                 {f.label}
@@ -170,10 +171,10 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
               />
               <Link href={`/event/${encodeURIComponent(event.id)}`} prefetch={false} className="block">
                 <article className="overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30">
-                  <div className="flex flex-row items-stretch">
+                  <div className="flex flex-row items-start">
                     <EventPoster
                       event={event}
-                      className="m-3 mr-0 aspect-[2/3] w-[100px] shrink-0 overflow-hidden rounded-lg sm:m-4 sm:mr-0 sm:w-[112px]"
+                      className="m-3 mr-0 h-[108px] w-[72px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[126px] sm:w-[84px]"
                     />
                     <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">

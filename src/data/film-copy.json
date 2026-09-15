@@ -18,57 +18,48 @@
     "title": "礼拜天",
     "titleEn": "Sundays",
     "directors": ["阿劳达·鲁伊斯·德·阿苏亚"],
-    "synopsis": "17岁的艾纳拉本该决定大学专业，却告诉家人自己与上帝的联系越来越近，想试探闭谛生涯。家庭被这一召命拉裂。",
-    "background": "TMDB 简中《礼拜天》，原题 Los domingos。导演 Alauda Ruiz de Azúa，中文通行阿劳达·鲁伊斯·德·阿苏亚。圣塞73金贝壳。"
+    "synopsis": "17岁的艾纳拉本该决定大学专业，却告诉家人自己与上帝的联系越来越近，想试探闭斋生涯。家庭被这一召命拉裂。",
+    "background": "TMDB 简中《礼拜天》，原题 Los domingos。导演 Alauda Ruiz de Azúa。圣塞73金贝壳。"
   },
   "look-back": {
-    "title": "葵然回首",
+    "title": "蓦然回首",
     "titleEn": "Look Back",
     "directors": ["是枝裕和"],
     "synopsis": "藤野与京本从小学走过13年。拍摄地以藤本树家乡秋田县仁贺保市为中心。",
-    "background": "豆瓣与 TMDB 均作《葵然回首》（ルックバック）。是枝裕和执导。威尼斯主竞赛。"
+    "background": "豆瓣与 TMDB 均作《蓦然回首》（ルックバック）。是枝裕和执导。威尼斯主竞赛。"
   },
   "hope-na": {
     "title": "希望",
     "titleEn": "Hope",
-    "directors": ["罗泳轼"],
+    "directors": ["罗泓轸"],
     "synopsis": "20世纪70至80年代，非军事区附近被隔离的湖浦港，村民与不明外星生物对抗。",
-    "background": "TMDB / 维基译名《希望》，原题 호프。导演罗泳轼。暨纳79主竞赛。"
+    "background": "TMDB / 维基译名《希望》，原题 호프。导演罗泓轸。曙纳79主竞赛。"
   },
   "the-odyssey": {
     "title": "奥德赛",
     "titleEn": "The Odyssey",
-    "directors": ["克里斯托弗·诺兰"],
-    "synopsis": "诺兰改编荷马史诗。奥德修斯返乡。",
-    "background": "全片 IMAX 70mm。"
+    "directors": ["克里斯托弗·诺兰"]
   },
   "digger": {
     "title": "挖掘者",
     "titleEn": "Digger",
-    "directors": ["亚历桑德罗·冈萨雷斯·伊尼亚里图"],
-    "synopsis": "伊尼亚里图英语新作。",
-    "background": "VistaVision。"
+    "directors": ["亚历桑德罗·冈萨雷斯·伊尼亚里图"]
   },
   "fjord": {
     "title": "峡湾",
     "titleEn": "Fjord",
     "directors": ["克里斯蒂安·蒙吉"],
-    "synopsis": "罗马尼亚一家搬到挪威偏远小村，本与邻居相处融洽，却陷入一桩不安的指控。",
-    "background": "蒙吉执导。暨纳金棕榈。"
+    "background": "蒙吉执导。曙纳金棕榈。"
   },
   "yellow-letters": {
     "title": "告知信",
     "titleEn": "Yellow Letters",
-    "directors": ["伊尔克·恰塔克"],
-    "synopsis": "安卡拉艺术家夫妇因政治压力失去工作与住所，带着13岁女儿搬到伊斯坦布尔亲属家。",
-    "background": "TMDB 简中《告知信》，原题 Gelbe Briefe。导演伊尔克·恰塔克（TMDB 亦作欧凯·查塔克）。柏林金熊。"
+    "directors": ["伊尔克·恰塔克"]
   },
   "two-seasons-two-strangers": {
     "title": "旅途中的日子",
     "titleEn": "Two Seasons, Two Strangers",
-    "directors": ["三宅唱"],
-    "synopsis": "改编柘植义春漫画。郁郁不得志的编剧误入深山旅馆。",
-    "background": "TMDB 简中《旅途中的日子》，原题「旅と日々」。三宅唱执导。洛迦诺金豹。"
+    "directors": ["三宅唱"]
   },
   "black-red-yellow": {
     "title": "黑，红，黄",
@@ -83,9 +74,7 @@
   "palestine-36": {
     "title": "巴勒斯坦36号",
     "titleEn": "Palestine 36",
-    "directors": ["安娜玛丽·雅西尔"],
-    "synopsis": "尤瑟夫往返于农耕村庄与耶路撒冷的工作之间，想在变动的现代世界找到位置。",
-    "background": "TMDB 简中《巴勒斯坦36号》。导演安娜玛丽·雅西尔。东京大奖。"
+    "directors": ["安娜玛丽·雅西尔"]
   },
   "all-of-a-sudden": {
     "title": "突如其来",
@@ -95,30 +84,23 @@
   "wild-horse-nine": {
     "title": "野马九号",
     "titleEn": "Wild Horse Nine",
-    "directors": ["马丁·麦克唐纳"],
-    "synopsis": "1973年智利，两名 CIA 特工从圣地亚哥被派往复活节岛。",
-    "background": "TMDB 简中《野马九号》。马丁·麦克唐纳执导。"
+    "directors": ["马丁·麦克唐纳"]
   },
   "bucking-fastard": {
     "title": "魂淡",
     "titleEn": "Bucking Fastard",
-    "directors": ["沃纳·赫尔佐格"],
-    "synopsis": "双胞胎姐妹在社会边缘求生，灵感来自英国卓别林双胞胎。",
-    "background": "TMDB 简中《魂淡》。导演沃纳·赫尔佐格。"
+    "directors": ["沃纳·赫尔佐格"]
   },
   "honorary-clooney": {
     "title": "乔治·克鲁尼",
-    "titleEn": "George Clooney",
-    "background": "威尼斯荣誉金狮。"
+    "titleEn": "George Clooney"
   },
   "honorary-burstyn": {
     "title": "艾伦·伯斯汀",
-    "titleEn": "Ellen Burstyn",
-    "background": "威尼斯荣誉金狮。"
+    "titleEn": "Ellen Burstyn"
   },
   "venice-jury-2026": {
     "title": "玛吉·吉伦哈尔",
-    "titleEn": "Maggie Gyllenhaal",
-    "background": "威尼斯主竞赛评委主席。"
+    "titleEn": "Maggie Gyllenhaal"
   }
 }

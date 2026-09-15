@@ -41,10 +41,7 @@ function initials(title: string): string {
   if (!trimmed) return "?";
   const latin = trimmed.match(/[A-Za-z]+/g);
   if (latin && latin.length > 0) {
-    return latin
-      .slice(0, 2)
-      .map((w) => w[0]!.toUpperCase())
-      .join("");
+    return latin.slice(0, 2).map((w) => w[0]!.toUpperCase()).join("");
   }
   return trimmed.slice(0, 2);
 }
@@ -80,7 +77,7 @@ export default async function EventPage({
   const badge = event.badge === "新品" ? "新片" : event.badge;
 
   return (
-    <div className="space-y-7">
+    <div className="space-y-6">
       <p className="text-xs text-cinema-muted">
         <Link href="/" className="hover:text-cinema-gold">
           ← 时间线
@@ -96,50 +93,48 @@ export default async function EventPage({
       </p>
 
       <article className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
-        <div className="flex flex-row items-stretch">
+        <div className="flex flex-row items-start">
           <div
-            className="m-4 mr-0 aspect-[2/3] w-[96px] shrink-0 overflow-hidden rounded-lg sm:m-5 sm:mr-0 sm:w-[120px]"
+            className="m-3 mr-0 aspect-[2/3] w-[64px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:w-[72px]"
             style={{ background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})` }}
           >
             {event.poster ? (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={event.poster} alt={event.filmTitle} className="h-full w-full object-cover" />
             ) : (
-              <div className="flex h-full w-full items-center justify-center font-display text-xl text-white/80">
+              <div className="flex h-full w-full items-center justify-center font-display text-sm text-white/80">
                 {initials(event.filmTitleEn || event.filmTitle)}
               </div>
             )}
           </div>
-          <div className="min-w-0 flex-1 p-4 pl-3 sm:p-5 sm:pl-4">
+          <div className="min-w-0 flex-1 p-3 pl-3 sm:p-4 sm:pl-4">
             <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
               <time dateTime={event.date || undefined}>{event.dateLabel}</time>
               <TypeBadge type={event.type} label={badge} />
             </div>
-            <h1 className="mt-2 font-display text-2xl leading-snug text-cinema-text sm:text-[1.65rem]">
+            <h1 className="mt-1.5 font-display text-xl leading-snug text-cinema-text sm:text-2xl">
               {event.filmTitle}
               {event.filmYear ? (
-                <span className="ml-2 font-sans text-base font-normal text-cinema-muted">
+                <span className="ml-2 font-sans text-sm font-normal text-cinema-muted">
                   {event.filmYear}
                 </span>
               ) : null}
             </h1>
             {event.filmTitleEn ? (
-              <p className="mt-1 text-sm text-cinema-muted">{event.filmTitleEn}</p>
+              <p className="mt-0.5 text-xs text-cinema-muted">{event.filmTitleEn}</p>
+            ) : null}
+            {directors.length > 0 ? (
+              <p className="mt-2 text-sm text-cinema-text">导演 {directors.join("、")}</p>
             ) : null}
           </div>
         </div>
       </article>
 
-      <Section title="导演">
-        {directors.length > 0 ? (
-          <p className="text-cinema-text">{directors.join("、")}</p>
-        ) : (
-          <p>尚无导演资料，不编造。</p>
-        )}
-        {film && film.cast.length > 0 ? (
-          <p className="mt-2 text-xs text-cinema-muted/70">主演 {film.cast.join("、")}</p>
-        ) : null}
-      </Section>
+      {film && film.cast.length > 0 ? (
+        <Section title="主演">
+          <p>{film.cast.join("、")}</p>
+        </Section>
+      ) : null}
 
       <Section title="本条消息">
         <p className="text-cinema-text">{event.summary}</p>
@@ -157,17 +152,15 @@ export default async function EventPage({
         <Section title="剧情简介">
           <p>{plot}</p>
         </Section>
-      ) : null}
+      ) : (
+        <Section title="剧情简介">
+          <p>尚无公开剧情资料，不编造。</p>
+        </Section>
+      )}
 
       {background ? (
         <Section title="创作背景">
           <p>{background}</p>
-        </Section>
-      ) : null}
-
-      {!plot && !background ? (
-        <Section title="剧情简介">
-          <p>尚无公开剧情与创作资料，不编造。</p>
         </Section>
       ) : null}
     </div>

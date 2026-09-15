@@ -11,7 +11,7 @@ const LABELS: Record<TimelineEventType, string> = {
   nomination: "入围",
   win: "获奖",
   streaming: "流媒体",
-  auteur: "作者",
+  auteur: "新品",
 };
 
 export function TypeBadge({

@@ -4,31 +4,31 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 
 const siteUrl = "https://news.readcine.com";
-const title = "银幕奖讯 · 时间线";
+const title = "银幕新讯 · 时间线";
 const description =
-  "A类电影节、奥斯卡、金球、金马、金像与作者向影讯时间线。主跟暨纳、威尼斯、柏林入围与获奖，兼收录流媒体定档。";
+  "作者向新片的定档与上映，加 A 类电影节与四大奖入围获奖。不收院线爆米花。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: "%s · 银幕奖讯",
+    template: "%s · 银幕新讯",
   },
   description,
   keywords: [
+    "作者电影",
+    "新片",
     "电影节",
     "暨纳",
     "威尼斯",
     "柏林",
     "奥斯卡",
-    "金球",
     "金马",
-    "金像",
-    "获奖",
     "入围",
+    "获奖",
     "流媒体",
   ],
-  authors: [{ name: "银幕奖讯" }],
+  authors: [{ name: "银幕新讯" }],
   alternates: {
     canonical: "/",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "zh_CN",
     url: siteUrl,
-    siteName: "银幕奖讯",
+    siteName: "银幕新讯",
     title,
     description,
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "银幕奖讯",
+  name: "银幕新讯",
   url: siteUrl,
   description,
   inLanguage: "zh-CN",

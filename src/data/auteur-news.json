@@ -1,5 +1,13 @@
 [
   {
+    "id": "woman-unknown-deals",
+    "filmId": "woman-unknown",
+    "date": "2026-09-15",
+    "kind": "promo",
+    "summary": "金狮后新销售 · 梅·埃尔-图希",
+    "detail": "TrustNordisk 公布法国（Memento）、西班牙、波兰、葡萄牙、前南斯拉夫、保加利亚等新交易；此前已有意大利、荷比卢、拉美、希腊、波罗的海。TIFF Centrepiece、BFI 伦敦、里加、釜山继续。"
+  },
+  {
     "id": "ss74-week",
     "filmId": "los-domingos",
     "date": "2026-09-15",
@@ -29,7 +37,7 @@
     "date": "2026-09-15",
     "kind": "release",
     "summary": "金棕榈《峡湾》进圣塞 Perlak",
-    "detail": "蒙吉作品从曙纳转入圣塞秋季精选栏。罗马尼亚移民家庭在挪威偏远村被调查。"
+    "detail": "蒙吉作品从戛纳转入圣塞秋季精选栏。罗马尼亚移民家庭在挪威偏远村被调查。"
   },
   {
     "id": "ss74-minotaur-perlak",
@@ -53,7 +61,7 @@
     "date": "2026-09-15",
     "kind": "release",
     "summary": "NYFF64 开幕：格雷《纸老虎》 9/25",
-    "detail": "第64届纽约电影节 9/25–10/12。亚当·德驱、迈尔斯·泰勒、斯嘉丽·约翰逊。北美首映。曙纳主竞赛之后的秋季作者向档期。"
+    "detail": "第64届纽约电影节 9/25–10/12。亚当·德驱、迈尔斯·泰勒、斯嘉丽·约翰逊。北美首映。戛纳主竞赛之后的秋季作者向档期。"
   },
   {
     "id": "nyff64-hamaguchi",
@@ -61,7 +69,7 @@
     "date": "2026-09-15",
     "kind": "release",
     "summary": "滨口《突如其来》进 NYFF64",
-    "detail": "纽约首映。曙纳主竞赛之后的美东作者向转场。"
+    "detail": "纽约首映。戛纳主竞赛之后的美东作者向转场。"
   },
   {
     "id": "nyff64-hong-two",
@@ -109,7 +117,7 @@
     "date": "2026-09-14",
     "kind": "release",
     "summary": "罗泓轸《希望》秋季转 MUBI",
-    "detail": "曙纳主竞赛片。MUBI 公布德意拉美西土耳其等地权益，欧洲院线 10 月起滚动。"
+    "detail": "戛纳主竞赛片。MUBI 公布德意拉美西土耳其等地权益，欧洲院线 10 月起滚动。"
   },
   {
     "id": "naza-venice-follow",
@@ -157,7 +165,7 @@
     "date": "2026-09-13",
     "kind": "release",
     "summary": "金棕榈《峡湾》转作者向流媒体",
-    "detail": "蒙吉第79届曙纳金棕榈。MUBI 等平台有部分地区权益估算，具体上线日待定。"
+    "detail": "蒙吉第79届戛纳金棕榈。MUBI 等平台有部分地区权益估算，具体上线日待定。"
   },
   {
     "id": "possible-love-rt-100",
@@ -189,7 +197,7 @@
     "date": "2026-09-12",
     "kind": "release",
     "summary": "滨口龙介《突如其来》秋季转院线",
-    "detail": "曙纳主竞赛。秋季作者向转场，不走超级英雄档期。"
+    "detail": "戛纳主竞赛。秋季作者向转场，不走超级英雄档期。"
   },
   {
     "id": "herzog-bucking-fastard",
@@ -204,32 +212,32 @@
     "filmId": "paper-tiger",
     "date": "2026-09-10",
     "kind": "release",
-    "summary": "詹姆斯·格雷《纸老虎》曙纳后转秋季",
-    "detail": "第79届曙纳主竞赛入围。作者向定档。"
+    "summary": "詹姆斯·格雷《纸老虎》戛纳后转秋季",
+    "detail": "第79届戛纳主竞赛入围。作者向定档。"
   },
   {
     "id": "farhadi-parallel",
     "filmId": "parallel-tales",
     "date": "2026-09-10",
     "kind": "release",
-    "summary": "法哈蒂《平行故事》曙纳后转场",
-    "detail": "阿斯哈·法哈蒂执导，第79届曙纳主竞赛。"
+    "summary": "法哈蒂《平行故事》戛纳后转场",
+    "detail": "阿斯哈·法哈蒂执导，第79届戛纳主竞赛。"
   },
   {
     "id": "koreeda-sheep-box",
     "filmId": "sheep-in-the-box",
     "date": "2026-09-09",
     "kind": "release",
-    "summary": "是枝《盒中羊》曙纳主竞赛后续",
-    "detail": "是枝今年两部：曙纳《盒中羊》与威尼斯《蓦然回首》。"
+    "summary": "是枝《盒中羊》戛纳主竞赛后续",
+    "detail": "是枝今年两部：戛纳《盒中羊》与威尼斯《蓦然回首》。"
   },
   {
     "id": "fukada-nagi",
     "filmId": "nagi-notes",
     "date": "2026-09-09",
     "kind": "release",
-    "summary": "深田晃司《凪日记》曙纳后",
-    "detail": "第79届曙纳主竞赛入围。日本作者向小制作。"
+    "summary": "深田晃司《凪日记》戛纳后",
+    "detail": "第79届戛纳主竞赛入围。日本作者向小制作。"
   },
   {
     "id": "almodovar-fall-note",
@@ -237,23 +245,23 @@
     "date": "2026-09-08",
     "kind": "release",
     "summary": "阿尔莫多瓦《苦涩的圣诞节》秋季定档跟进",
-    "detail": "曙纳主竞赛片。西班牙与欧洲作者向院线等待各区排片。"
+    "detail": "戛纳主竞赛片。西班牙与欧洲作者向院线等待各区排片。"
   },
   {
     "id": "nemes-moulin",
     "filmId": "moulin",
     "date": "2026-09-08",
     "kind": "release",
-    "summary": "奈迈施《穆兰》曙纳主竞赛后",
-    "detail": "拉斯洛·奈迈施执导。第79届曙纳主竞赛入围。"
+    "summary": "奈迈施《穆兰》戛纳主竞赛后",
+    "detail": "拉斯洛·奈迈施执导。第79届戛纳主竞赛入围。"
   },
   {
     "id": "sorogoyen-beloved",
     "filmId": "the-beloved",
     "date": "2026-09-07",
     "kind": "release",
-    "summary": "索罗戈延《所爱之人》曙纳后转场",
-    "detail": "罗德里戈·索罗戈延执导，第79届曙纳主竞赛。"
+    "summary": "索罗戈延《所爱之人》戛纳后转场",
+    "detail": "罗德里戈·索罗戈延执导，第79届戛纳主竞赛。"
   },
   {
     "id": "zong-atlantic",
@@ -364,8 +372,8 @@
     "filmId": "bitter-christmas",
     "date": "2026-05-20",
     "kind": "release",
-    "summary": "阿尔莫多瓦新作曙纳主竞赛",
-    "detail": "《苦涩的圣诞节》入围第79届曙纳主竞赛。"
+    "summary": "阿尔莫多瓦新作戛纳主竞赛",
+    "detail": "《苦涩的圣诞节》入围第79届戛纳主竞赛。"
   },
   {
     "id": "possible-love-netflix-date",

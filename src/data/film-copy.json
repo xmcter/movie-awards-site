@@ -3,97 +3,89 @@
     "title": "墨",
     "titleEn": "Ink",
     "directors": ["丹尼·博伊尔"],
-    "cast": ["杰克·奥康奈尔", "盖·皮尔斯", "克莱尔·芙伊"],
-    "synopsis": "改编自詹姆斯·格雷厄姆同名舞台剧。故事回到一家报业帝国的起步阶段：报纸如何用夺目、速度与说故事改写市场。",
-    "background": "丹尼·博伊尔执导。第83届威尼斯电影节开幕并入围主竞赛。Netflix 拥有美国与拉美权益，上线日待定。"
+    "synopsis": "出版商鲁珀特·默多克收购英国日报《太阳报》，交给行事不择手段的拉里·兰姆经营，以竞争对手《镜报》为代价把销量打上去。",
+    "background": "TMDB / 豆瓣译名《墨》。丹尼·博伊尔执导。第83届威尼斯开幕并入围主竞赛。"
   },
   "possible-love": {
     "title": "可能的爱情",
     "titleEn": "Possible Love",
     "directors": ["李沧东"],
     "cast": ["全度妍", "薛景求", "赵寅成", "赵汝贞"],
-    "synopsis": "两对处境迷异的夫妇：遭遇解雇的工人浩锡与妻子美玉，纪录片导演艺智与丈夫尚宇。四人因拍片交集，直面人生落差与隐秘欲望。",
-    "background": "李沧东执导。豆瓣译名《可能的爱情》（可能な爱 / Possible Love）。第83届威尼斯评审团大奖与费比西奖。韩国院线 9/23，美国 10/23，全球 Netflix 11/6。"
+    "synopsis": "两对已婚夫妇因一部纪录片相遇：失业工人与妻子，纪录片制作人与丈夫。四人直面不同的人生与隐藏的欲望。",
+    "background": "豆瓣译名《可能的爱情》；TMDB 简中亦作《假如爱有如果》。原题 기능한 사랑。李沧东执导。威尼斯评审团大奖与费比西奖。"
   },
   "los-domingos": {
-    "title": "星期天",
+    "title": "礼拜天",
     "titleEn": "Sundays",
     "directors": ["阿劳达·鲁伊斯·德·阿苏亚"],
-    "cast": ["布兰卡·索罗亚", "帕特里西亚·洛佩兹·阿尔奈伊斯"],
-    "synopsis": "巴斯克17岁的艾纳拉在修道院体验后，要试探闭谛修女生涯。父亲免强接受，无神论的姨母坚决反对。母亲早亡、餐馆家业摇晃，召命把家庭拉裂。",
-    "background": "西班牙原题 Los domingos。导演豆瓣常译阿劳达·鲁伊斯·德·阿苏亚（Alauda Ruiz de Azúa）。第73届圣塞巴斯蒂安电影节金贝壳。"
+    "synopsis": "17岁的艾纳拉本该决定大学专业，却告诉家人自己与上帝的联系越来越近，想试探闭谛生涯。家庭被这一召命拉裂。",
+    "background": "TMDB 简中《礼拜天》，原题 Los domingos。导演 Alauda Ruiz de Azúa，中文通行阿劳达·鲁伊斯·德·阿苏亚。圣塞73金贝壳。"
   },
   "look-back": {
     "title": "葵然回首",
     "titleEn": "Look Back",
     "directors": ["是枝裕和"],
-    "cast": ["荒田彩珠", "出口夏希", "广濒铃"],
-    "synopsis": "细腻描绘藤野与京本从小学一路走过的13年。一个闭门画稿，一个把漫画当做出路。",
-    "background": "豆瓣译名《葵然回首》（ルックバック / Look Back）。是枝裕和执导，改编藤本树漫画。第83届威尼斯主竞赛。"
+    "synopsis": "藤野与京本从小学走过13年。拍摄地以藤本树家乡秋田县仁贺保市为中心。",
+    "background": "豆瓣与 TMDB 均作《葵然回首》（ルックバック）。是枝裕和执导。威尼斯主竞赛。"
   },
   "hope-na": {
     "title": "希望",
     "titleEn": "Hope",
     "directors": ["罗泳轼"],
-    "cast": ["黄暃珉", "赵寅成", "郑好娟"],
-    "synopsis": "被隔离的港口村庄「希望港」遇上未知存在，村民陷入殊死搏斗。",
-    "background": "豆瓣/维基常用外文标题 Hope，导演译名罗泳轼。第79届暨纳主竞赛。台湾译名亦作《希望：末日血战》。"
+    "synopsis": "20世纪70至80年代，非军事区附近被隔离的湖浦港，村民与不明外星生物对抗。",
+    "background": "TMDB / 维基译名《希望》，原题 호프。导演罗泳轼。暨纳79主竞赛。"
   },
   "the-odyssey": {
     "title": "奥德赛",
     "titleEn": "The Odyssey",
     "directors": ["克里斯托弗·诺兰"],
     "synopsis": "诺兰改编荷马史诗。奥德修斯返乡。",
-    "background": "全片 IMAX 70mm 胶片。马特·达蒙、汤姆·霍兰德、安妮·海瑟薇主演。"
+    "background": "全片 IMAX 70mm。"
   },
   "digger": {
     "title": "挖掘者",
     "titleEn": "Digger",
     "directors": ["亚历桑德罗·冈萨雷斯·伊尼亚里图"],
-    "synopsis": "伊尼亚里图自《荒野猎人》后的英语长片。",
-    "background": "全片 VistaVision。汤姆·克鲁斯、里兹·阿迈德出演。"
+    "synopsis": "伊尼亚里图英语新作。",
+    "background": "VistaVision。"
   },
   "fjord": {
     "title": "峡湾",
     "titleEn": "Fjord",
     "directors": ["克里斯蒂安·蒙吉"],
-    "synopsis": "蒙吉新作。",
-    "background": "第79届暨纳金棕榈。MUBI 部分地区权益，上线日待定。"
+    "synopsis": "罗马尼亚一家搬到挪威偏远小村，本与邻居相处融洽，却陷入一桩不安的指控。",
+    "background": "蒙吉执导。暨纳金棕榈。"
   },
   "yellow-letters": {
-    "title": "黄信",
+    "title": "告知信",
     "titleEn": "Yellow Letters",
     "directors": ["伊尔克·恰塔克"],
-    "synopsis": "伊尔克·恰塔克新作。",
-    "background": "德文原题 Gelbe Briefe。第76届柏林金熊。"
+    "synopsis": "安卡拉艺术家夫妇因政治压力失去工作与住所，带着13岁女儿搬到伊斯坦布尔亲属家。",
+    "background": "TMDB 简中《告知信》，原题 Gelbe Briefe。导演伊尔克·恰塔克（TMDB 亦作欧凯·查塔克）。柏林金熊。"
   },
   "two-seasons-two-strangers": {
-    "title": "旅与日日",
+    "title": "旅途中的日子",
     "titleEn": "Two Seasons, Two Strangers",
     "directors": ["三宅唱"],
-    "synopsis": "三宅唱新作。",
-    "background": "日文原题「旅と日々」。第78届洛迦诺金豹。"
+    "synopsis": "改编柘植义春漫画。郁郁不得志的编剧误入深山旅馆。",
+    "background": "TMDB 简中《旅途中的日子》，原题「旅と日々」。三宅唱执导。洛迦诺金豹。"
   },
   "black-red-yellow": {
     "title": "黑，红，黄",
     "titleEn": "Black, Red, Yellow",
-    "directors": ["阿克坦·阿雷姆·库巴特"],
-    "synopsis": "阿克坦·阿雷姆·库巴特执导。",
-    "background": "第27届上海国际电影节金爵奖最佳影片。"
+    "directors": ["阿克坦·阿雷姆·库巴特"]
   },
   "gloaming-in-luomu": {
     "title": "罗目的黄昏",
     "titleEn": "Gloaming in Luomu",
-    "directors": ["张律"],
-    "synopsis": "张律执导。",
-    "background": "第30届釖山国际电影节釖山奖最佳影片。"
+    "directors": ["张律"]
   },
   "palestine-36": {
-    "title": "巴勒斯坦36",
+    "title": "巴勒斯坦36号",
     "titleEn": "Palestine 36",
-    "directors": ["安玛丽·贾西尔"],
-    "synopsis": "安玛丽·贾西尔执导。",
-    "background": "第38届东京国际电影节东京大奖。"
+    "directors": ["安娜玛丽·雅西尔"],
+    "synopsis": "尤瑟夫往返于农耕村庄与耶路撒冷的工作之间，想在变动的现代世界找到位置。",
+    "background": "TMDB 简中《巴勒斯坦36号》。导演安娜玛丽·雅西尔。东京大奖。"
   },
   "all-of-a-sudden": {
     "title": "突如其来",
@@ -101,31 +93,32 @@
     "directors": ["滨口龙介"]
   },
   "wild-horse-nine": {
-    "title": "九匹野马",
+    "title": "野马九号",
     "titleEn": "Wild Horse Nine",
-    "directors": ["马丁·麦克唐纳"]
+    "directors": ["马丁·麦克唐纳"],
+    "synopsis": "1973年智利，两名 CIA 特工从圣地亚哥被派往复活节岛。",
+    "background": "TMDB 简中《野马九号》。马丁·麦克唐纳执导。"
   },
   "bucking-fastard": {
-    "title": "Bucking Fastard",
+    "title": "魂淡",
     "titleEn": "Bucking Fastard",
-    "directors": ["维尔纳·赫尔佐格"]
+    "directors": ["沃纳·赫尔佐格"],
+    "synopsis": "双胞胎姐妹在社会边缘求生，灵感来自英国卓别林双胞胎。",
+    "background": "TMDB 简中《魂淡》。导演沃纳·赫尔佐格。"
   },
   "honorary-clooney": {
     "title": "乔治·克鲁尼",
     "titleEn": "George Clooney",
-    "synopsis": "",
-    "background": "第83届威尼斯电影节荣誉金狮。"
+    "background": "威尼斯荣誉金狮。"
   },
   "honorary-burstyn": {
     "title": "艾伦·伯斯汀",
     "titleEn": "Ellen Burstyn",
-    "synopsis": "",
-    "background": "第83届威尼斯电影节荣誉金狮。"
+    "background": "威尼斯荣誉金狮。"
   },
   "venice-jury-2026": {
     "title": "玛吉·吉伦哈尔",
     "titleEn": "Maggie Gyllenhaal",
-    "synopsis": "",
-    "background": "第83届威尼斯电影节主竞赛评委主席。"
+    "background": "威尼斯主竞赛评委主席。"
   }
 }

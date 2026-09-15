@@ -9,10 +9,10 @@ export default function Header() {
             银
           </span>
           <span className="font-display text-lg tracking-wide text-cinema-text group-hover:text-cinema-gold-light">
-            银幕奖讯
+            银幕新讯
           </span>
         </Link>
-        <span className="text-xs tracking-wider text-cinema-muted">A类·四大奖·作者</span>
+        <span className="text-xs tracking-wider text-cinema-muted">作者向新品·A类·奖讯</span>
       </div>
     </header>
   );

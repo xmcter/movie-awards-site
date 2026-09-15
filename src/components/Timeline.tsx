@@ -15,6 +15,8 @@ const FILTERS: { key: FilterKey; label: string }[] = [
   { key: "streaming", label: "流媒体" },
 ];
 
+const PIN_NEW = 10;
+
 function initials(title: string): string {
   const trimmed = title.trim();
   if (!trimmed) return "?";
@@ -78,7 +80,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return events.filter((e) => {
+    const matched = events.filter((e) => {
       if (filter !== "all" && e.type !== filter) return false;
       if (!q) return true;
       const hay = [
@@ -95,6 +97,10 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
         .toLowerCase();
       return hay.includes(q);
     });
+    if (filter !== "all" || q) return matched;
+    const pinned = matched.filter((e) => e.type === "auteur").slice(0, PIN_NEW);
+    const ids = new Set(pinned.map((e) => e.id));
+    return [...pinned, ...matched.filter((e) => !ids.has(e.id))];
   }, [events, filter, query]);
 
   const counts = useMemo(() => {

@@ -18,14 +18,14 @@ export default function HomePage() {
           />
           <div className="relative px-6 py-10 sm:px-8 sm:py-12">
             <p className="text-sm uppercase tracking-[0.2em] text-cinema-gold">
-              Festivals · Awards · Auteur · Timeline
+              New Films · Festivals · Awards
             </p>
             <h1 className="mt-3 font-display text-3xl leading-snug text-cinema-text sm:text-4xl">
-              银幕奖讯时间线
+              银幕新讯时间线
             </h1>
             <p className="mt-3 max-w-xl text-sm text-cinema-muted sm:text-base">
-              主跟 FIAPF A
-              类电影节入围、获奖与流媒体；同时收录奥斯卡、金球、金马、金像，以及作者性明确的导演影讯。
+              收作者向新片的定档、上映与流媒体，以及 A 类电影节、奥斯卡 / 金球 / 金马 / 金像的入围与获奖。
+              不收院线爆米花、超级英雄连载和纯票房娱乐片。
             </p>
           </div>
         </section>

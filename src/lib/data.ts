@@ -327,7 +327,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       posterColors: film.posterColors,
       summary: news.summary,
       detail: news.detail,
-      badge: "作者",
+      badge: "新品",
       accentColor: "#a78bfa",
       directors: film.directors,
       filmKind: filmKindOf(film),
@@ -338,7 +338,7 @@ export function getTimelineEvents(): TimelineEvent[] {
     const da = a.date || "0000-00-00";
     const db = b.date || "0000-00-00";
     if (da !== db) return db.localeCompare(da);
-    const order = { win: 0, nomination: 1, auteur: 2, streaming: 3 } as const;
+    const order = { auteur: 0, win: 1, nomination: 2, streaming: 3 } as const;
     return order[a.type] - order[b.type];
   });
 }

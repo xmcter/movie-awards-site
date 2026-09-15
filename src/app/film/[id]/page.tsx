@@ -32,13 +32,11 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/film/${film.id}` },
     openGraph: {
-      title: `${film.title} · 银幕奖讯`,
+      title: `${film.title} · 银幕新讯`,
       description,
       url: `https://news.readcine.com/film/${film.id}`,
       type: "article",
-      images: film.poster
-        ? [{ url: film.poster, alt: film.title }]
-        : undefined,
+      images: film.poster ? [{ url: film.poster, alt: film.title }] : undefined,
     },
   };
 }
@@ -48,10 +46,7 @@ function initials(title: string): string {
   if (!trimmed) return "?";
   const latin = trimmed.match(/[A-Za-z]+/g);
   if (latin && latin.length > 0) {
-    return latin
-      .slice(0, 2)
-      .map((w) => w[0]!.toUpperCase())
-      .join("");
+    return latin.slice(0, 2).map((w) => w[0]!.toUpperCase()).join("");
   }
   return trimmed.slice(0, 2);
 }
@@ -122,31 +117,28 @@ export default async function FilmPage({
       </p>
 
       <section className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
-        <div className="flex flex-col sm:flex-row">
+        <div className="flex flex-row items-start">
           <div
-            className="aspect-[2/3] w-full shrink-0 sm:w-[180px]"
+            className="m-4 mr-0 h-[144px] w-[96px] shrink-0 overflow-hidden rounded-md sm:m-5 sm:h-[210px] sm:w-[140px]"
             style={{
               background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+              aspectRatio: "2 / 3",
             }}
           >
             {film.poster ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={film.poster}
-                alt={film.title}
-                className="h-full w-full object-cover"
-              />
+              <img src={film.poster} alt={film.title} className="h-full w-full object-cover" />
             ) : (
-              <div className="flex h-full min-h-[240px] items-center justify-center font-display text-3xl text-white/80 sm:min-h-0">
+              <div className="flex h-full w-full items-center justify-center font-display text-2xl text-white/80">
                 {initials(film.titleEn || film.title)}
               </div>
             )}
           </div>
-          <div className="min-w-0 flex-1 p-5 sm:p-7">
+          <div className="min-w-0 flex-1 p-4 pl-3 sm:p-6 sm:pl-5">
             <p className="text-xs uppercase tracking-[0.18em] text-cinema-gold">
               {film.genres.join(" · ") || "影片"}
             </p>
-            <h1 className="mt-2 font-display text-3xl text-cinema-text">
+            <h1 className="mt-2 font-display text-2xl text-cinema-text sm:text-3xl">
               {film.title}
               <span className="ml-2 font-sans text-base font-normal text-cinema-muted">
                 {film.year}
@@ -201,8 +193,7 @@ export default async function FilmPage({
           <h2 className="font-display text-lg text-cinema-text">流媒体</h2>
           <ul className="mt-3 space-y-2">
             {film.streaming.map((release) => {
-              const platform =
-                PLATFORM_LABELS[release.platform] || release.platform;
+              const platform = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status];
               const when = release.date ? formatDate(release.date) : "待定";
               return (
@@ -227,13 +218,10 @@ export default async function FilmPage({
         ) : (
           <ol className="mt-3 space-y-3">
             {events.map((event) => (
-              <li
-                key={event.id}
-                className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3"
-              >
+              <li key={event.id} className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3">
                 <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
                   <time dateTime={event.date || undefined}>{event.dateLabel}</time>
-                  <TypeBadge type={event.type} label={event.badge} />
+                  <TypeBadge type={event.type} label={event.badge === "新品" ? "新片" : event.badge} />
                 </div>
                 <p className="mt-1.5 text-sm text-cinema-text">{event.summary}</p>
                 {event.detail ? (

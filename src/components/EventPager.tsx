@@ -23,45 +23,28 @@ export default function EventPager({
     setTick((n) => n + 1);
   }, [currentId]);
 
-  const { prev, next } = useMemo(() => {
+  const next = useMemo(() => {
     const i = items.findIndex((x) => x.id === currentId);
-    return {
-      prev: i > 0 ? items[i - 1] : null,
-      next: i >= 0 ? items[i + 1] || null : null,
-    };
+    return i >= 0 ? items[i + 1] || null : null;
   }, [items, currentId]);
 
   void tick;
 
-  function card(item: PagerItem | null, label: string) {
-    if (!item) {
-      return (
-        <div className="flex-1 rounded-xl border border-cinema-border px-3 py-3 text-xs text-cinema-muted/50">
-          {label}
-          <div className="mt-1">没有了</div>
-        </div>
-      );
-    }
-    const read = isClicked(item.id);
-    return (
+  if (!next) return null;
+  const read = isClicked(next.id);
+  return (
+    <div className="mt-10">
       <Link
-        href={`/event/${encodeURIComponent(item.id)}`}
+        href={`/event/${encodeURIComponent(next.id)}`}
         prefetch={false}
-        className="flex-1 rounded-xl border border-cinema-border bg-cinema-card px-3 py-3 transition hover:border-cinema-gold/40"
+        className="block rounded-xl border border-cinema-border bg-cinema-card px-4 py-3 transition hover:border-cinema-gold/40"
       >
-        <div className="text-xs text-cinema-muted">{label}</div>
-        <div className={`mt-1 line-clamp-2 text-sm ${read ? "text-cinema-muted" : "text-cinema-text"}`}>
+        <div className="text-xs text-cinema-muted">下一篇</div>
+        <div className={`mt-1 text-sm ${read ? "text-cinema-muted" : "text-cinema-text"}`}>
           {read ? "已读 · " : "未读 · "}
-          {item.title}
+          {next.title}
         </div>
       </Link>
-    );
-  }
-
-  return (
-    <div className="flex gap-3">
-      {card(prev, "上一篇")}
-      {card(next, "下一篇")}
     </div>
   );
 }

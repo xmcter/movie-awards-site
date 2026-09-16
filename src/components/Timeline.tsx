@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
+import { isClicked, markClicked, readLastId, readScroll, saveScroll } from "@/lib/readProgress";
 
 type FilterKey = "all" | TimelineEventType;
 
@@ -82,6 +83,46 @@ function displayBadge(label?: string) {
 export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [filter, setFilter] = useState<FilterKey>("all");
   const [query, setQuery] = useState("");
+  const [seen, setSeen] = useState<string[]>([]);
+
+  useEffect(() => {
+    setSeen(isClicked("") ? [] : JSON.parse(JSON.stringify(
+      // read on client only
+      (typeof window === "undefined" ? [] : null) as string[] | null
+    ) || []);
+  }, []);
+
+  useEffect(() => {
+    setSeen((typeof window === "undefined") ? [] : (function () {
+      try {
+        const raw = localStorage.getItem("news-readcine:clicked");
+        const arr = raw ? JSON.parse(raw) : [];
+        return Array.isArray(arr) ? arr : [];
+      } catch { return []; }
+    })());
+    const last = readLastId();
+    const y = readScroll();
+    requestAnimationFrame(() => {
+      if (last) {
+        const el = document.querySelector(`[data-event-id="${CSS.escape(last)}"]`);
+        if (el) {
+          el.scrollIntoView({ block: "center" });
+          return;
+        }
+      }
+      if (y > 0) window.scrollTo(0, y);
+    });
+    let tick = 0;
+    const onScroll = () => {
+      if (tick) return;
+      tick = requestAnimationFrame(() => {
+        tick = 0;
+        saveScroll(window.scrollY || 0);
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -163,14 +204,16 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
         </p>
       ) : (
         <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
-          {filtered.map((event) => (
-            <li key={event.id} className="relative pb-8 last:pb-0">
+          {filtered.map((event) => {
+            const read = seen.includes(event.id);
+            return (
+            <li key={event.id} className="relative pb-8 last:pb-0" data-event-id={event.id}>
               <span
                 className="absolute -left-[1.55rem] top-1.5 h-3 w-3 rounded-full border-2 border-cinema-bg sm:-left-[2.05rem]"
                 style={{ backgroundColor: dotColor(event.type) }}
               />
-              <Link href={`/event/${encodeURIComponent(event.id)}`} prefetch={false} className="block">
-                <article className="overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30">
+              <Link href={`/event/${encodeURIComponent(event.id)}`} prefetch={false} className="block" onClick={() => markClicked(event.id)}>
+                <article className={`overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30 ${read ? "opacity-60" : ""}`}>
                   <div className="flex flex-row items-start">
                     <EventPoster
                       event={event}
@@ -216,7 +259,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 </article>
               </Link>
             </li>
-          ))}
+            );
+          })}
         </ol>
       )}
     </div>

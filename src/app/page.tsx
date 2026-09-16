@@ -1,9 +1,11 @@
 import Timeline from "@/components/Timeline";
 import PullToRefresh from "@/components/PullToRefresh";
+import ResumeBar from "@/components/ResumeBar";
 import { getTimelineEvents } from "@/lib/data";
 
 export default function HomePage() {
   const events = getTimelineEvents();
+  const resumeItems = events.map((e) => ({ id: e.id, title: e.filmTitle }));
 
   return (
     <PullToRefresh>
@@ -30,6 +32,7 @@ export default function HomePage() {
           </div>
         </section>
 
+        <ResumeBar items={resumeItems} />
         <Timeline events={events} />
       </div>
     </PullToRefresh>

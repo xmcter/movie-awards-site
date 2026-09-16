@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
-import { isClicked, markClicked, readLastId, readScroll, saveScroll } from "@/lib/readProgress";
+import { markClicked, readClicked, readLastId, readScroll, saveScroll } from "@/lib/readProgress";
 
 type FilterKey = "all" | TimelineEventType;
 
@@ -23,10 +23,7 @@ function initials(title: string): string {
   if (!trimmed) return "?";
   const latin = trimmed.match(/[A-Za-z]+/g);
   if (latin && latin.length > 0) {
-    return latin
-      .slice(0, 2)
-      .map((w) => w[0]!.toUpperCase())
-      .join("");
+    return latin.slice(0, 2).map((w) => w[0]!.toUpperCase()).join("");
   }
   return trimmed.slice(0, 2);
 }
@@ -86,20 +83,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [seen, setSeen] = useState<string[]>([]);
 
   useEffect(() => {
-    setSeen(isClicked("") ? [] : JSON.parse(JSON.stringify(
-      // read on client only
-      (typeof window === "undefined" ? [] : null) as string[] | null
-    ) || []);
-  }, []);
-
-  useEffect(() => {
-    setSeen((typeof window === "undefined") ? [] : (function () {
-      try {
-        const raw = localStorage.getItem("news-readcine:clicked");
-        const arr = raw ? JSON.parse(raw) : [];
-        return Array.isArray(arr) ? arr : [];
-      } catch { return []; }
-    })());
+    setSeen(readClicked());
     const last = readLastId();
     const y = readScroll();
     requestAnimationFrame(() => {
@@ -207,58 +191,63 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
           {filtered.map((event) => {
             const read = seen.includes(event.id);
             return (
-            <li key={event.id} className="relative pb-8 last:pb-0" data-event-id={event.id}>
-              <span
-                className="absolute -left-[1.55rem] top-1.5 h-3 w-3 rounded-full border-2 border-cinema-bg sm:-left-[2.05rem]"
-                style={{ backgroundColor: dotColor(event.type) }}
-              />
-              <Link href={`/event/${encodeURIComponent(event.id)}`} prefetch={false} className="block" onClick={() => markClicked(event.id)}>
-                <article className={`overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30 ${read ? "opacity-60" : ""}`}>
-                  <div className="flex flex-row items-start">
-                    <EventPoster
-                      event={event}
-                      className="m-3 mr-0 h-[108px] w-[72px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[126px] sm:w-[84px]"
-                    />
-                    <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
-                      <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-                        <time dateTime={event.date || undefined}>{event.dateLabel}</time>
-                        {event.date ? (
-                          <span className="text-[10px] tracking-wide text-cinema-muted/45">
-                            消息时间
-                          </span>
+              <li key={event.id} className="relative pb-8 last:pb-0" data-event-id={event.id}>
+                <span
+                  className="absolute -left-[1.55rem] top-1.5 h-3 w-3 rounded-full border-2 border-cinema-bg sm:-left-[2.05rem]"
+                  style={{ backgroundColor: dotColor(event.type) }}
+                />
+                <Link
+                  href={`/event/${encodeURIComponent(event.id)}`}
+                  prefetch={false}
+                  className="block"
+                  onClick={() => markClicked(event.id)}
+                >
+                  <article className={`overflow-hidden rounded-xl border border-cinema-border bg-cinema-card transition hover:border-cinema-gold/30 ${read ? "opacity-60" : ""}`}>
+                    <div className="flex flex-row items-start">
+                      <EventPoster
+                        event={event}
+                        className="m-3 mr-0 h-[108px] w-[72px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[126px] sm:w-[84px]"
+                      />
+                      <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
+                        <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
+                          <time dateTime={event.date || undefined}>{event.dateLabel}</time>
+                          {event.date ? (
+                            <span className="text-[10px] tracking-wide text-cinema-muted/45">
+                              消息时间
+                            </span>
+                          ) : null}
+                          <TypeBadge type={event.type} label={displayBadge(event.badge)} />
+                        </div>
+                        <h2 className="mt-2 font-display text-lg text-cinema-text">
+                          {event.filmTitle}
+                          {event.filmYear ? (
+                            <span className="ml-2 text-sm font-sans font-normal text-cinema-muted">
+                              {event.filmYear}
+                            </span>
+                          ) : null}
+                        </h2>
+                        {event.filmTitleEn ? (
+                          <p className="text-xs text-cinema-muted/80">{event.filmTitleEn}</p>
                         ) : null}
-                        <TypeBadge type={event.type} label={displayBadge(event.badge)} />
+                        {event.awards && event.awards.length > 1 ? (
+                          <ul className="mt-2 space-y-0.5 text-sm leading-relaxed text-cinema-muted">
+                            {event.awards.map((line) => (
+                              <li key={line}>{line}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
+                            {event.summary}
+                          </p>
+                        )}
+                        {event.detail ? (
+                          <p className="mt-1 line-clamp-2 text-xs text-cinema-muted/70">{event.detail}</p>
+                        ) : null}
                       </div>
-                      <h2 className="mt-2 font-display text-lg text-cinema-text">
-                        {event.filmTitle}
-                        {event.filmYear ? (
-                          <span className="ml-2 text-sm font-sans font-normal text-cinema-muted">
-                            {event.filmYear}
-                          </span>
-                        ) : null}
-                      </h2>
-                      {event.filmTitleEn ? (
-                        <p className="text-xs text-cinema-muted/80">{event.filmTitleEn}</p>
-                      ) : null}
-                      {event.awards && event.awards.length > 1 ? (
-                        <ul className="mt-2 space-y-0.5 text-sm leading-relaxed text-cinema-muted">
-                          {event.awards.map((line) => (
-                            <li key={line}>{line}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
-                          {event.summary}
-                        </p>
-                      )}
-                      {event.detail ? (
-                        <p className="mt-1 line-clamp-2 text-xs text-cinema-muted/70">{event.detail}</p>
-                      ) : null}
                     </div>
-                  </div>
-                </article>
-              </Link>
-            </li>
+                  </article>
+                </Link>
+              </li>
             );
           })}
         </ol>

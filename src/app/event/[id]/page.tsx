@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
+import EventPager from "@/components/EventPager";
 import { getFilm, getTimelineEvents, splitFilmCopy } from "@/lib/data";
 
 export const dynamic = "force-static";
@@ -67,7 +68,8 @@ export default async function EventPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const event = getTimelineEvents().find((e) => e.id === id);
+  const timeline = getTimelineEvents();
+  const event = timeline.find((e) => e.id === id);
   if (!event) notFound();
   const film = event.filmId ? getFilm(event.filmId) : undefined;
   const { plot, background } = film ? splitFilmCopy(film) : { plot: "", background: "" };
@@ -75,6 +77,7 @@ export default async function EventPage({
     (film?.directors && film.directors.length > 0 ? film.directors : event.directors) || [];
   const colors = event.posterColors || ["#1a1a2e", "#334155"];
   const badge = event.badge === "新品" ? "新片" : event.badge;
+  const pagerItems = timeline.map((e) => ({ id: e.id, title: e.filmTitle }));
 
   return (
     <div className="space-y-6">
@@ -91,6 +94,8 @@ export default async function EventPage({
           </>
         ) : null}
       </p>
+
+      <EventPager currentId={event.id} items={pagerItems} />
 
       <article className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
         <div className="flex flex-row items-start">

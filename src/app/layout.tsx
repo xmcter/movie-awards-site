@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeInit from "@/components/ThemeInit";
 import "./globals.css";
 
 const siteUrl = "https://news.readcine.com";
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
     "作者电影",
     "新片",
     "电影节",
-    "暨纳",
+    "曦纳",
     "威尼斯",
     "柏林",
     "奥斯卡",
@@ -75,6 +76,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
       </head>
       <body className="flex min-h-screen flex-col">
+        <ThemeInit />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

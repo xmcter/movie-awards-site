@@ -95,8 +95,6 @@ export default async function EventPage({
         ) : null}
       </p>
 
-      <EventPager currentId={event.id} items={pagerItems} />
-
       <article className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
         <div className="flex flex-row items-start">
           <div
@@ -171,6 +169,8 @@ export default async function EventPage({
           <p>{background}</p>
         </Section>
       ) : null}
+
+      <EventPager currentId={event.id} items={pagerItems} />
     </div>
   );
 }

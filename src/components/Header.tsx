@@ -12,7 +12,12 @@ export default function Header() {
             银幕新讯
           </span>
         </Link>
-        <span className="text-xs tracking-wider text-cinema-muted">作者向新片·A类·奖讯</span>
+        <a
+          href="https://go.readcine.com"
+          className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+        >
+          readcine.
+        </a>
       </div>
     </header>
   );

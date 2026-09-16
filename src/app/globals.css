@@ -6,6 +6,28 @@
 
 :root {
   color-scheme: dark;
+  --rc-bg: #0c0f14;
+  --rc-card: #12161d;
+  --rc-elevated: #1c2330;
+  --rc-border: #262b33;
+  --rc-gold: #c9a227;
+  --rc-gold-light: #e8c547;
+  --rc-muted: #9aa3ab;
+  --rc-text: #e7ebe6;
+  --rc-accent: #e08a45;
+}
+
+html.theme-day {
+  color-scheme: light;
+  --rc-bg: #f4f5f2;
+  --rc-card: #ffffff;
+  --rc-elevated: #eef0eb;
+  --rc-border: #dcdfd9;
+  --rc-gold: #b8873a;
+  --rc-gold-light: #c9a227;
+  --rc-muted: #565f6b;
+  --rc-text: #14181f;
+  --rc-accent: #c8722c;
 }
 
 html {
@@ -15,10 +37,11 @@ html {
 body {
   @apply bg-cinema-bg text-cinema-text antialiased;
   min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
 
 ::selection {
-  background: rgba(201, 162, 39, 0.35);
+  background: color-mix(in srgb, var(--rc-gold) 35%, transparent);
 }
 
 @layer utilities {

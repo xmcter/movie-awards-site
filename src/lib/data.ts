@@ -314,6 +314,11 @@ export function getTimelineEvents(): TimelineEvent[] {
     if (!isPublished(news.date, today)) continue;
     const film = getFilm(news.filmId);
     if (!film) continue;
+    const kind = filmKindOf(film);
+    let badge = "新品";
+    if (kind === "jury") badge = "评审";
+    if (kind === "honor") badge = "荣誉";
+
     events.push({
       id: `auteur-${news.id}`,
       type: "auteur",
@@ -327,10 +332,10 @@ export function getTimelineEvents(): TimelineEvent[] {
       posterColors: film.posterColors,
       summary: news.summary,
       detail: news.detail,
-      badge: "新品",
-      accentColor: "#a78bfa",
+      badge,
+      accentColor: kind === "jury" || kind === "honor" ? "#f59e0b" : "#a78bfa",
       directors: film.directors,
-      filmKind: filmKindOf(film),
+      filmKind: kind,
     });
   }
 

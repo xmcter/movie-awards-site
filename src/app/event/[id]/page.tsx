@@ -89,7 +89,9 @@ export default async function EventPage({
           <>
             <span className="mx-2 opacity-40">/</span>
             <Link href={`/film/${event.filmId}`} className="hover:text-cinema-gold">
-              影片档
+              {event.filmKind === "jury" || event.filmKind === "honor"
+                ? "人物档"
+                : "影片档"}
             </Link>
           </>
         ) : null}

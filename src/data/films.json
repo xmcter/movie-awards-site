@@ -576,5 +576,95 @@
       "#7c2d12"
     ],
     "streaming": []
+  },
+  {
+    "id": "the-housewife",
+    "title": "The Housewife",
+    "titleEn": "The Housewife",
+    "year": 2026,
+    "synopsis": "本·希里尼安执导、娜奥米·沃茨主演。第74届圣塞巴斯蒂安电影节放映，沃茨同场获第二座 Donostia 终身成就奖。",
+    "directors": [
+      "本·希里尼安"
+    ],
+    "cast": [
+      "娜奥米·沃茨"
+    ],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "美国"
+    ],
+    "posterColors": [
+      "#1f2937",
+      "#9ca3af"
+    ],
+    "streaming": []
+  },
+  {
+    "id": "tender-loving-care",
+    "title": "精心护理",
+    "titleEn": "Tender Loving Care",
+    "year": 2026,
+    "synopsis": "迈克·李新作。第74届圣塞巴斯蒂安电影节主竞赛，并入选第64届纽约电影节。",
+    "directors": [
+      "迈克·李"
+    ],
+    "cast": [],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "英国"
+    ],
+    "posterColors": [
+      "#134e4a",
+      "#5eead4"
+    ],
+    "streaming": []
+  },
+  {
+    "id": "ghost-song",
+    "title": "鬼之歌",
+    "titleEn": "Ghost Song / Geister",
+    "year": 2026,
+    "synopsis": "法提赫·阿金执导。第74届圣塞巴斯蒂安电影节开幕片并入围主竞赛，竞逐金贝壳。",
+    "directors": [
+      "法提赫·阿金"
+    ],
+    "cast": [],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "德国",
+      "法国"
+    ],
+    "posterColors": [
+      "#111827",
+      "#7c3aed"
+    ],
+    "streaming": []
+  },
+  {
+    "id": "busan-31-cuaron",
+    "title": "阿方索·卡隆",
+    "titleEn": "Alfonso Cuarón",
+    "year": 2026,
+    "synopsis": "第31届釜山国际电影节开幕嘉宾并主持大师班，配合《地心引力》IMAX 特别放映。",
+    "directors": [],
+    "cast": [
+      "阿方索·卡隆"
+    ],
+    "genres": [],
+    "country": [
+      "墨西哥",
+      "美国"
+    ],
+    "posterColors": [
+      "#0c4a6e",
+      "#38bdf8"
+    ],
+    "streaming": []
   }
 ]

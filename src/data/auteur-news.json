@@ -1,5 +1,29 @@
 [
   {
+    "id": "ss74-watts-donostia",
+    "filmId": "the-housewife",
+    "date": "2026-09-19",
+    "kind": "release",
+    "summary": "娜奥米·沃茨领 Donostia · 献林奇",
+    "detail": "第74届圣塞巴斯蒂安电影节9/19颁发第二座Donostia终身成就奖予Naomi Watts，由J.A. Bayona颁奖并放映其新片《The Housewife》（本·希里尼安执导）。沃茨将奖献给已故大卫·林奇，称《穆赫兰道》改变人生，并强调「我们这个年纪的女性也需要在银幕上被看见」。节方 / THR / Deadline / El País 9/19。"
+  },
+  {
+    "id": "possible-love-rt-100-31",
+    "filmId": "possible-love",
+    "date": "2026-09-19",
+    "kind": "promo",
+    "summary": "critic 100% · 李沧东（样本31）",
+    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（31 条影评，均分约 8.8/10），Metacritic 93。威尼斯评审团大奖后样本继续扩大仍全满分；Netflix 10/23 有限院线、11/6 全球流媒体。Wikipedia / RT 汇总 9/19–20。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-23",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-19",
+    "kind": "promo",
+    "summary": "critic 100% · 迈克·李（样本23）",
+    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（23 条影评，均分约 8.4/10），Metacritic 86。Telluride/TIFF 后样本扩大仍全满分；圣塞74主竞赛与 NYFF64 继续。李自言或为最后一部长片。Wikipedia / RT 9/19–20。"
+  },
+  {
     "id": "busan-31-cuaron-visit",
     "filmId": "busan-31-cuaron",
     "date": "2026-09-18",

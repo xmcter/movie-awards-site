@@ -1,1 +1,66 @@
-PLACEHOLDER
+[
+  {
+    "id": "ink-rt-83",
+    "filmId": "ink",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "critic 83% · 丹尼·博伊尔（样本约42）",
+    "detail": "《墨迹 / Ink》Tomatometer 约 83%（约42条影评，均分约7.3/10），Metacritic 约79。威尼斯开幕片获正面评价，聚焦默多克与《太阳报》起源；美有限院线12/11，Netflix 美拉美1/8/2027。Wikipedia / RT 汇总 9/24。"
+  },
+  {
+    "id": "ss74-ink-boyle-surprise",
+    "filmId": "ink",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "圣塞74惊喜片 · 丹尼·博伊尔《墨迹》",
+    "detail": "第74届圣塞巴斯蒂安电影节官方宣布《Ink / 墨迹》为惊喜片：丹尼·博伊尔执导、杰克·奥康奈尔/盖·皮尔斯/克莱尔·芙伊主演，改编自詹姆斯·格雷厄姆舞台剧，讲述1969年默多克收购《太阳报》与编辑拉里·兰姆重塑英国小报的故事。威尼斯83开幕主竞赛后，9/25–26在维多利亚·欧亨尼娅剧院放映，博伊尔将出席26日场。西班牙院线定档2027-01-06。节方通稿 / EFE / Infobae 9/24。"
+  },
+  {
+    "id": "possible-love-rt-100-33",
+    "filmId": "possible-love",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "critic 100% · 李沧东（样本33）",
+    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（33 条影评，均分约 8.8/10），Metacritic 93。韩国院线已映；美澳 10/23 有限院线，Netflix 全球 11/6。Wikipedia / RT 9/23–24。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-28",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "critic 100% · 迈克·李（样本28）",
+    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（28 条影评，均分约 8.4/10），Metacritic 86。圣塞主竞赛与 NYFF64 继续；李确认极可能为最后长片。Wikipedia / RT 9/23–24。"
+  },
+  {
+    "id": "ss74-egeda-galerna-huezo",
+    "filmId": "galerna",
+    "date": "2026-09-23",
+    "kind": "promo",
+    "summary": "EGEDA Platino 最佳 WIP Latam · 塔蒂亚娜·韦索《加勒纳》",
+    "detail": "第74届圣塞巴斯蒂安电影节产业奖公布：墨西哥-萨尔瓦多导演 Tatiana Huezo《Galerna》获 EGEDA Platino Industria Award for Best WIP Latam（3万欧元，颁给主制片方）。同批 WIP Latam Industry Award 归 Juan Sebastián Mesa《Lovers Go Home!》（已记）。官方节讯 / Variety 9/23。"
+  },
+  {
+    "id": "possible-love-kr-release-923",
+    "filmId": "possible-love",
+    "date": "2026-09-23",
+    "kind": "release",
+    "summary": "《可能的爱情》韩国今日上映 · 李沧东",
+    "detail": "李沧东《可能的爱情 / Possible Love》威尼斯评审团大奖后，韩国院线今日（9/23）上映。美澳 10/23 有限院线，Netflix 全球 11/6。RT 仍 100%（32 条影评，均分约 8.8）。韩国选送第99届奥斯卡国际片。Wikipedia / 官方日程。"
+  },
+  {
+    "id": "tender-loving-care-leigh-final-ss74",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-23",
+    "kind": "promo",
+    "summary": "迈克·李确认极可能为最后长片 · 圣塞记者会",
+    "detail": "迈克·李因肌炎（myositis）无法亲赴圣塞74，9/22 以视频连线参加《精心护理 / Tender Loving Care》主竞赛记者会，明确表示「更可能这是我的最后一部长片」（It's more than probable that this film will have to be my last）。制片 Georgina Lowe 与主演 Marion Bailey、Paul Jesson、Alice Bailey Johnson 到场。影片 RT 仍 100%（24 评）。报道 9/22–23：THR / El País / ABC / La Vanguardia。"
+  },
+  {
+    "id": "ss74-wip-latam-lovers-go-home",
+    "filmId": "lovers-go-home",
+    "date": "2026-09-23",
+    "kind": "promo",
+    "summary": "WIP Latam 产业奖 · 胡安·塞巴斯蒂安·梅萨《恋人回家》",
+    "detail": "第74届圣塞巴斯蒂安电影节产业单元公布：哥伦比亚导演 Juan Sebastián Mesa《Lovers Go Home!》获 WIP Latam Industry Award（含后期至英西字幕 DCP + 西班牙发行）。同批产业奖项亦表彰拉丁美洲与欧洲新作。Proimágenes / 节方 / Variety 汇总 9/23。"
+  }
+]

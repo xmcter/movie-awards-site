@@ -1,18 +1,1 @@
-{
-  "films": [
-    {
-      "id": "galerna",
-      "title": "加勒纳",
-      "titleEn": "Galerna",
-      "year": 2026,
-      "synopsis": "塔蒂亚娜·韦索执导。两位选角导演穿越墨西哥偏远地区，为一部科幻片寻找非职业演员，旅程挑战其偏见与脆弱。圣塞巴斯蒂安74 WIP Latam 获 EGEDA Platino Industria 最佳奖。Pimienta Films / Elastica Films 制作。",
-      "directors": ["塔蒂亚娜·韦索"],
-      "cast": ["伊尔塞·萨拉斯", "拉萨罗·加比诺·罗德里格斯"],
-      "genres": ["剧情"],
-      "country": ["墨西哥", "西班牙"],
-      "posterColors": ["#1e3a5f", "#94a3b8"],
-      "streaming": []
-    }
-  ],
-  "ceremonies": []
-}
+PLACEHOLDER

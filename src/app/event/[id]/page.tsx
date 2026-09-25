@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
+import EventDismissButton from "@/components/EventDismissButton";
 import EventPager from "@/components/EventPager";
 import { getFilm, getTimelineEvents, splitFilmCopy } from "@/lib/data";
 
@@ -81,21 +82,24 @@ export default async function EventPage({
 
   return (
     <div className="space-y-6">
-      <p className="text-xs text-cinema-muted">
-        <Link href="/" className="hover:text-cinema-gold">
-          ← 时间线
-        </Link>
-        {event.filmId ? (
-          <>
-            <span className="mx-2 opacity-40">/</span>
-            <Link href={`/film/${event.filmId}`} className="hover:text-cinema-gold">
-              {event.filmKind === "jury" || event.filmKind === "honor"
-                ? "人物档"
-                : "影片档"}
-            </Link>
-          </>
-        ) : null}
-      </p>
+      <div className="flex items-center justify-between gap-4 text-xs text-cinema-muted">
+        <p>
+          <Link href="/" className="hover:text-cinema-gold">
+            ← 时间线
+          </Link>
+          {event.filmId ? (
+            <>
+              <span className="mx-2 opacity-40">/</span>
+              <Link href={`/film/${event.filmId}`} className="hover:text-cinema-gold">
+                {event.filmKind === "jury" || event.filmKind === "honor"
+                  ? "人物档"
+                  : "影片档"}
+              </Link>
+            </>
+          ) : null}
+        </p>
+        <EventDismissButton event={event} />
+      </div>
 
       <article className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
         <div className="flex flex-row items-start">

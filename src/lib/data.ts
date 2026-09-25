@@ -41,7 +41,18 @@ type CatalogSlice = {
 };
 
 type FilmCopy = Partial<
-  Pick<Film, "synopsis" | "background" | "directors" | "cast">
+  Pick<
+    Film,
+    | "title"
+    | "titleEn"
+    | "synopsis"
+    | "background"
+    | "directors"
+    | "cast"
+    | "genres"
+    | "runtime"
+    | "country"
+  >
 >;
 
 const major = majorAwardsData as unknown as CatalogSlice;
@@ -82,16 +93,17 @@ function resolvePoster(film: Film): string | undefined {
 function applyCopy(film: Film): Film {
   const extraCopy = filmCopy[film.id];
   const local = resolvePoster(film);
-  const merged: Film = extraCopy
-    ? {
-        ...film,
-        ...extraCopy,
-        directors: extraCopy.directors ?? film.directors,
-        cast: extraCopy.cast ?? film.cast,
-        poster: local,
-      }
-    : { ...film, poster: local };
-  return merged;
+  if (!extraCopy) return { ...film, poster: local };
+  return {
+    ...film,
+    ...extraCopy,
+    directors: extraCopy.directors ?? film.directors,
+    cast: extraCopy.cast ?? film.cast,
+    genres: extraCopy.genres ?? film.genres,
+    country: extraCopy.country ?? film.country,
+    runtime: extraCopy.runtime ?? film.runtime,
+    poster: local,
+  };
 }
 
 export const films = [

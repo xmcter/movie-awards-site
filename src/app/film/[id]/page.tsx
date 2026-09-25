@@ -147,31 +147,51 @@ export default async function FilmPage({
             {film.titleEn ? (
               <p className="mt-1 text-sm text-cinema-muted">{film.titleEn}</p>
             ) : null}
-            {film.country && film.country.length > 0 ? (
+            {(film.country && film.country.length > 0) || film.runtime || film.genres.length > 0 ? (
               <p className="mt-3 text-xs text-cinema-muted/70">
-                {film.country.join(" / ")}
-                {film.runtime ? ` · ${film.runtime} 分钟` : ""}
+                {[
+                  film.country && film.country.length > 0 ? film.country.join(" / ") : null,
+                  film.runtime ? `${film.runtime} 分钟` : null,
+                  film.year ? `${film.year}年` : null,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
               </p>
             ) : null}
           </div>
         </div>
       </section>
 
-      <Section title={peopleLabel}>
+      <Section title={film.directors.length > 0 && film.cast.length > 0 ? "导演与主演" : peopleLabel}>
         {people.length > 0 ? (
-          <p className="text-cinema-text">{people.join("、")}</p>
+          <p className="text-cinema-text">
+            {film.directors.length > 0 ? (
+              <>
+                <span className="text-cinema-muted">导演 </span>
+                {film.directors.join("、")}
+              </>
+            ) : (
+              people.join("、")
+            )}
+          </p>
         ) : (
           <p>尚无导演资料。时间线仍挂已发生的奖项。</p>
         )}
         {film.directors.length > 0 && film.cast.length > 0 ? (
-          <p className="mt-2 text-xs text-cinema-muted/70">
-            主演 {film.cast.join("、")}
+          <p className="mt-2 text-sm text-cinema-text">
+            <span className="text-cinema-muted">主演 </span>
+            {film.cast.join("、")}
+          </p>
+        ) : film.directors.length === 0 && film.cast.length > 0 && !film.genres.includes("荣誉") && !film.genres.includes("评审") ? (
+          <p className="mt-2 text-sm text-cinema-text">
+            <span className="text-cinema-muted">主演 </span>
+            {film.cast.join("、")}
           </p>
         ) : null}
       </Section>
 
       {plot ? (
-        <Section title="剧情简介">
+        <Section title="剧情介绍">
           <p>{plot}</p>
         </Section>
       ) : null}
@@ -184,7 +204,7 @@ export default async function FilmPage({
 
       {!plot && !background ? (
         <Section title="创作背景">
-          <p>尚无公开剧情与创作资料，不编造。</p>
+          <p>尚无可靠公开剧情或创作资料，本节从略，不编造。</p>
         </Section>
       ) : null}
 
@@ -212,7 +232,7 @@ export default async function FilmPage({
       ) : null}
 
       <section>
-        <h2 className="font-display text-lg text-cinema-text">相关奖讯</h2>
+        <h2 className="font-display text-lg text-cinema-text">本站相关奖项</h2>
         {events.length === 0 ? (
           <p className="mt-3 text-sm text-cinema-muted">暂无已发生的时间线事件。</p>
         ) : (

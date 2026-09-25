@@ -5,7 +5,7 @@
       "title": "盒中羊",
       "titleEn": "Sheep in the Box",
       "year": 2026,
-      "synopsis": "是枝裕和新作。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "是枝裕和新作。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "是枝裕和"
       ],
@@ -27,7 +27,7 @@
       "title": "凪日记",
       "titleEn": "Nagi Notes",
       "year": 2026,
-      "synopsis": "深田晃司执导。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "深田晃司执导。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "深田晃司"
       ],
@@ -49,7 +49,7 @@
       "title": "希望",
       "titleEn": "Hope",
       "year": 2026,
-      "synopsis": "罗泓轼执导。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "罗泓轼执导。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "罗泓轼"
       ],
@@ -72,7 +72,7 @@
       "title": "苦涩的圣诞节",
       "titleEn": "Bitter Christmas",
       "year": 2026,
-      "synopsis": "佩德罗·阿尔莫多瓦新作。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "佩德罗·阿尔莫多瓦新作。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "佩德罗·阿尔莫多瓦"
       ],
@@ -94,7 +94,7 @@
       "title": "纸老虎",
       "titleEn": "Paper Tiger",
       "year": 2026,
-      "synopsis": "詹姆斯·格雷执导。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "詹姆斯·格雷执导。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "詹姆斯·格雷"
       ],
@@ -116,7 +116,7 @@
       "title": "平行故事",
       "titleEn": "Parallel Tales",
       "year": 2026,
-      "synopsis": "阿斯哈·法哈蒂执导。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "阿斯哈·法哈蒂执导。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "阿斯哈·法哈蒂"
       ],
@@ -138,7 +138,7 @@
       "title": "穆兰",
       "titleEn": "Moulin",
       "year": 2026,
-      "synopsis": "拉斯洛·奈迈施执导。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "拉斯洛·奈迈施执导。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "拉斯洛·奈迈施"
       ],
@@ -160,7 +160,7 @@
       "title": "所爱之人",
       "titleEn": "The Beloved",
       "year": 2026,
-      "synopsis": "罗德里戈·索罗戈延执导。第79届暨纳电影节主竞赛入围。",
+      "synopsis": "罗德里戈·索罗戈延执导。第79届戛纳电影节主竞赛入围。",
       "directors": [
         "罗德里戈·索罗戈延"
       ],
@@ -742,11 +742,11 @@
     {
       "id": "cannes-79-lineup",
       "orgId": "cannes",
-      "name": "第79届暨纳电影节",
+      "name": "第79届戛纳电影节",
       "nameEn": "79th Cannes Film Festival",
       "year": 2026,
       "date": "2026-04-09",
-      "location": "法国暨纳",
+      "location": "法国戛纳",
       "nominations": [
         {
           "categoryId": "competition",

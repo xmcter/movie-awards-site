@@ -1,64 +1,49 @@
-# 银幕新讯 · 作者向新片与奖讯时间线
+# 银幕新讯 · news.readcine.com
 
-不再只做「获奖资讯」。主跟作者向新片的定档、上映、流媒体，同时收 A 类电影节与四大奖的入围 / 获奖。
+中文默认的作者向新片 / 电影节 / 影奖时间线：入围、获奖、流媒体与作者向动态。
 
-## 收什么 / 不收什么
+覆盖 **FIAPF A 类电影节**（戛纳、威尼斯、柏林等）以及 **奥斯卡、金球、金马、金像**。不收院线爆米花与超级英雄连载。
 
-**收**
+## 线上
 
-- 作者性明确的新片：定档、首映、院线、流媒体、制作进度
-- FIAPF A 类电影节（优先暨纳、威尼斯、柏林）入围与获奖
-- 奥斯卡、金球、金马、金像
-- 影评纯度 RT Tomatometer（或等价）**80%+** 的作者向影片；只有观众分不算
+- **主站**：https://news.readcine.com （GitHub Pages + 自定义域名，`basePath` 为空）
+- 仓库：https://github.com/xmcter/movie-awards-site
 
-**不收**
-
-- 院线爆米花、超级英雄连载、纯票房娱乐片
-- 华表
-- 未发生的典礼 / 提名日（不进时间线）
-- 编造的流媒体日期
-
-票房数字本身不是入库理由。
-
-时间线只挂「已发生」的消息日。定档新闻挂官方公布日。
-
-## 线上访问
-
-- 站点：[https://news.readcine.com](https://news.readcine.com)
-- 仓库：[xmcter/movie-awards-site](https://github.com/xmcter/movie-awards-site)
-- 部署：GitHub Pages（Actions 构建 `out/`）
-
-域名走 Cloudflare，源站指 `xmcter.github.io`，不要指国内 ECS。
-
-## 技术栈
+## 技术
 
 - Next.js App Router + TypeScript（`output: 'export'`）
 - Tailwind CSS
-- 本地 JSON 种子
+- 本地 JSON 种子；时间线由 `src/lib/data.ts` 派生
+- 列表标题由 `src/lib/headlines.ts` 生成醒目新闻标题
+- 海报：`public/posters/{id}.jpg`（构建时自动挂载）
 
-## 本地运行
+## 本地
 
 ```bash
-npm install
+npm ci
+npm run validate
+npm run build   # 输出 out/
 npm run dev
 ```
 
 ## 页面
 
-单一主页时间线。筛选：全部 / 新品 / 获奖 / 入围 / 流媒体。
+- `/` 时间线（全部 / 新片 / 获奖 / 入围或提名 / 流媒体）
+- `/film/[id]` 影片详情（剧情、导演、主演、奖讯、流媒体）
+- `/event/[id]` 单条消息详情
 
-新消息改 JSON 并推 `main`。
+`ceremonies[].date` / `nominations[].date` / `auteur-news[].date` 是**消息时间**，不是部署时间。
 
-## 数据
+## 海报脚本
 
-| 文件 | 说明 |
-|------|------|
-| `src/data/films.json` | 影片与流媒体日程 |
-| `src/data/ceremonies.json` | 电影节典礼 |
-| `src/data/auteur-news.json` | 作者向已发生影讯（定档 / 上映 / 预告） |
-| `src/data/major-awards.json` | 奥斯卡 / 金球 / 金马 / 金像 |
-| `src/data/more-catalog.json` / `extra-catalog.json` | 补充 |
+```bash
+node scripts/fetch-posters.mjs
+```
 
-## License
+## 部署
 
-MIT
+Push `main` → GitHub Actions Pages。可选 ECS：
+
+```bash
+./deploy/deploy.sh
+```

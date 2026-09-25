@@ -127,6 +127,8 @@ export interface TimelineEvent {
   filmYear?: number;
   poster?: string;
   posterColors?: [string, string];
+  /** 醒目新闻标题（列表 h2） */
+  headline?: string;
   summary: string;
   detail?: string;
   badge: string;

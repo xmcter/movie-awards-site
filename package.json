@@ -1,7 +1,7 @@
 {
   "name": "movie-awards-site",
   "version": "1.0.0",
-  "description": "FIAPF A类电影节时间线：入围、获奖与相关流媒体上线。",
+  "description": "银幕新讯：作者向新片 + A类电影节 / 奥斯卡 / 金球 / 金马时间线",
   "private": true,
   "scripts": {
     "dev": "next dev",

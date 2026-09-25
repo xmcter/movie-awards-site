@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!event) return { title: "未找到" };
   const film = event.filmId ? getFilm(event.filmId) : undefined;
   const { plot, background } = film ? splitFilmCopy(film) : { plot: "", background: "" };
-  const title = event.summary || event.filmTitle;
+  const title = event.headline || event.summary || event.filmTitle;
   const description = event.detail || plot || background || event.summary;
   return {
     title,
@@ -77,7 +77,7 @@ export default async function EventPage({
     (film?.directors && film.directors.length > 0 ? film.directors : event.directors) || [];
   const colors = event.posterColors || ["#1a1a2e", "#334155"];
   const badge = event.badge === "新品" ? "新片" : event.badge;
-  const pagerItems = timeline.map((e) => ({ id: e.id, title: e.filmTitle }));
+  const pagerItems = timeline.map((e) => ({ id: e.id, title: e.headline || e.filmTitle }));
 
   return (
     <div className="space-y-6">
@@ -121,16 +121,13 @@ export default async function EventPage({
               <TypeBadge type={event.type} label={badge} />
             </div>
             <h1 className="mt-1.5 font-display text-xl leading-snug text-cinema-text sm:text-2xl">
-              {event.filmTitle}
-              {event.filmYear ? (
-                <span className="ml-2 font-sans text-sm font-normal text-cinema-muted">
-                  {event.filmYear}
-                </span>
-              ) : null}
+              {event.headline || event.summary || event.filmTitle}
             </h1>
-            {event.filmTitleEn ? (
-              <p className="mt-0.5 text-xs text-cinema-muted">{event.filmTitleEn}</p>
-            ) : null}
+            <p className="mt-1 text-xs text-cinema-muted">
+              {event.filmTitle}
+              {event.filmYear ? ` · ${event.filmYear}` : ""}
+              {event.filmTitleEn ? ` / ${event.filmTitleEn}` : ""}
+            </p>
             {directors.length > 0 ? (
               <p className="mt-2 text-sm text-cinema-text">导演 {directors.join("、")}</p>
             ) : null}

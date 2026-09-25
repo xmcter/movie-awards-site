@@ -12,7 +12,7 @@ const FILTERS: { key: FilterKey; label: string }[] = [
   { key: "all", label: "全部" },
   { key: "auteur", label: "新片" },
   { key: "win", label: "获奖" },
-  { key: "nomination", label: "入围" },
+  { key: "nomination", label: "入围或提名" },
   { key: "streaming", label: "流媒体" },
 ];
 
@@ -114,6 +114,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       if (filter !== "all" && e.type !== filter) return false;
       if (!q) return true;
       const hay = [
+        e.headline,
         e.filmTitle,
         e.filmTitleEn,
         e.summary,
@@ -197,7 +198,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                   style={{ backgroundColor: dotColor(event.type) }}
                 />
                 <Link
-                  href={`/event/${encodeURIComponent(event.id)}`}
+                  href={event.filmId ? `/film/${encodeURIComponent(event.filmId)}` : `/event/${encodeURIComponent(event.id)}`}
                   prefetch={false}
                   className="block"
                   onClick={() => markClicked(event.id)}
@@ -218,30 +219,19 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           ) : null}
                           <TypeBadge type={event.type} label={displayBadge(event.badge)} />
                         </div>
-                        <h2 className="mt-2 font-display text-lg text-cinema-text">
-                          {event.filmTitle}
-                          {event.filmYear ? (
-                            <span className="ml-2 text-sm font-sans font-normal text-cinema-muted">
-                              {event.filmYear}
-                            </span>
-                          ) : null}
+                        <h2 className="mt-2 font-display text-[1.05rem] leading-snug text-cinema-text sm:text-lg">
+                          {event.headline || event.summary || event.filmTitle}
                         </h2>
-                        {event.filmTitleEn ? (
-                          <p className="text-xs text-cinema-muted/80">{event.filmTitleEn}</p>
-                        ) : null}
-                        {event.awards && event.awards.length > 1 ? (
-                          <ul className="mt-2 space-y-0.5 text-sm leading-relaxed text-cinema-muted">
-                            {event.awards.map((line) => (
-                              <li key={line}>{line}</li>
-                            ))}
-                          </ul>
-                        ) : (
-                          <p className="mt-2 text-sm leading-relaxed text-cinema-muted">
-                            {event.summary}
+                        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
+                          {event.summary}
+                        </p>
+                        {event.filmId ? (
+                          <p className="mt-2 text-[11px] text-cinema-muted/55">
+                            {event.filmTitle}
+                            {event.filmYear ? ` · ${event.filmYear}` : ""}
+                            {event.directors && event.directors[0] ? ` · ${event.directors[0]}` : ""}
+                            <span className="ml-2 text-cinema-gold/70">影片档 →</span>
                           </p>
-                        )}
-                        {event.detail ? (
-                          <p className="mt-1 line-clamp-2 text-xs text-cinema-muted/70">{event.detail}</p>
                         ) : null}
                       </div>
                     </div>

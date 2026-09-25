@@ -5,7 +5,7 @@ import { getTimelineEvents } from "@/lib/data";
 
 export default function HomePage() {
   const events = getTimelineEvents();
-  const resumeItems = events.map((e) => ({ id: e.id, title: e.filmTitle }));
+  const resumeItems = events.map((e) => ({ id: e.id, title: e.headline || e.filmTitle }));
 
   return (
     <PullToRefresh>

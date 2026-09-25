@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import filmsData from "@/data/films.json";
 import orgsData from "@/data/orgs.json";
 import ceremoniesData from "@/data/ceremonies.json";
@@ -24,6 +26,13 @@ import {
   formatDate,
   formatYearMonth,
 } from "@/lib/labels";
+import {
+  buildAwardBody,
+  buildAwardHeadline,
+  buildStreamingBody,
+  buildStreamingHeadline,
+  polishAuteurHeadline,
+} from "@/lib/headlines";
 
 type CatalogSlice = {
   orgs?: AwardOrg[];
@@ -43,50 +52,36 @@ const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 const posterUrls = posterUrlsData as Record<string, string>;
 
-const LOCAL_POSTER_IDS = new Set([
-  "a-foggy-tale",
-  "all-of-a-sudden",
-  "black-red-yellow",
-  "bucking-fastard",
-  "catching-the-wind",
-  "coward",
-  "fatherland",
-  "fjord",
-  "gloaming-in-luomu",
-  "hamnet",
-  "honorary-burstyn",
-  "honorary-clooney",
-  "if-i-had-legs",
-  "ink",
-  "kpop-demon-hunters",
-  "look-back",
-  "los-domingos",
-  "lucky-lu",
-  "marty-supreme",
-  "minotaur",
-  "mother-bhumi",
-  "one-battle",
-  "our-redemption",
-  "palestine-36",
-  "queerpanorama",
-  "sentimental-value",
-  "sinners",
-  "the-black-ball",
-  "the-dreamed-adventure",
-  "two-seasons-two-strangers",
-  "venice-jury-2026",
-  "weapons",
-  "wild-horse-nine",
-  "yellow-letters",
-]);
+/** Build-time inventory of committed posters under public/posters */
+const LOCAL_POSTER_FILES = (() => {
+  try {
+    const dir = path.join(process.cwd(), "public", "posters");
+    const map = new Map<string, string>();
+    for (const name of fs.readdirSync(dir)) {
+      const m = name.match(/^(.+)\.(jpe?g|png|webp)$/i);
+      if (!m) continue;
+      map.set(m[1]!, `/posters/${name}`);
+    }
+    return map;
+  } catch {
+    return new Map<string, string>();
+  }
+})();
+
+function resolvePoster(film: Film): string | undefined {
+  const disk = LOCAL_POSTER_FILES.get(film.id);
+  if (disk) return disk;
+  if (film.poster && film.poster.startsWith("/posters/")) return film.poster;
+  // Prefer already-downloaded local over hotlinked remotes
+  if (posterUrls[film.id] && LOCAL_POSTER_FILES.has(film.id)) {
+    return LOCAL_POSTER_FILES.get(film.id);
+  }
+  return film.poster || posterUrls[film.id];
+}
 
 function applyCopy(film: Film): Film {
   const extraCopy = filmCopy[film.id];
-  const mapped = posterUrls[film.id];
-  const local =
-    film.poster ||
-    mapped ||
-    (LOCAL_POSTER_IDS.has(film.id) ? `/posters/${film.id}.jpg` : undefined);
+  const local = resolvePoster(film);
   const merged: Film = extraCopy
     ? {
         ...film,
@@ -96,9 +91,6 @@ function applyCopy(film: Film): Film {
         poster: local,
       }
     : { ...film, poster: local };
-  if (film.id === "secret-agent" && !merged.poster) {
-    merged.poster = "/posters/secret-agent.png";
-  }
   return merged;
 }
 
@@ -243,7 +235,7 @@ export function getTimelineEvents(): TimelineEvent[] {
     const wins = noms.filter((n) => n.result === "won");
     const isWin = wins.length > 0;
     const ordered = [...wins, ...noms.filter((n) => n.result !== "won")];
-    const awards = ordered.map(awardLine);
+    const awards = [...new Set(ordered.map(awardLine))];
     const scope = org
       ? A_CLASS.has(org.id)
         ? `A类电影节 · ${org.name}`
@@ -253,6 +245,9 @@ export function getTimelineEvents(): TimelineEvent[] {
     let badge = isWin ? "获奖" : "入围";
     if (kind === "honor") badge = "荣誉";
     if (kind === "jury") badge = "评审";
+
+    const headline = buildAwardHeadline({ ceremony, org, film, noms, kind });
+    const body = buildAwardBody({ ceremony, org, film, noms, awards });
 
     events.push({
       id: `${ceremony.orgId}-${ceremony.year}-${film.id}-${date}-${isWin ? "win" : "nom"}`,
@@ -265,7 +260,8 @@ export function getTimelineEvents(): TimelineEvent[] {
       filmYear: film.year,
       poster: withBase(film.poster),
       posterColors: film.posterColors,
-      summary: `${ceremony.name} · ${awards.join(" / ")}`,
+      headline,
+      summary: body,
       detail: scope
         ? `${scope}${ceremony.location ? ` · ${ceremony.location}` : ""}`
         : undefined,
@@ -290,6 +286,22 @@ export function getTimelineEvents(): TimelineEvent[] {
       const region = release.region ? ` · ${release.region}` : "";
       const note = release.note ? `（${release.note}）` : "";
 
+      const headline = buildStreamingHeadline({
+        film,
+        platform,
+        statusLabel,
+        datePart,
+        region: release.region,
+      });
+      const body = buildStreamingBody({
+        film,
+        platform,
+        statusLabel,
+        datePart,
+        region: release.region,
+        note: release.note,
+      });
+
       events.push({
         id: `stream-${film.id}-${release.platform}-${release.date || "tba"}`,
         type: "streaming",
@@ -301,7 +313,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmYear: film.year,
         poster: withBase(film.poster),
         posterColors: film.posterColors,
-        summary: `${platform} · ${statusLabel} ${datePart}${region}`,
+        headline,
+        summary: body,
         detail: note || undefined,
         badge: "流媒体",
         directors: film.directors,
@@ -319,6 +332,7 @@ export function getTimelineEvents(): TimelineEvent[] {
     if (kind === "jury") badge = "评审";
     if (kind === "honor") badge = "荣誉";
 
+    const headline = polishAuteurHeadline(news.summary, film);
     events.push({
       id: `auteur-${news.id}`,
       type: "auteur",
@@ -330,8 +344,9 @@ export function getTimelineEvents(): TimelineEvent[] {
       filmYear: film.year,
       poster: withBase(film.poster),
       posterColors: film.posterColors,
-      summary: news.summary,
-      detail: news.detail,
+      headline,
+      summary: news.detail || news.summary,
+      detail: news.detail && news.detail !== news.summary ? undefined : news.detail,
       badge,
       accentColor: kind === "jury" || kind === "honor" ? "#f59e0b" : "#a78bfa",
       directors: film.directors,

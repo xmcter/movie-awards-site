@@ -1,5 +1,13 @@
 [
   {
+    "id": "nyff64-opens-paper-tiger",
+    "filmId": "paper-tiger",
+    "date": "2026-09-25",
+    "kind": "promo",
+    "summary": "NYFF64 开幕 · 詹姆斯·格雷《纸老虎》北美首映",
+    "detail": "第64届纽约电影节（9/25–10/12）今日开幕：詹姆斯·格雷《纸老虎 / Paper Tiger》作开幕片，北美首映并配 35mm 放映（Alice Tully Hall / Walter Reade）。格雷、亚当·德赖弗、斯嘉丽·约翰逊、迈尔斯·特勒出席 Q&A。影片戛纳主竞赛后 RT 约 83%（约52–53条影评，均分约6.7），Metacritic 77；Neon 11/13 有限、11/20 全国。Film at Lincoln Center / IndieWire / THR。"
+  },
+  {
     "id": "paper-tiger-rt-83",
     "filmId": "paper-tiger",
     "date": "2026-09-24",

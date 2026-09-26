@@ -64,6 +64,58 @@
       "country": ["哥伦比亚", "西班牙", "加拿大", "法国"],
       "posterColors": ["#7c2d12", "#fbbf24"],
       "streaming": []
+    },
+    {
+      "id": "the-black-ball",
+      "title": "黑球",
+      "titleEn": "La Bola Negra / The Black Ball",
+      "year": 2026,
+      "synopsis": "哈维尔·安布罗希与哈维尔·卡尔沃（Los Javis）执导。以洛尔卡未完成之作与阿尔贝托·科内赫罗剧作为起点，跨越1932、1937与2017三条时间线，讲述三位同性恋男子的欲望、压抑与自由。戛纳最佳导演（并列）、TIFF与圣塞观众奖，西班牙第99届奥斯卡国际片候选。",
+      "directors": ["哈维尔·安布罗希", "哈维尔·卡尔沃"],
+      "cast": ["Guitarricadelafuente", "米格尔·贝尔纳多", "佩内洛普·克鲁兹", "格伦·克洛斯", "洛拉·杜埃尼亚斯"],
+      "genres": ["剧情"],
+      "country": ["西班牙", "法国"],
+      "posterColors": ["#1a1a1a", "#c9a227"],
+      "streaming": []
+    },
+    {
+      "id": "naza",
+      "title": "纳扎",
+      "titleEn": "NAZA",
+      "year": 2026,
+      "synopsis": "尤瓦尔·亚伯拉罕、雷切尔·绍尔执导纪录片。聚焦以色列军方与情报系统使用AI目标系统对加沙平民造成的影响。第83届威尼斯评审团特别奖；圣塞74欧洲片观众奖。",
+      "directors": ["尤瓦尔·亚伯拉罕", "雷切尔·绍尔"],
+      "cast": [],
+      "genres": ["纪录"],
+      "country": ["英国"],
+      "posterColors": ["#422006", "#f59e0b"],
+      "streaming": []
+    },
+    {
+      "id": "possible-love",
+      "title": "可能的爱情",
+      "titleEn": "Possible Love",
+      "year": 2026,
+      "synopsis": "李沧东执导。两对夫妇因一部纪录片拍摄而命运交错。威尼斯评审团大奖与FIPRESCI奖；RT 100%。",
+      "directors": ["李沧东"],
+      "cast": ["全度妍", "薛景求", "赵寅成", "赵汝贞"],
+      "genres": ["剧情"],
+      "country": ["韩国", "美国"],
+      "posterColors": ["#2c3e50", "#ecf0f1"],
+      "streaming": []
+    },
+    {
+      "id": "tender-loving-care",
+      "title": "精心护理",
+      "titleEn": "Tender Loving Care",
+      "year": 2026,
+      "synopsis": "迈克·李执导并编剧。儿童保护工作者与社工好友的日常生活与家庭危机。Telluride/TIFF/圣塞/NYFF；RT 100%；导演称极可能为最后长片。",
+      "directors": ["迈克·李"],
+      "cast": ["凯特·奥弗林", "玛丽昂·贝利", "保罗·杰森"],
+      "genres": ["剧情", "喜剧"],
+      "country": ["英国"],
+      "posterColors": ["#5c4b37", "#d4c4a8"],
+      "streaming": []
     }
   ],
   "ceremonies": []

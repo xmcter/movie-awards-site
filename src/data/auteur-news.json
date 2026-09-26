@@ -1,1 +1,98 @@
-PLACEHOLDER
+[
+  {
+    "id": "nyff64-opens-paper-tiger",
+    "filmId": "paper-tiger",
+    "date": "2026-09-25",
+    "kind": "promo",
+    "summary": "NYFF64 开幕 · 詹姆斯·格雷《纸老虎》北美首映",
+    "detail": "第64届纽约电影节（9/25–10/12）今日开幕：詹姆斯·格雷《纸老虎 / Paper Tiger》作开幕片，北美首映并配 35mm 放映（Alice Tully Hall / Walter Reade）。格雷、亚当·德赖弗、斯嘉丽·约翰逊、迈尔斯·特勒出席 Q&A。影片戛纳主竞赛后 RT 约 83%（约52–53条影评，均分约6.7），Metacritic 77；Neon 11/13 有限、11/20 全国。Film at Lincoln Center / IndieWire / THR。"
+  },
+  {
+    "id": "paper-tiger-rt-83",
+    "filmId": "paper-tiger",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "格雷《纸老虎》口碑开局：新鲜度约 83%",
+    "detail": "《纸老虎 / Paper Tiger》Tomatometer 约 83%（约52条影评，均分约6.7/10），Metacritic 77。詹姆斯·格雷执导，亚当·德赖弗/迈尔斯·特勒/斯嘉丽·约翰逊主演；戛纳主竞赛后，NYFF64开幕片（9/25），Neon 11/13有限院线、11/20全国。Wikipedia / RT 汇总 9/24。"
+  },
+  {
+    "id": "ss74-ashes-luna-agenda2030",
+    "filmId": "ashes-ceniza",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "Euskadi 2030 Agenda奖 · 迭戈·卢纳《口中的灰烬》",
+    "detail": "第74届圣塞巴斯蒂安电影节：迭戈·卢纳《Ceniza en la boca / Ashes》获 Euskadi Basque Country 2030 Agenda Award（2万欧元，颁给主制片方）。评委表彰其透过移民现象横跨社会政治、经济与性别议题的能力，以及富有人情的导演与表演。影片属 Horizontes Latinos，卢纳以视频致谢并强调电影作为变革工具。官方节讯 / EFE / Diario Vasco 9/24。"
+  },
+  {
+    "id": "ss74-industry-full-924",
+    "filmId": "lovers-go-home",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "圣塞74产业奖全名单 · WIP Europa / 共制论坛",
+    "detail": "第74届圣塞巴斯蒂安产业奖正式公布：WIP Europa Industry Award 归瓦尔·贾沙里《In a Manner of Speaking》（科索沃-黑山）；欧洲-拉美共制论坛最佳项目奖归费利佩·索拉里·伊里戈延《The Amateurs》（智利-阿根廷-墨西哥）；DALE! Award 归英格丽德·波克罗佩克《The Illusions》；ArteKino 归塞尔玛·塞万提斯《Mourning Sound》；Casa Wabi-Escine 归伊内斯·努涅斯《The Spirit Healer Is Away For The Weekend》；Tanta/Sideral 归埃卡因·阿尔比特《Akira》。WIP Latam 与 EGEDA 此前已记。Screen / Deadline / Variety 9/24。"
+  },
+  {
+    "id": "ink-rt-83",
+    "filmId": "ink",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "博伊尔《墨》威尼斯后口碑：新鲜度约 83%",
+    "detail": "《墨迹 / Ink》Tomatometer 约 83%（约42条影评，均分约7.3/10），Metacritic 约79。威尼斯开幕片获正面评价，聚焦默多克与《太阳报》起源；美有限院线12/11，Netflix 美拉美1/8/2027。Wikipedia / RT 汇总 9/24。"
+  },
+  {
+    "id": "ss74-ink-boyle-surprise",
+    "filmId": "ink",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "圣塞74惊喜片 · 丹尼·博伊尔《墨迹》",
+    "detail": "第74届圣塞巴斯蒂安电影节官方宣布《Ink / 墨迹》为惊喜片：丹尼·博伊尔执导、杰克·奥康奈尔/盖·皮尔斯/克莱尔·芙伊主演，改编自詹姆斯·格雷厄姆舞台剧，讲述1969年默多克收购《太阳报》与编辑拉里·兰姆重塑英国小报的故事。威尼斯83开幕主竞赛后，9/25–26在维多利亚·欧亨尼娅剧院放映，博伊尔将出席26日场。西班牙院线定档2027-01-06。节方通稿 / EFE / Infobae 9/24。"
+  },
+  {
+    "id": "possible-love-rt-100-33",
+    "filmId": "possible-love",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "李沧东《可能的爱情》新鲜度维持 100%",
+    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（33 条影评，均分约 8.8/10），Metacritic 93。韩国院线已映；美澳 10/23 有限院线，Netflix 全球 11/6。Wikipedia / RT 9/23–24。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-28",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-24",
+    "kind": "promo",
+    "summary": "迈克·李《精心护理》新鲜度维持 100%",
+    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（28 条影评，均分约 8.4/10），Metacritic 86。圣塞主竞赛与 NYFF64 继续；李确认极可能为最后长片。Wikipedia / RT 9/23–24。"
+  },
+  {
+    "id": "ss74-egeda-galerna-huezo",
+    "filmId": "galerna",
+    "date": "2026-09-23",
+    "kind": "promo",
+    "summary": "EGEDA Platino 最佳 WIP Latam · 塔蒂亚娜·韦索《加勒纳》",
+    "detail": "第74届圣塞巴斯蒂安电影节产业奖公布：墨西哥-萨尔瓦多导演 Tatiana Huezo《Galerna》获 EGEDA Platino Industria Award for Best WIP Latam（3万欧元，颁给主制片方）。同批 WIP Latam Industry Award 归 Juan Sebastián Mesa《Lovers Go Home!》（已记）。官方节讯 / Variety 9/23。"
+  },
+  {
+    "id": "possible-love-kr-release-923",
+    "filmId": "possible-love",
+    "date": "2026-09-23",
+    "kind": "release",
+    "summary": "《可能的爱情》韩国今日上映 · 李沧东",
+    "detail": "李沧东《可能的爱情 / Possible Love》威尼斯评审团大奖后，韩国院线今日（9/23）上映。美澳 10/23 有限院线，Netflix 全球 11/6。RT 仍 100%（32 条影评，均分约 8.8）。韩国选送第99届奥斯卡国际片。Wikipedia / 官方日程。"
+  },
+  {
+    "id": "tender-loving-care-leigh-final-ss74",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-23",
+    "kind": "promo",
+    "summary": "迈克·李确认极可能为最后长片 · 圣塞记者会",
+    "detail": "迈克·李因肌炎（myositis）无法亲赴圣塞74，9/22 以视频连线参加《精心护理 / Tender Loving Care》主竞赛记者会，明确表示「更可能这是我的最后一部长片」（It's more than probable that this film will have to be my last）。制片 Georgina Lowe 与主演 Marion Bailey、Paul Jesson、Alice Bailey Johnson 到场。影片 RT 仍 100%（24 评）。报道 9/22–23：THR / El País / ABC / La Vanguardia。"
+  },
+  {
+    "id": "ss74-wip-latam-lovers-go-home",
+    "filmId": "lovers-go-home",
+    "date": "2026-09-23",
+    "kind": "promo",
+    "summary": "WIP Latam 产业奖 · 胡安·塞巴斯蒂安·梅萨《恋人回家》",
+    "detail": "第74届圣塞巴斯蒂安电影节产业单元公布：哥伦比亚导演 Juan Sebastián Mesa《Lovers Go Home!》获 WIP Latam Industry Award（含后期至英西字幕 DCP + 西班牙发行）。同批产业奖项亦表彰拉丁美洲与欧洲新作。Proimágenes / 节方 / Variety 汇总 9/23。"
+  }
+]

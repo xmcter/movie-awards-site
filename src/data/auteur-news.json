@@ -1,5 +1,21 @@
 [
   {
+    "id": "all-of-a-sudden-rt-96-47",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-09-30",
+    "kind": "promo",
+    "summary": "critic 96% · 滨口《突然》NYFF后",
+    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，嘎纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
+  },
+  {
+    "id": "chicago-62-gold-hugo-auteurs-915",
+    "filmId": "possible-love",
+    "date": "2026-09-15",
+    "kind": "promo",
+    "summary": "芝加哥62金雨果竞赛 · 李沧东 / 是枝 / 滨口",
+    "detail": "第62届芝加哥国际电影节（10/14–25）国际竞赛入围：李沧东《可能的爱情》、是枝裕和《蓞然回首》、滨口龙介《突然》角逐金雨果；同单元还有拉杜·裔德《女仆日记》、瓦莱斯卡·格里策巴赫《梦见的冒险》。开幕乔丹·弗斯特曼《Club Kid》，闭幕托尼·吉尔罗伊《Behemoth!。THR / Chicago Sun-Times 9/15–17。"
+  },
+  {
     "id": "possible-love-nyff64-qa-929",
     "filmId": "possible-love",
     "date": "2026-09-29",
@@ -21,7 +37,7 @@
     "date": "2026-09-29",
     "kind": "promo",
     "summary": "critic 100% · 迈克·李《精心护理》圣塞后维持",
-    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（31 条影评，均分约 8.3/10），Metacritic 86。圣塞金贝壳三奖后影评继续累积仍全票 Fresh。Wikipedia / RT 汇总 9/28–29。"
+    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（31 条影评，均分约 8.3/10），Metacritic 86。圣塞金贝壳三奖后影评继续累积仍全票 Fresh。美 Bleecker Street 12/4，英 StudioCanal 2027-02-12。Wikipedia / RT 汇总 9/28–29。"
   },
   {
     "id": "woman-unknown-rt-93-15",
@@ -44,7 +60,23 @@
     "filmId": "look-back",
     "date": "2026-09-29",
     "kind": "promo",
-    "summary": "critic 88% · 是枝《慕然回首》威尼斯后",
-    "detail": "《慕然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh。Wikipedia / RT 汇总 9/28–29。"
+    "summary": "critic 88% · 是枝《蓞然回首》威尼斯后",
+    "detail": "《蓞然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "paper-tiger-rt-86-64",
+    "filmId": "paper-tiger",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 86% · 格雷《纸老虎》NYFF后继续升",
+    "detail": "《纸老虎 / Paper Tiger》Tomatometer 约 86%（64 条影评，均分约 6.9/10），Metacritic 79。詹姆斯·格雷执导，亚当·德赖弗/迈尔斯·特勒/斯嘉丽·约翰逊主演；NYFF64 开幕片后影评继续累积，保持 Fresh。Neon 11/13 有限、11/20 全国。Wikipedia / RT 汇总 9/28–30。"
+  },
+  {
+    "id": "ss74-golden-shell-tlc",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-26",
+    "kind": "promo",
+    "summary": "圣塞74金贝壳 · 迈克·李《精心护理》三奖",
+    "detail": "第74届圣塞巴斯蒂安电影节闭幕：迈克·李《精心护理 / Tender Loving Care》获金贝壳最佳影片、最佳编剧（李本人）与银贝壳最佳主演（凯特·奥弗林，与阿斯塔·卡玛·奥古斯特并列）。评审团主席艾拉·萨克斯。李因肌炎未到场，发视频致谢并重申此片极可能为最后长片。观众奖已分别归《黑球》《纳扎》。Variety / Screen / Deadline / 官方 9/26。"
   }
 ]

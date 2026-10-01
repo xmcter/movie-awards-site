@@ -1,5 +1,29 @@
 [
   {
+    "id": "tokyo-39-gala-fjord",
+    "filmId": "fjord",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "东京39 Gala · 蒙吉《峡湾》亚洲首映",
+    "detail": "第39届东京国际电影节（10/26–11/4）全名单今日公布：克里斯蒂安·蒙吉金棕榈《峡湾 / Fjord》入选 Gala，与麦克多纳《野马九号》同场。开幕是泽泽崇久《Sukiyaki 上を向いて歩こう》，中心作品山崎贵《哥斯拉-0.0》，闭幕延相浩《Colony》日本首映。主竞赛 15 部，其中 7 部世界首映。Variety / Screen 10/1。"
+  },
+  {
+    "id": "tokyo-39-gala-wild-horse-nine",
+    "filmId": "wild-horse-nine",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "东京39 Gala · 麦克多纳《野马九号》",
+    "detail": "第39届东京国际电影节全名单：马丁·麦克多纳《野马九号 / Wild Horse Nine》入选 Gala，与蒙吉《峡湾》、韦恩·王《Diary of a Mad Old Man》、索罗戈延《The Beloved》、简·舍恩布伦《Teenage Sex and Death at Camp Miasma》同场。影展 10/26–11/4。Variety 10/1。"
+  },
+  {
+    "id": "tokyo-39-world-focus-dau",
+    "filmId": "dau",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "东京39 World Focus · 赫尔扎诺夫斯基《DAU》",
+    "detail": "第39届东京国际电影节官方指南（10/1 更新）补入 World Focus：伊利亚·赫尔扎诺夫斯基《DAU》，排期 10/29 19:30 与 11/3 16:25。同单元 World Focus 还有格里策巴赫、拉夫·迪亚兹、安吉拉·沙内莱克作品（片名未单列）。影展 10/26–11/4。官方 tiff-jp.net / Variety 10/1。"
+  },
+  {
     "id": "fjord-rt-93-72",
     "filmId": "fjord",
     "date": "2026-09-30",
@@ -45,7 +69,7 @@
     "date": "2026-09-15",
     "kind": "promo",
     "summary": "芝加哥62金雨果竞赛 · 李沧东 / 是枝 / 滨口",
-    "detail": "第62届芝加哥国际电影节（10/14–25）国际竞赛入围：李沧东《可能的爱情》、是枝裕和《鬚然回首》、滨口龙介《突然》角逐金雨果；同单元还有拉杜·裔德《女仆日记》、瓦莱斯卡·格里策巴赫《梦见的冒险》。开幕乔丹·弗斯特曼《Club Kid》，闭幕托尼·吉尔罗伊《Behemoth!》。THR / Chicago Sun-Times 9/15–17。"
+    "detail": "第62届芝加哥国际电影节（10/14–25）国际竞赛入围：李沧东《可能的爱情》、是枝裕和《鬍然回首》、滨口龙介《突然》角逐金雨果；同单元还有拉杜·裔德《女仆日记》、瓦莱斯卡·格里策巴赫《梦见的冒险》。开幕乔丹·弗斯特曼《Club Kid》，闭幕托尼·吉尔罗伊《Behemoth!》。THR / Chicago Sun-Times 9/15–17。"
   },
   {
     "id": "possible-love-nyff64-qa-929",
@@ -53,7 +77,7 @@
     "date": "2026-09-29",
     "kind": "promo",
     "summary": "NYFF64 映后 · 李沧东《可能的爱情》主创对谈",
-    "detail": "第64届纽约电影节主单元：《可能的爱情 / Possible Love》北美放映后，李沧东与全度妬、薛景求、赵寅成、赵汝贞出席，与艺术总监 Dennis Lim 对谈（Film at Lincoln Center 9/29 发布全程）。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；美 10/23 林肯中心起有限上映，Netflix 11/6。FilmLinc / @TheNYFF 9/29。"
+    "detail": "第64届纽约电影节主单元：《可能的爱情 / Possible Love》北美放映后，李沧东与全度妒、薛景求、赵寅成、赵汝贞出席，与艺术总监 Dennis Lim 对谈（Film at Lincoln Center 9/29 发布全程）。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；美 10/23 林肯中心起有限上映，Netflix 11/6。FilmLinc / @TheNYFF 9/29。"
   },
   {
     "id": "possible-love-rt-100-35",
@@ -92,8 +116,8 @@
     "filmId": "look-back",
     "date": "2026-09-29",
     "kind": "promo",
-    "summary": "critic 88% · 是枝《鬚然回首》威尼斯后",
-    "detail": "《鬚然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
+    "summary": "critic 88% · 是枝《鬍然回首》威尼斯后",
+    "detail": "《鬍然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
   },
   {
     "id": "paper-tiger-rt-86-64",

@@ -1,6 +1,19 @@
 {
   "films": [
     {
+      "id": "falcon",
+      "title": "猎鹰",
+      "titleEn": "Falcon",
+      "year": 2026,
+      "synopsis": "马可·贝洛基奥执导。皮尔弗兰切斯科·法维诺饰菲亚特-克莱斯勒救星塞尔吉奥·马尔基翁内，路易·加莱尔饰继承人约翰·埃尔坎。传记片围绕马尔基翁内挽救菲亚特与培养埃尔坎。2026年10月已在多伦多开拍，后续转意大利；RAI Cinema International 国际销售。",
+      "directors": ["马可·贝洛基奥"],
+      "cast": ["皮尔弗兰切斯科·法维诺", "路易·加莱尔", "瓦莱丽娅·布鲁尼·泰德斯基"],
+      "genres": ["剧情", "传记"],
+      "country": ["意大利", "加拿大"],
+      "posterColors": ["#1c1917", "#d6d3d1"],
+      "streaming": []
+    },
+    {
       "id": "ashes-ceniza",
       "title": "口中的灰烬",
       "titleEn": "Ashes / Ceniza en la boca",

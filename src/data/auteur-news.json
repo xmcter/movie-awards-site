@@ -1,11 +1,19 @@
 [
   {
+    "id": "park-chan-wook-aruna-vasudev-1012",
+    "filmId": "no-other-choice",
+    "date": "2026-10-12",
+    "kind": "promo",
+    "summary": "釜山31 · 朴赞郁获 NETPAC Aruna Vasudev 奖",
+    "detail": "第31届釜山国际电影节期间，Marie Claire Asia Star Awards 上，NETPAC 主席 Martine Thérouanne 向朴赞郁颁发 Aruna Vasudev 奖。该奖以 NETPAC 创始人、亚洲电影推广先驱 Aruna Vasudev 命名，每年致敬一位重要导演；朴赞郁曾担任第79届戛纳主竞赛评审团主席。Asian Movie Pulse / Marie Claire 获奖名单 10/12。"
+  },
+  {
     "id": "possible-love-netflix-oscar-push-1008",
     "filmId": "possible-love",
     "date": "2026-10-08",
     "kind": "promo",
     "summary": "Netflix 奥斯卡多类别冲刺 · 李沧东《可能的爱情》",
-    "detail": "THR 独家：Netflix 计划为李沧东《可能的爱情》展开多类别奥斯卡冲刺，重点推动全度妍最佳女主角（此前嘎纳《密阳》影后）。同时争取最佳影片、导演、原创剧本与国际片（韩国已提交）。威尼斯评审团大奖、100% RT、MC 93。美 10/23 有限，Netflix 11/6。Hollywood Reporter 10/8。"
+    "detail": "THR 独家：Netflix 计划为李沧东《可能的爱情》展开多类别奥斯卡冲刺，重点推动全度妍最佳女主角（此前嗦纳《密阳》影后）。同时争取最佳影片、导演、原创剧本与国际片（韩国已提交）。威尼斯评审团大奖、100% RT、MC 93。美 10/23 有限，Netflix 11/6。Hollywood Reporter 10/8。"
   },
   {
     "id": "hamaguchi-ficunam-medal-1008",
@@ -20,8 +28,8 @@
     "filmId": "the-black-ball",
     "date": "2026-10-08",
     "kind": "promo",
-    "summary": "哥谭先锋致敬 · Los Javis《黑球》",
-    "detail": "哥谭电影与媒体学会宣布，哈维尔·卡尔沃与哈维尔·安布罗希（Los Javis）《黑球 / La Bola Negra》将获第36届哥谭电影奖 Gotham Vanguard Tribute，典礼 11/30 纽约 Cipriani Wall Street。致敬涵盖主创与卡司（含佩内洛普·克鲁兹、格伦·克洛斯）。影片此前获嘎纳并列最佳导演、TIFF 观众选择奖与圣塞74观众奖。Variety / Next Best Picture 10/8。"
+    "summary": "哥谪先锋致敬 · Los Javis《黑球》",
+    "detail": "哥谪电影与媒体学会宣布，哈维尔·卡尔沃与哈维尔·安布罗希（Los Javis）《黑球 / La Bola Negra》将获第36届哥谪电影奖 Gotham Vanguard Tribute，典礼 11/30 纽约 Cipriani Wall Street。致敬涵盖主创与卡司（含佩内洛普·克鲁兹、格伦·克洛斯）。影片此前获嗦纳并列最佳导演、TIFF 观众选择奖与圣塞74观众奖。Variety / Next Best Picture 10/8。"
   },
   {
     "id": "woman-unknown-uk-vue-1008",
@@ -53,7 +61,7 @@
     "date": "2026-10-01",
     "kind": "promo",
     "summary": "金马63入围 · 舒淇《女孩》与陈哲艺《我们不是陌生人》",
-    "detail": "第63届金马奖入围名单于10月1日17:30公布（马士媛、刘敬揭晓）。最佳剧情片：舒淇《女孩》、许承傑《双嚘》、杨两全《善男信女》、SABU《狂忘警探》、陈哲艺《我们不是陌生人》。最佳导演另有邱礼涛《我们不是什么》、杨毅恒《告别的年代》。舒淇入围最佳新导演；影帝阮经天、刘冠廷，影后杨雁雁、余香凝。年度杰出电影工作者周佳圣。颁奖礼 11/22 台北流行音乐中心。喰！星闻 / 金马执委会 10/1。"
+    "detail": "第63届金马奖入围名单于10月1日17:30公布（马士媛、刘敬揭晓）。最佳剧情片：舒淇《女孩》、许承傔《双噘》、杨两全《善男信女》、SABU《狂忘警探》、陈哲艺《我们不是陌生人》。最佳导演另有邱礼涛《我们不是什么》、杨毅恒《告别的年代》。舒淇入围最佳新导演；影帝阮经天、刘冠廷，影后杨雁雁、余香凝。年度杰出电影工作者周佳圣。颁奖礼 11/22 台北流行音乐中心。單！星闻 / 金马执委会 10/1。"
   },
   {
     "id": "tokyo-39-gala-fjord",
@@ -117,7 +125,7 @@
     "date": "2026-09-30",
     "kind": "promo",
     "summary": "critic 96% · 滨口《突然》NYFF后",
-    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，嘎纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
+    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，嗦纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
   },
   {
     "id": "chicago-62-gold-hugo-auteurs-915",
@@ -125,7 +133,7 @@
     "date": "2026-09-15",
     "kind": "promo",
     "summary": "芝加哥62金雨果竞赛 · 李沧东 / 是枝 / 滨口",
-    "detail": "第62届芝加哥国际电影节（10/14–25）国际竞赛入围：李沧东《可能的爱情》、是枝裕和《鬭然回首》、滨口龙介《突然》角逐金雨果；同单元还有拉杜·裔德《女仆日记》、瓦莱斯卡·格里策巴赫《梦见的冒险》。开幕乔丹·弗斯特曼《Club Kid》，闭幕托尼·吉尔罗伊《Behemoth!》。THR / Chicago Sun-Times 9/15–17。"
+    "detail": "第62届芝加哥国际电影节（10/14–25）国际竞赛入围：李沧东《可能的爱情》、是枝裕和《鬪然回首》、滨口龙介《突然》角逐金雨果；同单元还有拉杜·裔德《女仆日记》、瓦莱斯卡·格里策巴赫《梦见的冒险》。开幕乔丹·弗斯特曼《Club Kid》，闭幕托尼·吉尔罗伊《Behemoth!》。THR / Chicago Sun-Times 9/15–17。"
   },
   {
     "id": "possible-love-nyff64-qa-929",
@@ -133,7 +141,7 @@
     "date": "2026-09-29",
     "kind": "promo",
     "summary": "NYFF64 映后 · 李沧东《可能的爱情》主创对谈",
-    "detail": "第64届纽约电影节主单元：《可能的爱情 / Possible Love》北美放映后，李沧东与全度妞、薛景求、赵寅成、赵汝贞出席，与艺术总监 Dennis Lim 对谈（Film at Lincoln Center 9/29 发布全程）。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；美 10/23 林肯中心起有限上映，Netflix 11/6。FilmLinc / @TheNYFF 9/29。"
+    "detail": "第64届纽约电影节主单元：《可能的爱情 / Possible Love》北美放映后，李沧东与全度姐、薛景求、赵寅成、赵汝贞出席，与艺术总监 Dennis Lim 对谈（Film at Lincoln Center 9/29 发布全程）。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；美 10/23 林肯中心起有限上映，Netflix 11/6。FilmLinc / @TheNYFF 9/29。"
   },
   {
     "id": "possible-love-rt-100-35",
@@ -172,8 +180,8 @@
     "filmId": "look-back",
     "date": "2026-09-29",
     "kind": "promo",
-    "summary": "critic 88% · 是枝《鬭然回首》威尼斯后",
-    "detail": "《鬭然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
+    "summary": "critic 88% · 是枝《鬪然回首》威尼斯后",
+    "detail": "《鬪然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
   },
   {
     "id": "paper-tiger-rt-86-64",

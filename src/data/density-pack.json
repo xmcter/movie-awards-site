@@ -1,6 +1,19 @@
 {
   "films": [
     {
+      "id": "no-other-choice",
+      "title": "别无选择",
+      "titleEn": "No Other Choice",
+      "year": 2025,
+      "synopsis": "朴赞郁执导。李秉宪主演。改编自唐纳德·E·韦斯特莱克小说《斧头》，讲述被裁员的纸厂中层为保住家庭而采取极端手段的讽刺喜剧。威尼斯主竞赛后于釜山30开幕；2026年10月13日韩国电影资料馆放映加长版导演剪辑。",
+      "directors": ["朴赞郁"],
+      "cast": ["李秉宪", "孙艺珍"],
+      "genres": ["剧情", "喜剧", "惊悚"],
+      "country": ["韩国"],
+      "posterColors": ["#1c1917", "#a8a29e"],
+      "streaming": []
+    },
+    {
       "id": "falcon",
       "title": "猎鹰",
       "titleEn": "Falcon",

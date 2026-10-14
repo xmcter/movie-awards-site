@@ -1,1 +1,1 @@
-$(cat /tmp/density-pack-new.json)
+{{FILE:/tmp/density-pack-content.json}}

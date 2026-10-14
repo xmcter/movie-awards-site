@@ -1,1 +1,250 @@
-see local /tmp/auteur-news-updated.json - full content too long for this call, but the new item is fjord-neon-specialty-opening-1011
+[
+  {
+    "id": "ink-rt-73-1014",
+    "filmId": "ink",
+    "date": "2026-10-14",
+    "kind": "promo",
+    "summary": "critic 跌破 80% · 博伊尔《墨迹》",
+    "detail": "《墨迹 / Ink》Tomatometer 现约 73%（56 条影评），自 9/24 约 83%（约42条）回落后跌破 80% 门槛。威尼斯开幕与圣塞74惊喜放映后口碑分化；美有限院线仍定 12/11，Netflix 美拉美 1/8/2027。RT 汇总 10/14。"
+  },
+  {
+    "id": "possible-love-rt-100-42",
+    "filmId": "possible-love",
+    "date": "2026-10-13",
+    "kind": "promo",
+    "summary": "critic 100% · 李沧东《可能的爱情》影评增至42",
+    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（42 条影评，均分约 8.8/10），Metacritic 93。较 9/29 节点（35条）样本继续扩大。美澳 10/23 有限院线，Netflix 全球 11/6；韩国已映并为第99届奥斯卡国际片候选。Wikipedia / RT 10/13。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-40",
+    "filmId": "tender-loving-care",
+    "date": "2026-10-13",
+    "kind": "promo",
+    "summary": "critic 100% · 迈克·李《精心护理》影评增至40",
+    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（40 条影评），圣塞74金贝壳后样本自 9/29 约31条继续上升。美限映定档 12/4（Bleecker Street）。RT 汇总 10/13。"
+  },
+  {
+    "id": "park-chan-wook-aruna-vasudev-1012",
+    "filmId": "no-other-choice",
+    "date": "2026-10-12",
+    "kind": "promo",
+    "summary": "釜山31 · 朴赞郁获 NETPAC Aruna Vasudev 奖",
+    "detail": "第31届釜山国际电影节期间，Marie Claire Asia Star Awards 上，NETPAC 主席 Martine Thérouanne 向朴赞郁颁发 Aruna Vasudev 奖。该奖以 NETPAC 创始人、亚洲电影推广先驱 Aruna Vasudev 命名，每年致敬一位重要导演；朴赞郁曾担任第79届戛纳主竞赛评审团主席。Asian Movie Pulse / Marie Claire 获奖名单 10/12。"
+  },
+  {
+    "id": "fjord-neon-specialty-opening-1011",
+    "filmId": "fjord",
+    "date": "2026-10-11",
+    "kind": "promo",
+    "summary": "Neon《峡湾》美限映首周末 · 4厅约12.4万美元",
+    "detail": "克里斯蒂安·蒙吉金棕榈《峡湾 / Fjord》10/9 于纽约与洛杉矶4厅开画，首周末约12.4万美元（每厅约3.1万）。Deadline specialty box office 10/11 报道为当周独立片开画领先；Neon 计划后续四周扩映。罗马尼亚第99届奥斯卡国际片候选，已有约93% RT。Deadline / Box Office Mojo 10/11–12。"
+  },
+  {
+    "id": "nyff64-closes-14th",
+    "filmId": "fourteenth",
+    "date": "2026-10-09",
+    "kind": "promo",
+    "summary": "NYFF64 闭幕 · 杜威内《第十四条》世界首映",
+    "detail": "第64届纽约电影节闭幕夜（Alice Tully Hall，10/9）：Ava DuVernay 纪录片《第十四条 / 14th》世界首映，距同导《第十三条》作 NYFF54 开幕片正好十年。影片检视第十四修正案下的出生公民权、正当程序与平等保护等原则近年所受冲击；Netflix 发行，院线窗口约 11/27、流媒体约 12/4。Film at Lincoln Center / GoldDerby / IndieWire。"
+  },
+  {
+    "id": "possible-love-netflix-oscar-push-1008",
+    "filmId": "possible-love",
+    "date": "2026-10-08",
+    "kind": "promo",
+    "summary": "Netflix 奥斯卡多类别冲刺 · 李沧东《可能的爱情》",
+    "detail": "THR 独家：Netflix 计划为李沧东《可能的爱情》展开多类别奥斯卡冲刺，重点推动全度妍最佳女主角（此前嗦纳《密阳》影后）。同时争取最佳影片、导演、原创剧本与国际片（韩国已提交）。威尼斯评审团大奖、100% RT、MC 93。美 10/23 有限，Netflix 11/6。Hollywood Reporter 10/8。"
+  },
+  {
+    "id": "hamaguchi-ficunam-medal-1008",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-10-08",
+    "kind": "promo",
+    "summary": "滨口获 UNAM 电影资料馆奖章 · FICUNAM 16",
+    "detail": "FICUNAM 16（墨西哥城，11/5–15）官宣滨口龙介为荣誉嘉宾，并将于 11/10 在国家电影资料馆 Xoco 与黑泽清同获 Medalla Filmoteca UNAM（1987 年起颁发的银质奖章）。影展放映其日本奥斯卡国际片《突然 / All of a Sudden》；同届全景含李沧东《可能的爱情》，兹维亚金采夫出席《弥诺陶洛斯》墨西哥首映。Gaceta UNAM / EFE 10/8。"
+  },
+  {
+    "id": "black-ball-gotham-vanguard-1008",
+    "filmId": "the-black-ball",
+    "date": "2026-10-08",
+    "kind": "promo",
+    "summary": "哥谪先锋致敬 · Los Javis《黑球》",
+    "detail": "哥谪电影与媒体学会宣布，哈维尔·卡尔沃与哈维尔·安布罗希（Los Javis）《黑球 / La Bola Negra》将获第36届哥谪电影奖 Gotham Vanguard Tribute，典礼 11/30 纽约 Cipriani Wall Street。致敬涵盖主创与卡司（含佩内洛普·克鲁兹、格伦·克洛斯）。影片此前获嗦纳并列最佳导演、TIFF 观众选择奖与圣塞74观众奖。Variety / Next Best Picture 10/8。"
+  },
+  {
+    "id": "woman-unknown-uk-vue-1008",
+    "filmId": "woman-unknown",
+    "date": "2026-10-08",
+    "kind": "promo",
+    "summary": "英爱发行 · 埃尔-图希金狮《无名女人》",
+    "detail": "Vue Lumière 自 TrustNordisk 取得梅·埃尔-图希《无名女人 / Woman Unknown》英国与爱尔兰发行权，谈判方 Eve Gabereau 与 Susan Wendt。玛蒂尔德·阿尔塞尔凭此片获威尼斯沃尔皮杯最佳女演员；丹麦第99届奥斯卡国际片候选。影片正在 BFI 伦敦70主竞赛放映，随后走里加与釜山；院线日期未公布。同批已销德奥（Weltkino）、法（Memento）、西（Karma）等地。Screen / TrustNordisk 10/8。"
+  },
+  {
+    "id": "falcon-bellocchio-cast-1008",
+    "filmId": "falcon",
+    "date": "2026-10-08",
+    "kind": "promo",
+    "summary": "贝洛基奥《猎鹰》开机 · 加莱尔饰埃尔坎",
+    "detail": "马可·贝洛基奥新片《猎鹰 / Falcon》今日官宣卡司并确认已在多伦多开拍：皮尔弗兰切斯科·法维诺饰菲亚特救星塞尔吉奥·马尔基翁内，路易·加莱尔饰继承人约翰·埃尔坎，另有贝妮代塔·奇马蒂、芭芭拉·隆基与瓦莱丽娅·布鲁尼·泰德斯基客串。RAI Cinema International 接手国际销售；Kavac Film / Emotion Network / RAI Cinema 制作，意大利发行 01 Distribution。剧本由贝洛基奥与 Ludovica Rampoldi、Andrea Di Stefano、Stefano Rulli 等合写。Variety / Screen 10/8。"
+  },
+  {
+    "id": "busan31-yeoh-hui-1006",
+    "filmId": "honorary-yeoh",
+    "date": "2026-10-06",
+    "kind": "promo",
+    "summary": "釜山31开幕 · 杨紫琼亚洲电影人奖 / 许鞍华山茶花奖",
+    "detail": "第31届釜山国际电影节（10/6–15）开幕典礼：杨紫琼获 Asian Filmmaker of the Year；许鞍华获 Camellia Award（表彰推动女性电影贡献）。开幕片为金钟宽《The Table: Day and Night》；张艺谋任主竞赛评委会主席。主竞赛与 Vision 奖项待 10/15 闭幕揭晓。BIFF / Screen / 港府新闻稿 10/6。"
+  },
+  {
+    "id": "bitter-christmas-rt-87-69",
+    "filmId": "bitter-christmas",
+    "date": "2026-10-04",
+    "kind": "promo",
+    "summary": "critic 87% · 阿尔莫多瓦尔《苦涩圣诞》",
+    "detail": "《苦涩圣诞 / Bitter Christmas（Amarga Navidad）》Tomatometer 约 87%（69 条影评，均分约 7.4/10；RT 影片页现 70 条且已出共识），Metacritic 69（23 评，未过 80）。佩德罗·阿尔莫多瓦尔执导，更纳主竞赛国际首映后影评累积跨过 80%；美索尼 11/13 有限。Wikipedia / RT 名录汇总 10/4。"
+  },
+  {
+    "id": "gh63-noms-1001",
+    "filmId": "girl-shuqi",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "金马63入围 · 舒淇《女孩》与陈哲艺《我们不是陌生人》",
+    "detail": "第63届金马奖入围名单于10月1日17:30公布（马士媛、刘敬揭晓）。最佳剧情片：舒淇《女孩》、许承傔《双噘》、杨两全《善男信女》、SABU《狂忘警探》、陈哲艺《我们不是陌生人》。最佳导演另有邱礼涛《我们不是什么》、杨毅恒《告别的年代》。舒淇入围最佳新导演；影帝阮经天、刘冠廷，影后杨雁雁、余香凝。年度杰出电影工作者周佳圣。颁奖礼 11/22 台北流行音乐中心。單！星闻 / 金马执委会 10/1。"
+  },
+  {
+    "id": "tokyo-39-gala-fjord",
+    "filmId": "fjord",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "东京39 Gala · 蒙吉《峡湾》亚洲首映",
+    "detail": "第39届东京国际电影节（10/26–11/4）全名单今日公布：克里斯蒂安·蒙吉金棕榈《峡湾 / Fjord》入选 Gala，与麦克多纳《野马九号》同场。开幕是泽泽崇久《Sukiyaki 上を向いて歩こう》，中心作品山崎贵《哥斯拉-0.0》，闭幕延相浩《Colony》日本首映。主竞赛 15 部，其中 7 部世界首映。Variety / Screen 10/1。"
+  },
+  {
+    "id": "tokyo-39-gala-wild-horse-nine",
+    "filmId": "wild-horse-nine",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "东京39 Gala · 麦克多纳《野马九号》",
+    "detail": "第39届东京国际电影节全名单：马丁·麦克多纳《野马九号 / Wild Horse Nine》入选 Gala，与蒙吉《峡湾》、韦恩·王《Diary of a Mad Old Man》、索罗戈延《The Beloved》、简·舍恩布伦《Teenage Sex and Death at Camp Miasma》同场。影展 10/26–11/4。Variety 10/1。"
+  },
+  {
+    "id": "tokyo-39-world-focus-dau",
+    "filmId": "dau",
+    "date": "2026-10-01",
+    "kind": "promo",
+    "summary": "东京39 World Focus · 赫尔扎诺夫斯基《DAU》",
+    "detail": "第39届东京国际电影节官方指南（10/1 更新）补入 World Focus：伊利亚·赫尔扎诺夫斯基《DAU》，排期 10/29 19:30 与 11/3 16:25。同单元 World Focus 还有格里策巴赫、拉夫·迪亚兹、安吉拉·沙内莱克作品（片名未单列）。影展 10/26–11/4。官方 tiff-jp.net / Variety 10/1。"
+  },
+  {
+    "id": "fjord-rt-93-72",
+    "filmId": "fjord",
+    "date": "2026-09-30",
+    "kind": "promo",
+    "summary": "critic 93% · 蒙吉《峡湾》金棕榈后",
+    "detail": "《峡湾 / Fjord》Tomatometer 约 93%（72 条影评，均分约 7.9/10），Metacritic 81（22 评）。克里斯蒂安·蒙吉执导，塞巴斯蒂安·斯坦与蕾娜特·赖因斯夫主演；扎纳金棕榈、FIPRESCI 与评委会外多项后样本扩大仍 Certified Fresh。罗马尼亚第99届奥斯卡国际片候选；Neon 10/9 北美院线，NYFF64 Spotlight。Wikipedia / RT / Metacritic 汇总 9/30。"
+  },
+  {
+    "id": "the-black-ball-rt-91-55",
+    "filmId": "the-black-ball",
+    "date": "2026-09-30",
+    "kind": "promo",
+    "summary": "critic 91% · Los Javis《黑球》圣塞观众奖后",
+    "detail": "《黑球 / La Bola Negra》Tomatometer 约 91%（55 条影评，均分约 8.4/10），Metacritic 87（17 评）。扎纳并列最佳导演、TIFF 与圣塞74观众奖后样本扩大仍 Certified Fresh；西班牙 9/25 院线，美 10/16 有限。西班牙第99届奥斯卡国际片候选。Wikipedia / RT / Metacritic 汇总 9/30。"
+  },
+  {
+    "id": "naza-rt-100-23-us-930",
+    "filmId": "naza",
+    "date": "2026-09-30",
+    "kind": "promo",
+    "summary": "critic 100% · 亚伯拉罕/绍尔《纳扎》美限映",
+    "detail": "《纳扎 / NAZA》Tomatometer 100%（23 条影评，均分约 9.1/10），Metacritic 94（15 评）。威尼斯评审团特别奖、圣塞74欧洲片观众奖后，美 9/30 起 IFC Center 有限上映，10/9 扩至洛杉矶等地；英 10/15 Dogwoof。Wikipedia / RT / Metacritic / Guardian 汇总 9/30。"
+  },
+  {
+    "id": "all-of-a-sudden-rt-96-47",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-09-30",
+    "kind": "promo",
+    "summary": "critic 96% · 滨口《突然》NYFF后",
+    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，嗦纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
+  },
+  {
+    "id": "afi-fest-2026-lineup-929",
+    "filmId": "possible-love",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "AFI Fest 40 · 李沧东 / 滨口 / 赫尔佐格 / 麦克多纳",
+    "detail": "第40届 AFI Fest（好莱坞 TCL Chinese，10/21–25）全名单公布：李沧东《可能的爱情》、滨口龙介《突然》入选；特别放映含麦克多纳《野马九号》、赫尔佐格《Bucking Fastard》、阿尔莫多瓦尔《苦涩圣诞》。THR 9/29。"
+  },
+  {
+    "id": "possible-love-nyff64-qa-929",
+    "filmId": "possible-love",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "NYFF64 映后 · 李沧东《可能的爱情》主创对谈",
+    "detail": "第64届纽约电影节主单元：《可能的爱情 / Possible Love》北美放映后，李沧东与全度姐、薛景求、赵寅成、赵汝贞出席，与艺术总监 Dennis Lim 对谈（Film at Lincoln Center 9/29 发布全程）。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；美 10/23 林肯中心起有限上映，Netflix 11/6。FilmLinc / @TheNYFF 9/29。"
+  },
+  {
+    "id": "possible-love-rt-100-35",
+    "filmId": "possible-love",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 100% · 李沧东《可能的爱情》影评增至35",
+    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（35 条影评，均分约 8.8/10），Metacritic 93。威尼斯评审团大奖后影评累积保持完美 Fresh；美 10/23 有限、Netflix 11/6。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-31",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 100% · 迈克·李《精心护理》圣塞后维持",
+    "detail": "《精心护理 / Tender Loving Care》Tomatometer 维持 100%（31 条影评，均分约 8.3/10），Metacritic 86。圣塞金贝壳三奖后影评继续累积仍全票 Fresh。美 Bleecker Street 12/4，英 StudioCanal 2027-02-12。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "woman-unknown-rt-93-15",
+    "filmId": "woman-unknown",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 93% · 埃尔-图希《无名女人》金狮后",
+    "detail": "《无名女人 / Woman Unknown》Tomatometer 约 93%（15 条影评，均分约 8.3/10），Metacritic 84。梅·埃尔-图希执导，玛蒂尔德·阿尔塞尔获威尼斯沃尔皮杯最佳女演员；金狮得主后口碑持续 Fresh。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "wild-horse-nine-rt-94-72",
+    "filmId": "wild-horse-nine",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 94% · 麦克多纳《野马九号》威尼斯后",
+    "detail": "《野马九号 / Wild Horse Nine》Tomatometer 约 94%（72 条影评，均分约 8.3/10），Metacritic 79。马丁·麦克多纳执导，约翰·马尔科维奇获威尼斯沃尔皮杯最佳男演员；Searchlight 11/6 上映。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "look-back-rt-88-24",
+    "filmId": "look-back",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 88% · 是枝《鬪然回首》威尼斯后",
+    "detail": "《鬪然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "paper-tiger-rt-86-64",
+    "filmId": "paper-tiger",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 86% · 格雷《纸老虎》NYFF后继续升",
+    "detail": "《纸老虎 / Paper Tiger》Tomatometer 约 86%（64 条影评，均分约 6.9/10），Metacritic 79。詹姆斯·格雷执导，亚当·德赖弗/迈尔斯·特勒/斯嘉丽·约翰逊主演；NYFF64 开幕片后影评继续累积，保持 Fresh。Neon 11/13 有限、11/20 全国。Wikipedia / RT 汇总 9/28–30。"
+  },
+  {
+    "id": "ss74-golden-shell-tlc",
+    "filmId": "tender-loving-care",
+    "date": "2026-09-26",
+    "kind": "promo",
+    "summary": "圣塞74金贝壳 · 迈克·李《精心护理》三奖",
+    "detail": "第74届圣塞巴斯蒂安电影节闭幕：迈克·李《精心护理 / Tender Loving Care》获金贝壳最佳影片、最佳编剧（李本人）与银贝壳最佳主演（凯特·奥弗林，与阿斯塔·卡玛·奥古斯特并列）。评审团主席艾拉·萨克斯。李因肌炎未到场，发视频致谢并重申此片极可能为最后长片。观众奖已分别归《黑球》《纳扎》。Variety / Screen / Deadline / 官方 9/26。"
+  },
+  {
+    "id": "chicago-62-gold-hugo-auteurs-915",
+    "filmId": "possible-love",
+    "date": "2026-09-15",
+    "kind": "promo",
+    "summary": "芝加哥62金雨果竞赛 · 李沧东 / 是枝 / 滨口",
+    "detail": "第62届芝加哥国际电影节（10/14–25）国际竞赛入围：李沧东《可能的爱情》、是枝裕和《鬪然回首》、滨口龙介《突然》角逐金雨果；同单元还有拉杜·裔德《女仆日记》、瓦莱斯卡·格里策巴赫《梦见的冒险》。开幕乔丹·弗斯特曼《Club Kid》，闭幕托尼·吉尔罗伊《Behemoth!》。THR / Chicago Sun-Times 9/15–17。"
+  }
+]

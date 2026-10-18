@@ -26,6 +26,12 @@ const FILTERS: { key: FilterKey; label: string }[] = [
 ];
 
 const PIN_NEW = 10;
+const DEDUP_STORAGE_KEY = "news_dedup_by_film_v1";
+
+interface GroupedTimelineItem {
+  event: TimelineEvent;
+  priorEvents: TimelineEvent[];
+}
 
 function initials(title: string): string {
   const trimmed = title.trim();
@@ -94,10 +100,18 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [showBlocked, setShowBlocked] = useState(false);
   const [lastUndo, setLastUndo] = useState<{ event: TimelineEvent; message: string } | null>(null);
   const [ready, setReady] = useState(false);
+  const [dedupByFilm, setDedupByFilm] = useState(true);
+  const [expandedFilms, setExpandedFilms] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     setSeen(readClicked());
     setDismissStore(loadDismissMarks());
+    try {
+      const savedDedup = localStorage.getItem(DEDUP_STORAGE_KEY);
+      if (savedDedup !== null) {
+        setDedupByFilm(savedDedup === "true");
+      }
+    } catch {}
     setReady(true);
 
     const onDismissUpdate = () => {
@@ -166,12 +180,29 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     setLastUndo(null);
   };
 
+  const handleToggleDedup = () => {
+    setDedupByFilm((prev) => {
+      const next = !prev;
+      try {
+        localStorage.setItem(DEDUP_STORAGE_KEY, String(next));
+      } catch {}
+      return next;
+    });
+  };
+
+  const toggleExpandFilm = (key: string) => {
+    setExpandedFilms((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   const blockedCount = useMemo(() => {
     return Object.keys(dismissStore.blocked || {}).length;
   }, [dismissStore]);
 
-  // 过滤顺序：现有 type 筛选 / 搜索 → 不再推荐过滤 → 渲染。
-  const filtered = useMemo(() => {
+  // 过滤顺序：现有 type 筛选 / 搜索 → 不再推荐过滤 → 是否开启电影去重聚合 → 渲染。
+  const grouped = useMemo((): GroupedTimelineItem[] => {
     const q = query.trim().toLowerCase();
     const matched = events.filter((e) => {
       if (filter !== "all" && e.type !== filter) return false;
@@ -197,12 +228,38 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       ? matched
       : matched.filter((e) => !isBlockedOrSimilar(e, dismissStore));
 
-    if (filter !== "all" || q) return afterDismiss;
+    if (!dedupByFilm) {
+      if (filter !== "all" || q) {
+        return afterDismiss.map((e) => ({ event: e, priorEvents: [] }));
+      }
+      const pinned = afterDismiss.filter((e) => e.type === "auteur").slice(0, PIN_NEW);
+      const ids = new Set(pinned.map((e) => e.id));
+      const list = [...pinned, ...afterDismiss.filter((e) => !ids.has(e.id))];
+      return list.map((e) => ({ event: e, priorEvents: [] }));
+    }
 
-    const pinned = afterDismiss.filter((e) => e.type === "auteur").slice(0, PIN_NEW);
-    const ids = new Set(pinned.map((e) => e.id));
-    return [...pinned, ...afterDismiss.filter((e) => !ids.has(e.id))];
-  }, [events, filter, query, dismissStore, showBlocked]);
+    // 开启「每片仅最新」：按电影唯一去重，最新一条作为主卡片，较早动态存入 priorEvents
+    const filmMap = new Map<string, GroupedTimelineItem>();
+    const result: GroupedTimelineItem[] = [];
+
+    for (const e of afterDismiss) {
+      const key = e.filmId;
+      if (!key) {
+        result.push({ event: e, priorEvents: [] });
+        continue;
+      }
+      const existing = filmMap.get(key);
+      if (!existing) {
+        const item: GroupedTimelineItem = { event: e, priorEvents: [] };
+        filmMap.set(key, item);
+        result.push(item);
+      } else {
+        existing.priorEvents.push(e);
+      }
+    }
+
+    return result;
+  }, [events, filter, query, dismissStore, showBlocked, dedupByFilm]);
 
   const counts = useMemo(() => {
     const c: Record<FilterKey, number> = {
@@ -212,14 +269,34 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       streaming: 0,
       auteur: 0,
     };
+    const seenMap: Record<FilterKey, Set<string>> = {
+      all: new Set(),
+      nomination: new Set(),
+      win: new Set(),
+      streaming: new Set(),
+      auteur: new Set(),
+    };
+
     for (const e of events) {
       if (!isBlockedOrSimilar(e, dismissStore)) {
-        c.all += 1;
-        c[e.type] += 1;
+        if (dedupByFilm) {
+          const key = e.filmId || e.id;
+          if (!seenMap.all.has(key)) {
+            seenMap.all.add(key);
+            c.all += 1;
+          }
+          if (!seenMap[e.type].has(key)) {
+            seenMap[e.type].add(key);
+            c[e.type] += 1;
+          }
+        } else {
+          c.all += 1;
+          c[e.type] += 1;
+        }
       }
     }
     return c;
-  }, [events, dismissStore]);
+  }, [events, dismissStore, dedupByFilm]);
 
   return (
     <div className="space-y-6">
@@ -234,17 +311,39 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 onClick={() => setFilter(f.key)}
                 className={`rounded-full px-3.5 py-1.5 text-sm transition ${
                   active
-                    ? "bg-cinema-gold text-cinema-bg"
+                    ? "bg-cinema-gold text-cinema-bg font-medium"
                     : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
                 }`}
               >
                 {f.label}
-                <span className={`ml-1.5 text-xs ${active ? "opacity-70" : "opacity-50"}`}>
+                <span className={`ml-1.5 text-xs ${active ? "opacity-75" : "opacity-50"}`}>
                   {counts[f.key]}
                 </span>
               </button>
             );
           })}
+
+          <button
+            type="button"
+            onClick={handleToggleDedup}
+            className={`rounded-full px-3 py-1.5 text-xs font-medium transition inline-flex items-center gap-1.5 ${
+              dedupByFilm
+                ? "border border-cinema-gold/60 bg-cinema-gold/15 text-cinema-gold hover:bg-cinema-gold/25"
+                : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
+            }`}
+            title={
+              dedupByFilm
+                ? "每部电影仅显示最新动态（已开启），点击查看全部细分条目"
+                : "显示所有历史动态（已开启），点击按电影去重聚合"
+            }
+          >
+            <span
+              className={`inline-block h-1.5 w-1.5 rounded-full ${
+                dedupByFilm ? "bg-cinema-gold" : "bg-cinema-muted/40"
+              }`}
+            />
+            {dedupByFilm ? "每片仅最新" : "全部动态"}
+          </button>
 
           {ready && blockedCount > 0 ? (
             <div className="flex items-center gap-1.5 rounded-full border border-cinema-border/80 bg-cinema-card px-3 py-1 text-xs text-cinema-muted">
@@ -293,18 +392,21 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
         </div>
       ) : null}
 
-      {filtered.length === 0 ? (
+      {grouped.length === 0 ? (
         <p className="rounded-xl border border-dashed border-cinema-border px-4 py-10 text-center text-sm text-cinema-muted">
           没有匹配的时间线事件
         </p>
       ) : (
         <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
-          {filtered.map((event) => {
+          {grouped.map(({ event, priorEvents }) => {
             const read = seen.includes(event.id);
             const isBlocked = isBlockedOrSimilar(event, dismissStore);
             const linkHref = event.filmId
               ? `/film/${encodeURIComponent(event.filmId)}`
               : `/event/${encodeURIComponent(event.id)}`;
+            const groupKey = event.filmId || event.id;
+            const hasPrior = priorEvents.length > 0;
+            const isExpanded = Boolean(expandedFilms[groupKey]);
 
             return (
               <li key={event.id} className="relative pb-8 last:pb-0" data-event-id={event.id}>
@@ -391,6 +493,60 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           {isBlocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
                         </button>
                       </div>
+
+                      {hasPrior ? (
+                        <div className="mt-3 border-t border-cinema-border/50 pt-2.5">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              toggleExpandFilm(groupKey);
+                            }}
+                            className="group inline-flex items-center gap-1.5 text-xs text-cinema-muted hover:text-cinema-gold transition"
+                          >
+                            <span className="font-medium text-cinema-gold/90 group-hover:text-cinema-gold">
+                              {isExpanded
+                                ? "收起该片历史动态"
+                                : `该片另有 ${priorEvents.length} 条动态`}
+                            </span>
+                            <span className="text-[10px] text-cinema-muted/60 transition group-hover:text-cinema-gold">
+                              {isExpanded ? "▴" : "▾"}
+                            </span>
+                          </button>
+
+                          {isExpanded ? (
+                            <ul className="mt-2.5 space-y-2 border-l-2 border-cinema-gold/30 pl-3 pt-1">
+                              {priorEvents.map((p) => {
+                                const pRead = seen.includes(p.id);
+                                const pLink = p.filmId
+                                  ? `/film/${encodeURIComponent(p.filmId)}`
+                                  : `/event/${encodeURIComponent(p.id)}`;
+                                return (
+                                  <li key={p.id} className="text-xs">
+                                    <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-cinema-muted">
+                                      <time dateTime={p.date || undefined}>{p.dateLabel}</time>
+                                      <TypeBadge type={p.type} label={displayBadge(p.badge)} />
+                                    </div>
+                                    <Link
+                                      href={pLink}
+                                      prefetch={false}
+                                      onClick={() => markClicked(p.id)}
+                                      className={`mt-0.5 block hover:text-cinema-gold transition ${
+                                        pRead
+                                          ? "text-cinema-muted/70"
+                                          : "text-cinema-text/90 font-normal"
+                                      }`}
+                                    >
+                                      {p.headline || p.summary}
+                                    </Link>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          ) : null}
+                        </div>
+                      ) : null}
                     </div>
                   </div>
                 </article>

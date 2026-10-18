@@ -666,5 +666,27 @@
       "#38bdf8"
     ],
     "streaming": []
+  },
+  {
+    "id": "parasite",
+    "title": "奉俊昊 · 金马63大师课",
+    "titleEn": "Bong Joon-ho / Golden Horse Master Class",
+    "year": 2026,
+    "synopsis": "第63届金马电影大师课公布完整阵容并开放报名，奉俊昊、三谷幸喜、戴伦·艾洛诺夫斯基、凯尔·巴尔达等名导及幕后主创主讲。",
+    "directors": [
+      "奉俊昊"
+    ],
+    "cast": [],
+    "genres": [
+      "荣誉"
+    ],
+    "country": [
+      "韩国"
+    ],
+    "posterColors": [
+      "#1e293b",
+      "#0f172a"
+    ],
+    "streaming": []
   }
 ]

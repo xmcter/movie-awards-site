@@ -1,6 +1,146 @@
 {
   "films": [
     {
+      "id": "honorary-hui",
+      "title": "许鞍华（荣誉）",
+      "titleEn": "Ann Hui (Honorary)",
+      "year": 2026,
+      "synopsis": "香港导演许鞍华。第31届釜山国际电影节山茶花奖得主，表彰其推动女性电影的贡献。",
+      "directors": [
+        "许鞍华"
+      ],
+      "cast": [],
+      "genres": [
+        "荣誉"
+      ],
+      "country": [
+        "香港"
+      ],
+      "posterColors": [
+        "#fce7f3",
+        "#9d174d"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "ibuku",
+      "title": "我的母亲",
+      "titleEn": "Ibuku / My Mother",
+      "year": 2026,
+      "synopsis": "印尼导演 Eddie Cahyono 执导。工薪阶层寡妇在成年女儿于沙特入狱后挣扎求生。釜山31 Busan Award 评审团特别奖。",
+      "directors": [
+        "Eddie Cahyono"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "印尼",
+        "日本"
+      ],
+      "posterColors": [
+        "#1e3a5f",
+        "#fbbf24"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "to-be-ordinary",
+      "title": "平凡之路",
+      "titleEn": "To Be Ordinary",
+      "year": 2026,
+      "synopsis": "台湾导演李云禅执导成长剧情片。釜山31 Busan Award 最佳导演。",
+      "directors": [
+        "李云禅"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "台湾"
+      ],
+      "posterColors": [
+        "#e7e5e4",
+        "#57534e"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "concrete-land",
+      "title": "水泥之地",
+      "titleEn": "Concrete Land",
+      "year": 2026,
+      "synopsis": "约旦导演 Asmahan Bkerat 纪录长片处女作。跟随约旦一个混血家庭数代人，面对驱逐与敌意时的韧性。第70届 BFI 伦敦电影节 Grierson 纪录片奖。",
+      "directors": [
+        "Asmahan Bkerat"
+      ],
+      "cast": [],
+      "genres": [
+        "纪录片"
+      ],
+      "country": [
+        "约旦",
+        "巴勒斯坦"
+      ],
+      "posterColors": [
+        "#44403c",
+        "#d6d3d1"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "nine-temples-to-heaven",
+      "title": "九座通往天堂的庙",
+      "titleEn": "9 Temples to Heaven",
+      "year": 2026,
+      "synopsis": "泰国导演 Sompot Chidgasornpongse 剧情长片处女作。男子听闻母亲将不久于人世的预言后，携家人一日朝圣九座寺庙。戛纳导演双周首映；BFI 伦敦电影节 Sutherland 奖；泰国奥斯卡国际片报送。监制含阿彼察邦·韦拉斯哈古。",
+      "directors": [
+        "Sompot Chidgasornpongse"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "泰国",
+        "新加坡",
+        "法国",
+        "挪威"
+      ],
+      "posterColors": [
+        "#fef3c7",
+        "#92400e"
+      ],
+      "streaming": []
+    },
+    {
+      "id": "imperium",
+      "title": "帝国",
+      "titleEn": "Imperium",
+      "year": 2026,
+      "synopsis": "谢尔盖·洛兹尼察执导档案纪录片（约175分钟）。借意大利摄影师在1970年代初苏联拍摄的素材重访帝国社会与文化景观。威尼斯 Open 单元首映；第70届 BFI 伦敦电影节官方竞赛最佳影片。",
+      "directors": [
+        "谢尔盖·洛兹尼察"
+      ],
+      "cast": [],
+      "genres": [
+        "纪录片"
+      ],
+      "country": [
+        "德国",
+        "法国",
+        "意大利",
+        "立陶宛"
+      ],
+      "posterColors": [
+        "#1c1917",
+        "#78716c"
+      ],
+      "streaming": []
+    },
+    {
       "id": "fourteenth",
       "title": "第十四条",
       "titleEn": "14th",

@@ -1,5 +1,45 @@
 [
   {
+    "id": "lff70-best-film-imperium-1018",
+    "filmId": "imperium",
+    "date": "2026-10-18",
+    "kind": "promo",
+    "summary": "LFF70 最佳影片 · 洛兹尼察《帝国》",
+    "detail": "第70届 BFI 伦敦电影节官方竞赛最佳影片授予谢尔盖·洛兹尼察档案纪录片《帝国 / Imperium》（约175分钟；借意大利摄影师镜头重访1970年代初苏联）。评审团主席 Sam Pollard。同日 Sutherland 处女作奖：泰国 Sompot Chidgasornpongse《九座通往天堂的庙》（监制含阿彼察邦）；Grierson 纪录片奖：Asmahan Bkerat《水泥之地》。观众奖投票至 10/21。报道：Variety / Deadline / Screen Daily / @BFI 2026-10-18。"
+  },
+  {
+    "id": "lff70-sutherland-nine-temples-1018",
+    "filmId": "nine-temples-to-heaven",
+    "date": "2026-10-18",
+    "kind": "promo",
+    "summary": "LFF70 Sutherland · 《九座通往天堂的庙》",
+    "detail": "第70届 BFI 伦敦电影节 Sutherland 最佳处女作奖授予泰国导演 Sompot Chidgasornpongse《九座通往天堂的庙 / 9 Temples to Heaven》（戛纳导演双周首映；泰国奥斯卡国际片报送；监制 Kissada Kamyoung 与阿彼察邦·韦拉斯哈古）。评审团特别提及视觉与冥想气质。同单元特别提及：Bertil Nilsson《Masc》。Deadline / Variety / Screen 2026-10-18。"
+  },
+  {
+    "id": "paper-tiger-rt-92-77",
+    "filmId": "paper-tiger",
+    "date": "2026-10-18",
+    "kind": "promo",
+    "summary": "critic 92% · 格雷《纸老虎》",
+    "detail": "詹姆斯·格雷《纸老虎 / Paper Tiger》Rotten Tomatoes Tomatometer 升至约 92%（约 77 条影评；此前节点约 86%/64）。仍处 80%+ 高口碑带，样本继续累积。数据：RT 2026-10-18 检索。"
+  },
+  {
+    "id": "minotaur-rt-100-49",
+    "filmId": "minotaur",
+    "date": "2026-10-18",
+    "kind": "promo",
+    "summary": "critic 100% · 萨金塞夫《米诺陶》",
+    "detail": "安德烈·萨金塞夫《米诺陶 / Minotaur》Rotten Tomatoes Tomatometer 由约 98%（47）升至 100%（约 49 条影评）。影片已于 10/14 法国院线上映。数据：RT 2026-10-18 检索。"
+  },
+  {
+    "id": "fjord-lff-uk-premiere-1017",
+    "filmId": "fjord",
+    "date": "2026-10-17",
+    "kind": "promo",
+    "summary": "LFF70 英国首映 · 蒙吉《峡湾》",
+    "detail": "戛纳金棕榈得主克里斯蒂安·蒙吉《峡湾 / Fjord》于 10/17 在第70届 BFI 伦敦电影节举行英国首映；主演 Sebastian Stan、Renate Reinsve 出席。影片已获 Neon 北美发行并完成美限映首周末。报道：LFF 日程 / 现场报道 2026-10-17。"
+  },
+  {
     "id": "black-ball-us-limited-1016",
     "filmId": "the-black-ball",
     "date": "2026-10-16",

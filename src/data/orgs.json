@@ -79,5 +79,14 @@
     "country": "捷克",
     "founded": 1946,
     "accentColor": "#22d3ee"
+  },
+  {
+    "id": "london",
+    "name": "伦敦",
+    "nameEn": "BFI London Film Festival",
+    "description": "英国电影协会主办的非竞赛向大型电影节，近年设官方竞赛并颁发最佳影片奖。",
+    "country": "英国",
+    "founded": 1957,
+    "accentColor": "#a78bfa"
   }
 ]

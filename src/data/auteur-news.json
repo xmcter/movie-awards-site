@@ -1,11 +1,19 @@
 [
   {
+    "id": "lff70-awards-1018",
+    "filmId": "imperium",
+    "date": "2026-10-18",
+    "kind": "promo",
+    "summary": "LFF70 最佳影片 · 洛兹尼察《帝国》",
+    "detail": "第70届 BFI 伦敦电影节官方竞赛最佳影片给谢尔盖·洛兹尼察档案纪录片《帝国 / Imperium》（约175分钟，借1970年代初意大利摄影师在苏联拍摄的素材重访帝国日常）。评委会（Sam Pollard 主席）称其「富于唤起力且情感充满」。同日：Sompot Chidgasornpongse《九座通往天堂的庙》Sutherland 首作奖；Asmahan Bkerat《水泥之地》Grierson 纪录片奖；Rahul Roye《Aman》短片奖。观众奖投票至10/21。BFI / Variety / Deadline / Screen 2026-10-18。"
+  },
+  {
     "id": "possible-love-korean-critics-best-1020",
     "filmId": "possible-love",
     "date": "2026-10-20",
     "kind": "promo",
     "summary": "영평상 최우수작품 · 이창동《가능한 사랑》",
-    "detail": "제46회 한국영화평론가협회상（영평상）최우수작품상을 이창동《가능한 사랑 / Possible Love》가 수상；전도연 여우주연상을 함께 획득（공개 2026-10-19/20，시상식 11/4 서울 KOFA）。베네치아 심사원장 그랜드쥬리 프라이즈 후 한국 평론가들의 연말 최우수작품으로 선정。Yonhap / Korea Times / Asian Movie Pulse 보도。"
+    "detail": "제46회 한국영화평론가협회상（영평상）최우수작품상을 이창동《가능한 사랑 / Possible Love》가 수상；전도연 여우주연상을 함께 획득（공개 2026-10-19/20，시상식 11/4 서울 KOFA）。베네치아 심사원장 그랜드주리 프라이즈 후 한국 평론가들의 연말 최우수작품으로 선정。Yonhap / Korea Times / Asian Movie Pulse 보도。"
   },
   {
     "id": "nowhere-to-lay-my-eyes-kr-1021",
@@ -13,7 +21,7 @@
     "date": "2026-10-21",
     "kind": "promo",
     "summary": "한국원선상영 · 홍상수《무처안방의목광》",
-    "detail": "홍상수제35부장폈《무처안방의 목광 / Nowhere to Lay My Eyes》（눈 두를 데가 없네）오늘（2026-10-21）에한국원선상영；김민희주연, 최명길、권해타、신석호、박미소출연, 폈장약72분장。영화로자노주경쟁획최적감독、김민희최적성연과프세심사원투표상, 및입선뉴욕영화절주단원과부산 Icons。KMDb / Cine21 / Jeonwonsa 당기；Cine21 개화일이미록득상좌。"
+    "detail": "홍상수제35부장펴《무처안방의 목광 / Nowhere to Lay My Eyes》（눈 두를 데가 없네）오늘（2026-10-21）에한국원선상영；김민희주연, 최명길、권해타、신석호、박미소출연, 펴장약72분장。영화로자노주경쟁획최적감독、김민희최적성연과프세심사원투표상, 및입선뉴욕영화절주단원과부산 Icons。KMDb / Cine21 / Jeonwonsa 당기；Cine21 개화일이미록득상좌。"
   },
   {
     "id": "minotaur-france-theatrical-1014",
@@ -53,7 +61,7 @@
     "date": "2026-09-30",
     "kind": "promo",
     "summary": "critic 93% · 몬지《협만》금팔리후",
-    "detail": "《협만 / Fjord》Tomatometer 약 93%（72 조 영평, 균분 약 7.9/10）, Metacritic 81（22 평）。크리스티안·몬지집도, 세바스티안·스탄과레이나트·라인스프주연；자나금팔리、FIPRESCI 과 평위회외 다수후 샘플확대 여전히 Certified Fresh。루마니아 제99회 오스카국제폈후보；Neon 10/9 북미원선, NYFF64 Spotlight。Wikipedia / RT / Metacritic 합산 9/30。"
+    "detail": "《협만 / Fjord》Tomatometer 약 93%（72 조 영평, 균분 약 7.9/10）, Metacritic 81（22 평）。크리스티안·몬지집도, 세바스티안·스탄과레이나트·라인스프주연；자나금팔리、FIPRESCI 과 평위회외 다수후 샘플확대 여전히 Certified Fresh。루마니아 제99회 오스카국제펴후보；Neon 10/9 북미원선, NYFF64 Spotlight。Wikipedia / RT / Metacritic 합산 9/30。"
   },
   {
     "id": "naza-rt-100-23-us-930",
@@ -61,7 +69,7 @@
     "date": "2026-09-30",
     "kind": "promo",
     "summary": "critic 100% · 아버라함/쇼얼《나자》미한영",
-    "detail": "《나자 / NAZA》Tomatometer 100%（23 조 영평, 균분 약 9.1/10）, Metacritic 94（15 평）。베네치아 평심원투표특별상、성세74유럽폈관객상후, 미 9/30 부터 IFC Center 유한상영, 10/9 확장에로앤지에스 등지；영 10/15 Dogwoof。Wikipedia / RT / Metacritic / Guardian 합산 9/30。"
+    "detail": "《나자 / NAZA》Tomatometer 100%（23 조 영평, 균분 약 9.1/10）, Metacritic 94（15 평）。베네치아 평심원투표특별상、성세74유럽펴관객상후, 미 9/30 부터 IFC Center 유한상영, 10/9 확장에로앤지에스 등지；영 10/15 Dogwoof。Wikipedia / RT / Metacritic / Guardian 합산 9/30。"
   },
   {
     "id": "all-of-a-sudden-rt-96-47",

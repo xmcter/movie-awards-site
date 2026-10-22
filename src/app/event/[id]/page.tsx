@@ -33,7 +33,7 @@ export async function generateMetadata({
       description,
       url: `https://news.readcine.com/event/${event.id}`,
       type: "article",
-      images: event.poster ? [{ url: event.poster, alt: event.filmTitle }] : undefined,
+      images: event.poster ? [{ url: event.poster, alt: event.filmTitle }] : [{ url: "/og.png", width: 1200, height: 630, alt: "银幕新讯" }],
     },
   };
 }

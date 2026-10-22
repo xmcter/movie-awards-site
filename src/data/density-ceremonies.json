@@ -1,66 +1,5 @@
 [
   {
-    "id": "lff-70-awards",
-    "orgId": "london",
-    "name": "第70届BFI伦敦电影节",
-    "nameEn": "70th BFI London Film Festival",
-    "year": 2026,
-    "date": "2026-10-18",
-    "location": "伦敦（10月7–18日；颁奖 10月18日）",
-    "nominations": [
-      {
-        "categoryId": "best-film",
-        "categoryName": "官方竞赛最佳影片",
-        "filmId": "imperium",
-        "personNames": [
-          "谢尔盖·洛兹尼察"
-        ],
-        "result": "won",
-        "date": "2026-10-18"
-      },
-      {
-        "categoryId": "sutherland",
-        "categoryName": "Sutherland 最佳处女作",
-        "filmId": "nine-temples-to-heaven",
-        "personNames": [
-          "Sompot Chidgasornpongse"
-        ],
-        "result": "won",
-        "date": "2026-10-18"
-      },
-      {
-        "categoryId": "grierson",
-        "categoryName": "Grierson 最佳纪录片",
-        "filmId": "concrete-land",
-        "personNames": [
-          "Asmahan Bkerat"
-        ],
-        "result": "won",
-        "date": "2026-10-18"
-      },
-      {
-        "categoryId": "competition",
-        "categoryName": "官方竞赛入围",
-        "filmId": "look-back",
-        "personNames": [
-          "是枝裕和"
-        ],
-        "result": "nominated",
-        "date": "2026-08-17"
-      },
-      {
-        "categoryId": "competition",
-        "categoryName": "官方竞赛入围",
-        "filmId": "woman-unknown",
-        "personNames": [
-          "梅·埃尔-图希"
-        ],
-        "result": "nominated",
-        "date": "2026-08-17"
-      }
-    ]
-  },
-  {
     "id": "busan-31-awards",
     "orgId": "busan",
     "name": "第31届釜山国际电影节",
@@ -98,26 +37,6 @@
         ],
         "result": "won",
         "date": "2026-10-15"
-      },
-      {
-        "categoryId": "asian-filmmaker",
-        "categoryName": "年度亚洲电影人",
-        "filmId": "honorary-yeoh",
-        "personNames": [
-          "杨紫琼"
-        ],
-        "result": "won",
-        "date": "2026-10-06"
-      },
-      {
-        "categoryId": "camellia",
-        "categoryName": "山茶花奖",
-        "filmId": "honorary-hui",
-        "personNames": [
-          "许鞍华"
-        ],
-        "result": "won",
-        "date": "2026-10-06"
       }
     ]
   },
@@ -270,46 +189,6 @@
         ],
         "result": "nominated",
         "date": "2026-04-09"
-      },
-      {
-        "categoryId": "ucr",
-        "categoryName": "一种注目最佳影片",
-        "filmId": "everytime",
-        "personNames": [
-          "桑德拉·沃尔纳"
-        ],
-        "result": "won",
-        "date": "2026-05-22"
-      },
-      {
-        "categoryId": "ucr-jury",
-        "categoryName": "一种注目评审团奖",
-        "filmId": "elephants-in-the-fog",
-        "personNames": [
-          "阿比纳什·比克拉姆·沙"
-        ],
-        "result": "won",
-        "date": "2026-05-22"
-      },
-      {
-        "categoryId": "camera-dor",
-        "categoryName": "金摄影机奖",
-        "filmId": "benimana",
-        "personNames": [
-          "玛丽-克莱芒蒂娜·杜萨贝让博"
-        ],
-        "result": "won",
-        "date": "2026-05-23"
-      },
-      {
-        "categoryId": "honorary-palme",
-        "categoryName": "荣誉金棕榈",
-        "filmId": "honorary-streisand",
-        "personNames": [
-          "芭芭拉·史翠珊"
-        ],
-        "result": "won",
-        "date": "2026-05-23"
       }
     ]
   },
@@ -547,99 +426,6 @@
     ]
   },
   {
-    "id": "berlin-76-awards",
-    "orgId": "berlin",
-    "name": "第76届柏林电影节",
-    "nameEn": "76th Berlin International Film Festival",
-    "year": 2026,
-    "date": "2026-02-21",
-    "location": "德国柏林（闭幕颁奖）",
-    "nominations": [
-      {
-        "categoryId": "grand-jury",
-        "categoryName": "评审团大奖银熊",
-        "filmId": "salvation",
-        "personNames": [
-          "埃明·阿尔佩尔"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "jury-prize",
-        "categoryName": "评审团奖银熊",
-        "filmId": "queen-at-sea",
-        "personNames": [
-          "兰斯·哈默"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "best-director",
-        "categoryName": "最佳导演银熊",
-        "filmId": "everybody-digs-bill-evans",
-        "personNames": [
-          "格兰特·吉"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "best-lead",
-        "categoryName": "最佳主演银熊",
-        "filmId": "rose-berlin",
-        "personNames": [
-          "桑德拉·惠勒"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "best-supporting",
-        "categoryName": "最佳配角银熊",
-        "filmId": "queen-at-sea",
-        "personNames": [
-          "安娜·考尔德-马歇尔",
-          "汤姆·考特尼"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "best-screenplay",
-        "categoryName": "最佳编剧银熊",
-        "filmId": "nina-roza",
-        "personNames": [
-          "热纳维耶芙·迪吕德-德塞勒"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "artistic",
-        "categoryName": "杰出艺术贡献银熊",
-        "filmId": "yo-rebellious-bird",
-        "personNames": [
-          "安娜·菲奇",
-          "班克·怀特"
-        ],
-        "result": "won",
-        "date": "2026-02-21"
-      },
-      {
-        "categoryId": "honorary-bear",
-        "categoryName": "荣誉金熊",
-        "filmId": "honorary-yeoh",
-        "personNames": [
-          "杨紫琼"
-        ],
-        "result": "won",
-        "date": "2026-02-12"
-      }
-    ]
-  },
-  {
     "id": "san-sebastian-74",
     "orgId": "san-sebastian",
     "name": "第74届圣塞巴斯蒂安电影节",
@@ -789,28 +575,6 @@
         "date": "2026-09-26"
       },
       {
-        "categoryId": "audience",
-        "categoryName": "观众奖最佳影片",
-        "filmId": "the-black-ball",
-        "personNames": [
-          "哈维尔·安布罗希",
-          "哈维尔·卡尔沃"
-        ],
-        "result": "won",
-        "date": "2026-09-26"
-      },
-      {
-        "categoryId": "audience-european",
-        "categoryName": "欧洲片观众奖",
-        "filmId": "naza",
-        "personNames": [
-          "尤瓦尔·亚伯拉罕",
-          "雷切尔·绍尔"
-        ],
-        "result": "won",
-        "date": "2026-09-26"
-      },
-      {
         "categoryId": "competition",
         "categoryName": "主竞赛入围",
         "filmId": "border",
@@ -859,110 +623,6 @@
         ],
         "result": "won",
         "date": "2026-09-26"
-      },
-      {
-        "categoryId": "best-cinematography",
-        "categoryName": "最佳摄影",
-        "filmId": "growth-of-the-soil",
-        "personNames": [
-          "奥斯卡·达尔斯巴肯"
-        ],
-        "result": "won",
-        "date": "2026-09-26"
-      },
-      {
-        "categoryId": "rtve-another-look",
-        "categoryName": "RTVE 另一种目光奖",
-        "filmId": "all-of-a-sudden",
-        "personNames": [
-          "滨口龙介"
-        ],
-        "result": "won",
-        "date": "2026-09-26"
-      }
-    ]
-  },
-  {
-    "id": "venice-83-awards",
-    "orgId": "venice",
-    "name": "第83届威尼斯电影节",
-    "nameEn": "83rd Venice International Film Festival",
-    "year": 2026,
-    "date": "2026-09-12",
-    "location": "意大利威尼斯（9月2–12日，闭幕颁奖）",
-    "nominations": [
-      {
-        "categoryId": "golden-lion",
-        "categoryName": "金狮奖",
-        "filmId": "woman-unknown",
-        "personNames": [
-          "梅·埃尔-图希"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
-      },
-      {
-        "categoryId": "grand-jury",
-        "categoryName": "评审团大奖银狮",
-        "filmId": "possible-love",
-        "personNames": [
-          "李沧东"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
-      },
-      {
-        "categoryId": "best-director",
-        "categoryName": "最佳导演银狮",
-        "filmId": "dau",
-        "personNames": [
-          "伊利亚·赫尔扎诺夫斯基"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
-      },
-      {
-        "categoryId": "special-jury",
-        "categoryName": "评审团特别奖",
-        "filmId": "naza",
-        "personNames": [
-          "尤瓦尔·亚伯拉罕",
-          "雷切尔·绍尔"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
-      },
-      {
-        "categoryId": "best-screenplay",
-        "categoryName": "最佳编剧",
-        "filmId": "a-good-little-soldier",
-        "personNames": [
-          "斯特凡·布里泽",
-          "科拉莉·阿梅代奥",
-          "奥利维耶·戈尔斯"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
-      },
-      {
-        "categoryId": "volpi-actress",
-        "categoryName": "沃尔皮杯最佳女演员",
-        "filmId": "woman-unknown",
-        "personNames": [
-          "玛蒂尔德·阿尔塞尔"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
-      },
-      {
-        "categoryId": "volpi-actor",
-        "categoryName": "沃尔皮杯最佳男演员",
-        "filmId": "wild-horse-nine",
-        "personNames": [
-          "约翰·马尔科维奇"
-        ],
-        "result": "won",
-        "date": "2026-09-12"
       }
     ]
   },
@@ -1243,16 +903,6 @@
           "翁倩玉"
         ],
         "result": "nominated",
-        "date": "2026-10-01"
-      },
-      {
-        "categoryId": "outstanding",
-        "categoryName": "年度杰出电影工作者",
-        "filmId": "gh63-outstanding",
-        "personNames": [
-          "周佳圣"
-        ],
-        "result": "won",
         "date": "2026-10-01"
       }
     ]

@@ -14,7 +14,48 @@ export type ResumeItem = {
   title: string;
 };
 
-export default function ResumeBar({ items }: { items: ResumeItem[] }) {
+export type NewSinceInfo = {
+  /** false for first-time visitors (no marker stored yet) */
+  hasBaseline: boolean;
+  count: number;
+};
+
+function NewSinceLine({ info }: { info: NewSinceInfo }) {
+  if (!info.hasBaseline) return null;
+  return (
+    <div className="mb-4 flex items-center justify-between gap-3 rounded-2xl bg-cinema-card px-4 py-3 text-sm ring-1 ring-cinema-border/70">
+      <span className={info.count > 0 ? "text-cinema-text" : "text-cinema-muted"}>
+        {info.count > 0 ? (
+          <>
+            自上次来访新增 <span className="font-semibold text-cinema-gold">{info.count}</span> 条
+          </>
+        ) : (
+          "没有新内容 · 你已经看到最新了"
+        )}
+      </span>
+      {info.count > 0 ? (
+        <button
+          type="button"
+          className="shrink-0 text-xs font-medium text-cinema-gold hover:underline"
+          onClick={() => {
+            const el = document.querySelector("[data-last-seen-divider]");
+            if (el) el.scrollIntoView({ block: "center", behavior: "smooth" });
+          }}
+        >
+          跳到上次看到这里 ↓
+        </button>
+      ) : null}
+    </div>
+  );
+}
+
+export default function ResumeBar({
+  items,
+  newSince,
+}: {
+  items: ResumeItem[];
+  newSince?: NewSinceInfo | null;
+}) {
   const [lastId, setLastId] = useState("");
   const [dismissStore, setDismissStore] = useState<DismissStore>({ blocked: {} });
   const [ready, setReady] = useState(false);
@@ -35,12 +76,13 @@ export default function ResumeBar({ items }: { items: ResumeItem[] }) {
     };
   }, []);
 
-  if (!ready || !lastId) return null;
+  const line = ready && newSince ? <NewSinceLine info={newSince} /> : null;
+  if (!ready || !lastId) return line;
   const blocked = dismissStore.blocked || {};
-  if (blocked[lastId]) return null;
+  if (blocked[lastId]) return line;
 
   const i = items.findIndex((x) => x.id === lastId);
-  if (i < 0) return null;
+  if (i < 0) return line;
   const cur = items[i];
   let next: ResumeItem | undefined;
   for (let j = i + 1; j < items.length; j++) {
@@ -52,6 +94,8 @@ export default function ResumeBar({ items }: { items: ResumeItem[] }) {
   const nextRead = next ? isClicked(next.id) : true;
 
   return (
+    <>
+    {line}
     <div className="mb-4 flex flex-wrap gap-2">
       <button
         type="button"
@@ -78,5 +122,6 @@ export default function ResumeBar({ items }: { items: ResumeItem[] }) {
         </Link>
       ) : null}
     </div>
+    </>
   );
 }

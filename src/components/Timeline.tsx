@@ -1,9 +1,22 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
+import ResumeBar from "@/components/ResumeBar";
+import {
+  getVisitBaseline,
+  isNewSince,
+  writeLastSeen,
+  type LastSeenMarker,
+} from "@/lib/lastSeen";
+import {
+  absoluteDayLabel,
+  groupByDay,
+  relativeDayPrefix,
+  shanghaiToday,
+} from "@/lib/dayGroups";
 import { markClicked, readClicked, readLastId, readScroll, saveScroll } from "@/lib/readProgress";
 import {
   DISMISS_EVENT_NAME,
@@ -88,6 +101,24 @@ function dotColor(type: TimelineEventType): string {
   return "#34d399";
 }
 
+/** Viewed = page visible for this long after load; only then may the marker advance. */
+const VIEW_DWELL_MS = 2500;
+
+function LastSeenDivider() {
+  return (
+    <div
+      data-last-seen-divider
+      role="separator"
+      aria-label="上次看到这里"
+      className="flex items-center gap-3 text-xs font-medium tracking-wide text-cinema-gold"
+    >
+      <span className="h-px flex-1 bg-cinema-gold/45" />
+      <span>— 上次看到这里 —</span>
+      <span className="h-px flex-1 bg-cinema-gold/45" />
+    </div>
+  );
+}
+
 function displayBadge(label?: string) {
   return label === "新品" ? "新片" : label;
 }
@@ -102,10 +133,79 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [ready, setReady] = useState(false);
   const [dedupByFilm, setDedupByFilm] = useState(true);
   const [expandedFilms, setExpandedFilms] = useState<Record<string, boolean>>({});
+  const [baseline, setBaseline] = useState<LastSeenMarker | null>(null);
+  const [today, setToday] = useState("");
+  const viewedRef = useRef(false);
+
+  // Cards that are actually visible to the user (dismissed excluded, filters ignored).
+  const visibleAll = useMemo(
+    () => events.filter((e) => !isBlockedOrSimilar(e, dismissStore)),
+    [events, dismissStore],
+  );
+  const visibleAllRef = useRef(visibleAll);
+  visibleAllRef.current = visibleAll;
+
+  const isCardNew = useCallback(
+    (e: TimelineEvent) => isNewSince(e, baseline) && !isBlockedOrSimilar(e, dismissStore),
+    [baseline, dismissStore],
+  );
+
+  const newSinceCount = useMemo(
+    () => {
+      if (!baseline) return 0;
+      const fresh = visibleAll.filter((e) => isNewSince(e, baseline));
+      // match what the list shows: with 「每片仅最新」 one card per film
+      return dedupByFilm ? new Set(fresh.map((e) => e.filmId || e.id)).size : fresh.length;
+    },
+    [visibleAll, baseline, dedupByFilm],
+  );
+
+  // Advance the 「上次看到这里」 marker only after the page has been visible for a
+  // moment, and only when the user leaves (tab hidden / pagehide / navigates away).
+  useEffect(() => {
+    let visibleSince = document.visibilityState === "visible" ? Date.now() : 0;
+    let dwell = 0;
+    const timer = window.setInterval(() => {
+      if (viewedRef.current) return;
+      if (document.visibilityState === "visible" && visibleSince) {
+        if (dwell + (Date.now() - visibleSince) >= VIEW_DWELL_MS) viewedRef.current = true;
+      }
+    }, 500);
+    const commit = () => {
+      if (viewedRef.current) writeLastSeen(visibleAllRef.current);
+    };
+    const onVis = () => {
+      if (document.visibilityState === "hidden") {
+        if (visibleSince) dwell += Date.now() - visibleSince;
+        visibleSince = 0;
+        if (dwell >= VIEW_DWELL_MS) viewedRef.current = true;
+        commit();
+      } else {
+        visibleSince = Date.now();
+      }
+    };
+    document.addEventListener("visibilitychange", onVis);
+    window.addEventListener("pagehide", commit);
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVis);
+      window.removeEventListener("pagehide", commit);
+      commit(); // client-side navigation to a film / event page
+    };
+  }, []);
 
   useEffect(() => {
     setSeen(readClicked());
-    setDismissStore(loadDismissMarks());
+    const initialDismiss = loadDismissMarks();
+    setDismissStore(initialDismiss);
+    const visitBaseline = getVisitBaseline();
+    setBaseline(visitBaseline);
+    setToday(shanghaiToday());
+    // With new cards since last visit, start at the top instead of restoring scroll.
+    const hasNew = Boolean(
+      visitBaseline &&
+        events.some((e) => isNewSince(e, visitBaseline) && !isBlockedOrSimilar(e, initialDismiss)),
+    );
     try {
       const savedDedup = localStorage.getItem(DEDUP_STORAGE_KEY);
       if (savedDedup !== null) {
@@ -123,6 +223,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     const last = readLastId();
     const y = readScroll();
     requestAnimationFrame(() => {
+      if (hasNew) return;
       if (last) {
         const el = document.querySelector(`[data-event-id="${CSS.escape(last)}"]`);
         if (el) {
@@ -261,6 +362,29 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     return result;
   }, [events, filter, query, dismissStore, showBlocked, dedupByFilm]);
 
+  const dayGroups = useMemo(
+    () => groupByDay(grouped, (it) => it.event.date || ""),
+    [grouped],
+  );
+
+  // Divider goes right after the last (oldest) new card in render order.
+  const lastNewId = useMemo(() => {
+    if (!baseline) return "";
+    const flat = dayGroups.flatMap((g) => g.items);
+    let idx = -1;
+    flat.forEach((it, i) => {
+      if (isCardNew(it.event)) idx = i;
+    });
+    // no divider when nothing older follows it
+    if (idx < 0 || idx === flat.length - 1) return "";
+    return flat[idx]!.event.id;
+  }, [dayGroups, baseline, isCardNew]);
+
+  const resumeItems = useMemo(
+    () => events.map((e) => ({ id: e.id, title: e.headline || e.filmTitle })),
+    [events],
+  );
+
   const counts = useMemo(() => {
     const c: Record<FilterKey, number> = {
       all: 0,
@@ -298,107 +422,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     return c;
   }, [events, dismissStore, dedupByFilm]);
 
-  return (
-    <div className="space-y-6">
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap items-center gap-2">
-          {FILTERS.map((f) => {
-            const active = filter === f.key;
-            return (
-              <button
-                key={f.key}
-                type="button"
-                onClick={() => setFilter(f.key)}
-                className={`rounded-full px-3.5 py-1.5 text-sm transition ${
-                  active
-                    ? "bg-cinema-gold text-cinema-bg font-medium"
-                    : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
-                }`}
-              >
-                {f.label}
-                <span className={`ml-1.5 text-xs ${active ? "opacity-75" : "opacity-50"}`}>
-                  {counts[f.key]}
-                </span>
-              </button>
-            );
-          })}
-
-          <button
-            type="button"
-            onClick={handleToggleDedup}
-            className={`rounded-full px-3 py-1.5 text-xs font-medium transition inline-flex items-center gap-1.5 ${
-              dedupByFilm
-                ? "border border-cinema-gold/60 bg-cinema-gold/15 text-cinema-gold hover:bg-cinema-gold/25"
-                : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
-            }`}
-            title={
-              dedupByFilm
-                ? "每部电影仅显示最新动态（已开启），点击查看全部细分条目"
-                : "显示所有历史动态（已开启），点击按电影去重聚合"
-            }
-          >
-            <span
-              className={`inline-block h-1.5 w-1.5 rounded-full ${
-                dedupByFilm ? "bg-cinema-gold" : "bg-cinema-muted/40"
-              }`}
-            />
-            {dedupByFilm ? "每片仅最新" : "全部动态"}
-          </button>
-
-          {ready && blockedCount > 0 ? (
-            <div className="flex items-center gap-1.5 rounded-full border border-cinema-border/80 bg-cinema-card px-3 py-1 text-xs text-cinema-muted">
-              <span>已屏蔽 {blockedCount} 条</span>
-              <button
-                type="button"
-                onClick={() => setShowBlocked((s) => !s)}
-                className="ml-1 text-cinema-muted hover:text-cinema-gold underline underline-offset-2 transition"
-              >
-                {showBlocked ? "隐藏已屏蔽" : "查看"}
-              </button>
-              <span className="text-cinema-border">·</span>
-              <button
-                type="button"
-                onClick={handleClearAll}
-                className="text-cinema-gold hover:underline transition"
-              >
-                清除不再推荐
-              </button>
-            </div>
-          ) : null}
-        </div>
-
-        <label className="relative block w-full sm:max-w-[220px]">
-          <span className="sr-only">搜索</span>
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="搜索影片 / 导演 / 电影节…"
-            className="w-full rounded-full border border-cinema-border bg-cinema-card px-4 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus:outline-none"
-          />
-        </label>
-      </div>
-
-      {lastUndo ? (
-        <div className="flex items-center justify-between rounded-xl border border-cinema-gold/30 bg-cinema-card px-4 py-2.5 text-xs text-cinema-text">
-          <span className="line-clamp-1">{lastUndo.message}</span>
-          <button
-            type="button"
-            onClick={handleUndo}
-            className="ml-3 shrink-0 font-medium text-cinema-gold hover:underline"
-          >
-            ↩ 撤销
-          </button>
-        </div>
-      ) : null}
-
-      {grouped.length === 0 ? (
-        <p className="rounded-xl border border-dashed border-cinema-border px-4 py-10 text-center text-sm text-cinema-muted">
-          没有匹配的时间线事件
-        </p>
-      ) : (
-        <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
-          {grouped.map(({ event, priorEvents }) => {
+  const renderItem = ({ event, priorEvents }: GroupedTimelineItem) => {
             const read = seen.includes(event.id);
             const isBlocked = isBlockedOrSimilar(event, dismissStore);
             const linkHref = event.filmId
@@ -441,6 +465,11 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           </span>
                         ) : null}
                         <TypeBadge type={event.type} label={displayBadge(event.badge)} />
+                        {isCardNew(event) ? (
+                          <span className="rounded-full bg-cinema-gold px-1.5 py-px text-[10px] font-semibold leading-4 text-cinema-bg">
+                            新
+                          </span>
+                        ) : null}
                         {isBlocked ? (
                           <span className="rounded bg-cinema-elevated px-1.5 py-0.5 text-[10px] text-cinema-gold">
                             已屏蔽
@@ -552,8 +581,159 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 </article>
               </li>
             );
+  };
+
+  return (
+    <div className="space-y-6">
+      <ResumeBar
+        items={resumeItems}
+        newSince={ready ? { hasBaseline: Boolean(baseline), count: newSinceCount } : null}
+      />
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-wrap items-center gap-2">
+          {FILTERS.map((f) => {
+            const active = filter === f.key;
+            return (
+              <button
+                key={f.key}
+                type="button"
+                onClick={() => setFilter(f.key)}
+                className={`rounded-full px-3.5 py-1.5 text-sm transition ${
+                  active
+                    ? "bg-cinema-gold text-cinema-bg font-medium"
+                    : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
+                }`}
+              >
+                {f.label}
+                <span className={`ml-1.5 text-xs ${active ? "opacity-75" : "opacity-50"}`}>
+                  {counts[f.key]}
+                </span>
+              </button>
+            );
           })}
-        </ol>
+
+          <button
+            type="button"
+            onClick={handleToggleDedup}
+            className={`rounded-full px-3 py-1.5 text-xs font-medium transition inline-flex items-center gap-1.5 ${
+              dedupByFilm
+                ? "border border-cinema-gold/60 bg-cinema-gold/15 text-cinema-gold hover:bg-cinema-gold/25"
+                : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
+            }`}
+            title={
+              dedupByFilm
+                ? "每部电影仅显示最新动态（已开启），点击查看全部细分条目"
+                : "显示所有历史动态（已开启），点击按电影去重聚合"
+            }
+          >
+            <span
+              className={`inline-block h-1.5 w-1.5 rounded-full ${
+                dedupByFilm ? "bg-cinema-gold" : "bg-cinema-muted/40"
+              }`}
+            />
+            {dedupByFilm ? "每片仅最新" : "全部动态"}
+          </button>
+
+          {ready && blockedCount > 0 ? (
+            <div className="flex items-center gap-1.5 rounded-full border border-cinema-border/80 bg-cinema-card px-3 py-1 text-xs text-cinema-muted">
+              <span>已屏蔽 {blockedCount} 条</span>
+              <button
+                type="button"
+                onClick={() => setShowBlocked((s) => !s)}
+                className="ml-1 text-cinema-muted hover:text-cinema-gold underline underline-offset-2 transition"
+              >
+                {showBlocked ? "隐藏已屏蔽" : "查看"}
+              </button>
+              <span className="text-cinema-border">·</span>
+              <button
+                type="button"
+                onClick={handleClearAll}
+                className="text-cinema-gold hover:underline transition"
+              >
+                清除不再推荐
+              </button>
+            </div>
+          ) : null}
+        </div>
+
+        <label className="relative block w-full sm:max-w-[220px]">
+          <span className="sr-only">搜索</span>
+          <input
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="搜索影片 / 导演 / 电影节…"
+            className="w-full rounded-full border border-cinema-border bg-cinema-card px-4 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus:outline-none"
+          />
+        </label>
+      </div>
+
+      {lastUndo ? (
+        <div className="flex items-center justify-between rounded-xl border border-cinema-gold/30 bg-cinema-card px-4 py-2.5 text-xs text-cinema-text">
+          <span className="line-clamp-1">{lastUndo.message}</span>
+          <button
+            type="button"
+            onClick={handleUndo}
+            className="ml-3 shrink-0 font-medium text-cinema-gold hover:underline"
+          >
+            ↩ 撤销
+          </button>
+        </div>
+      ) : null}
+
+      {grouped.length === 0 ? (
+        <p className="rounded-xl border border-dashed border-cinema-border px-4 py-10 text-center text-sm text-cinema-muted">
+          没有匹配的时间线事件
+        </p>
+      ) : (
+        <div className="space-y-12 sm:space-y-14">
+          {dayGroups.map((g) => {
+            const lastNewInDay = g.items.some((it) => it.event.id === lastNewId);
+            const dividerAfterGroup =
+              lastNewInDay && g.items[g.items.length - 1]!.event.id === lastNewId;
+            const rel = today ? relativeDayPrefix(g.day, today) : "";
+            const abs = absoluteDayLabel(g.day, (today || "").slice(0, 4) || undefined);
+            const newInDay = baseline
+              ? g.items.filter((it) => isCardNew(it.event)).length
+              : 0;
+            return (
+              <section key={g.day} aria-label={abs} data-day={g.day}>
+                <header className="sticky top-[57px] z-20 -mx-4 mb-4 bg-cinema-bg/85 px-4 py-2.5 backdrop-blur-md sm:-mx-6 sm:px-6">
+                  <div className="flex items-baseline justify-between gap-3 border-b border-cinema-border/70 pb-2">
+                    <h2 className="flex items-baseline gap-2 text-[1.15rem] font-semibold tracking-tight text-cinema-text sm:text-xl">
+                      {rel ? <span className="text-cinema-gold">{rel}</span> : null}
+                      {rel ? <span className="text-cinema-muted/50">·</span> : null}
+                      <span>{abs}</span>
+                    </h2>
+                    <span className="shrink-0 text-xs tabular-nums text-cinema-muted">
+                      {newInDay > 0 ? (
+                        <span className="mr-2 font-medium text-cinema-gold">{newInDay} 条新</span>
+                      ) : null}
+                      {g.items.length} 条
+                    </span>
+                  </div>
+                </header>
+                <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
+                  {g.items.map((it) => (
+                    <Fragment key={it.event.id}>
+                      {renderItem(it)}
+                      {it.event.id === lastNewId && !dividerAfterGroup ? (
+                        <li className="list-none pb-8">
+                          <LastSeenDivider />
+                        </li>
+                      ) : null}
+                    </Fragment>
+                  ))}
+                </ol>
+                {dividerAfterGroup ? (
+                  <div className="mt-10">
+                    <LastSeenDivider />
+                  </div>
+                ) : null}
+              </section>
+            );
+          })}
+        </div>
       )}
     </div>
   );

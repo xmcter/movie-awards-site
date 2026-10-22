@@ -893,67 +893,6 @@
       ]
     },
     {
-      "id": "shanghai-28",
-      "orgId": "shanghai",
-      "name": "第28届上海国际电影节",
-      "nameEn": "28th Shanghai International Film Festival",
-      "year": 2026,
-      "date": "2026-06-20",
-      "location": "中国上海大剧院",
-      "nominations": [
-        {
-          "categoryId": "golden-goblet",
-          "categoryName": "金爵奖最佳影片",
-          "filmId": "atlantic",
-          "personNames": [
-            "钟凯峰"
-          ],
-          "result": "won",
-          "date": "2026-06-20"
-        },
-        {
-          "categoryId": "jury-prize",
-          "categoryName": "评委会大奖",
-          "filmId": "glimmer-girl",
-          "personNames": [
-            "尼古拉斯·林孔·吉耶"
-          ],
-          "result": "won",
-          "date": "2026-06-20"
-        },
-        {
-          "categoryId": "best-director",
-          "categoryName": "最佳导演",
-          "filmId": "halima",
-          "personNames": [
-            "亚辛·伊德里西"
-          ],
-          "result": "won",
-          "date": "2026-06-20"
-        },
-        {
-          "categoryId": "best-actress",
-          "categoryName": "最佳女演员",
-          "filmId": "halima",
-          "personNames": [
-            "哈迪贾·阿玛里"
-          ],
-          "result": "won",
-          "date": "2026-06-20"
-        },
-        {
-          "categoryId": "best-actor",
-          "categoryName": "最佳男演员",
-          "filmId": "box-mystery",
-          "personNames": [
-            "张颂文"
-          ],
-          "result": "won",
-          "date": "2026-06-20"
-        }
-      ]
-    },
-    {
       "id": "berlin-76-more",
       "orgId": "berlin",
       "name": "第76届柏林电影节",
@@ -1022,16 +961,6 @@
           ],
           "result": "won",
           "date": "2026-02-21"
-        },
-        {
-          "categoryId": "honorary-bear",
-          "categoryName": "荣誉金熊",
-          "filmId": "honorary-yeoh",
-          "personNames": [
-            "杨紫琼"
-          ],
-          "result": "won",
-          "date": "2026-02-12"
         }
       ]
     },

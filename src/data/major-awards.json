@@ -201,45 +201,6 @@
       ]
     },
     {
-      "id": "golden-horse-63",
-      "orgId": "golden-horse",
-      "name": "第63届金马奖",
-      "nameEn": "63rd Golden Horse Awards",
-      "year": 2026,
-      "date": "2026-07-01",
-      "location": "台北",
-      "nominations": [
-        {
-          "categoryId": "feature-entry-opens",
-          "categoryName": "长片报名开启",
-          "filmId": "golden-horse-63",
-          "result": "nominated",
-          "date": "2026-07-01"
-        }
-      ]
-    },
-    {
-      "id": "oscars-99",
-      "orgId": "oscars",
-      "name": "第99届奥斯卡",
-      "nameEn": "99th Academy Awards",
-      "year": 2026,
-      "date": "2026-04-07",
-      "location": "洛杉矶杜比剧院",
-      "nominations": [
-        {
-          "categoryId": "dates-announced",
-          "categoryName": "日程公布：提名 2027-01-21，典礼 2027-03-14",
-          "filmId": "oscars-99",
-          "personNames": [
-            "柯南·奥布赖恩"
-          ],
-          "result": "nominated",
-          "date": "2026-04-07"
-        }
-      ]
-    },
-    {
       "id": "golden-globes-83",
       "orgId": "golden-globes",
       "name": "第83届金球奖",

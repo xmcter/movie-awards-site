@@ -24,7 +24,6 @@ import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
   formatDate,
-  formatYearMonth,
 } from "@/lib/labels";
 import {
   buildAwardBody,
@@ -287,14 +286,13 @@ export function getTimelineEvents(): TimelineEvent[] {
 
   for (const film of films) {
     for (const release of film.streaming) {
-      if (release.date && !isPublished(release.date, today)) continue;
+      // EDITORIAL.md: only officially dated streaming launches make the timeline
+      // (tba / estimated windows stay on the film page only).
+      if (release.status !== "announced" || !release.date) continue;
+      if (!isPublished(release.date, today)) continue;
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
-      const datePart = release.date
-        ? release.status === "estimated"
-          ? formatYearMonth(release.date)
-          : formatDate(release.date)
-        : "待定";
+      const datePart = formatDate(release.date);
       const region = release.region ? ` · ${release.region}` : "";
       const note = release.note ? `（${release.note}）` : "";
 
@@ -366,13 +364,84 @@ export function getTimelineEvents(): TimelineEvent[] {
     });
   }
 
-  return events.sort((a, b) => {
-    const da = a.date || "0000-00-00";
-    const db = b.date || "0000-00-00";
+  return capPerDay(events);
+}
+
+/**
+ * Editorial cap (see EDITORIAL.md): at most MAX_EVENTS_PER_DAY cards per
+ * calendar day. Within a day, cards are ranked by eventPriority():
+ *   main award result > main-competition lineup/nomination >
+ *   auteur release / premiere / dated streaming > first 80%+ critic score.
+ * Ties go to catalog auteurs, then to films with more coverage elsewhere on
+ * the timeline, then to data order. Lower-ranked cards are dropped from the
+ * timeline, event pages and film pages alike.
+ */
+export const MAX_EVENTS_PER_DAY = 3;
+
+const CATALOG_AUTEURS = [
+  "诺兰", "伊纳里图", "李沧东", "是枝裕和", "滨口龙介", "阿尔莫多瓦",
+  "赫尔佐格", "麦克唐纳", "洪常秀", "萨金塞夫", "迈克·李", "拉雷恩",
+  "拉腊因", "詹姆斯·格雷", "法哈蒂", "蒙吉", "莫莱蒂", "帕夫利科夫斯基",
+];
+
+function categoryScore(name: string): number {
+  if (/金棕榈|金狮|金熊|金贝壳|金豹|水晶球|东京大奖|最佳影片|最佳电影|最佳剧情片|釜山奖/.test(name)) return 50;
+  if (/评审团大奖|评委会大奖/.test(name)) return 40;
+  if (/最佳导演/.test(name)) return 35;
+  if (/评审团特别奖|评委会特别奖|评审团奖/.test(name)) return 32;
+  if (/男主|女主|主演|男演员|女演员|最佳表演/.test(name)) return 30;
+  if (/编剧/.test(name)) return 25;
+  return 10;
+}
+
+function eventPriority(e: TimelineEvent): number {
+  const auteurBonus = (e.directors || []).some((d) =>
+    CATALOG_AUTEURS.some((name) => d.includes(name)),
+  )
+    ? 5
+    : 0;
+  const top = Math.max(0, ...(e.awards || []).map(categoryScore));
+  switch (e.type) {
+    case "win":
+      return 200 + top + auteurBonus;
+    case "nomination":
+      return 150 + top + Math.min((e.awards || []).length, 5) + auteurBonus;
+    case "streaming":
+      return 100 + auteurBonus;
+    case "auteur": {
+      const isScore = /critic|口碑 \d+%|烂番茄/i.test(e.headline || "");
+      return (isScore ? 60 : 100) + auteurBonus;
+    }
+  }
+}
+
+function capPerDay(events: TimelineEvent[]): TimelineEvent[] {
+  const coverage = new Map<string, number>();
+  for (const e of events) {
+    if (e.filmId) coverage.set(e.filmId, (coverage.get(e.filmId) || 0) + 1);
+  }
+  const ranked = events.map((e, i) => ({
+    e,
+    i,
+    p: eventPriority(e),
+    c: e.filmId ? coverage.get(e.filmId) || 0 : 0,
+  }));
+  ranked.sort((a, b) => {
+    const da = a.e.date || "0000-00-00";
+    const db = b.e.date || "0000-00-00";
     if (da !== db) return db.localeCompare(da);
-    const order = { auteur: 0, win: 1, nomination: 2, streaming: 3 } as const;
-    return order[a.type] - order[b.type];
+    return b.p - a.p || b.c - a.c || a.i - b.i;
   });
+  const perDay = new Map<string, number>();
+  const kept: TimelineEvent[] = [];
+  for (const { e } of ranked) {
+    const day = e.date || "tba";
+    const n = perDay.get(day) || 0;
+    if (n >= MAX_EVENTS_PER_DAY) continue;
+    perDay.set(day, n + 1);
+    kept.push(e);
+  }
+  return kept;
 }
 
 export function getFilmEvents(filmId: string): TimelineEvent[] {

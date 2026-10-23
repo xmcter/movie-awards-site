@@ -1,1 +1,26 @@
-PLACEHOLDER
+[
+  {
+    "id": "tender-loving-care-rt-100-41",
+    "filmId": "tender-loving-care",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "critic 100% · 利《温柔的关怀》",
+    "detail": "迈克·利《温柔的关怀 / Tender Loving Care》Tomatometer 100%（约41–45条影评，均分约8.5/10），Metacritic 85（13评）。圣塞74金贝壳、最佳编剧与凯特·奥弗林最佳主演后样本扩大仍完美 Fresh；美 Bleecker Street 12/4 有限，英 StudioCanal 2027-02-12。Wikipedia / RT / Metacritic 汇总 10/23。"
+  },
+  {
+    "id": "possible-love-us-theatrical-1023",
+    "filmId": "possible-love",
+    "date": "2026-10-23",
+    "kind": "release",
+    "summary": "美加英爱日院线上映 · 李沧东《可能的爱情》",
+    "detail": "李沧东《可能的爱情 / Possible Love》今日（2026-10-23）在美国、加拿大、英国、爱尔兰与日本有限院线上映（澳大利亚已于 10/22 上映）；韩国院线为 9/23。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；Netflix 全球流媒体定档 11/6。Variety / Netflix Tudum / 各地院线排片。"
+  },
+  {
+    "id": "nowhere-to-lay-my-eyes-kr-1021",
+    "filmId": "nowhere-to-lay-my-eyes",
+    "date": "2026-10-21",
+    "kind": "promo",
+    "summary": "韩国院线上映 · 洪常秀《无处安放的目光》",
+    "detail": "洪常秀第35部长片《无处安放的目光 / Nowhere to Lay My Eyes》（눈 둘 데가 없네）今日（2026-10-21）在韩国院线上映；金敏喜主演，崔明吉、权海骅、申锡昊、朴美昭出演，片长约72分钟。影片洛迦诺主竞赛获最佳导演、金敏喜最佳表演与普世评审团奖，并入选纽约电影节主单元与釜山 Icons。KMDb / Cine21 / Jeonwonsa 档期；Cine21 开画日已录得上座。"
+  }
+]

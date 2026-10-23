@@ -8,14 +8,6 @@
     "detail": "李沧东《可能的爱情 / Possible Love》今日（2026-10-23）在美国、加拿大、英国、爱尔兰与日本有限院线上映（澳大利亚已于 10/22 上映）；韩国院线为 9/23。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；Netflix 全球流媒体定档 11/6。Variety / Netflix Tudum / 各地院线排片。"
   },
   {
-    "id": "lff70-imperium-best-film-1018",
-    "filmId": "imperium",
-    "date": "2026-10-18",
-    "kind": "promo",
-    "summary": "BFI伦敦70最佳影片 · 洛兹尼察《帝国》",
-    "detail": "谢尔盖·洛兹尼察档案纪录片《帝国 / Imperium》获第70届 BFI 伦敦电影节 Official Competition 最佳影片（10/18 闭幕颁奖）。影片借意大利摄影师1970年代初苏联素材重访帝国社会文化景观，威尼斯 Open 单元首映。同期 Sutherland 奖给泰国《九座通往天堂的庙》（Sompot Chidgasornpongse），Grierson 纪录片奖给《水泥之地》（Asmahan Bkerat）。BFI / Variety / Screen 2026-10-18。"
-  },
-  {
     "id": "nowhere-to-lay-my-eyes-kr-1021",
     "filmId": "nowhere-to-lay-my-eyes",
     "date": "2026-10-21",
@@ -24,12 +16,20 @@
     "detail": "洪常秀第35部长片《无处安放的目光 / Nowhere to Lay My Eyes》（눈 둘 데가 없네）今日（2026-10-21）在韩国院线上映；金敏喜主演，崔明吉、权海骁、申锡昊、朴美昭出演，片长约72分钟。影片洛迦诺主竞赛获最佳导演、金敏喜最佳表演与普世评审团奖，并入选纽约电影节主单元与釜山 Icons。KMDb / Cine21 / Jeonwonsa 档期；Cine21 开画日已录得上座。"
   },
   {
-    "id": "minotaur-france-theatrical-1014",
-    "filmId": "minotaur",
-    "date": "2026-10-14",
+    "id": "look-back-us-theatrical-1020",
+    "filmId": "look-back",
+    "date": "2026-10-20",
+    "kind": "release",
+    "summary": "北美院线定档 · 是枝《蓦然回首》12/30 有限映",
+    "detail": "GKids 10/20 官宣是枝裕和《蓦然回首 / Look Back》北美档期：12/30 精选影院有限上映，2027-01-15 全国扩映。影片威尼斯主竞赛世界首映，改编藤本树漫画；日本 9/11 上映，韩国 10/8。The Wrap / Anime News Network / GKids 2026-10-20。"
+  },
+  {
+    "id": "lff70-imperium-best-film-1018",
+    "filmId": "imperium",
+    "date": "2026-10-18",
     "kind": "promo",
-    "summary": "法国院线上映 · 萨金塞夫《米诺陶》",
-    "detail": "安德烈·萨金塞夫戛纳评审团大奖《米诺陶 / Minotaur》今日（10/14）由 Les Films du Losange 在法国院线上映。影片以《不忠的女人》为灵感，讲述当代迷宫中的权力、背叛与生存；Cannes 2026 获 Grand Prix。RT 约 98%（47 条影评）。"
+    "summary": "BFI伦敦70最佳影片 · 洛兹尼察《帝国》",
+    "detail": "谢尔盖·洛兹尼察档案纪录片《帝国 / Imperium》获第70届 BFI 伦敦电影节 Official Competition 最佳影片（10/18 闭幕颁奖）。影片借意大利摄影师1970年代初苏联素材重访帝国社会文化景观，威尼斯 Open 单元首映。同期 Sutherland 奖给泰国《九座通往天堂的庙》（Sompot Chidgasornpongse），Grierson 纪录片奖给《水泥之地》（Asmahan Bkerat）。BFI / Variety / Screen 2026-10-18。"
   },
   {
     "id": "minotaur-rt-98-47",
@@ -38,6 +38,14 @@
     "kind": "promo",
     "summary": "critic 98% · 萨金塞夫《米诺陶》",
     "detail": "安德烈·萨金塞夫《米诺陶 / Minotaur》Rotten Tomatoes Tomatometer 约 98%（47 条影评，均分约 8.6/10）。戛纳评审团大奖作品；法国 10/14 院线上映。报道日期约 2026-10。"
+  },
+  {
+    "id": "minotaur-france-theatrical-1014",
+    "filmId": "minotaur",
+    "date": "2026-10-14",
+    "kind": "promo",
+    "summary": "法国院线上映 · 萨金塞夫《米诺陶》",
+    "detail": "安德烈·萨金塞夫戛纳评审团大奖《米诺陶 / Minotaur》今日（10/14）由 Les Films du Losange 在法国院线上映。影片以《不忠的女人》为灵感，讲述当代迷宫中的权力、背叛与生存；Cannes 2026 获 Grand Prix。RT 约 98%（47 条影评）。"
   },
   {
     "id": "odyssey-home-release-1013",
@@ -56,20 +64,20 @@
     "detail": "《苦涩圣诞 / Bitter Christmas（Amarga Navidad）》Tomatometer 约 87%（69 条影评，均分约 7.4/10；RT 影片页现 70 条且已出共识），Metacritic 69（23 评，未过 80）。佩德罗·阿尔莫多瓦尔执导，更纳主竞赛国际首映后影评累积跨过 80%；美索尼 11/13 有限。Wikipedia / RT 名录汇总 10/4。"
   },
   {
-    "id": "fjord-rt-93-72",
-    "filmId": "fjord",
-    "date": "2026-09-30",
-    "kind": "promo",
-    "summary": "critic 93% · 蒙吉《峡湾》金棕榈后",
-    "detail": "《峡湾 / Fjord》Tomatometer 约 93%（72 条影评，均分约 7.9/10），Metacritic 81（22 评）。克里斯蒂安·蒙吉执导，塞巴斯蒂安·斯坦与蕾娜特·赖因斯夫主演；扎纳金棕榈、FIPRESCI 与评委会外多项后样本扩大仍 Certified Fresh。罗马尼亚第99届奥斯卡国际片候选；Neon 10/9 北美院线，NYFF64 Spotlight。Wikipedia / RT / Metacritic 汇总 9/30。"
-  },
-  {
     "id": "naza-rt-100-23-us-930",
     "filmId": "naza",
     "date": "2026-09-30",
     "kind": "promo",
     "summary": "critic 100% · 亚伯拉罕/绍尔《纳扎》美限映",
     "detail": "《纳扎 / NAZA》Tomatometer 100%（23 条影评，均分约 9.1/10），Metacritic 94（15 评）。威尼斯评审团特别奖、圣塞74欧洲片观众奖后，美 9/30 起 IFC Center 有限上映，10/9 扩至洛杉矶等地；英 10/15 Dogwoof。Wikipedia / RT / Metacritic / Guardian 汇总 9/30。"
+  },
+  {
+    "id": "fjord-rt-93-72",
+    "filmId": "fjord",
+    "date": "2026-09-30",
+    "kind": "promo",
+    "summary": "critic 93% · 蒙吉《峡湾》金棕榈后",
+    "detail": "《峡湾 / Fjord》Tomatometer 约 93%（72 条影评，均分约 7.9/10），Metacritic 81（22 评）。克里斯蒂安·蒙吉执导，塞巴斯蒂安·斯坦与蕾娜特·赖因斯夫主演；扎纳金棕榈、FIPRESCI 与评委会外多项后样本扩大仍 Certified Fresh。罗马尼亚第99届奥斯卡国际片候选；Neon 10/9 北美院线，NYFF64 Spotlight。Wikipedia / RT / Metacritic 汇总 9/30。"
   },
   {
     "id": "all-of-a-sudden-rt-96-47",
@@ -80,20 +88,20 @@
     "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，嗦纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
   },
   {
-    "id": "possible-love-rt-100-35",
-    "filmId": "possible-love",
-    "date": "2026-09-29",
-    "kind": "promo",
-    "summary": "critic 100% · 李沧东《可能的爱情》威尼斯后",
-    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（35 条影评，均分约 8.8/10），Metacritic 93。威尼斯评审团大奖后影评累积保持完美 Fresh；美 10/23 有限、Netflix 11/6。Wikipedia / RT 汇总 9/28–29。"
-  },
-  {
     "id": "wild-horse-nine-rt-94-72",
     "filmId": "wild-horse-nine",
     "date": "2026-09-29",
     "kind": "promo",
     "summary": "critic 94% · 麦克多纳《野马九号》威尼斯后",
     "detail": "《野马九号 / Wild Horse Nine》Tomatometer 约 94%（72 条影评，均分约 8.3/10），Metacritic 79。马丁·麦克多纳执导，约翰·马尔科维奇获威尼斯沃尔皮杯最佳男演员；Searchlight 11/6 上映。Wikipedia / RT 汇总 9/28–29。"
+  },
+  {
+    "id": "possible-love-rt-100-35",
+    "filmId": "possible-love",
+    "date": "2026-09-29",
+    "kind": "promo",
+    "summary": "critic 100% · 李沧东《可能的爱情》威尼斯后",
+    "detail": "《可能的爱情 / Possible Love》Tomatometer 维持 100%（35 条影评，均分约 8.8/10），Metacritic 93。威尼斯评审团大奖后影评累积保持完美 Fresh；美 10/23 有限、Netflix 11/6。Wikipedia / RT 汇总 9/28–29。"
   },
   {
     "id": "look-back-rt-88-24",

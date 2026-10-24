@@ -1,1 +1,18 @@
-$(cat /tmp/auteur-news-new.json)
+[
+  {
+    "id": "chicago-62-gold-hugo-dreamed-adventure-1023",
+    "filmId": "the-dreamed-adventure",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
+    "detail": "第62届芝加哥国际电影节国际竞赛（10/23 公布）：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获金雨果最佳影片，亚娜·拉代娃获银雨果最佳主演。同期银雨果最佳编剧给滨口龙介《突然》（与莱娅·勒·迪姆纳），最佳摄影给是枝《蓦然回首》上野千蔵。影片戛纳评审团奖、保加利亚奥斯卡国际片候选。Chicago Film Festival / BTA 2026-10-23。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-41",
+    "filmId": "tender-loving-care",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "critic 100% · 利《温柔的关怀》",
+    "detail": "迈克·利《温柔的关怀 / Tender Loving Care》Tomatometer 100%（约41–45条影评，均分约8.5/10），Metacritic 85（13评）。圣塞74金贝壳、最佳编剧与凯特·奥弗林最佳主演后样本扩大仍完美 Fresh；美 Bleecker Street 12/4 有限，英 StudioCanal 2027-02-12。Wikipedia / RT / Metacritic 汇总 10/23。"
+  }
+]

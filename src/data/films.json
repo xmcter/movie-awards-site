@@ -82,5 +82,57 @@
       }
     ],
     "poster": "/posters/ink.jpg"
+  },
+  {
+    "id": "bucking-fastard",
+    "title": "Bucking Fastard",
+    "titleEn": "Bucking Fastard",
+    "year": 2026,
+    "synopsis": "维尔纳·赫尔佐格新作。第83届威尼斯电影节主竞赛入围。",
+    "directors": [
+      "维尔纳·赫尔佐格"
+    ],
+    "cast": [
+      "鲁妮·玛拉",
+      "凯特·玛拉"
+    ],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "美国"
+    ],
+    "posterColors": [
+      "#0f172a",
+      "#334155"
+    ],
+    "streaming": [],
+    "poster": "/posters/bucking-fastard.jpg"
+  },
+  {
+    "id": "wild-horse-nine",
+    "title": "九匹野马",
+    "titleEn": "Wild Horse Nine",
+    "year": 2026,
+    "synopsis": "马丁·麦克多纳新片。第83届威尼斯电影节主竞赛入围。",
+    "directors": [
+      "马丁·麦克多纳"
+    ],
+    "cast": [
+      "约翰·马尔科维奇"
+    ],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "英国",
+      "美国"
+    ],
+    "posterColors": [
+      "#1c1917",
+      "#78716c"
+    ],
+    "streaming": [],
+    "poster": "/posters/wild-horse-nine.jpg"
   }
 ]

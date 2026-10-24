@@ -1,1 +1,42 @@
-[full content here]
+[
+  {
+    "id": "chicago-62-gold-hugo-1023",
+    "filmId": "the-dreamed-adventure",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62金雨果 · 格里策巴赫《梦见的冒险》",
+    "detail": "瓦莱斯卡·格里策巴赫《梦见的冒险 / The Dreamed Adventure》获第62届芝加哥国际电影节 Gold Hugo 最佳影片（10/23 颁奖）。影片戛纳主竞赛评审团奖，保加利亚奥斯卡国际片候选。同期银雨果最佳编剧给滨口龙介与 Léa Le Dimna《突然》，最佳摄影给上野 Senzo《蓦然回首》。Cinema/Chicago / Wikipedia 2026-10-23。"
+  },
+  {
+    "id": "all-of-a-sudden-chicago-screenplay-1023",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62最佳编剧 · 滨口《突然》",
+    "detail": "滨口龙介与 Léa Le Dimna 凭《突然 / All of a Sudden》获第62届芝加哥国际电影节 Silver Hugo 最佳编剧（10/23）。影片戛纳主竞赛最佳女演员（并列），Neon 11/25 北美院线。Cinema/Chicago 2026-10-23。"
+  },
+  {
+    "id": "look-back-chicago-cinematography-1023",
+    "filmId": "look-back",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62最佳摄影 · 是枝《蓦然回首》",
+    "detail": "上野 Senzo 凭是枝裕和《蓦然回首 / Look Back》获第62届芝加哥国际电影节 Silver Hugo 最佳摄影（10/23）。影片威尼斯主竞赛，GKids 12/30 北美有限上映。Cinema/Chicago 2026-10-23。"
+  },
+  {
+    "id": "tender-loving-care-rt-100-41",
+    "filmId": "tender-loving-care",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "critic 100% · 利《温柔的关怀》",
+    "detail": "迈克·利《温柔的关怀 / Tender Loving Care》Tomatometer 100%（约41–45条影评，均分约8.5/10），Metacritic 85（13评）。圣塞74金贝壳、最佳编剧与凯特·奥弗林最佳主演后样本扩大仍完美 Fresh；美 Bleecker Street 12/4 有限，英 StudioCanal 2027-02-12。Wikipedia / RT / Metacritic 汇总 10/23。"
+  },
+  {
+    "id": "possible-love-us-theatrical-1023",
+    "filmId": "possible-love",
+    "date": "2026-10-23",
+    "kind": "release",
+    "summary": "美加英爱日院线上映 · 李沧东《可能的爱情》",
+    "detail": "李沧东《可能的爱情 / Possible Love》今日（2026-10-23）在美国、加拿大、英国、爱尔兰与日本有限院线上映（澳大利亚已于 10/22 上映）；韩国院线为 9/23。影片威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；Netflix 全球流媒体定档 11/6。Variety / Netflix Tudum / 各地院线排片。"
+  }
+]

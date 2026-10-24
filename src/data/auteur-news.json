@@ -1,11 +1,27 @@
 [
   {
+    "id": "busan-31-best-film-midday-meal-1015",
+    "filmId": "midday-meal",
+    "date": "2026-10-15",
+    "kind": "ceremony",
+    "summary": "釜山31釜山奖最佳影片 · 马基迪《午餐》",
+    "detail": "第31届釜山国际电影节（10/15 闭幕）：马吉德·马基迪《午餐 / Midday Meal》（伊朗）获釜山奖最佳影片，评委会一致，自动获奥斯卡国际片资格。特别评审团奖给印尼《Ibuku》（埃迪·卡希约诺），最佳导演给台湾李云灿《To Be Ordinary》，最佳演员周迅与Himeno Kashun。Screen / Korea.net 2026-10-15/16。"
+  },
+  {
+    "id": "lff70-best-film-imperium-1018",
+    "filmId": "imperium",
+    "date": "2026-10-18",
+    "kind": "ceremony",
+    "summary": "伦敦70最佳影片 · 洛兹尼察《帝国》",
+    "detail": "第70届BFI伦敦电影节（10/18 公布）：谢尔盖·洛兹尼察《帝国 / Imperium》获官方竞赛最佳影片。Sutherland首作给《9 Temples to Heaven》，Grierson纪录片给《Concrete Land》。评委会主席Sam Pollard。BFI / THR 2026-10-18。"
+  },
+  {
     "id": "chicago-62-gold-hugo-dreamed-adventure-1023",
     "filmId": "the-dreamed-adventure",
     "date": "2026-10-23",
     "kind": "promo",
     "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
-    "detail": "第62届芝加哥国际电影节国际竞赛（10/23 公布）：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获金雨果最佳影片，亚娜·拉代娃获银雨果最佳主演。同期银雨果最佳编剧给滨口龙介《突然》（与莱娅·勒·迪姆纳），最佳摄影给是枝《蓦然回首》上野千蔵。影片戛纳评审团奖、保加利亚奥斯卡国际片候选。Chicago Film Festival / BTA 2026-10-23。"
+    "detail": "第62届芝加哥国际电影节国际竞赛（10/23 公布）：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获金雨果最佳影片，亚娜·拉代娃获银雨果最佳主演。同期银雨果最佳编剧给滨口龙介《突然》（与莱娅·勒·迪姆纳），最佳摄影给是枝《蓖然回首》上野千蔵。影片戛纳评审团奖、保加利亚奥斯卡国际片候选。Chicago Film Festival / BTA 2026-10-23。"
   },
   {
     "id": "tender-loving-care-rt-100-41",

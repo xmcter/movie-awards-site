@@ -3,7 +3,14 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
-import { films, getFilm, getFilmEvents, splitFilmCopy } from "@/lib/data";
+import {
+  FILM_ALIASES,
+  films,
+  getFilm,
+  getFilmEvents,
+  splitFilmCopy,
+  truncateDescription,
+} from "@/lib/data";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -13,7 +20,13 @@ import {
 export const dynamic = "force-static";
 
 export function generateStaticParams() {
-  return films.map((film) => ({ id: film.id }));
+  const uniqueIds = [
+    ...new Set([
+      ...films.map((film) => film.id),
+      ...Object.keys(FILM_ALIASES),
+    ]),
+  ];
+  return uniqueIds.map((id) => ({ id }));
 }
 
 export async function generateMetadata({
@@ -22,11 +35,44 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
+  const canonicalId = FILM_ALIASES[id];
+  if (canonicalId) {
+    const targetFilm = getFilm(canonicalId);
+    const title = targetFilm
+      ? targetFilm.titleEn
+        ? `${targetFilm.title} / ${targetFilm.titleEn}`
+        : targetFilm.title
+      : "页面已迁移";
+    const description = targetFilm
+      ? truncateDescription(
+          splitFilmCopy(targetFilm).plot ||
+            splitFilmCopy(targetFilm).background ||
+            targetFilm.synopsis,
+          150,
+        )
+      : "该影片条目已合并至主页面。";
+    return {
+      title,
+      description,
+      robots: {
+        index: false,
+        follow: true,
+      },
+      alternates: {
+        canonical: `/film/${canonicalId}`,
+      },
+    };
+  }
+
   const film = getFilm(id);
   if (!film) return { title: "未找到" };
   const title = film.titleEn ? `${film.title} / ${film.titleEn}` : film.title;
   const { plot, background } = splitFilmCopy(film);
-  const description = plot || background || film.synopsis;
+  const rawDescription =
+    [plot, background].filter(Boolean).join(" ") ||
+    film.synopsis ||
+    `${film.title}（${film.year}）影片档案与奖项时间线。`;
+  const description = truncateDescription(rawDescription, 150);
   return {
     title,
     description,
@@ -72,6 +118,38 @@ export default async function FilmPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const canonicalId = FILM_ALIASES[id];
+  if (canonicalId) {
+    const targetFilm = getFilm(canonicalId);
+    const targetUrl = `/film/${canonicalId}`;
+    return (
+      <div className="space-y-6">
+        <meta httpEquiv="refresh" content={`0;url=${targetUrl}`} />
+        <p className="text-xs text-cinema-muted">
+          <Link href="/" className="hover:text-cinema-gold">
+            ← 时间线
+          </Link>
+        </p>
+        <section className="rounded-2xl border border-cinema-border bg-cinema-card p-6 sm:p-8">
+          <h1 className="font-display text-xl text-cinema-text sm:text-2xl">
+            {targetFilm ? `${targetFilm.title}（条目已合并）` : "影片条目已合并"}
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-cinema-muted">
+            本页面已合并至主档案页，正在为您自动跳转。如浏览器未自动跳转，请点击下方链接访问：
+          </p>
+          <p className="mt-4">
+            <Link
+              href={targetUrl}
+              className="text-sm font-medium text-cinema-gold underline decoration-cinema-border underline-offset-4 hover:text-cinema-gold-light"
+            >
+              前往 {targetFilm ? `《${targetFilm.title}》影片档` : targetUrl}（{targetUrl}） →
+            </Link>
+          </p>
+        </section>
+      </div>
+    );
+  }
+
   const film = getFilm(id);
   if (!film) notFound();
 

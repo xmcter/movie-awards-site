@@ -4,7 +4,12 @@ import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
 import EventDismissButton from "@/components/EventDismissButton";
 import EventPager from "@/components/EventPager";
-import { getFilm, getTimelineEvents, splitFilmCopy } from "@/lib/data";
+import {
+  getFilm,
+  getTimelineEvents,
+  splitFilmCopy,
+  truncateDescription,
+} from "@/lib/data";
 
 export const dynamic = "force-static";
 
@@ -18,12 +23,20 @@ export async function generateMetadata({
   params: Promise<{ id: string }>;
 }): Promise<Metadata> {
   const { id } = await params;
-  const event = getTimelineEvents().find((e) => e.id === id);
+  let decoded = id;
+  try {
+    decoded = decodeURIComponent(id);
+  } catch {
+    decoded = id;
+  }
+  const event = getTimelineEvents().find((e) => e.id === id || e.id === decoded);
   if (!event) return { title: "未找到" };
   const film = event.filmId ? getFilm(event.filmId) : undefined;
   const { plot, background } = film ? splitFilmCopy(film) : { plot: "", background: "" };
   const title = event.headline || event.summary || event.filmTitle;
-  const description = event.detail || plot || background || event.summary;
+  const extra = [event.detail, plot, background].find((s) => s && s !== event.summary) || "";
+  const rawDescription = extra ? `${event.summary}：${extra}` : event.summary;
+  const description = truncateDescription(rawDescription, 150);
   return {
     title,
     description,
@@ -69,8 +82,14 @@ export default async function EventPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  let decoded = id;
+  try {
+    decoded = decodeURIComponent(id);
+  } catch {
+    decoded = id;
+  }
   const timeline = getTimelineEvents();
-  const event = timeline.find((e) => e.id === id);
+  const event = timeline.find((e) => e.id === id || e.id === decoded);
   if (!event) notFound();
   const film = event.filmId ? getFilm(event.filmId) : undefined;
   const { plot, background } = film ? splitFilmCopy(film) : { plot: "", background: "" };

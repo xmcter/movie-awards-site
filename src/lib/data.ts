@@ -123,6 +123,17 @@ export const ceremonies = [
 ];
 export const auteurNews = auteurNewsData as AuteurNews[];
 
+/** Maps deprecated/duplicate film slugs to their canonical film id. */
+export const FILM_ALIASES: Record<string, string> = {
+  "nowhere-to-lay-my-eyes": "nowhere-to-lay-eyes",
+};
+
+export function truncateDescription(text: string, maxLen = 150): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= maxLen) return clean;
+  return `${clean.slice(0, maxLen - 1).replace(/[，、；：,.;:\s]+$/, "")}…`;
+}
+
 const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 function withBase(path?: string): string | undefined {
@@ -136,7 +147,13 @@ function getOrg(id: string): AwardOrg | undefined {
 }
 
 export function getFilm(id: string): Film | undefined {
-  const film = films.find((f) => f.id === id);
+  let decoded = id;
+  try {
+    decoded = decodeURIComponent(id);
+  } catch {
+    decoded = id;
+  }
+  const film = films.find((f) => f.id === id || f.id === decoded);
   if (!film) return undefined;
   return { ...film, poster: withBase(film.poster) };
 }

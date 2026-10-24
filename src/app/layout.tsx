@@ -30,9 +30,6 @@ export const metadata: Metadata = {
     "流媒体",
   ],
   authors: [{ name: "银幕新讯" }],
-  alternates: {
-    canonical: "/",
-  },
   robots: {
     index: true,
     follow: true,

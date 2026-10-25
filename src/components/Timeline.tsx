@@ -17,7 +17,7 @@ import {
   relativeDayPrefix,
   shanghaiToday,
 } from "@/lib/dayGroups";
-import { markClicked, readClicked, readLastId, readScroll, saveScroll } from "@/lib/readProgress";
+import { markClicked, readClicked } from "@/lib/readProgress";
 import {
   DISMISS_EVENT_NAME,
   blockEvent,
@@ -201,11 +201,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     const visitBaseline = getVisitBaseline();
     setBaseline(visitBaseline);
     setToday(shanghaiToday());
-    // With new cards since last visit, start at the top instead of restoring scroll.
-    const hasNew = Boolean(
-      visitBaseline &&
-        events.some((e) => isNewSince(e, visitBaseline) && !isBlockedOrSimilar(e, initialDismiss)),
-    );
     try {
       const savedDedup = localStorage.getItem(DEDUP_STORAGE_KEY);
       if (savedDedup !== null) {
@@ -220,31 +215,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     window.addEventListener(DISMISS_EVENT_NAME, onDismissUpdate);
     window.addEventListener("storage", onDismissUpdate);
 
-    const last = readLastId();
-    const y = readScroll();
-    requestAnimationFrame(() => {
-      if (hasNew) return;
-      if (last) {
-        const el = document.querySelector(`[data-event-id="${CSS.escape(last)}"]`);
-        if (el) {
-          el.scrollIntoView({ block: "center" });
-          return;
-        }
-      }
-      if (y > 0) window.scrollTo(0, y);
-    });
-
-    let tick = 0;
-    const onScroll = () => {
-      if (tick) return;
-      tick = requestAnimationFrame(() => {
-        tick = 0;
-        saveScroll(window.scrollY || 0);
-      });
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      window.removeEventListener("scroll", onScroll);
       window.removeEventListener(DISMISS_EVENT_NAME, onDismissUpdate);
       window.removeEventListener("storage", onDismissUpdate);
     };

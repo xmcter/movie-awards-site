@@ -1,1 +1,32 @@
-PLACEHOLDER_DP
+{
+  "films": [
+    {
+      "id": "the-dreamed-adventure",
+      "title": "梦想的冒险",
+      "titleEn": "The Dreamed Adventure / Das Geträumte Abenteuer",
+      "year": 2026,
+      "synopsis": "瓦莱斯卡·格里策巴赫执导。保加利亚边境小镇斯维伦格勒，考古学家维斯卡与旧识重逢，卷入后共产主义时期的地方黑帮与权力网络。更纳主竞赛评审团奖；芝加哥62金雨果最佳影片与最佳主演（亚娜·拉德瓦）；保加利亚奥斯卡国际片候选。多用非职业演员。",
+      "directors": [
+        "瓦莱斯卡·格里策巴赫"
+      ],
+      "cast": [
+        "亚娜·拉德瓦"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "德国",
+        "法国",
+        "保加利亚",
+        "奥地利"
+      ],
+      "posterColors": [
+        "#4a5568",
+        "#e2e8f0"
+      ],
+      "streaming": []
+    }
+  ],
+  "ceremonies": []
+}

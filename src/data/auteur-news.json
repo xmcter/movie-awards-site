@@ -1,1 +1,26 @@
-PLACEHOLDER_AN
+[
+  {
+    "id": "chicago-62-gold-hugo-1023",
+    "filmId": "the-dreamed-adventure",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
+    "detail": "瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》（Das Geträumte Abenteuer）获第62届芝加哥国际电影节国际竞赛金雨果最佳影片，亚娜·拉德瓦获银雨果最佳主演。影片更纳主竞赛评审团奖后美国首映于NYFF64；多用保加利亚非职业演员，描绘边境小镇后共产主义权力网络。Cinema/Chicago / BTA 2026-10-23。"
+  },
+  {
+    "id": "chicago-62-screenplay-1023",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62最佳编剧 · 滨口《突然》",
+    "detail": "滨口龙介与 Léa Le Dimna《突然 / All of a Sudden》（Soudain）获第62届芝加哥国际电影节银雨果最佳编剧。影片更纳主竞赛后样本持续，RT 约96%；Neon 11/25 北美有限。Cinema/Chicago 2026-10-23。"
+  },
+  {
+    "id": "chicago-62-cinematography-1023",
+    "filmId": "look-back",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62最佳摄影 · 是枝《蒙然回首》",
+    "detail": "是枝裕和《蒙然回首 / Look Back》摄影 Senzo Ueno 获第62届芝加哥国际电影节银雨果最佳摄影。影片威尼斯主竞赛后GKids北美12/30有限上映。Cinema/Chicago 2026-10-23。"
+  }
+]

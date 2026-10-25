@@ -31,11 +31,11 @@ import {
 type FilterKey = "all" | TimelineEventType;
 
 const FILTERS: { key: FilterKey; label: string }[] = [
-  { key: "all", label: "全部" },
-  { key: "auteur", label: "新片" },
-  { key: "win", label: "获奖" },
-  { key: "nomination", label: "入围或提名" },
-  { key: "streaming", label: "流媒体" },
+  { key: "all", label: "全部雷达" },
+  { key: "streaming", label: "流媒体与熟肉" },
+  { key: "auteur", label: "高分与新片" },
+  { key: "win", label: "影展大奖" },
+  { key: "nomination", label: "入围提名" },
 ];
 
 const PIN_NEW = 10;
@@ -461,7 +461,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         </p>
                       </Link>
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted/65">
-                        <div>
+                        <div className="flex flex-wrap items-center gap-2">
                           {event.filmId ? (
                             <Link
                               href={`/film/${encodeURIComponent(event.filmId)}`}
@@ -472,9 +472,27 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                               {event.filmTitle}
                               {event.filmYear ? ` · ${event.filmYear}` : ""}
                               {event.directors && event.directors[0] ? ` · ${event.directors[0]}` : ""}
-                              <span className="ml-2 text-cinema-gold/70">影片档 →</span>
+                              <span className="ml-1 text-cinema-gold/70">影片档 →</span>
                             </Link>
                           ) : null}
+                          <a
+                            href={`https://guide.readcine.com/?q=${encodeURIComponent([event.filmTitle, event.filmYear, event.filmTitleEn, event.directors?.[0]].filter(Boolean).join(" "))}&pick=1`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+                          >
+                            <span>🎞️ 导赏</span>
+                            <span className="text-[9px] opacity-70">↗</span>
+                          </a>
+                          <a
+                            href={`https://movie.readcine.com/#/movie/${encodeURIComponent(event.filmTitle)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
+                          >
+                            <span>💾 找资源</span>
+                            <span className="text-[9px] opacity-70">↗</span>
+                          </a>
                         </div>
                         <button
                           type="button"

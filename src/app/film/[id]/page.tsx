@@ -281,7 +281,7 @@ export default async function FilmPage({
       {plot ? (
         <Section title="剧情介绍">
           <p>{plot}</p>
-          <div className="mt-4 pt-1">
+          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
             <a
               href={guideUrl}
               target="_blank"
@@ -289,6 +289,15 @@ export default async function FilmPage({
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
               <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+            <a
+              href={`https://movie.readcine.com/#/movie/${encodeURIComponent(film.title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
+            >
+              <span>💾 在「电影片库」查找资源</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
           </div>
@@ -304,7 +313,7 @@ export default async function FilmPage({
       {!plot && !background ? (
         <Section title="创作背景">
           <p>尚无可靠公开剧情或创作资料，本节从略，不编造。</p>
-          <div className="mt-4 pt-1">
+          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
             <a
               href={guideUrl}
               target="_blank"
@@ -312,6 +321,15 @@ export default async function FilmPage({
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
               <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+            <a
+              href={`https://movie.readcine.com/#/movie/${encodeURIComponent(film.title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
+            >
+              <span>💾 在「电影片库」查找资源</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
           </div>

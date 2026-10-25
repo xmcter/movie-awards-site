@@ -355,7 +355,9 @@ export function getTimelineEvents(): TimelineEvent[] {
     const film = getFilm(news.filmId);
     if (!film) continue;
     const kind = filmKindOf(film);
-    let badge = "新品";
+    let badge = "新片";
+    if (/critic|口碑|分|tomatometer|metacritic/i.test(news.summary)) badge = "高分口碑";
+    if (/上线|流出|熟肉|数字版|首发/i.test(news.summary)) badge = "熟肉上线";
     if (kind === "jury") badge = "评审";
     if (kind === "honor") badge = "荣誉";
 
@@ -415,20 +417,25 @@ function eventPriority(e: TimelineEvent): number {
   const auteurBonus = (e.directors || []).some((d) =>
     CATALOG_AUTEURS.some((name) => d.includes(name)),
   )
-    ? 5
+    ? 15
     : 0;
   const top = Math.max(0, ...(e.awards || []).map(categoryScore));
   switch (e.type) {
-    case "win":
-      return 200 + top + auteurBonus;
-    case "nomination":
-      return 150 + top + Math.min((e.awards || []).length, 5) + auteurBonus;
     case "streaming":
-      return 100 + auteurBonus;
+      // 流媒体与熟肉已上线，具备最高实用性
+      return 230 + auteurBonus;
     case "auteur": {
-      const isScore = /critic|口碑 \d+%|烂番茄/i.test(e.headline || "");
-      return (isScore ? 60 : 100) + auteurBonus;
+      const isRelease = /上线|流出|熟肉|数字版|首发/i.test(e.headline || "");
+      const isScore = /critic|口碑|分|tomatometer|metacritic/i.test(e.headline || "");
+      if (isRelease) return 220 + auteurBonus;
+      if (isScore) return 190 + auteurBonus;
+      return 150 + auteurBonus;
     }
+    case "win":
+      // 影展最高荣誉（金棕榈、金狮、金熊等）
+      return (top >= 40 ? 200 : 160) + top + auteurBonus;
+    case "nomination":
+      return 110 + top + Math.min((e.awards || []).length, 5) + auteurBonus;
   }
 }
 

@@ -99,6 +99,16 @@ export default async function EventPage({
   const badge = event.badge === "新品" ? "新片" : event.badge;
   const pagerItems = timeline.map((e) => ({ id: e.id, title: e.headline || e.filmTitle }));
 
+  const guideQuery = [
+    film?.title || event.filmTitle,
+    film?.year || event.filmYear,
+    film?.titleEn || event.filmTitleEn,
+    directors[0],
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const guideUrl = `https://guide.readcine.com/?q=${encodeURIComponent(guideQuery)}&pick=1`;
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between gap-4 text-xs text-cinema-muted">
@@ -179,10 +189,34 @@ export default async function EventPage({
       {plot ? (
         <Section title="剧情简介">
           <p>{plot}</p>
+          <div className="mt-4 pt-1">
+            <a
+              href={guideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+            >
+              <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+          </div>
         </Section>
       ) : (
         <Section title="剧情简介">
           <p>尚无公开剧情资料，不编造。</p>
+          {guideQuery ? (
+            <div className="mt-4 pt-1">
+              <a
+                href={guideUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+              >
+                <span>🎞️ 在「观影导赏」查看导赏</span>
+                <span className="text-[10px] opacity-70">↗</span>
+              </a>
+            </div>
+          ) : null}
         </Section>
       )}
 

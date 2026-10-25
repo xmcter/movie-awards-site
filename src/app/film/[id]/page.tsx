@@ -171,6 +171,16 @@ export default async function FilmPage({
           ? "致敬"
           : "导演";
 
+  const guideQuery = [
+    film.title,
+    film.year,
+    film.titleEn,
+    film.directors.length > 0 ? film.directors[0] : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const guideUrl = `https://guide.readcine.com/?q=${encodeURIComponent(guideQuery)}&pick=1`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Movie",
@@ -271,6 +281,17 @@ export default async function FilmPage({
       {plot ? (
         <Section title="剧情介绍">
           <p>{plot}</p>
+          <div className="mt-4 pt-1">
+            <a
+              href={guideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+            >
+              <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+          </div>
         </Section>
       ) : null}
 
@@ -283,6 +304,17 @@ export default async function FilmPage({
       {!plot && !background ? (
         <Section title="创作背景">
           <p>尚无可靠公开剧情或创作资料，本节从略，不编造。</p>
+          <div className="mt-4 pt-1">
+            <a
+              href={guideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+            >
+              <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+          </div>
         </Section>
       ) : null}
 

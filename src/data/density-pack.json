@@ -1,1 +1,30 @@
-FULL_CONTENT_HERE
+{
+  "films": [
+    {
+      "id": "honorary-hui",
+      "title": "许鞍华（荣誉）",
+      "titleEn": "Ann Hui (Honorary)",
+      "year": 2026,
+      "synopsis": "香港导演许鞍华。第31届釜山国际电影节山茶花奖得主，表彰其推动女性电影的贡献。",
+      "directors": ["许鞍华"],
+      "cast": [],
+      "genres": ["荣誉"],
+      "country": ["香港"],
+      "posterColors": ["#fce7f3", "#9d174d"],
+      "streaming": []
+    },
+    {
+      "id": "midday-meal",
+      "title": "午餐",
+      "titleEn": "Midday Meal",
+      "year": 2026,
+      "synopsis": "马吉德·马吉迪执导。伊朗东南偏远干旱村庄，合同制教师达乌德·苏兰（穆罕默德·拉希米）因资助者去世、免费午餐中断而面临学校关闭与永久编制落空；他与母亲搬进学校、动用积蓄乃至参与燃油走私以维持学生午餐。第31届釜山国际电影节 Busan Award 最佳影片，自动获得第99届奥斯卡国际片资格。",
+      "directors": ["马吉德·马吉迪"],
+      "cast": ["穆罕默德·拉希米"],
+      "genres": ["剧情"],
+      "country": ["伊朗"],
+      "posterColors": ["#1c1917", "#b45309"],
+      "streaming": []
+    }
+  ]
+}

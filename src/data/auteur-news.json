@@ -1,1 +1,34 @@
-$(cat /tmp/auteur-news.json)
+[
+  {
+    "id": "chicago-62-gold-hugo-1023",
+    "filmId": "the-dreamed-adventure",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
+    "detail": "瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获第62届芝加哥国际电影节 International Feature 金雨果最佳影片，Yana Radeva 银雨果最佳主演。戛纳评审团奖后；Cinema/Chicago 官宣 10/23。"
+  },
+  {
+    "id": "chicago-62-screenplay-1023",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62银雨果最佳编剧 · 滨口《突然》",
+    "detail": "滨口龙介、Léa Le Dimna《突然 / All of a Sudden》获第62届芝加哥国际电影节银雨果最佳编剧。Cinema/Chicago 官宣 10/23。"
+  },
+  {
+    "id": "chicago-62-cinematography-1023",
+    "filmId": "look-back",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "芝加哥62银雨果最佳摄影 · 是枝《蒙然回首》",
+    "detail": "Senzo Ueno 为是枝裕和《蒙然回首 / Look Back》获第62届芝加哥国际电影节银雨果最佳摄影。Cinema/Chicago 官宣 10/23。"
+  },
+  {
+    "id": "paper-tiger-rt-cf-1023",
+    "filmId": "paper-tiger",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "critic 86% · 格雷《纸老虎》",
+    "detail": "詹姆斯·格雷《纸老虎 / Paper Tiger》Tomatometer 86%（80条影评，均分约7.0/10），Metacritic 79。戛纳主竞赛后样本扩大达 Certified Fresh；Neon 11/13 美限映、11/20 全国。Rotten Tomatoes 官宣 / Wikipedia 汇总 10/23。"
+  }
+]

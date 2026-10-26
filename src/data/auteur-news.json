@@ -1,5 +1,13 @@
 [
   {
+    "id": "paper-tiger-rt-cf-1023",
+    "filmId": "paper-tiger",
+    "date": "2026-10-23",
+    "kind": "promo",
+    "summary": "critic 86% · 格雷《纸老虎》",
+    "detail": "詹姆斯·格雷《纸老虎 / Paper Tiger》Tomatometer 86%（80条影评，均分约7.0/10），Metacritic 79。更纳主竞赛后样本扩大达 Certified Fresh；Neon 11/13 美限映、11/20 全国。Rotten Tomatoes 官宣 / Wikipedia 汇总 10/23。"
+  },
+  {
     "id": "possible-love-korean-critics-1020",
     "filmId": "possible-love",
     "date": "2026-10-20",
@@ -13,7 +21,7 @@
     "date": "2026-10-23",
     "kind": "promo",
     "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
-    "detail": "第62届芝加哥国际电影节10月23日公布竞赛奖项：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获 Gold Hugo 最佳影片；滨口龙介与莱娅·勒迪姆纳《突然 / All of a Sudden》获 Silver Hugo 最佳编剧；是枝裕和《蓆然回首 / Look Back》摄影上野千草获最佳摄影。评委包括约翰·C·赖利、伊尔迪科·埃涅迪等。Cinema/Chicago / Wikipedia 2026-10-23。"
+    "detail": "第62届芝加哥国际电影节10月23日公布竞赛奖项：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获 Gold Hugo 最佳影片；滨口龙介与莱娅·勒迪姆纳《突然 / All of a Sudden》获 Silver Hugo 最佳编剧；是枝裕和《蓀然回首 / Look Back》摄影上野千草获最佳摄影。评委包括约翰·C·赖利、伊尔迪科·埃涅迪等。Cinema/Chicago / Wikipedia 2026-10-23。"
   },
   {
     "id": "tender-loving-care-rt-100-41",
@@ -44,8 +52,8 @@
     "filmId": "look-back",
     "date": "2026-10-20",
     "kind": "release",
-    "summary": "北美院线定档 · 是枝《蓆然回首》12/30 有限映",
-    "detail": "GKids 10/20 官宣是枝裕和《蓆然回首 / Look Back》北美档期：12/30 精选影院有限上映，2027-01-15 全国扩映。影片威尼斯主竞赛世界首映，改编藤本树漫画；日本 9/11 上映，韩国 10/8。The Wrap / Anime News Network / GKids 2026-10-20。"
+    "summary": "北美院线定档 · 是枝《蓀然回首》12/30 有限映",
+    "detail": "GKids 10/20 官宣是枝裕和《蓀然回首 / Look Back》北美档期：12/30 精选影院有限上映，2027-01-15 全国扩映。影片威尼斯主竞赛世界首映，改编藤本树漫画；日本 9/11 上映，韩国 10/8。The Wrap / Anime News Network / GKids 2026-10-20。"
   },
   {
     "id": "lff70-imperium-best-film-1018",
@@ -61,7 +69,7 @@
     "date": "2026-10-14",
     "kind": "promo",
     "summary": "critic 98% · 萨金塞夫《米诺陶》",
-    "detail": "安德烈·萨金塞夫《米诺陶 / Minotaur》Rotten Tomatoes Tomatometer 约 98%（47 条影评，均分约 8.6/10）。嘏纳评审团大奖作品；法国 10/14 院线上映。报道日期约 2026-10。"
+    "detail": "安德烈·萨金塞夫《米诺陶 / Minotaur》Rotten Tomatoes Tomatometer 约 98%（47 条影评，均分约 8.6/10）。更纳评审团大奖作品；法国 10/14 院线上映。报道日期约 2026-10。"
   },
   {
     "id": "minotaur-france-theatrical-1014",
@@ -69,7 +77,7 @@
     "date": "2026-10-14",
     "kind": "promo",
     "summary": "法国院线上映 · 萨金塞夫《米诺陶》",
-    "detail": "安德烈·萨金塞夫嘏纳评审团大奖《米诺陶 / Minotaur》今日（10/14）由 Les Films du Losange 在法国院线上映。影片以《不忠的女人》为灵感，讲述当代迷宫中的权力、背叛与生存；Cannes 2026 获 Grand Prix。RT 约 98%（47 条影评）。"
+    "detail": "安德烈·萨金塞夫更纳评审团大奖《米诺陶 / Minotaur》今日（10/14）由 Les Films du Losange 在法国院线上映。影片以《不忠的女人》为灵感，讲述当代迷宫中的权力、背叛与生存；Cannes 2026 获 Grand Prix。RT 约 98%（47 条影评）。"
   },
   {
     "id": "odyssey-home-release-1013",
@@ -109,7 +117,7 @@
     "date": "2026-09-30",
     "kind": "promo",
     "summary": "critic 96% · 滨口《突然》NYFF后",
-    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，喱纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
+    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，曷纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
   },
   {
     "id": "wild-horse-nine-rt-94-72",

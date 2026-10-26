@@ -1,6 +1,19 @@
 {
   "films": [
     {
+      "id": "imperium",
+      "title": "帝国",
+      "titleEn": "Imperium",
+      "year": 2026,
+      "synopsis": "谢尔盖·洛兹尼蔡执导纪录片。用 1970-1973 年意大利摄影队在苏联拍摄的约 60 小时 16mm 档案素材编辑而成，展现苏联帝国从莫斯科到中亚、波罗的日常生活与多元文化，无旁白。第 70 届 BFI 伦敦电影节官方竞赛最佳影片。",
+      "directors": ["谢尔盖·洛兹尼蔡"],
+      "cast": [],
+      "genres": ["纪录"],
+      "country": ["德国", "法国", "意大利", "立陶宛"],
+      "posterColors": ["#1e293b", "#64748b"],
+      "streaming": []
+    },
+    {
       "id": "honorary-hui",
       "title": "许鞍华（荣誉）",
       "titleEn": "Ann Hui (Honorary)",

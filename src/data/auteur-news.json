@@ -1,11 +1,27 @@
 [
   {
+    "id": "lff70-best-film-1018",
+    "filmId": "imperium",
+    "date": "2026-10-18",
+    "kind": "promo",
+    "summary": "伦敦70官方竞赛最佳影片 · 洛兹尼蔡《帝国》",
+    "detail": "谢尔盖·洛兹尼蔡纪录片《帝国 / Imperium》获第70届 BFI 伦敦电影节官方竞赛最佳影片。用 1970-1973 年意大利摄影队在苏联拍摄的档案素材编辑而成，展现帝国日常生活。BFI 官宣 10/18。"
+  },
+  {
+    "id": "busan31-best-film-1015",
+    "filmId": "midday-meal",
+    "date": "2026-10-15",
+    "kind": "promo",
+    "summary": "釜山31 Busan Award 最佳影片 · 马吉迪《午餐》",
+    "detail": "马吉德·马吉迪《午餐 / Midday Meal》获第31届釜山国际电影节 Busan Award 最佳影片（评委会主席张艺谋，一致通过），自动获得第99届奥斯卡国际片资格。BIFF 闭幕式 10/15。"
+  },
+  {
     "id": "chicago-62-gold-hugo-1023",
     "filmId": "the-dreamed-adventure",
     "date": "2026-10-23",
     "kind": "promo",
     "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
-    "detail": "瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获第62届芝加哥国际电影节 International Feature 金雨果最佳影片，Yana Radeva 银雨果最佳主演。戛纳评审团奖后；Cinema/Chicago 官宣 10/23。"
+    "detail": "瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获第62届芝加哥国际电影节 International Feature 金雨果最佳影片，Yana Radeva 银雨果最佳主演。曾纳评审团奖后；Cinema/Chicago 官宣 10/23。"
   },
   {
     "id": "chicago-62-screenplay-1023",
@@ -29,6 +45,6 @@
     "date": "2026-10-23",
     "kind": "promo",
     "summary": "critic 86% · 格雷《纸老虎》",
-    "detail": "詹姆斯·格雷《纸老虎 / Paper Tiger》Tomatometer 86%（80条影评，均分约7.0/10），Metacritic 79。戛纳主竞赛后样本扩大达 Certified Fresh；Neon 11/13 美限映、11/20 全国。Rotten Tomatoes 官宣 / Wikipedia 汇总 10/23。"
+    "detail": "詹姆斯·格雷《纸老虎 / Paper Tiger》Tomatometer 86%（80条影评，均分约7.0/10），Metacritic 79。曾纳主竞赛后样本扩大达 Certified Fresh；Neon 11/13 美限映、11/20 全国。Rotten Tomatoes 官宣 / Wikipedia 汇总 10/23。"
   }
 ]

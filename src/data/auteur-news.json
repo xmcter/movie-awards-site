@@ -1,5 +1,13 @@
 [
   {
+    "id": "tokyo-39-opens-1026",
+    "filmId": "fjord",
+    "date": "2026-10-26",
+    "kind": "promo",
+    "summary": "东京39开幕 · Gala 峡湾/野马九号",
+    "detail": "第39届东京国际电影节今日（2026-10-26）在日比谷开幕，开幕片为濑々敬久《SUKIYAKI 上向走》，中心片《哥斯拉-0.0》，闭幕《科罗尼》。Gala 单元含基里斯蒂安·蒙吉金棕榈《峡湾 / Fjord》与马丁·麦克多纳《野马九号 / Wild Horse Nine》（已早前定档，本次为实际开幕）。主竞赛15部仍无目录内作者片。Variety / Screen / THR / 官方 2026-10-26。"
+  },
+  {
     "id": "paper-tiger-rt-cf-1023",
     "filmId": "paper-tiger",
     "date": "2026-10-23",
@@ -21,7 +29,7 @@
     "date": "2026-10-23",
     "kind": "promo",
     "summary": "芝加哥62金雨果 · 格里策巴赫《梦想的冒险》",
-    "detail": "第62届芝加哥国际电影节10月23日公布竞赛奖项：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获 Gold Hugo 最佳影片；滨口龙介与莱娅·勒迪姆纳《突然 / All of a Sudden》获 Silver Hugo 最佳编剧；是枝裕和《蓀然回首 / Look Back》摄影上野千草获最佳摄影。评委包括约翰·C·赖利、伊尔迪科·埃涅迪等。Cinema/Chicago / Wikipedia 2026-10-23。"
+    "detail": "第62届芝加哥国际电影节10月23日公布竞赛奖项：瓦莱斯卡·格里策巴赫《梦想的冒险 / The Dreamed Adventure》获 Gold Hugo 最佳影片；滨口龙介与莱娅·勒迪姆纳《突然 / All of a Sudden》获 Silver Hugo 最佳编剧；是枝裕和《藁然回首 / Look Back》摄影上野千草获最佳摄影。评委包括约翰·C·赖利、伊尔迪科·埃涅迪等。Cinema/Chicago / Wikipedia 2026-10-23。"
   },
   {
     "id": "tender-loving-care-rt-100-41",
@@ -52,8 +60,8 @@
     "filmId": "look-back",
     "date": "2026-10-20",
     "kind": "release",
-    "summary": "北美院线定档 · 是枝《蓀然回首》12/30 有限映",
-    "detail": "GKids 10/20 官宣是枝裕和《蓀然回首 / Look Back》北美档期：12/30 精选影院有限上映，2027-01-15 全国扩映。影片威尼斯主竞赛世界首映，改编藤本树漫画；日本 9/11 上映，韩国 10/8。The Wrap / Anime News Network / GKids 2026-10-20。"
+    "summary": "北美院线定档 · 是枝《藁然回首》12/30 有限映",
+    "detail": "GKids 10/20 官宣是枝裕和《藁然回首 / Look Back》北美档期：12/30 精选影院有限上映，2027-01-15 全国扩映。影片威尼斯主竞赛世界首映，改编藤本树漫画；日本 9/11 上映，韩国 10/8。The Wrap / Anime News Network / GKids 2026-10-20。"
   },
   {
     "id": "lff70-imperium-best-film-1018",
@@ -117,7 +125,7 @@
     "date": "2026-09-30",
     "kind": "promo",
     "summary": "critic 96% · 滨口《突然》NYFF后",
-    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，曷纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
+    "detail": "《突然 / All of a Sudden》（法 Soudain）Tomatometer 约 96%（47 条影评，均分约 8.5/10），Metacritic 87（15 评）。滨口龙介法语首作，更纳主竞赛维吉妮·埃菲拉与冈本多绪并列最佳女演员；NYFF64 主单元、芝加哥62国际竞赛。Neon 11/25 北美院线。Wikipedia / RT / Metacritic 汇总 9/30。"
   },
   {
     "id": "wild-horse-nine-rt-94-72",
@@ -140,7 +148,7 @@
     "filmId": "look-back",
     "date": "2026-09-29",
     "kind": "promo",
-    "summary": "critic 88% · 是枝《鬭然回首》威尼斯后",
-    "detail": "《鬭然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
+    "summary": "critic 88% · 是枝《魍然回首》威尼斯后",
+    "detail": "《魍然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
   }
 ]

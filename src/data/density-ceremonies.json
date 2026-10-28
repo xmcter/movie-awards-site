@@ -1,5 +1,168 @@
 [
   {
+    "id": "gotham-36-noms",
+    "orgId": "gotham",
+    "name": "第36届哥谭奖",
+    "nameEn": "36th Gotham Awards",
+    "year": 2026,
+    "date": "2026-10-27",
+    "location": "纽约（提名公布 10月27日；颁奖 11月30日 Cipriani Wall Street）",
+    "nominations": [
+      {
+        "categoryId": "best-feature",
+        "categoryName": "最佳故事片",
+        "filmId": "paper-tiger",
+        "personNames": [
+          "詹姆斯·格雷"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-intl",
+        "categoryName": "最佳国际片",
+        "filmId": "all-of-a-sudden",
+        "personNames": [
+          "滨口龙介"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-intl",
+        "categoryName": "最佳国际片",
+        "filmId": "tender-loving-care",
+        "personNames": [
+          "迈克·利"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-intl",
+        "categoryName": "最佳国际片",
+        "filmId": "minotaur",
+        "personNames": [
+          "安德烈·萨金塞夫"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-intl",
+        "categoryName": "最佳国际片",
+        "filmId": "possible-love",
+        "personNames": [
+          "李沧东"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-intl",
+        "categoryName": "最佳国际片",
+        "filmId": "fatherland",
+        "personNames": [
+          "帕维乌·帕夫利科夫斯基"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-doc",
+        "categoryName": "最佳纪录片",
+        "filmId": "naza",
+        "personNames": [
+          "尤瓦尔·亚伯拉罕",
+          "雷切尔·绍尔"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演",
+        "filmId": "all-of-a-sudden",
+        "personNames": [
+          "滨口龙介"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演",
+        "filmId": "minotaur",
+        "personNames": [
+          "安德烈·萨金塞夫"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演",
+        "filmId": "tender-loving-care",
+        "personNames": [
+          "迈克·利"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "original-screenplay",
+        "categoryName": "最佳原著剧本",
+        "filmId": "possible-love",
+        "personNames": [
+          "李沧东",
+          "吴正美"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "original-screenplay",
+        "categoryName": "最佳原著剧本",
+        "filmId": "tender-loving-care",
+        "personNames": [
+          "迈克·利"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "original-screenplay",
+        "categoryName": "最佳原著剧本",
+        "filmId": "wild-horse-nine",
+        "personNames": [
+          "马丁·麦克多纳"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "lead-performance",
+        "categoryName": "杰出主演",
+        "filmId": "possible-love",
+        "personNames": [
+          "全度妍"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      },
+      {
+        "categoryId": "lead-performance",
+        "categoryName": "杰出主演",
+        "filmId": "wild-horse-nine",
+        "personNames": [
+          "约翰·马尔科维奇"
+        ],
+        "result": "nominated",
+        "date": "2026-10-27"
+      }
+    ]
+  },
+  {
     "id": "lff-70-awards",
     "orgId": "bfi-london",
     "name": "第70届BFI伦敦电影节",

@@ -1,1 +1,17 @@
-$(cat /tmp/ceremonies-updated.json)
+[{
+  "id": "gotham-36-noms",
+  "orgId": "gotham",
+  "name": "第36届Gotham电影奖",
+  "nameEn": "36th Gotham Awards",
+  "year": 2026,
+  "date": "2026-10-27",
+  "location": "纽约（典礼 11月30日 Cipriani）",
+  "nominations": [{
+    "categoryId": "best-feature",
+    "categoryName": "Best Feature",
+    "filmId": "paper-tiger",
+    "personNames": ["詹姆斯·格雷"],
+    "result": "nominated",
+    "date": "2026-10-27"
+  }]
+}]

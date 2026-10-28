@@ -1,1 +1,26 @@
-PLACEHOLDER
+[
+  {
+    "id": "possible-love-rt-100-60",
+    "filmId": "possible-love",
+    "date": "2026-10-27",
+    "kind": "promo",
+    "summary": "critic 100% · 李沧东《可能的爱情》",
+    "detail": "李沧东《可能的爱情 / Possible Love》Tomatometer 维持 100%（60 条影评，均分约 8.8/10），Metacritic 95（30 评）。美加等地 10/23 有限院线后样本扩大达 Certified Fresh；威尼斯评审团大奖、韩国第99届奥斯卡国际片候选；Netflix 全球流媒体 11/6。Rotten Tomatoes 官宣 10/26–27 / Wikipedia 汇总。"
+  },
+  {
+    "id": "tokyo-39-opens-1026",
+    "filmId": "fjord",
+    "date": "2026-10-26",
+    "kind": "promo",
+    "summary": "东京39开幕 · Gala 峡湾/野马九号",
+    "detail": "第39届东京国际电影节今日（2026-10-26）在日比谷开幕，开幕片为濑々敬久《SUKIYAKI 上向走》，中心片《哥斯拉-0.0》，闭幕《科罗尼》。Gala 单元含基里斯蒂安·蒙吉金棕榈《峡湾 / Fjord》与马丁·麦克多纳《野马九号 / Wild Horse Nine》（已早前定档，本次为实际开幕）。主竞赛15部仍无目录内作者片。Variety / Screen / THR / 官方 2026-10-26。"
+  },
+  {
+    "id": "busan-31-awards-1015",
+    "filmId": "midday-meal",
+    "date": "2026-10-15",
+    "kind": "promo",
+    "summary": "釜山31最佳影片 · 马吉迪《午餐》",
+    "detail": "第31届釜山国际电影节10月15日闭幕颁奖：马吉德·马吉迪《午餐 / Midday Meal》获 Busan Award 最佳影片，自动获得第99届奥斯卡最佳国际影片资格。李云禅《平凡之路 / To Be Ordinary》最佳导演，Eddie Cahyono《我的母亲 / Ibuku》评审团特别奖。评委主席张艺谋。Variety / THR / Screen / 官方 2026-10-15。"
+  }
+]

@@ -1,11 +1,27 @@
 [
   {
+    "id": "tao-okamoto-trailblazer-1028",
+    "filmId": "all-of-a-sudden",
+    "date": "2026-10-28",
+    "kind": "promo",
+    "summary": "冈本多绪获THR Trailblazer · 滨口《突然》",
+    "detail": "日本演员冈本多绪（Tao Okamoto）于东京American Film Night（THR Japan × MPA）2026-10-27/28获The Hollywood Reporter Trailblazer Award，表彰其国际突破。她因滨口龙介《突然 / All of a Sudden》获曹纳最佳女演员（与维吉妮·埃菲拉并列）。活动于东京American Club举行，首相高市早苗致贺词。THR 2026-10-28。"
+  },
+  {
+    "id": "gh63-jury-sylvia-chang-1028",
+    "filmId": "golden-horse-63",
+    "date": "2026-10-28",
+    "kind": "promo",
+    "summary": "金马63评审团 · 张艾嘉任主席",
+    "detail": "第63届金马奖执委会10月28日公布决选评审团15人，张艾嘉（Sylvia Chang）时隔15年再任主席。成员包括朱淑仪、张吉安、黄文英等。典礼11月22日台北流行音乐中心。官方 / UDN / TVBS 2026-10-28。"
+  },
+  {
     "id": "gotham-36-noms-1027",
     "filmId": "all-of-a-sudden",
     "date": "2026-10-27",
     "kind": "promo",
-    "summary": "哥谭36提名 · 滨口《突然》等目录片领跑",
-    "detail": "第36届哥谭奖10月27日公布提名：滨口龙介《突然 / All of a Sudden》获最佳国际片、最佳导演等4项提名；迈克·利《温柔的关怀》4项；安德烈·萨金塞夫《米诺陶》国际片与导演；李沧东《可能的爱情》国际片、原著剧本与全度妍主演；詹姆斯·格雷《纸老虎》最佳故事片；马丁·麦克多纳《野马九号》原著剧本与约翰·马尔科维奇主演；帕维乌·帕夫利科夫斯基《祖国》国际片；《纳扎》纪录片。颁奖典礼11月30日纽约Cipriani。官方 / Variety / Screen Daily 2026-10-27。"
+    "summary": "哥谷36提名 · 滨口《突然》等目录片领跑",
+    "detail": "第36届哥谷奖10月27日公布提名：滨口龙介《突然 / All of a Sudden》获最佳国际片、最佳导演等4项提名；迈克·利《温柔的关怀》4项；安德烈·萨金塞夫《米诺陶》国际片与导演；李沧东《可能的爱情》国际片、原著剧本与全度妍主演；詹姆斯·格雷《纸老虎》最佳故事片；马丁·麦克多纳《野马九号》原著剧本与约翰·马尔科维奇主演；帕维乌·帕夫利科夫斯基《祖国》国际片；《纳扎》纪录片。颁奖典礼11月30日纽约Cipriani。官方 / Variety / Screen Daily 2026-10-27。"
   },
   {
     "id": "tokyo-39-opens-1026",
@@ -61,7 +77,7 @@
     "date": "2026-10-21",
     "kind": "promo",
     "summary": "韩国院线上映 · 洪常秀《无处安放的目光》",
-    "detail": "洪常秀第35部长片《无处安放的目光 / Nowhere to Lay My Eyes》（눈 둘 데가 없네）今日（2026-10-21）在韩国院线上映；金敏喜主演，崔明吉、权海骁、申锡昊、朴美昭出演，片长约72分钟。影片洛迦诺主竞赛获最佳导演、金敏喜最佳表演与普世评审团奖，并入选纽约电影节主单元与釜山 Icons。KMDb / Cine21 / Jeonwonsa 档期；Cine21 开画日已录得上座。"
+    "detail": "洪常秀第35部长片《无处安放的目光 / Nowhere to Lay My Eyes》（눈 둘 데가 없네）今日（2026-10-21）在韩国院线上映；金敏喜主演，崔明吉、权海骐、申锡昊、朴美昭出演，片长约72分钟。影片洛卡诺主竞赛获最佳导演、金敏喜最佳表演与普世评审团奖，并入选纽约电影节主单元与釜山 Icons。KMDb / Cine21 / Jeonwonsa 档期；Cine21 开画日已录得上座。"
   },
   {
     "id": "look-back-us-theatrical-1020",
@@ -156,7 +172,7 @@
     "filmId": "look-back",
     "date": "2026-09-29",
     "kind": "promo",
-    "summary": "critic 88% · 是枝《魍然回首》威尼斯后",
-    "detail": "《魍然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
+    "summary": "critic 88% · 是枝《魁然回首》威尼斯后",
+    "detail": "《魁然回首 / Look Back》Tomatometer 约 88%（24 条影评，均分约 7.2/10），Metacritic 76。是枝裕和执导改编藤本树漫画，威尼斯主竞赛后影评累积保持 Fresh；韩国院线 10/8，釜山31 Gala。Wikipedia / RT 汇总 9/28–29。"
   }
 ]

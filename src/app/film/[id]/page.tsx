@@ -340,10 +340,17 @@ export default async function FilmPage({
         <section>
           <h2 className="font-display text-lg text-cinema-text">流媒体</h2>
           <ul className="mt-3 space-y-2">
-            {film.streaming.map((release) => {
+            {[...film.streaming]
+              .sort((a, b) => {
+                if (a.date && b.date) return a.date.localeCompare(b.date);
+                if (a.date) return -1;
+                if (b.date) return 1;
+                return 0;
+              })
+              .map((release) => {
               const platform = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status];
-              const when = release.date ? formatDate(release.date) : "待定";
+              const when = release.date ? formatDate(release.date) : "尚未公布";
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}
@@ -352,6 +359,7 @@ export default async function FilmPage({
                   {platform} · {status} {when}
                   {release.region ? ` · ${release.region}` : ""}
                   {release.note ? `（${release.note}）` : ""}
+                  {release.source ? ` · 来源：${release.source}` : ""}
                 </li>
               );
             })}

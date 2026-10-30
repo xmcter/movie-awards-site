@@ -46,3 +46,15 @@
 - 流媒体与熟肉上线 → `src/data/films.json`（streaming 字段）与 `src/data/density-pack.json`
 - 焦点新闻与高分快讯 → `src/data/auteur-news.json`
 - 重大主奖 → `src/data/density-ceremonies.json`
+
+
+---
+
+## 流媒体规则（2026-10-29）
+- 影片页流媒体字段只写官方已公布的确切日期 + 平台；未公布写“尚未公布”，不编造日期。
+- 地区标注必填：美国区日期只写美国，不得当作全球日期；When To Stream、JustWatch 多为美国区日期，须用平台官方月单或 Variety、Deadline、The Wrap 二次核对后才能落站。
+- 来源必填：每条流媒体信息须有来源（平台官方月单 / When To Stream / JustWatch / 行业媒体官宣），写进 `streaming[].source`；没有可核来源的不落站。
+- 状态规则：`announced` 必须有 `YYYY-MM-DD` 日期；`tba` / `estimated` 不得带日期。平台须在 `src/types/index.ts` 的枚举内；`region` 为字符串，不得用旧的 `regions` 数组。
+- 影片页排序：有日期在上、按日期从近到远；无日期在下、显示“尚未公布”。时间线门禁不动：只有 `announced` 且有日期且日期已到当天才进时间线，未来定档只在影片页。
+- 选片不变：获奖不是必要条件，制作好 / 作者向的片照发；爆米花类型不发。
+- 数据落点：全部五源都可带 `streaming`（`films.json`、`major-awards.json`、`more-catalog.json`、`extra-catalog.json`、`density-pack.json`），不得只改 `film-copy.json`（它不含 streaming，改了无效）。

@@ -162,11 +162,10 @@
       ],
       "streaming": [
         {
-          "platform": "Netflix",
-          "regions": [
-            "全球"
-          ],
+          "platform": "netflix",
+          "status": "announced",
           "date": "2026-12-04",
+          "region": "全球",
           "note": "流媒体窗口约12/4；院线约11/27"
         }
       ]

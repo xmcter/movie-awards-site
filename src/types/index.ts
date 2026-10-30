@@ -45,6 +45,8 @@ export interface StreamingRelease {
   status: ReleaseStatus;
   region?: string;
   note?: string;
+  /** 来源：平台官方月单 / When To Stream / JustWatch / 行业媒体官宣（Variety、Deadline、The Wrap 等）。编辑规则要求必填，字段可选仅为兼容旧数据。 */
+  source?: string;
 }
 
 export type FilmKind = "film" | "honor" | "jury";

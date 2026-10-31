@@ -35,7 +35,7 @@ export default function Footer() {
         </p>
         <p className="mt-2 text-xs text-cinema-muted/70">
           <a
-            href="https://go.readcine.com"
+            href="https://readcine.com"
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
             readcine 导航

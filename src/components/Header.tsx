@@ -16,7 +16,7 @@ export default function Header() {
           </span>
         </Link>
         <a
-          href="https://go.readcine.com"
+          href="https://readcine.com"
           className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
         >
           readcine.

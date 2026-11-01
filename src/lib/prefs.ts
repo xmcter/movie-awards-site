@@ -161,7 +161,20 @@ export async function googleSignIn(): Promise<PrefsSession> {
           else reject(new PrefsError("login-failed", "谷歌登录未完成"));
         },
       });
-      googleId.prompt();
+      googleId.prompt((notification) => {
+        // 弹框被关闭/跳过/无法展示时也要结束等待，否则点按钮后看起来毫无反应。
+        const n = notification as {
+          isNotDisplayed?: () => boolean;
+          isSkippedMoment?: () => boolean;
+          isDismissedMoment?: () => boolean;
+        };
+        if (
+          n &&
+          (n.isNotDisplayed?.() || n.isSkippedMoment?.() || n.isDismissedMoment?.())
+        ) {
+          reject(new PrefsError("login-failed", "谷歌登录未完成"));
+        }
+      });
     } catch {
       reject(new PrefsError("login-failed", "谷歌登录弹框失败"));
     }

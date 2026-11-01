@@ -4,7 +4,6 @@ import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "rea
 import Link from "next/link";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
-import ResumeBar from "@/components/ResumeBar";
 import {
   getVisitBaseline,
   isNewSince,
@@ -43,18 +42,8 @@ import {
   type PrefsSession,
 } from "@/lib/prefs";
 
-type FilterKey = "all" | TimelineEventType;
-
-const FILTERS: { key: FilterKey; label: string }[] = [
-  { key: "all", label: "全部雷达" },
-  { key: "streaming", label: "流媒体与熟肉" },
-  { key: "auteur", label: "高分与新片" },
-  { key: "win", label: "影展大奖" },
-  { key: "nomination", label: "入围提名" },
-];
 
 const PIN_NEW = 10;
-const DEDUP_STORAGE_KEY = "news_dedup_by_film_v1";
 
 interface GroupedTimelineItem {
   event: TimelineEvent;
@@ -139,8 +128,9 @@ function displayBadge(label?: string) {
 }
 
 export default function Timeline({ events }: { events: TimelineEvent[] }) {
-  const [filter, setFilter] = useState<FilterKey>("all");
-  const [query, setQuery] = useState("");
+  // 首页只留时间线：筛选与搜索已去掉，固定为全部、不过滤。
+  const filter = "all";
+  const query = "";
   const [seen, setSeen] = useState<string[]>([]);
   const [dismissStore, setDismissStore] = useState<DismissStore>({ blocked: {} });
   const [reasonTarget, setReasonTarget] = useState<TimelineEvent | null>(null);
@@ -151,7 +141,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [showBlocked, setShowBlocked] = useState(false);
   const [lastUndo, setLastUndo] = useState<{ event: TimelineEvent; message: string } | null>(null);
   const [ready, setReady] = useState(false);
-  const [dedupByFilm, setDedupByFilm] = useState(true);
+  // 首页只留时间线：去重开关已去掉，固定每片仅最新。
+  const dedupByFilm = true;
   const [expandedFilms, setExpandedFilms] = useState<Record<string, boolean>>({});
   const [baseline, setBaseline] = useState<LastSeenMarker | null>(null);
   const [today, setToday] = useState("");
@@ -170,15 +161,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     [baseline, dismissStore],
   );
 
-  const newSinceCount = useMemo(
-    () => {
-      if (!baseline) return 0;
-      const fresh = visibleAll.filter((e) => isNewSince(e, baseline));
-      // match what the list shows: with 「每片仅最新」 one card per film
-      return dedupByFilm ? new Set(fresh.map((e) => e.filmId || e.id)).size : fresh.length;
-    },
-    [visibleAll, baseline, dedupByFilm],
-  );
 
   // Advance the 「上次看到这里」 marker only after the page has been visible for a
   // moment, and only when the user leaves (tab hidden / pagehide / navigates away).
@@ -221,12 +203,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     const visitBaseline = getVisitBaseline();
     setBaseline(visitBaseline);
     setToday(shanghaiToday());
-    try {
-      const savedDedup = localStorage.getItem(DEDUP_STORAGE_KEY);
-      if (savedDedup !== null) {
-        setDedupByFilm(savedDedup === "true");
-      }
-    } catch {}
     setReady(true);
 
     // 已有会话（30 天内登录过）时静默从云端回填，之后以云端为准；
@@ -390,16 +366,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     }
   };
 
-  const handleToggleDedup = () => {
-    setDedupByFilm((prev) => {
-      const next = !prev;
-      try {
-        localStorage.setItem(DEDUP_STORAGE_KEY, String(next));
-      } catch {}
-      return next;
-    });
-  };
-
   const toggleExpandFilm = (key: string) => {
     setExpandedFilms((prev) => ({
       ...prev,
@@ -411,7 +377,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     return Object.keys(dismissStore.blocked || {}).length;
   }, [dismissStore]);
 
-  // 过滤顺序：现有 type 筛选 / 搜索 → 不再推荐过滤 → 是否开启电影去重聚合 → 渲染。
+  // 过滤顺序：不再推荐过滤 → 电影去重聚合 → 渲染（筛选与搜索已去掉）。
   const grouped = useMemo((): GroupedTimelineItem[] => {
     const q = query.trim().toLowerCase();
     const matched = events.filter((e) => {
@@ -488,48 +454,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     if (idx < 0 || idx === flat.length - 1) return "";
     return flat[idx]!.event.id;
   }, [dayGroups, baseline, isCardNew]);
-
-  const resumeItems = useMemo(
-    () => events.map((e) => ({ id: e.id, title: e.headline || e.filmTitle })),
-    [events],
-  );
-
-  const counts = useMemo(() => {
-    const c: Record<FilterKey, number> = {
-      all: 0,
-      nomination: 0,
-      win: 0,
-      streaming: 0,
-      auteur: 0,
-    };
-    const seenMap: Record<FilterKey, Set<string>> = {
-      all: new Set(),
-      nomination: new Set(),
-      win: new Set(),
-      streaming: new Set(),
-      auteur: new Set(),
-    };
-
-    for (const e of events) {
-      if (!isBlockedOrSimilar(e, dismissStore)) {
-        if (dedupByFilm) {
-          const key = e.filmId || e.id;
-          if (!seenMap.all.has(key)) {
-            seenMap.all.add(key);
-            c.all += 1;
-          }
-          if (!seenMap[e.type].has(key)) {
-            seenMap[e.type].add(key);
-            c[e.type] += 1;
-          }
-        } else {
-          c.all += 1;
-          c[e.type] += 1;
-        }
-      }
-    }
-    return c;
-  }, [events, dismissStore, dedupByFilm]);
 
   const renderItem = ({ event, priorEvents }: GroupedTimelineItem) => {
             const read = seen.includes(event.id);
@@ -782,56 +706,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
 
   return (
     <div className="space-y-6">
-      <ResumeBar
-        items={resumeItems}
-        newSince={ready ? { hasBaseline: Boolean(baseline), count: newSinceCount } : null}
-      />
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex flex-wrap items-center gap-2">
-          {FILTERS.map((f) => {
-            const active = filter === f.key;
-            return (
-              <button
-                key={f.key}
-                type="button"
-                onClick={() => setFilter(f.key)}
-                className={`rounded-full px-3.5 py-1.5 text-sm transition ${
-                  active
-                    ? "bg-cinema-gold text-cinema-bg font-medium"
-                    : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
-                }`}
-              >
-                {f.label}
-                <span className={`ml-1.5 text-xs ${active ? "opacity-75" : "opacity-50"}`}>
-                  {counts[f.key]}
-                </span>
-              </button>
-            );
-          })}
-
-          <button
-            type="button"
-            onClick={handleToggleDedup}
-            className={`rounded-full px-3 py-1.5 text-xs font-medium transition inline-flex items-center gap-1.5 ${
-              dedupByFilm
-                ? "border border-cinema-gold/60 bg-cinema-gold/15 text-cinema-gold hover:bg-cinema-gold/25"
-                : "border border-cinema-border text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
-            }`}
-            title={
-              dedupByFilm
-                ? "每部电影仅显示最新动态（已开启），点击查看全部细分条目"
-                : "显示所有历史动态（已开启），点击按电影去重聚合"
-            }
-          >
-            <span
-              className={`inline-block h-1.5 w-1.5 rounded-full ${
-                dedupByFilm ? "bg-cinema-gold" : "bg-cinema-muted/40"
-              }`}
-            />
-            {dedupByFilm ? "每片仅最新" : "全部动态"}
-          </button>
-
-          {ready && blockedCount > 0 ? (
+      {ready && blockedCount > 0 ? (
             <div className="flex items-center gap-1.5 rounded-full border border-cinema-border/80 bg-cinema-card px-3 py-1 text-xs text-cinema-muted">
               <span>已屏蔽 {blockedCount} 条</span>
               <button
@@ -851,19 +726,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
               </button>
             </div>
           ) : null}
-        </div>
-
-        <label className="relative block w-full sm:max-w-[220px]">
-          <span className="sr-only">搜索</span>
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="搜索影片 / 导演 / 电影节…"
-            className="w-full rounded-full border border-cinema-border bg-cinema-card px-4 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus:outline-none"
-          />
-        </label>
-      </div>
 
       {lastUndo ? (
         <div className="flex items-center justify-between rounded-xl border border-cinema-gold/30 bg-cinema-card px-4 py-2.5 text-xs text-cinema-text">

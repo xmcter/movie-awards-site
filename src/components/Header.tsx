@@ -15,12 +15,20 @@ export default function Header() {
             熟肉 · 上线雷达
           </span>
         </Link>
-        <a
-          href="https://readcine.com"
-          className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
-        >
-          readcine.
-        </a>
+        <nav className="flex items-center gap-4">
+          <Link
+            href="/about"
+            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+          >
+            关于
+          </Link>
+          <a
+            href="https://readcine.com"
+            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+          >
+            readcine.
+          </a>
+        </nav>
       </div>
     </header>
   );

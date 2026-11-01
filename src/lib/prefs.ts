@@ -28,7 +28,7 @@ import type { DismissMark, DismissStore } from "@/lib/dismiss";
  */
 
 // TODO(ops): 部署时替换为真实谷歌 OAuth 客户端 ID。
-export const GOOGLE_CLIENT_ID = "GOOGLE_CLIENT_ID_PLACEHOLDER";
+export const GOOGLE_CLIENT_ID = "209513444397-n5jmjotip6vvcerk5o66r668l5ubn5sl.apps.googleusercontent.com";
 export const PREFS_API_BASE = "https://ai.readcine.com/api/prefs";
 export const PREFS_SESSION_KEY = "readcine_prefs_session_v1";
 export const PREFS_SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 天

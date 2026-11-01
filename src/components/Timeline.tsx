@@ -288,20 +288,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
 
   const handleToggleDismiss = async (event: TimelineEvent) => {
     const isBlocked = isBlockedOrSimilar(event, dismissStore);
-    let session: PrefsSession;
-    try {
-      session = await ensureLoginAndMerge();
-    } catch (err) {
-      // 403（非 tonycter@gmail.com）或登录失败：不执行屏蔽，只提示。
-      setPrefsError(
-        err instanceof PrefsError
-          ? err.message
-          : "谷歌登录失败，未执行屏蔽",
-      );
-      return;
-    }
-    // 本条立即隐藏（先本地生效），再写云端；云端失败时降级提示，
-    // 不谎称已同步到其他设备。
+    // 本机先生效：点下去立即隐藏/恢复，不等登录；登录与云端同步在后台做，
+    // 失败只降级提示，不撤销本机结果。
     const prevStore = dismissStore;
     if (isBlocked) {
       const updated = unblockEvent(event, dismissStore);
@@ -317,11 +305,14 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       });
     }
     try {
+      const session = await ensureLoginAndMerge();
       if (isBlocked) {
         await cloudUnblockForEvent(session, event, prevStore);
       } else {
         await cloudBlock(session, event);
       }
+      // 登录合并可能用云端旧状态覆盖本机，写完云端后以本机持久化记录为准。
+      setDismissStore(loadDismissMarks());
       setPrefsError(null);
     } catch {
       setPrefsError("云端同步失败：本机已生效，未同步到其他设备");
@@ -330,15 +321,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
 
   const handleToggleLike = async (event: TimelineEvent) => {
     const isLiked = Boolean(liked[event.id]);
-    let session: PrefsSession;
-    try {
-      session = await ensureLoginAndMerge();
-    } catch (err) {
-      setPrefsError(
-        err instanceof PrefsError ? err.message : "谷歌登录失败，未执行点赞",
-      );
-      return;
-    }
+    // 本机先生效：点下去立即变状态，不等登录；登录与云端同步在后台做。
     const next = { ...liked };
     if (isLiked) delete next[event.id];
     else {
@@ -352,11 +335,14 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     }
     setLiked(next);
     try {
+      const session = await ensureLoginAndMerge();
       if (isLiked) await cloudUnlike(session, event.id);
       else await cloudLike(session, event);
+      // 登录合并可能用云端旧状态覆盖本机，写完云端后以本机这次操作为准。
+      setLiked(next);
       setPrefsError(null);
     } catch {
-      setPrefsError("云端同步失败：本机已生效，未同步到其他设备");
+      setPrefsError("登录未完成：点赞仅当前页面可见，未同步到其他设备");
     }
   };
 

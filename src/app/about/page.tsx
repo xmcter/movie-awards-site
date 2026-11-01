@@ -80,13 +80,38 @@ export default function AboutPage() {
           </ul>
         </div>
 
+        <div className="space-y-3">
+          <h2 className="font-display text-lg text-cinema-text">流媒体选稿与数据来源</h2>
+          <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
+            流媒体上线消息按以下规则整理：已公布上线时间的排在前面，按上线日期从近到远，并标注平台和地区；尚未公布的排在后面，仍按奖讯、入围与口碑排序。
+          </p>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
+            <li>
+              <span className="text-cinema-text">选片：</span>
+              获奖不是必要条件，没获奖但制作好的电影也会收录；不收爆米花类型。制作好以导演与制作水准、电影节入围和口碑分数为准，不以票房和 IP 热度为准。
+            </li>
+            <li>
+              <span className="text-cinema-text">流媒体字段：</span>
+              只写官方已公布的确切日期和平台，没公布的写“尚未公布”，不编造日期和平台；地区必须标注，When To Stream 等美国区来源在上线前会用平台官方月单或行业媒体二次核对。
+            </li>
+            <li>
+              <span className="text-cinema-text">参考来源：</span>
+              When To Stream、JustWatch、Netflix / Disney+ / Prime Video / Peacock / HBO Max 官方月单，以及 Variety、Deadline、The Wrap 的行业官宣。
+            </li>
+            <li>
+              <span className="text-cinema-text">更新方式：</span>
+              数据随仓库发布，非实时爬取；时间线只挂已发生的消息日。
+            </li>
+          </ul>
+        </div>
+
         <div className="space-y-2">
           <h2 className="font-display text-lg text-cinema-text">运营与站群</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             本站由 <span className="text-cinema-text">ReadCine 编辑部</span>{" "}
             独立维护与运营，隶属于{" "}
             <a
-              href="https://go.readcine.com"
+              href="https://readcine.com"
               className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
             >
               readcine.com

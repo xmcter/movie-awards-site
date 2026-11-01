@@ -206,7 +206,7 @@ export async function googleSignIn(): Promise<PrefsSession> {
     throw new PrefsError("login-failed", "登录凭证无效");
   }
   const session: PrefsSession = {
-    token: <redacted>
+    token: data.token,
     email: data.email || "",
     expiresAt: data.expires_at ? data.expires_at * 1000 : Date.now() + PREFS_SESSION_TTL_MS,
   };

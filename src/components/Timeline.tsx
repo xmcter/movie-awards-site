@@ -23,10 +23,25 @@ import {
   blockEvent,
   clearDismissMarks,
   isBlockedOrSimilar,
+  isSimilarMark,
   loadDismissMarks,
   unblockEvent,
   type DismissStore,
 } from "@/lib/dismiss";
+import {
+  PrefsError,
+  cloudBlock,
+  cloudClearBlocked,
+  cloudLike,
+  cloudUnblock,
+  cloudUnlike,
+  ensurePrefsSession,
+  fetchCloudPrefs,
+  loadPrefsSession,
+  syncLocalBlockedToCloud,
+  type LikeMark,
+  type PrefsSession,
+} from "@/lib/prefs";
 
 type FilterKey = "all" | TimelineEventType;
 
@@ -128,6 +143,9 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [query, setQuery] = useState("");
   const [seen, setSeen] = useState<string[]>([]);
   const [dismissStore, setDismissStore] = useState<DismissStore>({ blocked: {} });
+  const [liked, setLiked] = useState<Record<string, LikeMark>>({});
+  const [prefsError, setPrefsError] = useState<string | null>(null);
+  const prefsMergedRef = useRef(false);
   const [showBlocked, setShowBlocked] = useState(false);
   const [lastUndo, setLastUndo] = useState<{ event: TimelineEvent; message: string } | null>(null);
   const [ready, setReady] = useState(false);
@@ -209,6 +227,21 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     } catch {}
     setReady(true);
 
+    // 已有会话（30 天内登录过）时静默从云端回填，之后以云端为准；
+    // 没有会话时不在页面加载时弹登录，只在点按钮时弹。
+    const existingSession = loadPrefsSession();
+    if (existingSession) {
+      prefsMergedRef.current = true;
+      fetchCloudPrefs(existingSession)
+        .then((cloud) => {
+          setDismissStore({ blocked: cloud.blocked });
+          setLiked(cloud.liked);
+        })
+        .catch(() => {
+          setPrefsError("云端偏好读取失败，仅显示本机记录，未同步到其他设备");
+        });
+    }
+
     const onDismissUpdate = () => {
       setDismissStore(loadDismissMarks());
     };
@@ -221,8 +254,55 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     };
   }, []);
 
-  const handleToggleDismiss = (event: TimelineEvent) => {
+  // 登录后首次把本地屏蔽合并到云端，之后以云端为准。
+  const ensureLoginAndMerge = async (): Promise<PrefsSession> => {
+    const session = await ensurePrefsSession();
+    if (!prefsMergedRef.current) {
+      prefsMergedRef.current = true;
+      try {
+        await syncLocalBlockedToCloud(session, loadDismissMarks());
+        const cloud = await fetchCloudPrefs(session);
+        setDismissStore({ blocked: cloud.blocked });
+        setLiked(cloud.liked);
+      } catch {
+        // 合并失败不阻塞本次操作；下面写云端失败时会再提示降级。
+      }
+    }
+    return session;
+  };
+
+  const cloudUnblockForEvent = async (
+    session: PrefsSession,
+    event: TimelineEvent,
+    store: DismissStore,
+  ) => {
+    const ids = Object.entries(store.blocked || {})
+      .filter(
+        ([id, mark]) => id === event.id || isSimilarMark(event, mark),
+      )
+      .map(([id]) => id);
+    for (const id of ids) {
+      await cloudUnblock(session, id);
+    }
+  };
+
+  const handleToggleDismiss = async (event: TimelineEvent) => {
     const isBlocked = isBlockedOrSimilar(event, dismissStore);
+    let session: PrefsSession;
+    try {
+      session = await ensureLoginAndMerge();
+    } catch (err) {
+      // 403（非 tonycter@gmail.com）或登录失败：不执行屏蔽，只提示。
+      setPrefsError(
+        err instanceof PrefsError
+          ? err.message
+          : "谷歌登录失败，未执行屏蔽",
+      );
+      return;
+    }
+    // 本条立即隐藏（先本地生效），再写云端；云端失败时降级提示，
+    // 不谎称已同步到其他设备。
+    const prevStore = dismissStore;
     if (isBlocked) {
       const updated = unblockEvent(event, dismissStore);
       setDismissStore(updated);
@@ -236,20 +316,80 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
         message: `已屏蔽「${title}」及类似条目`,
       });
     }
+    try {
+      if (isBlocked) {
+        await cloudUnblockForEvent(session, event, prevStore);
+      } else {
+        await cloudBlock(session, event);
+      }
+      setPrefsError(null);
+    } catch {
+      setPrefsError("云端同步失败：本机已生效，未同步到其他设备");
+    }
   };
 
-  const handleUndo = () => {
+  const handleToggleLike = async (event: TimelineEvent) => {
+    const isLiked = Boolean(liked[event.id]);
+    let session: PrefsSession;
+    try {
+      session = await ensureLoginAndMerge();
+    } catch (err) {
+      setPrefsError(
+        err instanceof PrefsError ? err.message : "谷歌登录失败，未执行点赞",
+      );
+      return;
+    }
+    const next = { ...liked };
+    if (isLiked) delete next[event.id];
+    else {
+      next[event.id] = {
+        at: Date.now(),
+        type: event.type,
+        filmId: event.filmId,
+        headline: event.headline || event.filmTitle,
+        summary: event.summary,
+      };
+    }
+    setLiked(next);
+    try {
+      if (isLiked) await cloudUnlike(session, event.id);
+      else await cloudLike(session, event);
+      setPrefsError(null);
+    } catch {
+      setPrefsError("云端同步失败：本机已生效，未同步到其他设备");
+    }
+  };
+
+  const handleUndo = async () => {
     if (!lastUndo) return;
-    const updated = unblockEvent(lastUndo.event, dismissStore);
+    const event = lastUndo.event;
+    const session = loadPrefsSession();
+    const updated = unblockEvent(event, dismissStore);
     setDismissStore(updated);
     setLastUndo(null);
+    if (!session) return;
+    try {
+      await cloudUnblockForEvent(session, event, dismissStore);
+      setPrefsError(null);
+    } catch {
+      setPrefsError("云端同步失败：本机已撤销，未同步到其他设备");
+    }
   };
 
-  const handleClearAll = () => {
+  const handleClearAll = async () => {
     const updated = clearDismissMarks();
     setDismissStore(updated);
     setShowBlocked(false);
     setLastUndo(null);
+    // 清除同步写云端 /clear（点赞不动）；没有会话时不弹登录，只清本机。
+    const session = loadPrefsSession();
+    if (!session) return;
+    try {
+      await cloudClearBlocked(session);
+      setPrefsError(null);
+    } catch {
+      setPrefsError("云端同步失败：本机已清除，未同步到其他设备");
+    }
   };
 
   const handleToggleDedup = () => {
@@ -494,22 +634,40 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             <span className="text-[9px] opacity-70">↗</span>
                           </a>
                         </div>
-                        <button
-                          type="button"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            handleToggleDismiss(event);
-                          }}
-                          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium transition active:scale-95 ${
-                            isBlocked
-                              ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
-                              : "border border-cinema-border/60 text-cinema-muted/70 hover:border-cinema-gold/40 hover:text-cinema-text hover:bg-cinema-elevated"
-                          }`}
-                          title={isBlocked ? "撤销屏蔽本条及相关条目" : "不再推荐本条及类似内容"}
-                        >
-                          {isBlocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
-                        </button>
+                        <div className="flex items-center gap-1.5">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              void handleToggleLike(event);
+                            }}
+                            className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium transition active:scale-95 ${
+                              liked[event.id]
+                                ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
+                                : "border border-cinema-border/60 text-cinema-muted/70 hover:border-cinema-gold/40 hover:text-cinema-text hover:bg-cinema-elevated"
+                            }`}
+                            title={liked[event.id] ? "取消点赞" : "点赞：以后多推类似方向"}
+                          >
+                            {liked[event.id] ? "👍 已点赞" : "👍 点赞"}
+                          </button>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              void handleToggleDismiss(event);
+                            }}
+                            className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium transition active:scale-95 ${
+                              isBlocked
+                                ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
+                                : "border border-cinema-border/60 text-cinema-muted/70 hover:border-cinema-gold/40 hover:text-cinema-text hover:bg-cinema-elevated"
+                            }`}
+                            title={isBlocked ? "撤销屏蔽本条及相关条目" : "不再推荐本条及类似内容"}
+                          >
+                            {isBlocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
+                          </button>
+                        </div>
                       </div>
 
                       {hasPrior ? (
@@ -636,7 +794,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
               <span className="text-cinema-border">·</span>
               <button
                 type="button"
-                onClick={handleClearAll}
+                onClick={() => void handleClearAll()}
                 className="text-cinema-gold hover:underline transition"
               >
                 清除不再推荐
@@ -662,10 +820,23 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
           <span className="line-clamp-1">{lastUndo.message}</span>
           <button
             type="button"
-            onClick={handleUndo}
+            onClick={() => void handleUndo()}
             className="ml-3 shrink-0 font-medium text-cinema-gold hover:underline"
           >
             ↩ 撤销
+          </button>
+        </div>
+      ) : null}
+
+      {prefsError ? (
+        <div className="flex items-center justify-between rounded-xl border border-cinema-border bg-cinema-card px-4 py-2.5 text-xs text-cinema-text">
+          <span className="line-clamp-2">{prefsError}</span>
+          <button
+            type="button"
+            onClick={() => setPrefsError(null)}
+            className="ml-3 shrink-0 font-medium text-cinema-gold hover:underline"
+          >
+            知道了
           </button>
         </div>
       ) : null}

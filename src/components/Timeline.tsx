@@ -143,6 +143,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const [query, setQuery] = useState("");
   const [seen, setSeen] = useState<string[]>([]);
   const [dismissStore, setDismissStore] = useState<DismissStore>({ blocked: {} });
+  const [reasonTarget, setReasonTarget] = useState<TimelineEvent | null>(null);
+  const [reasonText, setReasonText] = useState("");
   const [liked, setLiked] = useState<Record<string, LikeMark>>({});
   const [prefsError, setPrefsError] = useState<string | null>(null);
   const prefsMergedRef = useRef(false);
@@ -260,7 +262,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     if (!prefsMergedRef.current) {
       prefsMergedRef.current = true;
       try {
-        await syncLocalBlockedToCloud(session, loadDismissMarks());
+        await syncLocalBlockedToCloud(session, loadDismissMarks(), liked);
         const cloud = await fetchCloudPrefs(session);
         setDismissStore({ blocked: cloud.blocked });
         setLiked(cloud.liked);
@@ -286,7 +288,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     }
   };
 
-  const handleToggleDismiss = async (event: TimelineEvent) => {
+  const handleToggleDismiss = async (event: TimelineEvent, reason?: string) => {
     const isBlocked = isBlockedOrSimilar(event, dismissStore);
     // 本机先生效：点下去立即隐藏/恢复，不等登录；登录与云端同步在后台做，
     // 失败只降级提示，不撤销本机结果。
@@ -296,7 +298,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       setDismissStore(updated);
       setLastUndo(null);
     } else {
-      const updated = blockEvent(event, dismissStore);
+      const updated = blockEvent(event, dismissStore, reason);
       setDismissStore(updated);
       const title = event.headline || event.filmTitle;
       setLastUndo({
@@ -309,7 +311,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       if (isBlocked) {
         await cloudUnblockForEvent(session, event, prevStore);
       } else {
-        await cloudBlock(session, event);
+        await cloudBlock(session, event, reason);
       }
       // 登录合并可能用云端旧状态覆盖本机，写完云端后以本机持久化记录为准。
       setDismissStore(loadDismissMarks());
@@ -317,6 +319,16 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     } catch {
       setPrefsError("云端同步失败：本机已生效，未同步到其他设备");
     }
+  };
+
+  const confirmDismissWithReason = async () => {
+    if (!reasonTarget) return;
+    const reason = reasonText.trim();
+    if (!reason) return;
+    const ev = reasonTarget;
+    setReasonTarget(null);
+    setReasonText("");
+    await handleToggleDismiss(ev, reason);
   };
 
   const handleToggleLike = async (event: TimelineEvent) => {
@@ -528,6 +540,13 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             const groupKey = event.filmId || event.id;
             const hasPrior = priorEvents.length > 0;
             const isExpanded = Boolean(expandedFilms[groupKey]);
+            const ownMark = dismissStore.blocked[event.id];
+            const similarMark =
+              ownMark ??
+              Object.values(dismissStore.blocked || {}).find((m) =>
+                isSimilarMark(event, m),
+              );
+            const blockReason = similarMark?.reason;
 
             return (
               <li key={event.id} className="relative pb-8 last:pb-0" data-event-id={event.id}>
@@ -642,7 +661,12 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             onClick={(e) => {
                               e.preventDefault();
                               e.stopPropagation();
-                              void handleToggleDismiss(event);
+                              if (isBlocked) {
+                                void handleToggleDismiss(event);
+                              } else {
+                                setReasonTarget(event);
+                                setReasonText("");
+                              }
                             }}
                             className={`inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium transition active:scale-95 ${
                               isBlocked
@@ -654,6 +678,46 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             {isBlocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
                           </button>
                         </div>
+                        {reasonTarget?.id === event.id ? (
+                          <form
+                            className="mt-2 flex flex-wrap items-center gap-2"
+                            onSubmit={(e) => {
+                              e.preventDefault();
+                              void confirmDismissWithReason();
+                            }}
+                          >
+                            <input
+                              type="text"
+                              value={reasonText}
+                              onChange={(e) => setReasonText(e.target.value)}
+                              placeholder="为什么不再推荐？比如：不喜欢这个类型"
+                              autoFocus
+                              className="min-w-0 flex-1 rounded-full border border-cinema-border/60 bg-cinema-card px-3 py-1.5 text-xs text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none"
+                            />
+                            <button
+                              type="submit"
+                              disabled={!reasonText.trim()}
+                              className="rounded-full border border-cinema-gold/40 bg-cinema-gold/10 px-3 py-1.5 text-xs font-medium text-cinema-gold disabled:opacity-40"
+                            >
+                              确认屏蔽
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                setReasonTarget(null);
+                                setReasonText("");
+                              }}
+                              className="rounded-full border border-cinema-border/60 px-3 py-1.5 text-xs text-cinema-muted hover:text-cinema-text"
+                            >
+                              取消
+                            </button>
+                          </form>
+                        ) : null}
+                        {blockReason ? (
+                          <p className="mt-2 text-xs text-cinema-muted">
+                            不再推荐原因：{blockReason}
+                          </p>
+                        ) : null}
                       </div>
 
                       {hasPrior ? (

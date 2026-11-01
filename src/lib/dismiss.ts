@@ -11,6 +11,8 @@ export interface DismissMark {
   filmId?: string;
   headline?: string;
   summary?: string;
+  /** 用户亲手写的不再推荐原因，后续作选稿提示词/规则的输入。 */
+  reason?: string;
 }
 
 export interface DismissStore {
@@ -178,7 +180,7 @@ export function isDirectlyBlocked(eventId: string, store: DismissStore): boolean
 /**
  * 屏蔽某条事件并持久化
  */
-export function blockEvent(event: TimelineEvent, store: DismissStore): DismissStore {
+export function blockEvent(event: TimelineEvent, store: DismissStore, reason?: string): DismissStore {
   const newBlocked: Record<string, DismissMark> = {
     ...store.blocked,
     [event.id]: {
@@ -187,6 +189,7 @@ export function blockEvent(event: TimelineEvent, store: DismissStore): DismissSt
       filmId: event.filmId,
       headline: event.headline || event.filmTitle,
       summary: event.summary,
+      ...(reason ? { reason } : {}),
     },
   };
   const updatedStore = { blocked: newBlocked };

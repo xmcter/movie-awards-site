@@ -11,23 +11,24 @@ import type { DismissMark, DismissStore } from "@/lib/dismiss";
  *   GOOGLE_CLIENT_ID —— 谷歌 Cloud Console 里该项目的 OAuth 客户端 ID，
  *   其「已获授权的 JavaScript 来源」必须包含 news.readcine.com、
  *   ai.readcine.com、deals.readcine.com。
- * 当前值是占位符；占位符状态下谷歌登录会失败，按钮会降级提示，
- * 不会谎称已同步。
+ * GOOGLE_CLIENT_ID 已填真实值。
  *
- * 后端约定（ECS 自建，部署时由运维提供，见 prefs API 说明）：
- *   POST /auth/google  { credential: <Google ID token> }
- *     -> 200 { sessionToken, email, expiresAt }，或 403（非允许账号）
- *   GET  /me            -> { email, blocked, liked }
- *   POST /sync         { blocked }              首次登录合并本地屏蔽
- *   POST /block        { id, mark }             POST /unblock { id }
- *   POST /like         { id, mark }             POST /unlike  { id }
- *   POST /clear        {}                       清空云端屏蔽（点赞不动）
- * 所有 /me 之后的接口都带 Authorization: Bearer <sessionToken>。
+ * 后端约定（ECS 自建 prefs 服务，字段以它为准）：
+ *   POST /auth/google  { id_token: <Google ID token> }
+ *     -> 200 { token, email, expires_at }（expires_at 为秒），或 403（非允许账号）
+ *   GET  /me            -> { email, blocked: [行], liked: [行] }
+ *     行字段：site, item_id, title, kind, vendor, film, reason（仅 blocked）, created_at（秒）
+ *   POST /sync         { merge, blocked: [行], liked: [行] }（merge 默认 true 只并集）
+ *   POST /block        { site, item_id, title, kind, film, reason }
+ *   POST /unblock      { site, item_id }
+ *   POST /like         { site, item_id, title, kind, film }（已存在时切换为取消）
+ *   POST /unlike       { site, item_id }
+ *   POST /clear        { what: "blocked" }      只清屏蔽（点赞不动）
+ * 所有 /me 之后的接口都带 Authorization: Bearer <token>。
  * 账号范围：后端只允许 tonycter@gmail.com，403 时前端只提示、
  * 不执行屏蔽 / 点赞。
  */
 
-// TODO(ops): 部署时替换为真实谷歌 OAuth 客户端 ID。
 export const GOOGLE_CLIENT_ID: string = "209513444397-n5jmjotip6vvcerk5o66r668l5ubn5sl.apps.googleusercontent.com";
 export const PREFS_API_BASE = "https://ai.readcine.com/api/prefs";
 export const PREFS_SESSION_KEY = "readcine_prefs_session_v1";
@@ -185,7 +186,7 @@ export async function googleSignIn(): Promise<PrefsSession> {
     res = await fetch(`${PREFS_API_BASE}/auth/google`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ credential }),
+      body: JSON.stringify({ id_token: credential }),
     });
   } catch {
     throw new PrefsError("api-unavailable", "偏好服务不可用，暂未同步到云端");
@@ -197,17 +198,17 @@ export async function googleSignIn(): Promise<PrefsSession> {
     throw new PrefsError("api-unavailable", "偏好服务不可用，暂未同步到云端");
   }
   const data = (await res.json()) as {
-    sessionToken?: string;
+    token?: string;
     email?: string;
-    expiresAt?: number;
+    expires_at?: number;
   };
-  if (!data.sessionToken) {
+  if (!data.token) {
     throw new PrefsError("login-failed", "登录凭证无效");
   }
   const session: PrefsSession = {
-    token: data.sessionToken,
+    token: <redacted>
     email: data.email || "",
-    expiresAt: data.expiresAt || Date.now() + PREFS_SESSION_TTL_MS,
+    expiresAt: data.expires_at ? data.expires_at * 1000 : Date.now() + PREFS_SESSION_TTL_MS,
   };
   savePrefsSession(session);
   return session;
@@ -251,23 +252,83 @@ async function prefsFetch(
   return res;
 }
 
+/** 后端行记录（/me、/sync 共用）。 */
+interface BackendRow {
+  item_id?: string;
+  title?: string;
+  kind?: string;
+  film?: string;
+  reason?: string;
+  created_at?: number;
+}
+
+function rowsToDismiss(rows: unknown): Record<string, DismissMark> {
+  const out: Record<string, DismissMark> = {};
+  if (!Array.isArray(rows)) return out;
+  for (const r of rows) {
+    const row = r as BackendRow;
+    if (!row.item_id) continue;
+    out[row.item_id] = {
+      at: (row.created_at || 0) * 1000,
+      type: row.kind as TimelineEvent["type"],
+      filmId: row.film,
+      headline: row.title,
+      summary: "",
+      ...(row.reason ? { reason: row.reason } : {}),
+    };
+  }
+  return out;
+}
+
+function rowsToLiked(rows: unknown): Record<string, LikeMark> {
+  const out: Record<string, LikeMark> = {};
+  if (!Array.isArray(rows)) return out;
+  for (const r of rows) {
+    const row = r as BackendRow;
+    if (!row.item_id) continue;
+    out[row.item_id] = {
+      at: (row.created_at || 0) * 1000,
+      type: row.kind as TimelineEvent["type"],
+      filmId: row.film,
+      headline: row.title,
+      summary: "",
+    };
+  }
+  return out;
+}
+
 /** 从云端回填屏蔽 + 点赞；之后以云端为准。 */
 export async function fetchCloudPrefs(session: PrefsSession): Promise<CloudPrefs> {
   const res = await prefsFetch(session, "/me");
-  const data = (await res.json()) as Partial<CloudPrefs>;
+  const data = (await res.json()) as { blocked?: unknown; liked?: unknown };
   return {
-    blocked:
-      data.blocked && typeof data.blocked === "object" ? data.blocked : {},
-    liked: data.liked && typeof data.liked === "object" ? data.liked : {},
+    blocked: rowsToDismiss(data.blocked),
+    liked: rowsToLiked(data.liked),
   };
 }
 
-/** 首次登录：把本地屏蔽合并到云端。失败时抛错，调用方保留本地状态。 */
+/** 首次登录：把本地屏蔽与点赞合并到云端（merge=true 只并集，不删云端）。失败时抛错，调用方保留本地状态。 */
 export async function syncLocalBlockedToCloud(
   session: PrefsSession,
   store: DismissStore,
+  liked?: Record<string, LikeMark>,
 ): Promise<void> {
-  await prefsFetch(session, "/sync", { blocked: store.blocked || {} });
+  const blocked = Object.entries(store.blocked || {}).map(([id, mark]) => ({
+    site: "news",
+    item_id: id,
+    title: mark.headline || "",
+    kind: mark.type || "",
+    film: mark.filmId || "",
+    reason: mark.reason || "",
+  }));
+  const likedRows = Object.entries(liked || {}).map(([id, mark]) => ({
+    site: "news",
+    item_id: id,
+    title: mark.headline || "",
+    kind: mark.type || "",
+    film: mark.filmId || "",
+  }));
+  await prefsFetch(session, "/sync", { merge: true, blocked, liked: likedRows });
 }
 
 export function dismissMarkFromEvent(event: TimelineEvent): DismissMark {
@@ -293,10 +354,15 @@ export function likeMarkFromEvent(event: TimelineEvent): LikeMark {
 export async function cloudBlock(
   session: PrefsSession,
   event: TimelineEvent,
+  reason?: string,
 ): Promise<void> {
   await prefsFetch(session, "/block", {
-    id: event.id,
-    mark: dismissMarkFromEvent(event),
+    site: "news",
+    item_id: event.id,
+    title: event.headline || event.filmTitle,
+    kind: event.type,
+    film: event.filmId || "",
+    reason: reason || "",
   });
 }
 
@@ -304,16 +370,20 @@ export async function cloudUnblock(
   session: PrefsSession,
   eventId: string,
 ): Promise<void> {
-  await prefsFetch(session, "/unblock", { id: eventId });
+  await prefsFetch(session, "/unblock", { site: "news", item_id: eventId });
 }
 
 export async function cloudLike(
   session: PrefsSession,
   event: TimelineEvent,
 ): Promise<void> {
+  // 后端 /like 是切换语义：调用方只在本地未点赞时调它，保证这次是新增。
   await prefsFetch(session, "/like", {
-    id: event.id,
-    mark: likeMarkFromEvent(event),
+    site: "news",
+    item_id: event.id,
+    title: event.headline || event.filmTitle,
+    kind: event.type,
+    film: event.filmId || "",
   });
 }
 
@@ -321,9 +391,9 @@ export async function cloudUnlike(
   session: PrefsSession,
   eventId: string,
 ): Promise<void> {
-  await prefsFetch(session, "/unlike", { id: eventId });
+  await prefsFetch(session, "/unlike", { site: "news", item_id: eventId });
 }
 
 export async function cloudClearBlocked(session: PrefsSession): Promise<void> {
-  await prefsFetch(session, "/clear", {});
+  await prefsFetch(session, "/clear", { what: "blocked" });
 }

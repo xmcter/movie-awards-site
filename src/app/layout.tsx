@@ -74,6 +74,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <script defer src="https://stats.readcine.com/script.js" data-website-id="56c0a024-728b-4820-90da-8abdc821f822" />
       </head>
       <body className="flex min-h-screen flex-col">
         <ThemeInit />

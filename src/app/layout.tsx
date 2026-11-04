@@ -52,6 +52,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 

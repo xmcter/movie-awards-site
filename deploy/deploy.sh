@@ -6,21 +6,31 @@ HOST="${DEPLOY_HOST:-8.134.173.91}"
 USER="${DEPLOY_USER:-root}"
 KEY="${DEPLOY_KEY:-$HOME/.ssh/aliyun_movieupdate}"
 REMOTE_DIR="${REMOTE_DIR:-/var/www/movie-awards-site}"
-SSH_OPTS=(-i "$KEY" -o BatchMode=yes)
+SSH_OPTS=(-i "$KEY" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
+STAMP="$(TZ=Asia/Shanghai date +%Y%m%d%H%M%S)"
+STAGE="${REMOTE_DIR}.next-${STAMP}"
+BAK="${REMOTE_DIR}.bak-${STAMP}"
 
 cd "$ROOT"
 npm run build
 
-ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" "mkdir -p ${REMOTE_DIR}"
-rsync -az --delete -e "ssh -i ${KEY} -o BatchMode=yes" \
-  "$ROOT/out/" "${USER}@${HOST}:${REMOTE_DIR}/"
+ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" "mkdir -p '${STAGE}'"
+rsync -az --delete -e "ssh -i ${KEY} -o BatchMode=yes -o StrictHostKeyChecking=accept-new" \
+  "$ROOT/out/" "${USER}@${HOST}:${STAGE}/"
 
-# Install nginx site if missing
-ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" bash -s <<'REMOTE'
+ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" \
+  "REMOTE_DIR='${REMOTE_DIR}' STAGE='${STAGE}' BAK='${BAK}' bash -s" << 'REMOTE'
 set -euo pipefail
+if [[ -d "$REMOTE_DIR" ]]; then
+  cp -a "$REMOTE_DIR" "$BAK"
+fi
+rm -rf "$REMOTE_DIR"
+mv "$STAGE" "$REMOTE_DIR"
+# Keep newest 3 backups
+ls -1dt ${REMOTE_DIR}.bak-* 2>/dev/null | tail -n +4 | xargs -r rm -rf || true
 CONF=/etc/nginx/sites-available/news.readcine.com
 if [[ ! -f "$CONF" ]]; then
-  cat > "$CONF" <<'NGINX'
+  cat > "$CONF" << 'NGINX'
 server {
     listen 80;
     listen [::]:80;
@@ -43,6 +53,7 @@ NGINX
   ln -sfn "$CONF" /etc/nginx/sites-enabled/news.readcine.com
 fi
 nginx -t && systemctl reload nginx
+echo "Deployed; backup=$BAK"
 REMOTE
 
 echo "Deployed to ${USER}@${HOST}:${REMOTE_DIR}"

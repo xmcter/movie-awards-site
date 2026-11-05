@@ -30,6 +30,7 @@ import {
   buildAwardHeadline,
   buildStreamingBody,
   buildStreamingHeadline,
+  dedupeSubtitleAgainstTitle,
   polishAuteurHeadline,
 } from "@/lib/headlines";
 
@@ -164,6 +165,32 @@ function filmKindOf(film: Film): FilmKind {
   return "film";
 }
 
+/** 纪录片（以 genres / 标题为准，不用剧情简介以免误伤） */
+export function isDocumentaryFilm(film: Film): boolean {
+  const genres = (film.genres || []).join("|");
+  if (/(^|[|、,，/\s])纪录(片)?($|[|、,，/\s])|纪录片|documentary|docuseries/i.test(genres)) {
+    return true;
+  }
+  const titles = `${film.title || ""} ${film.titleEn || ""}`;
+  return /纪录片|\bdocumentary\b|\bdocuseries\b/i.test(titles);
+}
+
+/** 剧集 / 迷你剧 / 连续剧（本站时间线只收电影） */
+export function isSeriesFilm(film: Film): boolean {
+  const genres = (film.genres || []).join("|");
+  const titles = `${film.title || ""} ${film.titleEn || ""}`;
+  const blob = `${genres} ${titles}`;
+  return /剧集|电视剧|连续剧|迷你剧|限定剧|网剧|\bTV\s*series\b|\bminiseries\b|\blimited\s*series\b/i.test(
+    blob,
+  );
+}
+
+/** 时间线只收院线/长片电影：排除纪录片与剧集 */
+export function isTimelineEligibleFilm(film: Film): boolean {
+  if (isDocumentaryFilm(film) || isSeriesFilm(film)) return false;
+  return true;
+}
+
 const A_CLASS = new Set([
   "cannes",
   "venice",
@@ -261,6 +288,7 @@ export function getTimelineEvents(): TimelineEvent[] {
   void buckets;
 
   for (const film of films) {
+    if (!isTimelineEligibleFilm(film)) continue;
     for (const release of film.streaming) {
       // EDITORIAL.md: only officially dated streaming launches make the timeline
       // (tba / estimated windows stay on the film page only).
@@ -280,14 +308,17 @@ export function getTimelineEvents(): TimelineEvent[] {
         datePart,
         region: release.region,
       });
-      const body = buildStreamingBody({
-        film,
-        platform,
-        statusLabel,
-        datePart,
-        region: release.region,
-        note: release.note,
-      });
+      const body = dedupeSubtitleAgainstTitle(
+        headline,
+        buildStreamingBody({
+          film,
+          platform,
+          statusLabel,
+          datePart,
+          region: release.region,
+          note: release.note,
+        }),
+      );
 
       events.push({
         id: `stream-${film.id}-${release.platform}-${release.date || "tba"}`,
@@ -314,10 +345,15 @@ export function getTimelineEvents(): TimelineEvent[] {
     if (!isPublished(news.date, today)) continue;
     const film = getFilm(news.filmId);
     if (!film) continue;
+    if (!isTimelineEligibleFilm(film)) continue;
     const kind = filmKindOf(film);
     // 评审/荣誉/纯奖讯不进时间线
     if (kind === "jury" || kind === "honor") continue;
     const blob = `${news.summary || ""} ${news.detail || ""}`;
+    // 文本明确写纪录片/剧集的也不进时间线
+    if (/纪录片|档案纪录片|纪录短片|\bdocumentary\b|剧集|电视剧|连续剧|迷你剧|限定剧|\bTV\s*series\b|\bminiseries\b/i.test(blob)) {
+      continue;
+    }
     if (/获奖|入围|提名|金棕榈|金狮|金熊|奥斯卡|金球|金马|Trailblazer|奖项/i.test(blob)
       && !/出资源|熟肉|网盘|可下|定档|流媒体|上线|WEB-DL|BDRip/i.test(blob)) {
       continue;
@@ -329,6 +365,12 @@ export function getTimelineEvents(): TimelineEvent[] {
     else if (/critic|口碑|tomatometer|metacritic/i.test(blob)) continue; // 口碑不进时间线
 
     const headline = polishAuteurHeadline(news.summary, film);
+    // 有独立 detail 时用 detail 作副文；否则用 summary，再与标题去重
+    const rawSummary =
+      news.detail && news.detail.trim() && news.detail.trim() !== (news.summary || "").trim()
+        ? news.detail
+        : news.summary || "";
+    const summary = dedupeSubtitleAgainstTitle(headline, rawSummary);
     events.push({
       id: `auteur-${news.id}`,
       type: "auteur",
@@ -341,7 +383,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       poster: withBase(film.poster),
       posterColors: film.posterColors,
       headline,
-      summary: news.detail || news.summary,
+      summary,
       detail: news.detail && news.detail !== news.summary ? undefined : news.detail,
       badge,
       accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",

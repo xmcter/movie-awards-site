@@ -235,12 +235,64 @@ export function buildStreamingBody(opts: {
   region?: string;
   note?: string;
 }): string {
-  const { film, platform, statusLabel, datePart, region, note } = opts;
-  const dir = film.directors[0] ? `${film.directors[0]}执导` : "";
-  const core = `${platform} · ${statusLabel} ${datePart}${region ? ` · ${region}` : ""}`;
-  if (note) return `${core}。${note}`;
-  if (dir) return `${core}。${dir}作品流媒体日程。`;
-  return core;
+  const { film, note } = opts;
+  // 副标题不再重复标题里已有的 平台/状态/日期/地区；只保留增量信息。
+  const bits: string[] = [];
+  if (note) {
+    const cleaned = note.replace(/^[（(]\s*/, "").replace(/\s*[）)]$/, "").trim();
+    if (cleaned) bits.push(cleaned);
+  }
+  // 导演信息不在流媒体标题里时，可作一句补充；已有 note 则不必硬凑。
+  if (!bits.length && film.directors[0]) {
+    bits.push(`${film.directors[0]}执导作品`);
+  }
+  return bits.join("。");
+}
+
+/**
+ * 去掉副标题里已在主标题出现的片段，避免「标题 + 副标题列表」信息重复。
+ * - 短副标题 / 「A · B · C」列表：按片去重
+ * - 长正文：仅当与标题几乎同文时整段丢弃；不因正文里提到片名就清空
+ */
+export function dedupeSubtitleAgainstTitle(title: string, subtitle: string): string {
+  const t = (title || "").trim();
+  const s = (subtitle || "").trim();
+  if (!s) return "";
+  if (!t) return s;
+
+  const norm = (v: string) =>
+    v
+      .toLowerCase()
+      .replace(/[\s·•|/／、，,。；;:：\-—_（）()《》【】\[\]「」『』]/g, "");
+
+  const nt = norm(t);
+  const ns = norm(s);
+  if (!ns) return "";
+  if (nt === ns) return "";
+  // 副标题被标题完全覆盖（副标题更短或等长）→ 丢弃
+  if (ns.length <= nt.length + 4 && nt.includes(ns)) return "";
+  // 副标题只是标题加极少字符 → 丢弃
+  if (nt.length >= 8 && ns.startsWith(nt) && ns.length - nt.length <= 6) return "";
+
+  // 「A · B · C」型短列表：去掉已在标题出现的片语
+  const looksLikeList =
+    (s.includes("·") || s.includes("|")) && s.length <= 160 && (s.match(/[·|｜]/g) || []).length >= 1;
+  if (looksLikeList) {
+    const parts = s
+      .split(/\s*[·|｜]\s*/)
+      .map((x) => x.trim())
+      .filter(Boolean);
+    const kept = parts.filter((p) => {
+      const np = norm(p);
+      if (!np) return false;
+      return !nt.includes(np);
+    });
+    if (kept.length === 0) return "";
+    if (kept.length === parts.length) return s;
+    return kept.join(" · ");
+  }
+
+  return s;
 }
 
 /** 把作者向短讯 summary 收成更醒目的标题；已够新闻感则原样 */

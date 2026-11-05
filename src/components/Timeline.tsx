@@ -525,9 +525,13 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         <h2 className="mt-2 font-display text-[1.05rem] leading-snug text-cinema-text group-hover:text-cinema-gold-light sm:text-lg">
                           {event.headline || event.summary || event.filmTitle}
                         </h2>
-                        <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
-                          {event.summary}
-                        </p>
+                        {event.summary &&
+                        event.summary.trim() &&
+                        event.summary.trim() !== (event.headline || "").trim() ? (
+                          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
+                            {event.summary}
+                          </p>
+                        ) : null}
                       </Link>
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted/65">
                         <div className="flex flex-wrap items-center gap-2">

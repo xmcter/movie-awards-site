@@ -257,61 +257,21 @@ export function getTimelineEvents(): TimelineEvent[] {
     }
   }
 
-  for (const bucket of buckets.values()) {
-    const { ceremony, org, film, date, dateLabel, noms } = bucket;
-    const kind = filmKindOf(film);
-    const wins = noms.filter((n) => n.result === "won");
-    const isWin = wins.length > 0;
-    const ordered = [...wins, ...noms.filter((n) => n.result !== "won")];
-    const awards = [...new Set(ordered.map(awardLine))];
-    const scope = org
-      ? A_CLASS.has(org.id)
-        ? `A类电影节 · ${org.name}`
-        : `${org.name}`
-      : undefined;
-
-    let badge = isWin ? "获奖" : "入围";
-    if (kind === "honor") badge = "荣誉";
-    if (kind === "jury") badge = "评审";
-
-    const headline = buildAwardHeadline({ ceremony, org, film, noms, kind });
-    const body = buildAwardBody({ ceremony, org, film, noms, awards });
-
-    events.push({
-      id: `${ceremony.orgId}-${ceremony.year}-${film.id}-${date}-${isWin ? "win" : "nom"}`,
-      type: isWin ? "win" : "nomination",
-      date,
-      dateLabel,
-      filmId: film.id,
-      filmTitle: film.title,
-      filmTitleEn: film.titleEn,
-      filmYear: film.year,
-      poster: withBase(film.poster),
-      posterColors: film.posterColors,
-      headline,
-      summary: body,
-      detail: scope
-        ? `${scope}${ceremony.location ? ` · ${ceremony.location}` : ""}`
-        : undefined,
-      badge,
-      accentColor: org?.accentColor,
-      awards,
-      directors: film.directors,
-      filmKind: kind,
-    });
-  }
+  // 2026-11-05：时间线完全不进影展/奖项/入围（buckets 仍可计算，但不 push）。
+  void buckets;
 
   for (const film of films) {
     for (const release of film.streaming) {
       // EDITORIAL.md: only officially dated streaming launches make the timeline
       // (tba / estimated windows stay on the film page only).
       if (release.status !== "announced" || !release.date) continue;
-      if (!isPublished(release.date, today)) continue;
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = formatDate(release.date);
       const region = release.region ? ` · ${release.region}` : "";
       const note = release.note ? `（${release.note}）` : "";
+      const isLive = isPublished(release.date, today);
+      const streamBadge = isLive ? "已上线" : "定档";
 
       const headline = buildStreamingHeadline({
         film,
@@ -343,7 +303,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         headline,
         summary: body,
         detail: note || undefined,
-        badge: "流媒体",
+        badge: streamBadge,
         directors: film.directors,
         filmKind: filmKindOf(film),
       });
@@ -355,11 +315,18 @@ export function getTimelineEvents(): TimelineEvent[] {
     const film = getFilm(news.filmId);
     if (!film) continue;
     const kind = filmKindOf(film);
+    // 评审/荣誉/纯奖讯不进时间线
+    if (kind === "jury" || kind === "honor") continue;
+    const blob = `${news.summary || ""} ${news.detail || ""}`;
+    if (/获奖|入围|提名|金棕榈|金狮|金熊|奥斯卡|金球|金马|Trailblazer|奖项/i.test(blob)
+      && !/出资源|熟肉|网盘|可下|定档|流媒体|上线|WEB-DL|BDRip/i.test(blob)) {
+      continue;
+    }
     let badge = "新片";
-    if (/critic|口碑|分|tomatometer|metacritic/i.test(news.summary)) badge = "高分口碑";
-    if (/上线|流出|熟肉|数字版|首发/i.test(news.summary)) badge = "熟肉上线";
-    if (kind === "jury") badge = "评审";
-    if (kind === "honor") badge = "荣誉";
+    if (/出资源|网盘可下|可下|WEB-DL|BDRip|压制/i.test(blob)) badge = "出资源";
+    else if (/定档|将于.*上线|官宣.*上线/i.test(blob)) badge = "定档";
+    else if (/上线|流出|熟肉|数字版|首发/i.test(blob)) badge = "已上线";
+    else if (/critic|口碑|tomatometer|metacritic/i.test(blob)) continue; // 口碑不进时间线
 
     const headline = polishAuteurHeadline(news.summary, film);
     events.push({
@@ -377,7 +344,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       summary: news.detail || news.summary,
       detail: news.detail && news.detail !== news.summary ? undefined : news.detail,
       badge,
-      accentColor: kind === "jury" || kind === "honor" ? "#f59e0b" : "#a78bfa",
+      accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
       directors: film.directors,
       filmKind: kind,
     });
@@ -389,11 +356,9 @@ export function getTimelineEvents(): TimelineEvent[] {
 /**
  * Editorial cap (see EDITORIAL.md): at most MAX_EVENTS_PER_DAY cards per
  * calendar day. Within a day, cards are ranked by eventPriority():
- *   main award result > main-competition lineup/nomination >
- *   auteur release / premiere / dated streaming > first 80%+ critic score.
- * Ties go to catalog auteurs, then to films with more coverage elsewhere on
- * the timeline, then to data order. Lower-ranked cards are dropped from the
- * timeline, event pages and film pages alike.
+ *   出资源通知 > 流媒体已上线 > 流媒体定档.
+ * Awards / nominations are never admitted to the timeline (2026-11-05).
+ * Ties go to catalog auteurs, then coverage, then data order.
  */
 export const MAX_EVENTS_PER_DAY = 3;
 
@@ -403,14 +368,10 @@ const CATALOG_AUTEURS = [
   "拉腊因", "詹姆斯·格雷", "法哈蒂", "蒙吉", "莫莱蒂", "帕夫利科夫斯基",
 ];
 
-function categoryScore(name: string): number {
-  if (/金棕榈|金狮|金熊|金贝壳|金豹|水晶球|东京大奖|最佳影片|最佳电影|最佳剧情片|釜山奖/.test(name)) return 50;
-  if (/评审团大奖|评委会大奖/.test(name)) return 40;
-  if (/最佳导演/.test(name)) return 35;
-  if (/评审团特别奖|评委会特别奖|评审团奖/.test(name)) return 32;
-  if (/男主|女主|主演|男演员|女演员|最佳表演/.test(name)) return 30;
-  if (/编剧/.test(name)) return 25;
-  return 10;
+
+function isResourceNotice(e: TimelineEvent): boolean {
+  const blob = `${e.headline || ""} ${e.summary || ""} ${e.badge || ""}`;
+  return /出资源|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出/i.test(blob);
 }
 
 function eventPriority(e: TimelineEvent): number {
@@ -419,32 +380,35 @@ function eventPriority(e: TimelineEvent): number {
   )
     ? 15
     : 0;
-  const top = Math.max(0, ...(e.awards || []).map(categoryScore));
   switch (e.type) {
-    case "streaming":
-      // 流媒体与熟肉已上线，具备最高实用性
-      return 230 + auteurBonus;
+    case "streaming": {
+      // 已上线 > 未来定档
+      const announcedPast = e.badge === "已上线" || e.badge === "流媒体";
+      return (announcedPast ? 230 : 200) + auteurBonus;
+    }
     case "auteur": {
-      const isRelease = /上线|流出|熟肉|数字版|首发/i.test(e.headline || "");
-      const isScore = /critic|口碑|分|tomatometer|metacritic/i.test(e.headline || "");
-      if (isRelease) return 220 + auteurBonus;
-      if (isScore) return 190 + auteurBonus;
-      return 150 + auteurBonus;
+      if (isResourceNotice(e) || e.badge === "出资源") return 250 + auteurBonus;
+      if (e.badge === "已上线" || /上线|流出|熟肉|数字版|首发/i.test(e.headline || ""))
+        return 220 + auteurBonus;
+      if (e.badge === "定档" || /定档|上线日|将于.*上线/i.test(e.headline || ""))
+        return 200 + auteurBonus;
+      // 其余作者向快讯极低，配额满时被挤掉
+      return 80 + auteurBonus;
     }
     case "win":
-      // 影展最高荣誉（金棕榈、金狮、金熊等）
-      return (top >= 40 ? 200 : 160) + top + auteurBonus;
     case "nomination":
-      return 110 + top + Math.min((e.awards || []).length, 5) + auteurBonus;
+      // 时间线不进奖项；若误入则垫底
+      return 0;
   }
 }
 
 function capPerDay(events: TimelineEvent[]): TimelineEvent[] {
+  const eligible = events.filter((e) => e.type !== "win" && e.type !== "nomination");
   const coverage = new Map<string, number>();
-  for (const e of events) {
+  for (const e of eligible) {
     if (e.filmId) coverage.set(e.filmId, (coverage.get(e.filmId) || 0) + 1);
   }
-  const ranked = events.map((e, i) => ({
+  const ranked = eligible.map((e, i) => ({
     e,
     i,
     p: eventPriority(e),

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const title = "关于银幕新讯";
 const description =
-  "关于银幕新讯（news.readcine.com）：聚焦作者向新片与 A 类国际电影节、奥斯卡、金球奖、金马奖、香港金像奖核心资讯的中文时间线，由 ReadCine 编辑部运营。";
+  "关于银幕新讯（news.readcine.com）：聚焦优质新片流媒体定档时间与出资源通知（中字熟肉 / 片库可下），由 ReadCine 编辑部运营。";
 
 export const metadata: Metadata = {
   title,
@@ -37,7 +37,7 @@ export default function AboutPage() {
           关于银幕新讯
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-cinema-muted sm:text-base">
-          「银幕新讯」（news.readcine.com）是一份聚焦作者向新片动态与国际重要影展、核心电影奖项的中文时间线，旨在帮助影迷用最短时间掌握值得关注的银幕节点。
+          「银幕新讯」（news.readcine.com）聚焦<strong>流媒体定档</strong>与<strong>出资源通知</strong>：只告诉影迷两件事——这部新片什么时候能在流媒体看，以及什么时候已经有可下资源。
         </p>
       </header>
 
@@ -45,62 +45,64 @@ export default function AboutPage() {
         <div className="space-y-2">
           <h2 className="font-display text-lg text-cinema-text">本站定位</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            我们按已经发生的确切日期，整理作者向新片的首映、公映、流媒体上线，以及 A
-            类国际电影节、奥斯卡、金球奖、金马奖与香港金像奖的入围和获奖脉络。每条消息均关联对应的影片档案页，串联起一部作品从电影节入围、首映口碑到院线与流媒体发行的完整轨迹。
+            本站围绕<strong>「新片流媒体定档」</strong>与<strong>「新片出资源通知」</strong>两大主轴运转，作为 ReadCine 三站联动的前哨：<strong>银幕新讯（news）</strong>负责官宣流媒体定档日与资源释出通知；<strong>电影导赏（guide）</strong>提供无剧透背景、风格与看点参谋；<strong>电影片库（movie）</strong>提供网盘秒存下载。每条消息均关联影片档案页，并可一键直达导赏与找资源。
           </p>
         </div>
 
         <div className="space-y-3">
           <h2 className="font-display text-lg text-cinema-text">编辑标准</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            为避免信息过载与营销噪音，编辑部执行严格的“少而精”筛选准则：
+            为避免信息过载与营销噪音，编辑部执行严格的“少而精”筛选准则（详见仓库{" "}
+            <code className="text-xs text-cinema-gold">EDITORIAL.md</code>）：
           </p>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
-              <span className="text-cinema-text">每日数量上限：</span>
-              每个自然日最多收录 3 条动态，宁缺毋滥。同一天若有多条消息，按“主要奖项揭晓
-              &gt; 主竞赛入围与重点提名 &gt; 作者新片首映/院线公映/官宣定档流媒体 &gt;
-              影评口碑首次突破 80%”的优先级取舍。
+              <span className="text-cinema-text">每日数量上限与优先级：</span>
+              每个自然日最多收录 3 条精选卡片，宁缺毋滥（无每日下限）。同一天若有多条消息，按“出资源通知 &gt; 流媒体已上线 &gt; 流媒体定档官宣”的优先级取舍。
             </li>
             <li>
-              <span className="text-cinema-text">收录范围：</span>
-              涵盖戛纳、威尼斯、柏林、洛迦诺、圣塞巴斯蒂安、釜山、东京、卡罗维发利等 A
-              类电影节主竞赛单元入围片单与主竞赛核心大奖（最佳影片、评审团大奖、最佳导演、评审团奖、最佳表演、最佳编剧等），以及奥斯卡、金球奖、金马奖、香港金像奖的主要奖项；同时跟进片单内重点作者导演的新片世界首映、正式院线上映、已官宣确切日期的流媒体上线、重大终身/荣誉奖，以及影片在主流影评聚合平台首次达到
-              80% 及以上好评率（每部影片仅记录首次达标）。
+              <span className="text-cinema-text">主轴 A · 新片流媒体定档：</span>
+              收录官方或权威行业媒体公布的确切流媒体上线日期（<code className="text-xs">YYYY-MM-DD</code>）与平台（Netflix / Apple TV+ / Max / Prime Video / Criterion Channel / MUBI / Disney+ / 国内正版平台等），必填地区与可核信源。聚焦作者向、制作精良的新片与焦点文艺片，获奖不是必要条件。
+            </li>
+            <li>
+              <span className="text-cinema-text">主轴 B · 新片出资源通知：</span>
+              当高质量中字压制释出（WEB-DL / BDRip / 官方数字版等，国内影迷可实际获取）或{" "}
+              <a
+                href="https://movie.readcine.com"
+                className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
+              >
+                电影片库（movie.readcine.com）
+              </a>{" "}
+              已有可存网盘资源时，发布时间线通知并附资源形态简述与片库直达入口（每片首次出资源记一次，重大画质升级可再记一次）。
+            </li>
+            <li>
+              <span className="text-cinema-text">特例：</span>
+              经典神作首次 4K / CC 修复上线流媒体，按主轴 A（定档/已上线）收录。
             </li>
             <li>
               <span className="text-cinema-text">不收录内容：</span>
-              不收商业爆米花大片与超级英雄连载；不收创投论坛与制作中项目（WIP）奖、非主竞赛单元副奖、观众奖与技术支线奖、影评人协会奖及非
-              A 类小型影展；不追踪影评样本数量增加或分数微调、票房成绩、发行扩映公关、映后掌声等营销讯息；未公布确切上线日期的流媒体消息仅保留在影片档案页，不进入时间线。
-            </li>
-            <li>
-              <span className="text-cinema-text">信息来源与撰写：</span>
-              站内条目均依据各大电影节与奖项官方公报、发行方正式通告及权威行业媒体的公开报道核实，由编辑部以简明、克制的中文重新梳理撰写。
+              <strong>时间线完全不进影展/奖项/入围/提名</strong>；不收纯商业爆米花与超级英雄连载；不收纯国外线下院线点映或开画；不收口碑刷屏、公关分数微调、票房炒作；不收无确切日期的 TBA；不收无中字无法获取的资源传闻。出资源通知目前<strong>仅站内时间线</strong>。
             </li>
           </ul>
         </div>
 
         <div className="space-y-3">
-          <h2 className="font-display text-lg text-cinema-text">流媒体选稿与数据来源</h2>
+          <h2 className="font-display text-lg text-cinema-text">流媒体与资源核实规则</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            流媒体上线消息按以下规则整理：已公布上线时间的排在前面，按上线日期从近到远，并标注平台和地区；尚未公布的排在后面，仍按奖讯、入围与口碑排序。
+            影片档案页中，已公布确切上线日期的流媒体条目排在前面（按日期由近到远并标注平台与地区），尚未公布的排在后面并标明“尚未公布”。
           </p>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
-              <span className="text-cinema-text">选片：</span>
-              获奖不是必要条件，没获奖但制作好的电影也会收录；不收爆米花类型。制作好以导演与制作水准、电影节入围和口碑分数为准，不以票房和 IP 热度为准。
-            </li>
-            <li>
               <span className="text-cinema-text">流媒体字段：</span>
-              只写官方已公布的确切日期和平台，没公布的写“尚未公布”，不编造日期和平台；地区必须标注，When To Stream 等美国区来源在上线前会用平台官方月单或行业媒体二次核对。
+              只写官方已公布的确切日期（<code className="text-xs">YYYY-MM-DD</code>）和平台，未公布写“尚未公布”，绝不编造日期；地区必须如实标注（美国区日期只写美国，不当全球）。
             </li>
             <li>
               <span className="text-cinema-text">参考来源：</span>
-              When To Stream、JustWatch、Netflix / Disney+ / Prime Video / Peacock / HBO Max 官方月单，以及 Variety、Deadline、The Wrap 的行业官宣。
+              Netflix / Apple TV+ / Max / Prime Video / MUBI / Criterion Channel / Disney+ 官方月单，Variety、Deadline、The Wrap 等权威行业官宣（When To Stream、JustWatch 须经官方月单或行业媒体二次核对），以及 ReadCine 电影片库实测入库记录。
             </li>
             <li>
               <span className="text-cinema-text">更新方式：</span>
-              数据随仓库发布，非实时爬取；时间线只挂已发生的消息日。
+              数据随仓库发布，非实时爬取。
             </li>
           </ul>
         </div>

@@ -1,7 +1,7 @@
 {
   "name": "movie-awards-site",
   "version": "1.0.0",
-  "description": "银幕新讯：作者向新片 + A类电影节 / 奥斯卡 / 金球 / 金马时间线",
+  "description": "银幕新讯：流媒体定档与出资源通知（news.readcine.com）",
   "private": true,
   "scripts": {
     "dev": "next dev",

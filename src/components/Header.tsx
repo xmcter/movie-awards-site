@@ -12,7 +12,7 @@ export default function Header() {
             银幕新讯
           </span>
           <span className="hidden rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold sm:inline-block">
-            熟肉 · 上线雷达
+            定档 · 出资源
           </span>
         </Link>
         <nav className="flex items-center gap-4">

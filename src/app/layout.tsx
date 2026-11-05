@@ -5,9 +5,9 @@ import ThemeInit from "@/components/ThemeInit";
 import "./globals.css";
 
 const siteUrl = "https://news.readcine.com";
-const title = "银幕新讯 · 高口碑新片与熟肉上线雷达";
+const title = "银幕新讯 · 流媒体定档与出资源通知";
 const description =
-  "聚焦优质作者新片、节展口碑佳作的流媒体首播、蓝光压制与熟肉资源动态。今晚看什么，不收院线爆米花。";
+  "只做两件事：作者向与高口碑新片的流媒体定档时间，以及新片出资源（中字熟肉/网盘可下）通知。今晚看什么，不收院线爆米花。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -17,18 +17,18 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    "高口碑电影",
+    "流媒体定档",
+    "出资源通知",
     "新片上线",
     "熟肉资源",
     "流媒体首播",
-    "Criterion",
-    "MUBI",
-    "Netflix",
-    "电影导赏",
-    "电影节获奖",
+    "网盘可下",
+    "高口碑电影",
     "作者电影",
-    "戛纳",
-    "威尼斯",
+    "Netflix",
+    "Apple TV+",
+    "MUBI",
+    "Criterion",
   ],
   authors: [{ name: "银幕新讯" }],
   robots: {

@@ -56,12 +56,12 @@
 ---
 
 ## 数据落点
-- 流媒体定档 / 上线 → 五源 `streaming` 字段，以及 `density-pack.json` / `auteur-news.json` / `wts-streaming-catalog.json` / `won-streaming-catalog.json`
+- 流媒体定档 / 上线 → `streaming` 字段，以及 `density-pack.json` / `auteur-news.json` / `wts-streaming-catalog.json` / `won-streaming-catalog.json` / `motn-streaming-catalog.json`
 - 自动定档源（2026-11-05）：
   - **When To Stream**：远窗 PVOD / 数字版；`scripts` 侧由 Muse 定时或一次性抓取 → `wts-streaming-catalog.json`
-  - **What's on Netflix**：美区 Netflix 近窗日历（公开 JSON-LD）；复跑 `python3 scripts/fetch_whatson_netflix.py` → `won-streaming-catalog.json`；与 WTS 按 `filmId|platform|date` 去重，不清理 WTS 其它平台远窗
-  - **Movie of the Night（Streaming Availability API）**：待注册 key（邮箱 tonycter@gmail.com）；未接前不阻塞 WON
-- 时间线定档卡展示来源标签：由 `streaming[].sourceLabel` 或 `source` URL host 推导（When To Stream / What's on Netflix）；编辑种子无 source 时可不显示
+  - **What's on Netflix**：美区 Netflix 近窗日历（公开 JSON-LD）；复跑 `python3 scripts/fetch_whatson_netflix.py` → `won-streaming-catalog.json`；与 WTS/MotN 按同平台同日去重，不清理其它平台远窗
+  - **Movie of the Night（Streaming Availability API）**：美区近 ~31 天 Netflix/Disney+/Prime/Apple/Max/Mubi upcoming；复跑 `MOTN_API_KEY=… python3 scripts/fetch_motn_upcoming.py` → `motn-streaming-catalog.json`；不覆盖已有同平台 announced 日期
+- 时间线定档卡展示来源标签：由 `streaming[].sourceLabel` 或 `source` URL host 推导（When To Stream / What's on Netflix / Movie of the Night）；编辑种子无 source 时可不显示
 - 出资源通知 → `auteur-news.json`（摘要含「出资源/熟肉/网盘可下」等可识别词，便于 badge 与优先级）
 - 奖项 JSON 可保留作影片档案参考，**不得**再进入 `getTimelineEvents()` 时间线
 - 不得只改 `film-copy.json`（不含 streaming，改了无效）

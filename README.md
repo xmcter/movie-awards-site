@@ -51,6 +51,18 @@ npm run validate && npm run build
 ```
 
   写入 `src/data/won-streaming-catalog.json`，并与已有片库按 id/titleEn 合并 Netflix `announced`（同平台同日跳过；不删 WTS 其它平台条目）。
-- When To Stream 定时抓取交 Muse；本仓库不新建 Grok 例程。
+
+- Movie of the Night / Streaming Availability（美区 upcoming，可复跑、幂等）：
+
+```bash
+export MOTN_API_KEY='…'
+python3 scripts/fetch_motn_upcoming.py
+python3 scripts/fetch_motn_upcoming.py --dry-run
+npm run validate && npm run build
+```
+
+  写入 `src/data/motn-streaming-catalog.json`；catalogs=`netflix,disney,prime,apple,hbo,mubi`；同平台同日跳过，不覆盖 WTS/WON 已有 announced 日期。说明见 `scripts/README-motn-scrape.md`。
+
+- When To Stream / WON / MotN 定时抓取交 Muse；本仓库不新建 Grok 例程。
 - 勿把 API 密钥写入仓库。
 

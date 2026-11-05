@@ -44,6 +44,7 @@ CATALOG_FILES = [
     "density-pack.json",
     "wts-streaming-catalog.json",
     "won-streaming-catalog.json",
+    "motn-streaming-catalog.json",
 ]
 
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")

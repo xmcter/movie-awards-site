@@ -114,10 +114,10 @@
       "streaming": [
         {
           "platform": "other",
-          "date": "2026-09-22",
+          "date": "2026-12-04",
           "status": "announced",
           "region": "美国",
-          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/comedy-idiots-sets-amc-streaming-premiere-date/",
+          "note": "AMC+ · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/comedy-idiots-sets-amc-streaming-premiere-date/",
           "source": "https://whentostream.com/comedy-idiots-sets-amc-streaming-premiere-date/"
         }
       ]
@@ -145,10 +145,10 @@
       "streaming": [
         {
           "platform": "other",
-          "date": "2026-08-14",
+          "date": "2026-11-12",
           "status": "announced",
           "region": "美国",
-          "note": "PVOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/paw-patrol-the-dino-movie-sets-paramount-streaming-premiere-date/",
+          "note": "Paramount+ · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/paw-patrol-the-dino-movie-sets-paramount-streaming-premiere-date/",
           "source": "https://whentostream.com/paw-patrol-the-dino-movie-sets-paramount-streaming-premiere-date/"
         }
       ]
@@ -176,7 +176,7 @@
       "streaming": [
         {
           "platform": "hulu",
-          "date": "2026-08-07",
+          "date": "2026-11-05",
           "status": "announced",
           "region": "美国",
           "note": "Hulu · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/super-troopers-3-sets-hulu-streaming-premiere-date/",
@@ -266,7 +266,7 @@
       "streaming": [
         {
           "platform": "other",
-          "date": "2026-09-11",
+          "date": "2026-11-06",
           "status": "announced",
           "region": "美国",
           "note": "Peacock · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/the-uprising-sets-peacock-streaming-premiere-date/",
@@ -297,7 +297,7 @@
       "streaming": [
         {
           "platform": "max",
-          "date": "2026-09-15",
+          "date": "2026-11-20",
           "status": "announced",
           "region": "美国",
           "note": "HBO Max · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/anthony-bourdain-biopic-tony-sets-hbo-max-streaming-release-date/",
@@ -445,11 +445,11 @@
       ],
       "streaming": [
         {
-          "platform": "prime",
+          "platform": "other",
           "date": "2026-10-27",
           "status": "announced",
           "region": "美国",
-          "note": "Amazon Prime · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/ridley-scotts-the-dog-stars-gets-digital-streaming-release-date-sets-4k-blu-ray-dvd-launch/",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/ridley-scotts-the-dog-stars-gets-digital-streaming-release-date-sets-4k-blu-ray-dvd-launch/",
           "source": "https://whentostream.com/ridley-scotts-the-dog-stars-gets-digital-streaming-release-date-sets-4k-blu-ray-dvd-launch/"
         }
       ]
@@ -477,11 +477,73 @@
       "streaming": [
         {
           "platform": "other",
-          "date": "2026-08-28",
+          "date": "2026-10-23",
           "status": "announced",
           "region": "美国",
           "note": "Peacock · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/romantic-comedy-finding-emily-sets-peacock-streaming-premiere-date/",
           "source": "https://whentostream.com/romantic-comedy-finding-emily-sets-peacock-streaming-premiere-date/"
+        }
+      ]
+    },
+    {
+      "id": "crawlers",
+      "title": "爬行者",
+      "titleEn": "Crawlers",
+      "year": 2026,
+      "synopsis": "Crawlers。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Ángel Gómez Hernández"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1a1a2e",
+        "#16213e"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-10",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/spider-horror-thriller-crawlers-gets-digital-streaming-release-date/",
+          "source": "https://whentostream.com/spider-horror-thriller-crawlers-gets-digital-streaming-release-date/"
+        }
+      ]
+    },
+    {
+      "id": "ali-g-who-iz-i",
+      "title": "阿里·G：我是谁？",
+      "titleEn": "Ali G: Who Iz I?",
+      "year": 2026,
+      "synopsis": "Ali G: Who Iz I?。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Sacha Baron Cohen"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#7f1d1d",
+        "#991b1b"
+      ],
+      "streaming": [
+        {
+          "platform": "prime",
+          "date": "2026-10-28",
+          "status": "announced",
+          "region": "美国",
+          "note": "Prime Video · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/ali-g-who-iz-i-gets-prime-video-streaming-release-date/",
+          "source": "https://whentostream.com/ali-g-who-iz-i-gets-prime-video-streaming-release-date/"
         }
       ]
     }

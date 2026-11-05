@@ -47,6 +47,8 @@ export interface StreamingRelease {
   note?: string;
   /** 来源：平台官方月单 / When To Stream / JustWatch / 行业媒体官宣（Variety、Deadline、The Wrap 等）。编辑规则要求必填，字段可选仅为兼容旧数据。 */
   source?: string;
+  /** 可选展示名；缺省时由 source URL host 推导（见 labels.streamingSourceLabel）。 */
+  sourceLabel?: string;
 }
 
 export type FilmKind = "film" | "honor" | "jury";
@@ -138,4 +140,7 @@ export interface TimelineEvent {
   awards?: string[];
   directors?: string[];
   filmKind?: FilmKind;
+  /** 流媒体定档来源展示名（When To Stream / What's on Netflix / 编辑） */
+  sourceLabel?: string;
+  sourceUrl?: string;
 }

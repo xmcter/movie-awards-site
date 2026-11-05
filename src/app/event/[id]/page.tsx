@@ -152,6 +152,22 @@ export default async function EventPage({
             <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
               <time dateTime={event.date || undefined}>{event.dateLabel}</time>
               <TypeBadge type={event.type} label={badge} />
+              {event.sourceLabel ? (
+                event.sourceUrl ? (
+                  <a
+                    href={event.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-cinema-border/60 bg-cinema-elevated/40 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted/70 hover:border-cinema-gold/30 transition"
+                  >
+                    {event.sourceLabel}
+                  </a>
+                ) : (
+                  <span className="rounded-full border border-cinema-border/60 bg-cinema-elevated/40 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted/70">
+                    {event.sourceLabel}
+                  </span>
+                )
+              ) : null}
             </div>
             <h1 className="mt-1.5 font-display text-xl leading-snug text-cinema-text sm:text-2xl">
               {event.headline || event.summary || event.filmTitle}

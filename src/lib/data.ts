@@ -9,6 +9,7 @@ import moreCatalogData from "@/data/more-catalog.json";
 import extraCatalogData from "@/data/extra-catalog.json";
 import densityPackData from "@/data/density-pack.json";
 import wtsStreamingCatalogData from "@/data/wts-streaming-catalog.json";
+import wonStreamingCatalogData from "@/data/won-streaming-catalog.json";
 import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
 import posterUrlsData from "@/data/poster-urls.json";
@@ -25,6 +26,7 @@ import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
   formatDate,
+  streamingSourceLabel,
 } from "@/lib/labels";
 import {
   buildAwardBody,
@@ -61,6 +63,7 @@ const extra = moreCatalogData as unknown as CatalogSlice;
 const moreExtra = extraCatalogData as unknown as CatalogSlice;
 const density = densityPackData as unknown as CatalogSlice;
 const wtsStreaming = wtsStreamingCatalogData as unknown as CatalogSlice;
+const wonStreaming = wonStreamingCatalogData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 const posterUrls = posterUrlsData as Record<string, string>;
@@ -115,6 +118,7 @@ export const films = [
   ...moreExtra.films,
   ...density.films,
   ...wtsStreaming.films,
+  ...wonStreaming.films,
 ].map(applyCopy);
 export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [
@@ -323,6 +327,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         }),
       );
 
+      const srcLabel = streamingSourceLabel(release);
       events.push({
         id: `stream-${film.id}-${release.platform}-${release.date || "tba"}`,
         type: "streaming",
@@ -340,6 +345,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         badge: streamBadge,
         directors: film.directors,
         filmKind: filmKindOf(film),
+        sourceLabel: srcLabel,
+        sourceUrl: release.source?.trim() || undefined,
       });
     }
   }

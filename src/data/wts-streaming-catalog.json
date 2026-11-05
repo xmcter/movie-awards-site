@@ -236,11 +236,12 @@
       "streaming": [
         {
           "platform": "netflix",
-          "date": "2026-08-11",
+          "date": "2026-11-07",
           "status": "announced",
           "region": "美国",
-          "note": "Netflix · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/gail-daughtry-and-the-celebrity-sex-pass-sets-netflix-streaming-premiere-date/",
-          "source": "https://whentostream.com/gail-daughtry-and-the-celebrity-sex-pass-sets-netflix-streaming-premiere-date/"
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
         }
       ]
     },

@@ -39,3 +39,18 @@ Push `main` → 构建 `out/` → 备份后原子替换 ECS `/var/www/movie-awar
 ```bash
 ./deploy/deploy.sh
 ```
+
+## 定档数据脚本
+
+- What's on Netflix（美区 Netflix 日历，可复跑、幂等）：
+
+```bash
+python3 scripts/fetch_whatson_netflix.py
+python3 scripts/fetch_whatson_netflix.py --dry-run
+npm run validate && npm run build
+```
+
+  写入 `src/data/won-streaming-catalog.json`，并与已有片库按 id/titleEn 合并 Netflix `announced`（同平台同日跳过；不删 WTS 其它平台条目）。
+- When To Stream 定时抓取交 Muse；本仓库不新建 Grok 例程。
+- 勿把 API 密钥写入仓库。
+

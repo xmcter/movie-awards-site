@@ -45,6 +45,29 @@ import {
 
 const PIN_NEW = 10;
 
+
+function SourceTag({ label, href }: { label?: string; href?: string }) {
+  if (!label) return null;
+  const className =
+    "rounded-full border border-cinema-border/60 bg-cinema-elevated/40 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted/70";
+  if (href) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${className} hover:border-cinema-gold/30 hover:text-cinema-muted transition`}
+        title={href}
+        onClick={(e) => e.stopPropagation()}
+      >
+        {label}
+      </a>
+    );
+  }
+  return <span className={className}>{label}</span>;
+}
+
+
 interface GroupedTimelineItem {
   event: TimelineEvent;
   priorEvents: TimelineEvent[];
@@ -505,6 +528,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           </span>
                         ) : null}
                         <TypeBadge type={event.type} label={displayBadge(event.badge)} />
+                        <SourceTag label={event.sourceLabel} href={event.sourceUrl} />
                         {isCardNew(event) ? (
                           <span className="rounded-full bg-cinema-gold px-1.5 py-px text-[10px] font-semibold leading-4 text-cinema-bg">
                             新
@@ -681,6 +705,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                     <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-cinema-muted">
                                       <time dateTime={p.date || undefined}>{p.dateLabel}</time>
                                       <TypeBadge type={p.type} label={displayBadge(p.badge)} />
+                                      <SourceTag label={p.sourceLabel} href={p.sourceUrl} />
                                     </div>
                                     <Link
                                       href={pLink}

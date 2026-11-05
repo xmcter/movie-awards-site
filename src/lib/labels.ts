@@ -38,3 +38,31 @@ export function formatYearMonth(date?: string): string {
   const [y, m] = date.split("-");
   return `${y}年${Number(m)}月`;
 }
+
+/** 从 streaming.source / sourceLabel 推导卡片上来源标签；无来源时返回 undefined（编辑种子可不显示）。 */
+export function streamingSourceLabel(release: {
+  source?: string;
+  sourceLabel?: string;
+}): string | undefined {
+  const explicit = release.sourceLabel?.trim();
+  if (explicit) return explicit;
+  const src = release.source?.trim();
+  if (!src) return undefined;
+  try {
+    const host = new URL(src).hostname.replace(/^www\./i, "").toLowerCase();
+    if (host.includes("whentostream")) return "When To Stream";
+    if (host.includes("whats-on-netflix")) return "What's on Netflix";
+    if (host.includes("movieofthenight") || host.includes("streamingavailability"))
+      return "Movie of the Night";
+    if (host.includes("deadline")) return "Deadline";
+    if (host.includes("variety")) return "Variety";
+    if (host.includes("thewrap")) return "The Wrap";
+    if (host.includes("filmaffinity")) return "FilmAffinity";
+    if (host.includes("criterion")) return "Criterion";
+    if (host.includes("apple.com")) return "Apple TV Press";
+    return host;
+  } catch {
+    return undefined;
+  }
+}
+

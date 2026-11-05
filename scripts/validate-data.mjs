@@ -21,6 +21,7 @@ for (const name of [
   "extra-catalog.json",
   "density-pack.json",
   "wts-streaming-catalog.json",
+  "won-streaming-catalog.json",
 ]) {
   const data = read(name);
   if (Array.isArray(data)) {

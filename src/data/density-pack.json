@@ -517,7 +517,17 @@
         "#2c3e50",
         "#ecf0f1"
       ],
-      "streaming": []
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-06",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
     },
     {
       "id": "tender-loving-care",

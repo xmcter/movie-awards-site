@@ -8,6 +8,7 @@ import majorAwardsData from "@/data/major-awards.json";
 import moreCatalogData from "@/data/more-catalog.json";
 import extraCatalogData from "@/data/extra-catalog.json";
 import densityPackData from "@/data/density-pack.json";
+import wtsStreamingCatalogData from "@/data/wts-streaming-catalog.json";
 import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
 import posterUrlsData from "@/data/poster-urls.json";
@@ -59,6 +60,7 @@ const major = majorAwardsData as unknown as CatalogSlice;
 const extra = moreCatalogData as unknown as CatalogSlice;
 const moreExtra = extraCatalogData as unknown as CatalogSlice;
 const density = densityPackData as unknown as CatalogSlice;
+const wtsStreaming = wtsStreamingCatalogData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 const posterUrls = posterUrlsData as Record<string, string>;
@@ -112,6 +114,7 @@ export const films = [
   ...extra.films,
   ...moreExtra.films,
   ...density.films,
+  ...wtsStreaming.films,
 ].map(applyCopy);
 export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [

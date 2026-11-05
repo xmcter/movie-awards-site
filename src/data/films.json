@@ -201,6 +201,14 @@
     ],
     "streaming": [
       {
+        "platform": "apple-tv",
+        "date": "2026-11-24",
+        "status": "announced",
+        "region": "美国",
+        "note": "iTunes · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/cristian-mungius-palme-dor-winner-fjord-sets-digital-streaming-release-date/",
+        "source": "https://whentostream.com/cristian-mungius-palme-dor-winner-fjord-sets-digital-streaming-release-date/"
+      },
+      {
         "platform": "mubi",
         "status": "estimated",
         "region": "部分地区"

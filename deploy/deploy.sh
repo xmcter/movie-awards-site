@@ -15,8 +15,13 @@ cd "$ROOT"
 npm run build
 
 ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" "mkdir -p '${STAGE}'"
-rsync -az --delete -e "ssh -i ${KEY} -o BatchMode=yes -o StrictHostKeyChecking=accept-new" \
-  "$ROOT/out/" "${USER}@${HOST}:${STAGE}/"
+# Prefer rsync when available; otherwise tar-over-ssh (box often lacks rsync).
+if command -v rsync >/dev/null 2>&1; then
+  rsync -az --delete -e "ssh -i ${KEY} -o BatchMode=yes -o StrictHostKeyChecking=accept-new" \
+    "$ROOT/out/" "${USER}@${HOST}:${STAGE}/"
+else
+  tar -C "$ROOT/out" -czf - . | ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" "tar -xzf - -C '${STAGE}'"
+fi
 
 ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" \
   "REMOTE_DIR='${REMOTE_DIR}' STAGE='${STAGE}' BAK='${BAK}' bash -s" << 'REMOTE'
@@ -26,7 +31,6 @@ if [[ -d "$REMOTE_DIR" ]]; then
 fi
 rm -rf "$REMOTE_DIR"
 mv "$STAGE" "$REMOTE_DIR"
-# Keep newest 3 backups
 ls -1dt ${REMOTE_DIR}.bak-* 2>/dev/null | tail -n +4 | xargs -r rm -rf || true
 CONF=/etc/nginx/sites-available/news.readcine.com
 if [[ ! -f "$CONF" ]]; then

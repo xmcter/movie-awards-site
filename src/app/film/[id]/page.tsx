@@ -12,7 +12,7 @@ import {
   splitFilmCopy,
   truncateDescription,
 } from "@/lib/data";
-import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
+import { dedupeSubtitleAgainstTitle, scrubNegativeCopy, stripStreamingBoilerplate } from "@/lib/headlines";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -49,7 +49,7 @@ export async function generateMetadata({
       ? truncateDescription(
           splitFilmCopy(targetFilm).plot ||
             splitFilmCopy(targetFilm).background ||
-            targetFilm.synopsis,
+            `${targetFilm.title}（${targetFilm.year}）流媒体定档与影片档。`,
           150,
         )
       : "该影片条目已合并至主页面。";
@@ -72,8 +72,7 @@ export async function generateMetadata({
   const { plot, background } = splitFilmCopy(film);
   const rawDescription =
     [plot, background].filter(Boolean).join(" ") ||
-    film.synopsis ||
-    `${film.title}（${film.year}）影片档案与奖项时间线。`;
+    `${film.title}（${film.year}）流媒体定档与影片档。`;
   const description = truncateDescription(rawDescription, 150);
   return {
     title,
@@ -190,7 +189,7 @@ export default async function FilmPage({
     name: film.title,
     alternateName: film.titleEn,
     dateCreated: String(film.year),
-    description: plot || background || film.synopsis,
+    description: plot || background || `${film.title}（${film.year}）`,
     director: film.directors.map((name) => ({ "@type": "Person", name })),
     inLanguage: "zh-CN",
   };
@@ -265,9 +264,7 @@ export default async function FilmPage({
               people.join("、")
             )}
           </p>
-        ) : (
-          <p>尚无导演资料。时间线仍挂已发生的奖项。</p>
-        )}
+        ) : null}
         {film.directors.length > 0 && film.cast.length > 0 ? (
           <p className="mt-2 text-sm text-cinema-text">
             <span className="text-cinema-muted">主演 </span>
@@ -347,8 +344,16 @@ export default async function FilmPage({
                   {statusBit ? ` · ${statusBit}` : ""}
                   {` · ${when}`}
                   {release.region ? ` · ${release.region}` : ""}
-                  {release.note && scrubNegativeCopy(release.note) ? `（${scrubNegativeCopy(release.note)}）` : ""}
-                  {release.source ? ` · 来源：${release.source}` : ""}
+                  {(() => {
+                    const note = stripStreamingBoilerplate(release.note || "", {
+                      platform,
+                      region: release.region,
+                      datePart: when !== "待定" ? when : undefined,
+                      filmTitle: film.title,
+                    });
+                    return note ? `（${note}）` : "";
+                  })()}
+                  {/* 来源 URL 不在列表式流媒体行里重复展示，详情顶栏已有来源芯片 */}
                 </li>
               );
             })}

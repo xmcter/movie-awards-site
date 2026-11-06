@@ -41,6 +41,7 @@ import {
   dedupeSubtitleAgainstTitle,
   polishAuteurHeadline,
   scrubNegativeCopy,
+  stripStreamingBoilerplate,
 } from "@/lib/headlines";
 
 type CatalogSlice = {
@@ -224,12 +225,28 @@ const A_CLASS = new Set([
 export const AWARD_ONLY =
   /第\d+届|荣誉金狮|评委主席|日程公布|长片报名/;
 
+/** MotN/WTS 入库时常写的「《片名》流媒体定档（美国区…）」——不是剧情，不当简介展示。 */
+function isStreamingMetaSynopsis(text: string, title?: string): boolean {
+  const s = (text || "").trim();
+  if (!s) return false;
+  if (s.length > 120) return false;
+  const t = (title || "").trim();
+  const mentionsTitle = t
+    ? s.includes(t) || s.includes(`《${t}》`)
+    : /《.+》/.test(s);
+  const meta =
+    /流媒体定档|片夜数据|以平台官方为准|美国区定档|区定档/.test(s) &&
+    !/执导|主演|讲述|故事|改编|获奖|入围|拍摄|取材/.test(s);
+  return Boolean(mentionsTitle && meta);
+}
+
 export function splitFilmCopy(film: Film): {
   plot: string;
   background: string;
 } {
   const background = (film.background || "").trim();
-  const raw = (film.synopsis || "").trim();
+  let raw = (film.synopsis || "").trim();
+  if (isStreamingMetaSynopsis(raw, film.title)) raw = "";
   if (background) {
     return { plot: raw, background };
   }
@@ -414,8 +431,6 @@ export function getTimelineEvents(): TimelineEvent[] {
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = formatDate(release.date);
-      const noteRaw = release.note ? scrubNegativeCopy(release.note) : "";
-      const note = noteRaw ? `（${noteRaw}）` : "";
       const isLive = isPublished(release.date, today);
       const streamBadge = isLive ? "已上线" : "定档";
 
@@ -438,6 +453,14 @@ export function getTimelineEvents(): TimelineEvent[] {
           note: release.note,
         }),
       );
+      // detail 与 summary 同源增量；口水 note 不再塞进 detail 造成详情页叠字
+      const noteExtra = stripStreamingBoilerplate(release.note || "", {
+        platform,
+        region: release.region,
+        datePart,
+        filmTitle: film.title,
+      });
+      const note = noteExtra ? `（${noteExtra}）` : "";
 
       const srcLabel = streamingSourceLabel(release);
       const sourcePublishedAt = release.sourcePublishedAt || undefined;

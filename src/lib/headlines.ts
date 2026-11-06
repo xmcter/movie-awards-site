@@ -236,6 +236,74 @@ export function buildStreamingHeadline(opts: {
   return `${title}${platform}${reg}`;
 }
 
+/** 流媒体 note 里的口水套话：只复述平台/地区/定档/官方声明，无增量事实。 */
+export function stripStreamingBoilerplate(
+  note: string,
+  opts?: { platform?: string; region?: string; datePart?: string; filmTitle?: string },
+): string {
+  if (!note) return "";
+  let cleaned = note.replace(/^[（(]\s*/, "").replace(/\s*[）)]$/, "").trim();
+  cleaned = cleaned.replace(/\s*·\s*来源\s+https?:\/\/\S+/gi, "");
+  cleaned = cleaned.replace(/Movie of the Night\s*\/\s*Streaming Availability/gi, "片夜数据");
+  cleaned = cleaned.replace(/When To Stream/gi, "定档来源");
+  cleaned = cleaned.replace(/What'?s on Netflix/gi, "Netflix 新片");
+  cleaned = scrubNegativeCopy(cleaned);
+  if (!cleaned) return "";
+
+  const platform = (opts?.platform || "").trim();
+  const region = (opts?.region || "").trim();
+  const datePart = (opts?.datePart || "").trim();
+  const filmTitle = (opts?.filmTitle || "").trim();
+
+  // 去掉与标题重复的实体后再判断是否还剩事实
+  const dropPatterns: RegExp[] = [
+    /须?以平台官方为准/g,
+    /以平台官方为准/g,
+    /流媒体定档/g,
+    /片夜数据/g,
+    /定档来源/g,
+    /Netflix 新片/g,
+    /美国区定档/g,
+    /[\u4e00-\u9fff]{0,6}区定档/g,
+    /\bPVOD\/?VOD\b/gi,
+  ];
+  if (platform) {
+    dropPatterns.push(new RegExp(platform.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "gi"));
+  }
+  if (region) {
+    dropPatterns.push(new RegExp(region.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"));
+  }
+  if (datePart) {
+    dropPatterns.push(new RegExp(datePart.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g"));
+  }
+  if (filmTitle) {
+    const q = filmTitle.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    dropPatterns.push(new RegExp(`《${q}》`, "g"));
+    dropPatterns.push(new RegExp(q, "g"));
+  }
+
+  // 先剥套话与已在标题出现的实体，再看还剩什么
+  let stripped = cleaned;
+  for (const re of dropPatterns) stripped = stripped.replace(re, " ");
+  stripped = stripped
+    .replace(/地区[:：]?/g, " ")
+    .replace(/定档/g, " ")
+    .replace(/上线/g, " ")
+    .replace(/[·|｜/／、，,。；;:：\-—_（）()\[\]]+/g, " ")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+
+  // 清空后几乎没字，或只剩「数据/来源/官方」这类虚词 → 视为口水
+  if (!stripped || stripped.length <= 2) return "";
+  if (/^(数据|来源|官方|平台|新片|影片|电影)$/.test(stripped)) return "";
+  // 原文几乎整段都是套话（去掉套话后长度骤降）
+  if (stripped.length <= 6 && cleaned.length >= 8 && stripped.length / cleaned.length < 0.4) {
+    return "";
+  }
+  // 有增量：返回剥掉套话后的句子，避免「有用句 + 美国区定档」再叠标题
+  return scrubNegativeCopy(stripped);
+}
+
 export function buildStreamingBody(opts: {
   film: Film;
   platform: string;
@@ -244,23 +312,19 @@ export function buildStreamingBody(opts: {
   region?: string;
   note?: string;
 }): string {
-  const { film, note } = opts;
-  // 副标题不再重复标题里已有的 平台/状态/日期/地区；只保留增量信息。
+  const { film, platform, datePart, region, note } = opts;
+  // 副标题不再重复标题里已有的 平台/状态/日期/地区；口水 note 直接丢。
   const bits: string[] = [];
   if (note) {
-    let cleaned = note.replace(/^[（(]\s*/, "").replace(/\s*[）)]$/, "").trim();
-    cleaned = cleaned.replace(/\s*·\s*来源\s+https?:\/\/\S+/gi, "");
-    cleaned = cleaned.replace(/Movie of the Night\s*\/\s*Streaming Availability/gi, "片夜数据");
-    cleaned = cleaned.replace(/When To Stream/gi, "定档来源");
-    cleaned = cleaned.replace(/What'?s on Netflix/gi, "Netflix 新片");
-    cleaned = cleaned.replace(/\s{2,}/g, " ").replace(/\s*·\s*$/, "").trim();
-    cleaned = scrubNegativeCopy(cleaned);
+    const cleaned = stripStreamingBoilerplate(note, {
+      platform,
+      region,
+      datePart,
+      filmTitle: film.title,
+    });
     if (cleaned) bits.push(cleaned);
   }
-  // 导演信息不在流媒体标题里时，可作一句补充；已有 note 则不必硬凑。
-  if (!bits.length && film.directors[0]) {
-    bits.push(`${film.directors[0]}执导作品`);
-  }
+  // 不再硬凑「某某执导作品」——底栏/详情已有导演，避免再叠一层。
   return scrubNegativeCopy(bits.join("。"));
 }
 
@@ -328,6 +392,28 @@ export function dedupeSubtitleAgainstTitle(title: string, subtitle: string): str
     if (kept.length === parts.length) return s;
     return kept.join(" · ");
   }
+
+  // 散文副文：若去掉标题里已出现的片名/平台/日期/地区/定档套话后几乎无增量 → 整段丢弃
+  const titleTokens = t
+    .split(/\s*[·|｜/／、，,。；;]\s*/)
+    .map((x) => x.trim())
+    .filter((x) => x.length >= 2);
+  let prose = s;
+  for (const tok of titleTokens) {
+    const esc = tok.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    prose = prose.replace(new RegExp(esc, "gi"), " ");
+  }
+  prose = prose
+    .replace(/须?以平台官方为准/g, " ")
+    .replace(/流媒体定档/g, " ")
+    .replace(/美国区定档|[\u4e00-\u9fff]{0,6}区定档/g, " ")
+    .replace(/定档|上线|地区[:：]?/g, " ")
+    .replace(/[·|｜/／、，,。；;:：\-—_（）()\[\]\s]+/g, " ")
+    .trim();
+  if (!prose || prose.length <= 2) return "";
+  if (/^(数据|来源|官方|平台|新片|影片|电影|片夜)$/.test(prose)) return "";
+  // 短副文（≤72）去掉重叠后剩余不足原文 35% → 视为重复念一遍
+  if (s.length <= 72 && prose.length / s.length < 0.35) return "";
 
   return s;
 }

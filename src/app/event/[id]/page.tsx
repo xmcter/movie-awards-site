@@ -177,11 +177,25 @@ export default async function EventPage({
             <h1 className="mt-1.5 font-display text-xl leading-snug text-cinema-text sm:text-2xl">
               {event.headline || event.summary || event.filmTitle}
             </h1>
-            <p className="mt-1 text-xs text-cinema-muted">
-              {event.filmTitle}
-              {event.filmYear ? ` · ${event.filmYear}` : ""}
-              {event.filmTitleEn ? ` / ${event.filmTitleEn}` : ""}
-            </p>
+            {(() => {
+              const hl = (event.headline || event.summary || "").toLowerCase();
+              const titleInHl =
+                Boolean(event.filmTitle) &&
+                (hl.includes(event.filmTitle.toLowerCase()) ||
+                  hl.includes(`《${event.filmTitle}》`.toLowerCase()));
+              const bits: string[] = [];
+              if (!titleInHl && event.filmTitle) bits.push(event.filmTitle);
+              if (event.filmYear && !hl.includes(String(event.filmYear))) {
+                bits.push(String(event.filmYear));
+              }
+              if (event.filmTitleEn && !hl.includes(event.filmTitleEn.toLowerCase())) {
+                bits.push(event.filmTitleEn);
+              }
+              if (!bits.length) return null;
+              return (
+                <p className="mt-1 text-xs text-cinema-muted">{bits.join(" · ")}</p>
+              );
+            })()}
             {directors.length > 0 ? (
               <p className="mt-2 text-sm text-cinema-text">导演 {directors.join("、")}</p>
             ) : null}

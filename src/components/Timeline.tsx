@@ -589,10 +589,31 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                               onClick={() => markClicked(event.id)}
                               className="hover:text-cinema-gold transition"
                             >
-                              {event.filmTitle}
-                              {event.filmYear ? ` · ${event.filmYear}` : ""}
-                              {event.directors && event.directors[0] ? ` · ${event.directors[0]}` : ""}
-                              <span className="ml-1 text-cinema-gold">影片档 →</span>
+                              {(() => {
+                                // 底栏不再复读标题已有的片名/年份；只补导演等增量，否则只留「影片档」
+                                const hl = (event.headline || "").toLowerCase();
+                                const titleHit =
+                                  Boolean(event.filmTitle) &&
+                                  (hl.includes(event.filmTitle.toLowerCase()) ||
+                                    hl.includes(`《${event.filmTitle}》`.toLowerCase()));
+                                const yearHit =
+                                  Boolean(event.filmYear) &&
+                                  hl.includes(String(event.filmYear));
+                                const bits: string[] = [];
+                                if (!titleHit && event.filmTitle) bits.push(event.filmTitle);
+                                if (!yearHit && event.filmYear) bits.push(String(event.filmYear));
+                                if (event.directors?.[0] && !hl.includes(event.directors[0].toLowerCase())) {
+                                  bits.push(event.directors[0]);
+                                }
+                                return bits.length ? (
+                                  <>
+                                    {bits.join(" · ")}
+                                    <span className="ml-1 text-cinema-gold">影片档 →</span>
+                                  </>
+                                ) : (
+                                  <span className="text-cinema-gold">影片档 →</span>
+                                );
+                              })()}
                             </Link>
                           ) : null}
                           <a

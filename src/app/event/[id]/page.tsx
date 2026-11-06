@@ -11,6 +11,7 @@ import {
   splitFilmCopy,
   truncateDescription,
 } from "@/lib/data";
+import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
 
 export const dynamic = "force-static";
 
@@ -194,21 +195,37 @@ export default async function EventPage({
         </Section>
       ) : null}
 
-      <Section title="本条消息">
-        <p className="text-cinema-text">{event.summary}</p>
-        {event.awards && event.awards.length > 0 ? (
-          <ul className="mt-2 space-y-1">
-            {event.awards.map((line) => (
-              <li key={line}>{line}</li>
-            ))}
-          </ul>
-        ) : null}
-        {event.detail ? <p className="mt-2">{event.detail}</p> : null}
-      </Section>
+      {(() => {
+        const title = (event.headline || event.filmTitle || "").trim();
+        const summary = scrubNegativeCopy(
+          dedupeSubtitleAgainstTitle(title, event.summary || ""),
+        );
+        const detail = scrubNegativeCopy(
+          dedupeSubtitleAgainstTitle(
+            summary || title,
+            dedupeSubtitleAgainstTitle(title, event.detail || ""),
+          ),
+        );
+        const hasAwards = Boolean(event.awards && event.awards.length > 0);
+        if (!summary && !detail && !hasAwards) return null;
+        return (
+          <Section title="本条消息">
+            {summary ? <p className="text-cinema-text">{summary}</p> : null}
+            {hasAwards ? (
+              <ul className="mt-2 space-y-1">
+                {event.awards!.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            ) : null}
+            {detail ? <p className={summary ? "mt-2" : ""}>{detail}</p> : null}
+          </Section>
+        );
+      })()}
 
       {plot ? (
         <Section title="剧情简介">
-          <p>{plot}</p>
+          <p>{scrubNegativeCopy(plot)}</p>
           <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
             <a
               href={guideUrl}
@@ -222,29 +239,26 @@ export default async function EventPage({
             <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
           </div>
         </Section>
-      ) : (
-        <Section title="剧情简介">
-          <p>尚无公开剧情资料，不编造。</p>
-          {guideQuery ? (
-            <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
-              <a
-                href={guideUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-              >
-                <span>🎞️ 在「观影导赏」查看导赏</span>
-                <span className="text-[10px] opacity-70">↗</span>
-              </a>
-              <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
-            </div>
-          ) : null}
+      ) : guideQuery ? (
+        <Section title="延伸阅读">
+          <div className="flex flex-wrap items-center gap-2.5">
+            <a
+              href={guideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+            >
+              <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+            <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
+          </div>
         </Section>
-      )}
+      ) : null}
 
       {background ? (
         <Section title="创作背景">
-          <p>{background}</p>
+          <p>{scrubNegativeCopy(background)}</p>
         </Section>
       ) : null}
 

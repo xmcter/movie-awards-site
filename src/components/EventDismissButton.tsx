@@ -116,7 +116,7 @@ export default function EventDismissButton({
             <textarea
               value={reasonText}
               onChange={(e) => setReasonText(e.target.value)}
-              placeholder="说说原因，比如：题材不感兴趣、已经看过、质量不行……"
+              placeholder="说说原因，比如：题材不感兴趣、已经看过、想换个风格……"
               autoFocus
               rows={6}
               className="mt-4 min-h-[160px] w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none"

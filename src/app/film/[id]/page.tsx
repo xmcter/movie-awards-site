@@ -12,6 +12,7 @@ import {
   splitFilmCopy,
   truncateDescription,
 } from "@/lib/data";
+import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -282,7 +283,7 @@ export default async function FilmPage({
 
       {plot ? (
         <Section title="剧情介绍">
-          <p>{plot}</p>
+          <p>{scrubNegativeCopy(plot)}</p>
           <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
             <a
               href={guideUrl}
@@ -300,14 +301,13 @@ export default async function FilmPage({
 
       {background ? (
         <Section title="创作背景">
-          <p>{background}</p>
+          <p>{scrubNegativeCopy(background)}</p>
         </Section>
       ) : null}
 
       {!plot && !background ? (
-        <Section title="创作背景">
-          <p>尚无可靠公开剧情或创作资料，本节从略，不编造。</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
+        <Section title="延伸阅读">
+          <div className="flex flex-wrap items-center gap-2.5">
             <a
               href={guideUrl}
               target="_blank"
@@ -336,7 +336,7 @@ export default async function FilmPage({
               .map((release) => {
               const platform = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
-              const when = release.date ? formatDate(release.date) : "尚未公布";
+              const when = release.date ? formatDate(release.date) : "待定";
               const statusBit = status ? `${status}` : "";
               return (
                 <li
@@ -347,7 +347,7 @@ export default async function FilmPage({
                   {statusBit ? ` · ${statusBit}` : ""}
                   {` · ${when}`}
                   {release.region ? ` · ${release.region}` : ""}
-                  {release.note ? `（${release.note}）` : ""}
+                  {release.note && scrubNegativeCopy(release.note) ? `（${scrubNegativeCopy(release.note)}）` : ""}
                   {release.source ? ` · 来源：${release.source}` : ""}
                 </li>
               );
@@ -368,10 +368,31 @@ export default async function FilmPage({
                   <time dateTime={event.date || undefined}>{event.dateLabel}</time>
                   <TypeBadge type={event.type} label={event.badge === "新品" ? "新片" : event.badge} />
                 </div>
-                <p className="mt-1.5 text-sm text-cinema-text">{event.summary}</p>
-                {event.detail ? (
-                  <p className="mt-1 text-xs text-cinema-muted/70">{event.detail}</p>
-                ) : null}
+                <p className="mt-1.5 text-sm text-cinema-text">
+                  {event.headline || event.summary}
+                </p>
+                {(() => {
+                  const title = (event.headline || "").trim();
+                  const summary = scrubNegativeCopy(
+                    dedupeSubtitleAgainstTitle(title, event.summary || ""),
+                  );
+                  const detail = scrubNegativeCopy(
+                    dedupeSubtitleAgainstTitle(
+                      summary || title,
+                      dedupeSubtitleAgainstTitle(title, event.detail || ""),
+                    ),
+                  );
+                  return (
+                    <>
+                      {summary ? (
+                        <p className="mt-1 text-xs text-cinema-muted">{summary}</p>
+                      ) : null}
+                      {detail ? (
+                        <p className="mt-1 text-xs text-cinema-muted/70">{detail}</p>
+                      ) : null}
+                    </>
+                  );
+                })()}
               </li>
             ))}
           </ol>

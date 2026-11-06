@@ -40,6 +40,7 @@ import {
   buildStreamingHeadline,
   dedupeSubtitleAgainstTitle,
   polishAuteurHeadline,
+  scrubNegativeCopy,
 } from "@/lib/headlines";
 
 type CatalogSlice = {
@@ -399,7 +400,8 @@ export function getTimelineEvents(): TimelineEvent[] {
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = formatDate(release.date);
-      const note = release.note ? `（${release.note}）` : "";
+      const noteRaw = release.note ? scrubNegativeCopy(release.note) : "";
+      const note = noteRaw ? `（${noteRaw}）` : "";
       const isLive = isPublished(release.date, today);
       const streamBadge = isLive ? "已上线" : "定档";
 
@@ -484,7 +486,9 @@ export function getTimelineEvents(): TimelineEvent[] {
       news.detail && news.detail.trim() && news.detail.trim() !== (news.summary || "").trim()
         ? news.detail
         : news.summary || "";
-    const summary = dedupeSubtitleAgainstTitle(headline, rawSummary);
+    const summary = scrubNegativeCopy(
+      dedupeSubtitleAgainstTitle(headline, scrubNegativeCopy(rawSummary)),
+    );
     const srcLabel =
       normalizeSourceLabel(news.sourceLabel) ||
       streamingSourceLabel({ source: news.source, sourceLabel: news.sourceLabel }) ||
@@ -505,7 +509,8 @@ export function getTimelineEvents(): TimelineEvent[] {
       posterColors: film.posterColors,
       headline,
       summary,
-      detail: news.detail && news.detail !== news.summary ? undefined : news.detail,
+      // detail 已并入 summary 时不再挂一份，避免详情页标题/摘要/正文三重重复
+      detail: undefined,
       badge,
       accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
       directors: film.directors,
@@ -522,90 +527,14 @@ export function getTimelineEvents(): TimelineEvent[] {
     });
   }
 
-  // 保留既有精选名单/配额；呈现顺序独立按首次发布时间倒序。
-  return capPerDay(events).sort(comparePublicationTime);
+  // 质量闸已在入库时过滤口水定档；不再按发布日卡条数，按首次发布时间倒序。
+  return events
+    .filter((e) => e.type !== "win" && e.type !== "nomination")
+    .sort(comparePublicationTime);
 }
 
-/**
- * Editorial cap (see EDITORIAL.md): at most MAX_EVENTS_PER_DAY cards per
- * **content publication day** (publishedAt / sourcePublishedAt), never per 定档日.
- * Within a day, cards are ranked by eventPriority():
- *   出资源 > 作者/获奖定档 > 其余定档；口水流媒体在 shouldAdmitStreaming 已硬过滤。
- * Awards / nominations are never admitted to the timeline (2026-11-05).
- */
-export const MAX_EVENTS_PER_DAY = 3;
-
-function isResourceNotice(e: TimelineEvent): boolean {
-  const blob = `${e.headline || ""} ${e.summary || ""} ${e.badge || ""}`;
-  return /出资源|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出/i.test(blob);
-}
-
-function eventPriority(e: TimelineEvent): number {
-  const film = e.filmId ? getFilm(e.filmId) : undefined;
-  const auteurBonus = film && isAuteurFilm(film) ? 40 : 0;
-  const awardBonus = film && isAwardedFilm(film) ? 30 : 0;
-  const qualityBonus = film
-    ? Math.max(0, streamingQualityScore(film, e.type === "streaming" ? guessPlatform(e) : undefined))
-    : 0;
-  switch (e.type) {
-    case "streaming": {
-      const announcedPast = e.badge === "已上线" || e.badge === "流媒体";
-      return (announcedPast ? 230 : 200) + auteurBonus + awardBonus + Math.min(qualityBonus, 80);
-    }
-    case "auteur": {
-      if (isResourceNotice(e) || e.badge === "出资源") return 260 + auteurBonus + awardBonus;
-      if (e.badge === "已上线" || /上线|流出|熟肉|数字版|首发/i.test(e.headline || ""))
-        return 220 + auteurBonus + awardBonus;
-      if (e.badge === "定档" || /定档|上线日|将于.*上线/i.test(e.headline || ""))
-        return 200 + auteurBonus + awardBonus;
-      return 80 + auteurBonus;
-    }
-    case "win":
-    case "nomination":
-      return 0;
-  }
-}
-
-function guessPlatform(e: TimelineEvent): string | undefined {
-  const m = e.id.match(
-    /-(netflix|disney-plus|prime|hulu|max|apple-tv|iqiyi|tencent|youku|bilibili|mubi|other)-(\d{4}-\d{2}-\d{2}|tba)$/,
-  );
-  return m?.[1];
-}
-
-/** 按「内容发布日」配额，绝不用定档/上映日分桶（避免 MotN 口水定档刷屏）。 */
-function publicationDay(e: TimelineEvent): string {
-  const iso = publicationTime(e);
-  return iso.slice(0, 10) || e.date || "tba";
-}
-
-function capPerDay(events: TimelineEvent[]): TimelineEvent[] {
-  const eligible = events.filter((e) => e.type !== "win" && e.type !== "nomination");
-  const coverage = new Map<string, number>();
-  for (const e of eligible) {
-    if (e.filmId) coverage.set(e.filmId, (coverage.get(e.filmId) || 0) + 1);
-  }
-  const ranked = eligible.map((e, i) => ({
-    e,
-    i,
-    p: eventPriority(e),
-    c: e.filmId ? coverage.get(e.filmId) || 0 : 0,
-    day: publicationDay(e),
-  }));
-  ranked.sort((a, b) => {
-    if (a.day !== b.day) return b.day.localeCompare(a.day);
-    return b.p - a.p || b.c - a.c || a.i - b.i;
-  });
-  const perDay = new Map<string, number>();
-  const kept: TimelineEvent[] = [];
-  for (const { e, day } of ranked) {
-    const n = perDay.get(day) || 0;
-    if (n >= MAX_EVENTS_PER_DAY) continue;
-    perDay.set(day, n + 1);
-    kept.push(e);
-  }
-  return kept;
-}
+/** 口水泥档已在 shouldAdmitStreaming 硬过滤；不再按日配额截断。 */
+export const MAX_EVENTS_PER_DAY = Infinity; // 兼容旧引用：无日上限
 
 export function getFilmEvents(filmId: string): TimelineEvent[] {
   return getTimelineEvents().filter((e) => e.filmId === filmId);

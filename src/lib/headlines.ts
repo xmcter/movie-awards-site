@@ -254,13 +254,14 @@ export function buildStreamingBody(opts: {
     cleaned = cleaned.replace(/When To Stream/gi, "定档来源");
     cleaned = cleaned.replace(/What'?s on Netflix/gi, "Netflix 新片");
     cleaned = cleaned.replace(/\s{2,}/g, " ").replace(/\s*·\s*$/, "").trim();
+    cleaned = scrubNegativeCopy(cleaned);
     if (cleaned) bits.push(cleaned);
   }
   // 导演信息不在流媒体标题里时，可作一句补充；已有 note 则不必硬凑。
   if (!bits.length && film.directors[0]) {
     bits.push(`${film.directors[0]}执导作品`);
   }
-  return bits.join("。");
+  return scrubNegativeCopy(bits.join("。"));
 }
 
 /**
@@ -268,6 +269,22 @@ export function buildStreamingBody(opts: {
  * - 短副标题 / 「A · B · C」列表：按片去重
  * - 长正文：仅当与标题几乎同文时整段丢弃；不因正文里提到片名就清空
  */
+/** 去掉读者可见的否定性编辑旁白（不编造/资料有限等），保留事实句。 */
+export function scrubNegativeCopy(text: string): string {
+  if (!text) return "";
+  let s = text.trim();
+  // 整句否定旁白
+  s = s.replace(/[，,。；;]?\s*公开(?:完整)?剧情资料有限[^。；;]*[。；;]?/g, "");
+  s = s.replace(/[，,。；;]?\s*不编造(?:细节|上线日|日期)?[。；;]?/g, "");
+  s = s.replace(/[，,。；;]?\s*本节从略[^。；;]*[。；;]?/g, "");
+  s = s.replace(/[，,。；;]?\s*尚无(?:可靠)?公开剧情资料[^。；;]*[。；;]?/g, "");
+  s = s.replace(/[，,。；;]?\s*绝不编造日期[。；;]?/g, "");
+  s = s.replace(/，不编造上线日/g, "");
+  s = s.replace(/窗口待定，不编造上线日/g, "窗口待定");
+  s = s.replace(/\s{2,}/g, " ").replace(/^[，,。；;\s]+|[，,。；;\s]+$/g, "").trim();
+  return s;
+}
+
 export function dedupeSubtitleAgainstTitle(title: string, subtitle: string): string {
   const t = (title || "").trim();
   const s = (subtitle || "").trim();
@@ -287,6 +304,12 @@ export function dedupeSubtitleAgainstTitle(title: string, subtitle: string): str
   if (ns.length <= nt.length + 4 && nt.includes(ns)) return "";
   // 副标题只是标题加极少字符 → 丢弃
   if (nt.length >= 8 && ns.startsWith(nt) && ns.length - nt.length <= 6) return "";
+  // 短副标题与标题高度重叠（>85%）→ 丢弃，避免列表再念一遍标题
+  if (ns.length <= 80 && nt.length >= 6) {
+    const shorter = ns.length <= nt.length ? ns : nt;
+    const longer = ns.length <= nt.length ? nt : ns;
+    if (longer.includes(shorter) && shorter.length / longer.length >= 0.85) return "";
+  }
 
   // 「A · B · C」型短列表：去掉已在标题出现的片语
   const looksLikeList =

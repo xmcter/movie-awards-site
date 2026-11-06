@@ -82,12 +82,12 @@ export default function AboutPage() {
         <div className="space-y-3">
           <h2 className="font-display text-lg text-cinema-text">流媒体与资源核实规则</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            影片档案页中，已公布确切上线日期的流媒体条目排在前面（按日期由近到远并标注平台与地区），尚未公布的排在后面并标明“尚未公布”。
+            影片档案页中，已公布确切上线日期的流媒体条目排在前面（按日期由近到远并标注平台与地区），待定的排在后面并标明“待定”。
           </p>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
               <span className="text-cinema-text">流媒体字段：</span>
-              只写官方已公布的确切日期（<code className="text-xs">YYYY-MM-DD</code>）和平台，未公布写“尚未公布”，绝不编造日期；地区必须如实标注（美国区日期只写美国，不当全球）。
+              只写官方已公布的确切日期（<code className="text-xs">YYYY-MM-DD</code>）和平台，未公布写“待定”；地区必须如实标注（美国区日期只写美国，不当全球）。
             </li>
             <li>
               <span className="text-cinema-text">参考来源：</span>

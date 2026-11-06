@@ -25,19 +25,24 @@ import {
   type DismissStore,
 } from "@/lib/dismiss";
 import {
-  PrefsError,
   cloudBlock,
   cloudClearBlocked,
   cloudLike,
   cloudUnblock,
   cloudUnlike,
-  ensurePrefsSession,
   fetchCloudPrefs,
   loadPrefsSession,
   syncLocalBlockedToCloud,
-  type LikeMark,
   type PrefsSession,
 } from "@/lib/prefs";
+import {
+  LIKE_EVENT_NAME,
+  loadLikeMarks,
+  setLikeMarks,
+  toggleLikeEvent,
+  type LikeMark,
+} from "@/lib/likes";
+import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
 
 
 
@@ -238,45 +243,69 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     setBaseline(visitBaseline);
     setReady(true);
 
-    // 已有会话（30 天内登录过）时静默从云端回填，之后以云端为准；
-    // 没有会话时不在页面加载时弹登录，只在点按钮时弹。
+    // 本机点赞 / 屏蔽始终可用；仅当已有会话时静默回填云端，绝不弹登录。
+    const initialLikes = loadLikeMarks();
+    setLiked(initialLikes);
     const existingSession = loadPrefsSession();
     if (existingSession) {
       prefsMergedRef.current = true;
       fetchCloudPrefs(existingSession)
         .then((cloud) => {
-          setDismissStore({ blocked: cloud.blocked });
-          setLiked(cloud.liked);
+          // 并集：云端 + 本机，避免匿名本机记录被冲掉。
+          const mergedBlocked = {
+            ...cloud.blocked,
+            ...loadDismissMarks().blocked,
+          };
+          const mergedLiked = { ...cloud.liked, ...loadLikeMarks() };
+          setDismissStore({ blocked: mergedBlocked });
+          setLiked(mergedLiked);
+          setLikeMarks(mergedLiked);
+          // 本机 dismiss 已在 load 时读过；若云端有额外项，写回本机便于离线一致。
+          // 不主动覆盖本机已有 reason。
         })
         .catch(() => {
-          setPrefsError("云端偏好读取失败，仅显示本机记录，未同步到其他设备");
+          setPrefsError("云端偏好读取失败，仅显示本机记录");
         });
     }
 
     const onDismissUpdate = () => {
       setDismissStore(loadDismissMarks());
     };
+    const onLikeUpdate = () => {
+      setLiked(loadLikeMarks());
+    };
     window.addEventListener(DISMISS_EVENT_NAME, onDismissUpdate);
+    window.addEventListener(LIKE_EVENT_NAME, onLikeUpdate);
     window.addEventListener("storage", onDismissUpdate);
+    window.addEventListener("storage", onLikeUpdate);
 
     return () => {
       window.removeEventListener(DISMISS_EVENT_NAME, onDismissUpdate);
+      window.removeEventListener(LIKE_EVENT_NAME, onLikeUpdate);
       window.removeEventListener("storage", onDismissUpdate);
+      window.removeEventListener("storage", onLikeUpdate);
     };
   }, []);
 
-  // 登录后首次把本地屏蔽合并到云端，之后以云端为准。
-  const ensureLoginAndMerge = async (): Promise<PrefsSession> => {
-    const session = await ensurePrefsSession();
+  /** 仅在已有会话时静默同步；没有会话直接返回 null，绝不弹谷歌登录。 */
+  const tryExistingSessionSync = async (): Promise<PrefsSession | null> => {
+    const session = loadPrefsSession();
+    if (!session) return null;
     if (!prefsMergedRef.current) {
       prefsMergedRef.current = true;
       try {
-        await syncLocalBlockedToCloud(session, loadDismissMarks(), liked);
+        await syncLocalBlockedToCloud(session, loadDismissMarks(), loadLikeMarks());
         const cloud = await fetchCloudPrefs(session);
-        setDismissStore({ blocked: cloud.blocked });
-        setLiked(cloud.liked);
+        const mergedBlocked = {
+          ...cloud.blocked,
+          ...loadDismissMarks().blocked,
+        };
+        const mergedLiked = { ...cloud.liked, ...loadLikeMarks() };
+        setDismissStore({ blocked: mergedBlocked });
+        setLiked(mergedLiked);
+        setLikeMarks(mergedLiked);
       } catch {
-        // 合并失败不阻塞本次操作；下面写云端失败时会再提示降级。
+        // 合并失败不阻塞本次本机操作。
       }
     }
     return session;
@@ -299,8 +328,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
 
   const handleToggleDismiss = async (event: TimelineEvent, reason?: string) => {
     const isBlocked = isBlockedOrSimilar(event, dismissStore);
-    // 本机先生效：点下去立即隐藏/恢复，不等登录；登录与云端同步在后台做，
-    // 失败只降级提示，不撤销本机结果。
+    // 本机先生效；仅当已有会话时静默写云端，绝不弹登录。
     const prevStore = dismissStore;
     if (isBlocked) {
       const updated = unblockEvent(event, dismissStore);
@@ -316,13 +344,13 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       });
     }
     try {
-      const session = await ensureLoginAndMerge();
+      const session = await tryExistingSessionSync();
+      if (!session) return;
       if (isBlocked) {
         await cloudUnblockForEvent(session, event, prevStore);
       } else {
         await cloudBlock(session, event, reason);
       }
-      // 登录合并可能用云端旧状态覆盖本机，写完云端后以本机持久化记录为准。
       setDismissStore(loadDismissMarks());
       setPrefsError(null);
     } catch {
@@ -342,28 +370,19 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
 
   const handleToggleLike = async (event: TimelineEvent) => {
     const isLiked = Boolean(liked[event.id]);
-    // 本机先生效：点下去立即变状态，不等登录；登录与云端同步在后台做。
-    const next = { ...liked };
-    if (isLiked) delete next[event.id];
-    else {
-      next[event.id] = {
-        at: Date.now(),
-        type: event.type,
-        filmId: event.filmId,
-        headline: event.headline || event.filmTitle,
-        summary: event.summary,
-      };
-    }
+    // 本机持久化先生效；仅当已有会话时静默写云端，绝不弹登录。
+    const next = toggleLikeEvent(event, liked);
     setLiked(next);
     try {
-      const session = await ensureLoginAndMerge();
+      const session = await tryExistingSessionSync();
+      if (!session) return;
       if (isLiked) await cloudUnlike(session, event.id);
       else await cloudLike(session, event);
-      // 登录合并可能用云端旧状态覆盖本机，写完云端后以本机这次操作为准。
       setLiked(next);
+      setLikeMarks(next);
       setPrefsError(null);
     } catch {
-      setPrefsError("登录未完成：点赞仅当前页面可见，未同步到其他设备");
+      setPrefsError("云端同步失败：点赞已记在本机，未同步到其他设备");
     }
   };
 
@@ -547,13 +566,19 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         <h2 className="mt-2 font-display text-[1.05rem] leading-snug text-cinema-text group-hover:text-cinema-gold-light sm:text-lg">
                           {event.headline || event.summary || event.filmTitle}
                         </h2>
-                        {event.summary &&
-                        event.summary.trim() &&
-                        event.summary.trim() !== (event.headline || "").trim() ? (
-                          <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
-                            {event.summary}
-                          </p>
-                        ) : null}
+                        {(() => {
+                          const sub = scrubNegativeCopy(
+                            dedupeSubtitleAgainstTitle(
+                              event.headline || event.filmTitle || "",
+                              event.summary || "",
+                            ),
+                          );
+                          return sub ? (
+                            <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
+                              {sub}
+                            </p>
+                          ) : null;
+                        })()}
                       </Link>
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted">
                         <div className="flex flex-wrap items-center gap-2">
@@ -807,7 +832,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             <textarea
               value={reasonText}
               onChange={(e) => setReasonText(e.target.value)}
-              placeholder="说说原因，比如：题材不感兴趣、已经看过、质量不行……"
+              placeholder="说说原因，比如：题材不感兴趣、已经看过、想换个风格……"
               autoFocus
               rows={6}
               className="mt-4 w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none min-h-[160px]"

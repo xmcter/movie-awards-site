@@ -109,6 +109,8 @@ function EventPoster({
           alt={event.filmTitle}
           loading="lazy"
           decoding="async"
+          width={168}
+          height={252}
           className="h-full w-full object-cover object-center"
           onError={() => setFailed(true)}
         />

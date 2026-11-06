@@ -78,7 +78,8 @@ const LOCAL_POSTER_FILES = (() => {
     for (const name of fs.readdirSync(dir)) {
       const m = name.match(/^(.+)\.(jpe?g|png|webp)$/i);
       if (!m) continue;
-      map.set(m[1]!, `/posters/${name}`);
+      // Deterministically prefer optimized WebP when the original is retained.
+      if (!map.has(m[1]!) || /\.webp$/i.test(name)) map.set(m[1]!, `/posters/${name}`);
     }
     return map;
   } catch {

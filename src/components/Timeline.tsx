@@ -525,7 +525,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
                         <time dateTime={event.date || undefined}>{event.dateLabel}</time>
                         {event.date ? (
-                          <span className="text-[10px] tracking-wide text-cinema-muted/45">
+                          <span className="text-[10px] tracking-wide text-cinema-muted/80">
                             消息时间
                           </span>
                         ) : null}
@@ -559,7 +559,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           </p>
                         ) : null}
                       </Link>
-                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted/65">
+                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted">
                         <div className="flex flex-wrap items-center gap-2">
                           {event.filmId ? (
                             <Link

@@ -1,10 +1,10 @@
 import type { TimelineEventType } from "@/types";
 
 const STYLES: Record<TimelineEventType, string> = {
-  nomination: "bg-sky-500/15 text-sky-300",
-  win: "bg-cinema-gold/20 text-cinema-gold-light",
-  streaming: "bg-emerald-500/15 text-emerald-300",
-  auteur: "bg-violet-500/15 text-violet-300",
+  nomination: "bg-sky-500/20 text-sky-200",
+  win: "bg-cinema-gold/25 text-cinema-gold-light",
+  streaming: "bg-emerald-500/20 text-emerald-200",
+  auteur: "bg-violet-500/20 text-violet-200",
 };
 
 const LABELS: Record<TimelineEventType, string> = {

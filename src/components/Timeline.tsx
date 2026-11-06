@@ -571,7 +571,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                               {event.filmTitle}
                               {event.filmYear ? ` · ${event.filmYear}` : ""}
                               {event.directors && event.directors[0] ? ` · ${event.directors[0]}` : ""}
-                              <span className="ml-1 text-cinema-gold/70">影片档 →</span>
+                              <span className="ml-1 text-cinema-gold">影片档 →</span>
                             </Link>
                           ) : null}
                           <a

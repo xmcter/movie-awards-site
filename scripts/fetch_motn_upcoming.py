@@ -293,6 +293,48 @@ def upsert_release(film: dict[str, Any], release: dict[str, Any]) -> str:
     return "added"
 
 
+
+def best_vertical_poster(image_set: Any) -> str | None:
+    """Pick a MotN vertical poster URL (prefer larger)."""
+    if not isinstance(image_set, dict):
+        return None
+    node = image_set.get("verticalPoster")
+    if not isinstance(node, dict):
+        return None
+    for size in ("w720", "w600", "w480", "w360", "w240"):
+        url = node.get(size)
+        if isinstance(url, str) and url.startswith("https://"):
+            return url
+    return None
+
+
+def localize_poster(film_id: str, image_set: Any) -> str | None:
+    """Download MotN poster into public/posters/{id}.jpg; return site path or None."""
+    url = best_vertical_poster(image_set)
+    if not url:
+        return None
+    out_dir = ROOT / "public" / "posters"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    dest = out_dir / f"{film_id}.jpg"
+    if dest.exists() and dest.stat().st_size > 2000:
+        return f"/posters/{film_id}.jpg"
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": UA, "Accept": "image/*"},
+        )
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = resp.read()
+        if len(data) < 2000:
+            log(f"poster too small for {film_id}: {len(data)}")
+            return None
+        dest.write_bytes(data)
+        return f"/posters/{film_id}.jpg"
+    except Exception as e:  # noqa: BLE001 - editorial ingest must continue
+        log(f"poster download failed for {film_id}: {e}")
+        return None
+
+
 def build_new_film(
     title_en: str,
     day: str,
@@ -436,6 +478,7 @@ def main() -> int:
                 "cast": cast,
                 "genres": genres,
                 "showId": sid,
+                "imageSet": show.get("imageSet"),
             }
         )
 
@@ -502,6 +545,11 @@ def main() -> int:
         )
         if hit:
             fname, _catalog, film = hit
+            if not film.get("poster"):
+                local_poster = localize_poster(str(film["id"]), row.get("imageSet"))
+                if local_poster:
+                    film["poster"] = local_poster
+                    dirty.add(fname)
             action = upsert_release(film, release)
             report["actions"][f"{film['id']}|{platform}|{day}"] = action
             if action == "skipped":
@@ -542,6 +590,9 @@ def main() -> int:
             row.get("cast") or [],
             row.get("genres") or [],
         )
+        local_poster = localize_poster(film["id"], row.get("imageSet"))
+        if local_poster:
+            film["poster"] = local_poster
         existing = next((f for f in motn["films"] if f.get("id") == film["id"]), None)
         if existing:
             action = upsert_release(existing, release)

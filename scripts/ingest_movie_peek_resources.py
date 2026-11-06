@@ -75,6 +75,44 @@ def safe_text(value):
     return value.strip()
 
 
+
+def localize_douban_poster(film_id: str, poster_url: str, identity: str, ssh_host: str) -> str | None:
+    """Download Douban/TMDB poster via ECS (box often gets 418) into public/posters."""
+    if not isinstance(poster_url, str) or not poster_url.startswith("https://"):
+        return None
+    out = ROOT / "public" / "posters" / f"{film_id}.jpg"
+    if out.exists() and out.stat().st_size > 2000:
+        return f"/posters/{film_id}.jpg"
+    remote = f"/tmp/news-poster-{film_id}.jpg"
+    cmd = [
+        "ssh", "-i", str(Path(identity).expanduser()), "-o", "BatchMode=yes",
+        "-o", "ConnectTimeout=15", "-o", "StrictHostKeyChecking=yes", ssh_host,
+        (
+            "curl -fsS --max-time 30 -A "
+            + shlex.quote("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
+            + " -H "
+            + shlex.quote("Referer: https://movie.douban.com/")
+            + " -o "
+            + shlex.quote(remote)
+            + " "
+            + shlex.quote(poster_url)
+        ),
+    ]
+    try:
+        subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=60)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        pull = [
+            "scp", "-i", str(Path(identity).expanduser()), "-o", "BatchMode=yes",
+            "-o", "StrictHostKeyChecking=yes", f"{ssh_host}:{remote}", str(out),
+        ]
+        subprocess.run(pull, check=True, capture_output=True, text=True, timeout=60)
+        if out.exists() and out.stat().st_size > 2000:
+            return f"/posters/{film_id}.jpg"
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError):
+        return None
+    return None
+
+
 def film_from_meta(meta, film_id, title, year):
     film = {
         "id": film_id, "title": title, "year": year,
@@ -225,6 +263,17 @@ def main():
         details = dict(pool.map(fetch_detail, titles))
     data_dir = ROOT / "src" / "data"
     catalog, news, report = plan_ingest(rows, details, data_dir, args.date, args.min_year or int(args.date[:4]) - 1)
+    # Prefer local posters: Douban hotlinks are blocked in many clients (418/403).
+    report["posters_localized"] = 0
+    for film in catalog.get("films", []):
+        remote = film.get("poster")
+        if isinstance(remote, str) and "doubanio.com" in remote:
+            local = None if args.dry_run else localize_douban_poster(
+                film["id"], remote, args.identity, args.ssh_host
+            )
+            if local:
+                film["poster"] = local
+                report["posters_localized"] += 1
     if not args.dry_run:
         # Only explicit allowlisted metadata and Weibo URLs reach these files.
         for filename, data in [("movie-peek-catalog.json", catalog), ("auteur-news.json", news)]:

@@ -323,15 +323,27 @@ function isAwardedFilm(film: Film): boolean {
   return AWARDED_FILM_IDS.has(film.id) || AWARDED_FILM_IDS.has(FILM_ALIASES[film.id] || "");
 }
 
-/** 质量分：越高越优先；负分硬过滤出时间线。 */
+/**
+ * 流媒体定档只收新片：上映/首映年 >= 当前公历年 - 2（近两年新片；经典回档剔除）。
+ * 经典回档、片库老片上新一律不进主列表（影片档仍可保留 streaming）。
+ */
+export function streamingNewFilmMinYear(now = new Date()): number {
+  return now.getFullYear() - 2;
+}
+
+export function isNewStreamingFilm(film: Film, now = new Date()): boolean {
+  const y = film.year;
+  if (typeof y !== "number" || !Number.isFinite(y)) return false;
+  return y >= streamingNewFilmMinYear(now);
+}
+
+/** 质量分：越高越优先；负分硬过滤出时间线。先过新片年窗，再打分。 */
 export function streamingQualityScore(film: Film, platform?: string): number {
   let score = 0;
   if (isAuteurFilm(film)) score += 100;
   if (isAwardedFilm(film)) score += 80;
   if (platform === "mubi") score += 45;
   if (platform === "apple-tv" && isAuteurFilm(film)) score += 10;
-  // 经典片在精品平台重映
-  if (film.year && film.year <= 2018 && (platform === "mubi" || isAuteurFilm(film))) score += 25;
   // 核心片库（非纯 MotN/WON 流水线）
   const coreIds = new Set((filmsData as Film[]).map((f) => f.id));
   if (coreIds.has(film.id) || film.id in filmCopy) score += 20;
@@ -346,6 +358,8 @@ export function streamingQualityScore(film: Film, platform?: string): number {
 }
 
 function shouldAdmitStreaming(film: Film, platform: string): boolean {
+  // 老片回档 / 经典上新：硬拒（即使作者或 MUBI）
+  if (!isNewStreamingFilm(film)) return false;
   // 作者 / 获奖 / MUBI 精品通道直接收
   if (isAuteurFilm(film) || isAwardedFilm(film) || platform === "mubi") return true;
   return streamingQualityScore(film, platform) >= 25;

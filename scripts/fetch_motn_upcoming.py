@@ -25,6 +25,7 @@ import os
 import re
 import sys
 import time
+from datetime import datetime
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -183,6 +184,12 @@ def genre_blob(show: dict[str, Any]) -> str:
     return " ".join(parts)
 
 
+def min_new_film_year(ref_year: int | None = None) -> int:
+    """Align with news timeline / peek: keep releaseYear >= calendar_year - 2."""
+    y = ref_year if ref_year is not None else datetime.now().year
+    return y - 2
+
+
 def should_skip(change: dict[str, Any], show: dict[str, Any] | None) -> str | None:
     if change.get("changeType") != "upcoming":
         return "not_upcoming"
@@ -214,6 +221,13 @@ def should_skip(change: dict[str, Any], show: dict[str, Any] | None) -> str | No
     title = (show.get("title") or show.get("originalTitle") or "").strip()
     if not title:
         return "empty_title"
+    year_raw = show.get("releaseYear")
+    try:
+        year_i = int(year_raw) if year_raw is not None else None
+    except (TypeError, ValueError):
+        year_i = None
+    if year_i is not None and year_i < min_new_film_year():
+        return "old_film_catalog_add"
     return None
 
 

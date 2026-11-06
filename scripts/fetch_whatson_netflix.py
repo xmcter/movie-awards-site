@@ -21,6 +21,7 @@ import json
 import re
 import sys
 import time
+from datetime import datetime
 import urllib.error
 import urllib.request
 from datetime import date, datetime
@@ -120,6 +121,12 @@ def is_real_date(s: str) -> bool:
         return False
 
 
+def min_new_film_year(ref_year: int | None = None) -> int:
+    """Align with news timeline / peek: keep copyrightYear >= calendar_year - 2."""
+    y = ref_year if ref_year is not None else datetime.now().year
+    return y - 2
+
+
 def should_skip_movie(item: dict[str, Any]) -> str | None:
     name = unescape(str(item.get("name") or "")).strip()
     desc = unescape(str(item.get("description") or "")).strip()
@@ -138,6 +145,13 @@ def should_skip_movie(item: dict[str, Any]) -> str | None:
     d = item.get("datePublished")
     if not d or not is_real_date(str(d)):
         return "no_confirmed_date"
+    year_raw = item.get("copyrightYear")
+    try:
+        year_i = int(year_raw) if year_raw is not None else None
+    except (TypeError, ValueError):
+        year_i = None
+    if year_i is not None and year_i < min_new_film_year():
+        return "old_film_catalog_add"
     return None
 
 

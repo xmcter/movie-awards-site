@@ -1033,6 +1033,163 @@
           "sourceLabel": "Movie of the Night"
         }
       ]
+    },
+    {
+      "id": "hot-line",
+      "title": "Hot Line",
+      "titleEn": "Hot Line",
+      "year": 2025,
+      "synopsis": "Hot Line。流媒体定档来自 Movie of the Night（美国区）。",
+      "directors": [
+        "Nicanor Loreti"
+      ],
+      "cast": [
+        "Magui Bravi",
+        "Demián Salomón",
+        "María Eugenia Rigón",
+        "Pablo Pinto",
+        "Germán Baudino",
+        "Ezequiel Rodríguez",
+        "Darío Levy"
+      ],
+      "genres": [
+        "Crime",
+        "Horror"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "max",
+          "date": "2026-11-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max · 地区：美国（Movie of the Night / Streaming Availability；须以平台官方为准） · 来源 https://play.hbomax.com/movie/ebe90b9e-fb44-4931-b2ed-5d5c16a94414",
+          "source": "https://play.hbomax.com/movie/ebe90b9e-fb44-4931-b2ed-5d5c16a94414",
+          "sourceLabel": "Movie of the Night"
+        }
+      ]
+    },
+    {
+      "id": "a-wisconsin-christmas-pie",
+      "title": "A Wisconsin Christmas Pie",
+      "titleEn": "A Wisconsin Christmas Pie",
+      "year": 2025,
+      "synopsis": "A pastry chef returns home for the holidays and must choose between a dream job and saving her family’s cherry orchard—with help from an old flame.",
+      "directors": [
+        "John Stimpson"
+      ],
+      "cast": [
+        "Katie Leclerc",
+        "Ryan Carnes",
+        "Ed Amatrudo",
+        "Debrah Farentino",
+        "Seamus Flynn",
+        "Peter Carey",
+        "Parth Akoliya"
+      ],
+      "genres": [
+        "Romance"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（Movie of the Night / Streaming Availability；须以平台官方为准） · 来源 https://www.netflix.com/title/82836241",
+          "source": "https://www.netflix.com/title/82836241",
+          "sourceLabel": "Movie of the Night"
+        }
+      ]
+    },
+    {
+      "id": "gianmarco-soresi-thief-of-joy",
+      "title": "Gianmarco Soresi: Thief of Joy",
+      "titleEn": "Gianmarco Soresi: Thief of Joy",
+      "year": 2025,
+      "synopsis": "Gianmarco Soresi jokes about his dysfunctional family, theater roots, and the mess of modern life.",
+      "directors": [
+        "Gianmarco Soresi"
+      ],
+      "cast": [
+        "Gianmarco Soresi",
+        "Tovah Silbermann"
+      ],
+      "genres": [
+        "Comedy"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-12-03",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（Movie of the Night / Streaming Availability；须以平台官方为准） · 来源 https://www.netflix.com/title/82189300",
+          "source": "https://www.netflix.com/title/82189300",
+          "sourceLabel": "Movie of the Night"
+        }
+      ]
+    },
+    {
+      "id": "my-crazy-feminist-girlfriend",
+      "title": "My Crazy Feminist Girlfriend",
+      "titleEn": "My Crazy Feminist Girlfriend",
+      "year": 2026,
+      "synopsis": "My Crazy Feminist Girlfriend。流媒体定档来自 Movie of the Night（美国区）。",
+      "directors": [
+        "Keiichi Kobayashi"
+      ],
+      "cast": [
+        "Mei Nagano",
+        "Taisei Kido",
+        "Junki Tozuka",
+        "Maho Nonami",
+        "Sotaro Tanaka",
+        "Hiroki Konno",
+        "Manami Higa"
+      ],
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-12-03",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（Movie of the Night / Streaming Availability；须以平台官方为准） · 来源 https://www.netflix.com/title/81703380",
+          "source": "https://www.netflix.com/title/81703380",
+          "sourceLabel": "Movie of the Night"
+        }
+      ]
     }
   ],
   "ceremonies": []

@@ -1469,6 +1469,216 @@
           "sourceLabel": "What's on Netflix"
         }
       ]
+    },
+    {
+      "id": "a-cherry-pie-christmas",
+      "title": "A Cherry Pie Christmas",
+      "titleEn": "A Cherry Pie Christmas",
+      "year": 2025,
+      "synopsis": "A Cherry Pie Christmas。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
+    },
+    {
+      "id": "a-thousand-and-one",
+      "title": "A Thousand and One",
+      "titleEn": "A Thousand and One",
+      "year": 2023,
+      "synopsis": "A Thousand and One。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
+    },
+    {
+      "id": "christmas-at-fields-ranch",
+      "title": "Christmas at Fields Ranch",
+      "titleEn": "Christmas at Fields Ranch",
+      "year": 2025,
+      "synopsis": "Christmas at Fields Ranch。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
+    },
+    {
+      "id": "hb2me",
+      "title": "HB2ME",
+      "titleEn": "HB2ME",
+      "year": 2026,
+      "synopsis": "HB2ME。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
+    },
+    {
+      "id": "the-super-mario-galaxy-movie",
+      "title": "The Super Mario Galaxy Movie",
+      "titleEn": "The Super Mario Galaxy Movie",
+      "year": 2026,
+      "synopsis": "The Super Mario Galaxy Movie。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-30",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
+    },
+    {
+      "id": "coyote-ugly",
+      "title": "Coyote Ugly",
+      "titleEn": "Coyote Ugly",
+      "year": 2000,
+      "synopsis": "Coyote Ugly。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
+    },
+    {
+      "id": "edward-scissorhands",
+      "title": "Edward Scissorhands",
+      "titleEn": "Edward Scissorhands",
+      "year": 1990,
+      "synopsis": "Edward Scissorhands。流媒体定档来自 What's on Netflix（美国区）。",
+      "directors": [],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "What's on Netflix"
+        }
+      ]
     }
   ],
   "ceremonies": []

@@ -185,8 +185,8 @@ def plan_ingest(peek, details, data_dir, day, min_year):
         notice = {
             "id": f"movie-peek-{film_id}-first-resource", "filmId": film_id,
             "publishedAt": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds"),
-            "date": day, "kind": "release", "summary": f"《{film_title}》出资源 · 片库已收录",
-            "detail": f"片库新增{shape}。可通过「微博」入口查看原帖；资源可用性以原帖最新说明为准。",
+            "date": day, "kind": "release", "summary": f"《{film_title}》出资源",
+            "detail": f"已有{shape}。可通过「微博」入口查看原帖；资源可用性以原帖最新说明为准。",
             "weiboUrl": weibo_url(source["weibo_url"]),
             "weiboLabel": safe_text(source.get("source")) or "微博原帖",
         }

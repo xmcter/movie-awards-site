@@ -67,7 +67,7 @@ export default function ContactPage() {
             </li>
             <li>
               <span className="text-cinema-text">新讯线索：</span>
-              欢迎提供符合本站编辑标准的线索：官方/权威媒体公布的流媒体定档（日期+平台+地区），以及「资源已出 / 片库可下」通知线索（请附官方公报、权威报道或片库条目链接）。
+              欢迎提供符合本站编辑标准的线索：官方/权威媒体公布的流媒体定档（日期+平台+地区），以及「资源已出 / 网盘可下」通知线索（请附官方公报、权威报道或可核微博原帖链接）。
             </li>
             <li>
               <span className="text-cinema-text">合作与交流：</span>

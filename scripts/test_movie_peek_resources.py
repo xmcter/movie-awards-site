@@ -44,7 +44,11 @@ class ImporterTests(unittest.TestCase):
         self.assertEqual(news[0]["date"], DAY)
         self.assertEqual(news[0]["weiboUrl"], "https://m.weibo.cn/detail/ABC123")
         self.assertIn("「微博」入口", news[0]["detail"])
-        for hidden in ["找资源", "movie.readcine.com", "登录"]:
+        self.assertEqual(news[0]["summary"], "《测试电影》出资源")
+        self.assertNotIn("片库已收录", news[0]["summary"])
+        self.assertNotIn("片库已收录", news[0]["detail"])
+        self.assertNotIn("片库新增", news[0]["detail"])
+        for hidden in ["找资源", "movie.readcine.com", "登录", "片库已收录"]:
             self.assertNotIn(hidden, news[0]["detail"])
         exported = json.dumps([catalog, news], ensure_ascii=False)
         for secret in ["pan.quark", "SHOULD_NOT_EXPORT", "passcode", "SECRET-CODE-ZXY9"]:

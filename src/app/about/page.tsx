@@ -66,7 +66,7 @@ export default function AboutPage() {
             </li>
             <li>
               <span className="text-cinema-text">主轴 B · 新片出资源通知：</span>
-              当高质量中字压制释出（WEB-DL / BDRip / 官方数字版等，国内影迷可实际获取）或片库记录已核实有资源时，发布时间线通知并附资源形态简述；有可核微博原帖时提供微博入口（每片首次出资源记一次，重大画质升级可再记一次）。
+              当高质量中字压制释出（WEB-DL / BDRip / 官方数字版等，国内影迷可实际获取）时，发布时间线通知并附资源形态简述；有可核微博原帖时提供微博入口（每片首次出资源记一次，重大画质升级可再记一次）。
             </li>
             <li>
               <span className="text-cinema-text">特例：</span>

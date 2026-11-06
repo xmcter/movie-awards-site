@@ -16,7 +16,7 @@ export const PLATFORM_LABELS: Record<StreamingPlatform, string> = {
 };
 
 export const RELEASE_STATUS_LABELS: Record<ReleaseStatus, string> = {
-  announced: "已公布",
+  announced: "",  // 有日期直接写日期，不写「已公布」
   estimated: "预计",
   tba: "待定",
 };
@@ -53,7 +53,7 @@ export function streamingSourceLabel(release: {
     if (host.includes("whentostream")) return "When To Stream";
     if (host.includes("whats-on-netflix")) return "What's on Netflix";
     if (host.includes("movieofthenight") || host.includes("streamingavailability"))
-      return "Movie of the Night";
+      return "片夜定档";
     if (host.includes("deadline")) return "Deadline";
     if (host.includes("variety")) return "Variety";
     if (host.includes("thewrap")) return "The Wrap";

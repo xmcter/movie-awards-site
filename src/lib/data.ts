@@ -321,7 +321,8 @@ export function getTimelineEvents(): TimelineEvent[] {
         film,
         platform,
         statusLabel,
-        datePart: "", // 时间线不显示定档日期；平台日程保留在影片档案。
+        // 有确切日期就直接写日期，不写「已公布」
+        datePart,
         region: release.region,
       });
       const body = dedupeSubtitleAgainstTitle(

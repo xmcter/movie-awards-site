@@ -37,7 +37,48 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "src" / "data"
 API_BASE = "https://api.movieofthenight.com/v4"
 UA = "ReadCineBot/1.0 (+https://news.readcine.com; contact=tonyecter@gmail.com)"
-SOURCE_LABEL = "Movie of the Night"
+SOURCE_LABEL = "片夜定档"
+
+# 已知通译 / 意译；入库时 title 优先中文，titleEn 保留英文原名。
+KNOWN_TITLE_ZH: dict[str, str] = {
+    "another-round": "酒精计划",
+    "man-of-iron": "铁人",
+    "man-of-marble": "大理石人",
+    "peppermint-candy": "薄荷糖",
+    "poetry": "诗",
+    "oasis": "绿洲",
+    "green-fish": "绿鱼",
+    "female-perversions": "女性倒错",
+    "innocent-sorcerers": "无辜的魔术师",
+    "the-promised-land": "应许之地",
+    "the-wedding": "婚礼",
+    "without-anesthesia": "无麻醉",
+    "fear-x": "恐惧X",
+    "thirst-street": "欲望街",
+    "being-heumann": "成为休曼",
+    "barrio-triste": "悲伤街区",
+    "taxi-moto": "摩的",
+    "in-a-holidaze": "节日迷雾",
+    "la-bola-negra": "黑球",
+    "the-man-with-the-bag": "提袋人",
+    "hot-line": "热线",
+    "a-wisconsin-christmas-pie": "威斯康星圣诞派",
+    "gianmarco-soresi-thief-of-joy": "詹马尔科·索雷西：快乐窃贼",
+    "my-crazy-feminist-girlfriend": "我的疯狂女权女友",
+    "tyler-perrys-the-gospel-of-christmas": "泰勒·佩里之圣诞福音",
+    "a-prince-in-paradise": "天堂王子",
+    "stranger-things-fireplace": "怪奇物语：壁炉",
+    "madden": "麦登",
+    "perfect-liars": "完美骗子",
+    "way-of-the-warrior-kid": "战士小子之道",
+}
+
+
+def title_zh_for(title_en: str) -> str:
+    """有中文译名用中文；否则暂留英文（后续可人工补 film-copy）。"""
+    fid = slugify(title_en)
+    return KNOWN_TITLE_ZH.get(fid, title_en)
+
 REGION = "美国"
 # MotN US catalog ids → site StreamingPlatform
 SERVICE_TO_PLATFORM = {
@@ -229,10 +270,7 @@ def platform_label(platform: str) -> str:
 def make_release(
     platform: str, day: str, source_url: str, service_name: str
 ) -> dict[str, Any]:
-    note = (
-        f"{service_name} · 地区：{REGION}（Movie of the Night / Streaming Availability；"
-        f"须以平台官方为准） · 来源 {source_url}"
-    )
+    note = f"{service_name} {REGION}区定档，以平台官方为准"
     return {
         "publishedAt": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds"),
         "platform": platform,
@@ -348,15 +386,16 @@ def build_new_film(
     genres: list[str],
 ) -> dict[str, Any]:
     fid = slugify(title_en)
+    title_zh = title_zh_for(title_en)
     y = year or int(day[:4])
     syn = overview.strip() if overview.strip() else (
-        f"{title_en}。流媒体定档来自 Movie of the Night（美国区）。"
+        f"《{title_zh}》流媒体定档（美国区，片夜数据；以平台官方为准）。"
     )
     if len(syn) > 400:
         syn = syn[:397].rstrip() + "…"
     return {
         "id": fid,
-        "title": title_en,
+        "title": title_zh,
         "titleEn": title_en,
         "year": y,
         "synopsis": syn,

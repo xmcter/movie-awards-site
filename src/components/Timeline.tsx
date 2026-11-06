@@ -606,41 +606,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             {isBlocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
                           </button>
                         </div>
-                        {reasonTarget?.id === event.id ? (
-                          <form
-                            className="mt-2 flex flex-wrap items-center gap-2"
-                            onSubmit={(e) => {
-                              e.preventDefault();
-                              void confirmDismissWithReason();
-                            }}
-                          >
-                            <input
-                              type="text"
-                              value={reasonText}
-                              onChange={(e) => setReasonText(e.target.value)}
-                              placeholder="为什么不再推荐？比如：不喜欢这个类型"
-                              autoFocus
-                              className="min-w-0 flex-1 rounded-full border border-cinema-border/60 bg-cinema-card px-3 py-1.5 text-xs text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none"
-                            />
-                            <button
-                              type="submit"
-                              disabled={!reasonText.trim()}
-                              className="rounded-full border border-cinema-gold/40 bg-cinema-gold/10 px-3 py-1.5 text-xs font-medium text-cinema-gold disabled:opacity-40"
-                            >
-                              确认屏蔽
-                            </button>
-                            <button
-                              type="button"
-                              onClick={() => {
-                                setReasonTarget(null);
-                                setReasonText("");
-                              }}
-                              className="rounded-full border border-cinema-border/60 px-3 py-1.5 text-xs text-cinema-muted hover:text-cinema-text"
-                            >
-                              取消
-                            </button>
-                          </form>
-                        ) : null}
                         {blockReason ? (
                           <p className="mt-2 text-xs text-cinema-muted">
                             不再推荐原因：{blockReason}
@@ -792,6 +757,70 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
           })}
         </div>
       )}
+
+      {reasonTarget ? (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/55 p-4"
+          role="presentation"
+          onClick={() => {
+            setReasonTarget(null);
+            setReasonText("");
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              e.preventDefault();
+              setReasonTarget(null);
+              setReasonText("");
+            }
+          }}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="news-dismiss-reason-title"
+            className="w-full max-w-lg rounded-2xl border border-cinema-border bg-cinema-card p-5 shadow-2xl sm:p-6"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3
+              id="news-dismiss-reason-title"
+              className="font-display text-lg text-cinema-text"
+            >
+              不再推荐这条？
+            </h3>
+            <p className="mt-2 line-clamp-2 text-sm text-cinema-muted">
+              {reasonTarget.headline || reasonTarget.filmTitle}
+            </p>
+            <textarea
+              value={reasonText}
+              onChange={(e) => setReasonText(e.target.value)}
+              placeholder="说说原因，比如：题材不感兴趣、已经看过、质量不行……"
+              autoFocus
+              rows={6}
+              className="mt-4 w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none min-h-[160px]"
+            />
+            <div className="mt-5 flex justify-end gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setReasonTarget(null);
+                  setReasonText("");
+                }}
+                className="rounded-full border border-cinema-border/70 px-4 py-2.5 text-sm text-cinema-muted hover:text-cinema-text"
+              >
+                取消
+              </button>
+              <button
+                type="button"
+                disabled={!reasonText.trim()}
+                onClick={() => void confirmDismissWithReason()}
+                className="rounded-full border border-cinema-gold/40 bg-cinema-gold/15 px-4 py-2.5 text-sm font-medium text-cinema-gold disabled:opacity-40"
+              >
+                确认不再推荐
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

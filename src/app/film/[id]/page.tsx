@@ -335,14 +335,17 @@ export default async function FilmPage({
               })
               .map((release) => {
               const platform = PLATFORM_LABELS[release.platform] || release.platform;
-              const status = RELEASE_STATUS_LABELS[release.status];
+              const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
               const when = release.date ? formatDate(release.date) : "尚未公布";
+              const statusBit = status ? `${status}` : "";
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}
                   className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3 text-sm text-cinema-muted"
                 >
-                  {platform} · {status} {when}
+                  {platform}
+                  {statusBit ? ` · ${statusBit}` : ""}
+                  {` · ${when}`}
                   {release.region ? ` · ${release.region}` : ""}
                   {release.note ? `（${release.note}）` : ""}
                   {release.source ? ` · 来源：${release.source}` : ""}

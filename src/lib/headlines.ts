@@ -224,7 +224,16 @@ export function buildStreamingHeadline(opts: {
   if (statusLabel === "待定") {
     return `${title}${platform}窗口待定${reg}`;
   }
-  return `${title}${platform}${statusLabel}${datePart}${reg}`;
+  if (statusLabel === "预计") {
+    return datePart
+      ? `${title}${platform}预计${datePart}${reg}`
+      : `${title}${platform}预计上线${reg}`;
+  }
+  // announced：直接写日期，不写「已公布」
+  if (datePart) {
+    return `${title}${platform} · ${datePart}${reg}`;
+  }
+  return `${title}${platform}${reg}`;
 }
 
 export function buildStreamingBody(opts: {
@@ -239,7 +248,12 @@ export function buildStreamingBody(opts: {
   // 副标题不再重复标题里已有的 平台/状态/日期/地区；只保留增量信息。
   const bits: string[] = [];
   if (note) {
-    const cleaned = note.replace(/^[（(]\s*/, "").replace(/\s*[）)]$/, "").trim();
+    let cleaned = note.replace(/^[（(]\s*/, "").replace(/\s*[）)]$/, "").trim();
+    cleaned = cleaned.replace(/\s*·\s*来源\s+https?:\/\/\S+/gi, "");
+    cleaned = cleaned.replace(/Movie of the Night\s*\/\s*Streaming Availability/gi, "片夜数据");
+    cleaned = cleaned.replace(/When To Stream/gi, "定档来源");
+    cleaned = cleaned.replace(/What'?s on Netflix/gi, "Netflix 新片");
+    cleaned = cleaned.replace(/\s{2,}/g, " ").replace(/\s*·\s*$/, "").trim();
     if (cleaned) bits.push(cleaned);
   }
   // 导演信息不在流媒体标题里时，可作一句补充；已有 note 则不必硬凑。

@@ -151,21 +151,24 @@ export default async function EventPage({
           </div>
           <div className="min-w-0 flex-1 p-3 pl-3 sm:p-4 sm:pl-4">
             <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-              <time dateTime={event.date || undefined}>{event.dateLabel}</time>
               <TypeBadge type={event.type} label={badge} />
-              {event.sourceLabel ? (
-                event.sourceUrl ? (
+              {event.sourceLabel || event.sourcePublishedLabel ? (
+                event.sourceUrl && event.sourceLabel ? (
                   <a
                     href={event.sourceUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-cinema-border/60 bg-cinema-elevated/40 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted/70 hover:border-cinema-gold/30 transition"
+                    className="rounded-full border border-cinema-border/60 bg-cinema-elevated/50 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted hover:border-cinema-gold/30 transition"
                   >
-                    {event.sourceLabel}
+                    {[event.sourceLabel ? `来源·${event.sourceLabel}` : null, event.sourcePublishedLabel]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </a>
                 ) : (
-                  <span className="rounded-full border border-cinema-border/60 bg-cinema-elevated/40 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted/70">
-                    {event.sourceLabel}
+                  <span className="rounded-full border border-cinema-border/60 bg-cinema-elevated/50 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted">
+                    {[event.sourceLabel ? `来源·${event.sourceLabel}` : null, event.sourcePublishedLabel]
+                      .filter(Boolean)
+                      .join(" · ")}
                   </span>
                 )
               ) : null}

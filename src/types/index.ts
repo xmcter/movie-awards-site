@@ -42,6 +42,8 @@ export type AwardOrgId =
 export interface StreamingRelease {
   /** 资讯首次发布/入库时间；与平台上线日期 date 分离。 */
   publishedAt?: string;
+  /** 源站原文发布时间（若可得）；优先于 publishedAt 展示。 */
+  sourcePublishedAt?: string;
   platform: StreamingPlatform;
   date?: string;
   status: ReleaseStatus;
@@ -114,12 +116,18 @@ export type AuteurNewsKind =
 export interface AuteurNews {
   /** 可选精确发布时间；旧稿使用 date（消息发布日）。 */
   publishedAt?: string;
+  /** 源站/原文发布时间（片库 posted_at、微博发帖等）；优先于入库时间展示与排序。 */
+  sourcePublishedAt?: string;
   id: string;
   filmId: string;
   date: string;
   kind: AuteurNewsKind;
   summary: string;
   detail?: string;
+  /** 抓取源站可读名（中文优先）。 */
+  sourceLabel?: string;
+  /** 源站 URL（微博原帖等）；勿放网盘。 */
+  source?: string;
   /** 微博原帖；不存网盘链接或提取码。 */
   weiboUrl?: string;
   weiboLabel?: string;
@@ -149,9 +157,13 @@ export interface TimelineEvent {
   awards?: string[];
   directors?: string[];
   filmKind?: FilmKind;
-  /** 流媒体定档来源展示名（When To Stream / What's on Netflix / 编辑） */
+  /** 抓取源站可读名（中文优先） */
   sourceLabel?: string;
   sourceUrl?: string;
+  /** 源站/原文发布时间 ISO；列表展示用，不是定档日。 */
+  sourcePublishedAt?: string;
+  /** 列表短标签，如「原文 11月6日 18:40」或「收录 11月5日」 */
+  sourcePublishedLabel?: string;
   weiboUrl?: string;
   weiboLabel?: string;
 }

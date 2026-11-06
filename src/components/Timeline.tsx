@@ -42,25 +42,39 @@ import {
 
 
 
-function SourceTag({ label, href }: { label?: string; href?: string }) {
-  if (!label) return null;
+function SourceTag({
+  label,
+  href,
+  publishedLabel,
+}: {
+  label?: string;
+  href?: string;
+  publishedLabel?: string;
+}) {
+  if (!label && !publishedLabel) return null;
+  const text = [label ? `来源·${label}` : null, publishedLabel].filter(Boolean).join(" · ");
   const className =
-    "rounded-full border border-cinema-border/60 bg-cinema-elevated/40 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted/70";
-  if (href) {
+    "rounded-full border border-cinema-border/60 bg-cinema-elevated/50 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted";
+  if (href && label) {
     return (
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`${className} hover:border-cinema-gold/30 hover:text-cinema-muted transition`}
+        className={`${className} hover:border-cinema-gold/30 hover:text-cinema-gold transition`}
         title={href}
         onClick={(e) => e.stopPropagation()}
+        data-source-label={label}
       >
-        {label}
+        {text}
       </a>
     );
   }
-  return <span className={className}>{label}</span>;
+  return (
+    <span className={className} data-source-label={label || ""}>
+      {text}
+    </span>
+  );
 }
 
 
@@ -512,7 +526,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                     <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
                         <TypeBadge type={event.type} label={displayBadge(event.badge)} />
-                        <SourceTag label={event.sourceLabel} href={event.sourceUrl} />
+                        <SourceTag label={event.sourceLabel} href={event.sourceUrl} publishedLabel={event.sourcePublishedLabel} />
                         {isCardNew(event) ? (
                           <span className="rounded-full bg-cinema-gold px-1.5 py-px text-[10px] font-semibold leading-4 text-cinema-bg">
                             新
@@ -645,7 +659,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                   <li key={p.id} className="text-xs">
                                     <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-cinema-muted">
                                       <TypeBadge type={p.type} label={displayBadge(p.badge)} />
-                                      <SourceTag label={p.sourceLabel} href={p.sourceUrl} />
+                                      <SourceTag label={p.sourceLabel} href={p.sourceUrl} publishedLabel={p.sourcePublishedLabel} />
                                       <WeiboLink href={p.weiboUrl} label={p.weiboLabel} />
                                     </div>
                                     <Link

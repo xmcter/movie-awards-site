@@ -34,7 +34,7 @@ DATA = ROOT / "src" / "data"
 CALENDAR_URL = "https://www.whats-on-netflix.com/coming-soon/calendar/"
 UA = "ReadCineBot/1.0 (+https://news.readcine.com; contact=tonyecter@gmail.com)"
 MIN_INTERVAL_S = 1.2
-SOURCE_LABEL = "What's on Netflix"
+SOURCE_LABEL = "Netflix上新日历"
 REGION = "美国"
 PLATFORM = "netflix"
 CATALOG_FILES = [
@@ -223,7 +223,7 @@ def upsert_release(film: dict[str, Any], release: dict[str, Any]) -> str:
                 cur["sourceLabel"] = SOURCE_LABEL
                 changed = True
             elif "whentostream" in (cur.get("source") or ""):
-                cur["sourceLabel"] = "When To Stream"
+                cur["sourceLabel"] = "定档追踪"
                 changed = True
         if changed:
             streaming[i] = cur

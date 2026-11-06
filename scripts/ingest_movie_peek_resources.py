@@ -211,20 +211,46 @@ def plan_ingest(peek, details, data_dir, day, min_year):
             report["films_added"] += 1
         existing_news = first_resource.get(film_id)
         if existing_news is not None:
+            touched = False
             if not existing_news.get("weiboUrl"):
                 existing_news["weiboUrl"] = weibo_url(source["weibo_url"])
                 existing_news["weiboLabel"] = safe_text(source.get("source")) or "微博原帖"
+                touched = True
+            if not existing_news.get("sourceLabel"):
+                existing_news["sourceLabel"] = "片库·微博"
+                touched = True
+            if not existing_news.get("source") and existing_news.get("weiboUrl"):
+                existing_news["source"] = existing_news["weiboUrl"]
+                touched = True
+            # Prefer library posted_at as original publish time
+            if posted and not existing_news.get("sourcePublishedAt"):
+                iso = posted.replace(" ", "T", 1)
+                if "+" not in iso and "Z" not in iso:
+                    iso = iso + "+08:00"
+                existing_news["sourcePublishedAt"] = iso
+                existing_news["publishedAt"] = iso
+                touched = True
+            if touched:
                 report["weibo_backfilled"] += 1
             skip("first-resource notice already exists for filmId")
             continue
         film_title = by_id[film_id]["title"]
         providers = list(dict.fromkeys(PROVIDERS[link["provider"]] for link in links if link.get("provider") in PROVIDERS))
         shape = "、".join(providers) + "网盘资源" if providers else "网盘资源"
+        # Use library posted_at as source publish time (not ingest clock).
+        src_iso = posted.replace(" ", "T", 1) if posted else ""
+        if src_iso and "+" not in src_iso and "Z" not in src_iso:
+            src_iso = src_iso + "+08:00"
+        if not src_iso:
+            src_iso = datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds")
         notice = {
             "id": f"movie-peek-{film_id}-first-resource", "filmId": film_id,
-            "publishedAt": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds"),
+            "publishedAt": src_iso,
+            "sourcePublishedAt": src_iso,
             "date": day, "kind": "release", "summary": f"《{film_title}》出资源",
             "detail": f"已有{shape}。可通过「微博」入口查看原帖；资源可用性以原帖最新说明为准。",
+            "sourceLabel": "片库·微博",
+            "source": weibo_url(source["weibo_url"]),
             "weiboUrl": weibo_url(source["weibo_url"]),
             "weiboLabel": safe_text(source.get("source")) or "微博原帖",
         }

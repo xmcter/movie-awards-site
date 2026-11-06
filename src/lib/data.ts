@@ -29,6 +29,8 @@ import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
   formatDate,
+  formatSourcePublishedLabel,
+  normalizeSourceLabel,
   streamingSourceLabel,
 } from "@/lib/labels";
 import {
@@ -265,6 +267,89 @@ type CeremonyBucket = {
   noms: CategoryNomination[];
 };
 
+/** 作者向导演（中英名）；命中则优先进时间线。 */
+const AUTEUR_DIRECTORS = [
+  "诺兰", "克里斯托弗·诺兰", "Nolan",
+  "伊纳里图", "Iñárritu", "Inarritu",
+  "李沧东", "Lee Chang-dong", "Chang-dong",
+  "是枝裕和", "是枝", "Kore-eda", "Koreeda",
+  "滨口龙介", "滨口", "Hamaguchi",
+  "阿尔莫多瓦", "Almodóvar", "Almodovar",
+  "赫尔佐格", "Herzog",
+  "洪常秀", "Hong Sang-soo", "Sangsoo",
+  "萨金塞夫", "Zvyagintsev",
+  "迈克·李", "Mike Leigh",
+  "拉雷恩", "拉腊因", "Larrain", "Larraín",
+  "詹姆斯·格雷", "James Gray",
+  "法哈蒂", "Farhadi",
+  "蒙吉", "Mungiu",
+  "莫莱蒂", "Moretti",
+  "帕夫利科夫斯基", "Pawlikowski",
+  "瓦伊达", "Wajda",
+  "温特伯格", "Vinterberg",
+  "雷弗恩", "Refn", "Winding Refn",
+  "大卫·O·拉塞尔", "David O. Russell",
+  "西恩·海德尔", "Sian Heder",
+  "洛兹尼察", "Loznitsa",
+  "格里策巴赫", "Grisebach",
+];
+
+const AWARDED_FILM_IDS = (() => {
+  const ids = new Set<string>();
+  for (const c of ceremonies) {
+    for (const n of c.nominations || []) {
+      if (n.filmId) ids.add(n.filmId);
+    }
+  }
+  return ids;
+})();
+
+/** 口水/凑数定档：节日片、无导演商业流水线等，默认不进主列表。 */
+const FILLER_TITLE_RE =
+  /圣诞|圣诞节|Christmas|Holiday|Tyler Perry|泰勒·?佩里|Paw Patrol|汪汪队|Warrior Kid|战士小子|Bag Man|提袋人|节日迷雾|威斯康星圣诞|快乐窃贼|完美骗子|壁炉|Batman.*Knight|蝙蝠侠：骑士|Super Troopers|Rolling Loud|Angel and the Badman|天使与坏蛋/i;
+
+function directorsBlob(film: Film): string {
+  return (film.directors || []).join(" ");
+}
+
+function isAuteurFilm(film: Film): boolean {
+  const blob = directorsBlob(film);
+  if (!blob.trim()) return false;
+  return AUTEUR_DIRECTORS.some((name) => blob.includes(name));
+}
+
+function isAwardedFilm(film: Film): boolean {
+  return AWARDED_FILM_IDS.has(film.id) || AWARDED_FILM_IDS.has(FILM_ALIASES[film.id] || "");
+}
+
+/** 质量分：越高越优先；负分硬过滤出时间线。 */
+export function streamingQualityScore(film: Film, platform?: string): number {
+  let score = 0;
+  if (isAuteurFilm(film)) score += 100;
+  if (isAwardedFilm(film)) score += 80;
+  if (platform === "mubi") score += 45;
+  if (platform === "apple-tv" && isAuteurFilm(film)) score += 10;
+  // 经典片在精品平台重映
+  if (film.year && film.year <= 2018 && (platform === "mubi" || isAuteurFilm(film))) score += 25;
+  // 核心片库（非纯 MotN/WON 流水线）
+  const coreIds = new Set((filmsData as Film[]).map((f) => f.id));
+  if (coreIds.has(film.id) || film.id in filmCopy) score += 20;
+  const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
+  if (FILLER_TITLE_RE.test(titleBlob)) score -= 80;
+  if (!(film.directors && film.directors.length)) score -= 35;
+  // Netflix 纯上新日历且无作者/奖项线索
+  if (platform === "netflix" && !isAuteurFilm(film) && !isAwardedFilm(film) && score < 40) {
+    score -= 15;
+  }
+  return score;
+}
+
+function shouldAdmitStreaming(film: Film, platform: string): boolean {
+  // 作者 / 获奖 / MUBI 精品通道直接收
+  if (isAuteurFilm(film) || isAwardedFilm(film) || platform === "mubi") return true;
+  return streamingQualityScore(film, platform) >= 25;
+}
+
 export function getTimelineEvents(): TimelineEvent[] {
   const events: TimelineEvent[] = [];
   const today = todayISO();
@@ -309,10 +394,11 @@ export function getTimelineEvents(): TimelineEvent[] {
       // (tba / estimated windows stay on the film page only).
       if (release.status !== "announced" || !release.date) continue;
       if (!release.publishedAt || !isPublished(publicationTime(release).slice(0, 10), today)) continue;
+      // 质量闸：口水定档不进主列表（影片档仍保留 streaming 字段）
+      if (!shouldAdmitStreaming(film, release.platform)) continue;
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = formatDate(release.date);
-      const region = release.region ? ` · ${release.region}` : "";
       const note = release.note ? `（${release.note}）` : "";
       const isLive = isPublished(release.date, today);
       const streamBadge = isLive ? "已上线" : "定档";
@@ -338,10 +424,12 @@ export function getTimelineEvents(): TimelineEvent[] {
       );
 
       const srcLabel = streamingSourceLabel(release);
+      const sourcePublishedAt = release.sourcePublishedAt || undefined;
+      const pubIso = sourcePublishedAt || release.publishedAt;
       events.push({
         id: `stream-${film.id}-${release.platform}-${release.date || "tba"}`,
         type: "streaming",
-        publishedAt: release.publishedAt,
+        publishedAt: pubIso,
         date: release.date || "",
         dateLabel: release.date ? formatDate(release.date) : "待定",
         filmId: film.id,
@@ -358,6 +446,11 @@ export function getTimelineEvents(): TimelineEvent[] {
         filmKind: filmKindOf(film),
         sourceLabel: srcLabel,
         sourceUrl: release.source?.trim() || undefined,
+        sourcePublishedAt: sourcePublishedAt || release.publishedAt,
+        sourcePublishedLabel: formatSourcePublishedLabel(
+          sourcePublishedAt || release.publishedAt,
+          { isOriginal: Boolean(sourcePublishedAt) },
+        ),
       });
     }
   }
@@ -392,10 +485,16 @@ export function getTimelineEvents(): TimelineEvent[] {
         ? news.detail
         : news.summary || "";
     const summary = dedupeSubtitleAgainstTitle(headline, rawSummary);
+    const srcLabel =
+      normalizeSourceLabel(news.sourceLabel) ||
+      streamingSourceLabel({ source: news.source, sourceLabel: news.sourceLabel }) ||
+      (news.weiboUrl ? "微博" : undefined);
+    const sourcePublishedAt = news.sourcePublishedAt || undefined;
+    const pubIso = sourcePublishedAt || news.publishedAt || `${news.date}T00:00:00+08:00`;
     events.push({
       id: `auteur-${news.id}`,
       type: "auteur",
-      publishedAt: news.publishedAt || `${news.date}T00:00:00+08:00`,
+      publishedAt: pubIso,
       date: news.date,
       dateLabel: formatDate(news.date),
       filmId: film.id,
@@ -411,6 +510,13 @@ export function getTimelineEvents(): TimelineEvent[] {
       accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
       directors: film.directors,
       filmKind: kind,
+      sourceLabel: srcLabel,
+      sourceUrl: (news.source || news.weiboUrl || "").trim() || undefined,
+      sourcePublishedAt: sourcePublishedAt || news.publishedAt,
+      sourcePublishedLabel: formatSourcePublishedLabel(
+        sourcePublishedAt || news.publishedAt || `${news.date}T00:00:00+08:00`,
+        { isOriginal: Boolean(sourcePublishedAt) },
+      ),
       weiboUrl: news.weiboUrl,
       weiboLabel: news.weiboLabel,
     });
@@ -422,19 +528,12 @@ export function getTimelineEvents(): TimelineEvent[] {
 
 /**
  * Editorial cap (see EDITORIAL.md): at most MAX_EVENTS_PER_DAY cards per
- * calendar day. Within a day, cards are ranked by eventPriority():
- *   出资源通知 > 流媒体已上线 > 流媒体定档.
+ * **content publication day** (publishedAt / sourcePublishedAt), never per 定档日.
+ * Within a day, cards are ranked by eventPriority():
+ *   出资源 > 作者/获奖定档 > 其余定档；口水流媒体在 shouldAdmitStreaming 已硬过滤。
  * Awards / nominations are never admitted to the timeline (2026-11-05).
- * Ties go to catalog auteurs, then coverage, then data order.
  */
 export const MAX_EVENTS_PER_DAY = 3;
-
-const CATALOG_AUTEURS = [
-  "诺兰", "伊纳里图", "李沧东", "是枝裕和", "滨口龙介", "阿尔莫多瓦",
-  "赫尔佐格", "麦克唐纳", "洪常秀", "萨金塞夫", "迈克·李", "拉雷恩",
-  "拉腊因", "詹姆斯·格雷", "法哈蒂", "蒙吉", "莫莱蒂", "帕夫利科夫斯基",
-];
-
 
 function isResourceNotice(e: TimelineEvent): boolean {
   const blob = `${e.headline || ""} ${e.summary || ""} ${e.badge || ""}`;
@@ -442,31 +541,42 @@ function isResourceNotice(e: TimelineEvent): boolean {
 }
 
 function eventPriority(e: TimelineEvent): number {
-  const auteurBonus = (e.directors || []).some((d) =>
-    CATALOG_AUTEURS.some((name) => d.includes(name)),
-  )
-    ? 15
+  const film = e.filmId ? getFilm(e.filmId) : undefined;
+  const auteurBonus = film && isAuteurFilm(film) ? 40 : 0;
+  const awardBonus = film && isAwardedFilm(film) ? 30 : 0;
+  const qualityBonus = film
+    ? Math.max(0, streamingQualityScore(film, e.type === "streaming" ? guessPlatform(e) : undefined))
     : 0;
   switch (e.type) {
     case "streaming": {
-      // 已上线 > 未来定档
       const announcedPast = e.badge === "已上线" || e.badge === "流媒体";
-      return (announcedPast ? 230 : 200) + auteurBonus;
+      return (announcedPast ? 230 : 200) + auteurBonus + awardBonus + Math.min(qualityBonus, 80);
     }
     case "auteur": {
-      if (isResourceNotice(e) || e.badge === "出资源") return 250 + auteurBonus;
+      if (isResourceNotice(e) || e.badge === "出资源") return 260 + auteurBonus + awardBonus;
       if (e.badge === "已上线" || /上线|流出|熟肉|数字版|首发/i.test(e.headline || ""))
-        return 220 + auteurBonus;
+        return 220 + auteurBonus + awardBonus;
       if (e.badge === "定档" || /定档|上线日|将于.*上线/i.test(e.headline || ""))
-        return 200 + auteurBonus;
-      // 其余作者向快讯极低，配额满时被挤掉
+        return 200 + auteurBonus + awardBonus;
       return 80 + auteurBonus;
     }
     case "win":
     case "nomination":
-      // 时间线不进奖项；若误入则垫底
       return 0;
   }
+}
+
+function guessPlatform(e: TimelineEvent): string | undefined {
+  const m = e.id.match(
+    /-(netflix|disney-plus|prime|hulu|max|apple-tv|iqiyi|tencent|youku|bilibili|mubi|other)-(\d{4}-\d{2}-\d{2}|tba)$/,
+  );
+  return m?.[1];
+}
+
+/** 按「内容发布日」配额，绝不用定档/上映日分桶（避免 MotN 口水定档刷屏）。 */
+function publicationDay(e: TimelineEvent): string {
+  const iso = publicationTime(e);
+  return iso.slice(0, 10) || e.date || "tba";
 }
 
 function capPerDay(events: TimelineEvent[]): TimelineEvent[] {
@@ -480,17 +590,15 @@ function capPerDay(events: TimelineEvent[]): TimelineEvent[] {
     i,
     p: eventPriority(e),
     c: e.filmId ? coverage.get(e.filmId) || 0 : 0,
+    day: publicationDay(e),
   }));
   ranked.sort((a, b) => {
-    const da = a.e.date || "0000-00-00";
-    const db = b.e.date || "0000-00-00";
-    if (da !== db) return db.localeCompare(da);
+    if (a.day !== b.day) return b.day.localeCompare(a.day);
     return b.p - a.p || b.c - a.c || a.i - b.i;
   });
   const perDay = new Map<string, number>();
   const kept: TimelineEvent[] = [];
-  for (const { e } of ranked) {
-    const day = e.date || "tba";
+  for (const { e, day } of ranked) {
     const n = perDay.get(day) || 0;
     if (n >= MAX_EVENTS_PER_DAY) continue;
     perDay.set(day, n + 1);

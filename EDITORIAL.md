@@ -10,11 +10,11 @@
 ---
 
 ## 硬上限
-- **每个自然日最多 3 条**精选卡片，宁缺毋滥（无每日下限）。
+- **每个「内容发布日」最多 3 条**精选卡片，宁缺毋滥（无每日下限）。分桶用 `publishedAt` / `sourcePublishedAt`，**绝不用定档/上映日**（避免 MotN 按上线日刷屏）。
 - 代码兜底：`src/lib/data.ts` 的 `capPerDay()` / `MAX_EVENTS_PER_DAY = 3`。
 - 同一天排序优先级（`eventPriority()`）：
-  **出资源通知 > 流媒体已上线/熟肉上线 > 流媒体官宣定档（有确切日期）**。
-- **时间线完全不进影展/奖项/入围/提名**（影片档案页可保留历史奖讯字段，但不进首页时间线）。
+  **出资源通知 > 作者/获奖向定档与已上线 > 其余定档**；口水流媒体在 `shouldAdmitStreaming()` 硬过滤。
+- **时间线完全不进影展/奖项/入围/提名卡片**（影片档案页可保留历史奖讯字段；有奖项/作者线索的**定档**可优先展示）。
 
 ---
 
@@ -25,7 +25,7 @@
 - 必须有 `YYYY-MM-DD`；未定档、TBA、空头支票不进时间线（可留在影片页写「尚未公布」）。
 - 地区必填：美国区日期只写美国，不得当全球；When To Stream / JustWatch 须用平台官方月单或 Variety、Deadline、The Wrap 二次核对。
 - 来源必填：写入 `streaming[].source`；没有可核来源的不落站。
-- 选片：作者向 / 制作好的新片与焦点文艺片；**不收**纯商业爆米花与超级英雄连载。获奖不是必要条件。
+- 选片：**作者向 / 获奖或三大节线索 / MUBI 等精品平台**优先；`streamingQualityScore` 负分或未达阈值的口水定档（节日片、无导演流水线、纯商业凑数）**不进主列表**（仍可留在影片档）。获奖不是唯一条件，但是强加分。
 - **未来定档**（日期尚未到）以 badge「定档」进时间线；**已到日**以 badge「已上线」进时间线。
 
 ### 2. 新片已经出资源 → 站内通知（主轴 B）
@@ -61,7 +61,7 @@
   - **When To Stream**：远窗 PVOD / 数字版；`scripts` 侧由 Muse 定时或一次性抓取 → `wts-streaming-catalog.json`
   - **What's on Netflix**：美区 Netflix 近窗日历（公开 JSON-LD）；复跑 `python3 scripts/fetch_whatson_netflix.py` → `won-streaming-catalog.json`；与 WTS/MotN 按同平台同日去重，不清理其它平台远窗
   - **Movie of the Night（Streaming Availability API）**：美区近 ~31 天 Netflix/Disney+/Prime/Apple/Max/Mubi upcoming；复跑 `MOTN_API_KEY=… python3 scripts/fetch_motn_upcoming.py` → `motn-streaming-catalog.json`；不覆盖已有同平台 announced 日期
-- 时间线定档卡展示来源标签：由 `streaming[].sourceLabel` 或 `source` URL host 推导（When To Stream / What's on Netflix / Movie of the Night）；编辑种子无 source 时可不显示
+- 时间线定档卡展示来源标签（中文优先）：由 `streaming[].sourceLabel` 或 `source` URL host 推导（定档追踪 / Netflix上新日历 / 片夜定档 / 片库·微博）；卡片显示为「来源·站名 · 原文/收录时间」
 - 出资源通知 → `auteur-news.json`（摘要含「出资源/熟肉/网盘可下」等可识别词，便于 badge 与优先级）
 - 奖项 JSON 可保留作影片档案参考，**不得**再进入 `getTimelineEvents()` 时间线
 - 不得只改 `film-copy.json`（不含 streaming，改了无效）
@@ -86,7 +86,11 @@
 - 这里只交付可复跑脚本；尚未配置定时采集。GitHub Pages 的现有定时任务仅重建，不会 SSH 抓取新资源。
 
 ## 时间线发布时间与排序（2026-11-06）
-- 内容按首次发布/入库的 `publishedAt` 倒序；旧作者短讯缺精确时间时使用 `auteur-news.date` 的上海发布日。平台 `streaming.date` 只描述上线安排，绝不作为列表排序时间。
-- 时间线卡片、历史动态与分组标题不显示日期；具体平台日程仍可在影片档案的流媒体资料中查阅。
-- 存量流媒体 `publishedAt` 由 Git 中该 filmId/platform/date 首次出现的提交时间回填，不拿定档日或本次构建日冒充；WON/MotN/peek 新稿在采集时记录上海时间，重跑不刷新旧稿时间。人工或 WTS 入库必须同时写入首次入库时间，校验会拦截缺值。
-- 本次只改变呈现顺序，既有每日期额/优先级的精选名单保持；精选完成后再严格按发布时间排序，不再把资源类型固定置顶。
+- 内容按首次发布/入库的 `publishedAt` 倒序；有 `sourcePublishedAt`（源站原文时间）时优先用它排序与展示。旧作者短讯缺精确时间时使用 `auteur-news.date` 的上海发布日。平台 `streaming.date` 只描述上线安排，绝不作为列表排序或主列表日期展示。
+- 列表不展示定档日；改为在来源芯片旁展示「原文 M月D日」或仅有入库戳时的「收录 M月D日」。具体平台上线日仍在影片档案查阅。
+- 存量流媒体 `publishedAt` 由 Git 中该 filmId/platform/date 首次出现的提交时间回填，不拿定档日或本次构建日冒充；peek 用片库 `posted_at` 写入 `sourcePublishedAt`；WON/MotN 新稿在采集时记录上海时间，重跑不刷新旧稿时间。人工或 WTS 入库必须同时写入首次入库时间，校验会拦截缺值。
+- 精选完成后再严格按发布时间排序，不再把资源类型固定置顶。
+
+## 来源与原文时间（2026-11-06）
+- 卡片必显可读来源名（中文优先）：片夜定档 / Netflix上新日历 / 定档追踪 / 片库·微博 / 好莱坞报道 等；不堆英文长 URL。
+- peek 出资源：`sourceLabel=片库·微博`，`source`/`weiboUrl` 为微博原帖，`sourcePublishedAt`=片库 `posted_at`。

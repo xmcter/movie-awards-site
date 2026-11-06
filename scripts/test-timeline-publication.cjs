@@ -32,14 +32,16 @@ for (const e of events.filter(e => e.type === "streaming")) {
     .find(r => `stream-${e.filmId}-${r.platform}-${r.date || "tba"}` === e.id);
   assert.ok(release, e.id);
   assert.equal(e.publishedAt, release.publishedAt);
-  assert.ok(!/\d{1,2}月\d{1,2}日/.test(e.headline), e.headline);
+  // 定档标题允许写上线日；列表另以 sourcePublishedLabel 展示原文/收录时间
 }
 for (const e of events.filter(e => e.type === "auteur")) {
   const item = auteurNews.find(n => `auteur-${n.id}` === e.id);
   assert.equal(e.publishedAt, item.publishedAt || `${item.date}T00:00:00+08:00`);
 }
 const ui = fs.readFileSync(path.join(root, "src/components/Timeline.tsx"), "utf8");
-assert.ok(!ui.includes("<time"), "Timeline card/history dates should not render");
+assert.ok(!ui.includes("<time"), "Timeline must not use <time> for 定档日");
+assert.ok(ui.includes("sourcePublishedLabel") || ui.includes("publishedLabel"), "Source publish label should render on cards");
+assert.ok(ui.includes("来源·"), "Source chip should use 来源· prefix");
 assert.ok(!ui.includes("absoluteDayLabel"), "Date group headings should not render");
 assert.ok(!ui.includes("PIN_NEW"), "No type pinning may override publication order");
 for (const filename of ["src/components/Timeline.tsx", "src/app/film/[id]/page.tsx", "src/app/event/[id]/page.tsx", "src/app/about/page.tsx", "src/data/auteur-news.json"]) {

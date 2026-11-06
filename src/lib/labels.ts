@@ -21,6 +21,46 @@ export const RELEASE_STATUS_LABELS: Record<ReleaseStatus, string> = {
   tba: "待定",
 };
 
+/** 影片类型展示用中文；未知英文保留原样，不臆造。 */
+export const GENRE_LABELS: Record<string, string> = {
+  Drama: "剧情",
+  drama: "剧情",
+  Crime: "犯罪",
+  Fantasy: "奇幻",
+  History: "历史",
+  "Science Fiction": "科幻",
+  "Sci-Fi": "科幻",
+  Thriller: "惊悚",
+  Comedy: "喜剧",
+  Romance: "爱情",
+  Action: "动作",
+  Adventure: "冒险",
+  Horror: "恐怖",
+  Documentary: "纪录片",
+  Animation: "动画",
+  Family: "家庭",
+  Mystery: "悬疑",
+  War: "战争",
+  Western: "西部",
+  Music: "音乐",
+  Biography: "传记",
+  Sport: "运动",
+};
+
+export function genreLabel(g: string): string {
+  const t = (g || "").trim();
+  if (!t) return "";
+  if (GENRE_LABELS[t]) return GENRE_LABELS[t];
+  // 已是中文
+  if (/[\u4e00-\u9fff]/.test(t)) return t;
+  return GENRE_LABELS[t] || t;
+}
+
+export function genreLabels(genres: string[] | undefined): string[] {
+  return (genres || []).map(genreLabel).filter(Boolean);
+}
+
+
 export const AWARD_RESULT_LABELS: Record<AwardResult, string> = {
   nominated: "入围",
   won: "获奖",

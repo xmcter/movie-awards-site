@@ -218,24 +218,22 @@ export function buildStreamingHeadline(opts: {
   datePart: string;
   region?: string;
 }): string {
-  // 展示层不写流媒体登录平台名（MUBI/Netflix 等）；平台仍传入供选稿/去重，来源芯片单独显示源站。
+  // 展示层不写登录平台名、也不写国别/流媒体地区；平台/地区仍传入供选稿与 note 去重。
   void opts.platform;
-  const { film, statusLabel, datePart, region } = opts;
+  void opts.region;
+  const { film, statusLabel, datePart } = opts;
   const title = filmQuote(film.title);
-  const reg = region ? ` · ${region}` : "";
   if (statusLabel === "待定") {
-    return `${title}窗口待定${reg}`;
+    return `${title}窗口待定`;
   }
   if (statusLabel === "预计") {
-    return datePart
-      ? `${title}预计${datePart}${reg}`
-      : `${title}预计上线${reg}`;
+    return datePart ? `${title}预计${datePart}` : `${title}预计上线`;
   }
-  // announced：片名 · 日期 · 地区，不写平台、不写「已公布」
+  // announced：片名 · 日期（不写平台/地区/「已公布」）
   if (datePart) {
-    return `${title} · ${datePart}${reg}`;
+    return `${title} · ${datePart}`;
   }
-  return `${title}${reg}` || title;
+  return title;
 }
 
 /** 流媒体 note 里的口水套话：只复述平台/地区/定档/官方声明，无增量事实。 */

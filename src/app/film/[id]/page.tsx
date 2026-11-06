@@ -17,6 +17,7 @@ import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
   formatDate,
+  genreLabels,
 } from "@/lib/labels";
 
 export const dynamic = "force-static";
@@ -226,7 +227,7 @@ export default async function FilmPage({
           </div>
           <div className="min-w-0 flex-1 p-4 pl-3 sm:p-6 sm:pl-5">
             <p className="text-xs uppercase tracking-[0.18em] text-cinema-gold">
-              {film.genres.join(" · ") || "影片"}
+              {genreLabels(film.genres).join(" · ") || "影片"}
             </p>
             <h1 className="mt-2 font-display text-2xl text-cinema-text sm:text-3xl">
               {film.title}
@@ -237,10 +238,9 @@ export default async function FilmPage({
             {film.titleEn ? (
               <p className="mt-1 text-sm text-cinema-muted">{film.titleEn}</p>
             ) : null}
-            {(film.country && film.country.length > 0) || film.runtime || film.genres.length > 0 ? (
+            {film.runtime || film.year ? (
               <p className="mt-3 text-xs text-cinema-muted/70">
                 {[
-                  film.country && film.country.length > 0 ? film.country.join(" / ") : null,
                   film.runtime ? `${film.runtime} 分钟` : null,
                   film.year ? `${film.year}年` : null,
                 ]
@@ -335,7 +335,7 @@ export default async function FilmPage({
               const platformLabel = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
               const when = release.date ? formatDate(release.date) : "待定";
-              const bits = [status || null, when, release.region || null].filter(Boolean);
+              const bits = [status || null, when].filter(Boolean); // 不展示平台/国别地区
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}

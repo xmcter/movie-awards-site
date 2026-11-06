@@ -104,6 +104,11 @@ for (const film of filmsForStreaming) {
     if (rel.date !== undefined && !isRealDate(rel.date)) {
       streamingErrors.push(`${where}: date not YYYY-MM-DD or not a real date: ${rel.date}`);
     }
+    if (rel.status === "announced" && (!rel.publishedAt ||
+        !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?\+08:00$/.test(rel.publishedAt) ||
+        !isRealDate(rel.publishedAt.slice(0, 10)) || !Number.isFinite(Date.parse(rel.publishedAt)))) {
+      streamingErrors.push(`${where}: announced streaming must carry first-ingested publishedAt (+08:00), not its launch date`);
+    }
     if (rel.status === "announced" && !rel.date) {
       streamingErrors.push(`${where}: announced streaming must carry a date`);
     }

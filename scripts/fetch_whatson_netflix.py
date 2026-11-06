@@ -23,7 +23,8 @@ import sys
 import time
 import urllib.error
 import urllib.request
-from datetime import date
+from datetime import date, datetime
+from zoneinfo import ZoneInfo
 from html import unescape
 from pathlib import Path
 from typing import Any
@@ -188,6 +189,7 @@ def make_release(day: str, source_url: str, note_extra: str = "") -> dict[str, A
     if note_extra:
         note = f"{note_extra} · {note}"
     return {
+        "publishedAt": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds"),
         "platform": PLATFORM,
         "date": day,
         "status": "announced",

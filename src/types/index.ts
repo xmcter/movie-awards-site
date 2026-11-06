@@ -40,6 +40,8 @@ export type AwardOrgId =
   | "hkfa";
 
 export interface StreamingRelease {
+  /** 资讯首次发布/入库时间；与平台上线日期 date 分离。 */
+  publishedAt?: string;
   platform: StreamingPlatform;
   date?: string;
   status: ReleaseStatus;
@@ -110,6 +112,8 @@ export type AuteurNewsKind =
   | "production";
 
 export interface AuteurNews {
+  /** 可选精确发布时间；旧稿使用 date（消息发布日）。 */
+  publishedAt?: string;
   id: string;
   filmId: string;
   date: string;
@@ -124,6 +128,8 @@ export interface AuteurNews {
 export type TimelineEventType = "nomination" | "win" | "streaming" | "auteur";
 
 export interface TimelineEvent {
+  /** 排序只用内容发布时间，不用定档/上映时间。 */
+  publishedAt?: string;
   id: string;
   type: TimelineEventType;
   date: string;

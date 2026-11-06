@@ -1,4 +1,5 @@
 import fs from "fs";
+import { comparePublicationTime, publicationTime } from "@/lib/timelineOrder";
 import path from "path";
 import filmsData from "@/data/films.json";
 import orgsData from "@/data/orgs.json";
@@ -307,6 +308,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       // EDITORIAL.md: only officially dated streaming launches make the timeline
       // (tba / estimated windows stay on the film page only).
       if (release.status !== "announced" || !release.date) continue;
+      if (!release.publishedAt || !isPublished(publicationTime(release).slice(0, 10), today)) continue;
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = formatDate(release.date);
@@ -319,7 +321,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         film,
         platform,
         statusLabel,
-        datePart,
+        datePart: "", // 时间线不显示定档日期；平台日程保留在影片档案。
         region: release.region,
       });
       const body = dedupeSubtitleAgainstTitle(
@@ -338,6 +340,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       events.push({
         id: `stream-${film.id}-${release.platform}-${release.date || "tba"}`,
         type: "streaming",
+        publishedAt: release.publishedAt,
         date: release.date || "",
         dateLabel: release.date ? formatDate(release.date) : "待定",
         filmId: film.id,
@@ -391,6 +394,7 @@ export function getTimelineEvents(): TimelineEvent[] {
     events.push({
       id: `auteur-${news.id}`,
       type: "auteur",
+      publishedAt: news.publishedAt || `${news.date}T00:00:00+08:00`,
       date: news.date,
       dateLabel: formatDate(news.date),
       filmId: film.id,
@@ -411,7 +415,8 @@ export function getTimelineEvents(): TimelineEvent[] {
     });
   }
 
-  return capPerDay(events);
+  // 保留既有精选名单/配额；呈现顺序独立按首次发布时间倒序。
+  return capPerDay(events).sort(comparePublicationTime);
 }
 
 /**

@@ -216,15 +216,6 @@ export default async function EventPage({
               <span>🎞️ 在「观影导赏」查看导赏</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
-            <a
-              href={`https://movie.readcine.com/#/movie/${encodeURIComponent(film?.title || event.filmTitle)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
-            >
-              <span>💾 在「电影片库」查找资源</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
             <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
           </div>
         </Section>
@@ -240,15 +231,6 @@ export default async function EventPage({
                 className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
               >
                 <span>🎞️ 在「观影导赏」查看导赏</span>
-                <span className="text-[10px] opacity-70">↗</span>
-              </a>
-              <a
-                href={`https://movie.readcine.com/#/movie/${encodeURIComponent(film?.title || event.filmTitle)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
-              >
-                <span>💾 在「电影片库」查找资源</span>
                 <span className="text-[10px] opacity-70">↗</span>
               </a>
               <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />

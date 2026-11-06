@@ -1,3 +1,5 @@
+import { publicationTime } from "./timelineOrder";
+
 /**
  * 「上次看到这里」marker. Pure helpers (no React) so they can be unit-tested.
  *
@@ -8,7 +10,7 @@
  * shares the marker date but was not among the cards visible last time.
  */
 
-export const LAST_SEEN_KEY = "news_last_seen_v1";
+export const LAST_SEEN_KEY = "news_last_seen_v2";
 const MAX_IDS = 60;
 
 export interface LastSeenMarker {
@@ -21,6 +23,7 @@ export interface LastSeenMarker {
 export interface MarkerSource {
   id: string;
   date: string;
+  publishedAt?: string;
 }
 
 export function readLastSeen(): LastSeenMarker | null {
@@ -42,7 +45,7 @@ export function readLastSeen(): LastSeenMarker | null {
 
 /** Build a marker from the cards currently visible (newest first, dismissed excluded). */
 export function buildMarker(visible: MarkerSource[], now = Date.now()): LastSeenMarker | null {
-  const dated = visible.filter((e) => e.date);
+  const dated = visible.map((e) => ({ ...e, date: publicationTime(e) })).filter((e) => e.date);
   if (dated.length === 0) return null;
   let newest = dated[0]!;
   for (const e of dated) if (e.date > newest.date) newest = e;
@@ -82,9 +85,10 @@ export function writeLastSeen(visible: MarkerSource[]): void {
 }
 
 export function isNewSince(e: MarkerSource, marker: LastSeenMarker | null): boolean {
-  if (!marker || !e.date) return false;
-  if (e.date > marker.date) return true;
-  if (e.date === marker.date) return !marker.ids.includes(e.id);
+  const date = publicationTime(e);
+  if (!marker || !date) return false;
+  if (date > marker.date) return true;
+  if (date === marker.date) return !marker.ids.includes(e.id);
   return false;
 }
 
@@ -95,7 +99,7 @@ export function isNewSince(e: MarkerSource, marker: LastSeenMarker | null): bool
  * clearing them mid-visit. A stale session copy (tab left open for hours)
  * falls back to the persisted marker.
  */
-const SESSION_KEY = "news_last_seen_visit_v1";
+const SESSION_KEY = "news_last_seen_visit_v2";
 const VISIT_WINDOW_MS = 30 * 60 * 1000;
 
 export function getVisitBaseline(now = Date.now()): LastSeenMarker | null {

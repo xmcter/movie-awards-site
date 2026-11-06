@@ -29,6 +29,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from datetime import date, datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Any
 
@@ -233,6 +234,7 @@ def make_release(
         f"须以平台官方为准） · 来源 {source_url}"
     )
     return {
+        "publishedAt": datetime.now(ZoneInfo("Asia/Shanghai")).isoformat(timespec="seconds"),
         "platform": platform,
         "date": day,
         "status": "announced",

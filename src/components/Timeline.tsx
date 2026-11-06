@@ -1,5 +1,6 @@
 "use client";
 
+import { publicationTime } from "@/lib/timelineOrder";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import WeiboLink from "@/components/WeiboLink";
@@ -11,12 +12,7 @@ import {
   writeLastSeen,
   type LastSeenMarker,
 } from "@/lib/lastSeen";
-import {
-  absoluteDayLabel,
-  groupByDay,
-  relativeDayPrefix,
-  shanghaiToday,
-} from "@/lib/dayGroups";
+import { groupByDay } from "@/lib/dayGroups";
 import { markClicked, readClicked } from "@/lib/readProgress";
 import {
   DISMISS_EVENT_NAME,
@@ -44,7 +40,6 @@ import {
 } from "@/lib/prefs";
 
 
-const PIN_NEW = 10;
 
 
 function SourceTag({ label, href }: { label?: string; href?: string }) {
@@ -171,7 +166,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   const dedupByFilm = true;
   const [expandedFilms, setExpandedFilms] = useState<Record<string, boolean>>({});
   const [baseline, setBaseline] = useState<LastSeenMarker | null>(null);
-  const [today, setToday] = useState("");
   const viewedRef = useRef(false);
 
   // Cards that are actually visible to the user (dismissed excluded, filters ignored).
@@ -228,7 +222,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     setDismissStore(initialDismiss);
     const visitBaseline = getVisitBaseline();
     setBaseline(visitBaseline);
-    setToday(shanghaiToday());
     setReady(true);
 
     // 已有会话（30 天内登录过）时静默从云端回填，之后以云端为准；
@@ -431,13 +424,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       : matched.filter((e) => !isBlockedOrSimilar(e, dismissStore));
 
     if (!dedupByFilm) {
-      if (filter !== "all" || q) {
-        return afterDismiss.map((e) => ({ event: e, priorEvents: [] }));
-      }
-      const pinned = afterDismiss.filter((e) => e.type === "auteur").slice(0, PIN_NEW);
-      const ids = new Set(pinned.map((e) => e.id));
-      const list = [...pinned, ...afterDismiss.filter((e) => !ids.has(e.id))];
-      return list.map((e) => ({ event: e, priorEvents: [] }));
+      return afterDismiss.map((e) => ({ event: e, priorEvents: [] }));
     }
 
     // 开启「每片仅最新」：按电影唯一去重，最新一条作为主卡片，较早动态存入 priorEvents
@@ -464,7 +451,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
   }, [events, filter, query, dismissStore, showBlocked, dedupByFilm]);
 
   const dayGroups = useMemo(
-    () => groupByDay(grouped, (it) => it.event.date || ""),
+    () => groupByDay(grouped, (it) => publicationTime(it.event).slice(0, 10)),
     [grouped],
   );
 
@@ -524,12 +511,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                     </Link>
                     <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-                        <time dateTime={event.date || undefined}>{event.dateLabel}</time>
-                        {event.date ? (
-                          <span className="text-[10px] tracking-wide text-cinema-muted/80">
-                            消息时间
-                          </span>
-                        ) : null}
                         <TypeBadge type={event.type} label={displayBadge(event.badge)} />
                         <SourceTag label={event.sourceLabel} href={event.sourceUrl} />
                         {isCardNew(event) ? (
@@ -582,15 +563,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
                           >
                             <span>🎞️ 导赏</span>
-                            <span className="text-[9px] opacity-70">↗</span>
-                          </a>
-                          <a
-                            href={`https://movie.readcine.com/#/movie/${encodeURIComponent(event.filmTitle)}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
-                          >
-                            <span>💾 找资源</span>
                             <span className="text-[9px] opacity-70">↗</span>
                           </a>
                           <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
@@ -707,7 +679,6 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                 return (
                                   <li key={p.id} className="text-xs">
                                     <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-cinema-muted">
-                                      <time dateTime={p.date || undefined}>{p.dateLabel}</time>
                                       <TypeBadge type={p.type} label={displayBadge(p.badge)} />
                                       <SourceTag label={p.sourceLabel} href={p.sourceUrl} />
                                       <WeiboLink href={p.weiboUrl} label={p.weiboLabel} />
@@ -797,28 +768,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             const lastNewInDay = g.items.some((it) => it.event.id === lastNewId);
             const dividerAfterGroup =
               lastNewInDay && g.items[g.items.length - 1]!.event.id === lastNewId;
-            const rel = today ? relativeDayPrefix(g.day, today) : "";
-            const abs = absoluteDayLabel(g.day, (today || "").slice(0, 4) || undefined);
-            const newInDay = baseline
-              ? g.items.filter((it) => isCardNew(it.event)).length
-              : 0;
             return (
-              <section key={g.day} aria-label={abs} data-day={g.day}>
-                <header className="sticky top-[57px] z-20 -mx-4 mb-4 bg-cinema-bg/85 px-4 py-2.5 backdrop-blur-md sm:-mx-6 sm:px-6">
-                  <div className="flex items-baseline justify-between gap-3 border-b border-cinema-border/70 pb-2">
-                    <h2 className="flex items-baseline gap-2 text-[1.15rem] font-semibold tracking-tight text-cinema-text sm:text-xl">
-                      {rel ? <span className="text-cinema-gold">{rel}</span> : null}
-                      {rel ? <span className="text-cinema-muted/50">·</span> : null}
-                      <span>{abs}</span>
-                    </h2>
-                    <span className="shrink-0 text-xs tabular-nums text-cinema-muted">
-                      {newInDay > 0 ? (
-                        <span className="mr-2 font-medium text-cinema-gold">{newInDay} 条新</span>
-                      ) : null}
-                      {g.items.length} 条
-                    </span>
-                  </div>
-                </header>
+              <section key={g.day} aria-label="消息列表" data-day={g.day}>
                 <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
                   {g.items.map((it) => (
                     <Fragment key={it.event.id}>

@@ -10,8 +10,8 @@
 ---
 
 ## 硬上限
-- **每个「内容发布日」最多 3 条**精选卡片，宁缺毋滥（无每日下限）。分桶用 `publishedAt` / `sourcePublishedAt`，**绝不用定档/上映日**（避免 MotN 按上线日刷屏）。
-- 代码兜底：`src/lib/data.ts` 的 `capPerDay()` / `MAX_EVENTS_PER_DAY = 3`。
+- **不再设每日条数上限**。时间线按 `publishedAt` / `sourcePublishedAt` 倒序；质量闸（口水定档硬过滤、作者/获奖/MUBI 优先）在入库时完成，**绝不用定档/上映日分桶**。
+- 代码：`src/lib/data.ts` 的 `shouldAdmitStreaming()` / `streamingQualityScore()`；`MAX_EVENTS_PER_DAY` 已取消硬限制。
 - 同一天排序优先级（`eventPriority()`）：
   **出资源通知 > 作者/获奖向定档与已上线 > 其余定档**；口水流媒体在 `shouldAdmitStreaming()` 硬过滤。
 - **时间线完全不进影展/奖项/入围/提名卡片**（影片档案页可保留历史奖讯字段；有奖项/作者线索的**定档**可优先展示）。

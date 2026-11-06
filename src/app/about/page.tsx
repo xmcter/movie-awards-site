@@ -57,9 +57,7 @@ export default function AboutPage() {
           </p>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
-              <span className="text-cinema-text">每日数量上限与优先级：</span>
-              每个自然日最多收录 3 条精选卡片，宁缺毋滥（无每日下限）。同一天若有多条消息，按“出资源通知 &gt; 流媒体已上线 &gt; 流媒体定档官宣”的优先级取舍。
-            </li>
+              <span className="text-cinema-text">选稿优先级：</span>按内容质量筛选：优先出资源通知与作者向/高口碑定档，过滤口水定档；不再设每日条数上限，按发布时间倒序展示。</li>
             <li>
               <span className="text-cinema-text">主轴 A · 新片流媒体定档：</span>
               收录官方或权威行业媒体公布的确切流媒体上线日期（<code className="text-xs">YYYY-MM-DD</code>）与平台（Netflix / Apple TV+ / Max / Prime Video / Criterion Channel / MUBI / Disney+ / 国内正版平台等），必填地区与可核信源。聚焦作者向、制作精良的新片与焦点文艺片，获奖不是必要条件。

@@ -331,29 +331,27 @@ export default async function FilmPage({
                 return 0;
               })
               .map((release) => {
-              const platform = PLATFORM_LABELS[release.platform] || release.platform;
+              // 定档行不展示登录平台名；PLATFORM_LABELS 仅用于剥 note 套话
+              const platformLabel = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
               const when = release.date ? formatDate(release.date) : "待定";
-              const statusBit = status ? `${status}` : "";
+              const bits = [status || null, when, release.region || null].filter(Boolean);
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}
                   className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3 text-sm text-cinema-muted"
                 >
-                  {platform}
-                  {statusBit ? ` · ${statusBit}` : ""}
-                  {` · ${when}`}
-                  {release.region ? ` · ${release.region}` : ""}
+                  {bits.join(" · ")}
                   {(() => {
                     const note = stripStreamingBoilerplate(release.note || "", {
-                      platform,
+                      platform: platformLabel,
                       region: release.region,
                       datePart: when !== "待定" ? when : undefined,
                       filmTitle: film.title,
                     });
                     return note ? `（${note}）` : "";
                   })()}
-                  {/* 来源 URL 不在列表式流媒体行里重复展示，详情顶栏已有来源芯片 */}
+                  {/* 真实来源仍走时间线/事件页的 sourceLabel；此处不写平台名也不伪造来源 */}
                 </li>
               );
             })}

@@ -746,17 +746,26 @@
     },
     {
       "id": "gentle-monster",
-      "title": "Gentle Monster",
+      "title": "温柔的怪物",
       "titleEn": "Gentle Monster",
       "year": 2026,
-      "synopsis": "Gentle Monster。流媒体定档来自 What's on Netflix（美国区）。",
-      "directors": [],
-      "cast": [],
+      "synopsis": "知名钢琴家与家人搬到乡下后，意外发现颠覆人生的真相，被迫直面爱情、信任与欺骗。玛丽·克鲁泽执导，蕾雅·赛杜、凯瑟琳·德纳芙主演。",
+      "directors": [
+        "玛丽·克鲁泽"
+      ],
+      "cast": [
+        "蕾雅·赛杜",
+        "凯瑟琳·德纳芙",
+        "劳伦斯·鲁波",
+        "耶拉·哈泽"
+      ],
       "genres": [
         "剧情"
       ],
       "country": [
-        "美国"
+        "奥地利",
+        "德国",
+        "法国"
       ],
       "posterColors": [
         "#0f172a",
@@ -768,12 +777,13 @@
           "date": "2026-11-18",
           "status": "announced",
           "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
+          "note": "",
           "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
           "sourceLabel": "Netflix上新日历",
           "publishedAt": "2026-11-05T20:29:58+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/gentle-monster.jpg"
     },
     {
       "id": "guarding-stars",

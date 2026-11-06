@@ -11,6 +11,7 @@ import densityPackData from "@/data/density-pack.json";
 import wtsStreamingCatalogData from "@/data/wts-streaming-catalog.json";
 import wonStreamingCatalogData from "@/data/won-streaming-catalog.json";
 import motnStreamingCatalogData from "@/data/motn-streaming-catalog.json";
+import moviePeekCatalogData from "@/data/movie-peek-catalog.json";
 import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
 import posterUrlsData from "@/data/poster-urls.json";
@@ -66,6 +67,7 @@ const density = densityPackData as unknown as CatalogSlice;
 const wtsStreaming = wtsStreamingCatalogData as unknown as CatalogSlice;
 const wonStreaming = wonStreamingCatalogData as unknown as CatalogSlice;
 const motnStreaming = motnStreamingCatalogData as unknown as CatalogSlice;
+const moviePeek = moviePeekCatalogData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 const posterUrls = posterUrlsData as Record<string, string>;
@@ -123,6 +125,7 @@ export const films = [
   ...wtsStreaming.films,
   ...wonStreaming.films,
   ...motnStreaming.films,
+  ...moviePeek.films,
 ].map(applyCopy);
 export const orgs = [...(orgsData as AwardOrg[]), ...(major.orgs ?? [])];
 export const ceremonies = [
@@ -403,6 +406,8 @@ export function getTimelineEvents(): TimelineEvent[] {
       accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
       directors: film.directors,
       filmKind: kind,
+      weiboUrl: news.weiboUrl,
+      weiboLabel: news.weiboLabel,
     });
   }
 

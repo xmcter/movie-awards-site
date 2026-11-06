@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
+import WeiboLink from "@/components/WeiboLink";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
 import {
@@ -154,6 +155,7 @@ export default async function FilmPage({
   if (!film) notFound();
 
   const events = getFilmEvents(film.id);
+  const weiboEvent = events.find((event) => event.weiboUrl);
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
   const { plot, background } = splitFilmCopy(film);
   const people =
@@ -300,6 +302,7 @@ export default async function FilmPage({
               <span>💾 在「电影片库」查找资源</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
+            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
           </div>
         </Section>
       ) : null}
@@ -332,6 +335,7 @@ export default async function FilmPage({
               <span>💾 在「电影片库」查找资源</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
+            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
           </div>
         </Section>
       ) : null}

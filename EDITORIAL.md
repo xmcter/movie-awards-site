@@ -73,3 +73,14 @@
 - `announced` 必须有 `YYYY-MM-DD`；`tba` / `estimated` 不得带日期。
 - 平台须在 `src/types/index.ts` 枚举内；`region` 为字符串，不用旧 `regions` 数组。
 - 影片页：有日期在上、由近到远；无日期在下。
+
+
+## 片库 peek 资源稿源（2026-11-06）
+- `python3 scripts/ingest_movie_peek_resources.py --dry-run` 预览；去掉 `--dry-run` 才写数据。
+- 使用已配置 SSH 身份读取服务器 localhost `/api/peek` → `/api/movie_detail`，不经过公开 OAuth API，也不在仓库保存密钥。
+- 导入目录：`src/data/movie-peek-catalog.json`；通知：`auteur-news.json`，每个 `filmId` 的首次出资源去重；已有通知缺微博时可补入口。
+- 使用片库 `posted_at`（Asia/Shanghai）作为消息日期，默认只处理当天；补跑可指定 `--date YYYY-MM-DD`。默认新片窗口为消息年份及前一年。
+- 仅接收可核影片身份/年份/类型、有效资源及微博原帖；英字专帖、纪录片/剧集、无法识别的资源简称、无已核升级证据的旧片留待人工审稿，不猜片名/年份/中字。
+- 只存影片元信息、资源形态概述及 HTTPS 微博原帖；不导入网盘 URL、提取码或原帖全文。微博入口位于首页、影片页和事件页「找资源」旁。
+- 保留每自然日 3 条精选上限；不因采集条数增加而改变编辑优先级。离线回归：`python3 scripts/test_movie_peek_resources.py`。
+- 这里只交付可复跑脚本；尚未配置定时采集。GitHub Pages 的现有定时任务仅重建，不会 SSH 抓取新资源。

@@ -2,6 +2,7 @@
 
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import WeiboLink from "@/components/WeiboLink";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
 import {
@@ -592,6 +593,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             <span>💾 找资源</span>
                             <span className="text-[9px] opacity-70">↗</span>
                           </a>
+                          <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
                         </div>
                         <div className="flex items-center gap-1.5">
                           <button
@@ -708,6 +710,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                       <time dateTime={p.date || undefined}>{p.dateLabel}</time>
                                       <TypeBadge type={p.type} label={displayBadge(p.badge)} />
                                       <SourceTag label={p.sourceLabel} href={p.sourceUrl} />
+                                      <WeiboLink href={p.weiboUrl} label={p.weiboLabel} />
                                     </div>
                                     <Link
                                       href={pLink}

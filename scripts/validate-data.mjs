@@ -23,6 +23,7 @@ for (const name of [
   "wts-streaming-catalog.json",
   "won-streaming-catalog.json",
   "motn-streaming-catalog.json",
+  "movie-peek-catalog.json",
 ]) {
   const data = read(name);
   if (Array.isArray(data)) {
@@ -58,6 +59,19 @@ if (missingNews.length) {
       `from the timeline: ${missingNews.join(", ")}`,
   );
   process.exit(1);
+}
+
+for (const item of news) {
+  if (item.weiboUrl === undefined) continue;
+  try {
+    const url = new URL(item.weiboUrl);
+    if (url.protocol !== "https:" ||
+        !["m.weibo.cn", "weibo.com", "www.weibo.com"].includes(url.hostname) ||
+        url.username || url.password || url.port) throw new Error("not a Weibo URL");
+  } catch {
+    console.error(`error: ${item.id}: weiboUrl must be a public HTTPS Weibo URL`);
+    process.exit(1);
+  }
 }
 
 // Streaming validation (2026-10-29): platform must be in the StreamingPlatform

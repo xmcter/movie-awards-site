@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WeiboLink from "@/components/WeiboLink";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
 import EventDismissButton from "@/components/EventDismissButton";
@@ -224,6 +225,7 @@ export default async function EventPage({
               <span>💾 在「电影片库」查找资源</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
+            <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
           </div>
         </Section>
       ) : (
@@ -249,6 +251,7 @@ export default async function EventPage({
                 <span>💾 在「电影片库」查找资源</span>
                 <span className="text-[10px] opacity-70">↗</span>
               </a>
+              <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
             </div>
           ) : null}
         </Section>

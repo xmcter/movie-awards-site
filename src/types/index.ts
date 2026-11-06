@@ -116,6 +116,9 @@ export interface AuteurNews {
   kind: AuteurNewsKind;
   summary: string;
   detail?: string;
+  /** 微博原帖；不存网盘链接或提取码。 */
+  weiboUrl?: string;
+  weiboLabel?: string;
 }
 
 export type TimelineEventType = "nomination" | "win" | "streaming" | "auteur";
@@ -143,4 +146,6 @@ export interface TimelineEvent {
   /** 流媒体定档来源展示名（When To Stream / What's on Netflix / 编辑） */
   sourceLabel?: string;
   sourceUrl?: string;
+  weiboUrl?: string;
+  weiboLabel?: string;
 }

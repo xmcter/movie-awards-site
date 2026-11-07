@@ -152,7 +152,7 @@ export interface TimelineEvent {
   headline?: string;
   summary: string;
   plot?: string;
-  filmAwards?: { filmId: string; year: number; festival: string; category: string; result: string; source: string }[];
+  filmAwards?: { filmId: string; year: number; festival: string; category: string; result: string; source: string; icon?: string }[];
   detail?: string;
   badge: string;
   accentColor?: string;

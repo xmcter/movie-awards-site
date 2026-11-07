@@ -591,6 +591,10 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           {event.filmAwards.map(award => (
                             <li key={`${award.year}-${award.festival}-${award.category}-${award.result}`}>
                               <a href={award.source} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                {award.icon ? (
+                                  // eslint-disable-next-line @next/next/no-img-element
+                                  <img src={award.icon} alt={`${award.festival}标识`} width={16} height={16} className="mr-1.5 inline-block h-4 w-4 shrink-0 rounded-sm bg-white p-px align-text-bottom object-contain" />
+                                ) : null}
                                 {award.year}年{award.festival} · {award.category} · {award.result === "won" ? "获奖" : "提名"}
                               </a>
                             </li>

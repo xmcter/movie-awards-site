@@ -1,0 +1,20 @@
+[
+  {
+    "festival": "戛纳电影节",
+    "path": "/award-icons/cannes.png",
+    "source": "https://www.festival-cannes.com/wp-content/themes/fdc/favicons/favicon-32x32.png",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  },
+  {
+    "festival": "威尼斯电影节",
+    "path": "/award-icons/venice.png",
+    "source": "https://static.labiennale.org/favicon-32x32.png",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  },
+  {
+    "festival": "哥谭奖",
+    "path": "/award-icons/gotham.png",
+    "source": "https://thegotham.org/wp-content/themes/the-gotham/images/favicon/favicon-32x32.png",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  }
+]

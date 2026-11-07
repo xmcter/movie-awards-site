@@ -6,7 +6,8 @@
     "category": "金棕榈奖",
     "result": "won",
     "source": "https://www.festival-cannes.com/en/press/press-releases/the-79th-festival-de-cannes-winners-list/",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "icon": "/award-icons/cannes.png"
   },
   {
     "filmId": "minotaur",
@@ -15,7 +16,8 @@
     "category": "评审团大奖",
     "result": "won",
     "source": "https://www.festival-cannes.com/en/press/press-releases/the-79th-festival-de-cannes-winners-list/",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "icon": "/award-icons/cannes.png"
   },
   {
     "filmId": "possible-love",
@@ -24,7 +26,8 @@
     "category": "评审团大奖（银狮奖）",
     "result": "won",
     "source": "https://www.labiennale.org/en/news/official-awards-83rd-venice-international-film-festival",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "icon": "/award-icons/venice.png"
   },
   {
     "filmId": "possible-love",
@@ -33,7 +36,8 @@
     "category": "最佳国际影片",
     "result": "nominated",
     "source": "https://thegotham.org/press/the-gothams-nominations-36th-edition/",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "icon": "/award-icons/gotham.png"
   },
   {
     "filmId": "minotaur",
@@ -42,7 +46,8 @@
     "category": "最佳国际影片",
     "result": "nominated",
     "source": "https://thegotham.org/press/the-gothams-nominations-36th-edition/",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "icon": "/award-icons/gotham.png"
   },
   {
     "filmId": "nowhere-to-lay-eyes",

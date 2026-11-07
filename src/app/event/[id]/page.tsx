@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ReleaseLabel from "@/components/ReleaseLabel";
 import WeiboLink from "@/components/WeiboLink";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
@@ -175,7 +176,7 @@ export default async function EventPage({
               ) : null}
             </div>
             <h1 className="mt-1.5 font-display text-xl leading-snug text-cinema-text sm:text-2xl">
-              {event.headline || event.summary || event.filmTitle}
+              {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} /> : (event.headline || event.summary || event.filmTitle)}
             </h1>
             {(() => {
               const hl = (event.headline || event.summary || "").toLowerCase();

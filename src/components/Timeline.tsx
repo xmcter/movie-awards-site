@@ -3,6 +3,7 @@
 import { publicationTime } from "@/lib/timelineOrder";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import ReleaseLabel from "@/components/ReleaseLabel";
 import WeiboLink from "@/components/WeiboLink";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
@@ -564,7 +565,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         className="group block focus:outline-none"
                       >
                         <h2 className="mt-2 font-display text-[1.05rem] leading-snug text-cinema-text group-hover:text-cinema-gold-light sm:text-lg">
-                          {event.headline || event.summary || event.filmTitle}
+                          {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} /> : (event.headline || event.summary || event.filmTitle)}
                         </h2>
                         {(() => {
                           const sub = scrubNegativeCopy(
@@ -734,7 +735,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                           : "text-cinema-text/90 font-normal"
                                       }`}
                                     >
-                                      {p.headline || p.summary}
+                                      {p.type === "streaming" && p.date ? <ReleaseLabel date={p.date} title={p.filmTitle} fallback={p.headline || p.filmTitle} /> : (p.headline || p.summary)}
                                     </Link>
                                   </li>
                                 );

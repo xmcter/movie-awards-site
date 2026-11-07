@@ -34,6 +34,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.4,
     },
+    {
+      url: "https://news.readcine.com/insight/not-only-scores",
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
   ];
 
   const filmUrls: MetadataRoute.Sitemap = uniqueFilmIds.map((id) => ({

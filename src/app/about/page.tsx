@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const title = "关于银幕新讯";
 const description =
-  "关于银幕新讯（news.readcine.com）：聚焦优质新片流媒体定档、出资源通知与微博原帖，由 ReadCine 编辑部运营。";
+  "关于银幕新讯（news.readcine.com）：聚焦优质新片流媒体定档、新片资讯与导赏，由 ReadCine 编辑部运营。";
 
 export const metadata: Metadata = {
   title,
@@ -37,7 +37,7 @@ export default function AboutPage() {
           关于银幕新讯
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-cinema-muted sm:text-base">
-          「银幕新讯」（news.readcine.com）聚焦<strong>流媒体定档</strong>与<strong>出资源通知</strong>：只告诉影迷两件事——这部新片什么时候能在流媒体看，以及什么时候已经有可下资源。
+          「银幕新讯」（news.readcine.com）聚焦<strong>新片流媒体定档</strong>与<strong>新片资讯</strong>：告诉影迷这部新片什么时候能在流媒体看、有什么值得关注的发行动态，并提供导赏参谋。本站不提供影片下载、播放或资源获取服务。
         </p>
       </header>
 
@@ -45,7 +45,7 @@ export default function AboutPage() {
         <div className="space-y-2">
           <h2 className="font-display text-lg text-cinema-text">本站定位</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            本站围绕<strong>「新片流媒体定档」</strong>与<strong>「新片出资源通知」</strong>两大主轴运转，由<strong>银幕新讯（news）</strong>发布官宣流媒体定档日与资源释出通知，<strong>电影导赏（guide）</strong>提供无剧透背景、风格与看点参谋。每条消息均关联影片档案页，并可查看导赏；有可核微博原帖的通知同时提供微博入口。本站仅提供资讯，不展示资源获取或登录入口。
+            本站围绕<strong>「新片流媒体定档」</strong>与<strong>「新片发行资讯」</strong>两大主轴运转，由<strong>银幕新讯（news）</strong>发布官宣流媒体定档日与新片发行动态，<strong>电影导赏（guide）</strong>提供无剧透背景、风格与看点参谋。每条消息均关联影片档案页，并可查看导赏；有可核来源的通知同时提供来源入口。本站仅提供资讯，不提供影片下载、播放或资源获取服务，不展示资源获取或登录入口。
           </p>
         </div>
 
@@ -57,14 +57,14 @@ export default function AboutPage() {
           </p>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
-              <span className="text-cinema-text">选稿优先级：</span>按内容质量筛选：优先出资源通知与作者向/高口碑定档，过滤口水定档；不再设每日条数上限，按发布时间倒序展示。</li>
+              <span className="text-cinema-text">选稿优先级：</span>按内容质量筛选：优先作者向/高口碑定档与新片发行动态，过滤口水定档；不再设每日条数上限，按发布时间倒序展示。</li>
             <li>
               <span className="text-cinema-text">主轴 A · 新片流媒体定档：</span>
               收录官方或权威行业媒体公布的确切流媒体上线日期（<code className="text-xs">YYYY-MM-DD</code>）与平台（Netflix / Apple TV+ / Max / Prime Video / Criterion Channel / MUBI / Disney+ / 国内正版平台等），必填地区与可核信源。聚焦作者向、制作精良的新片与焦点文艺片，获奖不是必要条件。
             </li>
             <li>
-              <span className="text-cinema-text">主轴 B · 新片出资源通知：</span>
-              当高质量中字压制释出（WEB-DL / BDRip / 官方数字版等，国内影迷可实际获取）时，发布时间线通知并附资源形态简述；有可核微博原帖时提供微博入口（每片首次出资源记一次，重大画质升级可再记一次）。
+              <span className="text-cinema-text">主轴 B · 新片发行动态：</span>
+              当新片的高质量版本正式发行上线（流媒体上线、官方数字版等）时，发布时间线通知并附版本与平台简述；有可核来源时提供来源入口（每片首次发行动态记一次，重大版本更新可再记一次）。
             </li>
             <li>
               <span className="text-cinema-text">特例：</span>
@@ -72,7 +72,7 @@ export default function AboutPage() {
             </li>
             <li>
               <span className="text-cinema-text">不收录内容：</span>
-              <strong>时间线完全不进影展/奖项/入围/提名</strong>；不收纯商业爆米花与超级英雄连载；不收纯国外线下院线点映或开画；不收口碑刷屏、公关分数微调、票房炒作；不收无确切日期的 TBA；不收无中字无法获取的资源传闻。出资源通知目前<strong>仅站内时间线</strong>。
+              <strong>时间线完全不进影展/奖项/入围/提名</strong>；不收纯商业爆米花与超级英雄连载；不收纯国外线下院线点映或开画；不收口碑刷屏、公关分数微调、票房炒作；不收无确切日期的 TBA；不收无可靠来源的发行传闻。发行动态通知目前<strong>仅站内时间线</strong>。
             </li>
           </ul>
         </div>

@@ -63,11 +63,11 @@ export default function ContactPage() {
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
               <span className="text-cinema-text">资料纠错：</span>
-              如发现站内影片译名、主创名单、流媒体定档日期或出资源状态有误，请在邮件中附上对应页面链接与参考信源，我们将第一时间核对更正。
+              如发现站内影片译名、主创名单、流媒体定档日期或发行状态有误，请在邮件中附上对应页面链接与参考信源，我们将第一时间核对更正。
             </li>
             <li>
               <span className="text-cinema-text">新讯线索：</span>
-              欢迎提供符合本站编辑标准的线索：官方/权威媒体公布的流媒体定档（日期+平台+地区），以及「资源已出 / 网盘可下」通知线索（请附官方公报、权威报道或可核微博原帖链接）。
+              欢迎提供符合本站编辑标准的线索：官方/权威媒体公布的流媒体定档（日期+平台+地区），以及新片发行动态线索（请附官方公报、权威报道或可核来源链接）。
             </li>
             <li>
               <span className="text-cinema-text">合作与交流：</span>

@@ -6,12 +6,19 @@ export default function Footer() {
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
         <p className="font-display text-cinema-gold">银幕新讯</p>
         <p className="mt-1 text-sm text-cinema-muted">
-          新片流媒体定档 · 出资源通知（中字熟肉 / 网盘可下）
+          新片流媒体定档 · 新片发行动态
         </p>
         <p className="mt-3 text-xs text-cinema-muted/70">
-          只关心什么时候能在流媒体看、什么时候出资源；不收院线爆米花。数据随仓库发布，非实时爬取。
+          只关心什么时候能在流媒体看、什么时候发行上线；不收院线爆米花。数据随仓库发布，非实时爬取。
         </p>
         <p className="mt-3 text-xs text-cinema-muted/70">
+          <Link
+            href="/insight/not-only-scores"
+            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
+          >
+            本站原创
+          </Link>
+          <span className="mx-2 opacity-40">·</span>
           <Link
             href="/about"
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"

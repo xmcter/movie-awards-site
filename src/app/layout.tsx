@@ -8,7 +8,7 @@ import "./globals.css";
 const siteUrl = "https://news.readcine.com";
 const title = "电影资讯";
 const description =
-  "只做两件事：作者向与高口碑新片的流媒体定档时间，以及新片出资源（中字熟肉/网盘可下）通知。今晚看什么，不收院线爆米花。";
+  "只做两件事：作者向与高口碑新片的流媒体定档时间，以及新片发行动态。今晚看什么，不收院线爆米花。";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "流媒体定档",
-    "出资源通知",
+    "新片发行动态",
     "新片上线",
-    "熟肉资源",
+    "新片资讯",
     "流媒体首播",
-    "网盘可下",
+    "正版流媒体",
     "高口碑电影",
     "作者电影",
     "Netflix",

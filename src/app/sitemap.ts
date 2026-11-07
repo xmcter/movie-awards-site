@@ -37,13 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const filmUrls: MetadataRoute.Sitemap = uniqueFilmIds.map((id) => ({
-    url: `https://news.readcine.com/film/${id}`,
+    url: `https://news.readcine.com/film/${encodeURIComponent(id)}`,
     changeFrequency: "weekly" as const,
     priority: 0.7,
   }));
 
   const eventUrls: MetadataRoute.Sitemap = uniqueEventIds.map((id) => ({
-    url: `https://news.readcine.com/event/${id}`,
+    url: `https://news.readcine.com/event/${encodeURIComponent(id)}`,
     changeFrequency: "weekly" as const,
     priority: 0.6,
   }));

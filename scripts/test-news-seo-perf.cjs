@@ -7,7 +7,7 @@ assert(html.includes('loading="eager"') && html.includes('fetchPriority="high"')
 const sitemap=fs.readFileSync("out/sitemap.xml","utf8");
 assert(!sitemap.includes("<lastmod>"));assert(!sitemap.includes("movie.readcine.com"));
 for(const m of sitemap.matchAll(/<loc>https:\/\/news\.readcine\.com([^<]*)<\/loc>/g)) {
- const path=m[1].replace(/^\//,"");assert(fs.existsSync(path?"out/"+path+".html":"out/index.html"),path);
+ const path=decodeURIComponent(m[1]).replace(/^\//,"");assert(fs.existsSync(path?"out/"+path+".html":"out/index.html"),path);
 }
 for(const path of ["out/event/stream-barrio-triste-mubi-2026-11-27.html","out/film/possible-love.html"]){
  const s=fs.readFileSync(path,"utf8");assert(s.includes("BreadcrumbList"));

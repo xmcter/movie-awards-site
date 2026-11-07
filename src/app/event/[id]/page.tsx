@@ -47,7 +47,7 @@ export async function generateMetadata({
     twitter: { card: "summary_large_image", title, description },
     alternates: { canonical: `/event/${event.id}` },
     openGraph: {
-      title: `${title} · 银幕新讯`,
+      title,
       description,
       url: `https://news.readcine.com/event/${event.id}`,
       type: "article",

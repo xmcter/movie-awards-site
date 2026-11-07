@@ -73,7 +73,7 @@ export async function generateMetadata({
 
   const film = getFilm(id);
   if (!film) return { title: "未找到" };
-  const title = `${film.title}：剧情简介与影片资讯`;
+  const title = film.title;
   const { plot, background } = splitFilmCopy(film);
   const rawDescription =
     [plot, background].filter(Boolean).join(" ") ||
@@ -86,7 +86,7 @@ export async function generateMetadata({
     twitter: { card: "summary_large_image", title, description },
     alternates: { canonical: `/film/${film.id}` },
     openGraph: {
-      title: `${film.title} · 银幕新讯`,
+      title: film.title,
       description,
       url: `https://news.readcine.com/film/${film.id}`,
       type: "article",

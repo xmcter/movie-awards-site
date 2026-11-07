@@ -6,7 +6,7 @@ import ThemeInit from "@/components/ThemeInit";
 import "./globals.css";
 
 const siteUrl = "https://news.readcine.com";
-const title = "银幕新讯 · 流媒体定档与出资源通知";
+const title = "电影资讯";
 const description =
   "只做两件事：作者向与高口碑新片的流媒体定档时间，以及新片出资源（中字熟肉/网盘可下）通知。今晚看什么，不收院线爆米花。";
 
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: title,
-    template: "%s · 银幕新讯",
+    template: "%s",
   },
   description,
   keywords: [

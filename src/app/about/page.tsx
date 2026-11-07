@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     canonical: "/about",
   },
   openGraph: {
-    title: `${title} · 银幕新讯`,
+    title,
     description,
     url: "https://news.readcine.com/about",
     type: "website",

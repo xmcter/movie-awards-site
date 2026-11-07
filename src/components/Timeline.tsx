@@ -4,6 +4,7 @@ import { publicationTime } from "@/lib/timelineOrder";
 import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import ReleaseLabel from "@/components/ReleaseLabel";
+import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
 import type { TimelineEvent, TimelineEventType } from "@/types";
 import { TypeBadge } from "@/components/Badge";
@@ -622,17 +623,17 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                   hl.includes(String(event.filmYear));
                                 const bits: string[] = [];
                                 if (!titleHit && event.filmTitle) bits.push(event.filmTitle);
-                                if (!yearHit && event.filmYear) bits.push(String(event.filmYear));
+
                                 if (event.directors?.[0] && !hl.includes(event.directors[0].toLowerCase())) {
                                   bits.push(event.directors[0]);
                                 }
                                 return bits.length ? (
                                   <>
-                                    {bits.join(" · ")}
+                                    <FilmMeta year={!yearHit ? event.filmYear : undefined} parts={bits} />
                                     <span className="ml-1 text-cinema-gold">影片档 →</span>
                                   </>
                                 ) : (
-                                  <span className="text-cinema-gold">影片档 →</span>
+                                  <><FilmMeta year={!yearHit ? event.filmYear : undefined} /><span className="ml-1 text-cinema-gold">影片档 →</span></>
                                 );
                               })()}
                             </Link>

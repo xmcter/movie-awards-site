@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ReleaseLabel from "@/components/ReleaseLabel";
+import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
@@ -186,15 +187,12 @@ export default async function EventPage({
                   hl.includes(`《${event.filmTitle}》`.toLowerCase()));
               const bits: string[] = [];
               if (!titleInHl && event.filmTitle) bits.push(event.filmTitle);
-              if (event.filmYear && !hl.includes(String(event.filmYear))) {
-                bits.push(String(event.filmYear));
-              }
               if (event.filmTitleEn && !hl.includes(event.filmTitleEn.toLowerCase())) {
                 bits.push(event.filmTitleEn);
               }
-              if (!bits.length) return null;
+              if (!bits.length && !event.filmYear) return null;
               return (
-                <p className="mt-1 text-xs text-cinema-muted">{bits.join(" · ")}</p>
+                <p className="mt-1 text-xs text-cinema-muted"><FilmMeta year={!hl.includes(String(event.filmYear)) ? event.filmYear : undefined} parts={bits} /></p>
               );
             })()}
             {directors.length > 0 ? (

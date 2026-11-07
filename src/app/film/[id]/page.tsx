@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import ReleaseLabel from "@/components/ReleaseLabel";
+import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
@@ -233,7 +234,7 @@ export default async function FilmPage({
             <h1 className="mt-2 font-display text-2xl text-cinema-text sm:text-3xl">
               {film.title}
               <span className="ml-2 font-sans text-base font-normal text-cinema-muted">
-                {film.year}
+                <FilmMeta year={film.year} />
               </span>
             </h1>
             {film.titleEn ? (

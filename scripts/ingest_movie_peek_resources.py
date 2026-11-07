@@ -27,7 +27,7 @@ CATALOGS = [
 ]
 # Existing curated catalog calls this film 可能的爱情; preserve its canonical ID.
 KNOWN_FILM_IDS = {"36847425": "possible-love"}
-RESOURCE = re.compile(r"出资源|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出", re.I)
+RESOURCE = re.compile(r"出资源|已出源|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出", re.I)
 EXCLUDED = re.compile(r"纪录|documentary|docuseries|剧集|电视剧|连续剧|迷你剧|限定剧|TV\s*series|miniseries", re.I)
 ENGLISH_ONLY = re.compile(r"英字|英文字幕|无中字|无字幕|生肉", re.I)
 CHINESE_SUBS = re.compile(r"中字|中文字幕|官中|中英字幕|简繁|内封简|内嵌中", re.I)
@@ -247,7 +247,7 @@ def plan_ingest(peek, details, data_dir, day, min_year):
             "id": f"movie-peek-{film_id}-first-resource", "filmId": film_id,
             "publishedAt": src_iso,
             "sourcePublishedAt": src_iso,
-            "date": day, "kind": "release", "summary": f"《{film_title}》出资源",
+            "date": day, "kind": "release", "summary": f"《{film_title}》已出源",
             "detail": f"已有{shape}。可通过「微博」入口查看原帖；资源可用性以原帖最新说明为准。",
             "sourceLabel": "片库·微博",
             "source": weibo_url(source["weibo_url"]),

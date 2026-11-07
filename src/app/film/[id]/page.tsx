@@ -334,7 +334,7 @@ export default async function FilmPage({
               const platformLabel = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
               const when = release.date ? formatDate(release.date) : "待定";
-              const bits = [status || null, when].filter(Boolean); // 不展示平台/国别地区
+              const bits = [status || null, release.date ? `${when}出源` : when].filter(Boolean); // 不展示平台/国别地区
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}
@@ -367,8 +367,8 @@ export default async function FilmPage({
             {events.map((event) => (
               <li key={event.id} className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3">
                 <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-                  <time dateTime={event.date || undefined}>{event.dateLabel}</time>
-                  <TypeBadge type={event.type} label={event.badge === "新品" ? "新片" : event.badge} />
+                  {event.type !== "streaming" ? <time dateTime={event.date || undefined}>{event.dateLabel}</time> : null}
+                  <TypeBadge type={event.type} label={event.badge === "新品" ? "新片" : event.badge} headline={event.headline} />
                 </div>
                 <p className="mt-1.5 text-sm text-cinema-text">
                   {event.headline || event.summary}

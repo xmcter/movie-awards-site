@@ -432,8 +432,8 @@ export function getTimelineEvents(): TimelineEvent[] {
       const platform = PLATFORM_LABELS[release.platform] || release.platform;
       const statusLabel = RELEASE_STATUS_LABELS[release.status];
       const datePart = formatDate(release.date);
-      const isLive = isPublished(release.date, today);
-      const streamBadge = isLive ? "已上线" : "定档";
+      // 日历经过不等于已核实资源：计划始终显示日期+出源，只有 peek 实证才标已出源。
+      const streamBadge = "出源计划";
 
       const headline = buildStreamingHeadline({
         film,
@@ -514,12 +514,15 @@ export function getTimelineEvents(): TimelineEvent[] {
       continue;
     }
     let badge = "新片";
-    if (/出资源|网盘可下|可下|WEB-DL|BDRip|压制/i.test(blob)) badge = "出资源";
+    if (/出资源|已出源|网盘可下|可下|WEB-DL|BDRip|压制/i.test(blob)) badge = "出资源";
     else if (/定档|将于.*上线|官宣.*上线/i.test(blob)) badge = "定档";
     else if (/上线|流出|熟肉|数字版|首发/i.test(blob)) badge = "已上线";
     else if (/critic|口碑|tomatometer|metacritic/i.test(blob)) continue; // 口碑不进时间线
 
-    const headline = polishAuteurHeadline(news.summary, film);
+    const verifiedResource = news.id.startsWith("movie-peek-");
+    const headline = verifiedResource
+      ? `《${film.title}》已出源`
+      : polishAuteurHeadline(news.summary, film);
     // 有独立 detail 时用 detail 作副文；否则用 summary，再与标题去重
     const rawSummary =
       news.detail && news.detail.trim() && news.detail.trim() !== (news.summary || "").trim()
@@ -551,7 +554,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
       // detail 已并入 summary 时不再挂一份，避免详情页标题/摘要/正文三重重复
       detail: undefined,
-      badge,
+      badge: verifiedResource ? "已出源" : badge,
       accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
       directors: film.directors,
       filmKind: kind,

@@ -152,7 +152,7 @@ export default async function EventPage({
           </div>
           <div className="min-w-0 flex-1 p-3 pl-3 sm:p-4 sm:pl-4">
             <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-              <TypeBadge type={event.type} label={badge} />
+              <TypeBadge type={event.type} label={badge} headline={event.headline} />
               {event.sourceLabel || event.sourcePublishedLabel ? (
                 event.sourceUrl && event.sourceLabel ? (
                   <a

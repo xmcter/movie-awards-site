@@ -17,11 +17,14 @@ const LABELS: Record<TimelineEventType, string> = {
 export function TypeBadge({
   type,
   label,
+  headline,
 }: {
   type: TimelineEventType;
   label?: string;
+  headline?: string;
 }) {
   const text = label === "新品" ? "新片" : label || LABELS[type];
+  if (type === "streaming" || (label && headline?.includes(label))) return null;
   return (
     <span
       className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${STYLES[type]}`}

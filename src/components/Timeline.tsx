@@ -544,7 +544,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                     </Link>
                     <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-                        <TypeBadge type={event.type} label={displayBadge(event.badge)} />
+                        <TypeBadge type={event.type} label={displayBadge(event.badge)} headline={event.headline} />
                         <SourceTag label={event.sourceLabel} href={event.sourceUrl} publishedLabel={event.sourcePublishedLabel} />
                         {isCardNew(event) ? (
                           <span className="rounded-full bg-cinema-gold px-1.5 py-px text-[10px] font-semibold leading-4 text-cinema-bg">
@@ -709,7 +709,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                 return (
                                   <li key={p.id} className="text-xs">
                                     <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-cinema-muted">
-                                      <TypeBadge type={p.type} label={displayBadge(p.badge)} />
+                                      <TypeBadge type={p.type} label={displayBadge(p.badge)} headline={p.headline} />
                                       <SourceTag label={p.sourceLabel} href={p.sourceUrl} publishedLabel={p.sourcePublishedLabel} />
                                       <WeiboLink href={p.weiboUrl} label={p.weiboLabel} />
                                     </div>

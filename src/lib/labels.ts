@@ -66,17 +66,22 @@ export const AWARD_RESULT_LABELS: Record<AwardResult, string> = {
   won: "获奖",
 };
 
-export function formatDate(date?: string): string {
+export function shanghaiYear(now = new Date()): number {
+  return Number(new Intl.DateTimeFormat("en", { timeZone: "Asia/Shanghai", year: "numeric" }).format(now));
+}
+
+export function formatDate(date?: string, now = new Date()): string {
   if (!date) return "待定";
   const [y, m, d] = date.split("-");
   if (!y || !m) return date;
-  return d ? `${y}年${Number(m)}月${Number(d)}日` : `${y}年${Number(m)}月`;
+  const year = Number(y) === shanghaiYear(now) ? "" : `${y}年`;
+  return d ? `${year}${Number(m)}月${Number(d)}日` : `${year}${Number(m)}月`;
 }
 
 export function formatYearMonth(date?: string): string {
   if (!date) return "待定";
   const [y, m] = date.split("-");
-  return `${y}年${Number(m)}月`;
+  return `${Number(y) === shanghaiYear() ? "" : `${y}年`}${Number(m)}月`;
 }
 
 /** 中文优先的来源可读名；兼容旧英文标签。 */
@@ -126,17 +131,34 @@ export function streamingSourceLabel(release: {
 /** 列表展示用：原文/收录短日期（不用定档日）。 */
 export function formatSourcePublishedLabel(
   iso?: string,
-  opts?: { isOriginal?: boolean },
+  opts?: { isOriginal?: boolean; now?: Date },
 ): string | undefined {
   if (!iso) return undefined;
+  const now = opts?.now || new Date();
   const m = iso.match(/^(\d{4})-(\d{2})-(\d{2})(?:[T ](\d{2}):(\d{2}))?/);
   if (!m) return undefined;
-  const [, , mo, d, hh, mm] = m;
-  const day = `${Number(mo)}月${Number(d)}日`;
-  const prefix = opts?.isOriginal === false ? "收录" : "原文";
-  if (hh && mm && !(hh === "00" && mm === "00")) {
-    return `${prefix} ${day} ${hh}:${mm}`;
+  let [, y, mo, d, hh, mm] = m;
+  // 有明确时区的原文时间统一转换为 Asia/Shanghai；纯日期保持日历日期。
+  if (/[T ].*(?:Z|[+-]\d{2}:?\d{2})$/.test(iso)) {
+    const dt = new Date(iso);
+    if (!Number.isNaN(dt.getTime())) {
+      const parts = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", hourCycle: "h23",
+      }).formatToParts(dt);
+      const get = (type: Intl.DateTimeFormatPartTypes) => parts.find(p => p.type === type)!.value;
+      y = get("year"); mo = get("month"); d = get("day"); hh = get("hour"); mm = get("minute");
+    }
   }
+  const day = `${Number(y) === shanghaiYear(now) ? "" : `${y}年`}${Number(mo)}月${Number(d)}日`;
+  const prefix = opts?.isOriginal === false ? "收录" : "原文";
+  if (hh && mm && !(hh === "00" && mm === "00")) return `${prefix} ${day} ${hh}:${mm}`;
   return `${prefix} ${day}`;
 }
 
+/** 只格式化正文中的完整日期；保留电影制作年份、历史年份与新闻事实。 */
+export function formatContentDates(text: string, now = new Date()): string {
+  return text
+    .replace(/(\d{4})年(\d{1,2})月(\d{1,2})日/g, (_, y, m, d) => formatDate(`${y}-${m}-${d}`, now))
+    .replace(/\b(\d{4})-(\d{2})-(\d{2})\b/g, (_, y, m, d) => formatDate(`${y}-${m}-${d}`, now));
+}

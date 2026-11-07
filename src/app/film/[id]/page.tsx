@@ -238,11 +238,10 @@ export default async function FilmPage({
             {film.titleEn ? (
               <p className="mt-1 text-sm text-cinema-muted">{film.titleEn}</p>
             ) : null}
-            {film.runtime || film.year ? (
+            {film.runtime ? (
               <p className="mt-3 text-xs text-cinema-muted/70">
                 {[
                   film.runtime ? `${film.runtime} 分钟` : null,
-                  film.year ? `${film.year}年` : null,
                 ]
                   .filter(Boolean)
                   .join(" · ")}

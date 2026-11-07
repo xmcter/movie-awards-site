@@ -29,6 +29,7 @@ import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
   formatDate,
+  formatContentDates,
   formatSourcePublishedLabel,
   normalizeSourceLabel,
   streamingSourceLabel,
@@ -479,6 +480,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         posterColors: film.posterColors,
         headline,
         summary: body,
+        plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
         detail: note || undefined,
         badge: streamBadge,
         directors: film.directors,
@@ -546,6 +548,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       posterColors: film.posterColors,
       headline,
       summary,
+      plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
       // detail 已并入 summary 时不再挂一份，避免详情页标题/摘要/正文三重重复
       detail: undefined,
       badge,
@@ -567,7 +570,8 @@ export function getTimelineEvents(): TimelineEvent[] {
   // 质量闸已在入库时过滤口水定档；不再按发布日卡条数，按首次发布时间倒序。
   return events
     .filter((e) => e.type !== "win" && e.type !== "nomination")
-    .sort(comparePublicationTime);
+    .sort(comparePublicationTime)
+    .map(e => ({ ...e, headline: formatContentDates(e.headline || ""), summary: formatContentDates(e.summary || ""), detail: e.detail ? formatContentDates(e.detail) : undefined }));
 }
 
 /** 口水泥档已在 shouldAdmitStreaming 硬过滤；不再按日配额截断。 */

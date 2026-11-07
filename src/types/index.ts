@@ -151,6 +151,7 @@ export interface TimelineEvent {
   /** 醒目新闻标题（列表 h2） */
   headline?: string;
   summary: string;
+  plot?: string;
   detail?: string;
   badge: string;
   accentColor?: string;

@@ -595,6 +595,48 @@
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
       ]
+    },
+    {
+      "id": "ezra",
+      "title": "Ezra",
+      "titleEn": "Ezra",
+      "year": 2024,
+      "synopsis": "Divorced stand-up comedian Max Bernal struggles to raise his autistic son, Ezra. Forced to confront difficult decisions about the boy's future, Max and Ezra embark on a cross-country road trip that has a transcendent impact on both of their lives.",
+      "directors": [
+        "Tony Goldwyn"
+      ],
+      "cast": [
+        "Bobby Cannavale",
+        "William A. Fitzgerald",
+        "Robert De Niro",
+        "Rose Byrne",
+        "Vera Farmiga",
+        "Whoopi Goldberg",
+        "Rainn Wilson"
+      ],
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-07T09:59:58+08:00",
+          "platform": "netflix",
+          "date": "2026-11-20",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82138230",
+          "sourceLabel": "片夜定档"
+        }
+      ]
     }
   ],
   "ceremonies": []

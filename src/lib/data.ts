@@ -587,6 +587,13 @@ export function getFilmEvents(filmId: string): TimelineEvent[] {
   return getTimelineEvents().filter((e) => e.filmId === filmId);
 }
 
+/** 详情页复用与首页卡同一口径的已核实奖项：仅 won/nominated 且有证据链接。 */
+export function getVerifiedFilmAwards(filmId: string) {
+  return verifiedFilmAwards.filter(
+    (a) => a.filmId === filmId && (a.result === "won" || a.result === "nominated") && Boolean(a.source?.trim()),
+  );
+}
+
 /** 只将具有实质中文剧情/背景的影片档纳入索引；薄目录页仍可导航访问。 */
 export function isIndexableFilm(film: Film): boolean {
   const { plot, background } = splitFilmCopy(film);

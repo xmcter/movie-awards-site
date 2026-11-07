@@ -11,6 +11,7 @@ import {
   films,
   getFilm,
   getFilmEvents,
+  getVerifiedFilmAwards,
   isIndexableFilm,
   splitFilmCopy,
   truncateDescription,
@@ -164,6 +165,7 @@ export default async function FilmPage({
   const weiboEvent = events.find((event) => event.weiboUrl);
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
   const { plot, background } = splitFilmCopy(film);
+  const verifiedAwards = getVerifiedFilmAwards(film.id);
   const peopleLabel =
     film.directors.length > 0
       ? "导演"
@@ -288,6 +290,24 @@ export default async function FilmPage({
             </a>
             <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
           </div>
+        </Section>
+      ) : null}
+
+      {verifiedAwards.length > 0 ? (
+        <Section title="已核实奖项与提名">
+          <ul data-film-awards className="space-y-1 break-words text-xs leading-relaxed text-cinema-gold/90">
+            {verifiedAwards.map((award) => (
+              <li key={`${award.year}-${award.festival}-${award.category}-${award.result}`}>
+                <a href={award.source} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                  {award.icon ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={award.icon} alt={`${award.festival}标识`} width={16} height={16} className="mr-1.5 inline-block h-4 w-4 shrink-0 rounded-sm bg-white p-px align-text-bottom object-contain" />
+                  ) : null}
+                  {award.year}年{award.festival} · {award.category} · {award.result === "won" ? "获奖" : "提名"}
+                </a>
+              </li>
+            ))}
+          </ul>
         </Section>
       ) : null}
 

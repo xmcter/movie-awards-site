@@ -586,3 +586,10 @@ export const MAX_EVENTS_PER_DAY = Infinity; // 兼容旧引用：无日上限
 export function getFilmEvents(filmId: string): TimelineEvent[] {
   return getTimelineEvents().filter((e) => e.filmId === filmId);
 }
+
+/** 只将具有实质中文剧情/背景的影片档纳入索引；薄目录页仍可导航访问。 */
+export function isIndexableFilm(film: Film): boolean {
+  const { plot, background } = splitFilmCopy(film);
+  const content = `${plot} ${background}`;
+  return (content.match(/[\u4e00-\u9fff]/g) || []).length >= 40;
+}

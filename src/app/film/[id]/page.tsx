@@ -11,6 +11,7 @@ import {
   films,
   getFilm,
   getFilmEvents,
+  isIndexableFilm,
   splitFilmCopy,
   truncateDescription,
 } from "@/lib/data";
@@ -71,7 +72,7 @@ export async function generateMetadata({
 
   const film = getFilm(id);
   if (!film) return { title: "未找到" };
-  const title = film.titleEn ? `${film.title} / ${film.titleEn}` : film.title;
+  const title = `${film.title}：剧情简介与影片资讯`;
   const { plot, background } = splitFilmCopy(film);
   const rawDescription =
     [plot, background].filter(Boolean).join(" ") ||
@@ -80,6 +81,8 @@ export async function generateMetadata({
   return {
     title,
     description,
+    robots: { index: isIndexableFilm(film), follow: true },
+    twitter: { card: "summary_large_image", title, description },
     alternates: { canonical: `/film/${film.id}` },
     openGraph: {
       title: `${film.title} · 银幕新讯`,
@@ -201,7 +204,7 @@ export default async function FilmPage({
     <div className="space-y-8">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [jsonLd, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "电影资讯", item: "https://news.readcine.com/" }, { "@type": "ListItem", position: 2, name: film.title, item: `https://news.readcine.com/film/${film.id}` }] }] }).replace(/</g, "\\u003c") }}
       />
       <p className="text-xs text-cinema-muted">
         <Link href="/" className="hover:text-cinema-gold">

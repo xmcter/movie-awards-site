@@ -1,3 +1,4 @@
+import NavigationStatus from "@/components/NavigationStatus";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -73,8 +74,6 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <script defer src="https://stats.readcine.com/script.js" data-website-id="56c0a024-728b-4820-90da-8abdc821f822" />
       </head>
       <body className="flex min-h-screen flex-col">
@@ -83,6 +82,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <NavigationStatus />
         <Header />
         <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-8 sm:px-6">
           {children}

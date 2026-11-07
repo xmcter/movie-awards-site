@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "validate": "node scripts/validate-data.mjs",
-    "test:timeline": "node scripts/test-timeline-publication.cjs"
+    "test:timeline": "node scripts/test-timeline-publication.cjs",
+    "prebuild": "node scripts/build-thumbnails.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "dependencies": {
     "next": "^15.5.25",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "sharp": "^0.35.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.7",

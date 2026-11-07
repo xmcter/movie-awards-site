@@ -39,11 +39,12 @@ export async function generateMetadata({
   const { plot, background } = film ? splitFilmCopy(film) : { plot: "", background: "" };
   const title = event.headline || event.summary || event.filmTitle;
   const extra = [event.detail, plot, background].find((s) => s && s !== event.summary) || "";
-  const rawDescription = extra ? `${event.summary}：${extra}` : event.summary;
+  const rawDescription = [event.summary, extra].filter(Boolean).join("。");
   const description = truncateDescription(rawDescription, 150);
   return {
     title,
     description,
+    twitter: { card: "summary_large_image", title, description },
     alternates: { canonical: `/event/${event.id}` },
     openGraph: {
       title: `${title} · 银幕新讯`,
@@ -115,6 +116,21 @@ export default async function EventPage({
 
   return (
     <div className="space-y-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org", "@graph": [
+          { "@type": "Article", headline: event.headline || event.filmTitle,
+            description: truncateDescription(event.plot || event.summary || event.headline || event.filmTitle, 150),
+            mainEntityOfPage: `https://news.readcine.com/event/${event.id}`,
+            ...(event.sourcePublishedAt || event.publishedAt ? { datePublished: event.sourcePublishedAt || event.publishedAt } : {}),
+            ...(event.poster ? { image: new URL(event.poster, "https://news.readcine.com").href } : {}),
+            inLanguage: "zh-CN", about: { "@type": "Movie", name: event.filmTitle },
+            ...(event.sourceUrl ? { isBasedOn: event.sourceUrl } : {}) },
+          { "@type": "BreadcrumbList", itemListElement: [
+            { "@type": "ListItem", position: 1, name: "电影资讯", item: "https://news.readcine.com/" },
+            { "@type": "ListItem", position: 2, name: event.filmTitle, item: `https://news.readcine.com/event/${event.id}` }
+          ] }
+        ]
+      }).replace(/</g, "\\u003c") }} />
       <div className="flex items-center justify-between gap-4 text-xs text-cinema-muted">
         <p>
           <Link href="/" className="hover:text-cinema-gold">

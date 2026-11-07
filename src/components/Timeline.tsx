@@ -103,8 +103,10 @@ function initials(title: string): string {
 function EventPoster({
   event,
   className,
+  priority = false,
 }: {
   event: TimelineEvent;
+  priority?: boolean;
   className?: string;
 }) {
   const [failed, setFailed] = useState(false);
@@ -122,9 +124,10 @@ function EventPoster({
       {showImg ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={event.poster}
+          src={event.poster?.startsWith("/posters/") ? `/thumbs/${event.poster.split("/").pop()!.replace(/\.[^.]+$/, "")}.webp` : event.poster}
           alt={event.filmTitle}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "auto"}
           decoding="async"
           width={168}
           height={252}
@@ -540,9 +543,9 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                       href={linkHref}
                       prefetch={false}
                       onClick={() => markClicked(event.id)}
-                      className="m-3 mr-0 h-[108px] w-[72px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[126px] sm:w-[84px] focus:outline-none"
+                      className="m-3 mr-0 h-[108px] w-[72px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[126px] sm:w-[84px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold"
                     >
-                      <EventPoster event={event} className="h-full w-full" />
+                      <EventPoster event={event} priority={event.id === events[0]?.id} className="h-full w-full" />
                     </Link>
                     <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
@@ -563,7 +566,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         href={linkHref}
                         prefetch={false}
                         onClick={() => markClicked(event.id)}
-                        className="group block focus:outline-none"
+                        className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold"
                       >
                         <h2 className="mt-2 font-display text-[1.05rem] leading-snug text-cinema-text group-hover:text-cinema-gold-light sm:text-lg">
                           {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} /> : (event.headline || event.summary || event.filmTitle)}
@@ -581,12 +584,12 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             </p>
                           ) : null;
                         })()}
-                      </Link>
                       {event.plot && dedupeSubtitleAgainstTitle(event.summary || "", event.plot) ? (
                         <p data-film-plot className="mt-2 whitespace-pre-line break-words text-sm leading-relaxed text-cinema-muted">
                           {event.plot}
                         </p>
                       ) : null}
+                      </Link>
                       {event.filmAwards?.length ? (
                         <ul data-film-awards className="mt-3 space-y-1 break-words text-xs leading-relaxed text-cinema-gold/90">
                           {event.filmAwards.map(award => (
@@ -878,7 +881,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
               placeholder="说说原因，比如：题材不感兴趣、已经看过、想换个风格……"
               autoFocus
               rows={6}
-              className="mt-4 w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none min-h-[160px]"
+              className="mt-4 w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold min-h-[160px]"
             />
             <div className="mt-5 flex justify-end gap-2">
               <button

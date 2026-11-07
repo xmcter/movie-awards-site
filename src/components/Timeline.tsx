@@ -581,8 +581,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         })()}
                       </Link>
                       {event.plot && dedupeSubtitleAgainstTitle(event.summary || "", event.plot) ? (
-                        <p data-film-plot className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
-                          {dedupeSubtitleAgainstTitle(event.headline || "", event.plot)}
+                        <p data-film-plot className="mt-2 whitespace-pre-line break-words text-sm leading-relaxed text-cinema-muted">
+                          {event.plot}
                         </p>
                       ) : null}
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted">

@@ -208,5 +208,19 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/Rq7jKmpYw",
     "sourcePublishedAt": "2026-11-06T13:24:39+08:00"
+  },
+  {
+    "id": "movie-peek-movie-douban-38112572-first-resource",
+    "filmId": "movie-douban-38112572",
+    "publishedAt": "2026-11-07T09:39:42+08:00",
+    "sourcePublishedAt": "2026-11-07T09:39:42+08:00",
+    "date": "2026-11-07",
+    "kind": "release",
+    "summary": "《黑牢城》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RqfgW7YUQ",
+    "weiboUrl": "https://m.weibo.cn/detail/RqfgW7YUQ",
+    "weiboLabel": "微博·不爱吃饭的大马猴"
   }
 ]

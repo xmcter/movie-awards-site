@@ -48,7 +48,7 @@ class ImporterTests(unittest.TestCase):
         self.assertEqual(news[0]["sourcePublishedAt"], DAY + "T18:00:00+08:00")
         self.assertEqual(news[0]["publishedAt"], DAY + "T18:00:00+08:00")
         self.assertIn("「微博」入口", news[0]["detail"])
-        self.assertEqual(news[0]["summary"], "《测试电影》出资源")
+        self.assertEqual(news[0]["summary"], "《测试电影》已出源")
         self.assertNotIn("片库已收录", news[0]["summary"])
         self.assertNotIn("片库已收录", news[0]["detail"])
         self.assertNotIn("片库新增", news[0]["detail"])

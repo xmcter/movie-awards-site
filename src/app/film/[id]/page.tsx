@@ -164,12 +164,6 @@ export default async function FilmPage({
   const weiboEvent = events.find((event) => event.weiboUrl);
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
   const { plot, background } = splitFilmCopy(film);
-  const people =
-    film.directors.length > 0
-      ? film.directors
-      : film.genres.includes("荣誉") || film.genres.includes("评审")
-        ? film.cast
-        : [];
   const peopleLabel =
     film.directors.length > 0
       ? "导演"
@@ -256,34 +250,31 @@ export default async function FilmPage({
         </div>
       </section>
 
-      <Section title={film.directors.length > 0 && film.cast.length > 0 ? "导演与主演" : peopleLabel}>
-        {people.length > 0 ? (
-          <p className="text-cinema-text">
-            {film.directors.length > 0 ? (
-              <>
-                <span className="text-cinema-muted">导演 </span>
-                {film.directors.join("、")}
-              </>
-            ) : (
-              people.join("、")
-            )}
-          </p>
-        ) : null}
-        {film.directors.length > 0 && film.cast.length > 0 ? (
-          <p className="mt-2 text-sm text-cinema-text">
-            <span className="text-cinema-muted">主演 </span>
-            {film.cast.join("、")}
-          </p>
-        ) : film.directors.length === 0 && film.cast.length > 0 && !film.genres.includes("荣誉") && !film.genres.includes("评审") ? (
-          <p className="mt-2 text-sm text-cinema-text">
-            <span className="text-cinema-muted">主演 </span>
-            {film.cast.join("、")}
-          </p>
-        ) : null}
-      </Section>
+      {film.cast.length > 0 || (film.directors.length > 0 && !plot) ? (
+        <Section title={film.directors.length > 0 && !plot && film.cast.length > 0 ? "导演与主演" : film.directors.length > 0 && !plot ? "导演" : peopleLabel !== "导演" ? peopleLabel : "主演"}>
+          {!plot && film.directors.length > 0 ? (
+            <p className="text-cinema-text">
+              <span className="text-cinema-muted">导演 </span>
+              {film.directors.join("、")}
+            </p>
+          ) : null}
+          {film.cast.length > 0 ? (
+            <p className={`${!plot && film.directors.length > 0 ? "mt-2 " : ""}text-sm text-cinema-text`}>
+              <span className="text-cinema-muted">{film.directors.length === 0 && (film.genres.includes("荣誉") || film.genres.includes("评审")) ? peopleLabel : "主演"} </span>
+              {film.cast.join("、")}
+            </p>
+          ) : null}
+        </Section>
+      ) : null}
 
       {plot ? (
         <Section title="剧情介绍">
+          {film.directors.length > 0 ? (
+            <p className="mb-3 text-cinema-text">
+              <span className="text-cinema-muted">导演 </span>
+              {film.directors.join("、")}
+            </p>
+          ) : null}
           <p>{scrubNegativeCopy(plot)}</p>
           <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
             <a

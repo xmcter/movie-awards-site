@@ -1,3 +1,4 @@
+import verifiedFilmAwards from "@/data/verified-film-awards.json";
 import fs from "fs";
 import { comparePublicationTime, publicationTime } from "@/lib/timelineOrder";
 import path from "path";
@@ -481,6 +482,7 @@ export function getTimelineEvents(): TimelineEvent[] {
         headline,
         summary: body,
         plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
+        filmAwards: verifiedFilmAwards.filter(a => a.filmId === film.id && (a.result === "won" || a.result === "nominated")),
         detail: note || undefined,
         badge: streamBadge,
         directors: film.directors,
@@ -552,6 +554,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       headline,
       summary,
       plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
+        filmAwards: verifiedFilmAwards.filter(a => a.filmId === film.id && (a.result === "won" || a.result === "nominated")),
       // detail 已并入 summary 时不再挂一份，避免详情页标题/摘要/正文三重重复
       detail: undefined,
       badge: verifiedResource ? "已出源" : badge,

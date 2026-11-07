@@ -1,0 +1,65 @@
+[
+  {
+    "filmId": "fjord",
+    "year": 2026,
+    "festival": "戛纳电影节",
+    "category": "金棕榈奖",
+    "result": "won",
+    "source": "https://www.festival-cannes.com/en/press/press-releases/the-79th-festival-de-cannes-winners-list/",
+    "verifiedAt": "2026-11-07"
+  },
+  {
+    "filmId": "minotaur",
+    "year": 2026,
+    "festival": "戛纳电影节",
+    "category": "评审团大奖",
+    "result": "won",
+    "source": "https://www.festival-cannes.com/en/press/press-releases/the-79th-festival-de-cannes-winners-list/",
+    "verifiedAt": "2026-11-07"
+  },
+  {
+    "filmId": "possible-love",
+    "year": 2026,
+    "festival": "威尼斯电影节",
+    "category": "评审团大奖（银狮奖）",
+    "result": "won",
+    "source": "https://www.labiennale.org/en/news/official-awards-83rd-venice-international-film-festival",
+    "verifiedAt": "2026-11-07"
+  },
+  {
+    "filmId": "possible-love",
+    "year": 2026,
+    "festival": "哥谭奖",
+    "category": "最佳国际影片",
+    "result": "nominated",
+    "source": "https://thegotham.org/press/the-gothams-nominations-36th-edition/",
+    "verifiedAt": "2026-11-07"
+  },
+  {
+    "filmId": "minotaur",
+    "year": 2026,
+    "festival": "哥谭奖",
+    "category": "最佳国际影片",
+    "result": "nominated",
+    "source": "https://thegotham.org/press/the-gothams-nominations-36th-edition/",
+    "verifiedAt": "2026-11-07"
+  },
+  {
+    "filmId": "nowhere-to-lay-eyes",
+    "year": 2026,
+    "festival": "洛卡诺电影节",
+    "category": "最佳导演（洪常秀）",
+    "result": "won",
+    "source": "https://variety.com/2026/film/festivals/locarno-award-winners-monica-bellucci-kim-minhee-1236835378/",
+    "verifiedAt": "2026-11-07"
+  },
+  {
+    "filmId": "nowhere-to-lay-eyes",
+    "year": 2026,
+    "festival": "洛卡诺电影节",
+    "category": "最佳表演（金敏喜）",
+    "result": "won",
+    "source": "https://variety.com/2026/film/festivals/locarno-award-winners-monica-bellucci-kim-minhee-1236835378/",
+    "verifiedAt": "2026-11-07"
+  }
+]

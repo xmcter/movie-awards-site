@@ -585,6 +585,17 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           {event.plot}
                         </p>
                       ) : null}
+                      {event.filmAwards?.length ? (
+                        <ul data-film-awards className="mt-3 space-y-1 break-words text-xs leading-relaxed text-cinema-gold/90">
+                          {event.filmAwards.map(award => (
+                            <li key={`${award.year}-${award.festival}-${award.category}-${award.result}`}>
+                              <a href={award.source} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                {award.year}年{award.festival} · {award.category} · {award.result === "won" ? "获奖" : "提名"}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted">
                         <div className="flex flex-wrap items-center gap-2">
                           {event.filmId ? (

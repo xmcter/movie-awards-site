@@ -337,6 +337,10 @@ export function buildStreamingBody(opts: {
 export function scrubNegativeCopy(text: string): string {
   if (!text) return "";
   let s = text.trim();
+  // 仅剥自动资源通知套话，不碰剧情中的网盘/微博事实。
+  s = s.replace(/已有[^。！？\n]{0,100}(?:网盘资源|网盘资源可用)[。]?/g, "");
+  s = s.replace(/可通过「微博」入口查看原帖[；;。]?/g, "");
+  s = s.replace(/资源可用性以原帖最新说明为准[。]?/g, "");
   // 整句否定旁白
   s = s.replace(/[，,。；;]?\s*公开(?:完整)?剧情资料有限[^。；;]*[。；;]?/g, "");
   s = s.replace(/[，,。；;]?\s*不编造(?:细节|上线日|日期)?[。；;]?/g, "");

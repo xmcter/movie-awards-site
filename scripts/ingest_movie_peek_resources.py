@@ -248,7 +248,7 @@ def plan_ingest(peek, details, data_dir, day, min_year):
             "publishedAt": src_iso,
             "sourcePublishedAt": src_iso,
             "date": day, "kind": "release", "summary": f"《{film_title}》已出源",
-            "detail": f"已有{shape}。可通过「微博」入口查看原帖；资源可用性以原帖最新说明为准。",
+            "detail": "",  # 不生成网盘类型、入口指南或可用性免责声明
             "sourceLabel": "片库·微博",
             "source": weibo_url(source["weibo_url"]),
             "weiboUrl": weibo_url(source["weibo_url"]),

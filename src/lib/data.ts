@@ -526,7 +526,7 @@ export function getTimelineEvents(): TimelineEvent[] {
       ? `《${film.title}》已出源`
       : polishAuteurHeadline(news.summary, film);
     // 有独立 detail 时用 detail 作副文；否则用 summary，再与标题去重
-    const rawSummary =
+    const rawSummary = verifiedResource ? (news.detail || "") :
       news.detail && news.detail.trim() && news.detail.trim() !== (news.summary || "").trim()
         ? news.detail
         : news.summary || "";

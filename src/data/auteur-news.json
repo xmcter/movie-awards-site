@@ -222,5 +222,33 @@
     "source": "https://m.weibo.cn/detail/RqfgW7YUQ",
     "weiboUrl": "https://m.weibo.cn/detail/RqfgW7YUQ",
     "weiboLabel": "微博·不爱吃饭的大马猴"
+  },
+  {
+    "id": "movie-peek-movie-douban-36808876-first-resource",
+    "filmId": "movie-douban-36808876",
+    "publishedAt": "2026-11-07T17:08:13+08:00",
+    "sourcePublishedAt": "2026-11-07T17:08:13+08:00",
+    "date": "2026-11-07",
+    "kind": "release",
+    "summary": "《奥德赛 The Odyssey》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RqicZpHRt",
+    "weiboUrl": "https://m.weibo.cn/detail/RqicZpHRt",
+    "weiboLabel": "微博·爱看剧的小马达"
+  },
+  {
+    "id": "movie-peek-movie-douban-35233878-first-resource",
+    "filmId": "movie-douban-35233878",
+    "publishedAt": "2026-11-07T14:58:14+08:00",
+    "sourcePublishedAt": "2026-11-07T14:58:14+08:00",
+    "date": "2026-11-07",
+    "kind": "release",
+    "summary": "《巨蟒博尤纳》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rqhmeb7Tg",
+    "weiboUrl": "https://m.weibo.cn/detail/Rqhmeb7Tg",
+    "weiboLabel": "微博·OtisMilburn_"
   }
 ]

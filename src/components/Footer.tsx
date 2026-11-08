@@ -20,6 +20,13 @@ export default function Footer() {
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link
+            href="/films"
+            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
+          >
+            全部影片
+          </Link>
+          <span className="mx-2 opacity-40">·</span>
+          <Link
             href="/about"
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >

@@ -39,7 +39,9 @@ export async function generateMetadata({
   const { plot, background } = film ? splitFilmCopy(film) : { plot: "", background: "" };
   const title = event.headline || event.summary || event.filmTitle;
   const extra = [event.detail, plot, background].find((s) => s && s !== event.summary) || "";
-  const rawDescription = [event.summary, extra].filter(Boolean).join("。");
+  const rawDescription =
+    [event.summary, extra].filter(Boolean).join("。") ||
+    `${event.filmTitle}${event.filmYear ? `（${event.filmYear}）` : ""}流媒体定档与影片档。`;
   const description = truncateDescription(rawDescription, 150);
   return {
     title,

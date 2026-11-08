@@ -72,10 +72,10 @@ export default function InsightNotOnlyScoresPage() {
           <p className="text-xs leading-relaxed text-cinema-muted">
             来源：Wikipedia / Rotten Tomatoes / Metacritic 汇总，2026-10-23 新闻（
             <Link
-              href="/event/tender-loving-care-rt-100-41"
+              href="/film/tender-loving-care"
               className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
             >
-              新闻原文
+              影片档
             </Link>
             ）。
           </p>
@@ -96,10 +96,10 @@ export default function InsightNotOnlyScoresPage() {
           <p className="text-xs leading-relaxed text-cinema-muted">
             来源：Rotten Tomatoes 官宣 / Wikipedia 汇总，2026-10-23 新闻（
             <Link
-              href="/event/paper-tiger-rt-cf-1023"
+              href="/film/paper-tiger"
               className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
             >
-              新闻原文
+              影片档
             </Link>
             ）。
           </p>

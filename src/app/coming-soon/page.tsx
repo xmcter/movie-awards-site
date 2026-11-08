@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getComingSoonReleases, todayISO, type ComingSoonRelease } from "@/lib/data";
-import { formatDate, PLATFORM_LABELS } from "@/lib/labels";
+import { formatDate } from "@/lib/labels";
 import { bilingualAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -19,6 +19,14 @@ function addDays(iso: string, n: number): string {
   const m = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
   return `${y}-${m}-${day}`;
+}
+
+const WEEKDAY_ZH = ["日", "一", "二", "三", "四", "五", "六"];
+
+/** 下一周分段的片：显示“下周二”而不是日期。 */
+function nextWeekdayLabel(iso: string): string {
+  const d = new Date(`${iso}T12:00:00+08:00`);
+  return `下周${WEEKDAY_ZH[d.getDay()]}`;
 }
 
 function initials(title: string): string {
@@ -39,7 +47,7 @@ function thumbSrc(poster?: string): string | undefined {
   return poster;
 }
 
-function ReleaseRow({ release }: { release: ComingSoonRelease }) {
+function ReleaseRow({ release, dateText }: { release: ComingSoonRelease; dateText?: string }) {
   const colors = release.posterColors || ["#1a1a2e", "#334155"];
   const src = thumbSrc(release.poster);
   return (
@@ -80,9 +88,7 @@ function ReleaseRow({ release }: { release: ComingSoonRelease }) {
             ) : null}
           </span>
           <span className="mt-1 block text-xs text-cinema-muted">
-            {formatDate(release.date)}
-            {" · "}
-            {PLATFORM_LABELS[release.platform as keyof typeof PLATFORM_LABELS] || release.platform}
+            {dateText ?? formatDate(release.date)}
             {release.directors?.[0] ? ` · ${release.directors[0]}` : ""}
             {release.filmYear ? ` · ${release.filmYear}年` : ""}
           </span>
@@ -110,25 +116,29 @@ export default function ComingSoonPage() {
   })();
   const yearEnd = `${today.slice(0, 4)}-12-31`;
 
-  const buckets: { name: string; range: string; items: ComingSoonRelease[] }[] = [
+  const buckets: { name: string; range: string; weekday: boolean; items: ComingSoonRelease[] }[] = [
     {
       name: "本周",
       range: formatDate(today) + (thisWeekEnd === today ? "" : `–${formatDate(thisWeekEnd)}`),
+      weekday: false,
       items: releases.filter((r) => r.date >= today && r.date <= thisWeekEnd),
     },
     {
       name: "下一周",
       range: `${formatDate(nextWeekStart)}–${formatDate(nextWeekEnd)}`,
+      weekday: true,
       items: releases.filter((r) => r.date >= nextWeekStart && r.date <= nextWeekEnd),
     },
     {
       name: "本月剩余",
       range: `${formatDate(addDays(nextWeekEnd, 1))}–${formatDate(monthEndDate)}`,
+      weekday: false,
       items: releases.filter((r) => r.date > nextWeekEnd && r.date <= monthEndDate),
     },
     {
       name: "今年剩余",
       range: `${formatDate(addDays(monthEndDate, 1))}–${formatDate(yearEnd)}`,
+      weekday: false,
       items: releases.filter((r) => r.date > monthEndDate && r.date <= yearEnd),
     },
   ];
@@ -159,6 +169,7 @@ export default function ComingSoonPage() {
                 <ReleaseRow
                   key={`${release.filmId}-${release.platform}-${release.date}`}
                   release={release}
+                  dateText={bucket.weekday ? nextWeekdayLabel(release.date) : undefined}
                 />
               ))}
             </ul>

@@ -14,6 +14,12 @@ BAK="${REMOTE_DIR}.bak-${STAMP}"
 cd "$ROOT"
 npm run build
 
+# Static export writes the /en home page as out/en.html (not out/en/index.html),
+# so /en/ (trailing slash) 403s on nginx. Copy it so both /en and /en/ serve.
+if [[ -f "$ROOT/out/en.html" ]]; then
+  cp "$ROOT/out/en.html" "$ROOT/out/en/index.html"
+fi
+
 ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" "mkdir -p '${STAGE}'"
 # Prefer rsync when available; otherwise tar-over-ssh (box often lacks rsync).
 if command -v rsync >/dev/null 2>&1; then

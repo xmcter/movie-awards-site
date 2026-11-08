@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getComingSoonReleases, todayISO, type ComingSoonRelease } from "@/lib/data";
-import { formatDateEn, bilingualAlternatesEn, PLATFORM_LABELS_EN } from "@/lib/i18n";
+import { formatDateEn, bilingualAlternatesEn } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Coming soon",
@@ -29,6 +29,14 @@ function addDays(iso: string, n: number): string {
   return `${y}-${m}-${day}`;
 }
 
+const WEEKDAY_EN = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+/** Next-week section: show “Next Tue” instead of the date. */
+function nextWeekdayLabelEn(iso: string): string {
+  const d = new Date(`${iso}T12:00:00+08:00`);
+  return `Next ${WEEKDAY_EN[d.getDay()]}`;
+}
+
 function initials(title: string): string {
   const trimmed = title.trim();
   if (!trimmed) return "?";
@@ -47,7 +55,7 @@ function thumbSrc(poster?: string): string | undefined {
   return poster;
 }
 
-function ReleaseRow({ release }: { release: ComingSoonRelease }) {
+function ReleaseRow({ release, dateText }: { release: ComingSoonRelease; dateText?: string }) {
   const colors = release.posterColors || ["#1a1a2e", "#334155"];
   const src = thumbSrc(release.poster);
   return (
@@ -85,9 +93,7 @@ function ReleaseRow({ release }: { release: ComingSoonRelease }) {
             {release.filmTitle}
           </span>
           <span className="mt-1 block text-xs text-cinema-muted">
-            {formatDateEn(release.date)}
-            {" · "}
-            {PLATFORM_LABELS_EN[release.platform] || release.platform}
+            {dateText ?? formatDateEn(release.date)}
             {release.directors?.[0] ? ` · ${release.directors[0]}` : ""}
             {release.filmYear ? ` · ${release.filmYear}` : ""}
           </span>
@@ -115,25 +121,29 @@ export default function ComingSoonPageEn() {
   })();
   const yearEnd = `${today.slice(0, 4)}-12-31`;
 
-  const buckets: { name: string; range: string; items: ComingSoonRelease[] }[] = [
+  const buckets: { name: string; range: string; weekday: boolean; items: ComingSoonRelease[] }[] = [
     {
       name: "This week",
       range: formatDateEn(today) + (thisWeekEnd === today ? "" : `–${formatDateEn(thisWeekEnd)}`),
+      weekday: false,
       items: releases.filter((r) => r.date >= today && r.date <= thisWeekEnd),
     },
     {
       name: "Next week",
       range: `${formatDateEn(nextWeekStart)}–${formatDateEn(nextWeekEnd)}`,
+      weekday: true,
       items: releases.filter((r) => r.date >= nextWeekStart && r.date <= nextWeekEnd),
     },
     {
       name: "Rest of the month",
       range: `${formatDateEn(addDays(nextWeekEnd, 1))}–${formatDateEn(monthEndDate)}`,
+      weekday: false,
       items: releases.filter((r) => r.date > nextWeekEnd && r.date <= monthEndDate),
     },
     {
       name: "Rest of the year",
       range: `${formatDateEn(addDays(monthEndDate, 1))}–${formatDateEn(yearEnd)}`,
+      weekday: false,
       items: releases.filter((r) => r.date > monthEndDate && r.date <= yearEnd),
     },
   ];
@@ -164,6 +174,7 @@ export default function ComingSoonPageEn() {
                 <ReleaseRow
                   key={`${release.filmId}-${release.platform}-${release.date}`}
                   release={release}
+                  dateText={bucket.weekday ? nextWeekdayLabelEn(release.date) : undefined}
                 />
               ))}
             </ul>

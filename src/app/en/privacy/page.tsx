@@ -148,16 +148,7 @@ export default function PrivacyPageEn() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">3. Analytics</h2>
-          <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            This site currently does not use any third-party traffic statistics or behavioural
-            analytics tools. If an analytics service is added in the future, we will update this
-            privacy policy and explain the corresponding data handling.
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">4. Third-party services</h2>
+          <h2 className="font-display text-lg text-cinema-text">3. Third-party services</h2>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
               <span className="text-cinema-text">GitHub Pages hosting: </span>
@@ -192,7 +183,7 @@ export default function PrivacyPageEn() {
 
         <div className="space-y-3">
           <h2 className="font-display text-lg text-cinema-text">
-            5. Advertising and Google AdSense
+            4. Advertising and Google AdSense
           </h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             This site may use Google AdSense to display ads to support day-to-day operations:
@@ -271,7 +262,7 @@ export default function PrivacyPageEn() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">6. Data retention</h2>
+          <h2 className="font-display text-lg text-cinema-text">5. Data retention</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             This site does not store any visitor browsing data on its own servers; browser local
             storage (localStorage / sessionStorage) stays on your device until you clear the
@@ -282,7 +273,7 @@ export default function PrivacyPageEn() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">7. Children&apos;s privacy</h2>
+          <h2 className="font-display text-lg text-cinema-text">6. Children&apos;s privacy</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             This site&apos;s content is aimed at general film lovers and industry readers, not at
             children under 13, and it does not knowingly collect any personal information from
@@ -291,7 +282,7 @@ export default function PrivacyPageEn() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">8. External links</h2>
+          <h2 className="font-display text-lg text-cinema-text">7. External links</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             This site may contain links to other readcine.com subsites or third-party websites.
             External sites have their own privacy policies, which are not covered by this policy;
@@ -300,7 +291,7 @@ export default function PrivacyPageEn() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">9. Changes to this policy</h2>
+          <h2 className="font-display text-lg text-cinema-text">8. Changes to this policy</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             We may revise this privacy policy from time to time as site features or compliance
             requirements change. Updates will be published directly on this page, and the effective
@@ -309,7 +300,7 @@ export default function PrivacyPageEn() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">10. Contact us</h2>
+          <h2 className="font-display text-lg text-cinema-text">9. Contact us</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             If you have any questions or suggestions about this privacy policy, please email:
             <a

@@ -46,6 +46,7 @@ import {
 } from "@/lib/likes";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
 import { dedupeSubtitleAgainstTitleEn } from "@/lib/headlines-en";
+import { useShowSources } from "@/components/ShowSources";
 import type { Locale } from "@/lib/i18n";
 
 
@@ -62,6 +63,10 @@ function SourceTag({
   publishedLabel?: string;
   locale?: Locale;
 }) {
+  // Source attributions are private: only render on devices where the
+  // sources switch is on (?show-sources=1, stored in localStorage).
+  const showSources = useShowSources();
+  if (!showSources) return null;
   if (!label && !publishedLabel) return null;
   const text = [label ? `${locale === "en" ? "Source" : "来源"}·${label}` : null, publishedLabel].filter(Boolean).join(" · ");
   const className =

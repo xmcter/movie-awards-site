@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
 import EventDismissButton from "@/components/EventDismissButton";
 import EventPager from "@/components/EventPager";
+import ShowSources from "@/components/ShowSources";
 import {
   getFilm,
   getTimelineEvents,
@@ -174,6 +175,7 @@ export default async function EventPageEn({
           <div className="min-w-0 flex-1 p-3 pl-3 sm:p-4 sm:pl-4">
             <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
               <TypeBadge type={event.type} label={badge} headline={event.headline} locale="en" />
+              <ShowSources>
               {event.sourceLabel || event.sourcePublishedLabel ? (
                 event.sourceUrl && event.sourceLabel ? (
                   <a
@@ -194,6 +196,7 @@ export default async function EventPageEn({
                   </span>
                 )
               ) : null}
+              </ShowSources>
             </div>
             <h1 className="mt-1.5 font-display text-xl leading-snug text-cinema-text sm:text-2xl">
               {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} locale="en" /> : (event.headline || event.summary || event.filmTitle)}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ShowSources from "@/components/ShowSources";
 import { bilingualAlternates } from "@/lib/i18n";
 
 const title = "关于银幕新讯";
@@ -86,10 +87,12 @@ export default function AboutPage() {
               <span className="text-cinema-text">流媒体字段：</span>
               只写官方已公布的确切日期（<code className="text-xs">YYYY-MM-DD</code>）和平台，未公布写“待定”；地区必须如实标注（美国区日期只写美国，不当全球）。
             </li>
+            <ShowSources>
             <li>
               <span className="text-cinema-text">参考来源：</span>
               Netflix / Apple TV+ / Max / Prime Video / MUBI / Criterion Channel / Disney+ 官方月单，Variety、Deadline、The Wrap 等权威行业官宣（When To Stream、JustWatch 须经官方月单或行业媒体二次核对），以及 ReadCine 电影片库实测入库记录。
             </li>
+            </ShowSources>
             <li>
               <span className="text-cinema-text">更新方式：</span>
               数据随仓库发布，非实时爬取；消息按内容首次发布或入库时间倒序排列，时间线不展示日期，也不按平台定档日期排序。

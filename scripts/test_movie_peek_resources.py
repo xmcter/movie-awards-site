@@ -6,7 +6,15 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 import unittest
 
-from ingest_movie_peek_resources import plan_ingest, weibo_url
+from ingest_movie_peek_resources import (
+    FETCH_RETRIES,
+    FetchFailed,
+    call_with_retries,
+    load_details,
+    localize_poster_plan,
+    plan_ingest,
+    weibo_url,
+)
 
 DAY = "2026-11-06"
 ROW = {"title": "测试电影", "posted_at": DAY + " 18:00:00"}
@@ -113,6 +121,102 @@ class ImporterTests(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertIsNone(weibo_url(url))
         self.assertEqual(weibo_url("https://weibo.com/123/abc"), "https://weibo.com/123/abc")
+
+    def _stored_film(self, poster):
+        meta = self.detail["meta"]
+        return {
+            "id": "movie-douban-123456",
+            "title": "测试电影",
+            "year": 2026,
+            "synopsis": meta["intro"],
+            "directors": list(meta["directors"]),
+            "cast": list(meta["actors"]),
+            "genres": list(meta["genres"]),
+            "country": [],
+            "streaming": ["keep-me"],
+            "poster": poster,
+            "runtime": 110,
+        }
+
+    def test_local_poster_survives_remote_merge(self):
+        for remote in (
+            "https://image.tmdb.org/t/p/w500/abc.jpg",
+            "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p1.jpg",
+        ):
+            with self.subTest(remote=remote):
+                self.detail = copy.deepcopy(DETAIL)
+                existing = self._stored_film("/posters/movie-douban-123456.jpg")
+                self.persist({"films": [existing], "ceremonies": []}, [])
+                self.detail["meta"]["poster"] = remote
+                catalog, _, report = self.plan()
+                self.assertEqual(catalog["films"][0]["poster"], "/posters/movie-douban-123456.jpg")
+                self.assertEqual(catalog["films"][0]["streaming"], ["keep-me"])
+                self.assertEqual(report["films_updated"], 0)
+
+    def test_remote_poster_can_replace_remote_poster(self):
+        existing = self._stored_film("https://img1.doubanio.com/view/photo/old.jpg")
+        self.persist({"films": [existing], "ceremonies": []}, [])
+        self.detail["meta"]["poster"] = "https://image.tmdb.org/t/p/w500/abc.jpg"
+        catalog, _, report = self.plan()
+        self.assertEqual(catalog["films"][0]["poster"], "https://image.tmdb.org/t/p/w500/abc.jpg")
+        self.assertEqual(report["films_updated"], 1)
+
+    def test_poster_plan_lists_douban_and_tmdb(self):
+        films = [
+            {"id": "a", "title": "甲", "poster": "https://img9.doubanio.com/view/photo/a.jpg"},
+            {"id": "b", "title": "乙", "poster": "https://image.tmdb.org/t/p/w500/b.jpg"},
+            {"id": "c", "title": "丙", "poster": "/posters/c.jpg"},
+            {"id": "d", "title": "丁", "poster": "https://evil.example/x.jpg"},
+        ]
+        targets = localize_poster_plan(films)
+        self.assertEqual([item["filmId"] for item in targets], ["a", "b"])
+        self.assertEqual(targets[0]["remote"], films[0]["poster"])
+        self.assertEqual(targets[0]["local"], "/posters/a.jpg")
+        self.assertEqual(targets[1]["title"], "乙")
+        self.assertEqual(targets[1]["local"], "/posters/b.jpg")
+
+    def test_detail_fetch_failure_is_skipped_without_import(self):
+        catalog, news, report = plan_ingest(
+            [ROW], {}, self.data, DAY, 2025, failed_detail_titles={ROW["title"]},
+        )
+        self.assertEqual(catalog["films"], [])
+        self.assertEqual(news, [])
+        self.assertEqual(report["skipped"], [{"title": ROW["title"], "reason": "detail fetch failed"}])
+
+    def test_retries_twice_then_raises(self):
+        calls = {"n": 0}
+
+        def boom():
+            calls["n"] += 1
+            raise OSError("ssh down")
+
+        with self.assertRaises(FetchFailed) as caught:
+            call_with_retries(boom, retries=FETCH_RETRIES)
+        self.assertEqual(calls["n"], FETCH_RETRIES + 1)
+        self.assertEqual(caught.exception.attempts, FETCH_RETRIES + 1)
+        self.assertIn("ssh down", caught.exception.message)
+
+    def test_retry_returns_after_a_later_success(self):
+        calls = {"n": 0}
+
+        def flaky():
+            calls["n"] += 1
+            if calls["n"] < 2:
+                raise OSError("temporary")
+            return {"ok": True}
+
+        self.assertEqual(call_with_retries(flaky, retries=FETCH_RETRIES), {"ok": True})
+        self.assertEqual(calls["n"], 2)
+
+    def test_one_film_failure_does_not_drop_the_batch(self):
+        def fetch(title):
+            if title == "坏":
+                raise FetchFailed("ssh/curl timed out", FETCH_RETRIES + 1)
+            return {"success": True, "title": title}
+
+        details, failures = load_details(["好", "坏", "也好"], fetch)
+        self.assertEqual(set(details), {"好", "也好"})
+        self.assertEqual(failures, [{"title": "坏", "error": "ssh/curl timed out", "attempts": FETCH_RETRIES + 1}])
 
 
 if __name__ == "__main__":

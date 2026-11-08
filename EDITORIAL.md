@@ -11,7 +11,7 @@
 
 ## 硬上限
 - **不再设每日条数上限**。时间线按 `publishedAt` / `sourcePublishedAt` 倒序；质量闸（口水定档硬过滤、作者/获奖/MUBI 优先）在入库时完成，**绝不用定档/上映日分桶**。
-- 代码：`src/lib/data.ts` 的 `shouldAdmitStreaming()` / `streamingQualityScore()`；`MAX_EVENTS_PER_DAY` 已取消硬限制。
+- 代码：`src/lib/data.ts` 的 `shouldAdmitStreaming()` / `streamingQualityScore()`。不再按日配额截断。
 - 同一天排序优先级（`eventPriority()`）：
   **出资源通知 > 作者/获奖向定档与已上线 > 其余定档**；口水流媒体在 `shouldAdmitStreaming()` 硬过滤。
 - **时间线完全不进影展/奖项/入围/提名卡片**（影片档案页可保留历史奖讯字段；有奖项/作者线索的**定档**可优先展示）。
@@ -74,8 +74,8 @@
 
 
 ## 片库 peek 资源稿源（2026-11-06）
-- `python3 scripts/ingest_movie_peek_resources.py --dry-run` 预览；去掉 `--dry-run` 才写数据。
-- 使用已配置 SSH 身份读取服务器 localhost `/api/peek` → `/api/movie_detail`，不经过公开 OAuth API，也不在仓库保存密钥。
+- `python3 scripts/ingest_movie_peek_resources.py --dry-run` 预览；去掉 `--dry-run` 才写数据。连接只来自 `PEEK_SSH_HOST`、`PEEK_SSH_IDENTITY`、`PEEK_API_BASE`（或同名命令行参数，或 `PEEK_CONFIG` 的 KEY=VALUE 文件）。示例见 README，代码里不放真实主机和密钥路径。
+- 通过 SSH 在对端读取内网 `/api/peek` → `/api/movie_detail`，不经过公开 OAuth API，也不在仓库保存密钥。单片详情失败重试 2 次后记入报告，不中断整批。`--dry-run` 会列出待本地化的豆瓣与 TMDB 海报。已有 `/posters/` 路径优先于远程海报 URL。
 - 导入目录：`src/data/movie-peek-catalog.json`；通知：`auteur-news.json`，每个 `filmId` 的首次出资源去重；已有通知缺微博时可补入口。
 - 使用片库 `posted_at`（Asia/Shanghai）作为消息日期，默认只处理当天；补跑可指定 `--date YYYY-MM-DD`。默认新片窗口为消息年份及前一年。
 - 仅接收可核影片身份/年份/类型、有效资源及微博原帖；英字专帖、纪录片/剧集、无法识别的资源简称、无已核升级证据的旧片留待人工审稿，不猜片名/年份/中字。

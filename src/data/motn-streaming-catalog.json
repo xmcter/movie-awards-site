@@ -31,7 +31,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/tyler-perrys-the-gospel-of-christmas.jpg"
     },
     {
       "id": "being-heumann",
@@ -73,7 +74,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/being-heumann.jpg"
     },
     {
       "id": "stranger-things-fireplace",
@@ -104,7 +106,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/stranger-things-fireplace.jpg"
     },
     {
       "id": "madden",
@@ -145,7 +148,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/madden.jpg"
     },
     {
       "id": "perfect-liars",
@@ -184,7 +188,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/perfect-liars.jpg"
     },
     {
       "id": "way-of-the-warrior-kid",
@@ -226,7 +231,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/way-of-the-warrior-kid.jpg"
     },
     {
       "id": "barrio-triste",
@@ -269,7 +275,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/barrio-triste.jpg"
     },
     {
       "id": "taxi-moto",
@@ -305,7 +312,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/taxi-moto.jpg"
     },
     {
       "id": "in-a-holidaze",
@@ -347,7 +355,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/in-a-holidaze.jpg"
     },
     {
       "id": "la-bola-negra",
@@ -390,7 +399,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/la-bola-negra.jpg"
     },
     {
       "id": "the-man-with-the-bag",
@@ -433,7 +443,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/the-man-with-the-bag.jpg"
     },
     {
       "id": "hot-line",
@@ -475,7 +486,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/hot-line.jpg"
     },
     {
       "id": "a-wisconsin-christmas-pie",
@@ -516,7 +528,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/a-wisconsin-christmas-pie.jpg"
     },
     {
       "id": "gianmarco-soresi-thief-of-joy",
@@ -552,7 +565,8 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/gianmarco-soresi-thief-of-joy.jpg"
     },
     {
       "id": "my-crazy-feminist-girlfriend",
@@ -594,11 +608,12 @@
           "sourceLabel": "片夜定档",
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/my-crazy-feminist-girlfriend.jpg"
     },
     {
       "id": "ezra",
-      "title": "Ezra",
+      "title": "艾兹拉",
       "titleEn": "Ezra",
       "year": 2024,
       "synopsis": "Divorced stand-up comedian Max Bernal struggles to raise his autistic son, Ezra. Forced to confront difficult decisions about the boy's future, Max and Ezra embark on a cross-country road trip that has a transcendent impact on both of their lives.",
@@ -636,7 +651,8 @@
           "source": "https://www.netflix.com/title/82138230",
           "sourceLabel": "片夜定档"
         }
-      ]
+      ],
+      "poster": "/posters/ezra.jpg"
     }
   ],
   "ceremonies": []

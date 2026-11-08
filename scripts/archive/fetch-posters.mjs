@@ -1,6 +1,16 @@
 #!/usr/bin/env node
 /**
- * Download missing local posters for timeline films.
+ * ARCHIVED 2026-11-08 — moved to scripts/archive/fetch-posters.mjs
+ *
+ * 归档原因：待查清单（EXTRA_TMDB、SEARCH_QUERIES）已过期，且本脚本没有接入
+ * package.json 或其他入口。2026-11-08 对照 public/posters：清单里每一项都已有
+ * 本地海报文件。existingPoster() 把大于 2KB 的文件当成已有并跳过，所以这份
+ * 清单不会再去补图。选择归档，不并入现行抓取流程。两份清单已清空。
+ *
+ * 画质核查另记：galerna、lovers-go-home 磁盘上仍是纯色标题占位图，没有找到
+ * 可替换的正式海报，待人工处理。本脚本不再自动搜索它们。
+ *
+ * 原用途：Download missing local posters for timeline films.
  * Sources: existing poster-urls.json, TMDB pages (by tmdb-ids), Wikimedia URLs.
  * Outputs JPEG under public/posters/{id}.jpg
  */
@@ -10,104 +20,19 @@ import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const root = path.join(__dirname, "..");
+// File lives in scripts/archive/, so the repo root is two levels up.
+const root = path.join(__dirname, "..", "..");
 const outDir = path.join(root, "public", "posters");
 
 const tmdbIds = JSON.parse(fs.readFileSync(path.join(root, "src/data/tmdb-ids.json"), "utf8"));
 const posterUrls = JSON.parse(fs.readFileSync(path.join(root, "src/data/poster-urls.json"), "utf8"));
 
 const EXTRA_TMDB = {
-  "paper-tiger": null, // resolve via search HTML
-  "tender-loving-care": null,
-  "woman-unknown": null,
-  "naza": null,
-  "galerna": null,
-  "lovers-go-home": null,
-  "a-foggy-tale": null,
-  "goodbye-ufo": null,
-  "love-like-mine": null,
-  "family-matters": null,
-  "fruit-gathering": null,
-  "you-dont-belong-here": null,
-  "nowhere-to-lay-eyes": null,
-  "the-riverbank": null,
-  "atlantic": null,
-  "salvation": null,
-  "queen-at-sea": null,
-  "everybody-digs-bill-evans": null,
-  "rose-berlin": null,
-  "nina-roza": null,
-  "honorary-yeoh": null, // use film still
-  "tonight-will-happen": null,
-  "mr-nelson": null,
-  "bunker": null,
-  "company": null,
-  "primetime": null,
-  "place-to-heal": null,
-  "dau": null,
-  "good-little-soldier": null,
-  "fire-inside": null,
-  "sheep-in-the-box": null,
-  "nagi-notes": null,
-  "bitter-christmas": null,
-  "parallel-tales": null,
-  "moulin": null,
-  "the-beloved": null,
-  "box-mystery": null,
-  "halima": null,
-  "glimmer-girl": null,
-  "the-guest-kv": null,
-  "ketticè": null,
-  "ghost-song": null,
-  "the-housewife": null,
+  // 2026-11-08：原清单各项在 public/posters 均已有文件，已移出。
 };
 
 const SEARCH_QUERIES = {
-  "paper-tiger": "Paper Tiger James Gray",
-  "tender-loving-care": "Tender Loving Care Mike Leigh",
-  "woman-unknown": "Woman Unknown May el-Toukhy",
-  "naza": "NAZA Yuval Abraham",
-  "galerna": "Galerna Tatiana Huezo",
-  "lovers-go-home": "Lovers Go Home Juan Sebastian Mesa",
-  "goodbye-ufo": "Goodbye UFO",
-  "love-like-mine": "A Love Like Mine Hong Kong",
-  "family-matters": "Family Matters Zeng Jingli",
-  "you-dont-belong-here": "You Don't Belong Here Florin Serban",
-  "nowhere-to-lay-eyes": "Nowhere to Lay My Eyes Hong Sang-soo",
-  "the-riverbank": "The Riverbank Locarno",
-  "atlantic": "Atlantic Zhong Kaifeng",
-  "salvation": "Salvation Emin Alper",
-  "queen-at-sea": "Queen at Sea Lance Hammer",
-  "everybody-digs-bill-evans": "Everybody Digs Bill Evans",
-  "rose-berlin": "Rose Markus Schleinzer",
-  "nina-roza": "Nina Roza",
-  "tonight-will-happen": "Succederà questa notte Moretti",
-  "mr-nelson": "Mr. Nelson Did You Kill People Tsukamoto",
-  "bunker": "Bunker Florian Zeller",
-  "company": "Company Casey Affleck",
-  "primetime": "Primetime Lance Oppenheim",
-  "place-to-heal": "A Place to Heal Cedric Kahn",
-  "dau": "DAU Lev Landau Khrzhanovsky",
-  "good-little-soldier": "Un bon petit soldat Brize",
-  "fire-inside": "Il fuoco che ti porti dentro",
-  "sheep-in-the-box": "Sheep in the Box Kore-eda",
-  "nagi-notes": "Nagi Notes Fukada",
-  "bitter-christmas": "Bitter Christmas Almodovar",
-  "parallel-tales": "Parallel Tales Farhadi",
-  "moulin": "Moulin Nemes",
-  "the-beloved": "The Beloved Sorogoyen",
-  "box-mystery": "Mystery in a Carton Zhang Songwen",
-  "halima": "Halima Yassine Idrissi",
-  "glimmer-girl": "Glimmer Girl",
-  "the-guest-kv": "The Guest Maziar Miri",
-  "fruit-gathering": "Fruit Gathering Aung Phyoe",
-  "ketticè": "Ketticè Monica Bellucci",
-  "ghost-song": "Ghost Song Geister",
-  "the-housewife": "The Housewife film",
-  "honorary-yeoh": "Everything Everywhere All at Once",
-  "busan-jury-2026-zhang-yimou": "Raise the Red Lantern",
-  "busan-31-cuaron": "Roma Cuaron",
-  "venice-jury-2026": "The Lost Daughter Gyllenhaal",
+  // 2026-11-08：原清单各项在 public/posters 均已有文件，已移出。
 };
 
 const UA = "Mozilla/5.0 (compatible; movie-awards-site/1.0; editorial posters)";

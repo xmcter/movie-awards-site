@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
 """Import new movie-library resource notices without persisting download secrets.
 
-Uses the existing SSH identity (never reads it) because the public API requires
-OAuth. --dry-run fetches and reports but changes no files. Dates are Asia/Shanghai.
-Unknown/mismatched metadata, old titles, series, docs and English-only releases
-are held for editorial review rather than inventing a film/year/subtitle claim.
+SSH reaches an on-host HTTP API because the public API requires OAuth. The
+script never opens the key file itself; OpenSSH does. --dry-run fetches and
+reports but changes no files. Dates are Asia/Shanghai.
+
+Connection settings have no live defaults in this file. Export them, point
+PEEK_CONFIG at a KEY=VALUE file, or pass flags. These examples are
+placeholders for the docs, not a deployment:
+
+    PEEK_SSH_HOST=user@203.0.113.10
+    PEEK_SSH_IDENTITY=~/.ssh/id_ed25519
+    PEEK_API_BASE=http://127.0.0.1:8080
+
+--ssh-host, --identity, and --api-base override the environment and
+PEEK_CONFIG. PEEK_CONFIG fills a variable only when that variable is unset.
+Unknown/mismatched metadata, old titles, series, docs and English-only
+releases are held for editorial review rather than inventing a film/year/subtitle claim.
 """
 from __future__ import annotations
 
@@ -12,10 +24,12 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 import json
+import os
 from pathlib import Path
 import re
 import shlex
 import subprocess
+import time
 from urllib.parse import urlencode, urlsplit
 from zoneinfo import ZoneInfo
 
@@ -32,6 +46,28 @@ EXCLUDED = re.compile(r"纪录|documentary|docuseries|剧集|电视剧|连续剧
 ENGLISH_ONLY = re.compile(r"英字|英文字幕|无中字|无字幕|生肉", re.I)
 CHINESE_SUBS = re.compile(r"中字|中文字幕|官中|中英字幕|简繁|内封简|内嵌中", re.I)
 PROVIDERS = {"quark": "夸克", "baidu": "百度", "xunlei": "迅雷", "aliyun": "阿里云盘"}
+# Hosts film_from_meta may store, and the localization loop may download.
+REMOTE_POSTER_HOSTS = frozenset({
+    "img1.doubanio.com", "img2.doubanio.com", "img3.doubanio.com",
+    "img9.doubanio.com", "image.tmdb.org",
+})
+ENV_SSH_HOST = "PEEK_SSH_HOST"
+ENV_SSH_IDENTITY = "PEEK_SSH_IDENTITY"
+ENV_API_BASE = "PEEK_API_BASE"
+CONFIG_ENV = "PEEK_CONFIG"
+CONFIG_KEYS = frozenset({ENV_SSH_HOST, ENV_SSH_IDENTITY, ENV_API_BASE})
+# Extra attempts after the first SSH/curl failure. One film then stops;
+# the rest of the batch continues.
+FETCH_RETRIES = 2
+
+
+class FetchFailed(Exception):
+    """SSH/curl or JSON parse failed after the retry budget."""
+
+    def __init__(self, message: str, attempts: int):
+        super().__init__(message)
+        self.message = message
+        self.attempts = attempts
 
 
 def read_json(path: Path):
@@ -75,15 +111,70 @@ def safe_text(value):
     return value.strip()
 
 
+def is_local_poster_path(value):
+    return isinstance(value, str) and value.startswith("/posters/")
+
+
+def is_http_url(value):
+    if not isinstance(value, str):
+        return False
+    try:
+        url = urlsplit(value.strip())
+    except ValueError:
+        return False
+    return url.scheme in {"http", "https"} and bool(url.hostname)
+
+
+def is_allowed_remote_poster(value):
+    """Douban image hosts and image.tmdb.org only."""
+    if not isinstance(value, str):
+        return False
+    try:
+        url = urlsplit(value.strip())
+    except ValueError:
+        return False
+    return url.scheme == "https" and url.hostname in REMOTE_POSTER_HOSTS
+
+
+def localize_poster_plan(films):
+    """Films whose poster is still a Douban or TMDB URL, plus the local target."""
+    plan = []
+    for film in films:
+        remote = film.get("poster")
+        film_id = film.get("id")
+        if not isinstance(film_id, str) or not film_id or not is_allowed_remote_poster(remote):
+            continue
+        title = film.get("title")
+        plan.append({
+            "filmId": film_id,
+            "title": title if isinstance(title, str) else "",
+            "remote": remote,
+            "local": f"/posters/{film_id}.jpg",
+        })
+    return plan
+
+
+def merge_film(imported, new_film):
+    """Overlay non-empty incoming fields. A remote poster must not replace /posters/."""
+    updates = {k: v for k, v in new_film.items() if v and k != "streaming"}
+    if is_local_poster_path(imported.get("poster")) and is_http_url(updates.get("poster")):
+        updates.pop("poster", None)
+    return {**imported, **updates}
+
 
 def localize_douban_poster(film_id: str, poster_url: str, identity: str, ssh_host: str) -> str | None:
-    """Download Douban/TMDB poster via ECS (box often gets 418) into public/posters."""
-    if not isinstance(poster_url, str) or not poster_url.startswith("https://"):
+    """Download a Douban or TMDB poster via SSH (this box often gets 418)."""
+    if not is_allowed_remote_poster(poster_url):
         return None
     out = ROOT / "public" / "posters" / f"{film_id}.jpg"
     if out.exists() and out.stat().st_size > 2000:
         return f"/posters/{film_id}.jpg"
     remote = f"/tmp/news-poster-{film_id}.jpg"
+    referer = (
+        "https://www.themoviedb.org/"
+        if urlsplit(poster_url).hostname == "image.tmdb.org"
+        else "https://movie.douban.com/"
+    )
     cmd = [
         "ssh", "-i", str(Path(identity).expanduser()), "-o", "BatchMode=yes",
         "-o", "ConnectTimeout=15", "-o", "StrictHostKeyChecking=yes", ssh_host,
@@ -91,7 +182,7 @@ def localize_douban_poster(film_id: str, poster_url: str, identity: str, ssh_hos
             "curl -fsS --max-time 30 -A "
             + shlex.quote("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36")
             + " -H "
-            + shlex.quote("Referer: https://movie.douban.com/")
+            + shlex.quote(f"Referer: {referer}")
             + " -o "
             + shlex.quote(remote)
             + " "
@@ -125,11 +216,7 @@ def film_from_meta(meta, film_id, title, year):
     if original and original != title:
         film["titleEn"] = original
     poster = meta.get("poster", "")
-    url = urlsplit(poster) if isinstance(poster, str) else None
-    if url and url.scheme == "https" and url.hostname in {
-        "img1.doubanio.com", "img2.doubanio.com", "img3.doubanio.com",
-        "img9.doubanio.com", "image.tmdb.org",
-    }:
+    if is_allowed_remote_poster(poster):
         film["poster"] = poster
     runtime = re.search(r"\d+", " ".join(strings(meta.get("durations"))))
     if runtime:
@@ -137,7 +224,8 @@ def film_from_meta(meta, film_id, title, year):
     return film
 
 
-def plan_ingest(peek, details, data_dir, day, min_year):
+def plan_ingest(peek, details, data_dir, day, min_year, *, failed_detail_titles=None):
+    failed_detail_titles = set(failed_detail_titles or ())
     catalog_path = data_dir / "movie-peek-catalog.json"
     catalog = read_json(catalog_path) if catalog_path.exists() else {"films": [], "ceremonies": []}
     news = read_json(data_dir / "auteur-news.json")
@@ -162,6 +250,9 @@ def plan_ingest(peek, details, data_dir, day, min_year):
         posted = str(row.get("posted_at", ""))
         if posted[:10] != day:
             skip("not in requested posting date")
+            continue
+        if raw_title in failed_detail_titles:
+            skip("detail fetch failed")
             continue
         detail = details.get(raw_title) or {}
         meta = detail.get("meta") or {}
@@ -201,7 +292,7 @@ def plan_ingest(peek, details, data_dir, day, min_year):
         new_film = film_from_meta(meta, film_id, title, year)
         imported = next((f for f in catalog["films"] if f["id"] == film_id), None)
         if imported is not None:
-            merged = {**imported, **{k: v for k, v in new_film.items() if v and k != "streaming"}}
+            merged = merge_film(imported, new_film)
             if merged != imported:
                 imported.update(merged)
                 report["films_updated"] += 1
@@ -261,12 +352,110 @@ def plan_ingest(peek, details, data_dir, day, min_year):
     return catalog, news, report
 
 
+def short_fetch_error(exc: Exception) -> str:
+    """Operator-facing fetch error without the SSH command or key path."""
+    if isinstance(exc, subprocess.TimeoutExpired):
+        return "ssh/curl timed out"
+    if isinstance(exc, json.JSONDecodeError):
+        return "response was not JSON"
+    if isinstance(exc, subprocess.CalledProcessError):
+        text = (exc.stderr or exc.stdout or "").strip()
+        lines = text.splitlines()
+        tail = lines[-1] if lines else f"exit {exc.returncode}"
+        return f"ssh/curl failed: {tail}"[:300]
+    text = str(exc).strip() or type(exc).__name__
+    return text[:300]
+
+
+def call_with_retries(fn, retries=FETCH_RETRIES, pause_seconds=0):
+    """Call fn. After `retries` extra attempts, raise FetchFailed."""
+    attempts = retries + 1
+    last_message = "fetch failed"
+    for attempt in range(1, attempts + 1):
+        try:
+            return fn()
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError, json.JSONDecodeError) as exc:
+            last_message = short_fetch_error(exc)
+            if attempt >= attempts:
+                raise FetchFailed(last_message, attempts) from exc
+            if pause_seconds:
+                time.sleep(pause_seconds)
+    raise FetchFailed(last_message, attempts)
+
+
 def fetch_api(path, args):
+    url = args.api_base.rstrip("/") + path
     cmd = ["ssh", "-i", str(Path(args.identity).expanduser()), "-o", "BatchMode=yes",
            "-o", "ConnectTimeout=15", "-o", "StrictHostKeyChecking=yes", args.ssh_host,
-           "curl -fsS --max-time 30 " + shlex.quote("http://127.0.0.1:8080" + path)]
-    result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=50)
-    return json.loads(result.stdout)
+           "curl -fsS --max-time 30 " + shlex.quote(url)]
+
+    def once():
+        result = subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=50)
+        return json.loads(result.stdout)
+
+    return call_with_retries(once, retries=FETCH_RETRIES, pause_seconds=1)
+
+
+def load_details(titles, fetch_one, max_workers=3):
+    """Fetch each title. A failed title is reported and does not cancel the others."""
+
+    def wrapped(title):
+        try:
+            return title, fetch_one(title), None
+        except FetchFailed as exc:
+            return title, None, {"title": title, "error": exc.message, "attempts": exc.attempts}
+        except Exception as exc:
+            return title, None, {"title": title, "error": short_fetch_error(exc), "attempts": 1}
+
+    details = {}
+    failures = []
+    with ThreadPoolExecutor(max_workers=max_workers) as pool:
+        for title, payload, error in pool.map(wrapped, titles):
+            if error:
+                failures.append(error)
+            else:
+                details[title] = payload
+    return details, failures
+
+
+def apply_config_file():
+    """Fill unset PEEK_* variables from PEEK_CONFIG. Does not override the environment."""
+    path = (os.environ.get(CONFIG_ENV) or "").strip()
+    if not path:
+        return
+    file_path = Path(path).expanduser()
+    if not file_path.is_file():
+        raise SystemExit(f"{CONFIG_ENV} is not a file: {path}")
+    for raw in file_path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip().strip('"').strip("'")
+        if key in CONFIG_KEYS and value and key not in os.environ:
+            os.environ[key] = value
+
+
+def require_setting(cli_value, env_name):
+    value = (cli_value or os.environ.get(env_name) or "").strip()
+    if not value:
+        raise SystemExit(
+            f"missing {env_name}. Export it, pass the matching flag, or set {CONFIG_ENV} "
+            "to a KEY=VALUE file. Names and examples are in the module docstring and README."
+        )
+    return value
+
+
+def normalize_api_base(value):
+    base = value.strip().rstrip("/")
+    parts = urlsplit(base)
+    if parts.scheme not in {"http", "https"} or not parts.hostname or parts.path not in {"", "/"}:
+        raise SystemExit(
+            f"{ENV_API_BASE} must be an origin with no path. "
+            "See the module docstring for an example."
+        )
+    return base
 
 
 def main():
@@ -274,29 +463,46 @@ def main():
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--date", default=datetime.now(ZoneInfo("Asia/Shanghai")).date().isoformat())
     parser.add_argument("--min-year", type=int, help="default: posting year minus one")
-    parser.add_argument("--ssh-host", default="root@8.134.173.91")
-    parser.add_argument("--identity", default="~/.ssh/aliyun_movieupdate")
+    parser.add_argument("--ssh-host", default=None, help=f"Overrides {ENV_SSH_HOST}.")
+    parser.add_argument("--identity", default=None, help=f"Overrides {ENV_SSH_IDENTITY}.")
+    parser.add_argument("--api-base", default=None, help=f"Overrides {ENV_API_BASE}.")
     args = parser.parse_args()
     date.fromisoformat(args.date)
-    peek = fetch_api("/api/peek", args)
+    apply_config_file()
+    args.ssh_host = require_setting(args.ssh_host, ENV_SSH_HOST)
+    args.identity = require_setting(args.identity, ENV_SSH_IDENTITY)
+    args.api_base = normalize_api_base(require_setting(args.api_base, ENV_API_BASE))
+    try:
+        peek = fetch_api("/api/peek", args)
+    except FetchFailed as exc:
+        raise SystemExit(f"peek fetch failed after {exc.attempts} attempts: {exc.message}") from exc
     if peek.get("success") is not True or not isinstance(peek.get("data"), list):
         raise RuntimeError("peek returned an unsuccessful response")
     rows = peek["data"]
     titles = list(dict.fromkeys(row["title"] for row in rows if str(row.get("posted_at", ""))[:10] == args.date))
+
     def fetch_detail(title):
-        return title, fetch_api("/api/movie_detail?" + urlencode({"title": title}), args)
-    with ThreadPoolExecutor(max_workers=3) as pool:
-        details = dict(pool.map(fetch_detail, titles))
+        return fetch_api("/api/movie_detail?" + urlencode({"title": title}), args)
+
+    details, detail_failures = load_details(titles, fetch_detail)
     data_dir = ROOT / "src" / "data"
-    catalog, news, report = plan_ingest(rows, details, data_dir, args.date, args.min_year or int(args.date[:4]) - 1)
-    # Prefer local posters: Douban hotlinks are blocked in many clients (418/403).
+    catalog, news, report = plan_ingest(
+        rows, details, data_dir, args.date, args.min_year or int(args.date[:4]) - 1,
+        failed_detail_titles={item["title"] for item in detail_failures},
+    )
+    report["detail_failures"] = detail_failures
+    # Douban and TMDB hotlinks are both downloaded. Dry-run only lists them.
+    pending = localize_poster_plan(catalog.get("films", []))
     report["posters_localized"] = 0
-    for film in catalog.get("films", []):
-        remote = film.get("poster")
-        if isinstance(remote, str) and "doubanio.com" in remote:
-            local = None if args.dry_run else localize_douban_poster(
-                film["id"], remote, args.identity, args.ssh_host
-            )
+    if args.dry_run:
+        report["posters_to_localize"] = pending
+    else:
+        by_id = {item["filmId"]: item["remote"] for item in pending}
+        for film in catalog.get("films", []):
+            remote = by_id.get(film.get("id"))
+            if not remote:
+                continue
+            local = localize_douban_poster(film["id"], remote, args.identity, args.ssh_host)
             if local:
                 film["poster"] = local
                 report["posters_localized"] += 1

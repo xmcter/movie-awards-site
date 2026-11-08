@@ -1,0 +1,134 @@
+[
+  {
+    "names": ["诺兰", "克里斯托弗·诺兰", "Nolan"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["伊纳里图", "伊尼亚里图", "Iñárritu", "Inarritu"],
+    "note": "原作者向名单。目录导演字段写作「伊尼亚里图」（亚历杭德罗／亚历桑德罗），原「伊纳里图」对不上。"
+  },
+  {
+    "names": ["李沧东", "Lee Chang-dong", "Chang-dong"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["是枝裕和", "是枝", "Kore-eda", "Koreeda"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["滨口龙介", "滨口", "Hamaguchi"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["阿尔莫多瓦", "Almodóvar", "Almodovar"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["赫尔佐格", "Herzog"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["洪常秀", "Hong Sang-soo", "Sangsoo"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["萨金塞夫", "Zvyagintsev"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["迈克·李", "Mike Leigh"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["拉雷恩", "拉腊因", "Larrain", "Larraín"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["詹姆斯·格雷", "James Gray"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["法哈蒂", "Farhadi"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["蒙吉", "Mungiu"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["莫莱蒂", "Moretti"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["帕夫利科夫斯基", "Pawlikowski"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["瓦伊达", "Wajda"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["温特伯格", "Vinterberg"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["雷弗恩", "Refn", "Winding Refn"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["大卫·O·拉塞尔", "David O. Russell"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["西恩·海德尔", "Sian Heder"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["洛兹尼察", "Loznitsa"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["格里策巴赫", "Grisebach"],
+    "note": "原作者向名单"
+  },
+  {
+    "names": ["哈维尔·安布罗希", "Javier Ambrossi", "哈维尔·卡尔沃", "Javier Calvo"],
+    "note": "第79届戛纳最佳导演（并列）《黑球》。中文名在 films.json；MotN 片 la-bola-negra 用英文名 Javier Ambrossi / Javier Calvo。"
+  },
+  {
+    "names": ["梁柏堅"],
+    "note": "第44届香港电影金像奖最佳导演、最佳电影《再见 UFO》。"
+  },
+  {
+    "names": ["保罗·托马斯·安德森", "Paul Thomas Anderson"],
+    "note": "第98届奥斯卡最佳导演、第83届金球奖最佳导演《一战再战》。"
+  },
+  {
+    "names": ["李骏硕"],
+    "note": "第62届金马奖最佳导演《众生相》。"
+  },
+  {
+    "names": ["伊利亚·赫尔扎诺夫斯基", "Ilya Khrzhanovsky", "Khrzhanovsky"],
+    "note": "第83届威尼斯最佳导演银狮《DAU》。"
+  },
+  {
+    "names": ["格兰特·吉", "Grant Gee"],
+    "note": "第76届柏林电影节最佳导演（银熊）《人人都懂比尔·埃文斯》。"
+  },
+  {
+    "names": ["李云禅"],
+    "note": "第31届釜山国际电影节 Busan Award 最佳导演《平凡之路》（density-ceremonies）。"
+  },
+  {
+    "names": ["阿曼达·克内尔", "Amanda Kernell"],
+    "note": "第74届圣塞巴斯蒂安银贝壳最佳导演《撑住你的心》（density-ceremonies）。"
+  },
+  {
+    "names": ["马吉德·马吉迪", "Majid Majidi"],
+    "note": "第31届釜山国际电影节 Busan Award 最佳影片《午餐》（density-ceremonies）。获奖者即该片导演。"
+  },
+  {
+    "names": ["Lisandro Alonso", "利桑德罗·阿隆索"],
+    "note": "第39届东京电影节最佳导演《Double Freedom》（补录清单亦记亚太电影奖最佳导演）。影片档尚未入库；先挂名单，避免日后定档被质量闸挡住。不用单独的 Alonso，以免误伤同姓。"
+  }
+]

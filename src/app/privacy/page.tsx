@@ -140,14 +140,7 @@ export default function PrivacyPage() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">3. 统计分析</h2>
-          <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            本站目前未接入任何第三方流量统计或行为分析工具。若未来接入统计服务，我们将同步更新本隐私政策并说明相应的数据处理方式。
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">4. 第三方服务</h2>
+          <h2 className="font-display text-lg text-cinema-text">3. 第三方服务</h2>
           <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-cinema-muted">
             <li>
               <span className="text-cinema-text">GitHub Pages 托管：</span>
@@ -180,7 +173,7 @@ export default function PrivacyPage() {
 
         <div className="space-y-3">
           <h2 className="font-display text-lg text-cinema-text">
-            5. 广告与 Google AdSense
+            4. 广告与 Google AdSense
           </h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             本站可能使用 Google AdSense 展示广告以维持站点日常运营：
@@ -259,7 +252,7 @@ export default function PrivacyPage() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">6. 数据保留</h2>
+          <h2 className="font-display text-lg text-cinema-text">5. 数据保留</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             本站自身不在服务器端保存任何访问者浏览数据；浏览器本地存储（localStorage /
             sessionStorage）保留在您的设备中，直至您主动清除浏览器站点数据；第三方基础设施与服务商（如
@@ -268,7 +261,7 @@ export default function PrivacyPage() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">7. 儿童隐私</h2>
+          <h2 className="font-display text-lg text-cinema-text">6. 儿童隐私</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             本站内容面向一般电影爱好者与行业读者，不面向 13 岁以下儿童，也不会故意收集 13
             岁以下儿童的任何个人信息。
@@ -276,21 +269,21 @@ export default function PrivacyPage() {
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">8. 外部链接</h2>
+          <h2 className="font-display text-lg text-cinema-text">7. 外部链接</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             本站可能包含指向 readcine.com 站群其他子站或第三方外部网站的链接。外部网站有其独立的隐私政策，不受本隐私政策约束，建议您在访问时查阅相应站点的隐私声明。
           </p>
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">9. 政策变更</h2>
+          <h2 className="font-display text-lg text-cinema-text">8. 政策变更</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             我们可能根据站点功能或合规要求适时修订本隐私政策。政策更新后将直接在本页面发布，并同步修改页面顶部的生效日期。
           </p>
         </div>
 
         <div className="space-y-2">
-          <h2 className="font-display text-lg text-cinema-text">10. 联系我们</h2>
+          <h2 className="font-display text-lg text-cinema-text">9. 联系我们</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             如您对本隐私政策有任何疑问或建议，请发送邮件至：
             <a

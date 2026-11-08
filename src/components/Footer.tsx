@@ -1,50 +1,62 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { isEnPath } from "@/lib/i18n";
 
 export default function Footer() {
+  const pathname = usePathname();
+  const en = isEnPath(pathname);
+  const prefix = en ? "/en" : "";
+
   return (
     <footer className="mt-16 border-t border-cinema-border bg-cinema-card">
       <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
-        <p className="font-display text-cinema-gold">银幕新讯</p>
+        <p className="font-display text-cinema-gold">{en ? "Screen News" : "银幕新讯"}</p>
         <p className="mt-1 text-sm text-cinema-muted">
-          新片流媒体定档 · 新片发行动态
+          {en
+            ? "New film streaming dates · new film updates"
+            : "新片流媒体定档 · 新片发行动态"}
         </p>
         <p className="mt-3 text-xs text-cinema-muted/70">
-          只关心什么时候能在流媒体看、什么时候发行上线；不收院线爆米花。数据随仓库发布，非实时爬取。
+          {en
+            ? "Only when a film hits streaming, and when it goes on release; no box-office popcorn. Data ships with the repo, not scraped live."
+            : "只关心什么时候能在流媒体看、什么时候发行上线；不收院线爆米花。数据随仓库发布，非实时爬取。"}
         </p>
         <p className="mt-3 text-xs text-cinema-muted/70">
           <Link
-            href="/insight/not-only-scores"
+            href={`${prefix}/insight/not-only-scores`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
-            本站原创
+            {en ? "Original" : "本站原创"}
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link
-            href="/films"
+            href={`${prefix}/films`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
-            全部影片
+            {en ? "All films" : "全部影片"}
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link
-            href="/about"
+            href={`${prefix}/about`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
-            关于
+            {en ? "About" : "关于"}
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link
-            href="/contact"
+            href={`${prefix}/contact`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
-            联系
+            {en ? "Contact" : "联系"}
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link
-            href="/privacy"
+            href={`${prefix}/privacy`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
-            隐私政策
+            {en ? "Privacy" : "隐私政策"}
           </Link>
         </p>
         <p className="mt-2 text-xs text-cinema-muted/70">
@@ -52,7 +64,7 @@ export default function Footer() {
             href="https://readcine.com"
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-gold"
           >
-            readcine 导航
+            readcine {en ? "nav" : "导航"}
           </a>
           <span className="mx-2 opacity-40">·</span>
           <a
@@ -63,7 +75,7 @@ export default function Footer() {
           </a>
         </p>
         <p className="mt-2 text-xs text-cinema-muted/70">
-          © 2026 ReadCine 编辑部
+          © 2026 ReadCine {en ? "Editors" : "编辑部"}
         </p>
       </div>
     </footer>

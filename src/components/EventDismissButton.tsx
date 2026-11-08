@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { TimelineEvent } from "@/types";
+import type { Locale } from "@/lib/i18n";
 import {
   DISMISS_EVENT_NAME,
   isBlockedOrSimilar,
@@ -14,9 +15,11 @@ import {
 export default function EventDismissButton({
   event,
   className = "",
+  locale = "zh",
 }: {
   event: TimelineEvent;
   className?: string;
+  locale?: Locale;
 }) {
   const [store, setStore] = useState<DismissStore>({ blocked: {} });
   const [ready, setReady] = useState(false);
@@ -45,7 +48,7 @@ export default function EventDismissButton({
         disabled
         className={`inline-flex items-center gap-1 rounded-full border border-cinema-border/50 bg-cinema-card px-2.5 py-1 text-xs text-cinema-muted/40 ${className}`}
       >
-        ✕ 不再推荐
+        {locale === "en" ? "✕ Not interested" : "✕ 不再推荐"}
       </button>
     );
   }
@@ -83,9 +86,9 @@ export default function EventDismissButton({
             ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
             : "border border-cinema-border bg-cinema-card text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
         } ${className}`}
-        title={blocked ? "撤销屏蔽本条及相关内容" : "不再推荐本条及类似内容"}
+        title={blocked ? (locale === "en" ? "Unblock this and related items" : "撤销屏蔽本条及相关内容") : (locale === "en" ? "Don't recommend this or similar items" : "不再推荐本条及类似内容")}
       >
-        {blocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
+        {blocked ? (locale === "en" ? "↩ Unblock" : "↩ 撤销屏蔽") : (locale === "en" ? "✕ Not interested" : "✕ 不再推荐")}
       </button>
 
       {open ? (
@@ -108,7 +111,7 @@ export default function EventDismissButton({
               id="event-dismiss-reason-title"
               className="font-display text-lg text-cinema-text"
             >
-              不再推荐这条？
+              {locale === "en" ? "Don't recommend this?" : "不再推荐这条？"}
             </h3>
             <p className="mt-2 line-clamp-2 text-sm text-cinema-muted">
               {event.headline || event.filmTitle}
@@ -116,7 +119,7 @@ export default function EventDismissButton({
             <textarea
               value={reasonText}
               onChange={(e) => setReasonText(e.target.value)}
-              placeholder="说说原因，比如：题材不感兴趣、已经看过、想换个风格……"
+              placeholder={locale === "en" ? "Tell us why — e.g. not my genre, already seen, want something different…" : "说说原因，比如：题材不感兴趣、已经看过、想换个风格……"}
               autoFocus
               rows={6}
               className="mt-4 min-h-[160px] w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus:outline-none"
@@ -130,7 +133,7 @@ export default function EventDismissButton({
                 }}
                 className="rounded-full border border-cinema-border/70 px-4 py-2.5 text-sm text-cinema-muted hover:text-cinema-text"
               >
-                取消
+                {locale === "en" ? "Cancel" : "取消"}
               </button>
               <button
                 type="button"
@@ -138,7 +141,7 @@ export default function EventDismissButton({
                 onClick={confirm}
                 className="rounded-full border border-cinema-gold/40 bg-cinema-gold/15 px-4 py-2.5 text-sm font-medium text-cinema-gold disabled:opacity-40"
               >
-                确认不再推荐
+                {locale === "en" ? "Confirm" : "确认不再推荐"}
               </button>
             </div>
           </div>

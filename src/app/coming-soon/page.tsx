@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getComingSoonReleases, todayISO, type ComingSoonRelease } from "@/lib/data";
 import { formatDate, PLATFORM_LABELS } from "@/lib/labels";
+import { bilingualAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "即将上线",
   description: "本周、下周、本月内及今年内即将上线流媒体的新片定档。",
-  alternates: {
-    canonical: "/coming-soon",
-  },
+  alternates: bilingualAlternates("/coming-soon"),
 };
 
 export const dynamic = "force-static";

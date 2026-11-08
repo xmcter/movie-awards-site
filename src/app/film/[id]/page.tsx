@@ -17,6 +17,7 @@ import {
   truncateDescription,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy, stripStreamingBoilerplate } from "@/lib/headlines";
+import { bilingualAlternates } from "@/lib/i18n";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -65,9 +66,7 @@ export async function generateMetadata({
         index: false,
         follow: true,
       },
-      alternates: {
-        canonical: `/film/${canonicalId}`,
-      },
+      alternates: bilingualAlternates(`/film/${canonicalId}`),
     };
   }
 
@@ -84,7 +83,7 @@ export async function generateMetadata({
     description,
     robots: { index: isIndexableFilm(film), follow: true },
     twitter: { card: "summary_large_image", title, description },
-    alternates: { canonical: `/film/${film.id}` },
+    alternates: bilingualAlternates(`/film/${film.id}`),
     openGraph: {
       title: film.title,
       description,

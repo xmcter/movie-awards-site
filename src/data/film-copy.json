@@ -12,7 +12,9 @@
     "titleEn": "Ink",
     "directors": [
       "丹尼·博伊尔"
-    ]
+    ],
+    "synopsisEn": "In 1969, publisher Rupert Murdoch acquired the British daily The Sun and put the unscrupulous Larry Lamb in charge, driving up circulation at the expense of its rival The Mirror—the rise of the tabloid also reshaped the media landscape for decades to come.",
+    "backgroundEn": "Directed by Danny Boyle, with a screenplay by James Graham adapted from his 2017 stage play. Jack O'Connell plays Larry Lamb, Guy Pearce plays Murdoch, and Claire Foy plays reporter Jules. It opened the 83rd Venice Film Festival and competed in the main competition; runtime is about 116 minutes. Netflix holds streaming rights for the US and Latin America."
   },
   "bucking-fastard": {
     "synopsis": "一对形影不离的双胞胎姐妹在社会边缘挣扎求生。维尔纳·赫尔佐格灵感来自真实双胞胎故事，以近乎野兽般的生命力书写血缘与疯狂。",
@@ -22,7 +24,9 @@
     "titleEn": "Bucking Fastard",
     "directors": [
       "沃纳·赫尔佐格"
-    ]
+    ],
+    "synopsisEn": "A pair of inseparable twin sisters struggle to survive on the margins of society. Inspired by a true story of twins, Werner Herzog writes of blood ties and madness with a nearly feral vitality.",
+    "backgroundEn": "A new narrative feature from Werner Herzog, with Rooney Mara and Kate Mara as the twins. It is in competition at the 83rd Venice Film Festival."
   },
   "wild-horse-nine": {
     "synopsis": "1973年智利，性格迥异的中央情报局特工被派往复活节岛执行任务，搭档关系与地缘政治一同接受考验。马丁·麦克唐纳以黑色幽默与暴力诗学再探政治惊悚。",
@@ -32,25 +36,31 @@
     "titleEn": "Wild Horse Nine",
     "directors": [
       "马丁·麦克唐纳"
-    ]
+    ],
+    "synopsisEn": "Chile, 1973: two CIA agents of very different temperaments are sent to Easter Island on a mission, and their partnership is tested along with geopolitics. Martin McDonagh explores the political thriller once more through black humor and a poetics of violence.",
+    "backgroundEn": "Directed by Martin McDonagh, starring John Malkovich and others. It is in competition at the 83rd Venice Film Festival."
   },
   "honorary-clooney": {
     "background": "乔治·克鲁尼演员／导演／制片多栖，第83届威尼斯荣誉金狮致敬其银幕与公共影响力。",
     "title": "乔治·克鲁尼",
-    "titleEn": "George Clooney"
+    "titleEn": "George Clooney",
+    "backgroundEn": "George Clooney, who works as actor, director and producer, receives an honorary Golden Lion at the 83rd Venice Film Festival in tribute to his screen and public impact."
   },
   "honorary-burstyn": {
     "background": "艾伦·伯斯汀（《驱魔人》《爱丽丝不再住这里》等），第83届威尼斯荣誉金狮。",
     "title": "艾伦·伯斯汀",
-    "titleEn": "Ellen Burstyn"
+    "titleEn": "Ellen Burstyn",
+    "backgroundEn": "Ellen Burstyn (The Exorcist, Alice Doesn't Live Here Anymore, and others) receives an honorary Golden Lion at the 83rd Venice Film Festival."
   },
   "venice-jury-2026": {
     "background": "玛吉·吉伦哈尔出任第83届威尼斯主竞赛评委主席；其导演作品亦受作者向影迷关注。",
     "title": "玛吉·吉伦哈尔",
-    "titleEn": "Maggie Gyllenhaal"
+    "titleEn": "Maggie Gyllenhaal",
+    "backgroundEn": "Maggie Gyllenhaal will serve as president of the main competition jury at the 83rd Venice Film Festival; her directorial work has also drawn auteur-minded cinephiles."
   },
   "busan-jury-2026-zhang-yimou": {
-    "background": "张艺谋出任第31届釜山国际电影节主竞赛评审主席。"
+    "background": "张艺谋出任第31届釜山国际电影节主竞赛评审主席。",
+    "backgroundEn": "Zhang Yimou will serve as president of the main competition jury at the 31st Busan International Film Festival."
   },
   "fjord": {
     "synopsis": "罗马尼亚裔父亲米哈伊与挪威籍母亲丽斯贝特带着五个孩子迁回峡湾小镇，本与邻居相处融洽；当少女埃利亚身上出现瘀伤，挪威儿童福利机构介入，严格宗教教养与国家监护理念正面碰撞。",
@@ -64,25 +74,35 @@
     "titleEn": "Fjord",
     "directors": [
       "克里斯蒂安·蒙吉"
-    ]
+    ],
+    "synopsisEn": "Mihai, a Romanian-born father, and Lisbet, his Norwegian wife, move back to a small fjord town with their five children and initially get along well with their neighbors; when bruises appear on their teenage daughter Elia, Norway's child welfare services step in, setting strict religious upbringing directly against the state's philosophy of guardianship.",
+    "backgroundEn": "Written and directed by Cristian Mungiu, inspired by a real Norwegian child welfare controversy (the surname is changed to Georgiu in the film). A Romania/France/Norway co-production running about 146 minutes, starring Sebastian Stan and Renate Reinsve. It had its world premiere in the main competition at the 79th Cannes Film Festival, winning the Palme d'Or and the FIPRESCI Prize, among others."
   },
   "minotaur": {
     "synopsis": "安德烈·萨金塞夫以神话隐喻当代极权与迷宫般的社会结构，人在看不见的墙里寻找出口。",
-    "background": "安德烈·萨金塞夫执导。第79届戛纳评审团大奖。"
+    "background": "安德烈·萨金塞夫执导。第79届戛纳评审团大奖。",
+    "synopsisEn": "Andrey Zvyagintsev uses myth as metaphor for contemporary totalitarianism and a labyrinthine social structure, with people searching for an exit inside invisible walls.",
+    "backgroundEn": "Directed by Andrey Zvyagintsev. Grand Jury Prize at the 79th Cannes Film Festival."
   },
   "the-dreamed-adventure": {
     "synopsis": "生活在保加利亚、希腊与土耳其边境的女子为帮朋友卷入一桩特殊交易，自己也坠入危险。瓦莱斯卡·格里策巴赫书写边境女性的伦理抉择。",
     "background": "瓦莱斯卡·格里策巴赫执导。第79届戛纳评审团奖。",
-    "runtime": 167
+    "runtime": 167,
+    "synopsisEn": "A woman living at the border of Bulgaria, Greece and Turkey gets drawn into a peculiar deal to help a friend and lands in danger herself. Valeska Grisebach writes of a borderland woman's ethical choices.",
+    "backgroundEn": "Directed by Valeska Grisebach. Jury Prize at the 79th Cannes Film Festival."
   },
   "the-black-ball": {
     "synopsis": "三个同性恋男子的故事横跨1932、1937与2017年的西班牙：欲望、压迫与自由在不同时代的「黑球」隐喻中回响。哈维尔·安布罗希与哈维尔·卡尔沃执导。",
     "background": "哈维尔·安布罗希、哈维尔·卡尔沃执导。第79届戛纳最佳导演。",
-    "runtime": 155
+    "runtime": 155,
+    "synopsisEn": "The stories of three gay men span Spain in 1932, 1937 and 2017: desire, oppression and freedom echo across eras through the metaphor of the \"black ball.\" Directed by Javier Ambrossi and Javier Calvo.",
+    "backgroundEn": "Directed by Javier Ambrossi and Javier Calvo. Best Director at the 79th Cannes Film Festival."
   },
   "fatherland": {
     "synopsis": "帕维乌·帕夫利科夫斯基回望故土、记忆与历史暴力如何塑造一代人的面孔。",
-    "background": "帕维乌·帕夫利科夫斯基执导。第79届戛纳最佳导演。"
+    "background": "帕维乌·帕夫利科夫斯基执导。第79届戛纳最佳导演。",
+    "synopsisEn": "Paweł Pawlikowski looks back at how homeland, memory and historical violence shaped the face of a generation.",
+    "backgroundEn": "Directed by Paweł Pawlikowski. Best Director at the 79th Cannes Film Festival."
   },
   "all-of-a-sudden": {
     "synopsis": "巴黎郊区养老院院长玛丽-露坚持推行更人文的护理；一次相遇让她结识身患癌症的日本导演麻里。两位女性因共同价值观与对语言的眷恋结成深厚友谊，也悄然改变整间机构。滨口龙介执导。",
@@ -96,16 +116,22 @@
     "titleEn": "All of a Sudden",
     "directors": [
       "滨口龙介"
-    ]
+    ],
+    "synopsisEn": "Marie-Lou, director of a nursing home in the Paris suburbs, insists on a more humane approach to care; a chance encounter introduces her to Mari, a Japanese filmmaker living with cancer. The two women form a deep friendship built on shared values and a love of language, quietly transforming the entire institution. Directed by Ryusuke Hamaguchi.",
+    "backgroundEn": "A French-Japanese co-production directed by Ryusuke Hamaguchi, starring Virginie Efira and Tao Okamoto, with a runtime of about 196 minutes. Best Actress at the 79th Cannes Film Festival."
   },
   "coward": {
     "synopsis": "一战前线后方，青年士兵皮埃尔渴望证明勇气，却遇见必须「想办法处理」逃兵的弗朗西斯。影片以反战视角拆解勇气与懦弱的定义。",
     "background": "第79届戛纳最佳男演员。一战题材反战剧。",
-    "runtime": 120
+    "runtime": 120,
+    "synopsisEn": "Behind the front lines of World War I, young soldier Pierre longs to prove his courage, but meets Francis, who must \"find a way to deal with\" deserters. The film dismantles the definitions of courage and cowardice from an anti-war perspective.",
+    "backgroundEn": "Best Actor at the 79th Cannes Film Festival. A World War I anti-war drama."
   },
   "our-redemption": {
     "synopsis": "伊曼努尔·马雷书写一个「属于自己时代」的男人如何在道德账本上寻求救赎。",
-    "background": "伊曼努尔·马雷执导。第79届戛纳最佳编剧。"
+    "background": "伊曼努尔·马雷执导。第79届戛纳最佳编剧。",
+    "synopsisEn": "Emmanuel Marre writes about how a man \"of his own time\" seeks redemption in the ledger of morality.",
+    "backgroundEn": "Directed by Emmanuel Marre. Best Screenplay, 79th Cannes Film Festival."
   },
   "yellow-letters": {
     "synopsis": "安卡拉戏剧界备受瞩目的夫妇德丽娅与阿齐兹，因新戏首演后的政治压力一夜失去工作与住所，带着十三岁女儿暂居伊斯坦布尔亲属家。他坚持理想打零工，她寻找经济自立，婚姻与亲子关系同时被拉扯。",
@@ -119,7 +145,9 @@
     "titleEn": "Yellow Letters",
     "directors": [
       "伊尔克·恰塔克"
-    ]
+    ],
+    "synopsisEn": "Derya and Aziz, a celebrated couple in Ankara's theater world, lose their jobs and home overnight after political pressure follows the premiere of their new play, and move in with relatives in Istanbul with their thirteen-year-old daughter. He holds to his ideals and takes odd jobs while she seeks financial independence, straining both their marriage and their relationship with their child.",
+    "backgroundEn": "Directed by İlker Çatak (The Teachers' Lounge), who co-wrote with Ayda Çatak and Enis Kostepen. German title Gelbe Briefe, Turkish dialogue, a German/French/Turkish co-production, runtime approximately 128 minutes. Golden Bear, 76th Berlin Film Festival."
   },
   "two-seasons-two-strangers": {
     "synopsis": "改编自柘植义春漫画。郁郁不得志的李编剧因缘际会来到大雪深山，误入破旧旅馆：屋顶压着积雪，老板笨造看起来毫无干劲。某夜，笨造带她踏入雪原——季节与陌生人改写了创作与孤独。",
@@ -129,7 +157,9 @@
     "titleEn": "Two Seasons, Two Strangers",
     "directors": [
       "三宅唱"
-    ]
+    ],
+    "synopsisEn": "Adapted from a manga by Yoshiharu Tsuge. Li, a frustrated screenwriter, happens upon a snowbound mountain village and stumbles into a dilapidated inn: snow weighs on the roof, and the owner, Benzo, seems utterly listless. One night Benzo leads her into the snowy fields—the season and a stranger rewrite both her work and her solitude.",
+    "backgroundEn": "Directed by Sho Miyake, adapted from a manga by Yoshiharu Tsuge. Original title Tabi to Hibi. Golden Leopard, 78th Locarno Film Festival."
   },
   "los-domingos": {
     "synopsis": "十七岁的艾纳拉本该选定大学专业，却告诉家人自己与上帝的联系越来越近，想试探修道院生涯。家庭被这一召命拉裂。阿劳达·鲁伊斯·德·阿苏亚执导。",
@@ -139,7 +169,9 @@
     "titleEn": "Sundays",
     "directors": [
       "阿劳达·鲁伊斯·德·阿苏亚"
-    ]
+    ],
+    "synopsisEn": "Seventeen-year-old Ainara is supposed to pick a university major, but instead tells her family that she feels ever closer to God and wants to explore life in a convent. The calling fractures the family. Directed by Alauda Ruiz de Azúa.",
+    "backgroundEn": "Directed by Alauda Ruiz de Azúa. Original title Los domingos. Golden Shell, 73rd San Sebastián Film Festival."
   },
   "black-red-yellow": {
     "synopsis": "吉尔吉斯群山中，手艺最好的织毯女工图尔杜古尔织出的黑、红、黄不仅是图案，更是人们的命运线。阿克坦·阿雷姆·库巴特以工艺与神话织就民族史诗。",
@@ -149,7 +181,9 @@
     "titleEn": "Black, Red, Yellow",
     "directors": [
       "阿克坦·阿雷姆·库巴特"
-    ]
+    ],
+    "synopsisEn": "In the mountains of Kyrgyzstan, Turdugul, the finest weaver of her craft, weaves black, red and yellow not merely into patterns but into the threads of people's fate. Aktan Arym Kubat spins a national epic from craft and myth.",
+    "backgroundEn": "Directed by Kyrgyz filmmaker Aktan Arym Kubat. Winner of the Golden Goblet for Best Feature Film at the 27th Shanghai International Film Festival."
   },
   "palestine-36": {
     "synopsis": "1936年英属巴勒斯坦委任统治时期，农耕青年尤瑟夫每日往返村庄与耶路撒冷城内工作，在土地剥夺与殖民政策升温中寻找立足之地。安娜玛丽·雅西尔执导。",
@@ -159,7 +193,9 @@
     "titleEn": "Palestine 36",
     "directors": [
       "安娜玛丽·雅西尔"
-    ]
+    ],
+    "synopsisEn": "In 1936, during the British Mandate of Palestine, a young farmer named Yusef travels daily between his village and his work in Jerusalem, seeking his footing as land dispossession and colonial policy escalate. Directed by Annemarie Jacir.",
+    "backgroundEn": "A historical drama directed by Annemarie Jacir, set around the 1936 Arab Revolt in Palestine. Winner of the Tokyo Grand Prix at the 38th Tokyo International Film Festival."
   },
   "gloaming-in-luomu": {
     "synopsis": "小白收到西南小镇寄来的明信片，寄件人是三年前不辞而别的男友。她犹豫再三仍前往探寻。张律取景峨眉山罗目一带，以漫游节奏书写告别与余温。",
@@ -169,7 +205,9 @@
     "titleEn": "Gloaming in Luomu",
     "directors": [
       "张律"
-    ]
+    ],
+    "synopsisEn": "Xiaobai receives a postcard from a small town in the southwest, sent by the boyfriend who left without a word three years ago. After much hesitation, she goes to find him. Zhang Lu shoots around Luomu in the Emei Mountains, tracing farewell and lingering warmth at a wandering pace.",
+    "backgroundEn": "Directed by Zhang Lu and shot around Luomu in the Emei Mountains, Sichuan. Starring Bai Baihe and others. Winner of Best Film in the competition at the 30th Busan International Film Festival."
   },
   "the-odyssey": {
     "synopsis": "克里斯托弗·诺兰改编荷马史诗：特洛伊战后，奥德修斯踏上归途，途经独眼巨人、塞壬与喀耳刻等试炼。全片以大画幅胶片拍摄。",
@@ -179,7 +217,9 @@
     "titleEn": "The Odyssey",
     "directors": [
       "克里斯托弗·诺兰"
-    ]
+    ],
+    "synopsisEn": "Christopher Nolan adapts Homer's epic: after the Trojan War, Odysseus sets out for home, passing through trials including the Cyclops, the Sirens and Circe. The entire film was shot on large-format film.",
+    "backgroundEn": "Christopher Nolan's adaptation of The Odyssey, shot entirely on large-format/IMAX film. It bypassed the three major competitions, entering awards-season contention as an auteur-driven blockbuster."
   },
   "digger": {
     "synopsis": "亚历桑德罗·冈萨雷斯·伊尼亚里图新作：世上最有权势的男人极力证明自己是人类救世主，却迎来自己酝酿的灾难。",
@@ -189,41 +229,56 @@
     "titleEn": "Digger",
     "directors": [
       "亚历桑德罗·冈萨雷斯·伊尼亚里图"
-    ]
+    ],
+    "synopsisEn": "In Alejandro González Iñárritu's new film, the world's most powerful man strives to prove himself humanity's savior, only to bring about the catastrophe he set in motion.",
+    "backgroundEn": "Directed by Alejandro González Iñárritu. An ambitious auteur work exploring power, savior narratives and catastrophe."
   },
   "the-housewife": {
-    "background": "本·希里尼安执导，娜奥米·沃茨主演；沃茨于圣塞巴斯蒂安获 Donostia 终身成就奖同场放映。"
+    "background": "本·希里尼安执导，娜奥米·沃茨主演；沃茨于圣塞巴斯蒂安获 Donostia 终身成就奖同场放映。",
+    "backgroundEn": "Directed by Ben Shirinian and starring Naomi Watts; screened alongside Watts receiving the Donostia Lifetime Achievement Award at San Sebastián."
   },
   "tender-loving-care": {
     "synopsis": "社工艾米把心力几乎都花在需要帮助的家庭上，却逐渐发现自己的私人生活也在失序边缘。迈克·李以群戏与即兴排练捕捉当代英国福利与照护体系中的疲惫与温情。",
     "background": "迈克·李确认的「最终长片」之一线创作，圣塞巴斯蒂安主竞赛并入选纽约电影节。英国社会现实主义脉络。",
-    "runtime": 107
+    "runtime": 107,
+    "synopsisEn": "Social worker Amy pours nearly all her energy into families in need, yet gradually finds her own private life edging toward disorder. Mike Leigh captures the exhaustion and warmth of contemporary Britain's welfare and care systems through ensemble scenes and improvisational rehearsal.",
+    "backgroundEn": "One of Mike Leigh's confirmed final features, in competition at San Sebastián and selected for the New York Film Festival. Rooted in the British social realist tradition."
   },
   "ghost-song": {
     "synopsis": "十七岁的艾莎去世后，灵魂在生者与逝者之间游荡，试图与仍在哀悼的家人与朋友对话。法提赫·阿金以奇幻外壳书写移民家庭的失落与和解。",
     "background": "法提赫·阿金执导。第74届圣塞巴斯蒂安开幕并入围主竞赛。",
-    "runtime": 106
+    "runtime": 106,
+    "synopsisEn": "After seventeen-year-old Aisha dies, her soul drifts between the living and the dead, trying to speak with the family and friends still mourning her. Fatih Akin writes of loss and reconciliation in an immigrant family through a fantastical frame.",
+    "backgroundEn": "Directed by Fatih Akin. Opened the 74th San Sebastián and competed in its main competition."
   },
   "busan-31-cuaron": {
-    "background": "阿方索·卡隆出席第31届釜山国际电影节开幕并主持大师班，配合《地心引力》IMAX 特别放映。"
+    "background": "阿方索·卡隆出席第31届釜山国际电影节开幕并主持大师班，配合《地心引力》IMAX 特别放映。",
+    "backgroundEn": "Alfonso Cuarón attended the opening of the 31st Busan International Film Festival and hosted a masterclass, accompanied by a special IMAX screening of Gravity."
   },
   "goodbye-ufo": {
     "synopsis": "1985年香港仔华富邨传出 UFO 低空飞过的都市传说。三个少年陈子健、何家谦、林可儿是目击者，也是成长的证人。梁柏堅以怀旧科幻质地回望八十年代香港。",
     "background": "梁柏堅执导。第44届香港电影金像奖最佳电影、最佳导演。",
-    "runtime": 121
+    "runtime": 121,
+    "synopsisEn": "In 1985, an urban legend spread through Wah Fu Estate in Aberdeen, Hong Kong: a UFO flying low overhead. Three teenagers — Chan Tsz-kin, Ho Ka-him and Lam Ho-yee — witnessed it, and grew up along with it. Leung Pak-kin looks back on 1980s Hong Kong through a nostalgic sci-fi lens.",
+    "backgroundEn": "Directed by Leung Pak-kin. Winner of Best Film and Best Director at the 44th Hong Kong Film Awards."
   },
   "catching-the-wind": {
     "synopsis": "梁家辉在《捕风追影》中以成熟演技刻画游走法律与情义边缘的男人，摘下第44届金像奖影帝。",
-    "background": "梁家辉凭《捕风追影》获第44届金像奖最佳男主角。"
+    "background": "梁家辉凭《捕风追影》获第44届金像奖最佳男主角。",
+    "synopsisEn": "In The Shadow's Edge, Tony Leung Ka-fai delivers a seasoned performance as a man caught between the law and loyalty, earning him the Best Actor prize at the 44th Hong Kong Film Awards.",
+    "backgroundEn": "Tony Leung Ka-fai won Best Actor at the 44th Hong Kong Film Awards for The Shadow's Edge."
   },
   "love-like-mine": {
-    "background": "廖子妎凭本片获第44届金像奖最佳女主角。"
+    "background": "廖子妎凭本片获第44届金像奖最佳女主角。",
+    "backgroundEn": "Liao Tsz-han won Best Actress at the 44th Hong Kong Film Awards for this film."
   },
   "golden-horse-63": {
-    "background": "第63届金马奖长片报名已于2026年7月开启；入围与典礼未举行前，时间线仅记报名节点。"
+    "background": "第63届金马奖长片报名已于2026年7月开启；入围与典礼未举行前，时间线仅记报名节点。",
+    "backgroundEn": "Feature film submissions for the 63rd Golden Horse Awards opened in July 2026; until the nominees and ceremony are announced, the timeline records only the submission milestone."
   },
   "oscars-99": {
-    "background": "第99届奥斯卡公布日程：提名 2027年1月21日，典礼 3月14日。时间线记日程发布，不提前虚构结果。"
+    "background": "第99届奥斯卡公布日程：提名 2027年1月21日，典礼 3月14日。时间线记日程发布，不提前虚构结果。",
+    "backgroundEn": "The 99th Academy Awards has unveiled its schedule: nominations on January 21, 2027, and the ceremony on March 14. The timeline records the schedule announcement without speculating on results."
   },
   "look-back": {
     "synopsis": "藤野与京本从小学一路走过十三年：因漫画结缘、互相激励，也因一场变故被迫重新理解创作与陪伴。是枝裕和改编藤本树短篇，于秋田等地实景拍摄。",
@@ -237,7 +292,9 @@
     "titleEn": "Look Back",
     "directors": [
       "是枝裕和"
-    ]
+    ],
+    "synopsisEn": "Fujino and Kyomoto's story spans thirteen years, from elementary school onward: brought together by manga, inspiring each other, and forced by a twist of fate to rethink what creation and companionship mean. Hirokazu Kore-eda adapts Tatsuki Fujimoto's short story, shooting on location in Akita and elsewhere.",
+    "backgroundEn": "Hirokazu Kore-eda adapts Tatsuki Fujimoto's short manga Look Back; the live-action film was shot on location in Akita Prefecture and elsewhere. It was selected for the main competition at the 83rd Venice Film Festival. Douban/TMDB render the title as Look Back."
   },
   "possible-love": {
     "synopsis": "失业工人昊锡与妻子美玉，纪录片导演叡智与丈夫相宇——两对夫妇因拍摄纪录而相遇，阶级落差、隐性欲望与「可能的爱」在镜头内外同时展开。",
@@ -253,92 +310,130 @@
     "titleEn": "Possible Love",
     "directors": [
       "李沧东"
-    ]
+    ],
+    "synopsisEn": "Unemployed worker Ho-seok and his wife Mi-ok, documentary director Ye-ji and her husband Sang-woo—two couples meet through a documentary shoot, and class divides, hidden desires and 'possible love' unfold on both sides of the camera.",
+    "backgroundEn": "Written by Lee Chang-dong and Oh Jung-mi. Original title: Possible Love. Starring Jeon Do-yeon, Sol Kyung-gu, Zo In-sung and Jo Yeo-jeong, with a runtime of about 164 minutes. The project gestated for years and is tied to the social backdrop of Korean labor struggles. It won the Grand Jury Prize and the FIPRESCI Prize at the 83rd Venice Film Festival; after its Korean theatrical release it launched on Netflix."
   },
   "tonight-will-happen": {
     "synopsis": "在奥斯陆，西娅与马泰奥等待孩子降生，却被突如其来的现实击中。南尼·莫莱蒂以个人化笔触书写父职、焦虑与欧洲当代家庭。",
     "background": "南尼·莫莱蒂执导。第83届威尼斯主竞赛。",
-    "runtime": 103
+    "runtime": 103,
+    "synopsisEn": "In Oslo, Thea and Matteo await the birth of their child, only to be struck by sudden reality. Nanni Moretti writes fatherhood, anxiety and the contemporary European family in a personal key.",
+    "backgroundEn": "Directed by Nanni Moretti. Main competition, 83rd Venice Film Festival."
   },
   "mr-nelson": {
     "synopsis": "冢本晋也以激烈影像质询战争责任：尼尔森先生，你杀人了吗？威尼斯主竞赛入围。",
-    "background": "冢本晋也执导。第83届威尼斯主竞赛。"
+    "background": "冢本晋也执导。第83届威尼斯主竞赛。",
+    "synopsisEn": "Shinya Tsukamoto interrogates war responsibility through fierce imagery: Mr. Nelson, did you kill people? Main competition, Venice Film Festival.",
+    "backgroundEn": "Directed by Shinya Tsukamoto. Main competition, 83rd Venice Film Festival."
   },
   "bunker": {
     "synopsis": "弗洛里安·泽勒（《父亲》《儿子》）新作，将心理惊悚置于封闭空间，探讨恐惧、记忆与幸存者叙事。",
-    "background": "弗洛里安·泽勒执导。第83届威尼斯主竞赛。"
+    "background": "弗洛里安·泽勒执导。第83届威尼斯主竞赛。",
+    "synopsisEn": "A new work from Florian Zeller (The Father, The Son) that places psychological thriller in a confined space, exploring fear, memory and survivor narratives.",
+    "backgroundEn": "Directed by Florian Zeller. Main competition, 83rd Venice Film Festival."
   },
   "naza": {
     "synopsis": "约旦河西岸马萨费尔亚塔的年轻活动家巴塞尔·阿德拉，自幼反抗占领军对社群的大规模拆迁；优瓦尔·亚伯拉罕与蕾切尔·索尔以纪录长片追随抵抗日常。",
     "background": "优瓦尔·亚伯拉罕与蕾切尔·索尔纪录长片，延续其对占领与日常抵抗的关注。",
-    "runtime": 92
+    "runtime": 92,
+    "synopsisEn": "Basel Adra, a young activist in Masafer Yatta in the West Bank, has fought since childhood against the occupying army's mass demolition of his community; Yuval Abraham and Rachel Szor follow the daily reality of resistance in this documentary feature.",
+    "backgroundEn": "A documentary feature by Yuval Abraham and Rachel Szor, continuing their focus on occupation and everyday resistance."
   },
   "company": {
     "synopsis": "卡西·阿弗莱克自导自演，聚焦一间公司内部的权力、忠诚与道德模糊地带。威尼斯主竞赛亮相。",
-    "background": "卡西·阿弗莱克执导。第83届威尼斯主竞赛。"
+    "background": "卡西·阿弗莱克执导。第83届威尼斯主竞赛。",
+    "synopsisEn": "Casey Affleck directs and stars, centering on power, loyalty and moral ambiguity inside a corporation. Premiered in main competition at Venice.",
+    "backgroundEn": "Directed by Casey Affleck. Main competition, 83rd Venice Film Festival."
   },
   "primetime": {
     "synopsis": "纪录片导演兰斯·奥本海姆首部剧情长片，把真人秀逻辑推到极限：镜头如何制造真相，又如何吞没被拍摄者。",
-    "background": "兰斯·奥本海姆首部剧情长片。第83届威尼斯主竞赛。"
+    "background": "兰斯·奥本海姆首部剧情长片。第83届威尼斯主竞赛。",
+    "synopsisEn": "Documentary filmmaker Lance Oppenheim's first narrative feature pushes the logic of reality TV to its limit: how the camera manufactures truth, and how it swallows the people it films.",
+    "backgroundEn": "Lance Oppenheim's first narrative feature. Main competition, 83rd Venice Film Festival."
   },
   "place-to-heal": {
     "synopsis": "法国公立医院青少年精神科，医生与病患在制度缝隙里寻找疗愈可能。塞德里克·康以纪录片式观察书写照护伦理。",
     "background": "塞德里克·康执导；玛卢·克比齐获马斯特罗亚尼奖相关节点。",
-    "runtime": 104
+    "runtime": 104,
+    "synopsisEn": "In the adolescent psychiatry ward of a French public hospital, doctors and patients seek the possibility of healing in the gaps of the system. Cédric Kahn observes the ethics of care with a documentary-like eye.",
+    "backgroundEn": "Directed by Cédric Kahn; Malou Krebiz receives the Mastroianni Award-related milestone."
   },
   "dau": {
     "synopsis": "1950年代，娜塔莎在苏联秘密研究所食堂工作，科学家与外国访客穿梭其间。伊利亚·赫尔扎诺夫斯基以极端沉浸制作著称的 DAU 计划衍生长片。",
     "background": "伊利亚·赫尔扎诺夫斯基 DAU 计划衍生。第83届威尼斯相关单元。",
-    "runtime": 138
+    "runtime": 138,
+    "synopsisEn": "In the 1950s, Natasha works in the cafeteria of a secret Soviet research institute, where scientists and foreign visitors pass through. A feature spun off from Ilya Khrzhanovsky's DAU project, renowned for its extreme immersive production.",
+    "backgroundEn": "A spin-off of Ilya Khrzhanovsky's DAU project. A sidebar of the 83rd Venice Film Festival."
   },
   "good-little-soldier": {
     "synopsis": "四十三岁的高管卡拉在职场与家庭间维持完美表象，一次危机迫使她重新审视忠诚、服从与自我。史蒂芬·布里泽以冷峻社会剧质地书写当代中产压力。",
     "background": "史蒂芬·布里泽执导。第83届威尼斯最佳编剧。中文或译《优秀卒子》。",
-    "runtime": 102
+    "runtime": 102,
+    "synopsisEn": "Kara, a 43-year-old executive, maintains a flawless facade between work and family until a crisis forces her to reexamine loyalty, obedience and selfhood. Stéphane Brizé crafts a stark social drama about the pressures of contemporary middle-class life.",
+    "backgroundEn": "Directed by Stéphane Brizé. Best Screenplay at the 83rd Venice Film Festival. Also known in Chinese as 《优秀卒子》."
   },
   "fire-inside": {
     "synopsis": "多年前逃离那不勒斯的安东尼奥在别处重建生活，却因一桩旧事被拉回故土与家族恩怨。艾多阿尔多·德·安杰利斯继续书写南意大利的血缘与暴力余波。",
     "background": "艾多阿尔多·德·安杰利斯执导。第83届威尼斯主竞赛。",
-    "runtime": 93
+    "runtime": 93,
+    "synopsisEn": "Antonio, who fled Naples years ago, has rebuilt his life elsewhere, but an old matter draws him back to his homeland and family grudges. Edoardo De Angelis continues to explore the aftershocks of blood ties and violence in southern Italy.",
+    "backgroundEn": "Directed by Edoardo De Angelis. Main Competition at the 83rd Venice Film Festival."
   },
   "woman-unknown": {
     "synopsis": "前家政工玛丽筹划一场铺张的葬礼，却不愿让任何人知道她真正的身份与过去。梅·埃尔-图希借一场告别仪式，探讨阶级、尊严与被看见的权利。",
     "background": "梅·埃尔-图希执导。圣塞巴斯蒂安等作者向巡展。",
-    "runtime": 124
+    "runtime": 124,
+    "synopsisEn": "Marie, a former domestic worker, plans an extravagant funeral but refuses to let anyone know her true identity and past. Through a farewell ceremony, May El-Toukhy explores class, dignity and the right to be seen.",
+    "backgroundEn": "Directed by May El-Toukhy. Author-driven touring showcase including San Sebastián."
   },
   "diane-in-the-loop": {
     "synopsis": "黛安既渴望男人又厌恶男人；一次绕道的相遇把她卷入欲望与自我欺骗的循环。安·西罗与拉斐尔·巴尔博尼以黑色幽默拆解当代两性关系。",
     "background": "安·西罗、拉斐尔·巴尔博尼执导。第83届威尼斯地平线最佳影片。",
-    "runtime": 92
+    "runtime": 92,
+    "synopsisEn": "Diane both craves and loathes men; a chance detour ensnares her in a cycle of desire and self-deception. Ann Sirot and Raphaël Balboni dissect contemporary gender relations with dark humor.",
+    "backgroundEn": "Directed by Ann Sirot and Raphaël Balboni. Best Film in the Orizzonti section at the 83rd Venice Film Festival."
   },
   "jo-phaedra": {
     "synopsis": "十五岁假小子乔做着关于费德拉的噩梦，现实与神话在青春期欲望与禁忌中交织。杰奎琳·伦楚以大胆形式实验书写少女主体。",
     "background": "杰奎琳·伦楚执导。第83届威尼斯地平线最佳导演。",
-    "runtime": 88
+    "runtime": 88,
+    "synopsisEn": "Fifteen-year-old tomboy Jo has nightmares about Phaedra as reality and myth entwine amid adolescent desire and taboo. Jacqueline Lentzou writes the teenage subject through bold formal experimentation.",
+    "backgroundEn": "Directed by Jacqueline Lentzou. Best Director in the Orizzonti section at the 83rd Venice Film Festival."
   },
   "house-of-the-wind": {
     "synopsis": "八十岁的若塞特独自住在喀麦隆雅温得，孩子们散落各地，风穿过空屋。奥古斯特·贝尔纳·库埃莫·扬胡以静默影像书写离散家庭。",
     "background": "奥古斯特·贝尔纳·库埃莫·扬胡执导。地平线评委会特别奖兼处女作奖。",
-    "runtime": 102
+    "runtime": 102,
+    "synopsisEn": "Eighty-year-old Josette lives alone in Yaoundé, Cameroon, her children scattered far away, the wind blowing through an empty house. Auguste Bernard Kouemo Yanghu portrays a dispersed family through silent imagery.",
+    "backgroundEn": "Directed by Auguste Bernard Kouemo Yanghu. Orizzonti Special Jury Prize and Best Debut Film."
   },
   "children-of-the-monkey": {
     "synopsis": "达里奥抚养残障孩子，却开始收到匿名威胁与邻里敌意。托马索·兰杜奇以家庭惊悚质地探讨恐惧如何在社区中传染。",
     "background": "托马索·兰杜奇执导。地平线最佳男演员与最佳编剧。",
-    "runtime": 110
+    "runtime": 110,
+    "synopsisEn": "Dario is raising a disabled child when anonymous threats and neighborhood hostility begin. Tommaso Landucci uses the texture of a domestic thriller to explore how fear spreads through a community.",
+    "backgroundEn": "Directed by Tommaso Landucci. Won Best Actor and Best Screenplay in Horizons."
   },
   "falling-house": {
     "synopsis": "德黑兰郊外一户普通人家，在经济与政治压力下眼看居所倾颓。拉蕾·马尔兹班等演员以克制表演呈现伊朗当代家庭的日常抵抗。",
     "background": "拉蕾·马尔兹班凭本片获地平线最佳女演员。",
-    "runtime": 124
+    "runtime": 124,
+    "synopsisEn": "An ordinary family on the outskirts of Tehran watches their home crumble under economic and political pressure. Laleh Marzban and the cast deliver restrained performances in this portrait of everyday resistance in a contemporary Iranian family.",
+    "backgroundEn": "Laleh Marzban won Best Actress in Horizons for this film."
   },
   "pigeon-ring": {
     "synopsis": "陶世欣、张妒琦的中国 VR 短片以鸽环为意象，探索沉浸叙事中的空间与记忆，威尼斯沉浸单元大奖。",
-    "background": "陶世欣、张妒琦中国 VR 短片。威尼斯沉浸单元大奖。"
+    "background": "陶世欣、张妒琦中国 VR 短片。威尼斯沉浸单元大奖。",
+    "synopsisEn": "Tao Shixin and Zhang Duqi's Chinese VR short uses pigeon rings as its central image to explore space and memory in immersive storytelling, winning the Venice Immersive Grand Prize.",
+    "backgroundEn": "A Chinese VR short by Tao Shixin and Zhang Duqi. Venice Immersive Grand Prize winner."
   },
   "i-matter": {
     "synopsis": "即将离开孤儿院的少女站在自立门槛上，试图证明自己「很重要」。阿林娜·塞尔班以罗马尼亚新浪潮余脉书写制度边缘的成长。",
     "background": "阿林娜·塞尔班执导。威尼斯相关单元奖项。",
-    "runtime": 116
+    "runtime": 116,
+    "synopsisEn": "A teenage girl about to leave her orphanage stands on the threshold of independence, trying to prove that she matters. Alina Serban draws on the legacy of the Romanian New Wave to portray coming of age on the margins of the system.",
+    "backgroundEn": "Directed by Alina Serban. Winner of a Venice award in its section."
   },
   "one-battle": {
     "synopsis": "曾经的革命者鲍勃带着女儿薇拉离网隐居，十六年来仍摆脱不了对危险的警惕。宿敌重新出现、女儿失踪后，他被迫联系旧日同伴，父女两代一起面对过去的代价。",
@@ -354,14 +449,18 @@
     ],
     "directors": [
       "保罗·托马斯·安德森"
-    ]
+    ],
+    "synopsisEn": "Bob, a former revolutionary, has lived off the grid with his daughter Vera for sixteen years, yet he has never shaken his vigilance against danger. When an old enemy resurfaces and his daughter goes missing, he is forced to contact former comrades, and the two generations must together confront the cost of the past.",
+    "backgroundEn": "Written and directed by Paul Thomas Anderson, inspired by Thomas Pynchon's novel Vineland. Starring Leonardo DiCaprio, Sean Penn, and Benicio del Toro, with a runtime of about 162 minutes. Released in North America in 2025; won Best Picture and Best Director at the 98th Academy Awards."
   },
   "sinners": {
     "synopsis": "1932年密西西比，双胞胎兄弟从芝加哥归来，用攒下的钱开起黑人酒吧；一夜狂欢演变成对抗种族暴力与超自然力量的血战。瑞安·库格勒执导。",
     "background": "瑞安·库格勒执导。第98届奥斯卡最佳男主角相关奖项节点。",
     "cast": [
       "迈克尔·B·乔丹"
-    ]
+    ],
+    "synopsisEn": "Mississippi, 1932: twin brothers return from Chicago and use their savings to open a Black juke joint; a night of revelry turns into a bloody battle against racial violence and supernatural forces. Directed by Ryan Coogler.",
+    "backgroundEn": "Directed by Ryan Coogler. Key awards milestone at the 98th Academy Awards for Best Actor."
   },
   "hamnet": {
     "synopsis": "莎士比亚与妻子艾格尼丝痛失十一岁儿子哈姆奈特。赵婷改编玛吉·奥法雷尔同名小说，以丧子之痛对照《哈姆雷特》的诞生。",
@@ -370,11 +469,15 @@
     "cast": [
       "杰西·巴克利",
       "保罗·麦斯卡"
-    ]
+    ],
+    "synopsisEn": "Shakespeare and his wife Agnes lose their eleven-year-old son Hamnet. Chloé Zhao adapts Maggie O'Farrell's novel of the same name, setting the grief of losing a child against the creation of Hamlet.",
+    "backgroundEn": "Directed by Chloé Zhao, adapted from Maggie O'Farrell's novel Hamnet. Jessie Buckley won Best Actress at the 98th Academy Awards."
   },
   "weapons": {
     "synopsis": "小镇在一夜之间失去一群孩子，社区陷入恐慌与猜疑。扎克·克雷格执导的恐怖群像，埃米·马迪根以配角戏份震动奖季。",
-    "background": "埃米·马迪根凭本片获第98届奥斯卡最佳女配角。"
+    "background": "埃米·马迪根凭本片获第98届奥斯卡最佳女配角。",
+    "synopsisEn": "A small town loses a group of children overnight, plunging the community into panic and suspicion. Zach Cregger's horror ensemble, in which Amy Madigan's supporting performance shook up awards season.",
+    "backgroundEn": "Amy Madigan won Best Supporting Actress at the 98th Academy Awards for this film."
   },
   "sentimental-value": {
     "synopsis": "姐妹诺拉与阿格尼丝面对疏远多年的导演父亲古斯塔夫——他想让诺拉主演复出之作，遭拒后改邀美国明星。约阿希姆·特里尔书写家庭创伤与电影能否修好关系。",
@@ -383,21 +486,29 @@
       "伦妮·玛尔腾斯",
       "斯泰兰·斯卡斯加德",
       "艾莉·范宁"
-    ]
+    ],
+    "synopsisEn": "Sisters Nora and Agnes confront their estranged director father Gustav, who wants Nora to star in his comeback film; when she refuses, he turns to an American star instead. Joachim Trier explores family trauma and whether cinema can mend relationships.",
+    "backgroundEn": "Directed by Joachim Trier. Best International Feature Film at the 98th Academy Awards."
   },
   "kpop-demon-hunters": {
     "synopsis": "虚拟女团猎人穿越舞台与妖怪世界，以歌曲与战斗守护粉丝与人间。索尼动画与韩国流行文化碰撞的动作音乐动画。",
-    "background": "第98届奥斯卡最佳动画长片。"
+    "background": "第98届奥斯卡最佳动画长片。",
+    "synopsisEn": "A virtual girl group of hunters moves between the stage and a world of monsters, protecting their fans and the human realm through song and combat. An action musical where Sony Animation meets Korean pop culture.",
+    "backgroundEn": "Best Animated Feature at the 98th Academy Awards."
   },
   "sheep-in-the-box": {
     "synopsis": "近未来日本，中小型建筑公司总裁与同为建筑师的妻子在高度管理的社会里养育孩子；片名取自《小王子》。是枝裕和另一线创作。",
     "background": "是枝裕和创作线之一，片名取自《小王子》意象，近未来日本设定。",
-    "runtime": 126
+    "runtime": 126,
+    "synopsisEn": "In near-future Japan, the president of a small-to-mid-sized construction company and his wife, also an architect, raise their child in a highly managed society; the title comes from The Little Prince. One of Hirokazu Kore-eda's parallel creative threads.",
+    "backgroundEn": "One of Hirokazu Kore-eda's creative threads, its title drawing on imagery from The Little Prince, set in near-future Japan."
   },
   "nagi-notes": {
     "synopsis": "失落的雕塑家寄子在自然丰饶的凪町继续创作；东京与台湾两地奔忙的建筑师友梨前来担任雕塑模特，两人在沉默与海风中重新对齐节奏。深田晃司执导。",
     "background": "深田晃司执导。",
-    "runtime": 110
+    "runtime": 110,
+    "synopsisEn": "Yoriko, a sculptor who has lost her way, continues working in the nature-rich town of Nagi; Yuri, an architect shuttling between Tokyo and Taiwan, comes to model for her, and the two realign their rhythms amid silence and sea breeze. Directed by Koji Fukada.",
+    "backgroundEn": "Directed by Koji Fukada."
   },
   "hope-na": {
     "synopsis": "二十世纪七八十年代，非军事区附近被隔离的湖浦港村民，与不明外星生物对抗。罗泓轸将类型动作与韩国现代史阴影并置。",
@@ -407,157 +518,221 @@
     "titleEn": "Hope",
     "directors": [
       "罗泓轸"
-    ]
+    ],
+    "synopsisEn": "In the 1970s and 1980s, villagers in the isolated port of Hopo near the demilitarized zone confront unidentified alien creatures. Na Hong-jin sets genre action against the shadows of modern Korean history.",
+    "backgroundEn": "Directed by Na Hong-jin. Original title: Hope. Main Competition, 79th Cannes Film Festival. The genre spans action and sci-fi while also evoking the atmosphere of modern Korean history."
   },
   "bitter-christmas": {
     "synopsis": "广告总监埃尔莎在母亲于十二月去世后以工作麻痹伤痛，一次惊恐发作迫使她停下。佩德罗·阿尔莫多瓦以节日气氛反衬哀悼。",
     "background": "佩德罗·阿尔莫多瓦执导，节日气氛与哀悼并置。",
-    "runtime": 111
+    "runtime": 111,
+    "synopsisEn": "After her mother's death in December, advertising director Elsa numbs her grief with work until a panic attack forces her to stop. Pedro Almodóvar sets mourning against a festive backdrop.",
+    "backgroundEn": "Directed by Pedro Almodóvar, juxtaposing festive atmosphere with mourning."
   },
   "paper-tiger": {
     "synopsis": "詹姆斯·格雷讲述一对兄弟在追逐美国梦时落入精心骗局：致富契机转眼成陷阱，兄弟情与道德底线一同被推到极限。",
     "background": "詹姆斯·格雷执导。第64届纽约电影节北美首映等作者向巡展节点。",
-    "runtime": 115
+    "runtime": 115,
+    "synopsisEn": "James Gray tells of two brothers who fall into an elaborate con while chasing the American dream: a chance at wealth turns into a trap, pushing brotherhood and moral limits to the brink.",
+    "backgroundEn": "Directed by James Gray. North American premiere at the 64th New York Film Festival, among other auteur-focused tour stops."
   },
   "parallel-tales": {
     "synopsis": "为给新小说找灵感，西尔维偷窥对面邻居，并雇年轻的亚当处理日常——却未料到对方藏着另一套人生剧本。阿斯哈·法哈蒂书写窥视与阶级。",
     "background": "阿斯哈·法哈蒂执导；曾与「十诫」改编计划有渊源讨论，成片独立成篇。",
-    "runtime": 139
+    "runtime": 139,
+    "synopsisEn": "Seeking inspiration for her new novel, Sylvie spies on the neighbor across the way and hires young Adam for day-to-day tasks—never suspecting he is living out a different script. Asghar Farhadi writes of voyeurism and class.",
+    "backgroundEn": "Directed by Asghar Farhadi; once discussed in connection with a planned adaptation of \"The Decalogue,\" the finished film stands on its own."
   },
   "moulin": {
     "synopsis": "拉斯洛·奈迈施以极简光影与长镜头，把历史人物置于几乎抽象的空间中，延续其影像哲学。",
-    "background": "拉斯洛·奈迈施执导。第79届戛纳主竞赛入围。"
+    "background": "拉斯洛·奈迈施执导。第79届戛纳主竞赛入围。",
+    "synopsisEn": "With minimalist light and shadow and long takes, László Nemes places historical figures in an almost abstract space, extending his visual philosophy.",
+    "backgroundEn": "Directed by László Nemes. In competition at the 79th Cannes Film Festival."
   },
   "the-beloved": {
     "synopsis": "罗德里戈·索罗戈延聚焦「所爱之人」关系中的失控、责任与西班牙社会的暗面。",
-    "background": "罗德里戈·索罗戈延执导。第79届戛纳主竞赛入围。"
+    "background": "罗德里戈·索罗戈延执导。第79届戛纳主竞赛入围。",
+    "synopsisEn": "Rodrigo Sorogoyen explores loss of control, responsibility and the dark side of Spanish society in the relationships of The Beloved.",
+    "backgroundEn": "Directed by Rodrigo Sorogoyen. In competition at the 79th Cannes Film Festival."
   },
   "you-dont-belong-here": {
     "synopsis": "弗洛林·塞尔班讲述格格不入者在体制与家庭缝隙中的挣扎，洛迦诺金豹肯定其锋利社会观察。",
-    "background": "弗洛林·塞尔班执导。第79届洛迦诺金豹奖。"
+    "background": "弗洛林·塞尔班执导。第79届洛迦诺金豹奖。",
+    "synopsisEn": "Florin Șerban portrays misfits struggling in the cracks between institutions and family, with Locarno's Golden Leopard affirming his sharp social observation.",
+    "backgroundEn": "Directed by Florin Șerban. Golden Leopard at the 79th Locarno Film Festival."
   },
   "nowhere-to-lay-eyes": {
     "synopsis": "尚熙时隔十年与弟弟赴济州探望母亲：餐馆大获成功，继父在拍片，目光无处安放。洪常秀以日常对话拆解家庭尴尬。",
     "background": "洪常秀执导并编剧，济州取景的家庭群像。第79届洛迦诺电影节主竞赛获最佳导演、金敏喜最佳表演与普世评审团奖；纽约电影节主单元、釜山 Icons、芝加哥 Departure 放映后，2026-10-21 韩国院线上映。",
-    "runtime": 73
+    "runtime": 73,
+    "synopsisEn": "After ten years, Sang-hee travels to Jeju with her brother to visit their mother: the restaurant is a great success, the stepfather is making a film, and there is nowhere to lay their eyes. Hong Sangsoo dissects family awkwardness through everyday conversation.",
+    "backgroundEn": "Directed and written by Hong Sangsoo, a family portrait set in Jeju. At the 79th Locarno Film Festival it won Best Director in the main competition, Best Performance for Kim Minhee and the Universal Jury Prize; after screenings at the New York Film Festival's Main Slate, Busan's Icons and Chicago's Departures, it opens in Korean theaters on 2026-10-21."
   },
   "the-riverbank": {
     "synopsis": "女人因亲人离世回到故乡河岸，往事与邻里关系重新浮现。马特乌·法里亚斯与埃诺克·卡瓦略以巴西地方风物书写哀悼。",
     "background": "马特乌·法里亚斯、埃诺克·卡瓦略执导。洛迦诺等展映节点。",
-    "runtime": 76
+    "runtime": 76,
+    "synopsisEn": "A woman returns to her hometown riverbank after a relative's death, and memories and neighborly ties resurface. Mateus Farias and Enoque Carvalho write mourning through Brazilian local life.",
+    "backgroundEn": "Directed by Mateus Farias and Enoque Carvalho. Screened at Locarno and other festival stops."
   },
   "ketticè": {
     "synopsis": "二十一世纪初的巴勒莫，一群少男少女直面青春期困境；在充满活力的西西里城市里，他们逐渐长成自己。乔瓦尼·托尔托里奇执导。",
     "background": "乔瓦尼·托尔托里奇执导。",
-    "runtime": 107
+    "runtime": 107,
+    "synopsisEn": "In early-2000s Palermo, a group of teenagers confront the trials of adolescence; in the vibrant Sicilian city, they gradually grow into themselves. Directed by Giovanni Tortorici.",
+    "backgroundEn": "Directed by Giovanni Tortorici."
   },
   "atlantic": {
     "synopsis": "钟凯峰以中国当代叙事书写跨洋情愫与命运分流，影像冷静而情绪暗涌；上海金爵奖肯定其整体完成度与摄影。",
-    "background": "钟凯峰执导。第28届上海金爵奖最佳影片、最佳摄影。"
+    "background": "钟凯峰执导。第28届上海金爵奖最佳影片、最佳摄影。",
+    "synopsisEn": "Zhong Kaifeng explores transoceanic affection and diverging fates through a contemporary Chinese narrative, with cool, restrained imagery and undercurrents of emotion; the Shanghai Golden Goblet Award recognized its overall execution and cinematography.",
+    "backgroundEn": "Directed by Zhong Kaifeng. Best Film and Best Cinematography at the 28th Shanghai Golden Goblet Awards."
   },
   "glimmer-girl": {
-    "background": "尼古拉斯·林孔·吉耶执导。第28届上海金爵奖评委会大奖。公开完整剧情有限。"
+    "background": "尼古拉斯·林孔·吉耶执导。第28届上海金爵奖评委会大奖。公开完整剧情有限。",
+    "backgroundEn": "Directed by Nicolás Rincón Gille. Jury Grand Prix at the 28th Shanghai Golden Goblet Awards. Full public plot details are limited."
   },
   "halima": {
-    "background": "第28届上海国际电影节金爵奖最佳导演、最佳女演员。"
+    "background": "第28届上海国际电影节金爵奖最佳导演、最佳女演员。",
+    "backgroundEn": "Best Director and Best Actress at the 28th Shanghai International Film Festival Golden Goblet Awards."
   },
   "box-mystery": {
     "synopsis": "一个纸盒牵出层层谜团与人情债；张颂文以克制表演拿下上海金爵奖影帝。",
-    "background": "张颂文凭本片获第28届上海金爵奖最佳男演员。"
+    "background": "张颂文凭本片获第28届上海金爵奖最佳男演员。",
+    "synopsisEn": "A cardboard box unravels layer upon layer of mystery and debts of gratitude; Zhang Songwen won the Shanghai Golden Goblet Best Actor with a restrained performance.",
+    "backgroundEn": "Zhang Songwen won Best Actor at the 28th Shanghai Golden Goblet Awards for his role in Mystery in a Carton."
   },
   "salvation": {
     "synopsis": "埃明·阿尔佩尔以土耳其当代政治与家庭伦理为底，追问救赎是否可能、代价由谁承担。",
-    "background": "埃明·阿尔佩尔执导。第76届柏林评审团大奖。"
+    "background": "埃明·阿尔佩尔执导。第76届柏林评审团大奖。",
+    "synopsisEn": "Grounded in contemporary Turkish politics and family ethics, Emin Alper asks whether salvation is possible and who bears its cost.",
+    "backgroundEn": "Directed by Emin Alper. Grand Jury Prize at the 76th Berlin Film Festival."
   },
   "queen-at-sea": {
     "synopsis": "阿尔茨海默病逐渐剥夺一位女性表达自我的能力；丈夫与女儿竭力为她谋求尊严与出海般的自由。兰斯·哈默以极简影像书写照护。",
     "background": "兰斯·哈默执导，安娜·考尔德-马歇尔、汤姆·考特尼等出演。第76届柏林评审团奖。",
-    "runtime": 121
+    "runtime": 121,
+    "synopsisEn": "Alzheimer's gradually strips a woman of her ability to express herself; her husband and daughter strive to secure her dignity and a freedom like setting out to sea. Lance Hammer crafts a minimalist portrait of care.",
+    "backgroundEn": "Directed by Lance Hammer, starring Anna Calder-Marshall, Tom Courtney and others. Jury Prize at the 76th Berlin Film Festival."
   },
   "everybody-digs-bill-evans": {
     "synopsis": "1961年纽约，传奇爵士钢琴家比尔·埃文斯录下改变爵士史的现场专辑前后。格兰特·吉以音乐传记片质地回访创造时刻。",
     "background": "格兰特·吉执导的爵士钢琴家比尔·埃文斯相关传记片。",
-    "runtime": 102
+    "runtime": 102,
+    "synopsisEn": "New York, 1961: legendary jazz pianist Bill Evans records the live album that would change jazz history. Grant Gee revisits the moment of creation with the texture of a music biopic.",
+    "backgroundEn": "A biopic of jazz pianist Bill Evans directed by Grant Gee."
   },
   "rose-berlin": {
     "synopsis": "桑德拉·惠勒饰演的罗丝在柏林的命运转折中寻找自我，柏林电影节以演技奖肯定其表演。",
-    "background": "马库斯·施莱因策执导线；桑德拉·惠勒获第76届柏林最佳主演。"
+    "background": "马库斯·施莱因策执导线；桑德拉·惠勒获第76届柏林最佳主演。",
+    "synopsisEn": "Sandra Hüller's Rose seeks herself amid a turning point in Berlin, and the Berlin Film Festival honored her performance with an acting award.",
+    "backgroundEn": "Directed by Marcus Schleinzer; Sandra Hüller won Best Leading Performance at the 76th Berlin Film Festival."
   },
   "nina-roza": {
-    "background": "热纳维耶芙·迪吕德-德塞勒执导。第76届柏林最佳编剧。公开完整剧情有限。"
+    "background": "热纳维耶芙·迪吕德-德塞勒执导。第76届柏林最佳编剧。公开完整剧情有限。",
+    "backgroundEn": "Directed by Geneviève Dulude-De Celles. Won Best Screenplay at the 76th Berlin Film Festival. Full plot details are limited."
   },
   "honorary-yeoh": {
-    "background": "杨紫琼获第76届柏林电影节荣誉金熊，致敬其跨越动作、剧情与国际合作的演艺生涯。"
+    "background": "杨紫琼获第76届柏林电影节荣誉金熊，致敬其跨越动作、剧情与国际合作的演艺生涯。",
+    "backgroundEn": "Michelle Yeoh received an Honorary Golden Bear at the 76th Berlin Film Festival, honouring a career spanning action, drama and international collaborations."
   },
   "fruit-gathering": {
     "synopsis": "工业仰光，年轻工厂女工桑琪在劳动与亲密关系中采撷微小希望。昂漂以缅甸当代现实书写女性主体。",
     "background": "昂漂执导。卡罗维发利等相关展映／奖项节点。",
-    "runtime": 97
+    "runtime": 97,
+    "synopsisEn": "In industrial Yangon, young factory worker Sanchi finds small hopes amid labour and intimacy. Aung Phyoe writes female subjectivity through contemporary Myanmar reality.",
+    "backgroundEn": "Directed by Aung Phyoe. Screening and award milestones include Karlovy Vary."
   },
   "the-guest-kv": {
-    "background": "马兹·门格尔执导。第60届卡罗维发利评审团特别奖。"
+    "background": "马兹·门格尔执导。第60届卡罗维发利评审团特别奖。",
+    "backgroundEn": "Directed by Mads Mengel. Won the Special Jury Prize at the 60th Karlovy Vary International Film Festival."
   },
   "secret-agent": {
     "synopsis": "冷战阴影下的特工在忠诚与背叛之间游走。影片以非英语语境重访间谍类型，金球奖季成为焦点。",
-    "background": "第83届金球奖剧情类男主角、最佳非英语片相关节点。"
+    "background": "第83届金球奖剧情类男主角、最佳非英语片相关节点。",
+    "synopsisEn": "An agent in the shadow of the Cold War navigates between loyalty and betrayal. The film revisits the spy genre in a non-English context and became a focus during Golden Globes season.",
+    "backgroundEn": "Milestones include Best Actor in a Drama and Best Non-English Film at the 83rd Golden Globe Awards."
   },
   "marty-supreme": {
     "synopsis": "蒂莫西·柴勒梅德饰演一心称霸的桌球少年马蒂，在野心与自我神话之间狂奔。约什·萨夫迪执导的体育传记喜剧。",
-    "background": "蒂莫西·柴勒梅德获第83届金球奖音乐／喜剧类男主角。"
+    "background": "蒂莫西·柴勒梅德获第83届金球奖音乐／喜剧类男主角。",
+    "synopsisEn": "Timothée Chalamet plays Marty, a pool prodigy hell-bent on domination, racing between ambition and self-mythology. A sports biopic comedy directed by Josh Safdie.",
+    "backgroundEn": "Timothée Chalamet won Best Actor in a Motion Picture — Musical or Comedy at the 83rd Golden Globe Awards."
   },
   "if-i-had-legs": {
     "synopsis": "罗丝·伯恩饰演濒临崩溃的母亲，在育儿、婚姻与精神压力中挣扎求存。玛丽·布朗斯坦以黑色幽默书写当代焦虑。",
-    "background": "罗丝·伯恩获第83届金球奖音乐／喜剧类女主角。"
+    "background": "罗丝·伯恩获第83届金球奖音乐／喜剧类女主角。",
+    "synopsisEn": "Rose Byrne plays a mother on the verge of collapse, struggling to survive the pressures of parenting, marriage and mental strain. Mary Bronstein writes contemporary anxiety with dark humor.",
+    "backgroundEn": "Rose Byrne won Best Actress in a Motion Picture — Musical or Comedy at the 83rd Golden Globe Awards."
   },
   "a-foggy-tale": {
     "synopsis": "陈玉勋以台湾乡土与黑色幽默，讲述大雾笼罩下的人情与命运错位。《大浜》获金马奖最佳剧情片。",
-    "background": "陈玉勋执导。《大浜》获第62届金马奖最佳剧情片。"
+    "background": "陈玉勋执导。《大浜》获第62届金马奖最佳剧情片。",
+    "synopsisEn": "Chen Yu-hsun blends Taiwanese rural life with dark humor to tell a tale of misplaced human connections and fate under a blanket of fog. A Foggy Tale won Best Narrative Feature at the Golden Horse Awards.",
+    "backgroundEn": "Directed by Chen Yu-hsun. A Foggy Tale won Best Narrative Feature at the 62nd Golden Horse Awards."
   },
   "queerpanorama": {
     "synopsis": "李骏硕以群像与都市碎片书写酷儿生存景观，金马奖最佳导演肯定其形式与议题的锋利度。",
-    "background": "李骏硕获第62届金马奖最佳导演。"
+    "background": "李骏硕获第62届金马奖最佳导演。",
+    "synopsisEn": "Li Jun-shuo paints a queer survival landscape through ensemble portraits and urban fragments, and the Golden Horse Award for Best Director affirms the sharpness of his form and subject matter.",
+    "backgroundEn": "Li Jun-shuo won Best Director at the 62nd Golden Horse Awards."
   },
   "lucky-lu": {
     "synopsis": "张震饰演在命运十字路口徘徊的男人，于移民与家庭责任之间寻找「幸福之路」。",
-    "background": "张震获第62届金马奖最佳男主角。"
+    "background": "张震获第62届金马奖最佳男主角。",
+    "synopsisEn": "Chang Chen plays a man lingering at a crossroads of fate, seeking \"the road to happiness\" between emigration and family duty in Lucky Lu.",
+    "backgroundEn": "Chang Chen won Best Leading Actor at the 62nd Golden Horse Awards for Lucky Lu."
   },
   "mother-bhumi": {
     "synopsis": "范冰冰饰演与土地、母性与权力缠斗的女性形象，《地母》以其表演力度拿下金马影后。",
-    "background": "范冰冰获第62届金马奖最佳女主角。"
+    "background": "范冰冰获第62届金马奖最佳女主角。",
+    "synopsisEn": "Fan Bingbing plays a woman wrestling with land, motherhood and power, and her performance in Mother Bhumi earned her the Golden Horse Best Actress award.",
+    "backgroundEn": "Fan Bingbing won Best Leading Actress at the 62nd Golden Horse Awards for Mother Bhumi."
   },
   "family-matters": {
-    "background": "曾敬骊获第62届金马奖最佳男配角。公开完整剧情有限。"
+    "background": "曾敬骊获第62届金马奖最佳男配角。公开完整剧情有限。",
+    "backgroundEn": "Tseng Ching-hua won Best Supporting Actor at the 62nd Golden Horse Awards for Family Matters. Full plot details remain limited."
   },
   "galerna": {
     "synopsis": "两位选角导演穿越墨西哥偏远地区，为一部科幻片寻找非职业演员；塔蒂亚娜·韦索以纪录片式旅程书写再现与权力。",
-    "background": "塔蒂亚娜·韦索执导。圣塞巴斯蒂安产业单元 EGEDA Platino 等相关节点。"
+    "background": "塔蒂亚娜·韦索执导。圣塞巴斯蒂安产业单元 EGEDA Platino 等相关节点。",
+    "synopsisEn": "Two casting directors travel through remote regions of Mexico seeking non-professional actors for a science fiction film; Tatiana Huezo uses a documentary-style journey to explore representation and power in Galerna.",
+    "backgroundEn": "Directed by Tatiana Huezo. Related milestones include the San Sebastián industry section and EGEDA Platino."
   },
   "lovers-go-home": {
     "synopsis": "麦德林网络主播与残疾美国退伍军人在屏幕内外相遇，胡安·塞巴斯蒂安·梅萨书写跨境亲密与数字时代的归属。",
-    "background": "胡安·塞巴斯蒂安·梅萨执导。圣塞巴斯蒂安 WIP Latam 相关奖项节点。"
+    "background": "胡安·塞巴斯蒂安·梅萨执导。圣塞巴斯蒂安 WIP Latam 相关奖项节点。",
+    "synopsisEn": "A Medellín webcam model and a disabled American veteran meet both on and off screen, as Juan Sebastián Mesa explores cross-border intimacy and belonging in the digital age in Lovers Go Home!",
+    "backgroundEn": "Directed by Juan Sebastián Mesa. San Sebastián WIP Latam award milestone."
   },
   "being-heumann": {
     "synopsis": "1977年，残障权利活动家朱迪·休曼与一群抗议者占领联邦办公楼，要求政府落实保障残障人士权利的规定。一次抗议逐渐成为持续的集体行动，他们在协作与分歧中寻找改变数百万人生活的道路。",
-    "synopsisSource": "https://www.beingheumannmovie.com/synopsis/"
+    "synopsisSource": "https://www.beingheumannmovie.com/synopsis/",
+    "synopsisEn": "In 1977, disability rights activist Judy Heumann and a group of protesters occupied a federal office building, demanding that the government enforce regulations protecting the rights of people with disabilities. What began as a single protest grew into a sustained collective movement, as they navigated collaboration and disagreement in pursuit of a path that would change millions of lives."
   },
   "madden": {
     "synopsis": "约翰·麦登与好友阿尔·戴维斯从携手带领突袭者队赢得超级碗，到成为橄榄球转播中家喻户晓的声音，再到参与打造风靡全球的橄榄球电子游戏。影片围绕他的职业转变、家庭与长久友谊展开。",
-    "synopsisSource": "https://escapeartists.com/film/madden/"
+    "synopsisSource": "https://escapeartists.com/film/madden/",
+    "synopsisEn": "John Madden and his close friend Al Davis went from leading the Raiders to a Super Bowl victory together, to becoming household voices in football broadcasting, to helping create the football video game that took the world by storm. The film centers on his career transitions, his family, and enduring friendships."
   },
   "barrio-triste": {
     "synopsis": "20世纪80年代的麦德林，一群生活在贫困街区的少年偷走电视记者的摄像机，用它记录自己的危险日常。当空中神秘光点的传闻伴随时空错乱出现，他们对现实、梦想与希望的理解开始动摇。",
-    "synopsisSource": "https://filmmovement.com/press/film/barrio-triste"
+    "synopsisSource": "https://filmmovement.com/press/film/barrio-triste",
+    "synopsisEn": "Medellín in the 1980s: a group of teenagers living in a poor neighborhood steal a TV journalist's camera and use it to document their dangerous daily lives. When rumors of mysterious lights in the sky coincide with disturbances in time and space, their understanding of reality, dreams, and hope begins to waver."
   },
   "taxi-moto": {
     "synopsis": "一名导演的影片拍摄被取消后，与另一名演员一起寻找这部作品尚存的痕迹。他们通过交谈探寻被压抑的故事，以及人们如何重新取得讲述自身经历的权利，电影与生活的边界也逐渐消融。",
-    "synopsisSource": "https://en.unifrance.org/movie/64296/taxi-moto"
+    "synopsisSource": "https://en.unifrance.org/movie/64296/taxi-moto",
+    "synopsisEn": "After a director's film shoot is canceled, he and another actor set out together to find whatever traces of the work remain. Through conversation they explore suppressed stories and how people reclaim the right to tell their own experiences, as the boundary between film and life gradually dissolves."
   },
   "the-end-of-oak-street": {
     "synopsis": "1982年，密歇根州郊区小镇的普拉特一家矛盾重重：妻子丹妮丝偷偷写着小说、考虑离婚，丈夫格雷格丢了正职、瞒着家人送披萨维生。一场神秘的宇宙事件突然把整条橡树街连同街区卷入史前时代，恐龙横行；一家人不得不放下分歧、齐心协力，在危机中求生并寻找回家的路。",
-    "synopsisSource": "https://press.wbd.com/us/media-release/end-oak-street-begins-streaming-exclusively-hbo-max-november-13?language_content_entity=en"
+    "synopsisSource": "https://press.wbd.com/us/media-release/end-oak-street-begins-streaming-exclusively-hbo-max-november-13?language_content_entity=en",
+    "synopsisEn": "In 1982, in a small suburban town in Michigan, the Pratt family is riven by conflict: wife Denise secretly writes novels and considers divorce, while husband Greg has lost his main job and hides it from the family by delivering pizzas. A mysterious cosmic event suddenly transports the entire Oak Street neighborhood, block and all, back to prehistoric times, where dinosaurs roam; the family must set aside their differences, pull together, survive the crisis, and find their way home."
   },
   "ezra": {
     "synopsis": "离婚的脱口秀演员麦克斯·伯纳尔努力抚养患有自闭症的儿子艾兹拉。面对关乎儿子未来的艰难决定，父子二人踏上横穿美国的公路之旅，这趟旅程深刻地改变了他们两个人的人生。",
-    "synopsisSource": "https://app2.atmovies.com.tw/film/feen20315818/"
+    "synopsisSource": "https://app2.atmovies.com.tw/film/feen20315818/",
+    "synopsisEn": "Divorced stand-up comedian Max Bernal struggles to raise his autistic son Ezra. Faced with a difficult decision about his son's future, father and son embark on a cross-country road trip across America, a journey that profoundly changes both of their lives."
   }
 }

@@ -45,6 +45,8 @@ import {
   type LikeMark,
 } from "@/lib/likes";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
+import { dedupeSubtitleAgainstTitleEn } from "@/lib/headlines-en";
+import type { Locale } from "@/lib/i18n";
 
 
 
@@ -53,13 +55,15 @@ function SourceTag({
   label,
   href,
   publishedLabel,
+  locale = "zh",
 }: {
   label?: string;
   href?: string;
   publishedLabel?: string;
+  locale?: Locale;
 }) {
   if (!label && !publishedLabel) return null;
-  const text = [label ? `来源·${label}` : null, publishedLabel].filter(Boolean).join(" · ");
+  const text = [label ? `${locale === "en" ? "Source" : "来源"}·${label}` : null, publishedLabel].filter(Boolean).join(" · ");
   const className =
     "rounded-full border border-cinema-border/60 bg-cinema-elevated/50 px-1.5 py-px text-[10px] tracking-wide text-cinema-muted";
   if (href && label) {
@@ -153,16 +157,16 @@ function dotColor(type: TimelineEventType): string {
 /** Viewed = page visible for this long after load; only then may the marker advance. */
 const VIEW_DWELL_MS = 2500;
 
-function LastSeenDivider() {
+function LastSeenDivider({ locale = "zh" }: { locale?: Locale }) {
   return (
     <div
       data-last-seen-divider
       role="separator"
-      aria-label="上次看到这里"
+      aria-label={locale === "en" ? "Last seen here" : "上次看到这里"}
       className="flex items-center gap-3 text-xs font-medium tracking-wide text-cinema-gold"
     >
       <span className="h-px flex-1 bg-cinema-gold/45" />
-      <span>— 上次看到这里 —</span>
+      <span>{locale === "en" ? "— You were here —" : "— 上次看到这里 —"}</span>
       <span className="h-px flex-1 bg-cinema-gold/45" />
     </div>
   );
@@ -172,7 +176,9 @@ function displayBadge(label?: string) {
   return label === "新品" ? "新片" : label;
 }
 
-export default function Timeline({ events }: { events: TimelineEvent[] }) {
+export default function Timeline({ events, locale = "zh" }: { events: TimelineEvent[]; locale?: Locale }) {
+  const en = locale === "en";
+  const dedupe = en ? dedupeSubtitleAgainstTitleEn : dedupeSubtitleAgainstTitle;
   // 首页只留时间线：筛选与搜索已去掉，固定为全部、不过滤。
   const filter = "all";
   const query = "";
@@ -269,7 +275,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
           // 不主动覆盖本机已有 reason。
         })
         .catch(() => {
-          setPrefsError("云端偏好读取失败，仅显示本机记录");
+          setPrefsError(en ? "Cloud preferences failed to load; showing local records only" : "云端偏好读取失败，仅显示本机记录");
         });
     }
 
@@ -345,7 +351,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       const title = event.headline || event.filmTitle;
       setLastUndo({
         event,
-        message: `已屏蔽「${title}」及类似条目`,
+        message: en ? `Blocked "${title}" and similar items` : `已屏蔽「${title}」及类似条目`,
       });
     }
     try {
@@ -359,7 +365,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       setDismissStore(loadDismissMarks());
       setPrefsError(null);
     } catch {
-      setPrefsError("云端同步失败：本机已生效，未同步到其他设备");
+      setPrefsError(en ? "Cloud sync failed: saved locally, not synced to other devices" : "云端同步失败：本机已生效，未同步到其他设备");
     }
   };
 
@@ -387,7 +393,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       setLikeMarks(next);
       setPrefsError(null);
     } catch {
-      setPrefsError("云端同步失败：点赞已记在本机，未同步到其他设备");
+      setPrefsError(en ? "Cloud sync failed: like saved locally, not synced to other devices" : "云端同步失败：点赞已记在本机，未同步到其他设备");
     }
   };
 
@@ -403,7 +409,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       await cloudUnblockForEvent(session, event, dismissStore);
       setPrefsError(null);
     } catch {
-      setPrefsError("云端同步失败：本机已撤销，未同步到其他设备");
+      setPrefsError(en ? "Cloud sync failed: undo saved locally, not synced to other devices" : "云端同步失败：本机已撤销，未同步到其他设备");
     }
   };
 
@@ -419,7 +425,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
       await cloudClearBlocked(session);
       setPrefsError(null);
     } catch {
-      setPrefsError("云端同步失败：本机已清除，未同步到其他设备");
+      setPrefsError(en ? "Cloud sync failed: cleared locally, not synced to other devices" : "云端同步失败：本机已清除，未同步到其他设备");
     }
   };
 
@@ -510,8 +516,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             const read = seen.includes(event.id);
             const isBlocked = isBlockedOrSimilar(event, dismissStore);
             const linkHref = event.filmId
-              ? `/film/${encodeURIComponent(event.filmId)}`
-              : `/event/${encodeURIComponent(event.id)}`;
+              ? `${en ? "/en" : ""}/film/${encodeURIComponent(event.filmId)}`
+              : `${en ? "/en" : ""}/event/${encodeURIComponent(event.id)}`;
             const groupKey = event.filmId || event.id;
             const hasPrior = priorEvents.length > 0;
             const isExpanded = Boolean(expandedFilms[groupKey]);
@@ -549,16 +555,16 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                     </Link>
                     <div className="min-w-0 flex-1 p-3 pl-3 sm:p-5 sm:pl-4">
                       <div className="flex flex-wrap items-center gap-2 text-xs text-cinema-muted">
-                        <TypeBadge type={event.type} label={displayBadge(event.badge)} headline={event.headline} />
-                        <SourceTag label={event.sourceLabel} href={event.sourceUrl} publishedLabel={event.sourcePublishedLabel} />
+                        <TypeBadge type={event.type} label={displayBadge(event.badge)} headline={event.headline} locale={locale} />
+                        <SourceTag label={event.sourceLabel} href={event.sourceUrl} publishedLabel={event.sourcePublishedLabel} locale={locale} />
                         {isCardNew(event) ? (
                           <span className="rounded-full bg-cinema-gold px-1.5 py-px text-[10px] font-semibold leading-4 text-cinema-bg">
-                            新
+                            {en ? "New" : "新"}
                           </span>
                         ) : null}
                         {isBlocked ? (
                           <span className="rounded bg-cinema-elevated px-1.5 py-0.5 text-[10px] text-cinema-gold">
-                            已屏蔽
+                            {en ? "Blocked" : "已屏蔽"}
                           </span>
                         ) : null}
                       </div>
@@ -569,22 +575,24 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold"
                       >
                         <h2 className="mt-2 font-display text-[1.05rem] leading-snug text-cinema-text group-hover:text-cinema-gold-light sm:text-lg">
-                          {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} /> : (event.headline || event.summary || event.filmTitle)}
+                          {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} locale={locale} /> : (event.headline || event.summary || event.filmTitle)}
                         </h2>
                         {(() => {
-                          const sub = scrubNegativeCopy(
-                            dedupeSubtitleAgainstTitle(
-                              event.headline || event.filmTitle || "",
-                              event.summary || "",
-                            ),
-                          );
+                          const sub = en
+                            ? dedupe(event.headline || event.filmTitle || "", event.summary || "")
+                            : scrubNegativeCopy(
+                                dedupeSubtitleAgainstTitle(
+                                  event.headline || event.filmTitle || "",
+                                  event.summary || "",
+                                ),
+                              );
                           return sub ? (
                             <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-cinema-muted">
                               {sub}
                             </p>
                           ) : null;
                         })()}
-                      {event.plot && dedupeSubtitleAgainstTitle(event.summary || "", event.plot) ? (
+                      {event.plot && dedupe(event.summary || "", event.plot) ? (
                         <p data-film-plot className="mt-2 whitespace-pre-line break-words text-sm leading-relaxed text-cinema-muted">
                           {event.plot}
                         </p>
@@ -597,9 +605,9 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                               <a href={award.source} target="_blank" rel="noopener noreferrer" className="hover:underline">
                                 {award.icon ? (
                                   // eslint-disable-next-line @next/next/no-img-element
-                                  <img src={award.icon} alt={`${award.festival}标识`} width={16} height={16} className="mr-1.5 inline-block h-4 w-4 shrink-0 rounded-sm bg-white p-px align-text-bottom object-contain" />
+                                  <img src={award.icon} alt={en ? `${award.festivalEn || award.festival} logo` : `${award.festival}标识`} width={16} height={16} className="mr-1.5 inline-block h-4 w-4 shrink-0 rounded-sm bg-white p-px align-text-bottom object-contain" />
                                 ) : null}
-                                {award.year}年{award.festival} · {award.category} · {award.result === "won" ? "获奖" : "提名"}
+                                {en ? `${award.year} ${award.festivalEn || award.festival} · ${award.categoryEn || award.category} · ${award.result === "won" ? "Won" : "Nominated"}` : `${award.year}年${award.festival} · ${award.category} · ${award.result === "won" ? "获奖" : "提名"}`}
                               </a>
                             </li>
                           ))}
@@ -609,7 +617,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                         <div className="flex flex-wrap items-center gap-2">
                           {event.filmId ? (
                             <Link
-                              href={`/film/${encodeURIComponent(event.filmId)}`}
+                              href={`${en ? "/en" : ""}/film/${encodeURIComponent(event.filmId)}`}
                               prefetch={false}
                               onClick={() => markClicked(event.id)}
                               className="hover:text-cinema-gold transition"
@@ -633,10 +641,10 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                 return bits.length ? (
                                   <>
                                     <FilmMeta year={!yearHit ? event.filmYear : undefined} parts={bits} />
-                                    <span className="ml-1 text-cinema-gold">影片档 →</span>
+                                    <span className="ml-1 text-cinema-gold">{en ? "Film page →" : "影片档 →"}</span>
                                   </>
                                 ) : (
-                                  <><FilmMeta year={!yearHit ? event.filmYear : undefined} /><span className="ml-1 text-cinema-gold">影片档 →</span></>
+                                  <><FilmMeta year={!yearHit ? event.filmYear : undefined} /><span className="ml-1 text-cinema-gold">{en ? "Film page →" : "影片档 →"}</span></>
                                 );
                               })()}
                             </Link>
@@ -647,10 +655,10 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
                           >
-                            <span>🎞️ 导赏</span>
+                            <span>{en ? "🎞️ Guide" : "🎞️ 导赏"}</span>
                             <span className="text-[9px] opacity-70">↗</span>
                           </a>
-                          <WeiboLink href={event.weiboUrl} label={event.weiboLabel} />
+                          <WeiboLink href={event.weiboUrl} label={event.weiboLabel} locale={locale} />
                         </div>
                         <div className="flex items-center gap-1.5">
                           <button
@@ -665,9 +673,9 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                 ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
                                 : "border border-cinema-border/60 text-cinema-muted/70 hover:border-cinema-gold/40 hover:text-cinema-text hover:bg-cinema-elevated"
                             }`}
-                            title={liked[event.id] ? "取消点赞" : "点赞：以后多推类似方向"}
+                            title={liked[event.id] ? (en ? "Unlike" : "取消点赞") : (en ? "Like: show more like this" : "点赞：以后多推类似方向")}
                           >
-                            {liked[event.id] ? "👍 已点赞" : "👍 点赞"}
+                            {liked[event.id] ? (en ? "👍 Liked" : "👍 已点赞") : (en ? "👍 Like" : "👍 点赞")}
                           </button>
                           <button
                             type="button"
@@ -686,14 +694,14 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                 ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
                                 : "border border-cinema-border/60 text-cinema-muted/70 hover:border-cinema-gold/40 hover:text-cinema-text hover:bg-cinema-elevated"
                             }`}
-                            title={isBlocked ? "撤销屏蔽本条及相关条目" : "不再推荐本条及类似内容"}
+                            title={isBlocked ? (en ? "Unblock this and related items" : "撤销屏蔽本条及相关条目") : (en ? "Don\'t recommend this or similar items" : "不再推荐本条及类似内容")}
                           >
-                            {isBlocked ? "↩ 撤销屏蔽" : "✕ 不再推荐"}
+                            {isBlocked ? (en ? "↩ Unblock" : "↩ 撤销屏蔽") : (en ? "✕ Not interested" : "✕ 不再推荐")}
                           </button>
                         </div>
                         {blockReason ? (
                           <p className="mt-2 text-xs text-cinema-muted">
-                            不再推荐原因：{blockReason}
+                            {en ? "Not interested because: " : "不再推荐原因："}{blockReason}
                           </p>
                         ) : null}
                       </div>
@@ -711,8 +719,8 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                           >
                             <span className="font-medium text-cinema-gold/90 group-hover:text-cinema-gold">
                               {isExpanded
-                                ? "收起该片历史动态"
-                                : `该片另有 ${priorEvents.length} 条动态`}
+                                ? (en ? "Collapse this film's history" : "收起该片历史动态")
+                                : (en ? `${priorEvents.length} more update${priorEvents.length === 1 ? "" : "s"} for this film` : `该片另有 ${priorEvents.length} 条动态`)}
                             </span>
                             <span className="text-[10px] text-cinema-muted/60 transition group-hover:text-cinema-gold">
                               {isExpanded ? "▴" : "▾"}
@@ -724,14 +732,14 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                               {priorEvents.map((p) => {
                                 const pRead = seen.includes(p.id);
                                 const pLink = p.filmId
-                                  ? `/film/${encodeURIComponent(p.filmId)}`
-                                  : `/event/${encodeURIComponent(p.id)}`;
+                                  ? `${en ? "/en" : ""}/film/${encodeURIComponent(p.filmId)}`
+                                  : `${en ? "/en" : ""}/event/${encodeURIComponent(p.id)}`;
                                 return (
                                   <li key={p.id} className="text-xs">
                                     <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-cinema-muted">
-                                      <TypeBadge type={p.type} label={displayBadge(p.badge)} headline={p.headline} />
-                                      <SourceTag label={p.sourceLabel} href={p.sourceUrl} publishedLabel={p.sourcePublishedLabel} />
-                                      <WeiboLink href={p.weiboUrl} label={p.weiboLabel} />
+                                      <TypeBadge type={p.type} label={displayBadge(p.badge)} headline={p.headline} locale={locale} />
+                                      <SourceTag label={p.sourceLabel} href={p.sourceUrl} publishedLabel={p.sourcePublishedLabel} locale={locale} />
+                                      <WeiboLink href={p.weiboUrl} label={p.weiboLabel} locale={locale} />
                                     </div>
                                     <Link
                                       href={pLink}
@@ -743,7 +751,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                                           : "text-cinema-text/90 font-normal"
                                       }`}
                                     >
-                                      {p.type === "streaming" && p.date ? <ReleaseLabel date={p.date} title={p.filmTitle} fallback={p.headline || p.filmTitle} /> : (p.headline || p.summary)}
+                                      {p.type === "streaming" && p.date ? <ReleaseLabel date={p.date} title={p.filmTitle} fallback={p.headline || p.filmTitle} locale={locale} /> : (p.headline || p.summary)}
                                     </Link>
                                   </li>
                                 );
@@ -763,13 +771,13 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
     <div className="space-y-6">
       {ready && blockedCount > 0 ? (
             <div className="flex items-center gap-1.5 rounded-full border border-cinema-border/80 bg-cinema-card px-3 py-1 text-xs text-cinema-muted">
-              <span>已屏蔽 {blockedCount} 条</span>
+              <span>{en ? `Blocked ${blockedCount}` : `已屏蔽 ${blockedCount} 条`}</span>
               <button
                 type="button"
                 onClick={() => setShowBlocked((s) => !s)}
                 className="ml-1 text-cinema-muted hover:text-cinema-gold underline underline-offset-2 transition"
               >
-                {showBlocked ? "隐藏已屏蔽" : "查看"}
+                {showBlocked ? (en ? "Hide blocked" : "隐藏已屏蔽") : (en ? "View" : "查看")}
               </button>
               <span className="text-cinema-border">·</span>
               <button
@@ -777,7 +785,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 onClick={() => void handleClearAll()}
                 className="text-cinema-gold hover:underline transition"
               >
-                清除不再推荐
+                {en ? "Clear all blocks" : "清除不再推荐"}
               </button>
             </div>
           ) : null}
@@ -790,7 +798,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             onClick={() => void handleUndo()}
             className="ml-3 shrink-0 font-medium text-cinema-gold hover:underline"
           >
-            ↩ 撤销
+            {en ? "↩ Undo" : "↩ 撤销"}
           </button>
         </div>
       ) : null}
@@ -803,14 +811,14 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             onClick={() => setPrefsError(null)}
             className="ml-3 shrink-0 font-medium text-cinema-gold hover:underline"
           >
-            知道了
+            {en ? "Got it" : "知道了"}
           </button>
         </div>
       ) : null}
 
       {grouped.length === 0 ? (
         <p className="rounded-xl border border-dashed border-cinema-border px-4 py-10 text-center text-sm text-cinema-muted">
-          没有匹配的时间线事件
+          {en ? "No timeline events match" : "没有匹配的时间线事件"}
         </p>
       ) : (
         <div className="space-y-12 sm:space-y-14">
@@ -819,14 +827,14 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             const dividerAfterGroup =
               lastNewInDay && g.items[g.items.length - 1]!.event.id === lastNewId;
             return (
-              <section key={g.day} aria-label="消息列表" data-day={g.day}>
+              <section key={g.day} aria-label={en ? "News list" : "消息列表"} data-day={g.day}>
                 <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
                   {g.items.map((it) => (
                     <Fragment key={it.event.id}>
                       {renderItem(it)}
                       {it.event.id === lastNewId && !dividerAfterGroup ? (
                         <li className="list-none pb-8">
-                          <LastSeenDivider />
+                          <LastSeenDivider locale={locale} />
                         </li>
                       ) : null}
                     </Fragment>
@@ -834,7 +842,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 </ol>
                 {dividerAfterGroup ? (
                   <div className="mt-10">
-                    <LastSeenDivider />
+                    <LastSeenDivider locale={locale} />
                   </div>
                 ) : null}
               </section>
@@ -870,7 +878,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
               id="news-dismiss-reason-title"
               className="font-display text-lg text-cinema-text"
             >
-              不再推荐这条？
+              {en ? "Don't recommend this?" : "不再推荐这条？"}
             </h3>
             <p className="mt-2 line-clamp-2 text-sm text-cinema-muted">
               {reasonTarget.headline || reasonTarget.filmTitle}
@@ -878,7 +886,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
             <textarea
               value={reasonText}
               onChange={(e) => setReasonText(e.target.value)}
-              placeholder="说说原因，比如：题材不感兴趣、已经看过、想换个风格……"
+              placeholder={en ? "Tell us why — e.g. not my genre, already seen, want something different…" : "说说原因，比如：题材不感兴趣、已经看过、想换个风格……"}
               autoFocus
               rows={6}
               className="mt-4 w-full resize-y rounded-xl border border-cinema-border/70 bg-cinema-elevated/40 px-4 py-3 text-base leading-relaxed text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold min-h-[160px]"
@@ -892,7 +900,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 }}
                 className="rounded-full border border-cinema-border/70 px-4 py-2.5 text-sm text-cinema-muted hover:text-cinema-text"
               >
-                取消
+                {en ? "Cancel" : "取消"}
               </button>
               <button
                 type="button"
@@ -900,7 +908,7 @@ export default function Timeline({ events }: { events: TimelineEvent[] }) {
                 onClick={() => void confirmDismissWithReason()}
                 className="rounded-full border border-cinema-gold/40 bg-cinema-gold/15 px-4 py-2.5 text-sm font-medium text-cinema-gold disabled:opacity-40"
               >
-                确认不再推荐
+                {en ? "Confirm" : "确认不再推荐"}
               </button>
             </div>
           </div>

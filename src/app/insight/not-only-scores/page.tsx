@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { bilingualAlternates } from "@/lib/i18n";
 
 const title = "不只看分数：2026 年 10 月这三部高口碑作者片，为什么可以放在一起读";
 const description =
@@ -8,9 +9,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: {
-    canonical: "/insight/not-only-scores",
-  },
+  alternates: bilingualAlternates("/insight/not-only-scores"),
   openGraph: {
     title: `${title} · 银幕新讯`,
     description,

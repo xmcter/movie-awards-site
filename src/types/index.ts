@@ -63,8 +63,12 @@ export interface Film {
   titleEn?: string;
   year: number;
   synopsis: string;
+  /** English synopsis (translated by scripts/translate-new.mjs). */
+  synopsisEn?: string;
   /** 创作背景：导演路径、改编依据、展映/定档等已发生的公开信息 */
   background?: string;
+  /** English background (translated by scripts/translate-new.mjs). */
+  backgroundEn?: string;
   directors: string[];
   cast: string[];
   genres: string[];
@@ -123,7 +127,11 @@ export interface AuteurNews {
   date: string;
   kind: AuteurNewsKind;
   summary: string;
+  /** English summary (translated by scripts/translate-new.mjs). */
+  summaryEn?: string;
   detail?: string;
+  /** English detail (translated by scripts/translate-new.mjs). */
+  detailEn?: string;
   /** 抓取源站可读名（中文优先）。 */
   sourceLabel?: string;
   /** 源站 URL（微博原帖等）；勿放网盘。 */
@@ -152,7 +160,7 @@ export interface TimelineEvent {
   headline?: string;
   summary: string;
   plot?: string;
-  filmAwards?: { filmId: string; year: number; festival: string; category: string; result: string; source: string; icon?: string }[];
+  filmAwards?: { filmId: string; year: number; festival: string; festivalEn?: string; category: string; categoryEn?: string; result: string; source: string; icon?: string }[];
   detail?: string;
   badge: string;
   accentColor?: string;

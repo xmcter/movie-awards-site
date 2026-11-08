@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { bilingualAlternates } from "@/lib/i18n";
 
 const title = "关于银幕新讯";
 const description =
@@ -8,9 +9,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: {
-    canonical: "/about",
-  },
+  alternates: bilingualAlternates("/about"),
   openGraph: {
     title,
     description,

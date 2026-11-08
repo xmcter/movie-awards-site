@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
+import fs from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import ReleaseLabel from "@/components/ReleaseLabel";
 import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
+import FilmPoster from "./FilmPoster";
 import {
   FILM_ALIASES,
   films,
@@ -17,6 +20,7 @@ import {
   truncateDescription,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy, stripStreamingBoilerplate } from "@/lib/headlines";
+import { bilingualAlternates } from "@/lib/i18n";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -25,6 +29,30 @@ import {
 } from "@/lib/labels";
 
 export const dynamic = "force-static";
+
+const SITE_ORIGIN = "https://news.readcine.com";
+
+/** OG 图用绝对地址。poster 已是 http(s) 时原样使用。 */
+function openGraphPosterUrl(poster: string): string {
+  if (/^https?:\/\//i.test(poster)) return poster;
+  return new URL(poster, SITE_ORIGIN).href;
+}
+
+/** /posters/x.ext → /thumbs/x.webp；public/thumbs 没有该文件时返回 undefined，调用方回退原图。 */
+function thumbForPoster(poster: string): string | undefined {
+  if (/^https?:\/\//i.test(poster)) return undefined;
+  const marker = "/posters/";
+  const at = poster.indexOf(marker);
+  if (at < 0) return undefined;
+  const file = poster.slice(at + marker.length).split(/[?#]/)[0] ?? "";
+  if (!file || file.includes("/")) return undefined;
+  const stem = file.replace(/\.[^.]+$/, "");
+  if (!stem) return undefined;
+  const thumbName = `${stem}.webp`;
+  const thumbFile = path.join(process.cwd(), "public", "thumbs", thumbName);
+  if (!fs.existsSync(thumbFile)) return undefined;
+  return `${poster.slice(0, at)}/thumbs/${thumbName}`;
+}
 
 export function generateStaticParams() {
   const uniqueIds = [
@@ -65,9 +93,7 @@ export async function generateMetadata({
         index: false,
         follow: true,
       },
-      alternates: {
-        canonical: `/film/${canonicalId}`,
-      },
+      alternates: bilingualAlternates(`/film/${canonicalId}`),
     };
   }
 
@@ -84,25 +110,22 @@ export async function generateMetadata({
     description,
     robots: { index: isIndexableFilm(film), follow: true },
     twitter: { card: "summary_large_image", title, description },
-    alternates: { canonical: `/film/${film.id}` },
+    alternates: bilingualAlternates(`/film/${film.id}`),
     openGraph: {
       title: film.title,
       description,
       url: `https://news.readcine.com/film/${film.id}`,
       type: "article",
-      images: film.poster ? [{ url: film.poster, alt: film.title }] : [{ url: "/og.png", width: 1200, height: 630, alt: "银幕新讯" }],
+      images: film.poster
+        ? [{ url: openGraphPosterUrl(film.poster), alt: film.title }]
+        : [{ url: "/og.png", width: 1200, height: 630, alt: "银幕新讯" }],
     },
   };
 }
 
-function initials(title: string): string {
-  const trimmed = title.trim();
-  if (!trimmed) return "?";
-  const latin = trimmed.match(/[A-Za-z]+/g);
-  if (latin && latin.length > 0) {
-    return latin.slice(0, 2).map((w) => w[0]!.toUpperCase()).join("");
-  }
-  return trimmed.slice(0, 2);
+function RedirectAlias({ canonicalId }: { canonicalId: string }): ReactNode {
+  redirect(`/film/${canonicalId}`);
+  return null;
 }
 
 function Section({
@@ -128,33 +151,12 @@ export default async function FilmPage({
   const { id } = await params;
   const canonicalId = FILM_ALIASES[id];
   if (canonicalId) {
-    const targetFilm = getFilm(canonicalId);
-    const targetUrl = `/film/${canonicalId}`;
+    // redirect() 会抛出。包在 Suspense 里，静态导出才会写成带跳转标签的页面，
+    // 而不是空的 __next_error__ 壳（nginx 静态站不会发 HTTP 307）。
     return (
-      <div className="space-y-6">
-        <meta httpEquiv="refresh" content={`0;url=${targetUrl}`} />
-        <p className="text-xs text-cinema-muted">
-          <Link href="/" className="hover:text-cinema-gold">
-            ← 时间线
-          </Link>
-        </p>
-        <section className="rounded-2xl border border-cinema-border bg-cinema-card p-6 sm:p-8">
-          <h1 className="font-display text-xl text-cinema-text sm:text-2xl">
-            {targetFilm ? `${targetFilm.title}（条目已合并）` : "影片条目已合并"}
-          </h1>
-          <p className="mt-3 text-sm leading-relaxed text-cinema-muted">
-            本页面已合并至主档案页，正在为您自动跳转。如浏览器未自动跳转，请点击下方链接访问：
-          </p>
-          <p className="mt-4">
-            <Link
-              href={targetUrl}
-              className="text-sm font-medium text-cinema-gold underline decoration-cinema-border underline-offset-4 hover:text-cinema-gold-light"
-            >
-              前往 {targetFilm ? `《${targetFilm.title}》影片档` : targetUrl}（{targetUrl}） →
-            </Link>
-          </p>
-        </section>
-      </div>
+      <Suspense fallback={null}>
+        <RedirectAlias canonicalId={canonicalId} />
+      </Suspense>
     );
   }
 
@@ -164,6 +166,7 @@ export default async function FilmPage({
   const events = getFilmEvents(film.id);
   const weiboEvent = events.find((event) => event.weiboUrl);
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
+  const thumb = film.poster ? thumbForPoster(film.poster) : undefined;
   const { plot, background } = splitFilmCopy(film);
   const verifiedAwards = getVerifiedFilmAwards(film.id);
   const peopleLabel =
@@ -210,22 +213,13 @@ export default async function FilmPage({
 
       <section className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
         <div className="flex flex-row items-start">
-          <div
-            className="m-4 mr-0 h-[144px] w-[96px] shrink-0 overflow-hidden rounded-md sm:m-5 sm:h-[210px] sm:w-[140px]"
-            style={{
-              background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
-              aspectRatio: "2 / 3",
-            }}
-          >
-            {film.poster ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={film.poster} alt={film.title} className="h-full w-full object-cover" />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center font-display text-2xl text-white/80">
-                {initials(film.titleEn || film.title)}
-              </div>
-            )}
-          </div>
+          <FilmPoster
+            src={thumb || film.poster}
+            fallbackSrc={thumb ? film.poster : undefined}
+            title={film.title}
+            titleEn={film.titleEn}
+            colors={colors}
+          />
           <div className="min-w-0 flex-1 p-4 pl-3 sm:p-6 sm:pl-5">
             <p className="text-xs uppercase tracking-[0.18em] text-cinema-gold">
               {genreLabels(film.genres).join(" · ") || "影片"}
@@ -345,7 +339,7 @@ export default async function FilmPage({
                 if (b.date) return 1;
                 return 0;
               })
-              .map((release) => {
+              .map((release, index) => {
               // 定档行不展示登录平台名；PLATFORM_LABELS 仅用于剥 note 套话
               const platformLabel = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
@@ -353,7 +347,7 @@ export default async function FilmPage({
               const bits = [status || null, release.date ? `${when}出源` : when].filter(Boolean); // 不展示平台/国别地区
               return (
                 <li
-                  key={`${release.platform}-${release.date || "tba"}`}
+                  key={`${release.platform}-${release.date || "tba"}-${index}`}
                   className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3 text-sm text-cinema-muted"
                 >
                   {release.date ? <ReleaseLabel date={release.date} fallback={bits.join(" · ")} /> : bits.join(" · ")}
@@ -375,7 +369,7 @@ export default async function FilmPage({
       ) : null}
 
       <section>
-        <h2 className="font-display text-lg text-cinema-text">本站相关奖项</h2>
+        <h2 className="font-display text-lg text-cinema-text">相关动态</h2>
         {events.length === 0 ? (
           <p className="mt-3 text-sm text-cinema-muted">暂无已发生的时间线事件。</p>
         ) : (
@@ -386,9 +380,12 @@ export default async function FilmPage({
                   {event.type !== "streaming" ? <time dateTime={event.date || undefined}>{event.dateLabel}</time> : null}
                   <TypeBadge type={event.type} label={event.badge === "新品" ? "新片" : event.badge} headline={event.headline} />
                 </div>
-                <p className="mt-1.5 text-sm text-cinema-text">
+                <Link
+                  href={`/event/${encodeURIComponent(event.id)}`}
+                  className="mt-1.5 block text-sm text-cinema-text hover:text-cinema-gold"
+                >
                   {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} /> : (event.headline || event.summary)}
-                </p>
+                </Link>
                 {(() => {
                   const title = (event.headline || "").trim();
                   const summary = scrubNegativeCopy(

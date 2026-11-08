@@ -38,6 +38,26 @@ import {
   streamingSourceLabel,
 } from "@/lib/labels";
 import {
+  badgeEn,
+  formatContentDatesEn,
+  formatDateEn,
+  formatSourcePublishedLabelEn,
+  filmTitleEn,
+  personNamesEn,
+  sourceLabelEn,
+  splitFilmCopyEn,
+  isIndexableFilmEn,
+  PLATFORM_LABELS_EN,
+  RELEASE_STATUS_LABELS_EN,
+  type Locale,
+} from "@/lib/i18n";
+import {
+  buildStreamingHeadlineEn,
+  buildStreamingBodyEn,
+  polishAuteurHeadlineEn,
+  dedupeSubtitleAgainstTitleEn,
+} from "@/lib/headlines-en";
+import {
   buildAwardBody,
   buildAwardHeadline,
   buildStreamingBody,
@@ -60,7 +80,9 @@ type FilmCopy = Partial<
     | "title"
     | "titleEn"
     | "synopsis"
+    | "synopsisEn"
     | "background"
+    | "backgroundEn"
     | "directors"
     | "cast"
     | "genres"
@@ -248,10 +270,11 @@ function isStreamingMetaSynopsis(text: string, title?: string): boolean {
   return Boolean(mentionsTitle && meta);
 }
 
-export function splitFilmCopy(film: Film): {
+export function splitFilmCopy(film: Film, locale: Locale = "zh"): {
   plot: string;
   background: string;
 } {
+  if (locale === "en") return splitFilmCopyEn(film);
   const background = (film.background || "").trim();
   let raw = (film.synopsis || "").trim();
   if (isStreamingMetaSynopsis(raw, film.title)) raw = "";
@@ -395,10 +418,11 @@ export function shouldAdmitStreaming(film: Film, platform: string, now = new Dat
   return streamingQualityScore(film, platform) >= 25;
 }
 
-export function getTimelineEvents(): TimelineEvent[] {
+export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
   const events: TimelineEvent[] = [];
   const today = todayISO();
   const buckets = new Map<string, CeremonyBucket>();
+  const en = locale === "en";
 
   for (const ceremony of ceremonies) {
     const org = getOrg(ceremony.orgId);
@@ -441,41 +465,51 @@ export function getTimelineEvents(): TimelineEvent[] {
       if (!release.publishedAt || !isPublished(publicationTime(release).slice(0, 10), today)) continue;
       // 质量闸：口水定档不进主列表（影片档仍保留 streaming 字段）
       if (!shouldAdmitStreaming(film, release.platform)) continue;
-      const platform = PLATFORM_LABELS[release.platform] || release.platform;
-      const statusLabel = RELEASE_STATUS_LABELS[release.status];
-      const datePart = formatDate(release.date);
+      const platform = en
+        ? PLATFORM_LABELS_EN[release.platform] || release.platform
+        : PLATFORM_LABELS[release.platform] || release.platform;
+      const statusLabel = en
+        ? RELEASE_STATUS_LABELS_EN[release.status]
+        : RELEASE_STATUS_LABELS[release.status];
+      const datePart = en ? formatDateEn(release.date) : formatDate(release.date);
       // 日历经过不等于已核实资源：计划始终显示日期+出源，只有 peek 实证才标已出源。
-      const streamBadge = "出源计划";
+      const streamBadge = en ? "Streaming planned" : "出源计划";
 
-      const headline = buildStreamingHeadline({
-        film,
-        platform,
-        statusLabel,
-        // 有确切日期就直接写日期，不写「已公布」
-        datePart,
-        region: release.region,
-      });
-      const body = dedupeSubtitleAgainstTitle(
-        headline,
-        buildStreamingBody({
-          film,
-          platform,
-          statusLabel,
-          datePart,
-          region: release.region,
-          note: release.note,
-        }),
-      );
+      const headline = en
+        ? buildStreamingHeadlineEn({ film, statusLabel, datePart })
+        : buildStreamingHeadline({
+            film,
+            platform,
+            statusLabel,
+            datePart,
+            region: release.region,
+          });
+      const body = en
+        ? buildStreamingBodyEn()
+        : dedupeSubtitleAgainstTitle(
+            headline,
+            buildStreamingBody({
+              film,
+              platform,
+              statusLabel,
+              datePart,
+              region: release.region,
+              note: release.note,
+            }),
+          );
       // detail 与 summary 同源增量；口水 note 不再塞进 detail 造成详情页叠字
-      const noteExtra = stripStreamingBoilerplate(release.note || "", {
-        platform,
-        region: release.region,
-        datePart,
-        filmTitle: film.title,
-      });
+      // 英文不翻译 note（中文营销套话），detail 留空。
+      const noteExtra = en
+        ? ""
+        : stripStreamingBoilerplate(release.note || "", {
+            platform,
+            region: release.region,
+            datePart,
+            filmTitle: film.title,
+          });
       const note = noteExtra ? `（${noteExtra}）` : "";
 
-      const srcLabel = streamingSourceLabel(release);
+      const srcLabel = en ? sourceLabelEn(streamingSourceLabel(release)) : streamingSourceLabel(release);
       const sourcePublishedAt = release.sourcePublishedAt || undefined;
       const pubIso = sourcePublishedAt || release.publishedAt;
       events.push({
@@ -483,28 +517,30 @@ export function getTimelineEvents(): TimelineEvent[] {
         type: "streaming",
         publishedAt: pubIso,
         date: release.date || "",
-        dateLabel: release.date ? formatDate(release.date) : "待定",
+        dateLabel: release.date ? (en ? formatDateEn(release.date) : formatDate(release.date)) : en ? "TBA" : "待定",
         filmId: film.id,
-        filmTitle: film.title,
+        filmTitle: en ? filmTitleEn(film) : film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
         poster: withBase(film.poster),
         posterColors: film.posterColors,
         headline,
         summary: body,
-        plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
+        plot: (en ? splitFilmCopy(film, "en").plot : scrubNegativeCopy(splitFilmCopy(film).plot)) || undefined,
         filmAwards: verifiedFilmAwards.filter(a => a.filmId === film.id && (a.result === "won" || a.result === "nominated")),
         detail: note || undefined,
         badge: streamBadge,
-        directors: film.directors,
+        directors: en ? personNamesEn(film.directors) : film.directors,
         filmKind: filmKindOf(film),
         sourceLabel: srcLabel,
         sourceUrl: release.source?.trim() || undefined,
         sourcePublishedAt: sourcePublishedAt || release.publishedAt,
-        sourcePublishedLabel: formatSourcePublishedLabel(
-          sourcePublishedAt || release.publishedAt,
-          { isOriginal: Boolean(sourcePublishedAt) },
-        ),
+        sourcePublishedLabel: en
+          ? formatSourcePublishedLabelEn(sourcePublishedAt || release.publishedAt, { isOriginal: Boolean(sourcePublishedAt) })
+          : formatSourcePublishedLabel(
+              sourcePublishedAt || release.publishedAt,
+              { isOriginal: Boolean(sourcePublishedAt) },
+            ),
       });
     }
   }
@@ -533,21 +569,38 @@ export function getTimelineEvents(): TimelineEvent[] {
     else if (/critic|口碑|tomatometer|metacritic/i.test(blob)) continue; // 口碑不进时间线
 
     const verifiedResource = news.id.startsWith("movie-peek-");
-    const headline = verifiedResource
-      ? `《${film.title}》已出源`
-      : polishAuteurHeadline(news.summary, film);
+    const headline = en
+      ? verifiedResource
+        ? `${filmTitleEn(film)} is out now`
+        : polishAuteurHeadlineEn(news.summaryEn || "", film)
+      : verifiedResource
+        ? `《${film.title}》已出源`
+        : polishAuteurHeadline(news.summary, film);
     // 有独立 detail 时用 detail 作副文；否则用 summary，再与标题去重
-    const rawSummary = verifiedResource ? (news.detail || "") :
-      news.detail && news.detail.trim() && news.detail.trim() !== (news.summary || "").trim()
-        ? news.detail
-        : news.summary || "";
-    const summary = scrubNegativeCopy(
-      dedupeSubtitleAgainstTitle(headline, scrubNegativeCopy(rawSummary)),
-    );
-    const srcLabel =
-      normalizeSourceLabel(news.sourceLabel) ||
-      streamingSourceLabel({ source: news.source, sourceLabel: news.sourceLabel }) ||
-      (news.weiboUrl ? "微博" : undefined);
+    const rawSummary = en
+      ? verifiedResource
+        ? news.detailEn || ""
+        : news.detailEn && news.detailEn.trim() && news.detailEn.trim() !== (news.summaryEn || "").trim()
+          ? news.detailEn
+          : news.summaryEn || ""
+      : verifiedResource ? (news.detail || "") :
+        news.detail && news.detail.trim() && news.detail.trim() !== (news.summary || "").trim()
+          ? news.detail
+          : news.summary || "";
+    const summary = en
+      ? dedupeSubtitleAgainstTitleEn(headline, rawSummary)
+      : scrubNegativeCopy(
+          dedupeSubtitleAgainstTitle(headline, scrubNegativeCopy(rawSummary)),
+        );
+    const srcLabel = en
+      ? sourceLabelEn(
+          normalizeSourceLabel(news.sourceLabel) ||
+            streamingSourceLabel({ source: news.source, sourceLabel: news.sourceLabel }) ||
+            (news.weiboUrl ? "Weibo" : undefined),
+        )
+      : normalizeSourceLabel(news.sourceLabel) ||
+        streamingSourceLabel({ source: news.source, sourceLabel: news.sourceLabel }) ||
+        (news.weiboUrl ? "微博" : undefined);
     const sourcePublishedAt = news.sourcePublishedAt || undefined;
     const pubIso = sourcePublishedAt || news.publishedAt || `${news.date}T00:00:00+08:00`;
     events.push({
@@ -555,30 +608,35 @@ export function getTimelineEvents(): TimelineEvent[] {
       type: "auteur",
       publishedAt: pubIso,
       date: news.date,
-      dateLabel: formatDate(news.date),
+      dateLabel: en ? formatDateEn(news.date) : formatDate(news.date),
       filmId: film.id,
-      filmTitle: film.title,
+      filmTitle: en ? filmTitleEn(film) : film.title,
       filmTitleEn: film.titleEn,
       filmYear: film.year,
       poster: withBase(film.poster),
       posterColors: film.posterColors,
       headline,
       summary,
-      plot: scrubNegativeCopy(splitFilmCopy(film).plot) || undefined,
+      plot: (en ? splitFilmCopy(film, "en").plot : scrubNegativeCopy(splitFilmCopy(film).plot)) || undefined,
         filmAwards: verifiedFilmAwards.filter(a => a.filmId === film.id && (a.result === "won" || a.result === "nominated")),
       // detail 已并入 summary 时不再挂一份，避免详情页标题/摘要/正文三重重复
       detail: undefined,
-      badge: verifiedResource ? "已出源" : badge,
+      badge: en ? (verifiedResource ? "Out now" : badgeEn(badge) || badge) : verifiedResource ? "已出源" : badge,
       accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
-      directors: film.directors,
+      directors: en ? personNamesEn(film.directors) : film.directors,
       filmKind: kind,
       sourceLabel: srcLabel,
       sourceUrl: (news.source || news.weiboUrl || "").trim() || undefined,
       sourcePublishedAt: sourcePublishedAt || news.publishedAt,
-      sourcePublishedLabel: formatSourcePublishedLabel(
-        sourcePublishedAt || news.publishedAt || `${news.date}T00:00:00+08:00`,
-        { isOriginal: Boolean(sourcePublishedAt) },
-      ),
+      sourcePublishedLabel: en
+        ? formatSourcePublishedLabelEn(
+            sourcePublishedAt || news.publishedAt || `${news.date}T00:00:00+08:00`,
+            { isOriginal: Boolean(sourcePublishedAt) },
+          )
+        : formatSourcePublishedLabel(
+            sourcePublishedAt || news.publishedAt || `${news.date}T00:00:00+08:00`,
+            { isOriginal: Boolean(sourcePublishedAt) },
+          ),
       weiboUrl: news.weiboUrl,
       weiboLabel: news.weiboLabel,
     });
@@ -588,11 +646,13 @@ export function getTimelineEvents(): TimelineEvent[] {
   return events
     .filter((e) => e.type !== "win" && e.type !== "nomination")
     .sort(comparePublicationTime)
-    .map(e => ({ ...e, headline: formatContentDates(e.headline || ""), summary: formatContentDates(e.summary || ""), detail: e.detail ? formatContentDates(e.detail) : undefined }));
+    .map(e => en
+      ? { ...e, headline: formatContentDatesEn(e.headline || ""), summary: formatContentDatesEn(e.summary || ""), detail: e.detail ? formatContentDatesEn(e.detail) : undefined }
+      : { ...e, headline: formatContentDates(e.headline || ""), summary: formatContentDates(e.summary || ""), detail: e.detail ? formatContentDates(e.detail) : undefined });
 }
 
-export function getFilmEvents(filmId: string): TimelineEvent[] {
-  return getTimelineEvents().filter(
+export function getFilmEvents(filmId: string, locale: Locale = "zh"): TimelineEvent[] {
+  return getTimelineEvents(locale).filter(
     (e) =>
       e.filmId === filmId ||
       (e.filmId !== undefined && FILM_ALIASES[e.filmId] === filmId),
@@ -612,9 +672,10 @@ export interface ComingSoonRelease {
   date: string;
 }
 
-export function getComingSoonReleases(now = new Date()): ComingSoonRelease[] {
+export function getComingSoonReleases(now = new Date(), locale: Locale = "zh"): ComingSoonRelease[] {
   const today = todayISO(now);
   const out: ComingSoonRelease[] = [];
+  const en = locale === "en";
   for (const film of films) {
     if (!isTimelineEligibleFilm(film)) continue;
     for (const release of film.streaming) {
@@ -624,12 +685,12 @@ export function getComingSoonReleases(now = new Date()): ComingSoonRelease[] {
       if (release.date < today) continue;
       out.push({
         filmId: film.id,
-        filmTitle: film.title,
+        filmTitle: en ? filmTitleEn(film) : film.title,
         filmTitleEn: film.titleEn,
         filmYear: film.year,
         poster: withBase(film.poster),
         posterColors: film.posterColors,
-        directors: film.directors,
+        directors: en ? personNamesEn(film.directors) : film.directors,
         platform: release.platform,
         date: release.date,
       });
@@ -646,7 +707,8 @@ export function getVerifiedFilmAwards(filmId: string) {
 }
 
 /** 只将具有实质中文剧情/背景的影片档纳入索引；薄目录页仍可导航访问。 */
-export function isIndexableFilm(film: Film): boolean {
+export function isIndexableFilm(film: Film, locale: Locale = "zh"): boolean {
+  if (locale === "en") return isIndexableFilmEn(film);
   const { plot, background } = splitFilmCopy(film);
   const content = `${plot} ${background}`;
   return (content.match(/[\u4e00-\u9fff]/g) || []).length >= 40;

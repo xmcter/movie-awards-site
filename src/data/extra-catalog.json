@@ -321,7 +321,8 @@
         "#1e1b4b",
         "#c4b5fd"
       ],
-      "streaming": []
+      "streaming": [],
+      "synopsisEn": "Grand Jury Prize at the Golden Goblet Awards of the 28th Shanghai International Film Festival."
     },
     {
       "id": "halima",
@@ -345,7 +346,8 @@
         "#365314",
         "#a3e635"
       ],
-      "streaming": []
+      "streaming": [],
+      "synopsisEn": "Best Director and Best Actress at the Golden Goblet Awards of the 28th Shanghai International Film Festival."
     },
     {
       "id": "box-mystery",
@@ -485,7 +487,8 @@
         "#134e4a",
         "#5eead4"
       ],
-      "streaming": []
+      "streaming": [],
+      "synopsisEn": "Best Screenplay at the 76th Berlin Film Festival."
     },
     {
       "id": "honorary-yeoh",
@@ -507,7 +510,8 @@
         "#422006",
         "#f59e0b"
       ],
-      "streaming": []
+      "streaming": [],
+      "synopsisEn": "Honorary Golden Bear at the 76th Berlin Film Festival."
     },
     {
       "id": "fruit-gathering",
@@ -553,7 +557,8 @@
         "#1e3a5f",
         "#93c5fd"
       ],
-      "streaming": []
+      "streaming": [],
+      "synopsisEn": "Special Jury Prize at the 60th Karlovy Vary Film Festival."
     },
     {
       "id": "secret-agent",
@@ -576,7 +581,7 @@
         "#bef264"
       ],
       "streaming": [],
-      "poster": "/posters/secret-agent.png"
+      "poster": "/posters/secret-agent.jpg"
     },
     {
       "id": "marty-supreme",
@@ -739,7 +744,8 @@
         "#1c1917",
         "#a8a29e"
       ],
-      "streaming": []
+      "streaming": [],
+      "synopsisEn": "Tseng Ching-li won Best Supporting Actor at the 62nd Golden Horse Awards."
     }
   ],
   "ceremonies": [

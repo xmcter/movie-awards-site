@@ -14,6 +14,7 @@ import {
   truncateDescription,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
+import { bilingualAlternates } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -47,7 +48,7 @@ export async function generateMetadata({
     title,
     description,
     twitter: { card: "summary_large_image", title, description },
-    alternates: { canonical: `/event/${event.id}` },
+    alternates: bilingualAlternates(`/event/${event.id}`),
     openGraph: {
       title,
       description,

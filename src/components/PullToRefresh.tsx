@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import type { Locale } from "@/lib/i18n";
 
 const THRESHOLD = 72;
 const MAX_PULL = 120;
@@ -12,8 +13,10 @@ const MAX_PULL = 120;
  */
 export default function PullToRefresh({
   children,
+  locale = "zh",
 }: {
   children: React.ReactNode;
+  locale?: Locale;
 }) {
   const startY = useRef(0);
   const tracking = useRef(false);
@@ -103,7 +106,7 @@ export default function PullToRefresh({
               transform: refreshing ? undefined : `rotate(${pull * 3}deg)`,
             }}
           />
-          <span>{refreshing ? "刷新中…" : ready ? "松开刷新" : "下拉刷新"}</span>
+          <span>{refreshing ? (locale === "en" ? "Refreshing…" : "刷新中…") : ready ? (locale === "en" ? "Release to refresh" : "松开刷新") : (locale === "en" ? "Pull to refresh" : "下拉刷新")}</span>
         </div>
       </div>
       <div

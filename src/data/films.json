@@ -108,7 +108,8 @@
       "#ea580c"
     ],
     "streaming": [],
-    "poster": "/posters/honorary-clooney.jpg"
+    "poster": "/posters/honorary-clooney.jpg",
+    "synopsisEn": "Honorary Golden Lion at the 83rd Venice Film Festival."
   },
   {
     "id": "honorary-burstyn",
@@ -131,7 +132,8 @@
       "#4b5563"
     ],
     "streaming": [],
-    "poster": "/posters/honorary-burstyn.jpg"
+    "poster": "/posters/honorary-burstyn.jpg",
+    "synopsisEn": "Honorary Golden Lion at the 83rd Venice Film Festival."
   },
   {
     "id": "venice-jury-2026",
@@ -154,7 +156,8 @@
       "#7c2d12"
     ],
     "streaming": [],
-    "poster": "/posters/venice-jury-2026.jpg"
+    "poster": "/posters/venice-jury-2026.jpg",
+    "synopsisEn": "President of the Main Competition jury at the 83rd Venice Film Festival."
   },
   {
     "id": "busan-jury-2026-zhang-yimou",
@@ -177,7 +180,8 @@
       "#1e3a5f",
       "#0c4a6e"
     ],
-    "streaming": []
+    "streaming": [],
+    "synopsisEn": "President of the Main Competition jury at the 31st Busan International Film Festival."
   },
   {
     "id": "fjord",
@@ -609,7 +613,8 @@
       "#1f2937",
       "#9ca3af"
     ],
-    "streaming": []
+    "streaming": [],
+    "synopsisEn": "Directed by Ben Shirinian and starring Naomi Watts. Screened at the 74th San Sebastián Film Festival, where Watts also received her second Donostia Lifetime Achievement Award."
   },
   {
     "id": "tender-loving-care",
@@ -675,7 +680,8 @@
       "#0c4a6e",
       "#38bdf8"
     ],
-    "streaming": []
+    "streaming": [],
+    "synopsisEn": "Opening guest and master class host at the 31st Busan International Film Festival, accompanying a special IMAX screening of Gravity."
   },
   {
     "id": "parasite",
@@ -697,6 +703,7 @@
       "#1e293b",
       "#0f172a"
     ],
-    "streaming": []
+    "streaming": [],
+    "synopsisEn": "The 63rd Golden Horse Master Class has unveiled its full lineup and opened registration, with lectures from acclaimed directors and key creative talents including Bong Joon-ho, Koki Mitani, Darren Aronofsky and Kyle Balda."
   }
 ]

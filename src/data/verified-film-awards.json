@@ -7,7 +7,9 @@
     "result": "won",
     "source": "https://www.festival-cannes.com/en/press/press-releases/the-79th-festival-de-cannes-winners-list/",
     "verifiedAt": "2026-11-07",
-    "icon": "/award-icons/cannes.png"
+    "icon": "/award-icons/cannes.png",
+    "festivalEn": "Cannes Film Festival",
+    "categoryEn": "Palme d'Or"
   },
   {
     "filmId": "minotaur",
@@ -17,7 +19,9 @@
     "result": "won",
     "source": "https://www.festival-cannes.com/en/press/press-releases/the-79th-festival-de-cannes-winners-list/",
     "verifiedAt": "2026-11-07",
-    "icon": "/award-icons/cannes.png"
+    "icon": "/award-icons/cannes.png",
+    "festivalEn": "Cannes Film Festival",
+    "categoryEn": "Grand Jury Prize"
   },
   {
     "filmId": "possible-love",
@@ -27,7 +31,9 @@
     "result": "won",
     "source": "https://www.labiennale.org/en/news/official-awards-83rd-venice-international-film-festival",
     "verifiedAt": "2026-11-07",
-    "icon": "/award-icons/venice.png"
+    "icon": "/award-icons/venice.png",
+    "festivalEn": "Venice Film Festival",
+    "categoryEn": "Grand Jury Prize (Silver Lion)"
   },
   {
     "filmId": "possible-love",
@@ -37,7 +43,9 @@
     "result": "nominated",
     "source": "https://thegotham.org/press/the-gothams-nominations-36th-edition/",
     "verifiedAt": "2026-11-07",
-    "icon": "/award-icons/gotham.png"
+    "icon": "/award-icons/gotham.png",
+    "festivalEn": "Gotham Awards",
+    "categoryEn": "Best International Film"
   },
   {
     "filmId": "minotaur",
@@ -47,7 +55,9 @@
     "result": "nominated",
     "source": "https://thegotham.org/press/the-gothams-nominations-36th-edition/",
     "verifiedAt": "2026-11-07",
-    "icon": "/award-icons/gotham.png"
+    "icon": "/award-icons/gotham.png",
+    "festivalEn": "Gotham Awards",
+    "categoryEn": "Best International Film"
   },
   {
     "filmId": "nowhere-to-lay-eyes",
@@ -56,7 +66,9 @@
     "category": "最佳导演（洪常秀）",
     "result": "won",
     "source": "https://variety.com/2026/film/festivals/locarno-award-winners-monica-bellucci-kim-minhee-1236835378/",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "festivalEn": "Locarno Film Festival",
+    "categoryEn": "Best Director (Hong Sang-soo)"
   },
   {
     "filmId": "nowhere-to-lay-eyes",
@@ -65,6 +77,8 @@
     "category": "最佳表演（金敏喜）",
     "result": "won",
     "source": "https://variety.com/2026/film/festivals/locarno-award-winners-monica-bellucci-kim-minhee-1236835378/",
-    "verifiedAt": "2026-11-07"
+    "verifiedAt": "2026-11-07",
+    "festivalEn": "Locarno Film Festival",
+    "categoryEn": "Best Performance (Kim Min-hee)"
   }
 ]

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { isClicked, markClicked } from "@/lib/readProgress";
+import type { Locale } from "@/lib/i18n";
 
 export type PagerItem = {
   id: string;
@@ -12,9 +13,11 @@ export type PagerItem = {
 export default function EventPager({
   currentId,
   items,
+  locale = "zh",
 }: {
   currentId: string;
   items: PagerItem[];
+  locale?: Locale;
 }) {
   const [tick, setTick] = useState(0);
 
@@ -35,13 +38,13 @@ export default function EventPager({
   return (
     <div className="mt-10">
       <Link
-        href={`/event/${encodeURIComponent(next.id)}`}
+        href={`${locale === "en" ? "/en" : ""}/event/${encodeURIComponent(next.id)}`}
         prefetch={false}
         className="block rounded-xl border border-cinema-border bg-cinema-card px-4 py-3 transition hover:border-cinema-gold/40"
       >
-        <div className="text-xs text-cinema-muted">下一篇</div>
+        <div className="text-xs text-cinema-muted">{locale === "en" ? "Next" : "下一篇"}</div>
         <div className={`mt-1 text-sm ${read ? "text-cinema-muted" : "text-cinema-text"}`}>
-          {read ? "已读 · " : "未读 · "}
+          {read ? (locale === "en" ? "Read · " : "已读 · ") : (locale === "en" ? "Unread · " : "未读 · ")}
           {next.title}
         </div>
       </Link>

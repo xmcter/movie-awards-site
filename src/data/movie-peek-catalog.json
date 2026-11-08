@@ -27,7 +27,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-35863074.jpg",
-      "runtime": 101
+      "runtime": 101,
+      "synopsisEn": "Job seeker Seok-hwan (Koo Kyo-hwan), who has repeatedly failed at interviews, finds himself at the lowest point in life but still has his sharp-tongued best friend Young-ha (Kang Ki-young) and his ever-supportive sister Ye-rin (Kim Si-a) by his side. Then one night, Seok-hwan is suddenly attacked by a mysterious stranger and dies on the spot. Miraculously, 72 hours after his death, he opens his eyes again! Seok-hwan learns that he possesses a special ability: no matter how many times he dies, he can come back to life. Before he can figure out what is happening, a mysterious man (Shin Seung-ho) has already set his sights on him. As the mysterious man closes in with relentless pursuit, Seok-hwan gradually discovers that each death makes him stronger. Who wants him dead? And where will this ability — the more he dies, the stronger he becomes — lead him? A desperate fight for survival is about to begin. The film is adapted from the webtoon of the same name."
     },
     {
       "id": "movie-douban-38112572",
@@ -61,7 +62,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-38112572.jpg",
-      "runtime": 147
+      "runtime": 147,
+      "synopsisEn": "Tensho 6, winter — four years before the Honno-ji Incident. Araki Murashige has betrayed Oda Nobunaga and holds out in Arioka Castle. With the Oda army besieging the castle, a series of baffling incidents break out inside Arioka, shaking morale and spreading panic. At a loss, Murashige repeatedly turns to the prisoner in his dungeon, Kuroda Kanbei, for solutions. What lies behind these incidents? And what is Kuroda Kanbei, former strategist of the Oda army, plotting? As the battle and the deductions unfold, Murashige finally understands..."
     },
     {
       "id": "movie-douban-36808876",
@@ -110,8 +112,9 @@
         "英国"
       ],
       "streaming": [],
-      "poster": "https://img9.doubanio.com/view/photo/m_ratio_poster/public/p2933569626.jpg",
-      "runtime": 173
+      "poster": "/posters/movie-douban-36808876.jpg",
+      "runtime": 173,
+      "synopsisEn": "Adapted from the Homeric epic of the same name, it tells the story of Odysseus (Matt Damon) and his 10-year journey home after the Trojan War."
     },
     {
       "id": "movie-douban-35233878",
@@ -145,7 +148,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-35233878.jpg",
-      "runtime": 104
+      "runtime": 104,
+      "synopsisEn": "A medical team ventures deep into the Amazon rainforest on a mission, but they soon realize that the creatures of this place do not welcome outsiders. Blundering in, the group awakens the jungle predator — the Boiúna."
     }
   ],
   "ceremonies": []

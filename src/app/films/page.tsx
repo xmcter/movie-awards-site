@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FILM_ALIASES, films, isIndexableFilm } from "@/lib/data";
+import { bilingualAlternates } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "全部影片",
   description: "本站收录的全部影片档，按片名排列。",
-  alternates: {
-    canonical: "/films",
-  },
+  alternates: bilingualAlternates("/films"),
 };
 
 export const dynamic = "force-static";
@@ -15,7 +14,7 @@ export const dynamic = "force-static";
 export default function FilmsPage() {
   const seen = new Set<string>();
   const list = films
-    .filter(isIndexableFilm)
+    .filter((film) => isIndexableFilm(film))
     .filter((film) => !(film.id in FILM_ALIASES))
     .filter((film) => {
       if (seen.has(film.id)) return false;

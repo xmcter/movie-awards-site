@@ -25,10 +25,11 @@ export default function NavigationStatus() {
     return () => clearTimeout(timer);
   }, [target]);
   if (!target) return null;
+  const en = pathname === "/en" || pathname?.startsWith("/en/");
   return <div role="status" aria-live="polite" className="fixed right-3 top-16 z-50 flex items-center gap-2 rounded-lg border border-cinema-border bg-cinema-card px-3 py-2 text-sm text-cinema-text shadow-lg">
     <span className="h-3 w-3 animate-spin rounded-full border-2 border-cinema-gold border-t-transparent" />
-    {slow ? "加载较慢" : "正在打开详情…"}
-    {slow ? <a className="underline" href={target} onClick={e => { e.preventDefault(); location.assign(target); }}>重新打开</a> : null}
-    <button type="button" onClick={() => setTarget(null)} aria-label="关闭加载提示">×</button>
+    {slow ? (en ? "Loading slowly" : "加载较慢") : (en ? "Opening details…" : "正在打开详情…")}
+    {slow ? <a className="underline" href={target} onClick={e => { e.preventDefault(); location.assign(target); }}>{en ? "Reopen" : "重新打开"}</a> : null}
+    <button type="button" onClick={() => setTarget(null)} aria-label={en ? "Close loading notice" : "关闭加载提示"}>×</button>
   </div>;
 }

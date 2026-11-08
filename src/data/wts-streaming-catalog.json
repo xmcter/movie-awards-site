@@ -680,6 +680,39 @@
           "publishedAt": "2026-11-07T10:01:27+08:00"
         }
       ]
+    },
+    {
+      "id": "insidious-out-of-the-further",
+      "title": "潜伏6",
+      "titleEn": "Insidious: Out of the Further",
+      "year": 2026,
+      "synopsis": "Insidious: Out of the Further。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Jacob Chase"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-21",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/insidious-out-of-the-further-sets-netflix-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-08T10:00:26+08:00"
+        }
+      ]
     }
   ],
   "ceremonies": []

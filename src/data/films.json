@@ -181,7 +181,8 @@
       "#0c4a6e"
     ],
     "streaming": [],
-    "synopsisEn": "President of the Main Competition jury at the 31st Busan International Film Festival."
+    "synopsisEn": "President of the Main Competition jury at the 31st Busan International Film Festival.",
+    "poster": "/posters/busan-jury-2026-zhang-yimou.jpg"
   },
   {
     "id": "fjord",
@@ -558,7 +559,8 @@
       "#0b1d36",
       "#8a6a2f"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/the-odyssey.jpg"
   },
   {
     "id": "digger",
@@ -589,7 +591,8 @@
       "#1c1917",
       "#7c2d12"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/digger.jpg"
   },
   {
     "id": "the-housewife",
@@ -614,7 +617,8 @@
       "#9ca3af"
     ],
     "streaming": [],
-    "synopsisEn": "Directed by Ben Shirinian and starring Naomi Watts. Screened at the 74th San Sebastián Film Festival, where Watts also received her second Donostia Lifetime Achievement Award."
+    "synopsisEn": "Directed by Ben Shirinian and starring Naomi Watts. Screened at the 74th San Sebastián Film Festival, where Watts also received her second Donostia Lifetime Achievement Award.",
+    "poster": "/posters/the-housewife.jpg"
   },
   {
     "id": "tender-loving-care",
@@ -636,7 +640,8 @@
       "#134e4a",
       "#5eead4"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/tender-loving-care.jpg"
   },
   {
     "id": "ghost-song",
@@ -659,7 +664,8 @@
       "#111827",
       "#7c3aed"
     ],
-    "streaming": []
+    "streaming": [],
+    "poster": "/posters/ghost-song.jpg"
   },
   {
     "id": "busan-31-cuaron",
@@ -681,7 +687,8 @@
       "#38bdf8"
     ],
     "streaming": [],
-    "synopsisEn": "Opening guest and master class host at the 31st Busan International Film Festival, accompanying a special IMAX screening of Gravity."
+    "synopsisEn": "Opening guest and master class host at the 31st Busan International Film Festival, accompanying a special IMAX screening of Gravity.",
+    "poster": "/posters/busan-31-cuaron.jpg"
   },
   {
     "id": "parasite",
@@ -705,5 +712,111 @@
     ],
     "streaming": [],
     "synopsisEn": "The 63rd Golden Horse Master Class has unveiled its full lineup and opened registration, with lectures from acclaimed directors and key creative talents including Bong Joon-ho, Koki Mitani, Darren Aronofsky and Kyle Balda."
+  },
+  {
+    "id": "i-rarely-wake-up-dreaming",
+    "title": "我很少在梦中醒来",
+    "titleEn": "I Rarely Wake Up Dreaming",
+    "year": 2026,
+    "synopsis": "改编自真实故事：俄乌战争爆发之际，一对乌克兰酷儿伴侣被困国内——其中一人刚合法更改性别标记，因兵役规定无法离境。第39届东京电影节 Ethical 影片奖。",
+    "directors": [
+      "Isabelle Stever"
+    ],
+    "cast": [],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "德国",
+      "乌克兰"
+    ],
+    "posterColors": [
+      "#1e3a5f",
+      "#d6a419"
+    ],
+    "streaming": [],
+    "synopsisEn": "Based on a true story: as war breaks out, a queer Ukrainian couple is trapped at home after one partner legally changes their gender marker and military-service rules bar them from leaving. TIFF Ethical Film Award winner at the 39th Tokyo International Film Festival.",
+    "poster": "/posters/i-rarely-wake-up-dreaming.jpg"
+  },
+  {
+    "id": "the-violinist",
+    "title": "小提琴手",
+    "titleEn": "The Violinist",
+    "year": 2026,
+    "synopsis": "新加坡、西班牙、意大利合拍动画长片，第19届亚太电影奖最佳动画长片。",
+    "directors": [
+      "Ervin Han",
+      "Raúl García"
+    ],
+    "cast": [],
+    "genres": [
+      "动画"
+    ],
+    "country": [
+      "新加坡",
+      "西班牙",
+      "意大利"
+    ],
+    "posterColors": [
+      "#78350f",
+      "#fbbf24"
+    ],
+    "streaming": [],
+    "synopsisEn": "Singapore-Spain-Italy animated feature; Best Animated Film at the 19th Asia Pacific Screen Awards.",
+    "poster": "/posters/the-violinist.jpg"
+  },
+  {
+    "id": "double-freedom",
+    "title": "双重自由",
+    "titleEn": "Double Freedom",
+    "year": 2026,
+    "synopsis": "利桑德罗·阿隆索执导，智利、阿根廷、卢森堡、德国、英国合拍。第39届东京电影节最佳导演、第71届巴利亚多利德电影节最佳导演。",
+    "directors": [
+      "Lisandro Alonso"
+    ],
+    "cast": [],
+    "genres": [
+      "剧情"
+    ],
+    "country": [
+      "智利",
+      "阿根廷",
+      "卢森堡",
+      "德国",
+      "英国"
+    ],
+    "posterColors": [
+      "#292524",
+      "#a8a29e"
+    ],
+    "streaming": [],
+    "synopsisEn": "Directed by Lisandro Alonso; a Chile-Argentina-Luxembourg-Germany-UK co-production. Best Director at the 39th Tokyo International Film Festival and the 71st Valladolid International Film Festival (Seminci).",
+    "poster": "/posters/double-freedom.jpg"
+  },
+  {
+    "id": "magic-atlas",
+    "title": "魔幻地图册",
+    "titleEn": "Magic Atlas",
+    "year": 2026,
+    "synopsis": "一位魔术师来到与世隔绝的煤炭帝国罗刹，引发广泛恐慌；被捕后，他在牢房里与一名孤儿联手，用一本地图册动摇现实的根基。孙逊耗时十年打造的动画长片，第39届东京电影节评审团特别奖。",
+    "directors": [
+      "孙逊"
+    ],
+    "cast": [],
+    "genres": [
+      "动画"
+    ],
+    "runtime": 85,
+    "country": [
+      "新加坡",
+      "中国"
+    ],
+    "posterColors": [
+      "#111827",
+      "#f59e0b"
+    ],
+    "streaming": [],
+    "synopsisEn": "A magician arrives in the reclusive coal empire of Luocha, triggering widespread panic; arrested, he joins forces with a lonely orphan to undermine reality with a magical atlas. Sun Xun's animated feature, a decade in the making. Special Jury Prize at the 39th Tokyo International Film Festival.",
+    "poster": "/posters/magic-atlas.jpg"
   }
 ]

@@ -49,7 +49,19 @@
         "#3b0764",
         "#a78bfa"
       ],
-      "streaming": []
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-06",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "Netflix上新日历",
+          "publishedAt": "2026-11-05T20:29:58+08:00"
+        }
+      ],
+      "poster": "/posters/possible-love.jpg"
     },
     {
       "id": "tonight-will-happen",
@@ -71,7 +83,8 @@
         "#14532d",
         "#4ade80"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/tonight-will-happen.jpg"
     },
     {
       "id": "mr-nelson",
@@ -93,7 +106,8 @@
         "#111827",
         "#9ca3af"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/mr-nelson.jpg"
     },
     {
       "id": "bunker",
@@ -118,7 +132,8 @@
         "#1c1917",
         "#57534e"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/bunker.jpg"
     },
     {
       "id": "naza",
@@ -148,7 +163,8 @@
           "region": "部分地区",
           "note": "艺术院线/纪录片窗口待定"
         }
-      ]
+      ],
+      "poster": "/posters/naza.jpg"
     },
     {
       "id": "company",
@@ -171,7 +187,8 @@
         "#3f1d0f",
         "#b45309"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/company.jpg"
     },
     {
       "id": "primetime",
@@ -195,7 +212,8 @@
         "#0f172a",
         "#38bdf8"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/primetime.jpg"
     },
     {
       "id": "place-to-heal",
@@ -219,7 +237,8 @@
         "#164e63",
         "#67e8f9"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/place-to-heal.jpg"
     },
     {
       "id": "dau",
@@ -243,7 +262,8 @@
         "#7f1d1d",
         "#fca5a5"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/dau.jpg"
     },
     {
       "id": "good-little-soldier",
@@ -265,7 +285,8 @@
         "#1e3a5f",
         "#93c5fd"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/good-little-soldier.jpg"
     },
     {
       "id": "fire-inside",
@@ -287,7 +308,8 @@
         "#7c2d12",
         "#fdba74"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/fire-inside.jpg"
     },
     {
       "id": "woman-unknown",
@@ -320,7 +342,8 @@
           "region": "部分地区",
           "note": "金狮后艺术院线窗口待定"
         }
-      ]
+      ],
+      "poster": "/posters/woman-unknown.jpg"
     },
     {
       "id": "diane-in-the-loop",
@@ -344,7 +367,8 @@
         "#312e81",
         "#818cf8"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/diane-in-the-loop.jpg"
     },
     {
       "id": "jo-phaedra",
@@ -368,7 +392,8 @@
         "#0f766e",
         "#5eead4"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/jo-phaedra.jpg"
     },
     {
       "id": "house-of-the-wind",
@@ -391,7 +416,8 @@
         "#78350f",
         "#fdba74"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/house-of-the-wind.jpg"
     },
     {
       "id": "children-of-the-monkey",
@@ -415,7 +441,8 @@
         "#1e293b",
         "#fb923c"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/children-of-the-monkey.jpg"
     },
     {
       "id": "falling-house",
@@ -437,7 +464,8 @@
         "#44403c",
         "#a8a29e"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/falling-house.jpg"
     },
     {
       "id": "pigeon-ring",
@@ -461,7 +489,8 @@
         "#1e3a5f",
         "#93c5fd"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/pigeon-ring.jpg"
     },
     {
       "id": "i-matter",
@@ -483,7 +512,8 @@
         "#831843",
         "#f9a8d4"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/i-matter.jpg"
     },
     {
       "id": "one-battle",

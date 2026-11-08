@@ -16,7 +16,7 @@ import motnStreamingCatalogData from "@/data/motn-streaming-catalog.json";
 import moviePeekCatalogData from "@/data/movie-peek-catalog.json";
 import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
-import posterUrlsData from "@/data/poster-urls.json";
+
 import auteurDirectorsData from "@/data/auteur-directors.json";
 import priorAwardDirectorsData from "@/data/prior-award-directors.json";
 import type {
@@ -101,7 +101,7 @@ const motnStreaming = motnStreamingCatalogData as unknown as CatalogSlice;
 const moviePeek = moviePeekCatalogData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
-const posterUrls = posterUrlsData as Record<string, string>;
+
 /** films.json 的 id。质量分里的核心片库命中只用这一份，避免每次打分都重建 Set。 */
 const CORE_FILM_IDS = new Set((filmsData as Film[]).map((f) => f.id));
 
@@ -125,12 +125,7 @@ const LOCAL_POSTER_FILES = (() => {
 function resolvePoster(film: Film): string | undefined {
   const disk = LOCAL_POSTER_FILES.get(film.id);
   if (disk) return disk;
-  if (film.poster && film.poster.startsWith("/posters/")) return film.poster;
-  // Prefer already-downloaded local over hotlinked remotes
-  if (posterUrls[film.id] && LOCAL_POSTER_FILES.has(film.id)) {
-    return LOCAL_POSTER_FILES.get(film.id);
-  }
-  return film.poster || posterUrls[film.id];
+  return film.poster;
 }
 
 function applyCopy(film: Film): Film {

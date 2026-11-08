@@ -68,7 +68,8 @@
     "source": "https://variety.com/2026/film/festivals/locarno-award-winners-monica-bellucci-kim-minhee-1236835378/",
     "verifiedAt": "2026-11-07",
     "festivalEn": "Locarno Film Festival",
-    "categoryEn": "Best Director (Hong Sang-soo)"
+    "categoryEn": "Best Director (Hong Sang-soo)",
+    "icon": "/award-icons/locarno.png"
   },
   {
     "filmId": "nowhere-to-lay-eyes",
@@ -79,6 +80,91 @@
     "source": "https://variety.com/2026/film/festivals/locarno-award-winners-monica-bellucci-kim-minhee-1236835378/",
     "verifiedAt": "2026-11-07",
     "festivalEn": "Locarno Film Festival",
-    "categoryEn": "Best Performance (Kim Min-hee)"
+    "categoryEn": "Best Performance (Kim Min-hee)",
+    "icon": "/award-icons/locarno.png"
+  },
+  {
+    "filmId": "dao-gomis",
+    "year": 2026,
+    "festival": "巴利亚多利德国际电影节",
+    "category": "金穗奖",
+    "result": "won",
+    "source": "https://www.seminci.com/en/2026/news/dao-by-alain-gomis-wins-the-golden-spike-at-the-71st-seminci/",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/seminci.png",
+    "festivalEn": "Valladolid International Film Festival",
+    "categoryEn": "Golden Spike"
+  },
+  {
+    "filmId": "i-rarely-wake-up-dreaming",
+    "year": 2026,
+    "festival": "东京国际电影节",
+    "category": "Ethical 影片奖",
+    "result": "won",
+    "source": "https://2026.tiff-jp.net/award_winners_en/",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/tokyo.png",
+    "festivalEn": "Tokyo International Film Festival",
+    "categoryEn": "TIFF Ethical Film Award"
+  },
+  {
+    "filmId": "the-violinist",
+    "year": 2026,
+    "festival": "亚太电影奖",
+    "category": "最佳动画长片",
+    "result": "won",
+    "source": "https://www.asiapacificscreenawards.com/news-events/asia-pacific-screen-awards-announces-2026-winners",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/apsa.png",
+    "festivalEn": "Asia Pacific Screen Awards",
+    "categoryEn": "Best Animated Film"
+  },
+  {
+    "filmId": "double-freedom",
+    "year": 2026,
+    "festival": "东京国际电影节",
+    "category": "最佳导演",
+    "result": "won",
+    "source": "https://2026.tiff-jp.net/award_winners_en/",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/tokyo.png",
+    "festivalEn": "Tokyo International Film Festival",
+    "categoryEn": "Best Director"
+  },
+  {
+    "filmId": "double-freedom",
+    "year": 2026,
+    "festival": "巴利亚多利德国际电影节",
+    "category": "最佳导演",
+    "result": "won",
+    "source": "https://www.seminci.com/en/2026/news/dao-by-alain-gomis-wins-the-golden-spike-at-the-71st-seminci/",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/seminci.png",
+    "festivalEn": "Valladolid International Film Festival",
+    "categoryEn": "Best Director"
+  },
+  {
+    "filmId": "magic-atlas",
+    "year": 2026,
+    "festival": "东京国际电影节",
+    "category": "评审团特别奖",
+    "result": "won",
+    "source": "https://2026.tiff-jp.net/award_winners_en/",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/tokyo.png",
+    "festivalEn": "Tokyo International Film Festival",
+    "categoryEn": "Special Jury Prize"
+  },
+  {
+    "filmId": "magic-atlas",
+    "year": 2026,
+    "festival": "亚太电影奖",
+    "category": "最佳动画长片",
+    "result": "nominated",
+    "source": "https://www.asiapacificscreenawards.com/news-events/19th-asia-pacific-screen-awards-nominations-announced",
+    "verifiedAt": "2026-11-09",
+    "icon": "/award-icons/apsa.png",
+    "festivalEn": "Asia Pacific Screen Awards",
+    "categoryEn": "Best Animated Film"
   }
 ]

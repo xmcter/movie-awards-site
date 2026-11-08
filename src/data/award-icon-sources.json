@@ -16,5 +16,29 @@
     "path": "/award-icons/gotham.png",
     "source": "https://thegotham.org/wp-content/themes/the-gotham/images/favicon/favicon-32x32.png",
     "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  },
+  {
+    "festival": "巴利亚多利德国际电影节",
+    "path": "/award-icons/seminci.png",
+    "source": "https://www.seminci.com/wp-content/uploads/2024/06/cropped-lavios-32x32.png",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  },
+  {
+    "festival": "亚太电影奖",
+    "path": "/award-icons/apsa.png",
+    "source": "https://www.asiapacificscreenawards.com/wp-content/uploads/2017/10/favicon-150x150.jpg",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  },
+  {
+    "festival": "东京国际电影节",
+    "path": "/award-icons/tokyo.png",
+    "source": "https://2026.tiff-jp.net/favicon.ico",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
+  },
+  {
+    "festival": "洛卡诺电影节",
+    "path": "/award-icons/locarno.png",
+    "source": "https://www.locarnofestival.ch/.resources/locarnofestival/webresources/images/favicon.ico",
+    "description": "主办方官方网站 favicon，作机构标识，不冒充奖杯图形"
   }
 ]

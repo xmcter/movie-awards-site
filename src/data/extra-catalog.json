@@ -20,7 +20,8 @@
         "#1e293b",
         "#94a3b8"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/sheep-in-the-box.jpg"
     },
     {
       "id": "nagi-notes",
@@ -42,7 +43,8 @@
         "#164e63",
         "#67e8f9"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/nagi-notes.jpg"
     },
     {
       "id": "hope-na",
@@ -65,7 +67,8 @@
         "#7f1d1d",
         "#fca5a5"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/hope-na.jpg"
     },
     {
       "id": "bitter-christmas",
@@ -87,7 +90,8 @@
         "#881337",
         "#fb7185"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/bitter-christmas.jpg"
     },
     {
       "id": "paper-tiger",
@@ -109,7 +113,8 @@
         "#44403c",
         "#a8a29e"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/paper-tiger.jpg"
     },
     {
       "id": "parallel-tales",
@@ -131,7 +136,8 @@
         "#14532d",
         "#86efac"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/parallel-tales.jpg"
     },
     {
       "id": "moulin",
@@ -153,7 +159,8 @@
         "#1e1b4b",
         "#818cf8"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/moulin.jpg"
     },
     {
       "id": "the-beloved",
@@ -175,7 +182,8 @@
         "#7c2d12",
         "#fdba74"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/the-beloved.jpg"
     },
     {
       "id": "you-dont-belong-here",
@@ -197,7 +205,8 @@
         "#1c1917",
         "#a8a29e"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/you-dont-belong-here.jpg"
     },
     {
       "id": "nowhere-to-lay-eyes",
@@ -225,7 +234,8 @@
         "#0c4a6e",
         "#7dd3fc"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/nowhere-to-lay-eyes.jpg"
     },
     {
       "id": "the-riverbank",
@@ -249,7 +259,8 @@
         "#14532d",
         "#4ade80"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/the-riverbank.jpg"
     },
     {
       "id": "ketticè",
@@ -273,7 +284,8 @@
         "#4c0519",
         "#fb7185"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/ketticè.jpg"
     },
     {
       "id": "atlantic",
@@ -299,7 +311,8 @@
         "#0c4a6e",
         "#38bdf8"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/atlantic.jpg"
     },
     {
       "id": "glimmer-girl",
@@ -322,7 +335,8 @@
         "#c4b5fd"
       ],
       "streaming": [],
-      "synopsisEn": "Grand Jury Prize at the Golden Goblet Awards of the 28th Shanghai International Film Festival."
+      "synopsisEn": "Grand Jury Prize at the Golden Goblet Awards of the 28th Shanghai International Film Festival.",
+      "poster": "/posters/glimmer-girl.jpg"
     },
     {
       "id": "halima",
@@ -347,7 +361,8 @@
         "#a3e635"
       ],
       "streaming": [],
-      "synopsisEn": "Best Director and Best Actress at the Golden Goblet Awards of the 28th Shanghai International Film Festival."
+      "synopsisEn": "Best Director and Best Actress at the Golden Goblet Awards of the 28th Shanghai International Film Festival.",
+      "poster": "/posters/halima.jpg"
     },
     {
       "id": "box-mystery",
@@ -370,7 +385,8 @@
         "#111827",
         "#9ca3af"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/box-mystery.jpg"
     },
     {
       "id": "salvation",
@@ -392,7 +408,8 @@
         "#7c2d12",
         "#fdba74"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/salvation.jpg"
     },
     {
       "id": "queen-at-sea",
@@ -418,7 +435,8 @@
         "#0f172a",
         "#38bdf8"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/queen-at-sea.jpg"
     },
     {
       "id": "everybody-digs-bill-evans",
@@ -440,7 +458,8 @@
         "#1e293b",
         "#64748b"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/everybody-digs-bill-evans.jpg"
     },
     {
       "id": "rose-berlin",
@@ -465,7 +484,8 @@
         "#4c1d95",
         "#c4b5fd"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/rose-berlin.jpg"
     },
     {
       "id": "nina-roza",
@@ -488,7 +508,8 @@
         "#5eead4"
       ],
       "streaming": [],
-      "synopsisEn": "Best Screenplay at the 76th Berlin Film Festival."
+      "synopsisEn": "Best Screenplay at the 76th Berlin Film Festival.",
+      "poster": "/posters/nina-roza.jpg"
     },
     {
       "id": "honorary-yeoh",
@@ -511,7 +532,8 @@
         "#f59e0b"
       ],
       "streaming": [],
-      "synopsisEn": "Honorary Golden Bear at the 76th Berlin Film Festival."
+      "synopsisEn": "Honorary Golden Bear at the 76th Berlin Film Festival.",
+      "poster": "/posters/honorary-yeoh.jpg"
     },
     {
       "id": "fruit-gathering",
@@ -535,7 +557,8 @@
         "#14532d",
         "#86efac"
       ],
-      "streaming": []
+      "streaming": [],
+      "poster": "/posters/fruit-gathering.jpg"
     },
     {
       "id": "the-guest-kv",
@@ -558,7 +581,8 @@
         "#93c5fd"
       ],
       "streaming": [],
-      "synopsisEn": "Special Jury Prize at the 60th Karlovy Vary Film Festival."
+      "synopsisEn": "Special Jury Prize at the 60th Karlovy Vary Film Festival.",
+      "poster": "/posters/the-guest-kv.jpg"
     },
     {
       "id": "secret-agent",
@@ -745,7 +769,8 @@
         "#a8a29e"
       ],
       "streaming": [],
-      "synopsisEn": "Tseng Ching-li won Best Supporting Actor at the 62nd Golden Horse Awards."
+      "synopsisEn": "Tseng Ching-li won Best Supporting Actor at the 62nd Golden Horse Awards.",
+      "poster": "/posters/family-matters.jpg"
     }
   ],
   "ceremonies": [

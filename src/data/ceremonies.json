@@ -225,5 +225,109 @@
         "result": "won"
       }
     ]
+  },
+  {
+    "id": "seminci-71",
+    "orgId": "seminci",
+    "name": "第71届巴利亚多利德国际电影节",
+    "nameEn": "71st Valladolid International Film Festival",
+    "year": 2026,
+    "date": "2026-10-31",
+    "location": "西班牙巴利亚多利德（10月23–31日）",
+    "nominations": [
+      {
+        "categoryId": "golden-spike",
+        "categoryName": "金穗奖",
+        "filmId": "dao-gomis",
+        "personNames": [
+          "阿兰·戈米斯"
+        ],
+        "result": "won",
+        "date": "2026-10-31"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演",
+        "filmId": "double-freedom",
+        "personNames": [
+          "利桑德罗·阿隆索"
+        ],
+        "result": "won",
+        "date": "2026-10-31"
+      }
+    ]
+  },
+  {
+    "id": "tokyo-39",
+    "orgId": "tokyo",
+    "name": "第39届东京国际电影节",
+    "nameEn": "39th Tokyo International Film Festival",
+    "year": 2026,
+    "date": "2026-11-04",
+    "location": "日本东京（10月26日–11月4日）",
+    "nominations": [
+      {
+        "categoryId": "ethical-film-award",
+        "categoryName": "Ethical 影片奖",
+        "filmId": "i-rarely-wake-up-dreaming",
+        "personNames": [
+          "伊莎贝尔·史蒂弗"
+        ],
+        "result": "won",
+        "date": "2026-11-04"
+      },
+      {
+        "categoryId": "best-director",
+        "categoryName": "最佳导演",
+        "filmId": "double-freedom",
+        "personNames": [
+          "利桑德罗·阿隆索"
+        ],
+        "result": "won",
+        "date": "2026-11-04"
+      },
+      {
+        "categoryId": "special-jury-prize",
+        "categoryName": "评审团特别奖",
+        "filmId": "magic-atlas",
+        "personNames": [
+          "孙逊"
+        ],
+        "result": "won",
+        "date": "2026-11-04"
+      }
+    ]
+  },
+  {
+    "id": "apsa-19",
+    "orgId": "apsa",
+    "name": "第19届亚太电影奖",
+    "nameEn": "19th Asia Pacific Screen Awards",
+    "year": 2026,
+    "date": "2026-10-30",
+    "location": "澳大利亚黄金海岸",
+    "nominations": [
+      {
+        "categoryId": "best-animated-film",
+        "categoryName": "最佳动画长片",
+        "filmId": "the-violinist",
+        "personNames": [
+          "Ervin Han",
+          "Raúl García"
+        ],
+        "result": "won",
+        "date": "2026-10-30"
+      },
+      {
+        "categoryId": "best-animated-film",
+        "categoryName": "最佳动画长片",
+        "filmId": "magic-atlas",
+        "personNames": [
+          "孙逊"
+        ],
+        "result": "nominated",
+        "date": "2026-10-30"
+      }
+    ]
   }
 ]

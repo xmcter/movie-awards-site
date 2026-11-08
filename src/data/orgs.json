@@ -81,12 +81,39 @@
     "accentColor": "#22d3ee"
   },
   {
-    "id": "london",
-    "name": "伦敦",
+    "id": "bfi-london",
+    "name": "BFI 伦敦",
     "nameEn": "BFI London Film Festival",
     "description": "英国电影协会主办的非竞赛向大型电影节，近年设官方竞赛并颁发最佳影片奖。",
     "country": "英国",
     "founded": 1957,
     "accentColor": "#a78bfa"
+  },
+  {
+    "id": "seminci",
+    "name": "巴利亚多利德",
+    "nameEn": "Valladolid International Film Festival",
+    "description": "西班牙历史最悠久的电影节之一，金穗奖为最高荣誉。",
+    "country": "西班牙",
+    "founded": 1956,
+    "accentColor": "#dc2626"
+  },
+  {
+    "id": "apsa",
+    "name": "亚太电影奖",
+    "nameEn": "Asia Pacific Screen Awards",
+    "description": "亚太地区电影奖，表彰亚太电影的卓越成就。",
+    "country": "澳大利亚",
+    "founded": 2007,
+    "accentColor": "#0ea5e9"
+  },
+  {
+    "id": "gotham",
+    "name": "哥谭",
+    "nameEn": "Gotham Awards",
+    "description": "美国独立电影奖，表彰独立电影与新锐影人。",
+    "country": "美国",
+    "founded": 1991,
+    "accentColor": "#f59e0b"
   }
 ]

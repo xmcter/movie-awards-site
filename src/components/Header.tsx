@@ -2,7 +2,70 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import { isEnPath, toEnPath, toZhPath } from "@/lib/i18n";
+import {
+  clearPrefsSession,
+  googleSignIn,
+  loadPrefsSession,
+  type PrefsSession,
+} from "@/lib/prefs";
+
+/**
+ * Owner sign-in (Google). Sources are only shown while signed in, and the
+ * session persists in localStorage for 30 days. Click again to sign out.
+ * The backend only allows tonycter@gmail.com.
+ */
+function LoginButton({ en }: { en: boolean }) {
+  const [session, setSession] = useState<PrefsSession | null>(null);
+  const [busy, setBusy] = useState(false);
+  useEffect(() => {
+    setSession(loadPrefsSession());
+    const onChange = () => setSession(loadPrefsSession());
+    window.addEventListener("prefs-session-changed", onChange);
+    return () => window.removeEventListener("prefs-session-changed", onChange);
+  }, []);
+  const signIn = useCallback(async () => {
+    if (busy) return;
+    setBusy(true);
+    try {
+      await googleSignIn();
+      setSession(loadPrefsSession());
+      window.dispatchEvent(new Event("prefs-session-changed"));
+    } catch {
+      /* 登录失败/取消/非允许账号：保持未登录，不弹额外提示。 */
+    } finally {
+      setBusy(false);
+    }
+  }, [busy]);
+  const signOut = useCallback(() => {
+    clearPrefsSession();
+    setSession(null);
+    window.dispatchEvent(new Event("prefs-session-changed"));
+  }, []);
+  if (session) {
+    return (
+      <button
+        type="button"
+        onClick={signOut}
+        className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-gold"
+        title={`${session.email} · ${en ? "click to sign out" : "点击退出登录"}`}
+      >
+        {en ? "Signed in" : "已登录"}
+      </button>
+    );
+  }
+  return (
+    <button
+      type="button"
+      onClick={signIn}
+      disabled={busy}
+      className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-gold disabled:opacity-50"
+    >
+      {en ? "Sign in" : "登录"}
+    </button>
+  );
+}
 
 export default function Header() {
   const pathname = usePathname();
@@ -46,6 +109,7 @@ export default function Header() {
           >
             {en ? "中文" : "EN"}
           </Link>
+          <LoginButton en={en} />
           <a
             href="https://readcine.com"
             className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"

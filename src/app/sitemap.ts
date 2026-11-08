@@ -44,6 +44,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.6,
     },
+    {
+      url: "https://news.readcine.com/coming-soon",
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
   ];
 
   const filmUrls: MetadataRoute.Sitemap = uniqueFilmIds.map((id) => ({

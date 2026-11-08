@@ -17,6 +17,12 @@ export default function Header() {
         </Link>
         <nav className="flex items-center gap-4">
           <Link
+            href="/coming-soon"
+            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+          >
+            即将上线
+          </Link>
+          <Link
             href="/about"
             className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
           >

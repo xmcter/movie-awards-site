@@ -31,6 +31,8 @@ if [[ -d "$REMOTE_DIR" ]]; then
 fi
 rm -rf "$REMOTE_DIR"
 mv "$STAGE" "$REMOTE_DIR"
+# hatch 默认 umask 007 会让构建产物成 660/640，rsync -a 原样同步后 nginx 读不到、现网 403（2026-11-08 海报全空即因此）；每次部署后统一放开读权限。
+chmod -R a+rX "$REMOTE_DIR"
 ls -1dt ${REMOTE_DIR}.bak-* 2>/dev/null | tail -n +4 | xargs -r rm -rf || true
 CONF=/etc/nginx/sites-available/news.readcine.com
 if [[ ! -f "$CONF" ]]; then

@@ -17,6 +17,8 @@ import moviePeekCatalogData from "@/data/movie-peek-catalog.json";
 import densityCeremoniesData from "@/data/density-ceremonies.json";
 import filmCopyData from "@/data/film-copy.json";
 import posterUrlsData from "@/data/poster-urls.json";
+import auteurDirectorsData from "@/data/auteur-directors.json";
+import priorAwardDirectorsData from "@/data/prior-award-directors.json";
 import type {
   AwardCeremony,
   AwardOrg,
@@ -78,6 +80,8 @@ const moviePeek = moviePeekCatalogData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 const posterUrls = posterUrlsData as Record<string, string>;
+/** films.json 的 id。质量分里的核心片库命中只用这一份，避免每次打分都重建 Set。 */
+const CORE_FILM_IDS = new Set((filmsData as Film[]).map((f) => f.id));
 
 /** Build-time inventory of committed posters under public/posters */
 const LOCAL_POSTER_FILES = (() => {
@@ -148,6 +152,8 @@ export const auteurNews = auteurNewsData as AuteurNews[];
 /** Maps deprecated/duplicate film slugs to their canonical film id. */
 export const FILM_ALIASES: Record<string, string> = {
   "nowhere-to-lay-my-eyes": "nowhere-to-lay-eyes",
+  /** MotN 侧的 la-bola-negra 与 films.json 的 the-black-ball 是同一部《黑球》。 */
+  "la-bola-negra": "the-black-ball",
 };
 
 export function truncateDescription(text: string, maxLen = 150): string {
@@ -287,32 +293,23 @@ type CeremonyBucket = {
   noms: CategoryNomination[];
 };
 
-/** 作者向导演（中英名）；命中则优先进时间线。 */
-const AUTEUR_DIRECTORS = [
-  "诺兰", "克里斯托弗·诺兰", "Nolan",
-  "伊纳里图", "Iñárritu", "Inarritu",
-  "李沧东", "Lee Chang-dong", "Chang-dong",
-  "是枝裕和", "是枝", "Kore-eda", "Koreeda",
-  "滨口龙介", "滨口", "Hamaguchi",
-  "阿尔莫多瓦", "Almodóvar", "Almodovar",
-  "赫尔佐格", "Herzog",
-  "洪常秀", "Hong Sang-soo", "Sangsoo",
-  "萨金塞夫", "Zvyagintsev",
-  "迈克·李", "Mike Leigh",
-  "拉雷恩", "拉腊因", "Larrain", "Larraín",
-  "詹姆斯·格雷", "James Gray",
-  "法哈蒂", "Farhadi",
-  "蒙吉", "Mungiu",
-  "莫莱蒂", "Moretti",
-  "帕夫利科夫斯基", "Pawlikowski",
-  "瓦伊达", "Wajda",
-  "温特伯格", "Vinterberg",
-  "雷弗恩", "Refn", "Winding Refn",
-  "大卫·O·拉塞尔", "David O. Russell",
-  "西恩·海德尔", "Sian Heder",
-  "洛兹尼察", "Loznitsa",
-  "格里策巴赫", "Grisebach",
-];
+type AuteurDirectorEntry = {
+  names: string[];
+  /** 给人看的奖项或来源说明，不参与匹配。 */
+  note?: string;
+};
+
+/** 作者向导演（中英名）；命中则优先进时间线。名单在 src/data/auteur-directors.json。 */
+const AUTEUR_DIRECTORS: string[] = (auteurDirectorsData as AuteurDirectorEntry[])
+  .flatMap((entry) => entry.names)
+  .map((name) => name.trim())
+  .filter((name) => name.length > 0);
+
+/** 以前得过奖（含提名）的导演；命中则优先进时间线。名单在 src/data/prior-award-directors.json。用户 2026-11-08 定：以前获奖导演拍的片尽量不拦，提名也放行。 */
+const PRIOR_AWARD_DIRECTORS: string[] = (priorAwardDirectorsData as AuteurDirectorEntry[])
+  .flatMap((entry) => entry.names)
+  .map((name) => name.trim())
+  .filter((name) => name.length > 0);
 
 const AWARDED_FILM_IDS = (() => {
   const ids = new Set<string>();
@@ -328,6 +325,14 @@ const AWARDED_FILM_IDS = (() => {
 const FILLER_TITLE_RE =
   /圣诞|圣诞节|Christmas|Holiday|Tyler Perry|泰勒·?佩里|Paw Patrol|汪汪队|Warrior Kid|战士小子|Bag Man|提袋人|节日迷雾|威斯康星圣诞|快乐窃贼|完美骗子|壁炉|Batman.*Knight|蝙蝠侠：骑士|Super Troopers|Rolling Loud|Angel and the Badman|天使与坏蛋/i;
 
+/** 经典系列 IP：续集本身即有受众，直接收，不看平台分。用户 2026-11-08 定：潜伏系列不拦。 */
+const CLASSIC_FRANCHISE_RE = /Insidious|潜伏/i;
+
+function isClassicFranchiseFilm(film: Film): boolean {
+  const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
+  return CLASSIC_FRANCHISE_RE.test(titleBlob);
+}
+
 function directorsBlob(film: Film): string {
   return (film.directors || []).join(" ");
 }
@@ -336,6 +341,12 @@ function isAuteurFilm(film: Film): boolean {
   const blob = directorsBlob(film);
   if (!blob.trim()) return false;
   return AUTEUR_DIRECTORS.some((name) => blob.includes(name));
+}
+
+function isPriorAwardDirectorFilm(film: Film): boolean {
+  const blob = directorsBlob(film);
+  if (!blob.trim()) return false;
+  return PRIOR_AWARD_DIRECTORS.some((name) => blob.includes(name));
 }
 
 function isAwardedFilm(film: Film): boolean {
@@ -360,12 +371,12 @@ export function isNewStreamingFilm(film: Film, now = new Date()): boolean {
 export function streamingQualityScore(film: Film, platform?: string): number {
   let score = 0;
   if (isAuteurFilm(film)) score += 100;
+  if (isPriorAwardDirectorFilm(film)) score += 100;
   if (isAwardedFilm(film)) score += 80;
   if (platform === "mubi") score += 45;
   if (platform === "apple-tv" && isAuteurFilm(film)) score += 10;
   // 核心片库（非纯 MotN/WON 流水线）
-  const coreIds = new Set((filmsData as Film[]).map((f) => f.id));
-  if (coreIds.has(film.id) || film.id in filmCopy) score += 20;
+  if (CORE_FILM_IDS.has(film.id) || film.id in filmCopy) score += 20;
   const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
   if (FILLER_TITLE_RE.test(titleBlob)) score -= 80;
   if (!(film.directors && film.directors.length)) score -= 35;
@@ -376,11 +387,11 @@ export function streamingQualityScore(film: Film, platform?: string): number {
   return score;
 }
 
-function shouldAdmitStreaming(film: Film, platform: string): boolean {
+export function shouldAdmitStreaming(film: Film, platform: string, now = new Date()): boolean {
   // 老片回档 / 经典上新：硬拒（即使作者或 MUBI）
-  if (!isNewStreamingFilm(film)) return false;
-  // 作者 / 获奖 / MUBI 精品通道直接收
-  if (isAuteurFilm(film) || isAwardedFilm(film) || platform === "mubi") return true;
+  if (!isNewStreamingFilm(film, now)) return false;
+  // 作者 / 获奖 / 以前获奖（含提名）导演 / MUBI / 经典系列 IP 通道直接收
+  if (isAuteurFilm(film) || isAwardedFilm(film) || isPriorAwardDirectorFilm(film) || platform === "mubi" || isClassicFranchiseFilm(film)) return true;
   return streamingQualityScore(film, platform) >= 25;
 }
 
@@ -580,11 +591,51 @@ export function getTimelineEvents(): TimelineEvent[] {
     .map(e => ({ ...e, headline: formatContentDates(e.headline || ""), summary: formatContentDates(e.summary || ""), detail: e.detail ? formatContentDates(e.detail) : undefined }));
 }
 
-/** 口水泥档已在 shouldAdmitStreaming 硬过滤；不再按日配额截断。 */
-export const MAX_EVENTS_PER_DAY = Infinity; // 兼容旧引用：无日上限
-
 export function getFilmEvents(filmId: string): TimelineEvent[] {
-  return getTimelineEvents().filter((e) => e.filmId === filmId);
+  return getTimelineEvents().filter(
+    (e) =>
+      e.filmId === filmId ||
+      (e.filmId !== undefined && FILM_ALIASES[e.filmId] === filmId),
+  );
+}
+
+/** 即将上线：已过质量闸、日期在今天及之后的流媒体定档，按日期升序。 */
+export interface ComingSoonRelease {
+  filmId: string;
+  filmTitle: string;
+  filmTitleEn?: string;
+  filmYear?: number;
+  poster?: string;
+  posterColors?: [string, string];
+  directors?: string[];
+  platform: string;
+  date: string;
+}
+
+export function getComingSoonReleases(now = new Date()): ComingSoonRelease[] {
+  const today = todayISO(now);
+  const out: ComingSoonRelease[] = [];
+  for (const film of films) {
+    if (!isTimelineEligibleFilm(film)) continue;
+    for (const release of film.streaming) {
+      if (release.status !== "announced" || !release.date) continue;
+      if (!release.publishedAt || !isPublished(publicationTime(release).slice(0, 10), today)) continue;
+      if (!shouldAdmitStreaming(film, release.platform, now)) continue;
+      if (release.date < today) continue;
+      out.push({
+        filmId: film.id,
+        filmTitle: film.title,
+        filmTitleEn: film.titleEn,
+        filmYear: film.year,
+        poster: withBase(film.poster),
+        posterColors: film.posterColors,
+        directors: film.directors,
+        platform: release.platform,
+        date: release.date,
+      });
+    }
+  }
+  return out.sort((a, b) => a.date.localeCompare(b.date) || a.filmTitle.localeCompare(b.filmTitle, "zh-CN"));
 }
 
 /** 详情页复用与首页卡同一口径的已核实奖项：仅 won/nominated 且有证据链接。 */

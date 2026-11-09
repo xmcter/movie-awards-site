@@ -754,6 +754,40 @@
       ],
       "poster": "/posters/insidious-out-of-the-further.jpg",
       "synopsisEn": "Insidious: Out of the Further. Streaming release date via When To Stream (U.S.)."
+    },
+    {
+      "id": "the-last-temptation-of-becky",
+      "title": "贝琪的最后诱惑",
+      "titleEn": "The Last Temptation of Becky",
+      "year": 2026,
+      "synopsis": "The Last Temptation of Becky。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Jenn Wexler"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-20",
+          "status": "announced",
+          "region": "美国",
+          "note": "数字平台 · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/action-thriller-the-last-temptation-of-becky-sets-digital-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-09T10:03:26+08:00"
+        }
+      ],
+      "synopsisEn": "The Last Temptation of Becky. Streaming date set, per When To Stream (US)."
     }
   ],
   "ceremonies": []

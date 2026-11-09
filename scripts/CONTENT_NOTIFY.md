@@ -1,4 +1,7 @@
-# 内容更新邮件通知（电影资讯站）
+# 内容更新邮件通知
 
-事件驱动：`deploy/deploy.sh` 在 ECS 部署成功后调用 `/opt/readcine-content-notify/`，仅新增影片发汇总邮件到 `tonycter@gmail.com`。
-去重状态：`/var/lib/readcine-content-notify/news-*.json`；每小时最多 1 封。
+- 收件人**仅** `tonycter@gmail.com`（不发 QQ）。
+- 发信模块在 ECS：`/opt/readcine-content-notify/notify.py`
+- 发件优先 Gmail（`smtp-gmail.env` / `tonycter@gmail.com`）；失败时可备用 QQ SMTP **仅作发件通道**，收件仍是 Gmail。
+- 可用性告警用的 `/opt/readcine-uptime/smtp.env` 不在此范围、不要改。
+- 去重/限速状态：`/var/lib/readcine-content-notify/`

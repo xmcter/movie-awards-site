@@ -68,4 +68,14 @@ nginx -t && systemctl reload nginx
 echo "Deployed; backup=$BAK"
 REMOTE
 
+
+# 内容更新邮件：对比部署后片库，仅新增发汇总
+ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" 'bash -s' <<'NOTIFY'
+set -euo pipefail
+if [[ -x /opt/readcine-content-notify/notify.py ]]; then
+  python3 /opt/readcine-content-notify/hooks/news_emit_new.py \
+    | python3 /opt/readcine-content-notify/notify.py --site news || true
+fi
+NOTIFY
+
 echo "Deployed to ${USER}@${HOST}:${REMOTE_DIR}"

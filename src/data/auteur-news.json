@@ -374,5 +374,50 @@
     "source": "https://m.weibo.cn/detail/RqD295qFM",
     "weiboUrl": "https://m.weibo.cn/detail/RqD295qFM",
     "weiboLabel": "微博·找片大师伊万"
+  },
+  {
+    "id": "movie-peek-movie-douban-37116612-first-resource",
+    "filmId": "movie-douban-37116612",
+    "publishedAt": "2026-11-10T20:03:27+08:00",
+    "sourcePublishedAt": "2026-11-10T20:03:27+08:00",
+    "date": "2026-11-10",
+    "kind": "release",
+    "summary": "《世界的主人》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RqLDBwWdz",
+    "weiboUrl": "https://m.weibo.cn/detail/RqLDBwWdz",
+    "weiboLabel": "微博·找片大师伊万",
+    "summaryEn": "The World of Love is now available."
+  },
+  {
+    "id": "movie-peek-movie-douban-37363852-first-resource",
+    "filmId": "movie-douban-37363852",
+    "publishedAt": "2026-11-10T18:11:56+08:00",
+    "sourcePublishedAt": "2026-11-10T18:11:56+08:00",
+    "date": "2026-11-10",
+    "kind": "release",
+    "summary": "《入夜不再》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RqKUlj4VJ",
+    "weiboUrl": "https://m.weibo.cn/detail/RqKUlj4VJ",
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "Never After Dark is now available."
+  },
+  {
+    "id": "movie-peek-movie-douban-37317907-first-resource",
+    "filmId": "movie-douban-37317907",
+    "publishedAt": "2026-11-10T16:42:32+08:00",
+    "sourcePublishedAt": "2026-11-10T16:42:32+08:00",
+    "date": "2026-11-10",
+    "kind": "release",
+    "summary": "《另一个妈妈》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RqKk3EJdK",
+    "weiboUrl": "https://m.weibo.cn/detail/RqKk3EJdK",
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "Incidents Around the House is now available."
   }
 ]

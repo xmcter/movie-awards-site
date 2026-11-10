@@ -653,6 +653,184 @@
         }
       ],
       "poster": "/posters/ezra.jpg"
+    },
+    {
+      "id": "daayra",
+      "title": "Daayra",
+      "titleEn": "Daayra",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Meghna Gulzar"
+      ],
+      "cast": [
+        "Kareena Kapoor Khan",
+        "Prithviraj Sukumaran",
+        "Pragati Mishra",
+        "Prammod Sanghi",
+        "Sumali Khaniwale",
+        "Upendra Chauhan",
+        "Jitendra Joshi"
+      ],
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-10T22:01:56+08:00",
+          "platform": "netflix",
+          "date": "2026-11-12",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82083479",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/daayra.jpg"
+    },
+    {
+      "id": "ranabaali",
+      "title": "Ranabaali",
+      "titleEn": "Ranabaali",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Rahul Sankrityan"
+      ],
+      "cast": [
+        "Vijay Deverakonda",
+        "Rashmika Mandanna",
+        "Arnold Vosloo",
+        "Easwari Rao",
+        "Vinod Sagar",
+        "Kishore Kumar Polimera",
+        "Luke McGibney"
+      ],
+      "genres": [
+        "Action",
+        "Drama",
+        "History"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-10T22:01:58+08:00",
+          "platform": "netflix",
+          "date": "2026-11-12",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/81900289",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/ranabaali.jpg"
+    },
+    {
+      "id": "bad-day",
+      "title": "Bad Day",
+      "titleEn": "Bad Day",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Jake Szymanski"
+      ],
+      "cast": [
+        "Cameron Diaz",
+        "Ed O'Neill",
+        "Danielle Brooks",
+        "Rhenzy Feliz",
+        "John Higgins",
+        "Mark Duplass",
+        "Jessica Belkin"
+      ],
+      "genres": [
+        "Action",
+        "Comedy"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-10T22:01:59+08:00",
+          "platform": "netflix",
+          "date": "2026-12-11",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/81481306",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/bad-day.jpg"
+    },
+    {
+      "id": "in-waves",
+      "title": "In Waves",
+      "titleEn": "In Waves",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Phuong Mai Nguyen"
+      ],
+      "cast": [
+        "Rio Vega",
+        "Lyna Khoudri",
+        "Paul Kircher",
+        "Birane Ba",
+        "Gauthier Battoue",
+        "Taiana Tully",
+        "Amélia Ewu"
+      ],
+      "genres": [
+        "Animation",
+        "Drama"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-10T22:02:00+08:00",
+          "platform": "netflix",
+          "date": "2026-12-11",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82946622",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/in-waves.jpg"
     }
   ],
   "ceremonies": []

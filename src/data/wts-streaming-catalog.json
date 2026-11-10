@@ -788,6 +788,74 @@
         }
       ],
       "synopsisEn": "The Last Temptation of Becky. Streaming date set, per When To Stream (US)."
+    },
+    {
+      "id": "heart-of-the-beast",
+      "title": "野兽之心",
+      "titleEn": "Heart of the Beast",
+      "year": 2026,
+      "synopsis": "Heart of the Beast。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "David Ayer"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-10",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/paramount-confirms-heart-of-the-beast-pvod-date-sets-4k-blu-ray-dvd-launch/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-10T22:06:03+08:00"
+        }
+      ],
+      "synopsisEn": "Heart of the Beast. Streaming release date via When To Stream (US)."
+    },
+    {
+      "id": "ha-chan-shake-your-booty",
+      "title": "哈灿：摇摆起来",
+      "titleEn": "Ha Chan: Shake Your Booty!",
+      "year": 2026,
+      "synopsis": "Ha Chan: Shake Your Booty!。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Josef Kubota Wladyka"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-10",
+          "status": "announced",
+          "region": "美国",
+          "note": "数字平台 · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/ha-chan-shake-your-booty-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-10T22:06:03+08:00"
+        }
+      ],
+      "synopsisEn": "Ha Chan: Shake Your Booty!. Streaming release date via When To Stream (US)."
     }
   ],
   "ceremonies": []

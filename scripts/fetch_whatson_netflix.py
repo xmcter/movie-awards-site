@@ -193,6 +193,26 @@ def parse_calendar_movies(html: str) -> list[dict[str, Any]]:
     return movies
 
 
+def parse_card_kinds(html: str) -> dict[str, str]:
+    """Card kind by normalized title, from <article data-release-kind/title>.
+
+    JSON-LD descriptions are often only "Licensed"/"Netflix Original", so a
+    documentary such as "an open field" (2026-12-01) passes the DOC_RE check
+    while its card says data-release-kind="doc". The card kind is
+    authoritative for doc/series; 'other' (stand-up) is left alone.
+    """
+    kinds: dict[str, str] = {}
+    for tag in re.findall(r"<article\b[^>]*>", html, flags=re.I):
+        kind_m = re.search(r'data-release-kind="([^"]+)"', tag)
+        title_m = re.search(r'data-release-title="([^"]+)"', tag)
+        if not kind_m or not title_m:
+            continue
+        title = norm_title(unescape(title_m.group(1)))
+        if title and title not in kinds:
+            kinds[title] = kind_m.group(1).strip().lower()
+    return kinds
+
+
 def is_real_date(s: str) -> bool:
     if not DATE_RE.match(s):
         return False
@@ -209,7 +229,7 @@ def min_new_film_year(ref_year: int | None = None) -> int:
     return y - 2
 
 
-def should_skip_movie(item: dict[str, Any]) -> str | None:
+def should_skip_movie(item: dict[str, Any], kinds: dict[str, str] | None = None) -> str | None:
     name = unescape(str(item.get("name") or "")).strip()
     desc = unescape(str(item.get("description") or "")).strip()
     blob = f"{name} {desc}"
@@ -217,6 +237,12 @@ def should_skip_movie(item: dict[str, Any]) -> str | None:
         return "empty_title"
     if ROUNDUP_RE.search(name):
         return "roundup"
+    if kinds:
+        kind = kinds.get(norm_title(name))
+        if kind == "doc":
+            return "documentary"
+        if kind == "series":
+            return "series"
     if DOC_RE.search(blob):
         return "documentary"
     if SERIES_RE.search(blob):
@@ -504,10 +530,11 @@ def write_json(path: Path, data: Any) -> None:
 
 def collect_confirmed(html: str) -> tuple[list[dict[str, Any]], dict[str, int], int]:
     raw_movies = parse_calendar_movies(html)
+    kinds = parse_card_kinds(html)
     confirmed: list[dict[str, Any]] = []
     skip_counts: dict[str, int] = {}
     for item in raw_movies:
-        reason = should_skip_movie(item)
+        reason = should_skip_movie(item, kinds)
         if reason:
             skip_counts[reason] = skip_counts.get(reason, 0) + 1
             continue

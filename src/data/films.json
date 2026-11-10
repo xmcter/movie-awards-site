@@ -349,20 +349,39 @@
     "titleEn": "Coward",
     "year": 2026,
     "synopsis": "第79届戛纳电影节最佳男演员。",
-    "directors": [],
-    "cast": [],
+    "directors": [
+      "卢卡斯·德霍特"
+    ],
+    "cast": [
+      "伊曼纽尔·马基亚",
+      "瓦伦丁·坎帕涅",
+      "威廉·德·史瑞佛",
+      "鲍里斯·布沙",
+      "马蒂厄·卡彭蒂埃",
+      "安娜埃尔·富尼耶",
+      "米斯特拉尔·吉多蒂",
+      "杰夫·雅各布",
+      "埃米尔·克拉斯特夫",
+      "蒂杰曼·范·达梅",
+      "奥兰多·瓦西埃",
+      "图尔·韦雷尔斯",
+      "乔纳斯·韦尔茨"
+    ],
     "genres": [
       "剧情"
     ],
     "country": [
-      "法国"
+      "法国",
+      "比利时",
+      "荷兰"
     ],
     "posterColors": [
       "#422006",
       "#92400e"
     ],
     "streaming": [],
-    "poster": "/posters/coward.jpg"
+    "poster": "/posters/coward.jpg",
+    "runtime": 120
   },
   {
     "id": "our-redemption",

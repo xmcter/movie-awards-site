@@ -374,40 +374,6 @@
       ]
     },
     {
-      "id": "avedon",
-      "title": "Avedon",
-      "titleEn": "Avedon",
-      "year": 2026,
-      "synopsis": "",
-      "directors": [],
-      "cast": [],
-      "genres": [],
-      "country": [
-        "美国"
-      ],
-      "posterColors": [
-        "#0f172a",
-        "#1e3a5f"
-      ],
-      "streaming": [
-        {
-          "platform": "netflix",
-          "date": "2026-11-11",
-          "status": "announced",
-          "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
-          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
-          "sourceLabel": "Netflix上新日历",
-          "publishedAt": "2026-11-05T20:29:58+08:00"
-        }
-      ],
-      "poster": "/posters/avedon.jpg",
-      "copyPending": [
-        "title",
-        "synopsis"
-      ]
-    },
-    {
       "id": "kijsada-paradise",
       "title": "Kijsada Paradise",
       "titleEn": "Kijsada Paradise",
@@ -926,40 +892,6 @@
       ]
     },
     {
-      "id": "primetime-preacher",
-      "title": "Primetime Preacher$",
-      "titleEn": "Primetime Preacher$",
-      "year": 2026,
-      "synopsis": "",
-      "directors": [],
-      "cast": [],
-      "genres": [],
-      "country": [
-        "美国"
-      ],
-      "posterColors": [
-        "#0f172a",
-        "#1e3a5f"
-      ],
-      "streaming": [
-        {
-          "platform": "netflix",
-          "date": "2026-11-20",
-          "status": "announced",
-          "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
-          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
-          "sourceLabel": "Netflix上新日历",
-          "publishedAt": "2026-11-05T20:29:58+08:00"
-        }
-      ],
-      "poster": "/posters/primetime-preacher.jpg",
-      "copyPending": [
-        "title",
-        "synopsis"
-      ]
-    },
-    {
       "id": "steps",
       "title": "Steps",
       "titleEn": "Steps",
@@ -1022,74 +954,6 @@
         }
       ],
       "poster": "/posters/all-for-christmas.jpg",
-      "copyPending": [
-        "title",
-        "synopsis"
-      ]
-    },
-    {
-      "id": "one-last-order",
-      "title": "One Last Order",
-      "titleEn": "One Last Order",
-      "year": 2026,
-      "synopsis": "",
-      "directors": [],
-      "cast": [],
-      "genres": [],
-      "country": [
-        "美国"
-      ],
-      "posterColors": [
-        "#0f172a",
-        "#1e3a5f"
-      ],
-      "streaming": [
-        {
-          "platform": "netflix",
-          "date": "2026-11-24",
-          "status": "announced",
-          "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
-          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
-          "sourceLabel": "Netflix上新日历",
-          "publishedAt": "2026-11-05T20:29:58+08:00"
-        }
-      ],
-      "poster": "/posters/one-last-order.jpg",
-      "copyPending": [
-        "title",
-        "synopsis"
-      ]
-    },
-    {
-      "id": "rob-lowe-the-outsider",
-      "title": "Rob Lowe: The Outsider",
-      "titleEn": "Rob Lowe: The Outsider",
-      "year": 2026,
-      "synopsis": "",
-      "directors": [],
-      "cast": [],
-      "genres": [],
-      "country": [
-        "美国"
-      ],
-      "posterColors": [
-        "#0f172a",
-        "#1e3a5f"
-      ],
-      "streaming": [
-        {
-          "platform": "netflix",
-          "date": "2026-11-24",
-          "status": "announced",
-          "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
-          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
-          "sourceLabel": "Netflix上新日历",
-          "publishedAt": "2026-11-05T20:29:58+08:00"
-        }
-      ],
-      "poster": "/posters/rob-lowe-the-outsider.jpg",
       "copyPending": [
         "title",
         "synopsis"
@@ -1226,40 +1090,6 @@
         }
       ],
       "poster": "/posters/the-hunchback-soul-of-paris.jpg",
-      "copyPending": [
-        "title",
-        "synopsis"
-      ]
-    },
-    {
-      "id": "tyson-fury",
-      "title": "Tyson Fury",
-      "titleEn": "Tyson Fury",
-      "year": 2026,
-      "synopsis": "",
-      "directors": [],
-      "cast": [],
-      "genres": [],
-      "country": [
-        "美国"
-      ],
-      "posterColors": [
-        "#0f172a",
-        "#1e3a5f"
-      ],
-      "streaming": [
-        {
-          "platform": "netflix",
-          "date": "2026-11-27",
-          "status": "announced",
-          "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
-          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
-          "sourceLabel": "Netflix上新日历",
-          "publishedAt": "2026-11-05T20:29:58+08:00"
-        }
-      ],
-      "poster": "/posters/tyson-fury.jpg",
       "copyPending": [
         "title",
         "synopsis"
@@ -1464,40 +1294,6 @@
         }
       ],
       "poster": "/posters/papa-zola-the-movie.jpg",
-      "copyPending": [
-        "title",
-        "synopsis"
-      ]
-    },
-    {
-      "id": "marcos-another-world-is-possible",
-      "title": "Marcos: Another World Is Possible",
-      "titleEn": "Marcos: Another World Is Possible",
-      "year": 2026,
-      "synopsis": "",
-      "directors": [],
-      "cast": [],
-      "genres": [],
-      "country": [
-        "美国"
-      ],
-      "posterColors": [
-        "#0f172a",
-        "#1e3a5f"
-      ],
-      "streaming": [
-        {
-          "platform": "netflix",
-          "date": "2026-12-02",
-          "status": "announced",
-          "region": "美国",
-          "note": "Netflix · 地区：美国（Netflix 新片；须以平台官方为准）",
-          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
-          "sourceLabel": "Netflix上新日历",
-          "publishedAt": "2026-11-06T22:07:08+08:00"
-        }
-      ],
-      "poster": "/posters/marcos-another-world-is-possible.jpg",
       "copyPending": [
         "title",
         "synopsis"

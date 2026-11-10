@@ -359,5 +359,20 @@
     "weiboUrl": "https://m.weibo.cn/detail/RqBMSgzKw",
     "weiboLabel": "微博·找片大师伊万",
     "summaryEn": "\"LA BOLA NEGRA\" source is now available."
+  },
+  {
+    "id": "movie-peek-coward-first-resource",
+    "filmId": "coward",
+    "publishedAt": "2026-11-09T22:09:11+08:00",
+    "sourcePublishedAt": "2026-11-09T22:09:11+08:00",
+    "date": "2026-11-09",
+    "kind": "release",
+    "summary": "《懦夫》已出源",
+    "summaryEn": "\"Coward\" source is now available.",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RqD295qFM",
+    "weiboUrl": "https://m.weibo.cn/detail/RqD295qFM",
+    "weiboLabel": "微博·找片大师伊万"
   }
 ]

@@ -8,8 +8,8 @@
   "display": "standalone",
   "orientation": "any",
   "lang": "zh-CN",
-  "background_color": "#ffffff",
-  "theme_color": "#f97316",
+  "background_color": "#7a1f24",
+  "theme_color": "#e24b3b",
   "icons": [
     {
       "src": "/icon-192.png",

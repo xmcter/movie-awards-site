@@ -61,6 +61,7 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   manifest: "/manifest.json",
+  themeColor: "#e24b3b",
   appleWebApp: {
     capable: true,
     title: "电影资讯",

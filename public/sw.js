@@ -5,7 +5,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v1-20261111';
+var CACHE_VERSION = 'v2-20261111';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 

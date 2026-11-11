@@ -69,12 +69,15 @@ echo "Deployed; backup=$BAK"
 REMOTE
 
 
-# 内容更新邮件：对比部署后片库，仅新增发汇总
+# 内容更新邮件：2026-11-11 起默认关闭（资讯/资源都不发）。emit 脚本保留。
+# 仅当 ECS 去掉 DISABLE_EMAIL 且显式 CONTENT_NOTIFY_DISABLE_EMAIL=0 时才调用发信。
 ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" 'bash -s' <<'NOTIFY'
 set -euo pipefail
-if [[ -x /opt/readcine-content-notify/notify.py ]]; then
+if [[ -x /opt/readcine-content-notify/notify.py && ! -f /opt/readcine-content-notify/DISABLE_EMAIL && "${CONTENT_NOTIFY_DISABLE_EMAIL:-1}" == "0" ]]; then
   python3 /opt/readcine-content-notify/hooks/news_emit_new.py \
     | python3 /opt/readcine-content-notify/notify.py --site news || true
+else
+  echo "content-notify email disabled, skip"
 fi
 NOTIFY
 

@@ -146,7 +146,7 @@ export default function InsightNotOnlyScoresPage() {
         <div className="space-y-2">
           <h2 className="font-display text-lg text-cinema-text">结尾</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
-            本站以后会定期做这类“不只发新闻，也给判断”的盘点：不重复时间线已经写过的事实，而是把同一时期的几条新闻按阶段、按导演、按观影预期重新组织。如果你对这个方向有意见（比如更想看单片深读、还是更想看电影节全景），可以在联系页告诉我们。
+            本站以后会定期做这类“不只发新闻，也给判断”的盘点：不重复时间线已经写过的事实，而是把同一时期的几条新闻按阶段、按导演、按观影预期重新组织。
           </p>
         </div>
       </section>

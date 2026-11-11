@@ -19,11 +19,6 @@ export default function Footer() {
             : "新片流媒体定档 · 新片发行动态"}
         </p>
         <p className="mt-3 text-xs text-cinema-muted/70">
-          {en
-            ? "Only when a film hits streaming, and when it goes on release; no box-office popcorn. Data ships with the repo, not scraped live."
-            : "只关心什么时候能在流媒体看、什么时候发行上线；不收院线爆米花。数据随仓库发布，非实时爬取。"}
-        </p>
-        <p className="mt-3 text-xs text-cinema-muted/70">
           <Link
             href={`${prefix}/insight/not-only-scores`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
@@ -36,20 +31,6 @@ export default function Footer() {
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
           >
             {en ? "All films" : "全部影片"}
-          </Link>
-          <span className="mx-2 opacity-40">·</span>
-          <Link
-            href={`${prefix}/about`}
-            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
-          >
-            {en ? "About" : "关于"}
-          </Link>
-          <span className="mx-2 opacity-40">·</span>
-          <Link
-            href={`${prefix}/contact`}
-            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
-          >
-            {en ? "Contact" : "联系"}
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link

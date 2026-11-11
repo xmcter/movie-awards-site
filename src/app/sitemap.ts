@@ -29,16 +29,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: "https://news.readcine.com/about",
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: "https://news.readcine.com/contact",
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
       url: "https://news.readcine.com/privacy",
       changeFrequency: "monthly",
       priority: 0.4,
@@ -62,16 +52,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://news.readcine.com/en",
       changeFrequency: "daily",
       priority: 0.9,
-    },
-    {
-      url: "https://news.readcine.com/en/about",
-      changeFrequency: "monthly",
-      priority: 0.5,
-    },
-    {
-      url: "https://news.readcine.com/en/contact",
-      changeFrequency: "monthly",
-      priority: 0.5,
     },
     {
       url: "https://news.readcine.com/en/privacy",

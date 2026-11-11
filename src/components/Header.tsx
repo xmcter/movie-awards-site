@@ -73,7 +73,6 @@ export default function Header() {
   const toggleHref = en ? toZhPath(pathname || "/en") : toEnPath(pathname || "/");
   const homeHref = en ? "/en" : "/";
   const comingSoonHref = en ? "/en/coming-soon" : "/coming-soon";
-  const aboutHref = en ? "/en/about" : "/about";
 
   return (
     <header className="sticky top-0 z-50 border-b border-cinema-border/80 bg-cinema-bg/90 backdrop-blur-md">
@@ -99,12 +98,6 @@ export default function Header() {
             className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
           >
             {en ? "Coming soon" : "即将上线"}
-          </Link>
-          <Link
-            href={aboutHref}
-            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
-          >
-            {en ? "About" : "关于"}
           </Link>
           <Link
             href={toggleHref}

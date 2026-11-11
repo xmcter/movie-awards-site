@@ -59,7 +59,7 @@ function ReleaseRow({ release, dateText }: { release: ComingSoonRelease; dateTex
         <span
           className="h-[90px] w-[60px] shrink-0 overflow-hidden rounded-md"
           style={{
-            background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+            background: colors[0],
             aspectRatio: "2 / 3",
           }}
         >

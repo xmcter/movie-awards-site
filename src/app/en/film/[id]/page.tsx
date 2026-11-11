@@ -211,7 +211,7 @@ export default async function FilmPageEn({
           <div
             className="m-4 mr-0 h-[144px] w-[96px] shrink-0 overflow-hidden rounded-md sm:m-5 sm:h-[210px] sm:w-[140px]"
             style={{
-              background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+              background: colors[0],
               aspectRatio: "2 / 3",
             }}
           >

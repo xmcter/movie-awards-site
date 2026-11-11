@@ -5,7 +5,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v6-20261111';
+var CACHE_VERSION = 'v7-20261111';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 
@@ -18,12 +18,12 @@ var PRECACHE_URLS = [
   "/apple-touch-icon.png",
   "/icon-192.png",
   "/icon-512.png",
-  "/_next/static/css/d5d2657130bbad39.css",
+  "/_next/static/css/e9ba432f6be9c976.css",
   "/_next/static/chunks/webpack-2eb758dea75faf50.js",
-  "/_next/static/chunks/main-app-e87295ba550d9b92.js",
+  "/_next/static/chunks/main-app-068ed5f91129da74.js",
   "/_next/static/chunks/polyfills-42372ed130431b0a.js",
-  "/_next/static/chunks/app/layout-23ada7c1ec589c9f.js",
-  "/_next/static/chunks/app/page-55bc6748ad871b48.js"
+  "/_next/static/chunks/app/layout-1aa1e2d4a2d8c4e1.js",
+  "/_next/static/chunks/app/page-c18899e1df7603b2.js"
 ];
 
 var SHELL_PATHS = [];

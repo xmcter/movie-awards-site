@@ -159,7 +159,7 @@ export default async function EventPageEn({
           <div
             className="m-3 mr-0 h-[120px] w-[80px] shrink-0 overflow-hidden rounded-md sm:m-4 sm:h-[144px] sm:w-[96px]"
             style={{
-              background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+              background: colors[0],
               aspectRatio: "2 / 3",
             }}
           >

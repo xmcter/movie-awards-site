@@ -126,7 +126,7 @@ function EventPoster({
     <div
       className={className}
       style={{
-        background: `linear-gradient(145deg, ${colors[0]}, ${colors[1]})`,
+        background: colors[0],
         aspectRatio: "2 / 3",
       }}
     >

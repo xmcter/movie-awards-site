@@ -5,7 +5,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v4-20261111';
+var CACHE_VERSION = 'v5-20261111';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 
@@ -13,6 +13,8 @@ var PRECACHE_URLS = [
   "/",
   "/manifest.json",
   "/favicon.svg",
+  "/favicon.ico",
+  "/favicon-32.png",
   "/apple-touch-icon.png",
   "/icon-192.png",
   "/icon-512.png",

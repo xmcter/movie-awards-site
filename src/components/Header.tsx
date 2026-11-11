@@ -48,7 +48,7 @@ function LoginButton({ en }: { en: boolean }) {
       <button
         type="button"
         onClick={signOut}
-        className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-gold"
+        className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
         title={`${session.email} · ${en ? "click to sign out" : "点击退出登录"}`}
       >
         {en ? "Signed in" : "已登录"}
@@ -60,7 +60,7 @@ function LoginButton({ en }: { en: boolean }) {
       type="button"
       onClick={signIn}
       disabled={busy}
-      className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-gold disabled:opacity-50"
+      className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent disabled:opacity-50"
     >
       {en ? "Sign in" : "登录"}
     </button>
@@ -79,10 +79,14 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-cinema-border/80 bg-cinema-bg/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3 sm:px-6">
         <Link href={homeHref} className="group flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-cinema-gold/20 text-sm font-bold text-cinema-gold">
-            {en ? "S" : "银"}
-          </span>
-          <span className="font-display text-lg tracking-wide text-cinema-text group-hover:text-cinema-gold-light">
+          <img
+            src="/apple-touch-icon.png?v=20261111-22"
+            width={32}
+            height={32}
+            alt=""
+            className="h-8 w-8 rounded-[7px]"
+          />
+          <span className="font-display text-lg tracking-wide text-cinema-text group-hover:text-cinema-accent">
             {en ? "Screen News" : "银幕新讯"}
           </span>
           <span className="hidden rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold sm:inline-block">
@@ -92,19 +96,19 @@ export default function Header() {
         <nav className="flex items-center gap-4">
           <Link
             href={comingSoonHref}
-            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
           >
             {en ? "Coming soon" : "即将上线"}
           </Link>
           <Link
             href={aboutHref}
-            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
           >
             {en ? "About" : "关于"}
           </Link>
           <Link
             href={toggleHref}
-            className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-gold"
+            className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
             aria-label={en ? "切换到中文" : "Switch to English"}
           >
             {en ? "中文" : "EN"}
@@ -112,7 +116,7 @@ export default function Header() {
           <LoginButton en={en} />
           <a
             href="https://readcine.com"
-            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-gold"
+            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
           >
             readcine.
           </a>

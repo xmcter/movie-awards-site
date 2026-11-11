@@ -5,28 +5,41 @@
 
 :root {
   color-scheme: dark;
-  --rc-bg: #0c0f14;
-  --rc-card: #12161d;
-  --rc-elevated: #1c2330;
-  --rc-border: #262b33;
+  --rc-bg: #2a1014;
+  --rc-bg-end: #7a1f24;
+  --rc-card: #1a0c0e;
+  --rc-elevated: #2a1214;
+  --rc-border: #5c2024;
   --rc-gold: #c9a227;
   --rc-gold-light: #f0d36a;
-  --rc-muted: #b0b8bf;
-  --rc-text: #e7ebe6;
-  --rc-accent: #e08a45;
+  --rc-muted: #f0c8c8;
+  --rc-text: #ffffff;
+  --rc-accent: #fb7185;
 }
 
 html.theme-day {
   color-scheme: light;
-  --rc-bg: #f4f5f2;
+  --rc-bg: #fff7f6;
+  --rc-bg-end: #fff7f6;
   --rc-card: #ffffff;
-  --rc-elevated: #eef0eb;
-  --rc-border: #dcdfd9;
+  --rc-elevated: #fff1f0;
+  --rc-border: #fecaca;
   --rc-gold: #b8873a;
   --rc-gold-light: #c9a227;
-  --rc-muted: #565f6b;
-  --rc-text: #14181f;
-  --rc-accent: #c8722c;
+  --rc-muted: #8f4a4a;
+  --rc-text: #3b1014;
+  --rc-accent: #9f1239;
+}
+
+/* 页头用酒红，正文落在更深的卡片上，避免珊瑚红底配白字对比不够 */
+header.sticky {
+  background-color: rgba(122, 31, 36, 0.94);
+  --rc-text: #ffffff;
+  --rc-muted: #fecaca;
+  --rc-accent: #fecaca;
+  --rc-border: rgba(254, 202, 202, 0.45);
+  --rc-gold: #f0d36a;
+  --rc-gold-light: #fde68a;
 }
 
 html {

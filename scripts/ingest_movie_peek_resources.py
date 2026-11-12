@@ -22,7 +22,7 @@ from __future__ import annotations
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import json
 import os
 from pathlib import Path
@@ -487,7 +487,22 @@ def main():
     if peek.get("success") is not True or not isinstance(peek.get("data"), list):
         raise RuntimeError("peek returned an unsuccessful response")
     rows = peek["data"]
-    titles = list(dict.fromkeys(row["title"] for row in rows if str(row.get("posted_at", ""))[:10] == args.date))
+    # Detail fetch must cover the same 7-day timeliness window as plan_ingest,
+    # otherwise films posted a few days ago pass the window check but fail the
+    # detail lookup and are skipped. (2026-11-12 fix.)
+    run_day = date.fromisoformat(args.date)
+    window_start = run_day - timedelta(days=6)
+
+    def _in_window(value):
+        try:
+            day = date.fromisoformat(str(value)[:10])
+        except ValueError:
+            return False
+        return window_start <= day <= run_day
+
+    titles = list(dict.fromkeys(
+        row["title"] for row in rows if _in_window(row.get("posted_at", ""))
+    ))
 
     def fetch_detail(title):
         return fetch_api("/api/movie_detail?" + urlencode({"title": title}), args)

@@ -419,5 +419,33 @@
     "weiboUrl": "https://m.weibo.cn/detail/RqKk3EJdK",
     "weiboLabel": "微博·爱看剧的小马达",
     "summaryEn": "Incidents Around the House is now available."
+  },
+  {
+    "id": "movie-peek-movie-douban-30145677-first-resource",
+    "filmId": "movie-douban-30145677",
+    "publishedAt": "2026-11-12T16:29:26+08:00",
+    "sourcePublishedAt": "2026-11-12T16:29:26+08:00",
+    "date": "2026-11-12",
+    "kind": "release",
+    "summary": "《青春共体 The Body +》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rr35Jdtwf",
+    "weiboUrl": "https://m.weibo.cn/detail/Rr35Jdtwf",
+    "weiboLabel": "微博·爱看剧的小马达"
+  },
+  {
+    "id": "movie-peek-movie-douban-36085515-first-resource",
+    "filmId": "movie-douban-36085515",
+    "publishedAt": "2026-11-12T16:25:22+08:00",
+    "sourcePublishedAt": "2026-11-12T16:25:22+08:00",
+    "date": "2026-11-12",
+    "kind": "release",
+    "summary": "《急诊室的奇迹》已出源",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rr344E1By",
+    "weiboUrl": "https://m.weibo.cn/detail/Rr344E1By",
+    "weiboLabel": "微博·不知名压制小人z"
   }
 ]

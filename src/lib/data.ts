@@ -372,12 +372,11 @@ function isAwardedFilm(film: Film): boolean {
 }
 
 /**
- * 流媒体定档只收新片：上映/首映年 >= 当前公历年 - 5（近五年新片；经典回档剔除）。
+ * 流媒体定档只收新片：上映/首映年 >= 当前公历年 - 2（近两年新片；经典回档剔除）。
  * 经典回档、片库老片上新一律不进主列表（影片档仍可保留 streaming）。
- * 2026-11-12 用户定：时效窗由 2 年放宽到 5 年，不要因时效性低而拦片；分数门槛（>=25）不变。
  */
 export function streamingNewFilmMinYear(now = new Date()): number {
-  return now.getFullYear() - 5;
+  return now.getFullYear() - 2;
 }
 
 export function isNewStreamingFilm(film: Film, now = new Date()): boolean {

@@ -248,7 +248,15 @@ def plan_ingest(peek, details, data_dir, day, min_year, *, failed_detail_titles=
         def skip(reason):
             report["skipped"].append({"title": raw_title, "reason": reason})
         posted = str(row.get("posted_at", ""))
-        if posted[:10] != day:
+        # 时效窗：接受最近 7 天内（含当天）出源的片子，不要因只差一天就漏掉。
+        # 2026-11-12 用户定：下载站抓取的时效性放宽；年份门槛（min_year）不变。
+        try:
+            posted_day = date.fromisoformat(posted[:10])
+            run_day = date.fromisoformat(day)
+        except ValueError:
+            skip("not in requested posting date")
+            continue
+        if not 0 <= (run_day - posted_day).days < 7:
             skip("not in requested posting date")
             continue
         if raw_title in failed_detail_titles:

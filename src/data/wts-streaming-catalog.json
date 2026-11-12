@@ -922,6 +922,73 @@
           "publishedAt": "2026-11-12T10:00:15+08:00"
         }
       ]
+    },
+    {
+      "id": "avengers-endgame-encore",
+      "title": "复仇者联盟4：终局之战·安可版",
+      "titleEn": "Avengers Endgame: Encore",
+      "year": 2026,
+      "synopsis": "Avengers Endgame: Encore。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Anthony Russo",
+        "Joe Russo"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "disney-plus",
+          "date": "2026-11-13",
+          "status": "announced",
+          "region": "美国",
+          "note": "Disney+ · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/avengers-endgame-encore-sets-disney-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-12T22:13:11+08:00"
+        }
+      ]
+    },
+    {
+      "id": "maddies-secret",
+      "title": "麦迪的秘密",
+      "titleEn": "Maddie's Secret",
+      "year": 2026,
+      "synopsis": "Maddie's Secret。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "John Early"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2026-11-27",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/maddies-secret-gets-netflix-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-12T22:13:11+08:00"
+        }
+      ]
     }
   ],
   "ceremonies": []

@@ -166,7 +166,7 @@ export function formatContentDates(text: string, now = new Date()): string {
 /** 上海日历周（周一起点）；绝不凭日期推断资源已核实。 */
 export function formatReleaseWeek(date: string, now = new Date()): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
-  if (!match) return formatDate(date, now) + "出源";
+  if (!match) return formatDate(date, now) + "上线";
   const target = Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
   const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
   const get = (t: Intl.DateTimeFormatPartTypes) => Number(parts.find(p => p.type === t)!.value);
@@ -174,11 +174,11 @@ export function formatReleaseWeek(date: string, now = new Date()): string {
   const monday = (d: number) => d - ((new Date(d).getUTCDay() + 6) % 7) * 86400000;
   const diff = (monday(target) - monday(today)) / (7 * 86400000);
   const weekday = "日一二三四五六"[new Date(target).getUTCDay()];
-  if (diff === 0) return `本周${weekday}出源`;
-  if (diff === 1) return `下周${weekday}出源`;
+  if (diff === 0) return `本周${weekday}上线`;
+  if (diff === 1) return `下周${weekday}上线`;
   const nextMonth = new Date(Date.UTC(get("year"), get("month"), 1));
   if (Number(match[1]) === nextMonth.getUTCFullYear() && Number(match[2]) === nextMonth.getUTCMonth() + 1) {
-    return `下个月${Number(match[3])}号出源`;
+    return `下个月${Number(match[3])}号上线`;
   }
-  return formatDate(date, now) + "出源";
+  return formatDate(date, now) + "上线";
 }

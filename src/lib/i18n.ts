@@ -502,10 +502,9 @@ export function sourceLabelEn(label?: string): string | undefined {
 export const BADGE_EN: Record<string, string> = {
   "新片": "New",
   "新品": "New",
-  "出资源": "Out now",
   "定档": "Dated",
   "已上线": "Streaming",
-  "出源计划": "Streaming planned",
+  "上线计划": "Streaming planned",
 };
 
 export function badgeEn(label?: string): string | undefined {

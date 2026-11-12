@@ -231,7 +231,7 @@ export function buildStreamingHeadline(opts: {
   }
   // announced：片名 · 日期（不写平台/地区/「已公布」）
   if (datePart) {
-    return `${title} · ${datePart}出源`;
+    return `${title} · ${datePart}上线`;
   }
   return title;
 }

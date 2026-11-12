@@ -467,8 +467,8 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
         ? RELEASE_STATUS_LABELS_EN[release.status]
         : RELEASE_STATUS_LABELS[release.status];
       const datePart = en ? formatDateEn(release.date) : formatDate(release.date);
-      // 日历经过不等于已核实资源：计划始终显示日期+出源，只有 peek 实证才标已上线。
-      const streamBadge = en ? "Streaming planned" : "出源计划";
+      // 日历经过不等于已核实资源：计划始终显示日期+上线，只有 peek 实证才标已上线。
+      const streamBadge = en ? "Streaming planned" : "上线计划";
 
       const headline = en
         ? buildStreamingHeadlineEn({ film, statusLabel, datePart })
@@ -558,7 +558,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       continue;
     }
     let badge = "新片";
-    if (/出资源|已出源|已上线|网盘可下|可下|WEB-DL|BDRip|压制/i.test(blob)) badge = "出资源";
+    if (/出资源|已出源|已上线|网盘可下|可下|WEB-DL|BDRip|压制/i.test(blob)) badge = "已上线";
     else if (/定档|将于.*上线|官宣.*上线/i.test(blob)) badge = "定档";
     else if (/上线|流出|熟肉|数字版|首发/i.test(blob)) badge = "已上线";
     else if (/critic|口碑|tomatometer|metacritic/i.test(blob)) continue; // 口碑不进时间线
@@ -617,7 +617,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       // detail 已并入 summary 时不再挂一份，避免详情页标题/摘要/正文三重重复
       detail: undefined,
       badge: en ? (verifiedResource ? "Out now" : badgeEn(badge) || badge) : verifiedResource ? "已上线" : badge,
-      accentColor: badge === "出资源" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
+      accentColor: badge === "已上线" ? "#34d399" : badge === "定档" ? "#38bdf8" : "#a78bfa",
       directors: en ? personNamesEn(film.directors) : film.directors,
       filmKind: kind,
       sourceLabel: srcLabel,

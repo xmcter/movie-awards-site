@@ -432,7 +432,8 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/Rr35Jdtwf",
     "weiboUrl": "https://m.weibo.cn/detail/Rr35Jdtwf",
-    "weiboLabel": "微博·爱看剧的小马达"
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "The Body + is now streaming"
   },
   {
     "id": "movie-peek-movie-douban-36085515-first-resource",
@@ -446,6 +447,97 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/Rr344E1By",
     "weiboUrl": "https://m.weibo.cn/detail/Rr344E1By",
-    "weiboLabel": "微博·不知名压制小人z"
+    "weiboLabel": "微博·不知名压制小人z",
+    "summaryEn": "Miracles of the ER is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-36131687-first-resource",
+    "filmId": "movie-douban-36131687",
+    "publishedAt": "2026-11-13T21:19:24+08:00",
+    "sourcePublishedAt": "2026-11-13T21:19:24+08:00",
+    "date": "2026-11-13",
+    "kind": "release",
+    "summary": "《冰释雪融》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrepVlCz7",
+    "weiboUrl": "https://m.weibo.cn/detail/RrepVlCz7",
+    "weiboLabel": "微博·OtisMilburn_",
+    "summaryEn": "El deshielo is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-37657498-first-resource",
+    "filmId": "movie-douban-37657498",
+    "publishedAt": "2026-11-13T20:29:51+08:00",
+    "sourcePublishedAt": "2026-11-13T20:29:51+08:00",
+    "date": "2026-11-13",
+    "kind": "release",
+    "summary": "《猛鬼乐园》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rre5Opdqk",
+    "weiboUrl": "https://m.weibo.cn/detail/Rre5Opdqk",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Kritsada Paradise is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-37515883-first-resource",
+    "filmId": "movie-douban-37515883",
+    "publishedAt": "2026-11-13T19:18:59+08:00",
+    "sourcePublishedAt": "2026-11-13T19:18:59+08:00",
+    "date": "2026-11-13",
+    "kind": "release",
+    "summary": "《心乡迷踪》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrdD36zym",
+    "weiboUrl": "https://m.weibo.cn/detail/RrdD36zym",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Heartland is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-37226713-first-resource",
+    "filmId": "movie-douban-37226713",
+    "publishedAt": "2026-11-13T19:14:55+08:00",
+    "sourcePublishedAt": "2026-11-13T19:14:55+08:00",
+    "date": "2026-11-13",
+    "kind": "release",
+    "summary": "《小春，屁股摇起来！》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrdBoprJg",
+    "weiboUrl": "https://m.weibo.cn/detail/RrdBoprJg",
+    "weiboLabel": "微博·找片大师伊万",
+    "summaryEn": "Ha-Chan, Shake Your Booty! is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-37219614-first-resource",
+    "filmId": "movie-douban-37219614",
+    "publishedAt": "2026-11-13T15:25:05+08:00",
+    "sourcePublishedAt": "2026-11-13T15:25:05+08:00",
+    "date": "2026-11-13",
+    "kind": "release",
+    "summary": "《成为休曼》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rrc66BDB9",
+    "weiboUrl": "https://m.weibo.cn/detail/Rrc66BDB9",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Being Heumann is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-37134880-first-resource",
+    "filmId": "movie-douban-37134880",
+    "publishedAt": "2026-11-13T14:56:40+08:00",
+    "sourcePublishedAt": "2026-11-13T14:56:40+08:00",
+    "date": "2026-11-13",
+    "kind": "release",
+    "summary": "《老千4：别西卜之歌》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrbUzmjJ5",
+    "weiboUrl": "https://m.weibo.cn/detail/RrbUzmjJ5",
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "Tazza: The Song of Beelzebub is now streaming."
   }
 ]

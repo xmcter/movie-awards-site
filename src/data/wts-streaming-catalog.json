@@ -976,7 +976,8 @@
           "publishedAt": "2026-11-12T10:00:15+08:00"
         }
       ],
-      "poster": "/posters/the-samurai-and-the-prisoner.jpg"
+      "poster": "/posters/the-samurai-and-the-prisoner.jpg",
+      "synopsisEn": "The Samurai and the Prisoner. Streaming date from When To Stream (US)."
     },
     {
       "id": "one-night-only",
@@ -1016,7 +1017,8 @@
         "count": 3273,
         "doubanId": "37233476",
         "updatedAt": "2026-11-13T10:51:35.272Z"
-      }
+      },
+      "synopsisEn": "One Night Only. Streaming date from When To Stream (US)."
     },
     {
       "id": "avengers-endgame-encore",
@@ -1051,7 +1053,8 @@
           "publishedAt": "2026-11-12T22:13:11+08:00"
         }
       ],
-      "poster": "/posters/avengers-endgame-encore.jpg"
+      "poster": "/posters/avengers-endgame-encore.jpg",
+      "synopsisEn": "Avengers Endgame: Encore. Streaming date from When To Stream (US)."
     },
     {
       "id": "maddies-secret",
@@ -1085,7 +1088,8 @@
           "publishedAt": "2026-11-12T22:13:11+08:00"
         }
       ],
-      "poster": "/posters/maddies-secret.jpg"
+      "poster": "/posters/maddies-secret.jpg",
+      "synopsisEn": "Maddie's Secret. Streaming date from When To Stream (US)."
     }
   ],
   "ceremonies": []

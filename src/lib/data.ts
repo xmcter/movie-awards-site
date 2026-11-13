@@ -179,6 +179,15 @@ export const FILM_ALIASES: Record<string, string> = {
   /** WTS 的 the-samurai-and-the-prisoner 与 Peek 的 movie-douban-38112572 是同一部《黑牢城》。
    *  规范页用有剧情、卡司和片长的 Peek 记录；WTS 记录只留定档。 */
   "the-samurai-and-the-prisoner": "movie-douban-38112572",
+  /** WON 的 kijsada-paradise 与 Peek 的 movie-douban-37657498 是同一部《猛鬼乐园》。
+   *  规范页用有剧情、卡司和片长的 Peek 记录；WON 记录只留 Netflix 定档。 */
+  "kijsada-paradise": "movie-douban-37657498",
+  /** WON 的 heartland 与 Peek 的 movie-douban-37515883 是同一部《心乡迷踪》。 */
+  "heartland": "movie-douban-37515883",
+  /** WTS 的 ha-chan-shake-your-booty 与 Peek 的 movie-douban-37226713 是同一部《小春，屁股摇起来！》。 */
+  "ha-chan-shake-your-booty": "movie-douban-37226713",
+  /** MotN 的 being-heumann 与 Peek 的 movie-douban-37219614 是同一部《成为休曼》。 */
+  "being-heumann": "movie-douban-37219614",
 };
 
 function usableDoubanRating(rating: Film["doubanRating"]): boolean {

@@ -24,7 +24,13 @@
         "#64748b"
       ],
       "streaming": [],
-      "poster": "/posters/look-back.jpg"
+      "poster": "/posters/look-back.jpg",
+      "doubanRating": {
+        "score": 7.9,
+        "count": 2963,
+        "doubanId": "37269723",
+        "updatedAt": "2026-11-13T10:09:35.369Z"
+      }
     },
     {
       "id": "possible-love",
@@ -164,7 +170,13 @@
           "note": "艺术院线/纪录片窗口待定"
         }
       ],
-      "poster": "/posters/naza.jpg"
+      "poster": "/posters/naza.jpg",
+      "doubanRating": {
+        "score": 8.5,
+        "count": 1831,
+        "doubanId": "38617828",
+        "updatedAt": "2026-11-13T10:10:06.106Z"
+      }
     },
     {
       "id": "company",
@@ -213,7 +225,13 @@
         "#38bdf8"
       ],
       "streaming": [],
-      "poster": "/posters/primetime.jpg"
+      "poster": "/posters/primetime.jpg",
+      "doubanRating": {
+        "score": 6.2,
+        "count": 5265,
+        "doubanId": "37087760",
+        "updatedAt": "2026-11-13T10:10:15.720Z"
+      }
     },
     {
       "id": "place-to-heal",
@@ -539,7 +557,13 @@
         "#f59e0b"
       ],
       "streaming": [],
-      "poster": "/posters/one-battle.jpg"
+      "poster": "/posters/one-battle.jpg",
+      "doubanRating": {
+        "score": 8,
+        "count": 274620,
+        "doubanId": "36176155",
+        "updatedAt": "2026-11-13T10:24:10.994Z"
+      }
     },
     {
       "id": "sinners",
@@ -564,7 +588,13 @@
         "#dc2626"
       ],
       "streaming": [],
-      "poster": "/posters/sinners.jpg"
+      "poster": "/posters/sinners.jpg",
+      "doubanRating": {
+        "score": 7.7,
+        "count": 125396,
+        "doubanId": "36742579",
+        "updatedAt": "2026-11-13T10:25:09.473Z"
+      }
     },
     {
       "id": "hamnet",
@@ -590,7 +620,13 @@
         "#c4b5fd"
       ],
       "streaming": [],
-      "poster": "/posters/hamnet.jpg"
+      "poster": "/posters/hamnet.jpg",
+      "doubanRating": {
+        "score": 7.8,
+        "count": 62012,
+        "doubanId": "35618471",
+        "updatedAt": "2026-11-13T10:25:12.392Z"
+      }
     },
     {
       "id": "weapons",
@@ -613,7 +649,13 @@
         "#f87171"
       ],
       "streaming": [],
-      "poster": "/posters/weapons.jpg"
+      "poster": "/posters/weapons.jpg",
+      "doubanRating": {
+        "score": 6.8,
+        "count": 65451,
+        "doubanId": "36221247",
+        "updatedAt": "2026-11-13T10:25:15.991Z"
+      }
     },
     {
       "id": "sentimental-value",
@@ -638,7 +680,13 @@
         "#7dd3fc"
       ],
       "streaming": [],
-      "poster": "/posters/sentimental-value.jpg"
+      "poster": "/posters/sentimental-value.jpg",
+      "doubanRating": {
+        "score": 7.6,
+        "count": 51693,
+        "doubanId": "36413501",
+        "updatedAt": "2026-11-13T10:25:18.839Z"
+      }
     },
     {
       "id": "kpop-demon-hunters",
@@ -660,7 +708,13 @@
         "#f472b6"
       ],
       "streaming": [],
-      "poster": "/posters/kpop-demon-hunters.jpg"
+      "poster": "/posters/kpop-demon-hunters.jpg",
+      "doubanRating": {
+        "score": 6.4,
+        "count": 37899,
+        "doubanId": "35391124",
+        "updatedAt": "2026-11-13T10:25:22.285Z"
+      }
     }
   ],
   "ceremonies": [

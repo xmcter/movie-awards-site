@@ -430,7 +430,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Shu Qi's feature screenwriting and directorial debut. In late-1980s Taipei, an introverted teenage girl tries to escape domestic violence. Venice 82 main competition; Busan 30 Best Director. Nominated for Best Narrative Feature and Best New Director at the 63rd Golden Horse Awards.",
-      "poster": "/posters/girl-shuqi.jpg"
+      "poster": "/posters/girl-shuqi.jpg",
+      "doubanRating": {
+        "score": 7.2,
+        "count": 41307,
+        "doubanId": "36986482",
+        "updatedAt": "2026-11-13T10:34:25.999Z"
+      }
     },
     {
       "id": "double-happiness",
@@ -487,7 +493,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Yeung Leung-chuen. Starring Yeung Wai-lun and Chung Suet-ying. Nominated for Best Narrative Feature, Best New Director, Best Actor and Best Actress at the 63rd Golden Horse Awards.",
-      "poster": "/posters/we-are-born-good.jpg"
+      "poster": "/posters/we-are-born-good.jpg",
+      "doubanRating": {
+        "score": 7.9,
+        "count": 1025,
+        "doubanId": "37114070",
+        "updatedAt": "2026-11-13T10:34:38.776Z"
+      }
     },
     {
       "id": "arrested-memory",
@@ -516,7 +528,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by SABU. Starring Ethan Juan. Nominated for Best Narrative Feature, Best Director and Best Actor at the 63rd Golden Horse Awards.",
-      "poster": "/posters/arrested-memory.jpg"
+      "poster": "/posters/arrested-memory.jpg",
+      "doubanRating": {
+        "score": 7.2,
+        "count": 252,
+        "doubanId": "37514158",
+        "updatedAt": "2026-11-13T10:34:41.557Z"
+      }
     },
     {
       "id": "we-are-all-strangers",
@@ -544,7 +562,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Anthony Chen. Starring Yeo Yann Yann. Berlin 76 main competition; nominated for Best Narrative Feature, Best Director and Best Actress at the 63rd Golden Horse Awards.",
-      "poster": "/posters/we-are-all-strangers.jpg"
+      "poster": "/posters/we-are-all-strangers.jpg",
+      "doubanRating": {
+        "score": 5.8,
+        "count": 1151,
+        "doubanId": "35328629",
+        "updatedAt": "2026-11-13T10:34:45.256Z"
+      }
     },
     {
       "id": "age-of-goodbyes",
@@ -598,7 +622,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Herman Yau. Nominated for Best Director at the 63rd Golden Horse Awards.",
-      "poster": "/posters/were-nothing-at-all.jpg"
+      "poster": "/posters/were-nothing-at-all.jpg",
+      "doubanRating": {
+        "score": 7.1,
+        "count": 1352,
+        "doubanId": "37421915",
+        "updatedAt": "2026-11-13T10:34:57.773Z"
+      }
     },
     {
       "id": "sunshine-womens-choir",
@@ -623,7 +653,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Weng Chien-yu returns to the Golden Horse race after many years with a Best Supporting Actress nomination. Best Supporting Actress at the 63rd Golden Horse Awards.",
-      "poster": "/posters/sunshine-womens-choir.jpg"
+      "poster": "/posters/sunshine-womens-choir.jpg",
+      "doubanRating": {
+        "score": 7.3,
+        "count": 40233,
+        "doubanId": "37193250",
+        "updatedAt": "2026-11-13T10:55:45.802Z"
+      }
     },
     {
       "id": "midday-meal",
@@ -704,7 +740,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Léa Mysius. A birthday party is interrupted by intruders. Starring Hafsia Herzi, Benoît Magimel, Bastien Bouillon and Monica Bellucci. French title Histoires de la nuit. In Competition at the 79th Cannes Film Festival.",
-      "poster": "/posters/birthday-party-mysius.jpg"
+      "poster": "/posters/birthday-party-mysius.jpg",
+      "doubanRating": {
+        "score": 4.7,
+        "count": 211,
+        "doubanId": "36603390",
+        "updatedAt": "2026-11-13T10:39:11.010Z"
+      }
     },
     {
       "id": "the-man-i-love",
@@ -733,7 +775,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Ira Sachs. Starring Rami Malek, Tom Sturridge, Luther Ford and Rebecca Hall. A musical fantasia set in late-1980s New York, a city under siege. In Competition at the 79th Cannes Film Festival.",
-      "poster": "/posters/the-man-i-love.jpg"
+      "poster": "/posters/the-man-i-love.jpg",
+      "doubanRating": {
+        "score": 5.4,
+        "count": 298,
+        "doubanId": "37494774",
+        "updatedAt": "2026-11-13T10:36:29.440Z"
+      }
     },
     {
       "id": "the-unknown-harari",
@@ -760,7 +808,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Arthur Harari. A photographer (Niels Schneider) cannot take his eyes off a woman (Léa Seydoux), and wakes the next morning to find himself living inside her body. French title L'Inconnue. In Competition at the 79th Cannes Film Festival.",
-      "poster": "/posters/the-unknown-harari.jpg"
+      "poster": "/posters/the-unknown-harari.jpg",
+      "doubanRating": {
+        "score": 5.9,
+        "count": 288,
+        "doubanId": "36575610",
+        "updatedAt": "2026-11-13T10:39:22.465Z"
+      }
     },
     {
       "id": "a-womans-life",
@@ -940,7 +994,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Leïla Bouzid. Lilia returns from Paris to Tunisia, determined to uncover the mystery of her uncle's sudden death. Starring Eya Boutra, Hiam Abbass and Marion Barbeau. In Competition at the 76th Berlin Film Festival.",
-      "poster": "/posters/in-a-whisper.jpg"
+      "poster": "/posters/in-a-whisper.jpg",
+      "doubanRating": {
+        "score": 6.6,
+        "count": 494,
+        "doubanId": "36900843",
+        "updatedAt": "2026-11-13T10:40:28.821Z"
+      }
     },
     {
       "id": "josephine",
@@ -1025,7 +1085,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Fernando Eimbcke. In a Mexico City apartment building, Olga—whose life runs with rigid routine—rents out a room for much-needed cash; the tenant secretly brings in his nine-year-old son, and she unexpectedly forms a bond with the boy. Starring Tracie T. Sánchez and Bastián Escobar. Main Competition, 76th Berlin Film Festival.",
-      "poster": "/posters/flies-eimbcke.jpg"
+      "poster": "/posters/flies-eimbcke.jpg",
+      "doubanRating": {
+        "score": 6.5,
+        "count": 911,
+        "doubanId": "37242752",
+        "updatedAt": "2026-11-13T10:41:14.586Z"
+      }
     },
     {
       "id": "my-wife-cries",
@@ -1054,7 +1120,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Angela Schanelec. A couple in Berlin: crane operator Thomas waits for a call from kindergarten teacher Karla. He finds her and sits with her until she is ready to go home; on the walk back, a secret comes between them. Starring Vladimir Vulević and Agathe Bonitzer. Main Competition, 76th Berlin Film Festival.",
-      "poster": "/posters/my-wife-cries.jpg"
+      "poster": "/posters/my-wife-cries.jpg",
+      "doubanRating": {
+        "score": 6.8,
+        "count": 310,
+        "doubanId": "36950814",
+        "updatedAt": "2026-11-13T10:41:22.064Z"
+      }
     },
     {
       "id": "a-new-dawn",
@@ -1115,7 +1187,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Hanna Bergholm. Sedi Hara and Rupert Grint play a couple who move back to a childhood home in the Finnish forest to start a family; after the child is born, only the mother senses something is wrong. Main Competition, 76th Berlin Film Festival.",
-      "poster": "/posters/nightborn.jpg"
+      "poster": "/posters/nightborn.jpg",
+      "doubanRating": {
+        "score": 5.5,
+        "count": 739,
+        "doubanId": "36661776",
+        "updatedAt": "2026-11-13T10:41:39.471Z"
+      }
     },
     {
       "id": "rosebush-pruning",
@@ -1207,7 +1285,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Warwick Thornton, set in the same world as his 2017 film Sweet Country. On Australia's colonial frontier in the 1930s, two outlaws burst into a mining town; an Aboriginal brother and sister forced to work the mine escape their white overseer and cross the central desert searching for the way home. Starring Deborah Mailman. International Premiere, Main Competition, 76th Berlin Film Festival.",
-      "poster": "/posters/wolfram.jpg"
+      "poster": "/posters/wolfram.jpg",
+      "doubanRating": {
+        "score": 5.8,
+        "count": 128,
+        "doubanId": "37339827",
+        "updatedAt": "2026-11-13T10:42:20.474Z"
+      }
     },
     {
       "id": "yo-rebellious-bird",
@@ -1513,7 +1597,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Directed by Chi Chia-ching, produced by Angelica Lee and Wong Lai-lam. Ah Zhong, newly released from prison, returns to a Malaysian fishing village and meets Xue, kept locked away by her family in a stilt house. Starring Chen Tse-yao and Li Mu. Taiwan release on November 13, 2026. Nominated for Best Actor (Chen Tse-yao) at the 63rd Golden Horse Awards.",
-      "poster": "/posters/dead-tide.jpg"
+      "poster": "/posters/dead-tide.jpg",
+      "doubanRating": {
+        "score": 5.2,
+        "count": 305,
+        "doubanId": "37207215",
+        "updatedAt": "2026-11-13T10:44:52.073Z"
+      }
     },
     {
       "id": "afterpiece",
@@ -1602,7 +1692,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Written and directed by Hong Yu-jie as her feature debut, drawn from her own childhood. In a 1990s Singapore HDB flat, a seven-year-old girl faces her parents' separation. Starring Wang Xuan-jing, Wang Xue-qi, and Huang Si-tian. Won the Young Jury Award at the 2026 Rotterdam Film Festival. Nominated for Best New Director (Hong Yu-jie) at the 63rd Golden Horse Awards.",
-      "poster": "/posters/ah-girl.jpg"
+      "poster": "/posters/ah-girl.jpg",
+      "doubanRating": {
+        "score": 8.5,
+        "count": 1907,
+        "doubanId": "37030720",
+        "updatedAt": "2026-11-13T10:45:05.912Z"
+      }
     },
     {
       "id": "mudborn",
@@ -1633,7 +1729,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Xie Meng-ru's first narrative feature. Starring Yang Yu-ning, Cai Si-yun, Zhang Xuan-rui, Guo Xue-fu, and Zhou Cai-shi. Taiwan release on October 9, 2025. Nominated for Best New Director (Xie Meng-ru), Best Visual Effects, and Best Action Choreography at the 63rd Golden Horse Awards.",
-      "poster": "/posters/mudborn.jpg"
+      "poster": "/posters/mudborn.jpg",
+      "doubanRating": {
+        "score": 5.6,
+        "count": 10337,
+        "doubanId": "37474018",
+        "updatedAt": "2026-11-13T10:45:09.209Z"
+      }
     }
   ],
   "ceremonies": []

@@ -12,6 +12,7 @@ import FilmPoster from "./FilmPoster";
 import {
   FILM_ALIASES,
   films,
+  doubanRatingOf,
   getFilm,
   getFilmEvents,
   getVerifiedFilmAwards,
@@ -188,6 +189,7 @@ export default async function FilmPage({
   const thumb = film.poster ? thumbForPoster(film.poster) : undefined;
   const { plot, background } = splitFilmCopy(film);
   const verifiedAwards = getVerifiedFilmAwards(film.id);
+  const douban = doubanRatingOf(film);
   const peopleLabel =
     film.directors.length > 0
       ? "导演"
@@ -251,6 +253,11 @@ export default async function FilmPage({
             </h1>
             {film.titleEn ? (
               <p className="mt-1 text-sm text-cinema-muted">{film.titleEn}</p>
+            ) : null}
+            {douban ? (
+              <p className="mt-2 text-sm text-cinema-muted" data-douban-rating={douban.score.toFixed(1)}>
+                ⭐ 豆瓣 <span className="font-medium tabular-nums text-cinema-text">{douban.score.toFixed(1)}</span>
+              </p>
             ) : null}
             {film.runtime ? (
               <p className="mt-3 text-xs text-cinema-muted/70">

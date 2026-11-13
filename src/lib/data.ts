@@ -181,6 +181,29 @@ export const FILM_ALIASES: Record<string, string> = {
   "the-samurai-and-the-prisoner": "movie-douban-38112572",
 };
 
+function usableDoubanRating(rating: Film["doubanRating"]): boolean {
+  return Boolean(
+    rating &&
+      typeof rating.score === "number" &&
+      Number.isFinite(rating.score) &&
+      rating.score > 0,
+  );
+}
+
+/**
+ * 影片页要展示的豆瓣分。别名页会跳到规范页，规范页自己没分时，
+ * 借用指向它的那条记录上的分数（分数仍写在各自所属的 catalog 里）。
+ */
+export function doubanRatingOf(film: Film): Film["doubanRating"] | undefined {
+  if (usableDoubanRating(film.doubanRating)) return film.doubanRating;
+  for (const other of films) {
+    if (FILM_ALIASES[other.id] === film.id && usableDoubanRating(other.doubanRating)) {
+      return other.doubanRating;
+    }
+  }
+  return undefined;
+}
+
 /** 质量闸人工放行名单：用户 2026-11-13 定，B.1 建议的 8 部全放行（按片 id，不改闸本身）。
  *  只放质量分与纪录片/剧集这两关；新片年窗仍硬卡。 */
 export const STREAMING_ALLOWLIST = new Set([
@@ -564,6 +587,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
         filmTitle: en ? filmTitleEn(canonicalFilm) : canonicalFilm.title,
         filmTitleEn: canonicalFilm.titleEn,
         filmYear: canonicalFilm.year,
+        doubanScore: doubanRatingOf(canonicalFilm)?.score,
         poster: withBase(canonicalFilm.poster),
         posterColors: canonicalFilm.posterColors,
         headline,
@@ -657,6 +681,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       filmTitle: en ? filmTitleEn(film) : film.title,
       filmTitleEn: film.titleEn,
       filmYear: film.year,
+      doubanScore: doubanRatingOf(film)?.score,
       poster: withBase(film.poster),
       posterColors: film.posterColors,
       headline,

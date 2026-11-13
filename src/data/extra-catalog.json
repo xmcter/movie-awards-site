@@ -68,7 +68,13 @@
         "#fca5a5"
       ],
       "streaming": [],
-      "poster": "/posters/hope-na.jpg"
+      "poster": "/posters/hope-na.jpg",
+      "doubanRating": {
+        "score": 5.5,
+        "count": 30321,
+        "doubanId": "36179101",
+        "updatedAt": "2026-11-13T10:25:49.658Z"
+      }
     },
     {
       "id": "bitter-christmas",
@@ -91,7 +97,13 @@
         "#fb7185"
       ],
       "streaming": [],
-      "poster": "/posters/bitter-christmas.jpg"
+      "poster": "/posters/bitter-christmas.jpg",
+      "doubanRating": {
+        "score": 6.7,
+        "count": 3534,
+        "doubanId": "36690639",
+        "updatedAt": "2026-11-13T10:25:55.976Z"
+      }
     },
     {
       "id": "paper-tiger",
@@ -137,7 +149,13 @@
         "#86efac"
       ],
       "streaming": [],
-      "poster": "/posters/parallel-tales.jpg"
+      "poster": "/posters/parallel-tales.jpg",
+      "doubanRating": {
+        "score": 6.5,
+        "count": 1513,
+        "doubanId": "37296242",
+        "updatedAt": "2026-11-13T10:26:06.570Z"
+      }
     },
     {
       "id": "moulin",
@@ -183,7 +201,13 @@
         "#fdba74"
       ],
       "streaming": [],
-      "poster": "/posters/the-beloved.jpg"
+      "poster": "/posters/the-beloved.jpg",
+      "doubanRating": {
+        "score": 6.3,
+        "count": 1044,
+        "doubanId": "37055925",
+        "updatedAt": "2026-11-13T10:26:13.118Z"
+      }
     },
     {
       "id": "you-dont-belong-here",
@@ -336,7 +360,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Grand Jury Prize at the Golden Goblet Awards of the 28th Shanghai International Film Festival.",
-      "poster": "/posters/glimmer-girl.jpg"
+      "poster": "/posters/glimmer-girl.jpg",
+      "doubanRating": {
+        "score": 6.6,
+        "count": 287,
+        "doubanId": "35880812",
+        "updatedAt": "2026-11-13T10:27:17.581Z"
+      }
     },
     {
       "id": "halima",
@@ -362,7 +392,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Best Director and Best Actress at the Golden Goblet Awards of the 28th Shanghai International Film Festival.",
-      "poster": "/posters/halima.jpg"
+      "poster": "/posters/halima.jpg",
+      "doubanRating": {
+        "score": 6.8,
+        "count": 184,
+        "doubanId": "37656682",
+        "updatedAt": "2026-11-13T10:27:25.230Z"
+      }
     },
     {
       "id": "box-mystery",
@@ -409,7 +445,13 @@
         "#fdba74"
       ],
       "streaming": [],
-      "poster": "/posters/salvation.jpg"
+      "poster": "/posters/salvation.jpg",
+      "doubanRating": {
+        "score": 6.5,
+        "count": 655,
+        "doubanId": "36948305",
+        "updatedAt": "2026-11-13T10:27:31.665Z"
+      }
     },
     {
       "id": "queen-at-sea",
@@ -436,7 +478,13 @@
         "#38bdf8"
       ],
       "streaming": [],
-      "poster": "/posters/queen-at-sea.jpg"
+      "poster": "/posters/queen-at-sea.jpg",
+      "doubanRating": {
+        "score": 7.9,
+        "count": 4682,
+        "doubanId": "35765242",
+        "updatedAt": "2026-11-13T10:27:40.400Z"
+      }
     },
     {
       "id": "everybody-digs-bill-evans",
@@ -509,7 +557,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Best Screenplay at the 76th Berlin Film Festival.",
-      "poster": "/posters/nina-roza.jpg"
+      "poster": "/posters/nina-roza.jpg",
+      "doubanRating": {
+        "score": 6.3,
+        "count": 435,
+        "doubanId": "36473007",
+        "updatedAt": "2026-11-13T10:28:08.746Z"
+      }
     },
     {
       "id": "honorary-yeoh",
@@ -628,7 +682,13 @@
         "#fbbf24"
       ],
       "streaming": [],
-      "poster": "/posters/marty-supreme.jpg"
+      "poster": "/posters/marty-supreme.jpg",
+      "doubanRating": {
+        "score": 7.3,
+        "count": 44968,
+        "doubanId": "36691620",
+        "updatedAt": "2026-11-13T10:29:04.650Z"
+      }
     },
     {
       "id": "if-i-had-legs",
@@ -651,7 +711,13 @@
         "#fb7185"
       ],
       "streaming": [],
-      "poster": "/posters/if-i-had-legs.jpg"
+      "poster": "/posters/if-i-had-legs.jpg",
+      "doubanRating": {
+        "score": 7,
+        "count": 11914,
+        "doubanId": "36481186",
+        "updatedAt": "2026-11-13T10:29:15.974Z"
+      }
     },
     {
       "id": "a-foggy-tale",
@@ -723,7 +789,13 @@
         "#7dd3fc"
       ],
       "streaming": [],
-      "poster": "/posters/lucky-lu.jpg"
+      "poster": "/posters/lucky-lu.jpg",
+      "doubanRating": {
+        "score": 5.7,
+        "count": 753,
+        "doubanId": "37200693",
+        "updatedAt": "2026-11-13T10:29:59.915Z"
+      }
     },
     {
       "id": "mother-bhumi",
@@ -746,7 +818,13 @@
         "#a3e635"
       ],
       "streaming": [],
-      "poster": "/posters/mother-bhumi.jpg"
+      "poster": "/posters/mother-bhumi.jpg",
+      "doubanRating": {
+        "score": 7.1,
+        "count": 2252,
+        "doubanId": "37039108",
+        "updatedAt": "2026-11-13T10:30:02.769Z"
+      }
     },
     {
       "id": "family-matters",
@@ -770,7 +848,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Tseng Ching-li won Best Supporting Actor at the 62nd Golden Horse Awards.",
-      "poster": "/posters/family-matters.jpg"
+      "poster": "/posters/family-matters.jpg",
+      "doubanRating": {
+        "score": 7.1,
+        "count": 6171,
+        "doubanId": "36093535",
+        "updatedAt": "2026-11-13T10:30:06.436Z"
+      }
     }
   ],
   "ceremonies": [

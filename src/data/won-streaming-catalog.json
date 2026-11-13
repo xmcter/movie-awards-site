@@ -168,7 +168,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "doubanRating": {
+        "score": 6.5,
+        "count": 859,
+        "doubanId": "37042683",
+        "updatedAt": "2026-11-13T10:52:45.017Z"
+      }
     },
     {
       "id": "funny-money-the-dane-cook-story",
@@ -371,7 +377,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "doubanRating": {
+        "score": 5.6,
+        "count": 407,
+        "doubanId": "37062611",
+        "updatedAt": "2026-11-13T10:53:52.815Z"
+      }
     },
     {
       "id": "kijsada-paradise",
@@ -821,7 +833,13 @@
         }
       ],
       "poster": "/posters/gentle-monster.jpg",
-      "synopsisEn": "After a renowned pianist moves with her family to the countryside, she uncovers a life-altering truth and is forced to confront love, trust, and deception. Directed by Marie Kreutzer and starring Léa Seydoux and Catherine Deneuve."
+      "synopsisEn": "After a renowned pianist moves with her family to the countryside, she uncovers a life-altering truth and is forced to confront love, trust, and deception. Directed by Marie Kreutzer and starring Léa Seydoux and Catherine Deneuve.",
+      "doubanRating": {
+        "score": 6.1,
+        "count": 642,
+        "doubanId": "37269580",
+        "updatedAt": "2026-11-13T10:57:43.222Z"
+      }
     },
     {
       "id": "guarding-stars",
@@ -1127,7 +1145,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "doubanRating": {
+        "score": 8.2,
+        "count": 72031,
+        "doubanId": "36916000",
+        "updatedAt": "2026-11-13T10:59:53.466Z"
+      }
     },
     {
       "id": "a-cherry-pie-christmas",
@@ -1263,7 +1287,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "doubanRating": {
+        "score": 6.9,
+        "count": 53041,
+        "doubanId": "36806351",
+        "updatedAt": "2026-11-13T10:59:34.240Z"
+      }
     },
     {
       "id": "papa-zola-the-movie",
@@ -1399,7 +1429,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/you-me-tuscany.jpg"
+      "poster": "/posters/you-me-tuscany.jpg",
+      "doubanRating": {
+        "score": 5.4,
+        "count": 371,
+        "doubanId": "37294215",
+        "updatedAt": "2026-11-13T11:00:05.333Z"
+      }
     },
     {
       "id": "permafrost",

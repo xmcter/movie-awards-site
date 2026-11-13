@@ -82,6 +82,23 @@ export interface Film {
   poster?: string;
   posterColors?: [string, string];
   streaming: StreamingRelease[];
+  /**
+   * 豆瓣评分。构建前由 scripts/fill-douban-ratings.mjs 补在影片所属 catalog 上。
+   * 没有评分就不写这个字段，页面也不显示占位。
+   */
+  doubanRating?: DoubanRating;
+}
+
+/** 豆瓣评分。只存分数相关字段，不混入导演、演员或简介。 */
+export interface DoubanRating {
+  /** 豆瓣评分（10 分制）。0 表示暂无评分，脚本不写入。 */
+  score: number;
+  /** 评分人数 */
+  count: number;
+  /** 豆瓣 subject id */
+  doubanId: string;
+  /** 抓取时间，ISO 8601 */
+  updatedAt: string;
 }
 
 export interface CategoryNomination {
@@ -159,6 +176,8 @@ export interface TimelineEvent {
   filmTitle: string;
   filmTitleEn?: string;
   filmYear?: number;
+  /** 豆瓣评分。没有分就不设，时间线不占位。 */
+  doubanScore?: number;
   poster?: string;
   posterColors?: [string, string];
   /** 醒目新闻标题（列表 h2） */

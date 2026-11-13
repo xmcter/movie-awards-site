@@ -85,7 +85,13 @@
       "#78716c"
     ],
     "streaming": [],
-    "poster": "/posters/wild-horse-nine.jpg"
+    "poster": "/posters/wild-horse-nine.jpg",
+    "doubanRating": {
+      "score": 8.3,
+      "count": 1042,
+      "doubanId": "35641228",
+      "updatedAt": "2026-11-13T10:00:21.132Z"
+    }
   },
   {
     "id": "honorary-clooney",
@@ -221,7 +227,13 @@
         "region": "部分地区"
       }
     ],
-    "poster": "/posters/fjord.jpg"
+    "poster": "/posters/fjord.jpg",
+    "doubanRating": {
+      "score": 8,
+      "count": 4933,
+      "doubanId": "37168181",
+      "updatedAt": "2026-11-13T10:00:24.263Z"
+    }
   },
   {
     "id": "minotaur",
@@ -245,7 +257,13 @@
       "#7f1d1d"
     ],
     "streaming": [],
-    "poster": "/posters/minotaur.jpg"
+    "poster": "/posters/minotaur.jpg",
+    "doubanRating": {
+      "score": 7,
+      "count": 892,
+      "doubanId": "37291549",
+      "updatedAt": "2026-11-13T10:00:27.715Z"
+    }
   },
   {
     "id": "the-dreamed-adventure",
@@ -268,7 +286,13 @@
       "#365314"
     ],
     "streaming": [],
-    "poster": "/posters/the-dreamed-adventure.jpg"
+    "poster": "/posters/the-dreamed-adventure.jpg",
+    "doubanRating": {
+      "score": 6.7,
+      "count": 361,
+      "doubanId": "35954702",
+      "updatedAt": "2026-11-13T10:00:30.726Z"
+    }
   },
   {
     "id": "the-black-ball",
@@ -292,7 +316,13 @@
       "#374151"
     ],
     "streaming": [],
-    "poster": "/posters/the-black-ball.jpg"
+    "poster": "/posters/the-black-ball.jpg",
+    "doubanRating": {
+      "score": 8.7,
+      "count": 30820,
+      "doubanId": "37215318",
+      "updatedAt": "2026-11-13T10:00:34.891Z"
+    }
   },
   {
     "id": "fatherland",
@@ -316,7 +346,13 @@
       "#334155"
     ],
     "streaming": [],
-    "poster": "/posters/fatherland.jpg"
+    "poster": "/posters/fatherland.jpg",
+    "doubanRating": {
+      "score": 7.7,
+      "count": 5107,
+      "doubanId": "37487816",
+      "updatedAt": "2026-11-13T10:00:39.942Z"
+    }
   },
   {
     "id": "all-of-a-sudden",
@@ -341,7 +377,13 @@
       "#7c3aed"
     ],
     "streaming": [],
-    "poster": "/posters/all-of-a-sudden.jpg"
+    "poster": "/posters/all-of-a-sudden.jpg",
+    "doubanRating": {
+      "score": 7.7,
+      "count": 7487,
+      "doubanId": "37342630",
+      "updatedAt": "2026-11-13T10:00:44.107Z"
+    }
   },
   {
     "id": "coward",
@@ -381,7 +423,13 @@
     ],
     "streaming": [],
     "poster": "/posters/coward.jpg",
-    "runtime": 120
+    "runtime": 120,
+    "doubanRating": {
+      "score": 7.5,
+      "count": 2358,
+      "doubanId": "37148241",
+      "updatedAt": "2026-11-13T10:00:49.157Z"
+    }
   },
   {
     "id": "our-redemption",
@@ -404,7 +452,13 @@
       "#475569"
     ],
     "streaming": [],
-    "poster": "/posters/our-redemption.jpg"
+    "poster": "/posters/our-redemption.jpg",
+    "doubanRating": {
+      "score": 6.7,
+      "count": 558,
+      "doubanId": "36660162",
+      "updatedAt": "2026-11-13T10:05:29.651Z"
+    }
   },
   {
     "id": "yellow-letters",
@@ -432,7 +486,13 @@
         "status": "estimated"
       }
     ],
-    "poster": "/posters/yellow-letters.jpg"
+    "poster": "/posters/yellow-letters.jpg",
+    "doubanRating": {
+      "score": 6.9,
+      "count": 1264,
+      "doubanId": "35740374",
+      "updatedAt": "2026-11-13T10:05:38.035Z"
+    }
   },
   {
     "id": "two-seasons-two-strangers",
@@ -455,7 +515,13 @@
       "#0f766e"
     ],
     "streaming": [],
-    "poster": "/posters/two-seasons-two-strangers.jpg"
+    "poster": "/posters/two-seasons-two-strangers.jpg",
+    "doubanRating": {
+      "score": 7.1,
+      "count": 10853,
+      "doubanId": "37227650",
+      "updatedAt": "2026-11-13T10:05:43.609Z"
+    }
   },
   {
     "id": "los-domingos",
@@ -478,7 +544,13 @@
       "#4338ca"
     ],
     "streaming": [],
-    "poster": "/posters/los-domingos.jpg"
+    "poster": "/posters/los-domingos.jpg",
+    "doubanRating": {
+      "score": 6.9,
+      "count": 716,
+      "doubanId": "36898818",
+      "updatedAt": "2026-11-13T10:01:10.573Z"
+    }
   },
   {
     "id": "black-red-yellow",
@@ -501,7 +573,13 @@
       "#ca8a04"
     ],
     "streaming": [],
-    "poster": "/posters/black-red-yellow.jpg"
+    "poster": "/posters/black-red-yellow.jpg",
+    "doubanRating": {
+      "score": 6.8,
+      "count": 850,
+      "doubanId": "37374404",
+      "updatedAt": "2026-11-13T10:05:48.960Z"
+    }
   },
   {
     "id": "palestine-36",
@@ -524,7 +602,13 @@
       "#166534"
     ],
     "streaming": [],
-    "poster": "/posters/palestine-36.jpg"
+    "poster": "/posters/palestine-36.jpg",
+    "doubanRating": {
+      "score": 6.6,
+      "count": 789,
+      "doubanId": "36472989",
+      "updatedAt": "2026-11-13T10:01:18.880Z"
+    }
   },
   {
     "id": "gloaming-in-luomu",
@@ -579,7 +663,13 @@
       "#8a6a2f"
     ],
     "streaming": [],
-    "poster": "/posters/the-odyssey.jpg"
+    "poster": "/posters/the-odyssey.jpg",
+    "doubanRating": {
+      "score": 8.6,
+      "count": 583646,
+      "doubanId": "36808876",
+      "updatedAt": "2026-11-13T10:05:51.876Z"
+    }
   },
   {
     "id": "digger",
@@ -611,7 +701,13 @@
       "#7c2d12"
     ],
     "streaming": [],
-    "poster": "/posters/digger.jpg"
+    "poster": "/posters/digger.jpg",
+    "doubanRating": {
+      "score": 6.9,
+      "count": 1804,
+      "doubanId": "36783248",
+      "updatedAt": "2026-11-13T10:05:58.555Z"
+    }
   },
   {
     "id": "the-housewife",

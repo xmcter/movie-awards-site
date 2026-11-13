@@ -603,6 +603,11 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
                             {en ? "New" : "新"}
                           </span>
                         ) : null}
+                        {event.doubanScore && event.doubanScore > 0 ? (
+                          <span className="tabular-nums" data-douban-rating={event.doubanScore.toFixed(1)}>
+                            ⭐ {event.doubanScore.toFixed(1)} {en ? "Douban" : "豆瓣"}
+                          </span>
+                        ) : null}
                         {isBlocked ? (
                           <span className="rounded bg-cinema-elevated px-1.5 py-0.5 text-[10px] text-cinema-gold">
                             {en ? "Blocked" : "已屏蔽"}

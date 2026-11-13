@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FILM_ALIASES, films } from "@/lib/data";
+import { FILM_ALIASES, doubanRatingOf, films } from "@/lib/data";
 import { bilingualAlternatesEn, filmTitleEn } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -48,7 +48,9 @@ export default function FilmsPageEn() {
         </p>
       </header>
       <ul className="space-y-2">
-        {list.map((film) => (
+        {list.map((film) => {
+          const douban = doubanRatingOf(film);
+          return (
           <li
             key={film.id}
             className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3"
@@ -61,9 +63,15 @@ export default function FilmsPageEn() {
               <span className="ml-2 text-xs text-cinema-muted">
                 {film.year}
               </span>
+              {douban ? (
+                <span className="ml-2 text-xs tabular-nums text-cinema-muted" data-douban-rating={douban.score.toFixed(1)}>
+                  ⭐ {douban.score.toFixed(1)} Douban
+                </span>
+              ) : null}
             </Link>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </div>
   );

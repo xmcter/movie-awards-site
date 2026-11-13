@@ -10,6 +10,7 @@
     "lint": "next lint",
     "validate": "node scripts/validate-data.mjs",
     "test:timeline": "node scripts/test-timeline-publication.cjs",
+    "fill-douban": "node scripts/fill-douban-ratings.mjs",
     "prebuild": "node scripts/build-thumbnails.mjs",
     "postbuild": "node scripts/fix-en-lang.mjs"
   },

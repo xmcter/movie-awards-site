@@ -1,0 +1,3966 @@
+{
+  "23788377": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:44:49.024Z",
+    "status": "no_score",
+    "doubanId": "23788377",
+    "title": "功夫",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "26991057": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:47.163Z",
+    "status": "rated",
+    "doubanId": "26991057",
+    "title": "白痴们",
+    "originalTitle": "Idiots",
+    "year": "2026",
+    "score": 5.1,
+    "count": 378
+  },
+  "30145677": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:05:06.547Z",
+    "status": "no_score",
+    "doubanId": "30145677",
+    "title": "青春共体",
+    "originalTitle": "The Body",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "30290831": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:06:21.380Z",
+    "status": "no_score",
+    "doubanId": "30290831",
+    "title": "阿方索的微笑",
+    "originalTitle": "Afonso's Smile",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "34846514": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:52.136Z",
+    "status": "rated",
+    "doubanId": "34846514",
+    "title": "蜘蛛夫人：超感觉醒",
+    "originalTitle": "Madame Web",
+    "year": "2024",
+    "score": 4.5,
+    "count": 32457
+  },
+  "35190085": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:46:02.762Z",
+    "status": "no_score",
+    "doubanId": "35190085",
+    "title": "超级骑警3",
+    "originalTitle": "Super Troopers 3",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "35233878": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:57.113Z",
+    "status": "rated",
+    "doubanId": "35233878",
+    "title": "巨蟒博尤纳",
+    "originalTitle": "Beware Boiúna",
+    "year": "2026",
+    "score": 4.8,
+    "count": 1440
+  },
+  "35328629": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:34:45.256Z",
+    "status": "rated",
+    "doubanId": "35328629",
+    "title": "我们不是陌生人",
+    "originalTitle": "We Are All Strangers",
+    "year": "2026",
+    "score": 5.8,
+    "count": 1151
+  },
+  "35384241": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:24:07.557Z",
+    "status": "no_score",
+    "doubanId": "35384241",
+    "title": "吾有其重",
+    "originalTitle": "Eu contez",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "35391124": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:22.285Z",
+    "status": "rated",
+    "doubanId": "35391124",
+    "title": "K-POP：猎魔女团",
+    "originalTitle": "K-Pop: Demon Hunters",
+    "year": "2025",
+    "score": 6.4,
+    "count": 37899
+  },
+  "35481044": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:30:36.088Z",
+    "status": "no_score",
+    "doubanId": "35481044",
+    "title": "混凝土家园",
+    "originalTitle": "Concrete Land",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "35618471": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:12.392Z",
+    "status": "rated",
+    "doubanId": "35618471",
+    "title": "哈姆奈特",
+    "originalTitle": "Hamnet",
+    "year": "2025",
+    "score": 7.8,
+    "count": 62012
+  },
+  "35641228": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:21.132Z",
+    "status": "rated",
+    "doubanId": "35641228",
+    "title": "野马九号",
+    "originalTitle": "Wild Horse Nine",
+    "year": "2026",
+    "score": 8.3,
+    "count": 1042
+  },
+  "35700981": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:47.247Z",
+    "status": "no_score",
+    "doubanId": "35700981",
+    "title": "在浪中",
+    "originalTitle": "In Waves",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "35740374": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:05:38.035Z",
+    "status": "rated",
+    "doubanId": "35740374",
+    "title": "告知信",
+    "originalTitle": "Gelbe Briefe",
+    "year": "2026",
+    "score": 6.9,
+    "count": 1264
+  },
+  "35765242": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:40.400Z",
+    "status": "rated",
+    "doubanId": "35765242",
+    "title": "茫然女王",
+    "originalTitle": "Queen At Sea",
+    "year": "2026",
+    "score": 7.9,
+    "count": 4682
+  },
+  "35863074": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:53.478Z",
+    "status": "rated",
+    "doubanId": "35863074",
+    "title": "复活男",
+    "originalTitle": "부활남",
+    "year": "2026",
+    "score": 5.5,
+    "count": 2262
+  },
+  "35880812": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:17.581Z",
+    "status": "rated",
+    "doubanId": "35880812",
+    "title": "微光女孩",
+    "originalTitle": "Iluminada",
+    "year": "2026",
+    "score": 6.6,
+    "count": 287
+  },
+  "35954702": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:30.726Z",
+    "status": "rated",
+    "doubanId": "35954702",
+    "title": "向往的冒险",
+    "originalTitle": "Das geträumte Abenteuer",
+    "year": "2026",
+    "score": 6.7,
+    "count": 361
+  },
+  "36085515": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:05:08.345Z",
+    "status": "no_score",
+    "doubanId": "36085515",
+    "title": "急诊室的奇迹",
+    "originalTitle": "急診室的奇蹟",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36093535": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:30:06.436Z",
+    "status": "rated",
+    "doubanId": "36093535",
+    "title": "我家的事",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 7.1,
+    "count": 6171
+  },
+  "36176155": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:24:10.994Z",
+    "status": "rated",
+    "doubanId": "36176155",
+    "title": "一战再战",
+    "originalTitle": "One Battle After Another",
+    "year": "2025",
+    "score": 8,
+    "count": 274620
+  },
+  "36179101": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:49.658Z",
+    "status": "rated",
+    "doubanId": "36179101",
+    "title": "希望",
+    "originalTitle": "HOPE",
+    "year": "2026",
+    "score": 5.5,
+    "count": 30321
+  },
+  "36219411": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:02:16.475Z",
+    "status": "rated",
+    "doubanId": "36219411",
+    "title": "像我这样的爱情",
+    "originalTitle": "像我這樣的愛情",
+    "year": "2025",
+    "score": 7.1,
+    "count": 8718
+  },
+  "36221247": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:15.991Z",
+    "status": "rated",
+    "doubanId": "36221247",
+    "title": "凶器",
+    "originalTitle": "Weapons",
+    "year": "2025",
+    "score": 6.8,
+    "count": 65451
+  },
+  "36244077": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:58:17.332Z",
+    "status": "no_score",
+    "doubanId": "36244077",
+    "title": "孩子",
+    "originalTitle": "The Child",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36318703": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:48:07.933Z",
+    "status": "rated",
+    "doubanId": "36318703",
+    "title": "逃出绝命街",
+    "originalTitle": "The End of Oak Street",
+    "year": "2026",
+    "score": 5.5,
+    "count": 26206
+  },
+  "36413501": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:18.839Z",
+    "status": "rated",
+    "doubanId": "36413501",
+    "title": "情感价值",
+    "originalTitle": "Affeksjonsverdi",
+    "year": "2025",
+    "score": 7.6,
+    "count": 51693
+  },
+  "36423237": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:01:29.479Z",
+    "status": "no_score",
+    "doubanId": "36423237",
+    "title": "马登",
+    "originalTitle": "Madden",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36472989": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:01:18.880Z",
+    "status": "rated",
+    "doubanId": "36472989",
+    "title": "巴勒斯坦36",
+    "originalTitle": "فلسطين ٣٦",
+    "year": "2025",
+    "score": 6.6,
+    "count": 789
+  },
+  "36473007": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:28:08.746Z",
+    "status": "rated",
+    "doubanId": "36473007",
+    "title": "尼娜与萝扎",
+    "originalTitle": "Nina Roza",
+    "year": "2026",
+    "score": 6.3,
+    "count": 435
+  },
+  "36481186": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:29:15.974Z",
+    "status": "rated",
+    "doubanId": "36481186",
+    "title": "如果有腿，我会踢你",
+    "originalTitle": "If I Had Legs I'd Kick You",
+    "year": "2025",
+    "score": 7,
+    "count": 11914
+  },
+  "36575610": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:39:22.465Z",
+    "status": "rated",
+    "doubanId": "36575610",
+    "title": "未知",
+    "originalTitle": "L'inconnue",
+    "year": "2026",
+    "score": 5.9,
+    "count": 288
+  },
+  "36600459": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:02:13.484Z",
+    "status": "rated",
+    "doubanId": "36600459",
+    "title": "捕风追影",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 8,
+    "count": 620256
+  },
+  "36603390": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:39:11.010Z",
+    "status": "rated",
+    "doubanId": "36603390",
+    "title": "夜之寓言",
+    "originalTitle": "Histoires De La Nuit",
+    "year": "2026",
+    "score": 4.7,
+    "count": 211
+  },
+  "36636777": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:46:35.542Z",
+    "status": "no_score",
+    "doubanId": "36636777",
+    "title": "如果我走了，谁会想念我",
+    "originalTitle": "If I Go, Will They Miss Me",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36660162": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:05:29.651Z",
+    "status": "rated",
+    "doubanId": "36660162",
+    "title": "我们的救赎",
+    "originalTitle": "Notre Salut",
+    "year": "2026",
+    "score": 6.7,
+    "count": 558
+  },
+  "36661776": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:41:39.471Z",
+    "status": "rated",
+    "doubanId": "36661776",
+    "title": "疑婴夜生",
+    "originalTitle": "Yön lapsi",
+    "year": "2026",
+    "score": 5.5,
+    "count": 739
+  },
+  "36671189": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:14.128Z",
+    "status": "no_score",
+    "doubanId": "36671189",
+    "title": "大西洋",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36690639": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:55.976Z",
+    "status": "rated",
+    "doubanId": "36690639",
+    "title": "苦涩的圣诞节",
+    "originalTitle": "Amarga Navidad",
+    "year": "2026",
+    "score": 6.7,
+    "count": 3534
+  },
+  "36691620": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:29:04.650Z",
+    "status": "rated",
+    "doubanId": "36691620",
+    "title": "至尊马蒂",
+    "originalTitle": "Marty Supreme",
+    "year": "2025",
+    "score": 7.3,
+    "count": 44968
+  },
+  "36728172": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:26:38.660Z",
+    "status": "no_score",
+    "doubanId": "36728172",
+    "title": "河岸",
+    "originalTitle": "A Margem do Rio",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36741380": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:31:37.919Z",
+    "status": "no_score",
+    "doubanId": "36741380",
+    "title": "生生之土",
+    "originalTitle": "Markens Grøde",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36742579": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:25:09.473Z",
+    "status": "rated",
+    "doubanId": "36742579",
+    "title": "罪人",
+    "originalTitle": "Sinners",
+    "year": "2025",
+    "score": 7.7,
+    "count": 125396
+  },
+  "36749525": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:10:13.289Z",
+    "status": "no_score",
+    "doubanId": "36749525",
+    "title": "寒夜来客",
+    "originalTitle": "Company",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36769429": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:06:03.353Z",
+    "status": "no_score",
+    "doubanId": "36769429",
+    "title": "某人的妻子",
+    "originalTitle": "The Housewife",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36783248": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:05:58.555Z",
+    "status": "rated",
+    "doubanId": "36783248",
+    "title": "挖掘者",
+    "originalTitle": "Digger",
+    "year": "2026",
+    "score": 6.9,
+    "count": 1804
+  },
+  "36791178": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:55.009Z",
+    "status": "rated",
+    "doubanId": "36791178",
+    "title": "汪汪队立大功大电影3：勇闯恐龙岛",
+    "originalTitle": "PAW Patrol: The Dino Movie",
+    "year": "2026",
+    "score": 7.1,
+    "count": 3730
+  },
+  "36803381": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:40:40.867Z",
+    "status": "no_score",
+    "doubanId": "36803381",
+    "title": "Josephine",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "36806351": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:59:34.240Z",
+    "status": "rated",
+    "doubanId": "36806351",
+    "title": "超级马力欧银河大电影",
+    "originalTitle": "The Super Mario Galaxy Movie",
+    "year": "2026",
+    "score": 6.9,
+    "count": 53041
+  },
+  "36808876": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:05:51.876Z",
+    "status": "rated",
+    "doubanId": "36808876",
+    "title": "奥德赛",
+    "originalTitle": "The Odyssey",
+    "year": "2026",
+    "score": 8.6,
+    "count": 583646
+  },
+  "36809602": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:39:25.945Z",
+    "status": "no_score",
+    "doubanId": "36809602",
+    "title": "一个女人的生活",
+    "originalTitle": "La vie d'une femme",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36809803": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:07:02.730Z",
+    "status": "no_score",
+    "doubanId": "36809803",
+    "title": "双重自由",
+    "originalTitle": "La Libertad Doble",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36828393": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:48:25.264Z",
+    "status": "rated",
+    "doubanId": "36828393",
+    "title": "野兽之心",
+    "originalTitle": "Heart of the Beast",
+    "year": "2026",
+    "score": 7.3,
+    "count": 31711
+  },
+  "36829902": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:54:20.568Z",
+    "status": "no_score",
+    "doubanId": "36829902",
+    "title": "天堂皇室2：皇家的提议",
+    "originalTitle": "A Royal Proposal: A Royal in Paradise II",
+    "year": "2024",
+    "score": 0,
+    "count": 0
+  },
+  "36847425": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:21:49.998Z",
+    "status": "rated",
+    "doubanId": "36847425",
+    "title": "可能的爱",
+    "originalTitle": "가능한 사랑",
+    "year": "2026",
+    "score": 8.7,
+    "count": 42930
+  },
+  "36868196": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:39:29.436Z",
+    "status": "no_score",
+    "doubanId": "36868196",
+    "title": "在海边",
+    "originalTitle": "At the Sea",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36877095": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:55:52.811Z",
+    "status": "no_score",
+    "doubanId": "36877095",
+    "title": "消失的艾普尔",
+    "originalTitle": "April X",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "36882191": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:58.912Z",
+    "status": "rated",
+    "doubanId": "36882191",
+    "title": "八仙！",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 8.2,
+    "count": 483879
+  },
+  "36886420": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:47:54.933Z",
+    "status": "rated",
+    "doubanId": "36886420",
+    "title": "蛛楼",
+    "originalTitle": "Crawlers",
+    "year": "2026",
+    "score": 6.4,
+    "count": 1679
+  },
+  "36898818": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:01:10.573Z",
+    "status": "rated",
+    "doubanId": "36898818",
+    "title": "礼拜天",
+    "originalTitle": "Los domingos",
+    "year": "2025",
+    "score": 6.9,
+    "count": 716
+  },
+  "36900843": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:40:28.821Z",
+    "status": "rated",
+    "doubanId": "36900843",
+    "title": "家中低语",
+    "originalTitle": "À voix basse",
+    "year": "2026",
+    "score": 6.6,
+    "count": 494
+  },
+  "36901474": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:21:53.732Z",
+    "status": "no_score",
+    "doubanId": "36901474",
+    "title": "女人，未知",
+    "originalTitle": "Kvinde ukendt",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36912404": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:47:42.902Z",
+    "status": "rated",
+    "doubanId": "36912404",
+    "title": "寻找艾米丽",
+    "originalTitle": "Finding Emily",
+    "year": "2026",
+    "score": 7.5,
+    "count": 13556
+  },
+  "36916000": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:59:53.466Z",
+    "status": "rated",
+    "doubanId": "36916000",
+    "title": "诺曼底72小时",
+    "originalTitle": "Pressure",
+    "year": "2026",
+    "score": 8.2,
+    "count": 72031
+  },
+  "36939906": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:28.256Z",
+    "status": "no_score",
+    "doubanId": "36939906",
+    "title": "纸盒藏迷",
+    "originalTitle": "紙盒藏迷",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "36948305": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:31.665Z",
+    "status": "rated",
+    "doubanId": "36948305",
+    "title": "救赎",
+    "originalTitle": "Kurtuluş",
+    "year": "2026",
+    "score": 6.5,
+    "count": 655
+  },
+  "36950814": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:41:22.064Z",
+    "status": "rated",
+    "doubanId": "36950814",
+    "title": "我的妻子哭了",
+    "originalTitle": "Meine Frau weint",
+    "year": "2026",
+    "score": 6.8,
+    "count": 310
+  },
+  "36986482": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:34:25.999Z",
+    "status": "rated",
+    "doubanId": "36986482",
+    "title": "女孩",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 7.2,
+    "count": 41307
+  },
+  "37002986": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:46:25.026Z",
+    "status": "rated",
+    "doubanId": "37002986",
+    "title": "托尼",
+    "originalTitle": "Tony",
+    "year": "2026",
+    "score": 6.8,
+    "count": 1546
+  },
+  "37030720": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:05.912Z",
+    "status": "rated",
+    "doubanId": "37030720",
+    "title": "泡泡糖女孩",
+    "originalTitle": "Ah Girl",
+    "year": "2026",
+    "score": 8.5,
+    "count": 1907
+  },
+  "37039108": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:30:02.769Z",
+    "status": "rated",
+    "doubanId": "37039108",
+    "title": "地母",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 7.1,
+    "count": 2252
+  },
+  "37041920": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:01:22.620Z",
+    "status": "no_score",
+    "doubanId": "37041920",
+    "title": "罗目的黄昏",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "37042683": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:52:45.017Z",
+    "status": "rated",
+    "doubanId": "37042683",
+    "title": "卡罗来纳的卡罗琳",
+    "originalTitle": "Carolina Caroline",
+    "year": "2025",
+    "score": 6.5,
+    "count": 859
+  },
+  "37055925": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:26:13.118Z",
+    "status": "rated",
+    "doubanId": "37055925",
+    "title": "所爱之人",
+    "originalTitle": "El Ser Querido",
+    "year": "2026",
+    "score": 6.3,
+    "count": 1044
+  },
+  "37062611": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:53:52.815Z",
+    "status": "rated",
+    "doubanId": "37062611",
+    "title": "你留下的痕迹",
+    "originalTitle": "Reminders of Him",
+    "year": "2026",
+    "score": 5.6,
+    "count": 407
+  },
+  "37068446": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:05:00.799Z",
+    "status": "rated",
+    "doubanId": "37068446",
+    "title": "生化危机：爆发夜",
+    "originalTitle": "Resident Evil",
+    "year": "2026",
+    "score": 7.3,
+    "count": 242031
+  },
+  "37077011": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:06:10.743Z",
+    "status": "no_score",
+    "doubanId": "37077011",
+    "title": "温柔以待",
+    "originalTitle": "Tender Loving Care",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37087760": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:10:15.720Z",
+    "status": "rated",
+    "doubanId": "37087760",
+    "title": "黄金时段",
+    "originalTitle": "Primetime",
+    "year": "2026",
+    "score": 6.2,
+    "count": 5265
+  },
+  "37100986": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:26:03.170Z",
+    "status": "no_score",
+    "doubanId": "37100986",
+    "title": "纸老虎",
+    "originalTitle": "Paper Tiger",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37100991": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:53:43.736Z",
+    "status": "no_score",
+    "doubanId": "37100991",
+    "title": "米斯蒂·格林",
+    "originalTitle": "Misty Green",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37105480": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:48.807Z",
+    "status": "no_score",
+    "doubanId": "37105480",
+    "title": "人人都爱比尔·埃文斯",
+    "originalTitle": "Everybody Digs Bill Evans",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37107254": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:47:39.248Z",
+    "status": "no_score",
+    "doubanId": "37107254",
+    "title": "末世行者",
+    "originalTitle": "The Dog Stars",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37114070": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:34:38.776Z",
+    "status": "rated",
+    "doubanId": "37114070",
+    "title": "善男信女",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 7.9,
+    "count": 1025
+  },
+  "37116612": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:05:02.193Z",
+    "status": "rated",
+    "doubanId": "37116612",
+    "title": "世界的主人",
+    "originalTitle": "세계의 주인",
+    "year": "2025",
+    "score": 9,
+    "count": 163921
+  },
+  "37148241": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:49.157Z",
+    "status": "rated",
+    "doubanId": "37148241",
+    "title": "懦夫",
+    "originalTitle": "Coward",
+    "year": "2026",
+    "score": 7.5,
+    "count": 2358
+  },
+  "37149367": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:02.266Z",
+    "status": "no_score",
+    "doubanId": "37149367",
+    "title": "谎言生活",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37168181": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:24.263Z",
+    "status": "rated",
+    "doubanId": "37168181",
+    "title": "峡湾",
+    "originalTitle": "Fjord",
+    "year": "2026",
+    "score": 8,
+    "count": 4933
+  },
+  "37168191": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:10.073Z",
+    "status": "no_score",
+    "doubanId": "37168191",
+    "title": "凯蒂切",
+    "originalTitle": "Ketticè",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37169067": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:34:51.424Z",
+    "status": "no_score",
+    "doubanId": "37169067",
+    "title": "告别的年代",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37193250": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:55:45.802Z",
+    "status": "rated",
+    "doubanId": "37193250",
+    "title": "阳光女子合唱团",
+    "originalTitle": "陽光女子合唱團",
+    "year": "2025",
+    "score": 7.3,
+    "count": 40233
+  },
+  "37200693": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:29:59.915Z",
+    "status": "rated",
+    "doubanId": "37200693",
+    "title": "幸福之路",
+    "originalTitle": "Lucky Lu",
+    "year": "2025",
+    "score": 5.7,
+    "count": 753
+  },
+  "37207215": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:44:52.073Z",
+    "status": "rated",
+    "doubanId": "37207215",
+    "title": "黑潮",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 5.2,
+    "count": 305
+  },
+  "37215318": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:34.891Z",
+    "status": "rated",
+    "doubanId": "37215318",
+    "title": "黑球",
+    "originalTitle": "La bola negra",
+    "year": "2026",
+    "score": 8.7,
+    "count": 30820
+  },
+  "37219614": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:01:22.446Z",
+    "status": "no_score",
+    "doubanId": "37219614",
+    "title": "成为休曼",
+    "originalTitle": "Being Heumann",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37224574": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:16.583Z",
+    "status": "no_score",
+    "doubanId": "37224574",
+    "title": "魂淡",
+    "originalTitle": "Bucking Fastard",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37226713": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:48:35.340Z",
+    "status": "no_score",
+    "doubanId": "37226713",
+    "title": "小春，屁股摇起来！",
+    "originalTitle": "Ha-Chan, Shake Your Booty!",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37227650": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:05:43.609Z",
+    "status": "rated",
+    "doubanId": "37227650",
+    "title": "旅途中的日子",
+    "originalTitle": "旅と日々",
+    "year": "2025",
+    "score": 7.1,
+    "count": 10853
+  },
+  "37233382": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:07:11.774Z",
+    "status": "rated",
+    "doubanId": "37233382",
+    "title": "三声再见",
+    "originalTitle": "Tre Ciotole",
+    "year": "2025",
+    "score": 7.8,
+    "count": 5849
+  },
+  "37233476": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:51:35.272Z",
+    "status": "rated",
+    "doubanId": "37233476",
+    "title": "一夜限定",
+    "originalTitle": "One Night Only",
+    "year": "2026",
+    "score": 6.3,
+    "count": 3273
+  },
+  "37235031": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:28:34.179Z",
+    "status": "no_score",
+    "doubanId": "37235031",
+    "title": "我的特秘密特工丈夫 第二季",
+    "originalTitle": "My Secret Agent Husband Season 2",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "37242752": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:41:14.586Z",
+    "status": "rated",
+    "doubanId": "37242752",
+    "title": "苍蝇",
+    "originalTitle": "Moscas",
+    "year": "2026",
+    "score": 6.5,
+    "count": 911
+  },
+  "37246586": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:06:24.605Z",
+    "status": "no_score",
+    "doubanId": "37246586",
+    "title": "我很少在梦中醒来",
+    "originalTitle": "I Rarely Wake Up Dreaming",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37247236": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:39.732Z",
+    "status": "rated",
+    "doubanId": "37247236",
+    "title": "理智与情感",
+    "originalTitle": "Sense & Sensibility",
+    "year": "2026",
+    "score": 6.5,
+    "count": 2003
+  },
+  "37248336": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:26:10.260Z",
+    "status": "no_score",
+    "doubanId": "37248336",
+    "title": "穆兰",
+    "originalTitle": "Moulin",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37269580": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:57:43.222Z",
+    "status": "rated",
+    "doubanId": "37269580",
+    "title": "温柔的怪物",
+    "originalTitle": "Gentle Monster",
+    "year": "2026",
+    "score": 6.1,
+    "count": 642
+  },
+  "37269723": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:09:35.369Z",
+    "status": "rated",
+    "doubanId": "37269723",
+    "title": "蓦然回首",
+    "originalTitle": "ルックバック",
+    "year": "2026",
+    "score": 7.9,
+    "count": 2963
+  },
+  "37275292": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:07:21.432Z",
+    "status": "rated",
+    "doubanId": "37275292",
+    "title": "第98届奥斯卡颁奖典礼",
+    "originalTitle": "The 98th Annual Academy Awards",
+    "year": "2026",
+    "score": 6.8,
+    "count": 530
+  },
+  "37291549": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:27.715Z",
+    "status": "rated",
+    "doubanId": "37291549",
+    "title": "米诺陶",
+    "originalTitle": "Minotaure",
+    "year": "2026",
+    "score": 7,
+    "count": 892
+  },
+  "37292381": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:09:52.127Z",
+    "status": "no_score",
+    "doubanId": "37292381",
+    "title": "今晚将会发生",
+    "originalTitle": "Succederà questa notte",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37294215": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:00:05.333Z",
+    "status": "rated",
+    "doubanId": "37294215",
+    "title": "你我在托斯卡纳",
+    "originalTitle": "You, Me & Tuscany",
+    "year": "2026",
+    "score": 5.4,
+    "count": 371
+  },
+  "37296242": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:26:06.570Z",
+    "status": "rated",
+    "doubanId": "37296242",
+    "title": "平行故事",
+    "originalTitle": "Histoires parallèles",
+    "year": "2026",
+    "score": 6.5,
+    "count": 1513
+  },
+  "37305660": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:32.956Z",
+    "status": "no_score",
+    "doubanId": "37305660",
+    "title": "无始无终",
+    "originalTitle": "Daayra",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37314519": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:40:16.700Z",
+    "status": "no_score",
+    "doubanId": "37314519",
+    "title": "特殊家世",
+    "originalTitle": "Etwas ganz Besonderes",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37316554": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:58:32.593Z",
+    "status": "no_score",
+    "doubanId": "37316554",
+    "title": "威斯康星圣诞馅饼",
+    "originalTitle": "A Cherry Pie Christmas",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "37317906": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:47:29.442Z",
+    "status": "rated",
+    "doubanId": "37317906",
+    "title": "忘却之岛",
+    "originalTitle": "Forgotten Island",
+    "year": "2026",
+    "score": 7.5,
+    "count": 2255
+  },
+  "37317907": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:33.040Z",
+    "status": "rated",
+    "doubanId": "37317907",
+    "title": "另一个妈妈",
+    "originalTitle": "Other Mommy",
+    "year": "2026",
+    "score": 5.7,
+    "count": 3926
+  },
+  "37337765": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:10:03.107Z",
+    "status": "no_score",
+    "doubanId": "37337765",
+    "title": "地堡",
+    "originalTitle": "Bunker",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37339827": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:42:20.474Z",
+    "status": "rated",
+    "doubanId": "37339827",
+    "title": "钨",
+    "originalTitle": "Wolfram",
+    "year": "2025",
+    "score": 5.8,
+    "count": 128
+  },
+  "37342630": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:44.107Z",
+    "status": "rated",
+    "doubanId": "37342630",
+    "title": "突如其来",
+    "originalTitle": "Soudain",
+    "year": "2026",
+    "score": 7.7,
+    "count": 7487
+  },
+  "37342631": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:46:19.019Z",
+    "status": "rated",
+    "doubanId": "37342631",
+    "title": "盖尔·多尔蒂与名人豁免权",
+    "originalTitle": "Gail Daughtry and the Celebrity Sex Pass",
+    "year": "2026",
+    "score": 5.2,
+    "count": 247
+  },
+  "37363852": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:05:03.913Z",
+    "status": "rated",
+    "doubanId": "37363852",
+    "title": "入夜不再",
+    "originalTitle": "Never After Dark",
+    "year": "2026",
+    "score": 6.5,
+    "count": 3301
+  },
+  "37374404": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:05:48.960Z",
+    "status": "rated",
+    "doubanId": "37374404",
+    "title": "黑，红，黄",
+    "originalTitle": "Kara Kyzyl Sary",
+    "year": "2025",
+    "score": 6.8,
+    "count": 850
+  },
+  "37383586": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:57:53.279Z",
+    "status": "no_score",
+    "doubanId": "37383586",
+    "title": "童话继姐妹",
+    "originalTitle": "Steps",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37421915": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:34:57.773Z",
+    "status": "rated",
+    "doubanId": "37421915",
+    "title": "我们不是什么",
+    "originalTitle": "我們不是什麼",
+    "year": "2026",
+    "score": 7.1,
+    "count": 1352
+  },
+  "37425363": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:46:21.653Z",
+    "status": "rated",
+    "doubanId": "37425363",
+    "title": "起义",
+    "originalTitle": "The Uprising",
+    "year": "2026",
+    "score": 6.3,
+    "count": 1411
+  },
+  "37437634": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:44.885Z",
+    "status": "no_score",
+    "doubanId": "37437634",
+    "title": "倒霉日",
+    "originalTitle": "Bad Day",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37447589": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:10:39.222Z",
+    "status": "no_score",
+    "doubanId": "37447589",
+    "title": "优秀卒子",
+    "originalTitle": "Un Bon Petit Soldat",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37447786": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:56:02.256Z",
+    "status": "no_score",
+    "doubanId": "37447786",
+    "title": "麦迪的秘密",
+    "originalTitle": "Maddie's Secret",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "37449080": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:54:24.067Z",
+    "status": "no_score",
+    "doubanId": "37449080",
+    "title": "艾伦",
+    "originalTitle": "Allen",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37467646": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:31:20.305Z",
+    "status": "no_score",
+    "doubanId": "37467646",
+    "title": "帝国",
+    "originalTitle": "Imperium",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37469863": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:12.091Z",
+    "status": "no_score",
+    "doubanId": "37469863",
+    "title": "太阳永不落",
+    "originalTitle": "The Sun Never Sets",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37474018": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:09.209Z",
+    "status": "rated",
+    "doubanId": "37474018",
+    "title": "泥娃娃",
+    "originalTitle": "",
+    "year": "2025",
+    "score": 5.6,
+    "count": 10337
+  },
+  "37487792": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:12.356Z",
+    "status": "no_score",
+    "doubanId": "37487792",
+    "title": "墨",
+    "originalTitle": "Ink",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37487816": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:00:39.942Z",
+    "status": "rated",
+    "doubanId": "37487816",
+    "title": "故土",
+    "originalTitle": "Fatherland",
+    "year": "2026",
+    "score": 7.7,
+    "count": 5107
+  },
+  "37494774": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:36:29.440Z",
+    "status": "rated",
+    "doubanId": "37494774",
+    "title": "我爱的男人",
+    "originalTitle": "The Man I Love",
+    "year": "2026",
+    "score": 5.4,
+    "count": 298
+  },
+  "37496194": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:03:27.972Z",
+    "status": "rated",
+    "doubanId": "37496194",
+    "title": "吉安马可·索雷西：欢乐窃贼",
+    "originalTitle": "Gianmarco Soresi: Thief of Joy",
+    "year": "2025",
+    "score": 8.9,
+    "count": 1326
+  },
+  "37505232": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:28:24.079Z",
+    "status": "no_score",
+    "doubanId": "37505232",
+    "title": "客人",
+    "originalTitle": "Gæsten",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37514158": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:34:41.557Z",
+    "status": "rated",
+    "doubanId": "37514158",
+    "title": "狂忘警探",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 7.2,
+    "count": 252
+  },
+  "37515883": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:56:22.774Z",
+    "status": "no_score",
+    "doubanId": "37515883",
+    "title": "心乡迷踪",
+    "originalTitle": "Heartland",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37525017": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:48:10.589Z",
+    "status": "rated",
+    "doubanId": "37525017",
+    "title": "潜伏6",
+    "originalTitle": "Insidious: Out of the Further",
+    "year": "2026",
+    "score": 6.6,
+    "count": 12919
+  },
+  "37557276": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:44:30.069Z",
+    "status": "no_score",
+    "doubanId": "37557276",
+    "title": "葛兰素",
+    "originalTitle": "Glaxo",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37656453": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:19.983Z",
+    "status": "no_score",
+    "doubanId": "37656453",
+    "title": "天使与恶徒",
+    "originalTitle": "Angel and the Badman",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37656682": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:27:25.230Z",
+    "status": "rated",
+    "doubanId": "37656682",
+    "title": "哈莉玛",
+    "originalTitle": "Halima",
+    "year": "2026",
+    "score": 6.8,
+    "count": 184
+  },
+  "37666592": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:42:47.240Z",
+    "status": "no_score",
+    "doubanId": "37666592",
+    "title": "再多五分钟",
+    "originalTitle": "Cinco minutos más",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37806528": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:30:14.614Z",
+    "status": "no_score",
+    "doubanId": "37806528",
+    "title": "我的母亲",
+    "originalTitle": "Ibuku",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37816724": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:00:20.883Z",
+    "status": "no_score",
+    "doubanId": "37816724",
+    "title": "人生来点甜",
+    "originalTitle": "Give Me Some Sugah",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37817037": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:44:59.127Z",
+    "status": "no_score",
+    "doubanId": "37817037",
+    "title": "第四幕",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37835938": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:54:05.895Z",
+    "status": "no_score",
+    "doubanId": "37835938",
+    "title": "驭马圣诞缘",
+    "originalTitle": "Rodeo Christmas Romance",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "37862971": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:57:45.463Z",
+    "status": "no_score",
+    "doubanId": "37862971",
+    "title": "守护星",
+    "originalTitle": "Guarding Stars",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "37917553": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:59:25.504Z",
+    "status": "no_score",
+    "doubanId": "37917553",
+    "title": "菲尔兹牧场的圣诞节",
+    "originalTitle": "Christmas at Fields Ranch",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "37939269": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:01:26.282Z",
+    "status": "no_score",
+    "doubanId": "37939269",
+    "title": "怪奇物语：壁炉",
+    "originalTitle": "Stranger Things: Fireplace",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "38112572": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:04:54.932Z",
+    "status": "rated",
+    "doubanId": "38112572",
+    "title": "黑牢城",
+    "originalTitle": "黒牢城",
+    "year": "2026",
+    "score": 6.4,
+    "count": 1272
+  },
+  "38188724": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:42:16.890Z",
+    "status": "no_score",
+    "doubanId": "38188724",
+    "title": "苏姆苏姆，星辰之夜",
+    "originalTitle": "Soumsoum, la nuit des astres",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38202093": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:10:19.427Z",
+    "status": "no_score",
+    "doubanId": "38202093",
+    "title": "疗愈之地，飞鸟栖止",
+    "originalTitle": "On Healing Land, Birds Perch",
+    "year": "2025",
+    "score": 0,
+    "count": 0
+  },
+  "38211916": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:42:27.592Z",
+    "status": "no_score",
+    "doubanId": "38211916",
+    "title": "YO：爱是反叛鸟",
+    "originalTitle": "Yo (Love is a Rebellious Bird)",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38226553": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:54:13.545Z",
+    "status": "no_score",
+    "doubanId": "38226553",
+    "title": "黑色圣诞福音",
+    "originalTitle": "Tyler Perry's the Gospel of Christmas",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38226570": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:44:42.054Z",
+    "status": "no_score",
+    "doubanId": "38226570",
+    "title": "余存",
+    "originalTitle": "Artakalan",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38228422": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T11:00:10.702Z",
+    "status": "no_score",
+    "doubanId": "38228422",
+    "title": "永冻层",
+    "originalTitle": "Permafrost",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38230527": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:51:15.989Z",
+    "status": "no_score",
+    "doubanId": "38230527",
+    "title": "凯莉·米洛：澳洲天后之路",
+    "originalTitle": "Kylie",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38351570": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:11:11.399Z",
+    "status": "no_score",
+    "doubanId": "38351570",
+    "title": "你心中的火",
+    "originalTitle": "Il fuoco che ti porti dentro",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38363357": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:48:21.673Z",
+    "status": "no_score",
+    "doubanId": "38363357",
+    "title": "我不好惹3",
+    "originalTitle": "The Last Temptation Of Becky",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38401552": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:09:55.105Z",
+    "status": "no_score",
+    "doubanId": "38401552",
+    "title": "尼尔森先生，你杀人了吗",
+    "originalTitle": "ネルソンさん、あなたは人を殺しましたか？",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38548985": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:48:01.285Z",
+    "status": "rated",
+    "doubanId": "38548985",
+    "title": "阿里·G：我系水？",
+    "originalTitle": "Ali G: Who Iz I?",
+    "year": "2026",
+    "score": 6.5,
+    "count": 424
+  },
+  "38557300": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:23:57.151Z",
+    "status": "no_score",
+    "doubanId": "38557300",
+    "title": "鸽环",
+    "originalTitle": "The Pigeon Ring",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38563246": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:42:31.324Z",
+    "status": "no_score",
+    "doubanId": "38563246",
+    "title": "坏父亲",
+    "originalTitle": "El mal padre",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38569740": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:23:54.504Z",
+    "status": "no_score",
+    "doubanId": "38569740",
+    "title": "看守者",
+    "originalTitle": "Moragheb",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38613270": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:45:26.394Z",
+    "status": "no_score",
+    "doubanId": "38613270",
+    "title": "蝙蝠侠：骑士陨落 第二部",
+    "originalTitle": "Batman: Knightfall, Part 2 - Knightquest",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38613650": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:52:51.934Z",
+    "status": "no_score",
+    "doubanId": "38613650",
+    "title": "Funny Money: The Dane Cook Story",
+    "originalTitle": "",
+    "year": "2026",
+    "score": 0,
+    "count": 0
+  },
+  "38617828": {
+    "kind": "detail",
+    "fetchedAt": "2026-11-13T10:10:06.106Z",
+    "status": "rated",
+    "doubanId": "38617828",
+    "title": "附带伤亡",
+    "originalTitle": "Naza",
+    "year": "2026",
+    "score": 8.5,
+    "count": 1831
+  },
+  "A Cherry Pie Christmas|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:58:32.595Z",
+    "status": "picked",
+    "doubanId": "37316554",
+    "via": "search",
+    "query": "A Cherry Pie Christmas"
+  },
+  "A Christmas Castle Proposal: A Royal in Paradise 2|2024": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:19.404Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36829902",
+    "doubanTitle": "天堂皇室2：皇家的提议 A Royal Proposal: A Royal in Paradise II (2024)",
+    "doubanYear": 2024,
+    "query": "A Christmas Castle Proposal: A Royal in Paradise 2"
+  },
+  "All for Christmas|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:57:58.381Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37433949",
+    "doubanTitle": "万物生灵：2026圣诞特别集 All Creatures Great and Small: 2026 Christmas Special (2026)",
+    "doubanYear": 2026,
+    "query": "All for Christmas"
+  },
+  "Allen|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:54:24.069Z",
+    "status": "picked",
+    "doubanId": "37449080",
+    "via": "suggest",
+    "query": "Allen"
+  },
+  "April X|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:51:22.171Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36877095",
+    "doubanTitle": "消失的艾普尔 April X (2025)",
+    "doubanYear": 2025,
+    "query": "April X"
+  },
+  "Bad Day|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:44.888Z",
+    "status": "picked",
+    "doubanId": "37437634",
+    "via": "search",
+    "query": "Bad Day"
+  },
+  "Brawlers|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:54:41.270Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "38451515",
+    "doubanTitle": "全力以赴 Brawler (2027)",
+    "doubanYear": 2027,
+    "query": "Brawlers"
+  },
+  "Bucking Fastard|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:16.584Z",
+    "status": "picked",
+    "doubanId": "37224574",
+    "via": "suggest",
+    "query": "Bucking Fastard"
+  },
+  "Carolina Caroline|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:45.028Z",
+    "status": "picked",
+    "doubanId": "37042683",
+    "via": "suggest",
+    "query": "Carolina Caroline"
+  },
+  "Christmas On The Ranch|2024": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:32.834Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36910362",
+    "doubanTitle": "牧场浪漫 Romance on the Ranch (2024)",
+    "doubanYear": 2024,
+    "query": "Christmas On The Ranch"
+  },
+  "Christmas at Fields Ranch|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:59:25.507Z",
+    "status": "picked",
+    "doubanId": "37917553",
+    "via": "search",
+    "query": "Christmas at Fields Ranch"
+  },
+  "Company|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:13.290Z",
+    "status": "picked",
+    "doubanId": "36749525",
+    "via": "search",
+    "query": "Company"
+  },
+  "DAU|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:28.747Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37490322",
+    "doubanTitle": "列夫·朗道 DAU (2026)",
+    "doubanYear": 2026,
+    "query": "DAU"
+  },
+  "Daayra|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:32.959Z",
+    "status": "picked",
+    "doubanId": "37305660",
+    "via": "suggest",
+    "query": "Daayra"
+  },
+  "Dancing With a Murderer|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:59:43.519Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36576396",
+    "doubanTitle": "恨女的逆袭 恨女的逆襲 (2025)",
+    "doubanYear": 2025,
+    "query": "Dancing With a Murderer"
+  },
+  "Dao|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:34.367Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36122242",
+    "doubanTitle": "道 Dao (2026)",
+    "doubanYear": 2026,
+    "query": "Dao"
+  },
+  "Dilwali Diwali|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:19.280Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38649586",
+    "doubanTitle": "如何毁掉排灯节：见家长 How to Ruin Diwali: Meet The Parents (2026)",
+    "doubanYear": 2026,
+    "query": "Dilwali Diwali"
+  },
+  "Funny Money: The Dane Cook Story|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:51.936Z",
+    "status": "picked",
+    "doubanId": "38613650",
+    "via": "search",
+    "query": "Funny Money: The Dane Cook Story"
+  },
+  "Gail Daughtry and the Celebrity Sex Pass|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:46:19.021Z",
+    "status": "picked",
+    "doubanId": "37342631",
+    "via": "search",
+    "query": "Gail Daughtry and the Celebrity Sex Pass"
+  },
+  "Give Me Some Sugah|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:00:20.885Z",
+    "status": "picked",
+    "doubanId": "37816724",
+    "via": "search",
+    "query": "Give Me Some Sugah"
+  },
+  "Glaxo|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:44:30.072Z",
+    "status": "picked",
+    "doubanId": "37557276",
+    "via": "suggest",
+    "query": "Glaxo"
+  },
+  "Guarding Stars|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:57:45.465Z",
+    "status": "picked",
+    "doubanId": "37862971",
+    "via": "suggest",
+    "query": "Guarding Stars"
+  },
+  "HB2ME|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:59:28.911Z",
+    "status": "rejected",
+    "reason": "not_found",
+    "doubanId": "",
+    "doubanTitle": "",
+    "doubanYear": null,
+    "query": "HB2ME"
+  },
+  "Heartland|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:22.777Z",
+    "status": "picked",
+    "doubanId": "37515883",
+    "via": "suggest",
+    "query": "Heartland"
+  },
+  "High End: The Watch Theft Ring|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:24.141Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "39008880",
+    "doubanTitle": "上流罪网：跨国名表盗卖集团 Alta Gama: El Caso Relojes (2026)",
+    "doubanYear": 2026,
+    "query": "High End: The Watch Theft Ring"
+  },
+  "In Waves|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:47.251Z",
+    "status": "picked",
+    "doubanId": "35700981",
+    "via": "suggest",
+    "query": "In Waves"
+  },
+  "K-POP：猎魔女团|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:22.286Z",
+    "status": "picked",
+    "doubanId": "35391124",
+    "via": "suggest",
+    "query": "K-POP：猎魔女团"
+  },
+  "Kijsada Paradise|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:53:58.118Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37657498",
+    "doubanTitle": "猛鬼乐园 กฤษดา พาราไดซ์ (2026)",
+    "doubanYear": 2026,
+    "query": "Kijsada Paradise"
+  },
+  "Madame Web|2024": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:52.138Z",
+    "status": "picked",
+    "doubanId": "34846514",
+    "via": "search",
+    "query": "Madame Web"
+  },
+  "Misty Green|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:53:43.739Z",
+    "status": "picked",
+    "doubanId": "37100991",
+    "via": "suggest",
+    "query": "Misty Green"
+  },
+  "NAZA|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:06.107Z",
+    "status": "picked",
+    "doubanId": "38617828",
+    "via": "suggest",
+    "query": "NAZA"
+  },
+  "NFL Netflix Gameday: Packers vs. Rams|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:58:03.356Z",
+    "status": "rejected",
+    "reason": "not_found",
+    "doubanId": "",
+    "doubanTitle": "",
+    "doubanYear": null,
+    "query": "NFL Netflix Gameday: Packers vs. Rams"
+  },
+  "Never Surrender|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:54:29.584Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38228771",
+    "doubanTitle": "绝境反击 Serangan Balik (2026)",
+    "doubanYear": 2026,
+    "query": "Never Surrender"
+  },
+  "Obsession|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:57:38.128Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36682676",
+    "doubanTitle": "56天 56 Days (2026)",
+    "doubanYear": 2026,
+    "query": "Obsession"
+  },
+  "On Behalf of My Son|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:57:50.052Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38215108",
+    "doubanTitle": "替子道歉 Vicentina Pede Desculpas (2026)",
+    "doubanYear": 2026,
+    "query": "On Behalf of My Son"
+  },
+  "One Year to Live, Buy a Man|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:29.763Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37657706",
+    "doubanTitle": "余命一年买男人 余命一年、男をかう (2026)",
+    "doubanYear": 2026,
+    "query": "One Year to Live, Buy a Man"
+  },
+  "Overacting|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:35.929Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38242776",
+    "doubanTitle": "浮夸特攻队 แก๊งโอเวอร์ (2026)",
+    "doubanYear": 2026,
+    "query": "Overacting"
+  },
+  "Papa Zola The Movie|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:59:37.204Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37349962",
+    "doubanTitle": "超级爸爸大电影：冲啊！ Papa Zola: The Movie (2025)",
+    "doubanYear": 2025,
+    "query": "Papa Zola The Movie"
+  },
+  "Permafrost|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:00:10.706Z",
+    "status": "picked",
+    "doubanId": "38228422",
+    "via": "search",
+    "query": "Permafrost"
+  },
+  "Pressure|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:58:26.711Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36916000",
+    "doubanTitle": "诺曼底72小时 Pressure (2026)",
+    "doubanYear": 2026,
+    "query": "Pressure"
+  },
+  "Proxies|2027": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:00:14.768Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37854570",
+    "doubanTitle": "以他人之名 En nombre de otro (2026)",
+    "doubanYear": 2026,
+    "query": "Proxies"
+  },
+  "Ranabaali|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:36.195Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38614034",
+    "doubanTitle": "拉纳巴利 రణబాలి (2026)",
+    "doubanYear": 2026,
+    "query": "Ranabaali"
+  },
+  "Reminders of Him|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:53:52.817Z",
+    "status": "picked",
+    "doubanId": "37062611",
+    "via": "suggest",
+    "query": "Reminders of Him"
+  },
+  "Rodeo Christmas Romance|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:54:05.896Z",
+    "status": "picked",
+    "doubanId": "37835938",
+    "via": "search",
+    "query": "Rodeo Christmas Romance"
+  },
+  "Rolling Loud 大电影|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:46:12.280Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "5184284",
+    "doubanTitle": "The Rolling Stones: Shine a Light Movie Special (2008)",
+    "doubanYear": 2008,
+    "query": "Rolling Loud: The Movie"
+  },
+  "Secrets|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:00:00.881Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38371342",
+    "doubanTitle": "禁色密室 Secret (2025)",
+    "doubanYear": 2025,
+    "query": "Secrets"
+  },
+  "Sinterklaas: Fireplace|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:26.109Z",
+    "status": "rejected",
+    "reason": "not_found",
+    "doubanId": "",
+    "doubanTitle": "",
+    "doubanYear": null,
+    "query": "Sinterklaas: Fireplace"
+  },
+  "Steps|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:57:53.282Z",
+    "status": "picked",
+    "doubanId": "37383586",
+    "via": "suggest",
+    "query": "Steps"
+  },
+  "The Child|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:58:17.335Z",
+    "status": "picked",
+    "doubanId": "36244077",
+    "via": "search",
+    "query": "The Child"
+  },
+  "The Christmas Switch|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:54:35.237Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38396241",
+    "doubanTitle": "交换身份过圣诞 Bara till jul (2026)",
+    "doubanYear": 2026,
+    "query": "The Christmas Switch"
+  },
+  "The Good Lawyer|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:53:49.135Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38672345",
+    "doubanTitle": "秉公律师 One of the Good Ones (2026)",
+    "doubanYear": 2026,
+    "query": "The Good Lawyer"
+  },
+  "The Gospel of Christmas|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:11.622Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38226553",
+    "doubanTitle": "黑色圣诞福音 Tyler Perry's the Gospel of Christmas (2026)",
+    "doubanYear": 2026,
+    "query": "The Gospel of Christmas"
+  },
+  "The Housewife|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:06:03.354Z",
+    "status": "picked",
+    "doubanId": "36769429",
+    "via": "suggest",
+    "query": "The Housewife"
+  },
+  "The Hunchback, Soul of Paris|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:58:20.663Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37386598",
+    "doubanTitle": "卡西莫多：巴黎灵魂 Quasimodo, l'âme de Paris (2026)",
+    "doubanYear": 2026,
+    "query": "The Hunchback, Soul of Paris"
+  },
+  "The Left Foot Club|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:05.750Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "1294000",
+    "doubanTitle": "我的左脚 My Left Foot (1989)",
+    "doubanYear": 1989,
+    "query": "The Left Foot Club"
+  },
+  "The Mosquito Bowl|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:58:08.583Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37305697",
+    "doubanTitle": "蚊子杯：最后一役 Mosquito Bowl (2026)",
+    "doubanYear": 2026,
+    "query": "The Mosquito Bowl"
+  },
+  "The Super Mario Galaxy Movie|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:59:34.242Z",
+    "status": "picked",
+    "doubanId": "36806351",
+    "via": "suggest",
+    "query": "The Super Mario Galaxy Movie"
+  },
+  "Unprotected: Murder in Galicia|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:53:35.449Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38926434",
+    "doubanTitle": "无人守护：枕边杀局 Desprotexida: El crimen de Pazos (2026)",
+    "doubanYear": 2026,
+    "query": "Unprotected: Murder in Galicia"
+  },
+  "You, Me & Tuscany|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:00:05.335Z",
+    "status": "picked",
+    "doubanId": "37294215",
+    "via": "suggest",
+    "query": "You, Me & Tuscany"
+  },
+  "Yo：爱是一只叛逆的鸟|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:27.594Z",
+    "status": "picked",
+    "doubanId": "38211916",
+    "via": "search",
+    "query": "Yo：爱是一只叛逆的鸟"
+  },
+  "一个女人的生活|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:25.946Z",
+    "status": "picked",
+    "doubanId": "36809602",
+    "via": "suggest",
+    "query": "一个女人的生活"
+  },
+  "一夜限定|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:51:35.275Z",
+    "status": "picked",
+    "doubanId": "37233476",
+    "via": "suggest",
+    "query": "一夜限定"
+  },
+  "一战再战|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:24:10.995Z",
+    "status": "picked",
+    "doubanId": "36176155",
+    "via": "suggest",
+    "query": "一战再战"
+  },
+  "乔的一日：费德拉章|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:22:12.597Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "35881440",
+    "doubanTitle": "唐顿庄园3：盛世终章 Downton Abbey: The Grand Finale (2025)",
+    "doubanYear": 2025,
+    "query": "乔的一日：费德拉章"
+  },
+  "九匹野马|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:21.132Z",
+    "status": "picked",
+    "doubanId": "35641228",
+    "via": "search",
+    "query": "九匹野马"
+  },
+  "九座通往天堂的庙|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:30:45.640Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37134257",
+    "doubanTitle": "通往天堂的门票 เด็กชายไม่ไปสวรรค์ (2026)",
+    "doubanYear": 2026,
+    "query": "九座通往天堂的庙"
+  },
+  "人人都懂比尔·埃文斯|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:48.809Z",
+    "status": "picked",
+    "doubanId": "37105480",
+    "via": "search",
+    "query": "人人都懂比尔·埃文斯"
+  },
+  "众生相|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:29:32.886Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37213495",
+    "doubanTitle": "巴尔的摩众生相 The Baltimorons (2025)",
+    "doubanYear": 2025,
+    "query": "众生相"
+  },
+  "但以理与火窑|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:47:23.889Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38439946",
+    "doubanTitle": "但以理 Daniel (2026)",
+    "doubanYear": 2026,
+    "query": "但以理与火窑"
+  },
+  "低声|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:40:28.824Z",
+    "status": "picked",
+    "doubanId": "36900843",
+    "via": "search",
+    "query": "In a Whisper / À voix basse"
+  },
+  "余物|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:44:42.057Z",
+    "status": "picked",
+    "doubanId": "38226570",
+    "via": "search",
+    "query": "What Remains / Artakalan"
+  },
+  "你不属于这里|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:22.995Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36539374",
+    "doubanTitle": "非你所属 You Don’t Own Me (2026)",
+    "doubanYear": 2026,
+    "query": "你不属于这里"
+  },
+  "你心中的火|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:11:11.401Z",
+    "status": "picked",
+    "doubanId": "38351570",
+    "via": "search",
+    "query": "Il fuoco che ti porti dentro"
+  },
+  "修剪玫瑰丛|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:41:48.408Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "35028570",
+    "doubanTitle": "荆棘丛里的玫瑰 A Rose Between Thorns (2017)",
+    "doubanYear": 2017,
+    "query": "修剪玫瑰丛"
+  },
+  "倾颓之屋|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:23:54.505Z",
+    "status": "picked",
+    "doubanId": "38569740",
+    "via": "search",
+    "query": "Moragheb / Falling House"
+  },
+  "假如我有腿，就踢你|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:29:15.976Z",
+    "status": "picked",
+    "doubanId": "36481186",
+    "via": "search",
+    "query": "If I Had Legs I'd Kick You"
+  },
+  "像我这样的爱情|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:02:16.476Z",
+    "status": "picked",
+    "doubanId": "36219411",
+    "via": "suggest",
+    "query": "像我这样的爱情"
+  },
+  "再多五分钟|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:47.241Z",
+    "status": "picked",
+    "doubanId": "37666592",
+    "via": "search",
+    "query": "再多五分钟"
+  },
+  "再见 UFO|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:21:09.470Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "30208001",
+    "doubanTitle": "再见UFO 再見UFO (2019)",
+    "doubanYear": 2019,
+    "query": "再见 UFO"
+  },
+  "凪日记|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:42.399Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36506919",
+    "doubanTitle": "奈义日记 ナギダイアリー (2026)",
+    "doubanYear": 2026,
+    "query": "凪日记"
+  },
+  "凯蒂切|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:10.074Z",
+    "status": "picked",
+    "doubanId": "37168191",
+    "via": "search",
+    "query": "Ketticè"
+  },
+  "凶器|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:15.992Z",
+    "status": "picked",
+    "doubanId": "36221247",
+    "via": "suggest",
+    "query": "凶器"
+  },
+  "别无选择|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:32:24.502Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "4092781",
+    "doubanTitle": "无可奈何 어쩔수가없다 (2025)",
+    "doubanYear": 2025,
+    "query": "别无选择"
+  },
+  "功夫|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:44:49.032Z",
+    "status": "picked",
+    "doubanId": "23788377",
+    "via": "search",
+    "query": "功夫"
+  },
+  "加勒纳|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:02.679Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "38221151",
+    "doubanTitle": "重压之下 Under Pressure (2028)",
+    "doubanYear": 2028,
+    "query": "加勒纳"
+  },
+  "加朗斯|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:35:24.688Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37521904",
+    "doubanTitle": "嘉朗丝 Garance (2026)",
+    "doubanYear": 2026,
+    "query": "加朗斯"
+  },
+  "午餐|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:35:15.246Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "1480881",
+    "doubanTitle": "午餐女王 ランチの女王 (2002)",
+    "doubanYear": 2002,
+    "query": "午餐"
+  },
+  "双囍|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:35.265Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36576765",
+    "doubanTitle": "双喜 雙囍 (2025)",
+    "doubanYear": 2025,
+    "query": "双囍"
+  },
+  "双重自由|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:07:02.731Z",
+    "status": "picked",
+    "doubanId": "36809803",
+    "via": "search",
+    "query": "Double Freedom"
+  },
+  "口中的灰烬|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:32:44.268Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36739119",
+    "doubanTitle": "灰烬的剖面 (2026)",
+    "doubanYear": 2026,
+    "query": "口中的灰烬"
+  },
+  "另一个妈咪|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:33.042Z",
+    "status": "picked",
+    "doubanId": "37317907",
+    "via": "search",
+    "query": "另一个妈咪"
+  },
+  "可能的爱情|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:09:44.608Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36847425",
+    "doubanTitle": "可能的爱 가능한 사랑 (2026)",
+    "doubanYear": 2026,
+    "query": "可能的爱情"
+  },
+  "向往的冒险|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:30.726Z",
+    "status": "picked",
+    "doubanId": "35954702",
+    "via": "suggest",
+    "query": "向往的冒险"
+  },
+  "告别的年代|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:51.426Z",
+    "status": "picked",
+    "doubanId": "37169067",
+    "via": "search",
+    "query": "告别的年代"
+  },
+  "哈姆奈特|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:12.393Z",
+    "status": "picked",
+    "doubanId": "35618471",
+    "via": "suggest",
+    "query": "哈姆奈特"
+  },
+  "哈灿：摇摆起来|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:56:00.301Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37226713",
+    "doubanTitle": "小春，屁股摇起来！ Ha-Chan, Shake Your Booty! (2026)",
+    "doubanYear": 2026,
+    "query": "Ha Chan: Shake Your Booty!"
+  },
+  "哈莉玛|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:25.239Z",
+    "status": "picked",
+    "doubanId": "37656682",
+    "via": "suggest",
+    "query": "哈莉玛"
+  },
+  "善男信女|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:38.777Z",
+    "status": "picked",
+    "doubanId": "37114070",
+    "via": "suggest",
+    "query": "善男信女"
+  },
+  "土地的成长|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:31:37.921Z",
+    "status": "picked",
+    "doubanId": "36741380",
+    "via": "search",
+    "query": "土地的成长"
+  },
+  "在海边|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:29.437Z",
+    "status": "picked",
+    "doubanId": "36868196",
+    "via": "suggest",
+    "query": "在海边"
+  },
+  "地堡|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:03.108Z",
+    "status": "picked",
+    "doubanId": "37337765",
+    "via": "search",
+    "query": "地堡"
+  },
+  "地母|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:30:02.770Z",
+    "status": "picked",
+    "doubanId": "37039108",
+    "via": "suggest",
+    "query": "地母"
+  },
+  "坏父亲|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:31.326Z",
+    "status": "picked",
+    "doubanId": "38563246",
+    "via": "suggest",
+    "query": "坏父亲"
+  },
+  "墨|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:12.360Z",
+    "status": "picked",
+    "doubanId": "37487792",
+    "via": "search",
+    "query": "墨"
+  },
+  "复仇者联盟4：终局之战·安可版|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:51:43.870Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "26100958",
+    "doubanTitle": "复仇者联盟4：终局之战 Avengers: Endgame (2019)",
+    "doubanYear": 2019,
+    "query": "复仇者联盟4：终局之战·安可版"
+  },
+  "夜生|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:41:39.473Z",
+    "status": "picked",
+    "doubanId": "36661776",
+    "via": "search",
+    "query": "夜生"
+  },
+  "大濱|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:29:24.922Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "26826072",
+    "doubanTitle": "恋恋外星人 ラブラブエイリアン (2016)",
+    "doubanYear": 2016,
+    "query": "大濱"
+  },
+  "大西洋|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:14.130Z",
+    "status": "picked",
+    "doubanId": "36671189",
+    "via": "suggest",
+    "query": "大西洋"
+  },
+  "天使与坏蛋|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:19.985Z",
+    "status": "picked",
+    "doubanId": "37656453",
+    "via": "search",
+    "query": "天使与坏蛋"
+  },
+  "太阳永不落|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:12.093Z",
+    "status": "picked",
+    "doubanId": "37469863",
+    "via": "suggest",
+    "query": "太阳永不落"
+  },
+  "奥德赛|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:05:51.880Z",
+    "status": "picked",
+    "doubanId": "36808876",
+    "via": "suggest",
+    "query": "奥德赛"
+  },
+  "女人，未知|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:21:53.733Z",
+    "status": "picked",
+    "doubanId": "36901474",
+    "via": "suggest",
+    "query": "女人，未知"
+  },
+  "女孩|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:26.000Z",
+    "status": "picked",
+    "doubanId": "36986482",
+    "via": "suggest",
+    "query": "女孩"
+  },
+  "好小兵|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:39.224Z",
+    "status": "picked",
+    "doubanId": "37447589",
+    "via": "search",
+    "query": "Un bon petit soldat"
+  },
+  "威斯康星圣诞派|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:03:19.355Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37316554",
+    "doubanTitle": "威斯康星圣诞馅饼 A Cherry Pie Christmas (2025)",
+    "doubanYear": 2025,
+    "query": "威斯康星圣诞派"
+  },
+  "完美骗子|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:01:34.973Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38573958",
+    "doubanTitle": "（不）完美的骗子 (Ne)tobuli Melagiai (2026)",
+    "doubanYear": 2026,
+    "query": "完美骗子"
+  },
+  "实境诱捕|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:15.721Z",
+    "status": "picked",
+    "doubanId": "37087760",
+    "via": "suggest",
+    "query": "实境诱捕"
+  },
+  "客人|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:28:24.080Z",
+    "status": "picked",
+    "doubanId": "37505232",
+    "via": "search",
+    "query": "客人"
+  },
+  "家的故事|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:40:16.701Z",
+    "status": "picked",
+    "doubanId": "37314519",
+    "via": "search",
+    "query": "Home Stories / Etwas ganz Besonderes"
+  },
+  "寻找艾米丽|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:47:42.904Z",
+    "status": "picked",
+    "doubanId": "36912404",
+    "via": "suggest",
+    "query": "寻找艾米丽"
+  },
+  "小提琴手|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:06:31.218Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "1295161",
+    "doubanTitle": "小提琴手 The Violinist (1959)",
+    "doubanYear": 1959,
+    "query": "小提琴手"
+  },
+  "尘埃|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:43.578Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "33454920",
+    "doubanTitle": "归于尘埃 Dust (2026)",
+    "doubanYear": 2026,
+    "query": "尘埃"
+  },
+  "尼娜·罗莎|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:28:08.753Z",
+    "status": "picked",
+    "doubanId": "36473007",
+    "via": "search",
+    "query": "Nina Roza"
+  },
+  "尼尔森先生，你杀人了吗？|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:09:55.106Z",
+    "status": "picked",
+    "doubanId": "38401552",
+    "via": "suggest",
+    "query": "尼尔森先生"
+  },
+  "峡湾|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:24.264Z",
+    "status": "picked",
+    "doubanId": "37168181",
+    "via": "suggest",
+    "query": "峡湾"
+  },
+  "巴勒斯坦36|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:01:18.881Z",
+    "status": "picked",
+    "doubanId": "36472989",
+    "via": "suggest",
+    "query": "巴勒斯坦"
+  },
+  "希望|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:49.659Z",
+    "status": "picked",
+    "doubanId": "36179101",
+    "via": "search",
+    "query": "希望"
+  },
+  "帝国|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:31:20.307Z",
+    "status": "picked",
+    "doubanId": "37467646",
+    "via": "search",
+    "query": "帝国"
+  },
+  "平凡之路|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:30:24.239Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "37247879",
+    "doubanTitle": "平凡者的不平凡之路 (2025)",
+    "doubanYear": 2025,
+    "query": "平凡之路"
+  },
+  "平行故事|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:06.572Z",
+    "status": "picked",
+    "doubanId": "37296242",
+    "via": "suggest",
+    "query": "平行故事"
+  },
+  "幸福之路|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:29:59.917Z",
+    "status": "picked",
+    "doubanId": "37200693",
+    "via": "suggest",
+    "query": "幸福之路"
+  },
+  "微光女孩|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:17.582Z",
+    "status": "picked",
+    "doubanId": "35880812",
+    "via": "suggest",
+    "query": "微光女孩"
+  },
+  "必将今夜发生|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:09:52.128Z",
+    "status": "picked",
+    "doubanId": "37292381",
+    "via": "search",
+    "query": "必将今夜发生"
+  },
+  "怪奇物语：壁炉|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:01:26.286Z",
+    "status": "picked",
+    "doubanId": "37939269",
+    "via": "suggest",
+    "query": "怪奇物语：壁炉"
+  },
+  "恋人回家|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:19.843Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36199170",
+    "doubanTitle": "房屋猎人: 回家过圣诞 HOUSE HUNTER  HO-HO-HOME (2021)",
+    "doubanYear": 2021,
+    "query": "恋人回家"
+  },
+  "悲伤街区|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:01:59.103Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36989872",
+    "doubanTitle": "悲伤的街区 Barrio Triste (2025)",
+    "doubanYear": 2025,
+    "query": "悲伤街区"
+  },
+  "情感价值|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:18.840Z",
+    "status": "picked",
+    "doubanId": "36413501",
+    "via": "suggest",
+    "query": "情感价值"
+  },
+  "懦夫|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:49.158Z",
+    "status": "picked",
+    "doubanId": "37148241",
+    "via": "search",
+    "query": "懦夫"
+  },
+  "成为休曼|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:01:22.454Z",
+    "status": "picked",
+    "doubanId": "37219614",
+    "via": "search",
+    "query": "成为休曼"
+  },
+  "我们不是什么|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:57.775Z",
+    "status": "picked",
+    "doubanId": "37421915",
+    "via": "search",
+    "query": "我们不是什么"
+  },
+  "我们不是陌生人|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:45.257Z",
+    "status": "picked",
+    "doubanId": "35328629",
+    "via": "suggest",
+    "query": "我们不是陌生人"
+  },
+  "我们的救赎|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:05:29.655Z",
+    "status": "picked",
+    "doubanId": "36660162",
+    "via": "suggest",
+    "query": "我们的救赎"
+  },
+  "我家的事|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:30:06.441Z",
+    "status": "picked",
+    "doubanId": "36093535",
+    "via": "suggest",
+    "query": "我家的事"
+  },
+  "我很少在梦中醒来|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:06:24.606Z",
+    "status": "picked",
+    "doubanId": "37246586",
+    "via": "suggest",
+    "query": "我很少在梦中醒来"
+  },
+  "我很重要|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:24:07.558Z",
+    "status": "picked",
+    "doubanId": "35384241",
+    "via": "search",
+    "query": "I Matter / Eu contez"
+  },
+  "我爱的人|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:36:29.450Z",
+    "status": "picked",
+    "doubanId": "37494774",
+    "via": "suggest",
+    "query": "我爱的人"
+  },
+  "我的妻子在哭|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:41:22.066Z",
+    "status": "picked",
+    "doubanId": "36950814",
+    "via": "search",
+    "query": "我的妻子在哭"
+  },
+  "我的忧伤亡者|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:55.211Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "35740040",
+    "doubanTitle": "三只老虎 Três Tigres Tristes (2022)",
+    "doubanYear": 2022,
+    "query": "我的忧伤亡者"
+  },
+  "我的母亲|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:30:14.616Z",
+    "status": "picked",
+    "doubanId": "37806528",
+    "via": "search",
+    "query": "我的母亲"
+  },
+  "我的疯狂女权女友|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:19.868Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37824195",
+    "doubanTitle": "疯了！我女友是女性主义者 僕の狂ったフェミ彼女 (2026)",
+    "doubanYear": 2026,
+    "query": "我的疯狂女权女友"
+  },
+  "战士小子之道|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:01:50.970Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36877090",
+    "doubanTitle": "海豹小子 Way of the Warrior Kid (2026)",
+    "doubanYear": 2026,
+    "query": "Way of the Warrior Kid"
+  },
+  "所爱之人|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:13.120Z",
+    "status": "picked",
+    "doubanId": "37055925",
+    "via": "suggest",
+    "query": "所爱之人"
+  },
+  "托尼|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:46:25.028Z",
+    "status": "picked",
+    "doubanId": "37002986",
+    "via": "suggest",
+    "query": "托尼"
+  },
+  "挖掘者|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:05:58.556Z",
+    "status": "picked",
+    "doubanId": "36783248",
+    "via": "search",
+    "query": "挖掘者"
+  },
+  "捕风追影|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:02:13.485Z",
+    "status": "picked",
+    "doubanId": "36600459",
+    "via": "suggest",
+    "query": "捕风追影"
+  },
+  "提袋人|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:02:23.250Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36033629",
+    "doubanTitle": "布袋人 Bagman (2024)",
+    "doubanYear": 2024,
+    "query": "提袋人"
+  },
+  "摩的|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:02:06.396Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37522880",
+    "doubanTitle": "简·西摩的家族秘密 第一季 Relative Secrets with Jane Seymour Season 1 (2025)",
+    "doubanYear": 2025,
+    "query": "摩的"
+  },
+  "撑住你的心|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:31:46.846Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37363204",
+    "doubanTitle": "护工不是人 第一季 Ann Droid Season 1 (2026)",
+    "doubanYear": 2026,
+    "query": "撑住你的心"
+  },
+  "故土|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:39.942Z",
+    "status": "picked",
+    "doubanId": "37487816",
+    "via": "search",
+    "query": "故土"
+  },
+  "救赎|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:31.667Z",
+    "status": "picked",
+    "doubanId": "36948305",
+    "via": "suggest",
+    "query": "救赎"
+  },
+  "新的黎明|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:41:31.497Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36872791",
+    "doubanTitle": "花绿青绽放之日 花緑青が明ける日に (2026)",
+    "doubanYear": 2026,
+    "query": "新的黎明"
+  },
+  "旅と日々|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:05:43.610Z",
+    "status": "picked",
+    "doubanId": "37227650",
+    "via": "search",
+    "query": "旅と日々"
+  },
+  "无处安放双眼|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:32.024Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38208000",
+    "doubanTitle": "无处安放我的双眼 눈 둘 데가 없네 (2026)",
+    "doubanYear": 2026,
+    "query": "无处安放双眼"
+  },
+  "星期天们|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:01:10.574Z",
+    "status": "picked",
+    "doubanId": "36898818",
+    "via": "search",
+    "query": "Los domingos / Sundays"
+  },
+  "桑茨|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:41.148Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36401861",
+    "doubanTitle": "双面伴娘 Bride Hard (2025)",
+    "doubanYear": 2025,
+    "query": "桑茨"
+  },
+  "橡树街的尽头|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:48:07.936Z",
+    "status": "picked",
+    "doubanId": "36318703",
+    "via": "search",
+    "query": "橡树街的尽头"
+  },
+  "武士与囚徒|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:51:31.179Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36811388",
+    "doubanTitle": "白雪公主与七武士 Snow White and the Seven Samurai (2024)",
+    "doubanYear": 2024,
+    "query": "武士与囚徒"
+  },
+  "水泥之地|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:30:36.089Z",
+    "status": "picked",
+    "doubanId": "35481044",
+    "via": "search",
+    "query": "Concrete Land"
+  },
+  "汪汪队立大功：恐龙大电影|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:55.010Z",
+    "status": "picked",
+    "doubanId": "36791178",
+    "via": "search",
+    "query": "汪汪队立大功：恐龙大电影"
+  },
+  "河岸|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:38.664Z",
+    "status": "picked",
+    "doubanId": "36728172",
+    "via": "search",
+    "query": "河岸"
+  },
+  "泡泡糖女孩|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:05.914Z",
+    "status": "picked",
+    "doubanId": "37030720",
+    "via": "suggest",
+    "query": "泡泡糖女孩"
+  },
+  "泥娃娃|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:09.211Z",
+    "status": "picked",
+    "doubanId": "37474018",
+    "via": "suggest",
+    "query": "泥娃娃"
+  },
+  "泰勒·佩里之圣诞福音|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:00:28.118Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38226553",
+    "doubanTitle": "黑色圣诞福音 Tyler Perry's the Gospel of Christmas (2026)",
+    "doubanYear": 2026,
+    "query": "泰勒·佩里之圣诞福音"
+  },
+  "海上女王|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:40.401Z",
+    "status": "picked",
+    "doubanId": "35765242",
+    "via": "search",
+    "query": "海上女王"
+  },
+  "温柔的怪物|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:57:43.225Z",
+    "status": "picked",
+    "doubanId": "37269580",
+    "via": "suggest",
+    "query": "温柔的怪物"
+  },
+  "潜伏6|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:48:10.591Z",
+    "status": "picked",
+    "doubanId": "37525017",
+    "via": "suggest",
+    "query": "潜伏6"
+  },
+  "热线|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:03:11.719Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36433066",
+    "doubanTitle": "生命热线 Lifeline (2025)",
+    "doubanYear": 2025,
+    "query": "热线"
+  },
+  "爬行者|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:47:54.934Z",
+    "status": "picked",
+    "doubanId": "36886420",
+    "via": "search",
+    "query": "Crawlers"
+  },
+  "父亲的房间|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:44:25.328Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "36687720",
+    "doubanTitle": "隔壁房间 The Room Next Door (2024)",
+    "doubanYear": 2024,
+    "query": "父亲的房间"
+  },
+  "犬星|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:47:39.250Z",
+    "status": "picked",
+    "doubanId": "37107254",
+    "via": "search",
+    "query": "犬星"
+  },
+  "狂忘警探|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:34:41.558Z",
+    "status": "picked",
+    "doubanId": "37514158",
+    "via": "suggest",
+    "query": "狂忘警探"
+  },
+  "猎鹰|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:32:34.132Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "30367642",
+    "doubanTitle": "猎鹰与冬兵 The Falcon and the Winter Soldier (2021)",
+    "doubanYear": 2021,
+    "query": "猎鹰"
+  },
+  "猴子的孩子们|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:23:42.931Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36176186",
+    "doubanTitle": "猴子的孩子 I figli della scimmia (2026)",
+    "doubanYear": 2026,
+    "query": "猴子的孩子们"
+  },
+  "理智与情感|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:39.734Z",
+    "status": "picked",
+    "doubanId": "37247236",
+    "via": "search",
+    "query": "理智与情感"
+  },
+  "生日派对|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:11.020Z",
+    "status": "picked",
+    "doubanId": "36603390",
+    "via": "search",
+    "query": "生日派对"
+  },
+  "疗愈之地|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:10:19.428Z",
+    "status": "picked",
+    "doubanId": "38202093",
+    "via": "suggest",
+    "query": "疗愈之地"
+  },
+  "白痴们|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:47.165Z",
+    "status": "picked",
+    "doubanId": "26991057",
+    "via": "search",
+    "query": "白痴们"
+  },
+  "盒中羊|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:32.191Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "38908012",
+    "doubanTitle": "盒中雨 Box of Rain (2022)",
+    "doubanYear": 2022,
+    "query": "盒中羊"
+  },
+  "秘密特工|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:55:43.241Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37235031",
+    "doubanTitle": "我的特秘密特工丈夫 第二季 My Secret Agent Husband Season 2 (2025)",
+    "doubanYear": 2025,
+    "query": "秘密特工"
+  },
+  "穆兰|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:10.261Z",
+    "status": "picked",
+    "doubanId": "37248336",
+    "via": "suggest",
+    "query": "穆兰"
+  },
+  "突如其来|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:44.108Z",
+    "status": "picked",
+    "doubanId": "37342630",
+    "via": "search",
+    "query": "突如其来"
+  },
+  "第63届金马奖|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:21:18.398Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "1753930",
+    "doubanTitle": "第63届金球奖颁奖典礼 The 63rd Annual Golden Globe Awards (2006)",
+    "doubanYear": 2006,
+    "query": "第63届金马奖"
+  },
+  "第99届奥斯卡|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:21:27.551Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37275292",
+    "doubanTitle": "第98届奥斯卡颁奖典礼 The 98th Annual Academy Awards (2026)",
+    "doubanYear": 2026,
+    "query": "第99届奥斯卡"
+  },
+  "第十四条|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:31:30.589Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "34994828",
+    "doubanTitle": "第十四条金鱼 The Fourteenth Goldfish (2028)",
+    "doubanYear": 2028,
+    "query": "第十四条"
+  },
+  "第四幕|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:44:59.129Z",
+    "status": "picked",
+    "doubanId": "37817037",
+    "via": "search",
+    "query": "第四幕"
+  },
+  "米洛|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:51:16.035Z",
+    "status": "picked",
+    "doubanId": "38230527",
+    "via": "search",
+    "query": "米洛"
+  },
+  "米诺陶|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:27.722Z",
+    "status": "picked",
+    "doubanId": "37291549",
+    "via": "suggest",
+    "query": "米诺陶"
+  },
+  "精心护理|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:06:10.744Z",
+    "status": "picked",
+    "doubanId": "37077011",
+    "via": "search",
+    "query": "Tender Loving Care"
+  },
+  "约瑟芬|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:40:40.869Z",
+    "status": "picked",
+    "doubanId": "36803381",
+    "via": "search",
+    "query": "Josephine"
+  },
+  "纸盒藏迷|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:28.257Z",
+    "status": "picked",
+    "doubanId": "36939906",
+    "via": "suggest",
+    "query": "纸盒藏迷"
+  },
+  "纸老虎|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:26:03.171Z",
+    "status": "picked",
+    "doubanId": "37100986",
+    "via": "search",
+    "query": "纸老虎"
+  },
+  "绕道去找黛安|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:22:03.244Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36845676",
+    "doubanTitle": "绕道黛安 Un détour par Diane (2026)",
+    "doubanYear": 2026,
+    "query": "绕道去找黛安"
+  },
+  "罗丝|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:27:58.195Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "5050283",
+    "doubanTitle": "诺曼爱罗丝 Norman Loves Rose (1982)",
+    "doubanYear": 1982,
+    "query": "罗丝"
+  },
+  "罗目的黄昏|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:01:22.621Z",
+    "status": "picked",
+    "doubanId": "37041920",
+    "via": "suggest",
+    "query": "罗目的黄昏"
+  },
+  "罪人|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:09.485Z",
+    "status": "picked",
+    "doubanId": "36742579",
+    "via": "suggest",
+    "query": "罪人"
+  },
+  "艾兹拉|2024": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:04:27.984Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37311897",
+    "doubanTitle": "艾拉 Ella (2024)",
+    "doubanYear": 2024,
+    "query": "艾兹拉"
+  },
+  "节日迷雾|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:02:14.706Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "37173290",
+    "doubanTitle": "节日迷 The Holiday Junkie (2024)",
+    "doubanYear": 2024,
+    "query": "节日迷雾"
+  },
+  "苍蝇|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:41:14.588Z",
+    "status": "picked",
+    "doubanId": "37242752",
+    "via": "suggest",
+    "query": "苍蝇"
+  },
+  "苏姆苏姆，星夜|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:16.894Z",
+    "status": "picked",
+    "doubanId": "38188724",
+    "via": "search",
+    "query": "苏姆苏姆，星夜"
+  },
+  "若我离去，他们会想我吗|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:55:51.418Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "35700196",
+    "doubanTitle": "如果我离开了，他们会想念我吗？ If I Go Will They Miss Me (2022)",
+    "doubanYear": 2022,
+    "query": "若我离去，他们会想我吗"
+  },
+  "苦涩的圣诞节|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:25:55.977Z",
+    "status": "picked",
+    "doubanId": "36690639",
+    "via": "search",
+    "query": "苦涩的圣诞节"
+  },
+  "蓦然回首|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:09:35.377Z",
+    "status": "picked",
+    "doubanId": "37269723",
+    "via": "search",
+    "query": "蓦然回首"
+  },
+  "蝙蝠侠：骑士陨落2|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:26.396Z",
+    "status": "picked",
+    "doubanId": "38613270",
+    "via": "search",
+    "query": "蝙蝠侠：骑士陨落2"
+  },
+  "詹马尔科·索雷西：快乐窃贼|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:03:27.979Z",
+    "status": "picked",
+    "doubanId": "37496194",
+    "via": "search",
+    "query": "詹马尔科·索雷西：快乐窃贼"
+  },
+  "谎言生活|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:45:02.268Z",
+    "status": "picked",
+    "doubanId": "37149367",
+    "via": "suggest",
+    "query": "谎言生活"
+  },
+  "贝琪的最后诱惑|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:48:21.677Z",
+    "status": "picked",
+    "doubanId": "38363357",
+    "via": "search",
+    "query": "The Last Temptation of Becky"
+  },
+  "起义|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:46:21.656Z",
+    "status": "picked",
+    "doubanId": "37425363",
+    "via": "suggest",
+    "query": "起义"
+  },
+  "超级巡警3|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:46:02.763Z",
+    "status": "picked",
+    "doubanId": "35190085",
+    "via": "search",
+    "query": "超级巡警3"
+  },
+  "边境|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:32:14.906Z",
+    "status": "rejected",
+    "reason": "not_found",
+    "doubanId": "",
+    "doubanTitle": "",
+    "doubanYear": null,
+    "query": "Border / Bian jing"
+  },
+  "遗忘之岛|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:47:29.444Z",
+    "status": "picked",
+    "doubanId": "37317906",
+    "via": "suggest",
+    "query": "遗忘之岛"
+  },
+  "采果|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:28:17.511Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38411481",
+    "doubanTitle": "采果时节 Thit-thee Khu (2026)",
+    "doubanYear": 2026,
+    "query": "采果"
+  },
+  "野兽之心|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:48:25.267Z",
+    "status": "picked",
+    "doubanId": "36828393",
+    "via": "suggest",
+    "query": "野兽之心"
+  },
+  "钨|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:42:20.475Z",
+    "status": "picked",
+    "doubanId": "37339827",
+    "via": "suggest",
+    "query": "钨"
+  },
+  "镇上最孤独的人|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:41:08.939Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "37105044",
+    "doubanTitle": "当地最孤单的男人 Kein Platz für Johnny B. Goode (2026)",
+    "doubanYear": 2026,
+    "query": "The Loneliest Man in Town"
+  },
+  "阳光女子合唱团|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:35:06.571Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "37193250",
+    "doubanTitle": "阳光女子合唱团 陽光女子合唱團 (2025)",
+    "doubanYear": 2025,
+    "query": "阳光女子合唱团"
+  },
+  "阿方索·卡隆|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:21:00.900Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "37006059",
+    "doubanTitle": "未定名阿方索·卡隆恐怖片计划 Untitled Alfonso Cuarón Horror Project (2027)",
+    "doubanYear": 2027,
+    "query": "阿方索·卡隆"
+  },
+  "阿里·G：我是谁？|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:48:01.289Z",
+    "status": "picked",
+    "doubanId": "38548985",
+    "via": "search",
+    "query": "阿里·G：我是谁？"
+  },
+  "陌生女子|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:39:22.466Z",
+    "status": "picked",
+    "doubanId": "36575610",
+    "via": "search",
+    "query": "The Unknown / L'Inconnue"
+  },
+  "风之家|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:22:22.264Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "36728360",
+    "doubanTitle": "风起之家 La Maison du Vent (2026)",
+    "doubanYear": 2026,
+    "query": "风之家"
+  },
+  "马蒂至上|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:29:04.651Z",
+    "status": "picked",
+    "doubanId": "36691620",
+    "via": "search",
+    "query": "Marty Supreme"
+  },
+  "鬼之歌|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:06:15.909Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38539991",
+    "doubanTitle": "砂之歌 As a Cure (2026)",
+    "doubanYear": 2026,
+    "query": "鬼之歌"
+  },
+  "魔幻地图册|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:07:07.274Z",
+    "status": "rejected",
+    "reason": "title_mismatch",
+    "doubanId": "38553467",
+    "doubanTitle": "魔法星图 (2026)",
+    "doubanYear": 2026,
+    "query": "Magic Atlas"
+  },
+  "鸽环|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:23:57.152Z",
+    "status": "picked",
+    "doubanId": "38557300",
+    "via": "suggest",
+    "query": "鸽环"
+  },
+  "麦登|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T11:01:29.482Z",
+    "status": "picked",
+    "doubanId": "36423237",
+    "via": "suggest",
+    "query": "麦登"
+  },
+  "麦迪的秘密|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:52:12.585Z",
+    "status": "rejected",
+    "reason": "year_mismatch",
+    "doubanId": "37447786",
+    "doubanTitle": "麦迪的秘密 Maddie's Secret (2025)",
+    "doubanYear": 2025,
+    "query": "Maddie's Secret"
+  },
+  "黄信|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:05:38.036Z",
+    "status": "picked",
+    "doubanId": "35740374",
+    "via": "search",
+    "query": "Yellow Letters / Gelbe Briefe"
+  },
+  "黑潮|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:44:52.075Z",
+    "status": "picked",
+    "doubanId": "37207215",
+    "via": "suggest",
+    "query": "黑潮"
+  },
+  "黑球|2026": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:00:34.891Z",
+    "status": "picked",
+    "doubanId": "37215318",
+    "via": "search",
+    "query": "黑球"
+  },
+  "黑，红，黄|2025": {
+    "kind": "search",
+    "fetchedAt": "2026-11-13T10:05:48.961Z",
+    "status": "picked",
+    "doubanId": "37374404",
+    "via": "search",
+    "query": "Black, Red, Yellow"
+  }
+}

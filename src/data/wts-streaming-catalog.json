@@ -138,7 +138,13 @@
         }
       ],
       "poster": "/posters/other-mommy.jpg",
-      "synopsisEn": "Other Mommy. Streaming date via When To Stream (US)."
+      "synopsisEn": "Other Mommy. Streaming date via When To Stream (US).",
+      "doubanRating": {
+        "score": 5.7,
+        "count": 3926,
+        "doubanId": "37317907",
+        "updatedAt": "2026-11-13T10:45:33.040Z"
+      }
     },
     {
       "id": "sense-and-sensibility",
@@ -173,7 +179,13 @@
         }
       ],
       "poster": "/posters/sense-and-sensibility.jpg",
-      "synopsisEn": "Sense and Sensibility. Streaming date via When To Stream (US)."
+      "synopsisEn": "Sense and Sensibility. Streaming date via When To Stream (US).",
+      "doubanRating": {
+        "score": 6.5,
+        "count": 2003,
+        "doubanId": "37247236",
+        "updatedAt": "2026-11-13T10:45:39.732Z"
+      }
     },
     {
       "id": "idiots",
@@ -206,7 +218,13 @@
         }
       ],
       "poster": "/posters/idiots.jpg",
-      "synopsisEn": "Idiots. Streaming date via When To Stream (US)."
+      "synopsisEn": "Idiots. Streaming date via When To Stream (US).",
+      "doubanRating": {
+        "score": 5.1,
+        "count": 378,
+        "doubanId": "26991057",
+        "updatedAt": "2026-11-13T10:45:47.163Z"
+      }
     },
     {
       "id": "paw-patrol-the-dino-movie",
@@ -241,7 +259,13 @@
         }
       ],
       "poster": "/posters/paw-patrol-the-dino-movie.jpg",
-      "synopsisEn": "PAW Patrol: The Dino Movie. Streaming date via When To Stream (US)."
+      "synopsisEn": "PAW Patrol: The Dino Movie. Streaming date via When To Stream (US).",
+      "doubanRating": {
+        "score": 7.1,
+        "count": 3730,
+        "doubanId": "36791178",
+        "updatedAt": "2026-11-13T10:45:55.009Z"
+      }
     },
     {
       "id": "super-troopers-3",
@@ -343,7 +367,13 @@
           "publishedAt": "2026-11-05T13:56:39+08:00"
         }
       ],
-      "poster": "/posters/gail-daughtry-and-the-celebrity-sex-pass.jpg"
+      "poster": "/posters/gail-daughtry-and-the-celebrity-sex-pass.jpg",
+      "doubanRating": {
+        "score": 5.2,
+        "count": 247,
+        "doubanId": "37342631",
+        "updatedAt": "2026-11-13T10:46:19.019Z"
+      }
     },
     {
       "id": "the-uprising",
@@ -376,7 +406,13 @@
         }
       ],
       "poster": "/posters/the-uprising.jpg",
-      "synopsisEn": "The Uprising. Streaming date via When To Stream (US)."
+      "synopsisEn": "The Uprising. Streaming date via When To Stream (US).",
+      "doubanRating": {
+        "score": 6.3,
+        "count": 1411,
+        "doubanId": "37425363",
+        "updatedAt": "2026-11-13T10:46:21.653Z"
+      }
     },
     {
       "id": "tony",
@@ -411,7 +447,13 @@
         }
       ],
       "poster": "/posters/tony.jpg",
-      "synopsisEn": "Tony. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "Tony. Streaming release dates via When To Stream (US).",
+      "doubanRating": {
+        "score": 6.8,
+        "count": 1546,
+        "doubanId": "37002986",
+        "updatedAt": "2026-11-13T10:46:25.026Z"
+      }
     },
     {
       "id": "if-i-go-will-they-miss-me",
@@ -544,7 +586,13 @@
         }
       ],
       "poster": "/posters/forgotten-island.jpg",
-      "synopsisEn": "Forgotten Island. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "Forgotten Island. Streaming release dates via When To Stream (US).",
+      "doubanRating": {
+        "score": 7.5,
+        "count": 2255,
+        "doubanId": "37317906",
+        "updatedAt": "2026-11-13T10:47:29.442Z"
+      }
     },
     {
       "id": "the-dog-stars",
@@ -614,7 +662,13 @@
         }
       ],
       "poster": "/posters/finding-emily.jpg",
-      "synopsisEn": "Finding Emily. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "Finding Emily. Streaming release dates via When To Stream (US).",
+      "doubanRating": {
+        "score": 7.5,
+        "count": 13556,
+        "doubanId": "36912404",
+        "updatedAt": "2026-11-13T10:47:42.902Z"
+      }
     },
     {
       "id": "crawlers",
@@ -649,7 +703,13 @@
         }
       ],
       "poster": "/posters/crawlers.jpg",
-      "synopsisEn": "Crawlers. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "Crawlers. Streaming release dates via When To Stream (US).",
+      "doubanRating": {
+        "score": 6.4,
+        "count": 1679,
+        "doubanId": "36886420",
+        "updatedAt": "2026-11-13T10:47:54.933Z"
+      }
     },
     {
       "id": "ali-g-who-iz-i",
@@ -684,7 +744,13 @@
         }
       ],
       "poster": "/posters/ali-g-who-iz-i.jpg",
-      "synopsisEn": "Ali G: Who Iz I?. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "Ali G: Who Iz I?. Streaming release dates via When To Stream (US).",
+      "doubanRating": {
+        "score": 6.5,
+        "count": 424,
+        "doubanId": "38548985",
+        "updatedAt": "2026-11-13T10:48:01.285Z"
+      }
     },
     {
       "id": "the-end-of-oak-street",
@@ -718,7 +784,13 @@
           "publishedAt": "2026-11-07T10:01:27+08:00"
         }
       ],
-      "poster": "/posters/the-end-of-oak-street.jpg"
+      "poster": "/posters/the-end-of-oak-street.jpg",
+      "doubanRating": {
+        "score": 5.5,
+        "count": 26206,
+        "doubanId": "36318703",
+        "updatedAt": "2026-11-13T10:48:07.933Z"
+      }
     },
     {
       "id": "insidious-out-of-the-further",
@@ -753,7 +825,13 @@
         }
       ],
       "poster": "/posters/insidious-out-of-the-further.jpg",
-      "synopsisEn": "Insidious: Out of the Further. Streaming release date via When To Stream (U.S.)."
+      "synopsisEn": "Insidious: Out of the Further. Streaming release date via When To Stream (U.S.).",
+      "doubanRating": {
+        "score": 6.6,
+        "count": 12919,
+        "doubanId": "37525017",
+        "updatedAt": "2026-11-13T10:48:10.589Z"
+      }
     },
     {
       "id": "the-last-temptation-of-becky",
@@ -823,7 +901,13 @@
         }
       ],
       "synopsisEn": "Heart of the Beast. Streaming release date via When To Stream (US).",
-      "poster": "/posters/heart-of-the-beast.jpg"
+      "poster": "/posters/heart-of-the-beast.jpg",
+      "doubanRating": {
+        "score": 7.3,
+        "count": 31711,
+        "doubanId": "36828393",
+        "updatedAt": "2026-11-13T10:48:25.264Z"
+      }
     },
     {
       "id": "ha-chan-shake-your-booty",
@@ -926,7 +1010,13 @@
           "publishedAt": "2026-11-12T10:00:15+08:00"
         }
       ],
-      "poster": "/posters/one-night-only.jpg"
+      "poster": "/posters/one-night-only.jpg",
+      "doubanRating": {
+        "score": 6.3,
+        "count": 3273,
+        "doubanId": "37233476",
+        "updatedAt": "2026-11-13T10:51:35.272Z"
+      }
     },
     {
       "id": "avengers-endgame-encore",

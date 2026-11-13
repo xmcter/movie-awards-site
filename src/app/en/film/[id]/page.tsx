@@ -11,6 +11,7 @@ import { TypeBadge } from "@/components/Badge";
 import FilmPoster from "@/app/film/[id]/FilmPoster";
 import {
   FILM_ALIASES,
+  doubanRatingOf,
   films,
   getFilm,
   getFilmEvents,
@@ -173,6 +174,7 @@ export default async function FilmPageEn({
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
   const { plot, background } = splitFilmCopy(film, "en");
   const verifiedAwards = getVerifiedFilmAwards(film.id);
+  const douban = doubanRatingOf(film);
   const directorsEn = directorNamesEn(film.directors);
   const castEn = directorNamesEn(film.cast);
   const peopleLabel =
@@ -239,6 +241,11 @@ export default async function FilmPageEn({
                 <FilmMeta year={film.year} />
               </span>
             </h1>
+            {douban ? (
+              <p className="mt-2 text-sm text-cinema-muted" data-douban-rating={douban.score.toFixed(1)}>
+                ⭐ Douban <span className="font-medium tabular-nums text-cinema-text">{douban.score.toFixed(1)}</span>
+              </p>
+            ) : null}
             {film.runtime ? (
               <p className="mt-3 text-xs text-cinema-muted/70">
                 {film.runtime} min

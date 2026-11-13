@@ -82,7 +82,13 @@
         "#334155"
       ],
       "streaming": [],
-      "poster": "/posters/catching-the-wind.jpg"
+      "poster": "/posters/catching-the-wind.jpg",
+      "doubanRating": {
+        "score": 8,
+        "count": 620256,
+        "doubanId": "36600459",
+        "updatedAt": "2026-11-13T10:02:13.484Z"
+      }
     },
     {
       "id": "love-like-mine",
@@ -106,7 +112,13 @@
       ],
       "streaming": [],
       "synopsisEn": "Liu Tzu-han won Best Actress at the 44th Hong Kong Film Awards for this film.",
-      "poster": "/posters/love-like-mine.jpg"
+      "poster": "/posters/love-like-mine.jpg",
+      "doubanRating": {
+        "score": 7.1,
+        "count": 8718,
+        "doubanId": "36219411",
+        "updatedAt": "2026-11-13T10:02:16.475Z"
+      }
     },
     {
       "id": "golden-horse-63",

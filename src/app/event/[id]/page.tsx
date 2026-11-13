@@ -15,7 +15,8 @@ import {
   truncateDescription,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
-import { bilingualAlternates } from "@/lib/i18n";
+import LazyPoster from "@/components/LazyPoster";
+import { bilingualAlternates, cleanGuideDirector } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -112,7 +113,7 @@ export default async function EventPage({
     film?.title || event.filmTitle,
     film?.year || event.filmYear,
     film?.titleEn || event.filmTitleEn,
-    directors[0],
+    cleanGuideDirector(directors[0]),
   ]
     .filter(Boolean)
     .join(" ");
@@ -164,8 +165,11 @@ export default async function EventPage({
             }}
           >
             {event.poster ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={event.poster} alt={event.filmTitle} className="h-full w-full object-cover" />
+              <LazyPoster
+                src={event.poster}
+                alt={event.filmTitle}
+                fallback={initials(event.filmTitleEn || event.filmTitle)}
+              />
             ) : (
               <div className="flex h-full w-full items-center justify-center font-display text-sm text-white/80">
                 {initials(event.filmTitleEn || event.filmTitle)}

@@ -478,6 +478,26 @@ export function personNamesEn(names: string[] | undefined): string[] {
   return (names || []).map(personNameEn);
 }
 
+const HAN_CHAR = /[\u4e00-\u9fff]/;
+
+/** English titles and director credits: keep a mapped or already-Latin name.
+ *  An untranslated Chinese name is omitted instead of being pasted into English. */
+export function directorNamesEn(names: string[] | undefined): string[] {
+  return personNamesEn(names).filter((name) => name.trim() && !HAN_CHAR.test(name));
+}
+
+/** Guide query only. Drop a trailing comma and a scraped annotation clause
+ *  ("who…", "written by…", "and stars…"). Does not change which fields are joined. */
+export function cleanGuideDirector(name?: string): string {
+  let s = (name || "").replace(/\s+/g, " ").trim();
+  if (!s) return "";
+  s = s.replace(
+    /[,，]\s*(?:who|and|written|produced|starring|stars|co-wrote|co-directed|directed)\b[\s\S]*$/i,
+    "",
+  );
+  return s.replace(/[,，、;；:：\s]+$/g, "").trim();
+}
+
 /* ------------------------------------------------------------------ */
 /* Sources                                                             */
 /* ------------------------------------------------------------------ */

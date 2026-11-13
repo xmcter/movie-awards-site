@@ -49,7 +49,7 @@ import {
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
 import { dedupeSubtitleAgainstTitleEn } from "@/lib/headlines-en";
 import { useShowSources } from "@/components/ShowSources";
-import type { Locale } from "@/lib/i18n";
+import { cleanGuideDirector, type Locale } from "@/lib/i18n";
 
 
 
@@ -670,7 +670,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
                             </Link>
                           ) : null}
                           <a
-                            href={`https://guide.readcine.com/?q=${encodeURIComponent([event.filmTitle, event.filmYear, event.filmTitleEn, event.directors?.[0]].filter(Boolean).join(" "))}&pick=1`}
+                            href={`https://guide.readcine.com/?q=${encodeURIComponent([event.filmTitle, event.filmYear, event.filmTitleEn, cleanGuideDirector(event.directors?.[0])].filter(Boolean).join(" "))}&pick=1`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"

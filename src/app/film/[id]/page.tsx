@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Suspense, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
 import ReleaseLabel from "@/components/ReleaseLabel";
 import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
 import FilmPoster from "./FilmPoster";
 import {
@@ -20,7 +20,7 @@ import {
   truncateDescription,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy, stripStreamingBoilerplate } from "@/lib/headlines";
-import { bilingualAlternates } from "@/lib/i18n";
+import { bilingualAlternates, cleanGuideDirector } from "@/lib/i18n";
 import {
   PLATFORM_LABELS,
   RELEASE_STATUS_LABELS,
@@ -124,11 +124,6 @@ export async function generateMetadata({
   };
 }
 
-function RedirectAlias({ canonicalId }: { canonicalId: string }): ReactNode {
-  redirect(`/film/${canonicalId}`);
-  return null;
-}
-
 function Section({
   title,
   children,
@@ -152,12 +147,35 @@ export default async function FilmPage({
   const { id } = await params;
   const canonicalId = FILM_ALIASES[id];
   if (canonicalId) {
-    // redirect() 会抛出。包在 Suspense 里，静态导出才会写成带跳转标签的页面，
-    // 而不是空的 __next_error__ 壳（nginx 静态站不会发 HTTP 307）。
+    // 与英文别名页相同：0 秒 meta refresh（相对路径，保持当前 https）。
+    // 真正的 HTTP 301 在 deploy/nginx.conf.example，静态导出写不出状态码。
+    const targetFilm = getFilm(canonicalId);
+    const targetUrl = `/film/${canonicalId}`;
     return (
-      <Suspense fallback={null}>
-        <RedirectAlias canonicalId={canonicalId} />
-      </Suspense>
+      <div className="space-y-6">
+        <meta httpEquiv="refresh" content={`0;url=${targetUrl}`} />
+        <p className="text-xs text-cinema-muted">
+          <Link href="/" className="hover:text-cinema-gold">
+            ← 时间线
+          </Link>
+        </p>
+        <section className="rounded-2xl border border-cinema-border bg-cinema-card p-6 sm:p-8">
+          <h1 className="font-display text-xl text-cinema-text sm:text-2xl">
+            {targetFilm ? `《${targetFilm.title}》已合并` : "影片条目已合并"}
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-cinema-muted">
+            此页已并入主影片页，正在自动跳转。若浏览器没有跳转，请使用下面的链接：
+          </p>
+          <p className="mt-4">
+            <Link
+              href={targetUrl}
+              className="text-sm font-medium text-cinema-gold underline decoration-cinema-border underline-offset-4 hover:text-cinema-gold-light"
+            >
+              前往{targetFilm ? `《${targetFilm.title}》影片页` : targetUrl}（{targetUrl}）→
+            </Link>
+          </p>
+        </section>
+      </div>
     );
   }
 
@@ -183,7 +201,7 @@ export default async function FilmPage({
     film.title,
     film.year,
     film.titleEn,
-    film.directors.length > 0 ? film.directors[0] : "",
+    film.directors.length > 0 ? cleanGuideDirector(film.directors[0]) : "",
   ]
     .filter(Boolean)
     .join(" ");

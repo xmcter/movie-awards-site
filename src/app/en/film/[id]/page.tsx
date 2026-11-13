@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import fs from "node:fs";
+import path from "node:path";
 import Link from "next/link";
 import ReleaseLabel from "@/components/ReleaseLabel";
 import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
+import FilmPoster from "@/app/film/[id]/FilmPoster";
 import {
   FILM_ALIASES,
   films,
@@ -23,6 +26,8 @@ import {
   genreLabelsEn,
   filmTitleEn,
   personNamesEn,
+  directorNamesEn,
+  cleanGuideDirector,
   bilingualAlternatesEn,
 } from "@/lib/i18n";
 import { isPastReleaseDate } from "@/lib/labels";
@@ -93,14 +98,20 @@ export async function generateMetadata({
   };
 }
 
-function initials(title: string): string {
-  const trimmed = title.trim();
-  if (!trimmed) return "?";
-  const latin = trimmed.match(/[A-Za-z]+/g);
-  if (latin && latin.length > 0) {
-    return latin.slice(0, 2).map((w) => w[0]!.toUpperCase()).join("");
-  }
-  return trimmed.slice(0, 2);
+/** /posters/x.ext → /thumbs/x.webp；与中文影片页同一规则，缺缩略图时回退原图。 */
+function thumbForPoster(poster: string): string | undefined {
+  if (/^https?:\/\//i.test(poster)) return undefined;
+  const marker = "/posters/";
+  const at = poster.indexOf(marker);
+  if (at < 0) return undefined;
+  const file = poster.slice(at + marker.length).split(/[?#]/)[0] ?? "";
+  if (!file || file.includes("/")) return undefined;
+  const stem = file.replace(/\.[^.]+$/, "");
+  if (!stem) return undefined;
+  const thumbName = `${stem}.webp`;
+  const thumbFile = path.join(process.cwd(), "public", "thumbs", thumbName);
+  if (!fs.existsSync(thumbFile)) return undefined;
+  return `${poster.slice(0, at)}/thumbs/${thumbName}`;
 }
 
 function Section({
@@ -130,6 +141,7 @@ export default async function FilmPageEn({
     const targetUrl = `/en/film/${canonicalId}`;
     return (
       <div className="space-y-6">
+        {/* 与中文别名页同为 0 秒。HTTP 301 见 deploy/nginx.conf.example，目标为 https。 */}
         <meta httpEquiv="refresh" content={`0;url=${targetUrl}`} />
         <p className="text-xs text-cinema-muted">
           <Link href="/en" className="hover:text-cinema-gold">
@@ -164,7 +176,7 @@ export default async function FilmPageEn({
   const colors = film.posterColors || ["#1a1a2e", "#334155"];
   const { plot, background } = splitFilmCopy(film, "en");
   const verifiedAwards = getVerifiedFilmAwards(film.id);
-  const directorsEn = personNamesEn(film.directors);
+  const directorsEn = directorNamesEn(film.directors);
   const castEn = personNamesEn(film.cast);
   const peopleLabel =
     film.directors.length > 0
@@ -178,7 +190,7 @@ export default async function FilmPageEn({
   const guideQuery = [
     filmTitleEn(film),
     film.year,
-    film.directors.length > 0 ? directorsEn[0] : "",
+    directorsEn.length > 0 ? cleanGuideDirector(directorsEn[0]) : "",
   ]
     .filter(Boolean)
     .join(" ");
@@ -209,22 +221,13 @@ export default async function FilmPageEn({
 
       <section className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
         <div className="flex flex-row items-start">
-          <div
-            className="m-4 mr-0 h-[144px] w-[96px] shrink-0 overflow-hidden rounded-md sm:m-5 sm:h-[210px] sm:w-[140px]"
-            style={{
-              background: colors[0],
-              aspectRatio: "2 / 3",
-            }}
-          >
-            {film.poster ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={film.poster} alt={filmTitleEn(film)} className="h-full w-full object-cover" />
-            ) : (
-              <div className="flex h-full w-full items-center justify-center font-display text-2xl text-white/80">
-                {initials(film.titleEn || film.title)}
-              </div>
-            )}
-          </div>
+          <FilmPoster
+            src={thumbForPoster(film.poster || "") || film.poster}
+            fallbackSrc={film.poster && thumbForPoster(film.poster) ? film.poster : undefined}
+            title={filmTitleEn(film)}
+            titleEn={film.titleEn || film.title}
+            colors={colors}
+          />
           <div className="min-w-0 flex-1 p-4 pl-3 sm:p-6 sm:pl-5">
             <p className="text-xs uppercase tracking-[0.18em] text-cinema-gold">
               {genreLabelsEn(film.genres).join(" · ") || "Film"}
@@ -247,16 +250,16 @@ export default async function FilmPageEn({
         </div>
       </section>
 
-      {film.cast.length > 0 || (film.directors.length > 0 && !plot) ? (
-        <Section title={film.directors.length > 0 && !plot && film.cast.length > 0 ? "Director & cast" : film.directors.length > 0 && !plot ? "Director" : peopleLabel !== "Director" ? peopleLabel : "Cast"}>
-          {!plot && film.directors.length > 0 ? (
+      {film.cast.length > 0 || (directorsEn.length > 0 && !plot) ? (
+        <Section title={directorsEn.length > 0 && !plot && film.cast.length > 0 ? "Director & cast" : directorsEn.length > 0 && !plot ? "Director" : peopleLabel !== "Director" ? peopleLabel : "Cast"}>
+          {!plot && directorsEn.length > 0 ? (
             <p className="text-cinema-text">
               <span className="text-cinema-muted">Director </span>
               {directorsEn.join(", ")}
             </p>
           ) : null}
           {film.cast.length > 0 ? (
-            <p className={`${!plot && film.directors.length > 0 ? "mt-2 " : ""}text-sm text-cinema-text`}>
+            <p className={`${!plot && directorsEn.length > 0 ? "mt-2 " : ""}text-sm text-cinema-text`}>
               <span className="text-cinema-muted">{film.directors.length === 0 && (film.genres.includes("荣誉") || film.genres.includes("评审")) ? peopleLabel : "Cast"} </span>
               {castEn.join(", ")}
             </p>
@@ -266,7 +269,7 @@ export default async function FilmPageEn({
 
       {plot ? (
         <Section title="Plot">
-          {film.directors.length > 0 ? (
+          {directorsEn.length > 0 ? (
             <p className="mb-3 text-cinema-text">
               <span className="text-cinema-muted">Director </span>
               {directorsEn.join(", ")}

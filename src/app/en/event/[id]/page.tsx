@@ -15,7 +15,8 @@ import {
   truncateDescription,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitleEn } from "@/lib/headlines-en";
-import { bilingualAlternatesEn, filmTitleEn, personNamesEn } from "@/lib/i18n";
+import LazyPoster from "@/components/LazyPoster";
+import { bilingualAlternatesEn, cleanGuideDirector, directorNamesEn, filmTitleEn, personNamesEn } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -104,7 +105,7 @@ export default async function EventPageEn({
   const film = event.filmId ? getFilm(event.filmId) : undefined;
   const { plot, background } = film ? splitFilmCopy(film, "en") : { plot: "", background: "" };
   const directors =
-    (film?.directors && film.directors.length > 0 ? personNamesEn(film.directors) : event.directors) || [];
+    (film?.directors && film.directors.length > 0 ? directorNamesEn(film.directors) : directorNamesEn(event.directors)) || [];
   const colors = event.posterColors || ["#1a1a2e", "#334155"];
   const badge = event.badge;
   const pagerItems = timeline.map((e) => ({ id: e.id, title: e.headline || e.filmTitle }));
@@ -112,7 +113,7 @@ export default async function EventPageEn({
   const guideQuery = [
     film ? filmTitleEn(film) : event.filmTitle,
     film?.year || event.filmYear,
-    directors[0],
+    cleanGuideDirector(directors[0]),
   ]
     .filter(Boolean)
     .join(" ");
@@ -164,8 +165,11 @@ export default async function EventPageEn({
             }}
           >
             {event.poster ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={event.poster} alt={event.filmTitle} className="h-full w-full object-cover" />
+              <LazyPoster
+                src={event.poster}
+                alt={event.filmTitle}
+                fallback={initials(event.filmTitleEn || event.filmTitle)}
+              />
             ) : (
               <div className="flex h-full w-full items-center justify-center font-display text-sm text-white/80">
                 {initials(event.filmTitleEn || event.filmTitle)}

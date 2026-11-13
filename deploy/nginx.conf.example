@@ -6,6 +6,25 @@ server {
     root /var/www/movie-awards-site;
     index index.html;
 
+    # 影片别名。静态导出写不出 HTTP 状态，由这里 301。
+    # 精确匹配优先于 location / 的尾斜杠规则，一次跳到 https 规范页，不经过 http。
+    location = /film/nowhere-to-lay-my-eyes { return 301 https://$host/film/nowhere-to-lay-eyes; }
+    location = /film/nowhere-to-lay-my-eyes/ { return 301 https://$host/film/nowhere-to-lay-eyes; }
+    location = /en/film/nowhere-to-lay-my-eyes { return 301 https://$host/en/film/nowhere-to-lay-eyes; }
+    location = /en/film/nowhere-to-lay-my-eyes/ { return 301 https://$host/en/film/nowhere-to-lay-eyes; }
+    location = /film/la-bola-negra { return 301 https://$host/film/the-black-ball; }
+    location = /film/la-bola-negra/ { return 301 https://$host/film/the-black-ball; }
+    location = /en/film/la-bola-negra { return 301 https://$host/en/film/the-black-ball; }
+    location = /en/film/la-bola-negra/ { return 301 https://$host/en/film/the-black-ball; }
+    location = /film/movie-douban-36808876 { return 301 https://$host/film/the-odyssey; }
+    location = /film/movie-douban-36808876/ { return 301 https://$host/film/the-odyssey; }
+    location = /en/film/movie-douban-36808876 { return 301 https://$host/en/film/the-odyssey; }
+    location = /en/film/movie-douban-36808876/ { return 301 https://$host/en/film/the-odyssey; }
+    location = /film/other-mommy { return 301 https://$host/film/movie-douban-37317907; }
+    location = /film/other-mommy/ { return 301 https://$host/film/movie-douban-37317907; }
+    location = /en/film/other-mommy { return 301 https://$host/en/film/movie-douban-37317907; }
+    location = /en/film/other-mommy/ { return 301 https://$host/en/film/movie-douban-37317907; }
+
     location / {
         # Next.js static export emits path.html (no trailingSlash):
         # /film/id/ -> /film/id, unknown paths -> site 404 page (not nginx default).

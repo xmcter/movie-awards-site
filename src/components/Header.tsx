@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { isEnPath, toEnPath, toZhPath } from "@/lib/i18n";
 import {
   ALLOWED_EMAIL,
@@ -105,53 +105,128 @@ function LoginButton({ en }: { en: boolean }) {
   );
 }
 
+function LangLink({ href, en }: { href: string; en: boolean }) {
+  return (
+    <Link
+      href={href}
+      className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
+      aria-label={en ? "切换到中文" : "Switch to English"}
+    >
+      {en ? "中文" : "EN"}
+    </Link>
+  );
+}
+
+const navLinkClass = "text-xs tracking-wider text-cinema-muted hover:text-cinema-accent";
+
 export default function Header() {
   const pathname = usePathname();
   const en = isEnPath(pathname);
   const toggleHref = en ? toZhPath(pathname || "/en") : toEnPath(pathname || "/");
   const homeHref = en ? "/en" : "/";
   const comingSoonHref = en ? "/en/coming-soon" : "/coming-soon";
+  const tagline = en ? "Release dates · new films" : "定档 · 发行动态";
+  const [open, setOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 640px)");
+    const onChange = () => {
+      if (mq.matches) setOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target;
+      if (!(target instanceof Node)) return;
+      if (buttonRef.current?.contains(target)) return;
+      if (panelRef.current?.contains(target)) return;
+      setOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-cinema-border/80 bg-cinema-bg/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-4 py-3 sm:px-6">
-        <Link href={homeHref} className="group flex items-center gap-2">
-          <img
-            src="/apple-touch-icon.png?v=20261111-22"
-            width={32}
-            height={32}
-            alt=""
-            className="h-8 w-8 rounded-[7px]"
-          />
-          <span className="font-display text-lg tracking-wide text-cinema-text group-hover:text-cinema-accent">
-            {en ? "Screen News" : "银幕新讯"}
-          </span>
-          <span className="hidden rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold sm:inline-block">
-            {en ? "Release dates · new films" : "定档 · 发行动态"}
-          </span>
-        </Link>
-        <nav className="flex items-center gap-4">
-          <Link
-            href={comingSoonHref}
-            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
-          >
-            {en ? "Coming soon" : "即将上线"}
+    <header className="sticky top-0 z-50 min-w-0 border-b border-cinema-border/80 bg-cinema-bg/90 backdrop-blur-md">
+      <div className="mx-auto min-w-0 max-w-3xl px-4 sm:px-6">
+        <div className="flex min-w-0 items-center justify-between gap-2 py-3">
+          <Link href={homeHref} className="group flex min-w-0 items-center gap-2">
+            <img
+              src="/apple-touch-icon.png?v=20261111-22"
+              width={32}
+              height={32}
+              alt=""
+              className="h-8 w-8 shrink-0 rounded-[7px]"
+            />
+            <span className="min-w-0 truncate font-display text-lg tracking-wide text-cinema-text group-hover:text-cinema-accent">
+              {en ? "Screen News" : "银幕新讯"}
+            </span>
+            <span className="hidden shrink-0 rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold sm:inline-block">
+              {tagline}
+            </span>
           </Link>
-          <Link
-            href={toggleHref}
-            className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
-            aria-label={en ? "切换到中文" : "Switch to English"}
-          >
-            {en ? "中文" : "EN"}
-          </Link>
-          <LoginButton en={en} />
-          <a
-            href="https://readcine.com"
-            className="text-xs tracking-wider text-cinema-muted hover:text-cinema-accent"
-          >
-            readcine.
-          </a>
-        </nav>
+          <nav className="hidden shrink-0 items-center gap-4 sm:flex">
+            <Link href={comingSoonHref} className={navLinkClass}>
+              {en ? "Coming soon" : "即将上线"}
+            </Link>
+            <LangLink href={toggleHref} en={en} />
+            <LoginButton en={en} />
+            <a href="https://readcine.com" className={navLinkClass}>
+              readcine.
+            </a>
+          </nav>
+          <div className="flex shrink-0 items-center gap-2 sm:hidden">
+            <LangLink href={toggleHref} en={en} />
+            <button
+              ref={buttonRef}
+              type="button"
+              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cinema-border/70 text-sm text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
+              aria-expanded={open}
+              aria-controls="site-header-menu"
+              aria-label={open ? (en ? "Close menu" : "关闭菜单") : (en ? "Open menu" : "打开菜单")}
+              onClick={() => setOpen((value) => !value)}
+            >
+              <span aria-hidden="true">{open ? "✕" : "☰"}</span>
+            </button>
+          </div>
+        </div>
+        <div
+          id="site-header-menu"
+          ref={panelRef}
+          className={`${open ? "flex" : "hidden"} flex-col items-start gap-3 border-t border-cinema-border/80 py-3 sm:hidden`}
+        >
+          {open ? (
+            <>
+              <span className="rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold">
+                {tagline}
+              </span>
+              <Link href={comingSoonHref} className={navLinkClass} onClick={() => setOpen(false)}>
+                {en ? "Coming soon" : "即将上线"}
+              </Link>
+              <LoginButton en={en} />
+              <a href="https://readcine.com" className={navLinkClass}>
+                readcine.
+              </a>
+            </>
+          ) : null}
+        </div>
       </div>
     </header>
   );

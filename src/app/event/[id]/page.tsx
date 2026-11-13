@@ -107,7 +107,14 @@ export default async function EventPage({
     (film?.directors && film.directors.length > 0 ? film.directors : event.directors) || [];
   const colors = event.posterColors || ["#1a1a2e", "#334155"];
   const badge = event.badge === "新品" ? "新片" : event.badge;
-  const pagerItems = timeline.map((e) => ({ id: e.id, title: e.headline || e.filmTitle }));
+  const pagerItems = timeline.map((e) => ({
+    id: e.id,
+    title: e.headline || e.filmTitle,
+    filmId: e.filmId,
+    type: e.type,
+    headline: e.headline,
+    summary: e.summary,
+  }));
 
   const guideQuery = [
     film?.title || event.filmTitle,

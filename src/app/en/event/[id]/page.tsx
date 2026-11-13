@@ -108,7 +108,14 @@ export default async function EventPageEn({
     (film?.directors && film.directors.length > 0 ? directorNamesEn(film.directors) : directorNamesEn(event.directors)) || [];
   const colors = event.posterColors || ["#1a1a2e", "#334155"];
   const badge = event.badge;
-  const pagerItems = timeline.map((e) => ({ id: e.id, title: e.headline || e.filmTitle }));
+  const pagerItems = timeline.map((e) => ({
+    id: e.id,
+    title: e.headline || e.filmTitle,
+    filmId: e.filmId,
+    type: e.type,
+    headline: e.headline,
+    summary: e.summary,
+  }));
 
   const guideQuery = [
     film ? filmTitleEn(film) : event.filmTitle,

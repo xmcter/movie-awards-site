@@ -183,12 +183,30 @@ function displayBadge(label?: string) {
   return label === "新品" ? "新片" : label;
 }
 
+/** 每批凑满大约这么多张主卡就停。天是分组单位，不把同一天拆开。 */
+const TIMELINE_BATCH_CARDS = 15;
+
+function dayCountForBatches(groups: { items: unknown[] }[], batches: number): number {
+  let index = 0;
+  for (let batch = 0; batch < batches && index < groups.length; batch++) {
+    let cards = 0;
+    while (index < groups.length) {
+      cards += groups[index]!.items.length;
+      index += 1;
+      if (cards >= TIMELINE_BATCH_CARDS) break;
+    }
+  }
+  return index;
+}
+
 export default function Timeline({ events, locale = "zh" }: { events: TimelineEvent[]; locale?: Locale }) {
   const en = locale === "en";
   const dedupe = en ? dedupeSubtitleAgainstTitleEn : dedupeSubtitleAgainstTitle;
-  // 首页只留时间线：筛选与搜索已去掉，固定为全部、不过滤。
-  const filter = "all";
-  const query = "";
+  // 把原有 filter / query 接回界面。匹配仍用下面的过滤函数，不另写一套。
+  const [filter, setFilter] = useState<"all" | "streaming" | "auteur">("all");
+  const [query, setQuery] = useState("");
+  // 按天分页：首屏从最新一天往前凑满约 15 张卡，按钮再展开下一批。
+  const [batches, setBatches] = useState(1);
   const [seen, setSeen] = useState<string[]>([]);
   const [dismissStore, setDismissStore] = useState<DismissStore>({ blocked: {} });
   const [reasonTarget, setReasonTarget] = useState<TimelineEvent | null>(null);
@@ -443,7 +461,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
     return Object.keys(dismissStore.blocked || {}).length;
   }, [dismissStore]);
 
-  // 过滤顺序：不再推荐过滤 → 电影去重聚合 → 渲染（筛选与搜索已去掉）。
+  // 过滤顺序：type 筛选 / 搜索 → 不再推荐过滤 → 电影去重聚合 → 渲染。
   const grouped = useMemo((): GroupedTimelineItem[] => {
     const q = query.trim().toLowerCase();
     const matched = events.filter((e) => {
@@ -501,6 +519,9 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
     () => groupByDay(grouped, (it) => publicationTime(it.event).slice(0, 10)),
     [grouped],
   );
+  const shownDayCount = dayCountForBatches(dayGroups, batches);
+  const shownDayGroups = dayGroups.slice(0, shownDayCount);
+  const hasEarlier = shownDayCount < dayGroups.length;
 
   // 按天分组的标题：相对（今天/昨天）+ 绝对日期，中英文各一套。
   const today = shanghaiToday();
@@ -836,13 +857,59 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
         </div>
       ) : null}
 
+      <div className="flex flex-wrap items-center gap-2">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setBatches(1);
+          }}
+          placeholder={en ? "Search" : "搜索片名"}
+          aria-label={en ? "Search" : "搜索片名"}
+          autoComplete="off"
+          className="min-w-[8rem] flex-1 rounded-full border border-cinema-border/70 bg-cinema-card px-3 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold"
+        />
+        {(
+          [
+            ["all", en ? "All" : "全部"],
+            ["streaming", en ? "Streaming planned" : "上线计划"],
+            ["auteur", en ? "Out now" : "已上线"],
+          ] as const
+        ).map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            aria-pressed={filter === id}
+            onClick={() => {
+              if (filter === id) return;
+              setFilter(id);
+              setBatches(1);
+            }}
+            className={`rounded-full border px-2.5 py-1 text-xs font-medium transition ${
+              filter === id
+                ? "border-cinema-gold/50 bg-cinema-gold/15 text-cinema-gold"
+                : "border-cinema-border/70 text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
+            }`}
+          >
+            {label}
+          </button>
+        ))}
+        <Link
+          href={en ? "/en/films" : "/films"}
+          className="shrink-0 text-xs text-cinema-gold hover:underline"
+        >
+          {en ? "All films" : "全部影片"}
+        </Link>
+      </div>
+
       {grouped.length === 0 ? (
         <p className="rounded-xl border border-dashed border-cinema-border px-4 py-10 text-center text-sm text-cinema-muted">
           {en ? "No timeline events match" : "没有匹配的时间线事件"}
         </p>
       ) : (
         <div className="space-y-12 sm:space-y-14">
-          {dayGroups.map((g) => {
+          {shownDayGroups.map((g) => {
             const lastNewInDay = g.items.some((it) => it.event.id === lastNewId);
             const dividerAfterGroup =
               lastNewInDay && g.items[g.items.length - 1]!.event.id === lastNewId;
@@ -870,6 +937,17 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
               </section>
             );
           })}
+          {hasEarlier ? (
+            <div className="flex justify-center">
+              <button
+                type="button"
+                onClick={() => setBatches((n) => n + 1)}
+                className="rounded-full border border-cinema-border/80 bg-cinema-card px-4 py-2 text-sm text-cinema-text transition hover:border-cinema-gold/40 hover:text-cinema-gold"
+              >
+                {en ? "Earlier updates" : "更早的动态"}
+              </button>
+            </div>
+          ) : null}
         </div>
       )}
 

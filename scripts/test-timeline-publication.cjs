@@ -85,13 +85,26 @@ if (process.argv.includes("--built")) {
   const expectedLabelEn = relEn ? `${relEn} · ${absoluteDayLabelEn(newestDayEn, today.slice(0, 4))}` : absoluteDayLabelEn(newestDayEn, today.slice(0, 4));
   assert.ok(homeEn.includes(expectedLabelEn), `Built en home must show day heading: ${expectedLabelEn}`);
   const ids = [...home.matchAll(/data-event-id="([^"]+)"/g)].map(m => m[1]);
-  const seen = new Set();
-  const expected = events.filter(e => {
-    if (seen.has(e.filmId)) return false;
-    seen.add(e.filmId);
-    return true;
-  }).map(e => e.id);
-  assert.deepEqual(ids, expected, "Built card order must follow publication, with same-film dedup only");
+  const { groupByDay } = require("../src/lib/dayGroups.ts");
+  // 与 Timeline.tsx 的按天分页一致：每片只留最新，再从最新一天凑满约 15 张主卡。
+  const deduped = [];
+  const seenFilms = new Set();
+  for (const e of events) {
+    if (e.filmId && seenFilms.has(e.filmId)) continue;
+    if (e.filmId) seenFilms.add(e.filmId);
+    deduped.push(e);
+  }
+  const groups = groupByDay(deduped, (e) => publicationTime(e).slice(0, 10));
+  let dayCount = 0;
+  let cards = 0;
+  while (dayCount < groups.length) {
+    cards += groups[dayCount].items.length;
+    dayCount += 1;
+    if (cards >= 15) break;
+  }
+  const expected = groups.slice(0, dayCount).flatMap((g) => g.items.map((e) => e.id));
+  assert.deepEqual(ids, expected, "Built home shows the first day-batch (~15 cards), publication order, same-film dedup");
+  if (dayCount < groups.length) assert.ok(home.includes("更早的动态"), "Built home must offer earlier day groups");
   for (const n of auteurNews.filter(n => n.id.startsWith("movie-peek-"))) {
     const eventFile = `event/auteur-${n.id}.html`;
     const eventHtml = fs.readFileSync(path.join(out, eventFile), "utf8");
@@ -103,7 +116,9 @@ if (process.argv.includes("--built")) {
     const canonicalFilmId = FILM_ALIASES[n.filmId] || n.filmId;
     const filmEvents = events.filter((e) => e.filmId === canonicalFilmId);
     if (filmEvents[0] && filmEvents[0].id === `auteur-${n.id}`) {
-      assert.ok(home.includes(`href="${n.weiboUrl}"`), `Weibo missing in index.html`);
+      if (ids.includes(filmEvents[0].id)) {
+        assert.ok(home.includes(`href="${n.weiboUrl}"`), `Weibo missing in index.html`);
+      }
       // 影片页三个分支（有剧情 / 有背景无剧情 / 两者皆无）都渲染微博链接。
       const filmHtml = fs.readFileSync(path.join(out, `film/${canonicalFilmId}.html`), "utf8");
       assert.ok(filmHtml.includes(`href="${n.weiboUrl}"`), `Weibo missing in film/${canonicalFilmId}.html`);

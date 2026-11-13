@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FILM_ALIASES, films, isIndexableFilm } from "@/lib/data";
+import { FILM_ALIASES, films } from "@/lib/data";
 import { bilingualAlternatesEn, filmTitleEn } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -22,8 +22,9 @@ export const dynamic = "force-static";
 
 export default function FilmsPageEn() {
   const seen = new Set<string>();
+  // 显示口径与「纳入索引」分开：这里列全部有影片页的片子；isIndexableFilmEn
+  // 只留给 sitemap/robots 用。
   const list = films
-    .filter((film) => isIndexableFilm(film, "en"))
     .filter((film) => !(film.id in FILM_ALIASES))
     .filter((film) => {
       if (seen.has(film.id)) return false;

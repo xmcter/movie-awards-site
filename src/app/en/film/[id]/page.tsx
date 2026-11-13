@@ -309,6 +309,18 @@ export default async function FilmPageEn({
       {background ? (
         <Section title="Background">
           <p>{background}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
+            <a
+              href={guideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+            >
+              <span>🎞️ Read the guide on 观影导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
+          </div>
         </Section>
       ) : null}
 
@@ -370,9 +382,12 @@ export default async function FilmPageEn({
                   {event.type !== "streaming" ? <time dateTime={event.date || undefined}>{event.dateLabel}</time> : null}
                   <TypeBadge type={event.type} label={event.badge} headline={event.headline} locale="en" />
                 </div>
-                <p className="mt-1.5 text-sm text-cinema-text">
+                <Link
+                  href={`/en/event/${encodeURIComponent(event.id)}`}
+                  className="mt-1.5 block text-sm text-cinema-text hover:text-cinema-gold"
+                >
                   {event.type === "streaming" && event.date ? <ReleaseLabel date={event.date} title={event.filmTitle} fallback={event.headline || event.filmTitle} locale="en" /> : (event.headline || event.summary)}
-                </p>
+                </Link>
                 {(() => {
                   const title = (event.headline || "").trim();
                   const summary = dedupeSubtitleAgainstTitleEn(title, event.summary || "");

@@ -4,7 +4,7 @@ import { bilingualAlternatesEn } from "@/lib/i18n";
 
 const title = "Privacy Policy";
 const description =
-  "Screen News (news.readcine.com) privacy policy: static hosting, browser local storage keys, third-party services (GitHub Pages, Google Fonts) and Google AdSense ad cookie policy.";
+  "Screen News (news.readcine.com) privacy policy: static hosting, browser local storage keys, third-party services (GitHub Pages) and Google AdSense ad cookie policy.";
 
 export const metadata: Metadata = {
   title,
@@ -45,8 +45,8 @@ export default function PrivacyPageEn() {
             Screen News
           </a>{" "}
           (news.readcine.com, &ldquo;this site&rdquo;) handles information when you browse and use it.
-          We follow a minimisation principle: there is no account system, and we do not store
-          personal identity information on our own servers.
+          We follow a minimisation principle: we do not store visitors&rsquo; personal identity
+          information on our own servers.
         </p>
       </header>
 
@@ -55,10 +55,12 @@ export default function PrivacyPageEn() {
           <h2 className="font-display text-lg text-cinema-text">1. Overview</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             This site is a purely static news site run by the ReadCine editors (hosted on GitHub
-            Pages). It offers no user registration, login, comments or form submissions, and does
-            not actively collect your name, email address, phone number or other personal identity
-            information. Only when you email the editors yourself do we receive the contact
-            information in your message, which is used solely to reply.
+            Pages). It offers an owner-only Google sign-in (for the site owner only, used to sync
+            block and like preferences); it offers no visitor registration, comments or form
+            submissions, and does not actively collect visitors&rsquo; names, email addresses,
+            phone numbers or other personal identity information. Only when you email the editors
+            yourself do we receive the contact information in your message, which is used solely
+            to reply.
           </p>
         </div>
 
@@ -117,6 +119,12 @@ export default function PrivacyPageEn() {
             </li>
             <li>
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
+                news_dismiss_unblocked_v1
+              </code>{" "}
+              (localStorage): IDs of blocks you undid on this device, so a cloud sync does not bring back blocks you already removed.
+            </li>
+            <li>
+              <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 news_dedup_by_film_v1
               </code>{" "}
               (localStorage): the state of the timeline &ldquo;merge by film&rdquo; toggle.
@@ -167,16 +175,16 @@ export default function PrivacyPageEn() {
             </li>
             <li>
               <span className="text-cinema-text">Google Fonts: </span>
-              the site&apos;s styles reference Google Fonts (Noto Sans SC / Noto Serif SC). When your
-              browser loads font resources it sends requests to{" "}
+              this site&apos;s styles do not reference Google Fonts; browsers do not request font
+              resources from{" "}
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 fonts.googleapis.com
               </code>{" "}
-              and{" "}
+              or{" "}
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 fonts.gstatic.com
               </code>
-              , which are governed by Google&apos;s privacy policy.
+              .
             </li>
           </ul>
         </div>

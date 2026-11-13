@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const title = "隐私政策";
 const description =
-  "银幕新讯（news.readcine.com）隐私政策：说明静态托管架构、浏览器本地存储键值、第三方服务（GitHub Pages、Google Fonts）与 Google AdSense 广告 Cookie 政策。";
+  "银幕新讯（news.readcine.com）隐私政策：说明静态托管架构、浏览器本地存储键值、第三方服务（GitHub Pages）与 Google AdSense 广告 Cookie 政策。";
 
 export const metadata: Metadata = {
   title,
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           >
             news.readcine.com
           </a>
-          ，以下简称“本站”）在您浏览与使用过程中如何处理信息。我们坚持最小化原则，不设账号体系，也不在自有服务器存储个人身份信息。
+          ，以下简称“本站”）在您浏览与使用过程中如何处理信息。我们坚持最小化原则，不在自有服务器存储访客的个人身份信息。
         </p>
       </header>
 
@@ -54,7 +54,7 @@ export default function PrivacyPage() {
           <h2 className="font-display text-lg text-cinema-text">1. 概述</h2>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">
             本站是由 ReadCine 编辑部运营的纯静态资讯网站（通过 GitHub Pages
-            托管），不提供用户注册、登录、评论或表单提交功能，不主动收集您的姓名、电子邮箱、电话号码等个人身份信息。仅当您主动通过电子邮件联系编辑部时，我们才会收到您邮件中提供的联系信息并仅用于回复沟通。
+            托管），提供站长专用的 Google 登录（仅站长账号可用，用于同步屏蔽与点赞偏好）；不提供面向访客的注册、评论或表单提交功能，不主动收集访客的姓名、电子邮箱、电话号码等个人身份信息。仅当您主动通过电子邮件联系编辑部时，我们才会收到您邮件中提供的联系信息并仅用于回复沟通。
           </p>
         </div>
 
@@ -110,6 +110,12 @@ export default function PrivacyPage() {
             </li>
             <li>
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
+                news_dismiss_unblocked_v1
+              </code>
+              （localStorage）：保存您在本机撤销过的屏蔽条目 ID，用于与云端同步时不把已撤销的屏蔽加回来。
+            </li>
+            <li>
+              <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 news_dedup_by_film_v1
               </code>
               （localStorage）：保存时间线「同片合并」开关状态。
@@ -158,15 +164,15 @@ export default function PrivacyPage() {
             </li>
             <li>
               <span className="text-cinema-text">Google Fonts：</span>
-              本站样式引用了 Google Fonts（Noto Sans SC / Noto Serif SC）。浏览器加载字体资源时会向{" "}
+              本站样式不引用 Google Fonts，浏览器不会向{" "}
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 fonts.googleapis.com
               </code>{" "}
-              与{" "}
+              或{" "}
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 fonts.gstatic.com
               </code>{" "}
-              发起请求，相关请求受 Google 隐私政策约束。
+              请求字体资源。
             </li>
           </ul>
         </div>

@@ -52,9 +52,15 @@ server {
     index index.html;
 
     location / {
-        try_files $uri $uri.html $uri/ /index.html;
+        # Next.js static export emits path.html (no trailingSlash):
+        # /film/id/ -> /film/id, unknown paths -> site 404 page (not nginx default).
+        # 尾斜杠直接 301 到 https（不要先落到 http:// 再跳一次）。
+        rewrite ^/(.+)/$ https://$host/$1 permanent;
+        try_files $uri $uri.html $uri/ =404;
         add_header Cache-Control "public, max-age=300";
     }
+
+    error_page 404 /404.html;
 
     location /_next/static/ {
         add_header Cache-Control "public, max-age=31536000, immutable";

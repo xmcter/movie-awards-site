@@ -1,5 +1,7 @@
 /* 电影资讯 service worker (v1-20261113)
- * App shell + static: stale-while-revalidate / cache-first.
+ * Navigations: network-first (offline falls back to cache) — a returning
+ * visitor must not see the previous build's HTML first.
+ * Static assets: stale-while-revalidate / cache-first.
  * Never cache /oauth2/, /api/, cross-origin, or non-200/redirected responses.
  * Bump CACHE_VERSION when this file or precache list changes.
  * 带 hash 的 chunk 不进预缓存（每次构建 hash 都变，写死必过期）；
@@ -7,7 +9,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v8-20261113';
+var CACHE_VERSION = 'v9-20261113';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 
@@ -103,6 +105,28 @@ function cacheFirst(event, cacheName, cacheKey) {
   });
 }
 
+/* Navigations: network first so returning visitors get the newest HTML;
+ * only fall back to the cached copy when the network is unavailable. */
+function networkFirst(event, cacheName, cacheKey) {
+  var req = event.request;
+  return fetch(req).then(function (res) {
+    if (canCache(res)) {
+      var copy = res.clone();
+      caches.open(cacheName).then(function (cache) {
+        cache.put(cacheKey, copy);
+      }).catch(function () { /* cache write must not fail the navigation */ });
+    }
+    return res;
+  }).catch(function () {
+    return caches.open(cacheName).then(function (cache) {
+      return cache.match(cacheKey).then(function (cached) {
+        if (cached) return cached;
+        throw new Error('network unavailable');
+      });
+    });
+  });
+}
+
 function isShellPath(pathname) {
   if (!SHELL_PATHS.length) {
     return true; // empty list = all same-origin navigations
@@ -126,7 +150,7 @@ self.addEventListener('fetch', function (event) {
 
   if (req.mode === 'navigate') {
     if (!isShellPath(url.pathname)) return; // network only
-    event.respondWith(staleWhileRevalidate(event, SHELL_CACHE, url.origin + url.pathname));
+    event.respondWith(networkFirst(event, SHELL_CACHE, url.origin + url.pathname));
     return;
   }
 

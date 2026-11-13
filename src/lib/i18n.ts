@@ -595,7 +595,7 @@ export const UI_EN = {
   liked: "👍 Liked",
   notInterested: "✕ Not interested",
   unblock: "↩ Unblock",
-  likeTitle: "Like: show more like this",
+  likeTitle: "Like",
   unlikeTitle: "Unlike",
   blockTitle: "Don't recommend this or similar items",
   unblockTitle: "Unblock this and related items",

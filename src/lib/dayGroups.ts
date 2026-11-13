@@ -35,6 +35,25 @@ export function relativeDayPrefix(iso: string, today: string): string {
   return "";
 }
 
+const WEEKDAYS_EN = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const MONTHS_EN = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+/** English absolute label, e.g. 「Thu, Nov 13」; appends year when not in currentYear. */
+export function absoluteDayLabelEn(iso: string, currentYear?: string): string {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return "Date TBD";
+  const [y, m, d] = iso.split("-").map((x) => parseInt(x, 10));
+  const wd = WEEKDAYS_EN[new Date(Date.UTC(y!, m! - 1, d!)).getUTCDay()];
+  const yearPart = currentYear && String(y) !== currentYear ? `, ${y}` : "";
+  return `${wd}, ${MONTHS_EN[(m || 1) - 1]} ${d}${yearPart}`;
+}
+
+/** English relative prefix 「Today」/「Yesterday」 or "" — only call on the client. */
+export function relativeDayPrefixEn(iso: string, today: string): string {
+  if (iso === today) return "Today";
+  if (iso === addDays(today, -1)) return "Yesterday";
+  return "";
+}
+
 export interface DayGroup<T> {
   day: string;
   items: T[];

@@ -99,6 +99,9 @@ export function clearPrefsSession(): void {
   } catch {
     // ignore
   }
+  // 会话被清掉（401 过期、退出登录）时通知顶栏与来源芯片刷新，
+  // 否则顶栏会一直停在「已登录」。
+  window.dispatchEvent(new Event("prefs-session-changed"));
 }
 
 declare global {

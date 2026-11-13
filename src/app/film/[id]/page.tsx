@@ -309,6 +309,18 @@ export default async function FilmPage({
       {background ? (
         <Section title="创作背景">
           <p>{scrubNegativeCopy(background)}</p>
+          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
+            <a
+              href={guideUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+            >
+              <span>🎞️ 在「观影导赏」查看导赏</span>
+              <span className="text-[10px] opacity-70">↗</span>
+            </a>
+            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
+          </div>
         </Section>
       ) : null}
 

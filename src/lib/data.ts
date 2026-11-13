@@ -664,12 +664,30 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       : { ...e, headline: formatContentDates(e.headline || ""), summary: formatContentDates(e.summary || ""), detail: e.detail ? formatContentDates(e.detail) : undefined });
 }
 
+/** 影片页「相关动态」的去重键：标题规范化（小写、去标点空白）。 */
+function eventTitleKey(event: TimelineEvent): string {
+  return (event.headline || event.filmTitle || "")
+    .toLowerCase()
+    .replace(/[\s\p{P}\p{S}]+/gu, "");
+}
+
 export function getFilmEvents(filmId: string, locale: Locale = "zh"): TimelineEvent[] {
-  return getTimelineEvents(locale).filter(
-    (e) =>
-      e.filmId === filmId ||
-      (e.filmId !== undefined && FILM_ALIASES[e.filmId] === filmId),
-  );
+  const seen = new Set<string>();
+  return getTimelineEvents(locale)
+    .filter(
+      (e) =>
+        e.filmId === filmId ||
+        (e.filmId !== undefined && FILM_ALIASES[e.filmId] === filmId),
+    )
+    // 别名合并后同一可见标题只留一条（最新的一条在前）：例如《奥德赛》的两条
+    // Peek「已上线」事件，标题相同就不再重复列出。
+    .filter((e) => {
+      const key = eventTitleKey(e);
+      if (!key) return true;
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
 }
 
 /** 即将上线：已过质量闸、日期在今天及之后的流媒体定档，按日期升序。 */

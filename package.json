@@ -10,7 +10,8 @@
     "lint": "next lint",
     "validate": "node scripts/validate-data.mjs",
     "test:timeline": "node scripts/test-timeline-publication.cjs",
-    "prebuild": "node scripts/build-thumbnails.mjs"
+    "prebuild": "node scripts/build-thumbnails.mjs",
+    "postbuild": "node scripts/fix-en-lang.mjs"
   },
   "repository": {
     "type": "git",

@@ -6,11 +6,17 @@ import type { Locale } from "@/lib/i18n";
 import {
   DISMISS_EVENT_NAME,
   isBlockedOrSimilar,
+  isSimilarMark,
   loadDismissMarks,
   blockEvent,
   unblockEvent,
   type DismissStore,
 } from "@/lib/dismiss";
+import {
+  cloudBlock,
+  cloudUnblock,
+  loadPrefsSession,
+} from "@/lib/prefs";
 
 export default function EventDismissButton({
   event,
@@ -25,6 +31,7 @@ export default function EventDismissButton({
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
   const [reasonText, setReasonText] = useState("");
+  const [syncError, setSyncError] = useState(false);
 
   useEffect(() => {
     setStore(loadDismissMarks());
@@ -55,12 +62,40 @@ export default function EventDismissButton({
 
   const blocked = isBlockedOrSimilar(event, store);
 
+  // 本机先生效；仅当已有会话时静默写云端，绝不弹登录。
+  const syncUnblock = async (prevStore: DismissStore) => {
+    const session = loadPrefsSession();
+    if (!session) return;
+    const ids = Object.entries(prevStore.blocked || {})
+      .filter(([id, mark]) => id === event.id || isSimilarMark(event, mark))
+      .map(([id]) => id);
+    try {
+      for (const id of ids) await cloudUnblock(session, id);
+      setSyncError(false);
+    } catch {
+      setSyncError(true);
+    }
+  };
+
+  const syncBlock = async (reason: string) => {
+    const session = loadPrefsSession();
+    if (!session) return;
+    try {
+      await cloudBlock(session, event, reason);
+      setSyncError(false);
+    } catch {
+      setSyncError(true);
+    }
+  };
+
   const handleToggle = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     if (blocked) {
+      const prevStore = store;
       const next = unblockEvent(event, store);
       setStore(next);
+      void syncUnblock(prevStore);
       return;
     }
     setReasonText("");
@@ -74,6 +109,7 @@ export default function EventDismissButton({
     setStore(next);
     setOpen(false);
     setReasonText("");
+    void syncBlock(reason);
   };
 
   return (
@@ -90,6 +126,11 @@ export default function EventDismissButton({
       >
         {blocked ? (locale === "en" ? "↩ Unblock" : "↩ 撤销屏蔽") : (locale === "en" ? "✕ Not interested" : "✕ 不再推荐")}
       </button>
+      {syncError ? (
+        <p className="mt-1 text-xs text-cinema-muted">
+          {locale === "en" ? "Cloud sync failed: saved locally, not synced to other devices" : "云端同步失败：本机已生效，未同步到其他设备"}
+        </p>
+      ) : null}
 
       {open ? (
         <div

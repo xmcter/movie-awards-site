@@ -46,7 +46,7 @@ const ui = fs.readFileSync(path.join(root, "src/components/Timeline.tsx"), "utf8
 assert.ok(!ui.includes("<time"), "Timeline must not use <time> for 定档日");
 assert.ok(ui.includes("sourcePublishedLabel") || ui.includes("publishedLabel"), "Source publish label should render on cards");
 assert.ok(ui.includes('"来源"}·${label}'), "Source chip should use 来源· prefix");
-assert.ok(!ui.includes("absoluteDayLabel"), "Date group headings should not render");
+assert.ok(ui.includes("absoluteDayLabel"), "Date group headings should render");
 assert.ok(!ui.includes("PIN_NEW"), "No type pinning may override publication order");
 for (const filename of ["src/components/Timeline.tsx", "src/app/film/[id]/page.tsx", "src/app/event/[id]/page.tsx", "src/data/auteur-news.json"]) {
   const source = fs.readFileSync(path.join(root, filename), "utf8");
@@ -71,6 +71,19 @@ if (process.argv.includes("--built")) {
   }
   const home = fs.readFileSync(path.join(out, "index.html"), "utf8");
   assert.ok(!home.includes("<time"), "Built home must not show dates");
+  // A.5: day group headings render (relative + absolute, zh and en).
+  const { absoluteDayLabel, absoluteDayLabelEn, relativeDayPrefix, relativeDayPrefixEn, shanghaiToday } = require("../src/lib/dayGroups.ts");
+  const today = shanghaiToday();
+  const newestDay = publicationTime(events[0]).slice(0, 10);
+  const rel = relativeDayPrefix(newestDay, today);
+  const expectedLabel = rel ? `${rel} · ${absoluteDayLabel(newestDay, today.slice(0, 4))}` : absoluteDayLabel(newestDay, today.slice(0, 4));
+  assert.ok(home.includes(expectedLabel), `Built home must show day heading: ${expectedLabel}`);
+  const homeEn = fs.readFileSync(path.join(out, "en.html"), "utf8");
+  const eventsEn = getTimelineEvents("en");
+  const newestDayEn = publicationTime(eventsEn[0]).slice(0, 10);
+  const relEn = relativeDayPrefixEn(newestDayEn, today);
+  const expectedLabelEn = relEn ? `${relEn} · ${absoluteDayLabelEn(newestDayEn, today.slice(0, 4))}` : absoluteDayLabelEn(newestDayEn, today.slice(0, 4));
+  assert.ok(homeEn.includes(expectedLabelEn), `Built en home must show day heading: ${expectedLabelEn}`);
   const ids = [...home.matchAll(/data-event-id="([^"]+)"/g)].map(m => m[1]);
   const seen = new Set();
   const expected = events.filter(e => {
@@ -80,9 +93,20 @@ if (process.argv.includes("--built")) {
   }).map(e => e.id);
   assert.deepEqual(ids, expected, "Built card order must follow publication, with same-film dedup only");
   for (const n of auteurNews.filter(n => n.id.startsWith("movie-peek-"))) {
-    for (const file of ["index.html", `film/${n.filmId}.html`, `event/auteur-${n.id}.html`]) {
-      const html = fs.readFileSync(path.join(out, file), "utf8");
-      assert.ok(html.includes(`href="${n.weiboUrl}"`), `Weibo missing in ${file}`);
+    const eventFile = `event/auteur-${n.id}.html`;
+    const eventHtml = fs.readFileSync(path.join(out, eventFile), "utf8");
+    assert.ok(eventHtml.includes(`href="${n.weiboUrl}"`), `Weibo missing in ${eventFile}`);
+    // 首页按片去重只留最新一张卡，影片页按可见标题去重（A.6）：别名事件被
+    // 合并后不一定是可见代表；只有可见代表才要求首页/影片页带上微博链接。
+    // （2026-11-13 起：movie-douban-36808876 是 the-odyssey 的别名，旧事件
+    // 藏在同片历史里，首页不再出现它的微博链接。）
+    const canonicalFilmId = FILM_ALIASES[n.filmId] || n.filmId;
+    const filmEvents = events.filter((e) => e.filmId === canonicalFilmId);
+    if (filmEvents[0] && filmEvents[0].id === `auteur-${n.id}`) {
+      assert.ok(home.includes(`href="${n.weiboUrl}"`), `Weibo missing in index.html`);
+      // 影片页三个分支（有剧情 / 有背景无剧情 / 两者皆无）都渲染微博链接。
+      const filmHtml = fs.readFileSync(path.join(out, `film/${canonicalFilmId}.html`), "utf8");
+      assert.ok(filmHtml.includes(`href="${n.weiboUrl}"`), `Weibo missing in film/${canonicalFilmId}.html`);
     }
   }
   console.log(`ok: ${htmlFiles.length} exported HTML files clean; ${ids.length} built cards publication-sorted; all 6 Weibo anchors retained`);

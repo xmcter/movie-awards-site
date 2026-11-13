@@ -5,9 +5,11 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { isEnPath, toEnPath, toZhPath } from "@/lib/i18n";
 import {
+  ALLOWED_EMAIL,
   clearPrefsSession,
   googleSignIn,
   loadPrefsSession,
+  PrefsError,
   type PrefsSession,
 } from "@/lib/prefs";
 
@@ -19,29 +21,47 @@ import {
 function LoginButton({ en }: { en: boolean }) {
   const [session, setSession] = useState<PrefsSession | null>(null);
   const [busy, setBusy] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
   useEffect(() => {
     setSession(loadPrefsSession());
     const onChange = () => setSession(loadPrefsSession());
     window.addEventListener("prefs-session-changed", onChange);
-    return () => window.removeEventListener("prefs-session-changed", onChange);
+    // 另一个标签页登录/退出时，顶栏也要跟着变。
+    window.addEventListener("storage", onChange);
+    return () => {
+      window.removeEventListener("prefs-session-changed", onChange);
+      window.removeEventListener("storage", onChange);
+    };
   }, []);
   const signIn = useCallback(async () => {
     if (busy) return;
     setBusy(true);
+    setNotice(null);
     try {
       await googleSignIn();
       setSession(loadPrefsSession());
       window.dispatchEvent(new Event("prefs-session-changed"));
-    } catch {
-      /* 登录失败/取消/非允许账号：保持未登录，不弹额外提示。 */
+    } catch (err) {
+      // 登录失败/取消/非允许账号：留一句可见提示，不要静默失败。
+      if (err instanceof PrefsError) {
+        if (err.code === "forbidden") {
+          setNotice(en ? `Only ${ALLOWED_EMAIL} can sign in` : `仅限 ${ALLOWED_EMAIL} 账号使用`);
+        } else if (err.code === "api-unavailable") {
+          setNotice(en ? "Preferences service unavailable; try again later" : "偏好服务不可用，稍后再试");
+        } else {
+          setNotice(en ? "Google sign-in didn't complete" : "谷歌登录未完成");
+        }
+      } else {
+        setNotice(en ? "Google sign-in didn't complete" : "谷歌登录未完成");
+      }
     } finally {
       setBusy(false);
     }
-  }, [busy]);
+  }, [busy, en]);
   const signOut = useCallback(() => {
+    // clearPrefsSession 会派 prefs-session-changed，顶栏随之刷新。
     clearPrefsSession();
     setSession(null);
-    window.dispatchEvent(new Event("prefs-session-changed"));
   }, []);
   if (session) {
     return (
@@ -56,14 +76,32 @@ function LoginButton({ en }: { en: boolean }) {
     );
   }
   return (
-    <button
-      type="button"
-      onClick={signIn}
-      disabled={busy}
-      className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent disabled:opacity-50"
-    >
-      {en ? "Sign in" : "登录"}
-    </button>
+    <>
+      <button
+        type="button"
+        onClick={signIn}
+        disabled={busy}
+        className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent disabled:opacity-50"
+      >
+        {en ? "Sign in" : "登录"}
+      </button>
+      {notice ? (
+        <div
+          role="status"
+          className="fixed right-3 top-14 z-[90] flex max-w-xs items-center gap-2 rounded-xl border border-cinema-border bg-cinema-card px-3 py-2 text-xs text-cinema-text shadow-lg"
+        >
+          <span className="line-clamp-2">{notice}</span>
+          <button
+            type="button"
+            onClick={() => setNotice(null)}
+            aria-label={en ? "Dismiss" : "关闭"}
+            className="shrink-0 text-cinema-muted hover:text-cinema-gold"
+          >
+            ✕
+          </button>
+        </div>
+      ) : null}
+    </>
   );
 }
 

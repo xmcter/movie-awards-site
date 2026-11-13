@@ -14,7 +14,7 @@ import {
   writeLastSeen,
   type LastSeenMarker,
 } from "@/lib/lastSeen";
-import { groupByDay } from "@/lib/dayGroups";
+import { absoluteDayLabel, absoluteDayLabelEn, groupByDay, relativeDayPrefix, relativeDayPrefixEn, shanghaiToday } from "@/lib/dayGroups";
 import { markClicked, readClicked } from "@/lib/readProgress";
 import {
   DISMISS_EVENT_NAME,
@@ -23,6 +23,8 @@ import {
   isBlockedOrSimilar,
   isSimilarMark,
   loadDismissMarks,
+  mergeCloudDismiss,
+  saveDismissMarks,
   unblockEvent,
   type DismissStore,
 } from "@/lib/dismiss";
@@ -267,17 +269,15 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
       prefsMergedRef.current = true;
       fetchCloudPrefs(existingSession)
         .then((cloud) => {
-          // 并集：云端 + 本机，避免匿名本机记录被冲掉。
-          const mergedBlocked = {
-            ...cloud.blocked,
-            ...loadDismissMarks().blocked,
-          };
+          // 并集：云端 + 本机，避免匿名本机记录被冲掉；本机已撤销的 id
+          // 不再被云端盖回来（见 mergeCloudDismiss）。
+          const mergedBlocked = mergeCloudDismiss(cloud.blocked, loadDismissMarks().blocked);
           const mergedLiked = { ...cloud.liked, ...loadLikeMarks() };
           setDismissStore({ blocked: mergedBlocked });
           setLiked(mergedLiked);
           setLikeMarks(mergedLiked);
-          // 本机 dismiss 已在 load 时读过；若云端有额外项，写回本机便于离线一致。
-          // 不主动覆盖本机已有 reason。
+          // 云端有额外项时写回本机，便于离线一致；不主动覆盖本机已有 reason。
+          saveDismissMarks({ blocked: mergedBlocked });
         })
         .catch(() => {
           setPrefsError(en ? "Cloud preferences failed to load; showing local records only" : "云端偏好读取失败，仅显示本机记录");
@@ -312,14 +312,12 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
       try {
         await syncLocalBlockedToCloud(session, loadDismissMarks(), loadLikeMarks());
         const cloud = await fetchCloudPrefs(session);
-        const mergedBlocked = {
-          ...cloud.blocked,
-          ...loadDismissMarks().blocked,
-        };
+        const mergedBlocked = mergeCloudDismiss(cloud.blocked, loadDismissMarks().blocked);
         const mergedLiked = { ...cloud.liked, ...loadLikeMarks() };
         setDismissStore({ blocked: mergedBlocked });
         setLiked(mergedLiked);
         setLikeMarks(mergedLiked);
+        saveDismissMarks({ blocked: mergedBlocked });
       } catch {
         // 合并失败不阻塞本次本机操作。
       }
@@ -504,6 +502,23 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
     [grouped],
   );
 
+  // 按天分组的标题：相对（今天/昨天）+ 绝对日期，中英文各一套。
+  const today = shanghaiToday();
+  const currentYear = today.slice(0, 4);
+  const dayLabelFor = useCallback(
+    (day: string): string => {
+      if (en) {
+        const rel = relativeDayPrefixEn(day, today);
+        const abs = absoluteDayLabelEn(day, currentYear);
+        return rel ? `${rel} · ${abs}` : abs;
+      }
+      const rel = relativeDayPrefix(day, today);
+      const abs = absoluteDayLabel(day, currentYear);
+      return rel ? `${rel} · ${abs}` : abs;
+    },
+    [en, today, currentYear],
+  );
+
   // Divider goes right after the last (oldest) new card in render order.
   const lastNewId = useMemo(() => {
     if (!baseline) return "";
@@ -678,7 +693,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
                                 ? "border border-cinema-gold/40 bg-cinema-gold/10 text-cinema-gold hover:bg-cinema-gold/20"
                                 : "border border-cinema-border/60 text-cinema-muted/70 hover:border-cinema-gold/40 hover:text-cinema-text hover:bg-cinema-elevated"
                             }`}
-                            title={liked[event.id] ? (en ? "Unlike" : "取消点赞") : (en ? "Like: show more like this" : "点赞：以后多推类似方向")}
+                            title={liked[event.id] ? (en ? "Unlike" : "取消点赞") : (en ? "Like" : "点赞")}
                           >
                             {liked[event.id] ? (en ? "👍 Liked" : "👍 已点赞") : (en ? "👍 Like" : "👍 点赞")}
                           </button>
@@ -831,8 +846,10 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
             const lastNewInDay = g.items.some((it) => it.event.id === lastNewId);
             const dividerAfterGroup =
               lastNewInDay && g.items[g.items.length - 1]!.event.id === lastNewId;
+            const dayLabel = dayLabelFor(g.day);
             return (
-              <section key={g.day} aria-label={en ? "News list" : "消息列表"} data-day={g.day}>
+              <section key={g.day} aria-label={dayLabel} data-day={g.day}>
+                <h2 className="mb-4 font-display text-base text-cinema-text sm:text-lg">{dayLabel}</h2>
                 <ol className="relative space-y-0 border-l border-cinema-border pl-6 sm:pl-8">
                   {g.items.map((it) => (
                     <Fragment key={it.event.id}>

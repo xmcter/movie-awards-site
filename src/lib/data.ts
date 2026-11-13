@@ -177,6 +177,23 @@ export const FILM_ALIASES: Record<string, string> = {
   "other-mommy": "movie-douban-37317907",
 };
 
+/** 质量闸人工放行名单：用户 2026-11-13 定，B.1 建议的 8 部全放行（按片 id，不改闸本身）。
+ *  只放质量分与纪录片/剧集这两关；新片年窗仍硬卡。 */
+export const STREAMING_ALLOWLIST = new Set([
+  "avengers-endgame-encore", // 复仇者联盟4：终局之战·安可版
+  "madame-web", // Madame Web
+  "the-samurai-and-the-prisoner", // 武士与囚徒（黑泽清）
+  "the-super-mario-galaxy-movie", // 超级马里奥
+  "maddies-secret", // 麦迪的秘密
+  "batman-knightfall-part-2-knightquest", // 蝙蝠侠：骑士陨落2
+  "the-sun-never-sets", // 太阳永不落（Joe Swanberg）
+  "fourteenth", // 第十四条（阿娃·杜威内；纪录片）
+]);
+
+export function isAllowlistedStreamingFilm(film: Film): boolean {
+  return STREAMING_ALLOWLIST.has(film.id) || STREAMING_ALLOWLIST.has(FILM_ALIASES[film.id] || "");
+}
+
 export function truncateDescription(text: string, maxLen = 150): string {
   const clean = text.replace(/\s+/g, " ").trim();
   if (clean.length <= maxLen) return clean;
@@ -235,6 +252,8 @@ export function isSeriesFilm(film: Film): boolean {
 
 /** 时间线只收院线/长片电影：排除纪录片与剧集 */
 export function isTimelineEligibleFilm(film: Film): boolean {
+  // 人工放行名单（如纪录片《第十四条》）不受纪录片/剧集排除。
+  if (isAllowlistedStreamingFilm(film)) return true;
   if (isDocumentaryFilm(film) || isSeriesFilm(film)) return false;
   return true;
 }
@@ -419,6 +438,8 @@ export function streamingQualityScore(film: Film, platform?: string): number {
 export function shouldAdmitStreaming(film: Film, platform: string, now = new Date()): boolean {
   // 老片回档 / 经典上新：硬拒（即使作者或 MUBI）
   if (!isNewStreamingFilm(film, now)) return false;
+  // 人工放行名单：分数不够也收（年窗仍硬卡）。
+  if (isAllowlistedStreamingFilm(film)) return true;
   // 作者 / 获奖 / 以前获奖（含提名）导演 / MUBI / 经典系列 IP 通道直接收
   if (isAuteurFilm(film) || isAwardedFilm(film) || isPriorAwardDirectorFilm(film) || platform === "mubi" || isClassicFranchiseFilm(film)) return true;
   return streamingQualityScore(film, platform) >= 25;

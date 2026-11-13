@@ -18,6 +18,10 @@ const {
   shouldAdmitStreaming,
   streamingQualityScore,
   streamingNewFilmMinYear,
+  STREAMING_ALLOWLIST,
+  isAllowlistedStreamingFilm,
+  isTimelineEligibleFilm,
+  getComingSoonReleases,
   films,
   ceremonies,
 } = require("../src/lib/data.ts");
@@ -119,7 +123,35 @@ const coreFilm = film({
 assert.equal(streamingQualityScore(coreFilm, "apple-tv"), 20);
 assert.equal(shouldAdmitStreaming(coreFilm, "apple-tv", NOW), false);
 
-// 作者分本身跨过 25，和上面的门槛拒收对照。
-assert.ok(streamingQualityScore(film({ directors: ["诺兰"] }), "prime") >= 25);
+// 人工放行名单：用户 2026-11-13 定，B.1 建议的 8 部全放行。分数不够也收，
+// 纪录片《第十四条》也进时间线与即将上线；未放行的纪录片仍排除。
+assert.equal(STREAMING_ALLOWLIST.size, 8);
+const ALLOWLISTED = [
+  ["avengers-endgame-encore", "disney-plus"],
+  ["madame-web", "max"],
+  ["the-samurai-and-the-prisoner", "other"],
+  ["the-super-mario-galaxy-movie", "netflix"],
+  ["maddies-secret", "netflix"],
+  ["batman-knightfall-part-2-knightquest", "other"],
+  ["the-sun-never-sets", "other"],
+  ["fourteenth", "netflix"],
+];
+for (const [id, platform] of ALLOWLISTED) {
+  const f = films.find((item) => item.id === id);
+  assert.ok(f, `${id} should be in the catalog`);
+  assert.ok(streamingQualityScore(f, platform) < 25, `${id} is expected to fail the score gate without the allowlist`);
+  assert.equal(isAllowlistedStreamingFilm(f), true, `${id} allowlisted`);
+  assert.equal(shouldAdmitStreaming(f, platform, NOW), true, `${id} admitted`);
+  assert.equal(isTimelineEligibleFilm(f), true, `${id} timeline-eligible`);
+}
+// 年窗仍硬卡：放行名单里的老片回档也不收。
+assert.equal(shouldAdmitStreaming(film({ id: "avengers-endgame-encore", year: 2023 }), "disney-plus", NOW), false);
+// 未放行的纪录片仍排除。
+assert.equal(isTimelineEligibleFilm(film({ genres: ["纪录片"] })), false);
+// 即将上线页：8 部都在（今天 2026-11-13，含当天上线的安可版）。
+const soonIds = new Set(
+  getComingSoonReleases(new Date("2026-11-13T12:00:00+08:00")).map((r) => r.filmId),
+);
+for (const [id] of ALLOWLISTED) assert.ok(soonIds.has(id), `${id} should be in coming-soon`);
 
 console.log("ok: shouldAdmitStreaming covers year window, auteur, award, MUBI, and score threshold");

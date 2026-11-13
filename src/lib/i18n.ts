@@ -111,6 +111,7 @@ export function formatReleaseWeekEn(date: string, now = new Date()): string {
   const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
   const get = (t: Intl.DateTimeFormatPartTypes) => Number(parts.find((p) => p.type === t)!.value);
   const today = Date.UTC(get("year"), get("month") - 1, get("day"));
+  if (target < today) return `Streaming since ${formatDateEn(date, now)}`;
   const monday = (d: number) => d - ((new Date(d).getUTCDay() + 6) % 7) * 86400000;
   const diff = (monday(target) - monday(today)) / (7 * 86400000);
   const weekday = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"][new Date(target).getUTCDay()];
@@ -526,7 +527,20 @@ export function filmTitleEn(film: Pick<Film, "title" | "titleEn">): string {
  *  Chinese split, so English and Chinese pages stay in sync. */
 export function splitFilmCopyEn(film: Film): { plot: string; background: string } {
   const backgroundEn = (film.backgroundEn || "").trim();
-  const rawEn = (film.synopsisEn || "").trim();
+  // 英文简介待翻译时 synopsis 就是英文原文，可直接当英文剧情；否则只用 synopsisEn。
+  let rawEn = (film.synopsisEn || "").trim();
+  if (!rawEn && film.copyPending?.includes("synopsis")) {
+    rawEn = (film.synopsis || "").trim();
+  }
+  // 入库套话的英文版（"Title. Streaming date via When To Stream…"）不是剧情。
+  if (
+    rawEn &&
+    rawEn.length <= 120 &&
+    /streaming date via|When To Stream|Movie of the Night|streaming availability/i.test(rawEn) &&
+    !/directed by|starring|tells the story|based on|won|nominated/i.test(rawEn)
+  ) {
+    rawEn = "";
+  }
   if (backgroundEn) {
     return { plot: rawEn, background: backgroundEn };
   }

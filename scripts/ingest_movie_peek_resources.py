@@ -40,7 +40,8 @@ CATALOGS = [
     "motn-streaming-catalog.json", "movie-peek-catalog.json",
 ]
 # Existing curated catalog calls this film 可能的爱情; preserve its canonical ID.
-KNOWN_FILM_IDS = {"36847425": "possible-love"}
+# 36808876 is 《奥德赛》; the curated catalog already has it as the-odyssey.
+KNOWN_FILM_IDS = {"36847425": "possible-love", "36808876": "the-odyssey"}
 RESOURCE = re.compile(r"出资源|已出源|已上线|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出", re.I)
 EXCLUDED = re.compile(r"纪录|documentary|docuseries|剧集|电视剧|连续剧|迷你剧|限定剧|TV\s*series|miniseries", re.I)
 ENGLISH_ONLY = re.compile(r"英字|英文字幕|无中字|无字幕|生肉", re.I)
@@ -91,7 +92,7 @@ def weibo_url(value):
 def clean_title(value):
     value = str(value or "").strip(" 《》")
     value = re.sub(r"^[🔥✨🎬\s]+", "", value)
-    return re.split(r"\s+(?:英字|内嵌|内封|外挂|手慢无|HDR|4K|1080[pP])", value, maxsplit=1)[0].strip()
+    return re.split(r"\s+(?:英字|内嵌|内封|外挂|手慢无|HDR|4K|1080\+|1080[pP])", value, maxsplit=1)[0].strip()
 
 
 def normalized(value):

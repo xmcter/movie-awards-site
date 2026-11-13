@@ -26,6 +26,7 @@ import {
   RELEASE_STATUS_LABELS,
   formatDate,
   genreLabels,
+  isPastReleaseDate,
 } from "@/lib/labels";
 
 export const dynamic = "force-static";
@@ -344,7 +345,8 @@ export default async function FilmPage({
               const platformLabel = PLATFORM_LABELS[release.platform] || release.platform;
               const status = RELEASE_STATUS_LABELS[release.status]; // announced 为空：直接写日期
               const when = release.date ? formatDate(release.date) : "待定";
-              const bits = [status || null, release.date ? `${when}上线` : when].filter(Boolean); // 不展示平台/国别地区
+              const past = release.date ? isPastReleaseDate(release.date) : false;
+              const bits = [status || null, release.date ? `${when}${past ? "已上线" : "上线"}` : when].filter(Boolean); // 不展示平台/国别地区
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}-${index}`}

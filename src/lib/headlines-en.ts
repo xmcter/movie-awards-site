@@ -7,6 +7,7 @@
  */
 import type { Film } from "@/types";
 import { filmTitleEn } from "@/lib/i18n";
+import { isPastReleaseDate } from "@/lib/labels";
 
 /** Streaming headline: "The Odyssey · Streaming Nov 21" (announced),
  *  "Title · Expected Nov 21" (estimated), "Title · TBA" (tba). */
@@ -14,6 +15,7 @@ export function buildStreamingHeadlineEn(opts: {
   film: Film;
   statusLabel: string;
   datePart: string;
+  date?: string;
 }): string {
   const { film, statusLabel, datePart } = opts;
   const title = filmTitleEn(film);
@@ -21,7 +23,11 @@ export function buildStreamingHeadlineEn(opts: {
   if (statusLabel === "Expected") {
     return datePart ? `${title} · Expected ${datePart}` : `${title} · Expected`;
   }
-  if (datePart) return `${title} · Streaming ${datePart}`;
+  if (datePart) {
+    return opts.date && isPastReleaseDate(opts.date)
+      ? `${title} · Streaming since ${datePart}`
+      : `${title} · Streaming ${datePart}`;
+  }
   return title;
 }
 

@@ -171,6 +171,10 @@ export const FILM_ALIASES: Record<string, string> = {
   "nowhere-to-lay-my-eyes": "nowhere-to-lay-eyes",
   /** MotN 侧的 la-bola-negra 与 films.json 的 the-black-ball 是同一部《黑球》。 */
   "la-bola-negra": "the-black-ball",
+  /** Peek 的 movie-douban-36808876 与 films.json 的 the-odyssey 是同一部《奥德赛》。 */
+  "movie-douban-36808876": "the-odyssey",
+  /** WTS 的 other-mommy 与 Peek 的 movie-douban-37317907 是同一部《另一个妈妈 / Other Mommy》。 */
+  "other-mommy": "movie-douban-37317907",
 };
 
 export function truncateDescription(text: string, maxLen = 150): string {
@@ -251,13 +255,14 @@ export const AWARD_ONLY =
   /第\d+届|荣誉金狮|评委主席|日程公布|长片报名/;
 
 /** MotN/WTS 入库时常写的「《片名》流媒体定档（美国区…）」——不是剧情，不当简介展示。 */
-function isStreamingMetaSynopsis(text: string, title?: string): boolean {
+function isStreamingMetaSynopsis(text: string, title?: string, titleEn?: string): boolean {
   const s = (text || "").trim();
   if (!s) return false;
   if (s.length > 120) return false;
   const t = (title || "").trim();
-  const mentionsTitle = t
-    ? s.includes(t) || s.includes(`《${t}》`)
+  const te = (titleEn || "").trim();
+  const mentionsTitle = t || te
+    ? (t && (s.includes(t) || s.includes(`《${t}》`))) || (te && s.includes(te))
     : /《.+》/.test(s);
   const meta =
     /流媒体定档|片夜数据|以平台官方为准|美国区定档|区定档/.test(s) &&
@@ -272,7 +277,9 @@ export function splitFilmCopy(film: Film, locale: Locale = "zh"): {
   if (locale === "en") return splitFilmCopyEn(film);
   const background = (film.background || "").trim();
   let raw = (film.synopsis || "").trim();
-  if (isStreamingMetaSynopsis(raw, film.title)) raw = "";
+  // 中文简介待翻译（copyPending）时 synopsis 还是英文原文，不当中文剧情展示。
+  if (film.copyPending?.includes("synopsis")) raw = "";
+  if (isStreamingMetaSynopsis(raw, film.title, film.titleEn)) raw = "";
   if (background) {
     return { plot: raw, background };
   }
@@ -283,10 +290,14 @@ export function splitFilmCopy(film: Film, locale: Locale = "zh"): {
 }
 
 export function todayISO(now = new Date()): string {
-  const y = now.getFullYear();
-  const m = String(now.getMonth() + 1).padStart(2, "0");
-  const d = String(now.getDate()).padStart(2, "0");
-  return `${y}-${m}-${d}`;
+  // 定时构建跑在 UTC 的 GitHub Actions 上；站内“今天”一律按上海日历，
+  // 否则每天 00:30 CST 的构建会把当天冻成上海的昨天。
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Shanghai",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(now);
 }
 
 export function isPublished(date: string, today = todayISO()): boolean {
@@ -460,6 +471,10 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       if (!release.publishedAt || !isPublished(publicationTime(release).slice(0, 10), today)) continue;
       // 质量闸：口水定档不进主列表（影片档仍保留 streaming 字段）
       if (!shouldAdmitStreaming(film, release.platform)) continue;
+      // 重复片（见 FILM_ALIASES）：定档数据仍用原记录，展示归到规范片名下，
+      // 时间线按片去重时合并为一张卡，影片页由别名跳转兜底。
+      const canonicalFilm =
+        FILM_ALIASES[film.id] ? films.find((f) => f.id === FILM_ALIASES[film.id]) || film : film;
       const platform = en
         ? PLATFORM_LABELS_EN[release.platform] || release.platform
         : PLATFORM_LABELS[release.platform] || release.platform;
@@ -471,12 +486,13 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       const streamBadge = en ? "Streaming planned" : "上线计划";
 
       const headline = en
-        ? buildStreamingHeadlineEn({ film, statusLabel, datePart })
+        ? buildStreamingHeadlineEn({ film: canonicalFilm, statusLabel, datePart, date: release.date })
         : buildStreamingHeadline({
-            film,
+            film: canonicalFilm,
             platform,
             statusLabel,
             datePart,
+            date: release.date,
             region: release.region,
           });
       const body = en
@@ -484,7 +500,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
         : dedupeSubtitleAgainstTitle(
             headline,
             buildStreamingBody({
-              film,
+              film: canonicalFilm,
               platform,
               statusLabel,
               datePart,
@@ -500,7 +516,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
             platform,
             region: release.region,
             datePart,
-            filmTitle: film.title,
+            filmTitle: canonicalFilm.title,
           });
       const note = noteExtra ? `（${noteExtra}）` : "";
 
@@ -513,20 +529,20 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
         publishedAt: pubIso,
         date: release.date || "",
         dateLabel: release.date ? (en ? formatDateEn(release.date) : formatDate(release.date)) : en ? "TBA" : "待定",
-        filmId: film.id,
-        filmTitle: en ? filmTitleEn(film) : film.title,
-        filmTitleEn: film.titleEn,
-        filmYear: film.year,
-        poster: withBase(film.poster),
-        posterColors: film.posterColors,
+        filmId: canonicalFilm.id,
+        filmTitle: en ? filmTitleEn(canonicalFilm) : canonicalFilm.title,
+        filmTitleEn: canonicalFilm.titleEn,
+        filmYear: canonicalFilm.year,
+        poster: withBase(canonicalFilm.poster),
+        posterColors: canonicalFilm.posterColors,
         headline,
         summary: body,
-        plot: (en ? splitFilmCopy(film, "en").plot : scrubNegativeCopy(splitFilmCopy(film).plot)) || undefined,
-        filmAwards: verifiedFilmAwards.filter(a => a.filmId === film.id && (a.result === "won" || a.result === "nominated")),
+        plot: (en ? splitFilmCopy(canonicalFilm, "en").plot : scrubNegativeCopy(splitFilmCopy(canonicalFilm).plot)) || undefined,
+        filmAwards: verifiedFilmAwards.filter(a => a.filmId === canonicalFilm.id && (a.result === "won" || a.result === "nominated")),
         detail: note || undefined,
         badge: streamBadge,
-        directors: en ? personNamesEn(film.directors) : film.directors,
-        filmKind: filmKindOf(film),
+        directors: en ? personNamesEn(canonicalFilm.directors) : canonicalFilm.directors,
+        filmKind: filmKindOf(canonicalFilm),
         sourceLabel: srcLabel,
         sourceUrl: release.source?.trim() || undefined,
         sourcePublishedAt: sourcePublishedAt || release.publishedAt,
@@ -542,7 +558,9 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
 
   for (const news of auteurNews) {
     if (!isPublished(news.date, today)) continue;
-    const film = getFilm(news.filmId);
+    // 重复片（见 FILM_ALIASES）：资讯归到规范片名下，与流媒体事件合并为一张卡。
+    const film =
+      getFilm(FILM_ALIASES[news.filmId] || news.filmId) || getFilm(news.filmId);
     if (!film) continue;
     if (!isTimelineEligibleFilm(film)) continue;
     const kind = filmKindOf(film);
@@ -673,19 +691,22 @@ export function getComingSoonReleases(now = new Date(), locale: Locale = "zh"): 
   const en = locale === "en";
   for (const film of films) {
     if (!isTimelineEligibleFilm(film)) continue;
+    // 重复片（见 FILM_ALIASES）：展示归到规范片名下。
+    const canonicalFilm =
+      FILM_ALIASES[film.id] ? films.find((f) => f.id === FILM_ALIASES[film.id]) || film : film;
     for (const release of film.streaming) {
       if (release.status !== "announced" || !release.date) continue;
       if (!release.publishedAt || !isPublished(publicationTime(release).slice(0, 10), today)) continue;
       if (!shouldAdmitStreaming(film, release.platform, now)) continue;
       if (release.date < today) continue;
       out.push({
-        filmId: film.id,
-        filmTitle: en ? filmTitleEn(film) : film.title,
-        filmTitleEn: film.titleEn,
-        filmYear: film.year,
-        poster: withBase(film.poster),
-        posterColors: film.posterColors,
-        directors: en ? personNamesEn(film.directors) : film.directors,
+        filmId: canonicalFilm.id,
+        filmTitle: en ? filmTitleEn(canonicalFilm) : canonicalFilm.title,
+        filmTitleEn: canonicalFilm.titleEn,
+        filmYear: canonicalFilm.year,
+        poster: withBase(canonicalFilm.poster),
+        posterColors: canonicalFilm.posterColors,
+        directors: en ? personNamesEn(canonicalFilm.directors) : canonicalFilm.directors,
         platform: release.platform,
         date: release.date,
       });

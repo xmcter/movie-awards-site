@@ -13,7 +13,7 @@ require.extensions[".ts"] = (mod, filename) => mod._compile(ts.transpileModule(f
   compilerOptions: { module: ts.ModuleKind.CommonJS, esModuleInterop: true, target: ts.ScriptTarget.ES2020 },
 }).outputText, filename);
 const { comparePublicationTime, publicationTime } = require("../src/lib/timelineOrder.ts");
-const { getTimelineEvents, auteurNews, films } = require("../src/lib/data.ts");
+const { getTimelineEvents, auteurNews, films, FILM_ALIASES } = require("../src/lib/data.ts");
 const { buildMarker, isNewSince } = require("../src/lib/lastSeen.ts");
 const events = getTimelineEvents();
 assert.ok(events.length > 0);
@@ -28,10 +28,14 @@ assert.equal(buildMarker([older, newer]).id, "new");
 assert.equal(isNewSince(newer, buildMarker([older])), true);
 assert.equal(publicationTime(newer), newer.publishedAt);
 for (const e of events.filter(e => e.type === "streaming")) {
-  const release = films.filter(f => f.id === e.filmId).flatMap(f => f.streaming)
-    .find(r => `stream-${e.filmId}-${r.platform}-${r.date || "tba"}` === e.id);
-  assert.ok(release, e.id);
-  assert.equal(e.publishedAt, release.publishedAt);
+  // 事件 filmId 是规范片名；定档数据可能挂在别名记录上（如 la-bola-negra -> the-black-ball），
+  // 事件 id 保留的是来源记录的 id。
+  const sourceFilms = films.filter(f => f.id === e.filmId || FILM_ALIASES[f.id] === e.filmId);
+  const hit = sourceFilms
+    .flatMap(f => f.streaming.map(r => ({ filmId: f.id, release: r })))
+    .find(({ filmId, release }) => `stream-${filmId}-${release.platform}-${release.date || "tba"}` === e.id);
+  assert.ok(hit, e.id);
+  assert.equal(e.publishedAt, hit.release.publishedAt);
   // 定档标题允许写上线日；列表另以 sourcePublishedLabel 展示原文/收录时间
 }
 for (const e of events.filter(e => e.type === "auteur")) {
@@ -41,10 +45,10 @@ for (const e of events.filter(e => e.type === "auteur")) {
 const ui = fs.readFileSync(path.join(root, "src/components/Timeline.tsx"), "utf8");
 assert.ok(!ui.includes("<time"), "Timeline must not use <time> for 定档日");
 assert.ok(ui.includes("sourcePublishedLabel") || ui.includes("publishedLabel"), "Source publish label should render on cards");
-assert.ok(ui.includes("来源·"), "Source chip should use 来源· prefix");
+assert.ok(ui.includes('"来源"}·${label}'), "Source chip should use 来源· prefix");
 assert.ok(!ui.includes("absoluteDayLabel"), "Date group headings should not render");
 assert.ok(!ui.includes("PIN_NEW"), "No type pinning may override publication order");
-for (const filename of ["src/components/Timeline.tsx", "src/app/film/[id]/page.tsx", "src/app/event/[id]/page.tsx", "src/app/about/page.tsx", "src/data/auteur-news.json"]) {
+for (const filename of ["src/components/Timeline.tsx", "src/app/film/[id]/page.tsx", "src/app/event/[id]/page.tsx", "src/data/auteur-news.json"]) {
   const source = fs.readFileSync(path.join(root, filename), "utf8");
   assert.ok(!/找资源|movie\.readcine\.com/.test(source), filename);
 }

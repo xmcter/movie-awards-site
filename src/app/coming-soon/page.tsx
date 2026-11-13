@@ -115,6 +115,9 @@ export default function ComingSoonPage() {
     return `${y}-${m}-${day}`;
   })();
   const yearEnd = `${today.slice(0, 4)}-12-31`;
+  // “下一周”跨月时“本月剩余”不存在（起止会倒挂）；12 月时“今年剩余”同理，直接不展示该段。
+  const restMonthStart = addDays(nextWeekEnd, 1);
+  const restYearStart = addDays(monthEndDate, 1);
 
   const buckets: { name: string; range: string; weekday: boolean; items: ComingSoonRelease[] }[] = [
     {
@@ -129,18 +132,26 @@ export default function ComingSoonPage() {
       weekday: true,
       items: releases.filter((r) => r.date >= nextWeekStart && r.date <= nextWeekEnd),
     },
-    {
-      name: "本月剩余",
-      range: `${formatDate(addDays(nextWeekEnd, 1))}–${formatDate(monthEndDate)}`,
-      weekday: false,
-      items: releases.filter((r) => r.date > nextWeekEnd && r.date <= monthEndDate),
-    },
-    {
-      name: "今年剩余",
-      range: `${formatDate(addDays(monthEndDate, 1))}–${formatDate(yearEnd)}`,
-      weekday: false,
-      items: releases.filter((r) => r.date > monthEndDate && r.date <= yearEnd),
-    },
+    ...(restMonthStart <= monthEndDate
+      ? [
+          {
+            name: "本月剩余",
+            range: `${formatDate(restMonthStart)}–${formatDate(monthEndDate)}`,
+            weekday: false,
+            items: releases.filter((r) => r.date > nextWeekEnd && r.date <= monthEndDate),
+          },
+        ]
+      : []),
+    ...(restYearStart <= yearEnd
+      ? [
+          {
+            name: "今年剩余",
+            range: `${formatDate(restYearStart)}–${formatDate(yearEnd)}`,
+            weekday: false,
+            items: releases.filter((r) => r.date > monthEndDate && r.date <= yearEnd),
+          },
+        ]
+      : []),
   ];
 
   return (

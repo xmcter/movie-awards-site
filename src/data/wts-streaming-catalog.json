@@ -787,7 +787,8 @@
           "publishedAt": "2026-11-09T10:03:26+08:00"
         }
       ],
-      "synopsisEn": "The Last Temptation of Becky. Streaming date set, per When To Stream (US)."
+      "synopsisEn": "The Last Temptation of Becky. Streaming date set, per When To Stream (US).",
+      "poster": "/posters/the-last-temptation-of-becky.jpg"
     },
     {
       "id": "heart-of-the-beast",
@@ -821,7 +822,8 @@
           "publishedAt": "2026-11-10T22:06:03+08:00"
         }
       ],
-      "synopsisEn": "Heart of the Beast. Streaming release date via When To Stream (US)."
+      "synopsisEn": "Heart of the Beast. Streaming release date via When To Stream (US).",
+      "poster": "/posters/heart-of-the-beast.jpg"
     },
     {
       "id": "ha-chan-shake-your-booty",
@@ -855,7 +857,8 @@
           "publishedAt": "2026-11-10T22:06:03+08:00"
         }
       ],
-      "synopsisEn": "Ha Chan: Shake Your Booty!. Streaming release date via When To Stream (US)."
+      "synopsisEn": "Ha Chan: Shake Your Booty!. Streaming release date via When To Stream (US).",
+      "poster": "/posters/ha-chan-shake-your-booty.jpg"
     },
     {
       "id": "the-samurai-and-the-prisoner",
@@ -888,7 +891,8 @@
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-12T10:00:15+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/the-samurai-and-the-prisoner.jpg"
     },
     {
       "id": "one-night-only",
@@ -921,7 +925,8 @@
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-12T10:00:15+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/one-night-only.jpg"
     },
     {
       "id": "avengers-endgame-encore",
@@ -955,7 +960,8 @@
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-12T22:13:11+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/avengers-endgame-encore.jpg"
     },
     {
       "id": "maddies-secret",
@@ -988,7 +994,8 @@
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-12T22:13:11+08:00"
         }
-      ]
+      ],
+      "poster": "/posters/maddies-secret.jpg"
     }
   ],
   "ceremonies": []

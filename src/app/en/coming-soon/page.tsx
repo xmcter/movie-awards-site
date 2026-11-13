@@ -120,6 +120,11 @@ export default function ComingSoonPageEn() {
     return `${y}-${m}-${day}`;
   })();
   const yearEnd = `${today.slice(0, 4)}-12-31`;
+  // When next week crosses into the next month, "Rest of the month" has no
+  // days left (its range would read backwards); same for "Rest of the year"
+  // in December. Hide the empty segment instead of showing an inverted range.
+  const restMonthStart = addDays(nextWeekEnd, 1);
+  const restYearStart = addDays(monthEndDate, 1);
 
   const buckets: { name: string; range: string; weekday: boolean; items: ComingSoonRelease[] }[] = [
     {
@@ -134,18 +139,26 @@ export default function ComingSoonPageEn() {
       weekday: true,
       items: releases.filter((r) => r.date >= nextWeekStart && r.date <= nextWeekEnd),
     },
-    {
-      name: "Rest of the month",
-      range: `${formatDateEn(addDays(nextWeekEnd, 1))}–${formatDateEn(monthEndDate)}`,
-      weekday: false,
-      items: releases.filter((r) => r.date > nextWeekEnd && r.date <= monthEndDate),
-    },
-    {
-      name: "Rest of the year",
-      range: `${formatDateEn(addDays(monthEndDate, 1))}–${formatDateEn(yearEnd)}`,
-      weekday: false,
-      items: releases.filter((r) => r.date > monthEndDate && r.date <= yearEnd),
-    },
+    ...(restMonthStart <= monthEndDate
+      ? [
+          {
+            name: "Rest of the month",
+            range: `${formatDateEn(restMonthStart)}–${formatDateEn(monthEndDate)}`,
+            weekday: false,
+            items: releases.filter((r) => r.date > nextWeekEnd && r.date <= monthEndDate),
+          },
+        ]
+      : []),
+    ...(restYearStart <= yearEnd
+      ? [
+          {
+            name: "Rest of the year",
+            range: `${formatDateEn(restYearStart)}–${formatDateEn(yearEnd)}`,
+            weekday: false,
+            items: releases.filter((r) => r.date > monthEndDate && r.date <= yearEnd),
+          },
+        ]
+      : []),
   ];
 
   return (

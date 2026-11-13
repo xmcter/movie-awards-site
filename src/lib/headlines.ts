@@ -5,6 +5,7 @@ import type {
   Film,
   FilmKind,
 } from "@/types";
+import { isPastReleaseDate } from "@/lib/labels";
 
 /** 片名词：《片名》 */
 export function filmQuote(title: string): string {
@@ -216,6 +217,7 @@ export function buildStreamingHeadline(opts: {
   platform: string;
   statusLabel: string;
   datePart: string;
+  date?: string;
   region?: string;
 }): string {
   // 展示层不写登录平台名、也不写国别/流媒体地区；平台/地区仍传入供选稿与 note 去重。
@@ -229,9 +231,11 @@ export function buildStreamingHeadline(opts: {
   if (statusLabel === "预计") {
     return datePart ? `${title}预计${datePart}` : `${title}预计上线`;
   }
-  // announced：片名 · 日期（不写平台/地区/「已公布」）
+  // announced：片名 · 日期（不写平台/地区/「已公布」）；已过的日期写“已上线”
   if (datePart) {
-    return `${title} · ${datePart}上线`;
+    return opts.date && isPastReleaseDate(opts.date)
+      ? `${title} · ${datePart}已上线`
+      : `${title} · ${datePart}上线`;
   }
   return title;
 }

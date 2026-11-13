@@ -163,6 +163,17 @@ export function formatContentDates(text: string, now = new Date()): string {
     .replace(/\b(\d{4})-(\d{2})-(\d{2})\b/g, (_, y, m, d) => formatDate(`${y}-${m}-${d}`, now));
 }
 
+/** 定档日是否已过（按上海日历比较）；已过的日期不再写“上线”，改写“已上线”。 */
+export function isPastReleaseDate(date: string, now = new Date()): boolean {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+  if (!match) return false;
+  const target = Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
+  const get = (t: Intl.DateTimeFormatPartTypes) => Number(parts.find(p => p.type === t)!.value);
+  const today = Date.UTC(get("year"), get("month") - 1, get("day"));
+  return target < today;
+}
+
 /** 上海日历周（周一起点）；绝不凭日期推断资源已核实。 */
 export function formatReleaseWeek(date: string, now = new Date()): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
@@ -171,6 +182,7 @@ export function formatReleaseWeek(date: string, now = new Date()): string {
   const parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(now);
   const get = (t: Intl.DateTimeFormatPartTypes) => Number(parts.find(p => p.type === t)!.value);
   const today = Date.UTC(get("year"), get("month") - 1, get("day"));
+  if (target < today) return formatDate(date, now) + "已上线";
   const monday = (d: number) => d - ((new Date(d).getUTCDay() + 6) % 7) * 86400000;
   const diff = (monday(target) - monday(today)) / (7 * 86400000);
   const weekday = "日一二三四五六"[new Date(target).getUTCDay()];

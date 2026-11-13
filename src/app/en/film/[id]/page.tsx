@@ -25,6 +25,7 @@ import {
   personNamesEn,
   bilingualAlternatesEn,
 } from "@/lib/i18n";
+import { isPastReleaseDate } from "@/lib/labels";
 
 export const dynamic = "force-static";
 
@@ -342,7 +343,8 @@ export default async function FilmPageEn({
               .map((release) => {
               const status = RELEASE_STATUS_LABELS_EN[release.status];
               const when = release.date ? formatDateEn(release.date) : "TBA";
-              const bits = [status || null, release.date ? `${when} · streaming` : when].filter(Boolean);
+              const past = release.date ? isPastReleaseDate(release.date) : false;
+              const bits = [status || null, release.date ? (past ? `Streaming since ${when}` : `${when} · streaming`) : when].filter(Boolean);
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}

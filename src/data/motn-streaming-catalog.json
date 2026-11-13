@@ -831,6 +831,50 @@
         "synopsis"
       ],
       "poster": "/posters/in-waves.jpg"
+    },
+    {
+      "id": "madame-web",
+      "title": "Madame Web",
+      "titleEn": "Madame Web",
+      "year": 2024,
+      "synopsis": "After showing signs of clairvoyance, New York City paramedic Cassandra Webb must confront revelations about her past and protect three young women from a mysterious adversary who wants them dead.",
+      "directors": [
+        "SJ Clarkson"
+      ],
+      "cast": [
+        "Dakota Johnson",
+        "Sydney Sweeney",
+        "Isabela Merced",
+        "Celeste O'Connor",
+        "Tahar Rahim",
+        "Mike Epps",
+        "Emma Roberts"
+      ],
+      "genres": [
+        "Action",
+        "Thriller"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-13T09:59:35+08:00",
+          "platform": "max",
+          "date": "2026-11-14",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max 美国区定档，以平台官方为准",
+          "source": "https://play.hbomax.com/movie/61fde273-8fb2-4d10-8910-be2d4bc14e7c",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/madame-web.jpg"
     }
   ],
   "ceremonies": []

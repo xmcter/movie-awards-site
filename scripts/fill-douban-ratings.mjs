@@ -17,6 +17,11 @@
 // 豆瓣年份与数据 year 相差不超过 1 年才写。差 2 年及以上不写。
 // 豆瓣超时、空响应、HTTP 非 200 只记一行日志然后跳过。脚本始终以 0 退出。
 //
+// 范围（2026-11-13 用户定）：只补基线之后新增的片子，历史片一律不补。
+// 基线文件 scripts/cache/douban-fill-baseline.json 记录改动当日的全部影片 id；
+// 在基线里的 id 直接跳过，不在基线里的才按上面规则补分。基线文件缺失时
+// 本次不处理任何片子（只打印提示，仍以 0 退出），先跑 --write-baseline 生成。
+//
 // 接口照 ECS /opt/movieupdate/douban.py 的已验证调用（移动端 UA、suggest、
 // subject_search 回退、rexxar 详情、限流与详情重试）。只把分数写入影片所属的
 // catalog：Peek → movie-peek-catalog.json，其余写入该片 id 所在的文件。
@@ -26,6 +31,7 @@
 //   node scripts/fill-douban-ratings.mjs --dry-run
 //   node scripts/fill-douban-ratings.mjs --limit 10
 //   node scripts/fill-douban-ratings.mjs --limit=10 --dry-run
+//   node scripts/fill-douban-ratings.mjs --write-baseline   # 生成基线文件（只跑一次）
 //
 // --limit N 最多处理 N 部尚无评分的影片。N 为偶数时 Peek 直查和片名搜索各半
 // （--limit 10 即 5 + 5），用来先核对两条路径。不带 --limit 时按 catalog 顺序处理全部。
@@ -36,6 +42,7 @@ import { fileURLToPath } from "node:url";
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = join(ROOT, "src", "data");
 const CACHE_PATH = join(ROOT, "scripts", "cache", "douban-ratings.json");
+const BASELINE_PATH = join(ROOT, "scripts", "cache", "douban-fill-baseline.json");
 
 const UA =
   "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1";
@@ -354,6 +361,33 @@ function loadCache() {
     console.error(`fill-douban cache unreadable, starting empty (${err.message})`);
     return {};
   }
+}
+
+// 基线：改动当日已在库的全部影片 id。只补基线之后新增的片子。
+function loadBaselineIds() {
+  try {
+    const raw = readFileSync(BASELINE_PATH, "utf8");
+    const data = JSON.parse(raw);
+    const ids = Array.isArray(data) ? data : data.ids;
+    if (!Array.isArray(ids)) return null;
+    return new Set(ids.filter((id) => typeof id === "string" && id));
+  } catch (err) {
+    if (err && err.code === "ENOENT") return null;
+    console.error(`fill-douban baseline unreadable (${err.message})`);
+    return null;
+  }
+}
+
+function writeBaseline(catalogs) {
+  const ids = [];
+  for (const catalog of catalogs) {
+    for (const film of filmList(catalog.data)) {
+      if (!ids.includes(film.id)) ids.push(film.id);
+    }
+  }
+  const payload = { cutoff: "2026-11-13", count: ids.length, ids };
+  writeFileSync(BASELINE_PATH, `${JSON.stringify(payload, null, 2)}\n`);
+  console.log(`fill-douban baseline wrote ${ids.length} ids to ${BASELINE_PATH}`);
 }
 
 function saveCache(cache) {
@@ -835,14 +869,23 @@ async function main() {
     matcherSelfTest();
     return;
   }
-  claimSingleRun();
-  const { dryRun, limit } = parseArgs(process.argv.slice(2));
-  const cache = loadCache();
   const catalogs = CATALOG_FILES.map((name) => ({
     name,
     data: JSON.parse(readFileSync(join(DATA, name), "utf8")),
     dirty: false,
   }));
+  if (process.argv.includes("--write-baseline")) {
+    writeBaseline(catalogs);
+    return;
+  }
+  claimSingleRun();
+  const { dryRun, limit } = parseArgs(process.argv.slice(2));
+  const cache = loadCache();
+  const baseline = loadBaselineIds();
+  if (!baseline) {
+    console.error("fill-douban baseline missing: run --write-baseline first, nothing processed");
+    return;
+  }
   const byFile = new Map(catalogs.map((catalog) => [catalog.name, catalog]));
   const flushDirty = () => {
     if (dryRun) return;
@@ -867,6 +910,7 @@ async function main() {
 
   const stats = {
     scanned: 0,
+    baseline: 0,
     existing: 0,
     notFilm: 0,
     batch: 0,
@@ -884,6 +928,10 @@ async function main() {
   for (const catalog of catalogs) {
     for (const film of filmList(catalog.data)) {
       stats.scanned++;
+      if (baseline.has(film.id)) {
+        stats.baseline++;
+        continue;
+      }
       if (hasRating(film)) {
         stats.existing++;
         continue;
@@ -899,7 +947,7 @@ async function main() {
   const batch = selectBatch(pending, limit);
   stats.batch = batch.length;
   console.log(
-    `fill-douban: scan ${stats.scanned}, pending ${pending.length}, batch ${batch.length}` +
+    `fill-douban: scan ${stats.scanned}, baseline ${stats.baseline}, pending ${pending.length}, batch ${batch.length}` +
       `${limit != null ? ` (limit ${limit}, peek+search split)` : ""}` +
       `${dryRun ? " [dry-run]" : ""}`,
   );

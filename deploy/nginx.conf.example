@@ -24,6 +24,19 @@ server {
     location = /film/other-mommy/ { return 301 https://$host/film/movie-douban-37317907; }
     location = /en/film/other-mommy { return 301 https://$host/en/film/movie-douban-37317907; }
     location = /en/film/other-mommy/ { return 301 https://$host/en/film/movie-douban-37317907; }
+    location = /film/the-samurai-and-the-prisoner { return 301 https://$host/film/movie-douban-38112572; }
+    location = /film/the-samurai-and-the-prisoner/ { return 301 https://$host/film/movie-douban-38112572; }
+    location = /en/film/the-samurai-and-the-prisoner { return 301 https://$host/en/film/movie-douban-38112572; }
+    location = /en/film/the-samurai-and-the-prisoner/ { return 301 https://$host/en/film/movie-douban-38112572; }
+
+    # 英文 404。和站点 HTML 一起部署后才生效：线上在 out/en/404.html 就位之前
+    # 不要把 error_page 指到这里，否则 /en 下的 404 会落到 nginx 默认页。
+    location /en/ {
+        error_page 404 /en/404.html;
+        rewrite ^/en/(.+)/$ https://$host/en/$1 permanent;
+        try_files $uri $uri.html $uri/ =404;
+        add_header Cache-Control "public, max-age=300";
+    }
 
     location / {
         # Next.js static export emits path.html (no trailingSlash):

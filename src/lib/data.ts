@@ -41,6 +41,7 @@ import {
   badgeEn,
   formatContentDatesEn,
   formatDateEn,
+  formatDateEnLong,
   formatSourcePublishedLabelEn,
   filmTitleEn,
   directorNamesEn,
@@ -175,6 +176,9 @@ export const FILM_ALIASES: Record<string, string> = {
   "movie-douban-36808876": "the-odyssey",
   /** WTS 的 other-mommy 与 Peek 的 movie-douban-37317907 是同一部《另一个妈妈 / Other Mommy》。 */
   "other-mommy": "movie-douban-37317907",
+  /** WTS 的 the-samurai-and-the-prisoner 与 Peek 的 movie-douban-38112572 是同一部《黑牢城》。
+   *  规范页用有剧情、卡司和片长的 Peek 记录；WTS 记录只留定档。 */
+  "the-samurai-and-the-prisoner": "movie-douban-38112572",
 };
 
 /** 质量闸人工放行名单：用户 2026-11-13 定，B.1 建议的 8 部全放行（按片 id，不改闸本身）。
@@ -507,7 +511,13 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       const streamBadge = en ? "Streaming planned" : "上线计划";
 
       const headline = en
-        ? buildStreamingHeadlineEn({ film: canonicalFilm, statusLabel, datePart, date: release.date })
+        ? buildStreamingHeadlineEn({
+            film: canonicalFilm,
+            date: release.date,
+            status: release.status,
+            platform: release.platform,
+            note: release.note,
+          })
         : buildStreamingHeadline({
             film: canonicalFilm,
             platform,
@@ -605,7 +615,7 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
     const verifiedResource = news.id.startsWith("movie-peek-");
     const headline = en
       ? verifiedResource
-        ? `${filmTitleEn(film)} is out now`
+        ? `${filmTitleEn(film)} is out now as of ${formatDateEnLong(news.date)}`
         : polishAuteurHeadlineEn(news.summaryEn || "", film)
       : verifiedResource
         ? `《${film.title}》已上线`

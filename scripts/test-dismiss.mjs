@@ -47,6 +47,7 @@ function diceCoefficient(a, b) {
 
 // Mirror of src/lib/dismiss.ts stripScheduleSuffix / strippedTitleKey.
 const SCHEDULE_SUFFIX_RES = [
+  /\s+(?:has been streaming|streams|is expected|is out now|out now)\b.*$/i,
   /\s*[·•]\s*(?:\d{1,2}月\d{1,2}日|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2}|Streaming\b|Expected\b|TBA\b|上线|已上线|定档|出源|窗口待定).*$/iu,
   /\s*(?:已上线|上线|窗口待定|预计.*|定档.*)$/u,
   /\s+(?:is\s+out\s+now|out\s+now|streaming\b.*)$/i,

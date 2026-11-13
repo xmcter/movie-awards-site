@@ -19,18 +19,15 @@ import {
   splitFilmCopy,
   truncateDescription,
 } from "@/lib/data";
-import { dedupeSubtitleAgainstTitleEn } from "@/lib/headlines-en";
+import { dedupeSubtitleAgainstTitleEn, streamingWhenWhereEn } from "@/lib/headlines-en";
 import {
-  RELEASE_STATUS_LABELS_EN,
-  formatDateEn,
   genreLabelsEn,
   filmTitleEn,
-  personNamesEn,
   directorNamesEn,
   cleanGuideDirector,
   bilingualAlternatesEn,
+  UI_EN,
 } from "@/lib/i18n";
-import { isPastReleaseDate } from "@/lib/labels";
 
 export const dynamic = "force-static";
 
@@ -177,7 +174,7 @@ export default async function FilmPageEn({
   const { plot, background } = splitFilmCopy(film, "en");
   const verifiedAwards = getVerifiedFilmAwards(film.id);
   const directorsEn = directorNamesEn(film.directors);
-  const castEn = personNamesEn(film.cast);
+  const castEn = directorNamesEn(film.cast);
   const peopleLabel =
     film.directors.length > 0
       ? "Director"
@@ -196,11 +193,15 @@ export default async function FilmPageEn({
     .join(" ");
   const guideUrl = `https://guide.readcine.com/?q=${encodeURIComponent(guideQuery)}&pick=1`;
 
+  const alternateName =
+    film.title && film.title !== filmTitleEn(film) && !/[\u4e00-\u9fff]/.test(film.title)
+      ? film.title
+      : undefined;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Movie",
     name: filmTitleEn(film),
-    alternateName: film.title,
+    ...(alternateName ? { alternateName } : {}),
     dateCreated: String(film.year),
     description: plot || background || `${filmTitleEn(film)} (${film.year})`,
     director: directorsEn.map((name) => ({ "@type": "Person", name })),
@@ -238,9 +239,6 @@ export default async function FilmPageEn({
                 <FilmMeta year={film.year} />
               </span>
             </h1>
-            {film.titleEn && film.titleEn !== film.title ? (
-              <p className="mt-1 text-sm text-cinema-muted">{film.title}</p>
-            ) : null}
             {film.runtime ? (
               <p className="mt-3 text-xs text-cinema-muted/70">
                 {film.runtime} min
@@ -250,15 +248,15 @@ export default async function FilmPageEn({
         </div>
       </section>
 
-      {film.cast.length > 0 || (directorsEn.length > 0 && !plot) ? (
-        <Section title={directorsEn.length > 0 && !plot && film.cast.length > 0 ? "Director & cast" : directorsEn.length > 0 && !plot ? "Director" : peopleLabel !== "Director" ? peopleLabel : "Cast"}>
+      {castEn.length > 0 || (directorsEn.length > 0 && !plot) ? (
+        <Section title={directorsEn.length > 0 && !plot && castEn.length > 0 ? "Director & cast" : directorsEn.length > 0 && !plot ? "Director" : peopleLabel !== "Director" ? peopleLabel : "Cast"}>
           {!plot && directorsEn.length > 0 ? (
             <p className="text-cinema-text">
               <span className="text-cinema-muted">Director </span>
               {directorsEn.join(", ")}
             </p>
           ) : null}
-          {film.cast.length > 0 ? (
+          {castEn.length > 0 ? (
             <p className={`${!plot && directorsEn.length > 0 ? "mt-2 " : ""}text-sm text-cinema-text`}>
               <span className="text-cinema-muted">{film.directors.length === 0 && (film.genres.includes("荣誉") || film.genres.includes("评审")) ? peopleLabel : "Cast"} </span>
               {castEn.join(", ")}
@@ -275,7 +273,7 @@ export default async function FilmPageEn({
               {directorsEn.join(", ")}
             </p>
           ) : null}
-          <p>{plot}</p>
+          <p data-film-plot>{plot}</p>
           <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
             <a
               href={guideUrl}
@@ -283,7 +281,7 @@ export default async function FilmPageEn({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
-              <span>🎞️ Read the guide on 观影导赏</span>
+              <span>{UI_EN.guideInGuide}</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
             <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
@@ -319,7 +317,7 @@ export default async function FilmPageEn({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
-              <span>🎞️ Read the guide on 观影导赏</span>
+              <span>{UI_EN.guideInGuide}</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
             <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
@@ -336,7 +334,7 @@ export default async function FilmPageEn({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
-              <span>🎞️ Read the guide on 观影导赏</span>
+              <span>{UI_EN.guideInGuide}</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
             <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
@@ -344,11 +342,17 @@ export default async function FilmPageEn({
         </Section>
       ) : null}
 
-      {film.streaming.length > 0 ? (
+      {(() => {
+        const streaming = [
+          ...film.streaming,
+          ...films.filter((item) => FILM_ALIASES[item.id] === film.id).flatMap((item) => item.streaming),
+        ];
+        if (streaming.length === 0) return null;
+        return (
         <section>
           <h2 className="font-display text-lg text-cinema-text">Streaming</h2>
           <ul className="mt-3 space-y-2">
-            {[...film.streaming]
+            {[...streaming]
               .sort((a, b) => {
                 if (a.date && b.date) return a.date.localeCompare(b.date);
                 if (a.date) return -1;
@@ -356,22 +360,25 @@ export default async function FilmPageEn({
                 return 0;
               })
               .map((release) => {
-              const status = RELEASE_STATUS_LABELS_EN[release.status];
-              const when = release.date ? formatDateEn(release.date) : "TBA";
-              const past = release.date ? isPastReleaseDate(release.date) : false;
-              const bits = [status || null, release.date ? (past ? `Streaming since ${when}` : `${when} · streaming`) : when].filter(Boolean);
+              const line = streamingWhenWhereEn({
+                date: release.date,
+                status: release.status,
+                platform: release.platform,
+                note: release.note,
+              });
               return (
                 <li
                   key={`${release.platform}-${release.date || "tba"}`}
                   className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3 text-sm text-cinema-muted"
                 >
-                  {release.date ? <ReleaseLabel date={release.date} fallback={bits.join(" · ")} locale="en" /> : bits.join(" · ")}
+                  {line}
                 </li>
               );
             })}
           </ul>
         </section>
-      ) : null}
+        );
+      })()}
 
       <section>
         <h2 className="font-display text-lg text-cinema-text">Related on this site</h2>

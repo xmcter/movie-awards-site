@@ -6,29 +6,87 @@
  * note carries no incremental facts.
  */
 import type { Film } from "@/types";
-import { filmTitleEn } from "@/lib/i18n";
+import { filmTitleEn, formatDateEnLong, PLATFORM_LABELS_EN } from "@/lib/i18n";
 import { isPastReleaseDate } from "@/lib/labels";
 
-/** Streaming headline: "The Odyssey · Streaming Nov 21" (announced),
- *  "Title · Expected Nov 21" (estimated), "Title · TBA" (tba). */
+const HAN_CHAR = /[\u4e00-\u9fff]/;
+
+/** Named services that arrive with platform code "other" and a note prefix. */
+const NAMED_FROM_NOTE: Array<[RegExp, string]> = [
+  [/^AMC\+$/i, "AMC+"],
+  [/^Peacock$/i, "Peacock"],
+  [/^Paramount\+$/i, "Paramount+"],
+  [/^HBO Max\b/i, "Max"],
+  [/^Max\b/i, "Max"],
+  [/^Prime Video\b/i, "Prime Video"],
+  [/^Apple TV\+/i, "Apple TV+"],
+  [/^Disney\+$/i, "Disney+"],
+  [/^Hulu$/i, "Hulu"],
+  [/^Netflix$/i, "Netflix"],
+  [/^MUBI\b/i, "MUBI"],
+  [/^iTunes$/i, "Apple TV+"],
+];
+
+/** "Netflix", "AMC+", or "digitally" when the release is not one named service. */
+export function streamingServiceEn(platform?: string, note?: string): string {
+  const code = (platform || "").trim();
+  if (code && code !== "other") return PLATFORM_LABELS_EN[code] || code;
+  const head = (note || "").split("·")[0].replace(/\s+/g, " ").trim();
+  if (!head || HAN_CHAR.test(head)) return "digitally";
+  if (/^PVOD(?:\/VOD)?$/i.test(head) || /^VOD$/i.test(head)) return "digitally";
+  for (const [re, name] of NAMED_FROM_NOTE) {
+    if (re.test(head)) return name;
+  }
+  return "digitally";
+}
+
+/** Clause after the title: "streams on Netflix on November 30, 2026". */
+function streamingClause(opts: {
+  date?: string;
+  status?: string;
+  platform?: string;
+  note?: string;
+}): string {
+  const service = streamingServiceEn(opts.platform, opts.note);
+  const named = service !== "digitally";
+  const when = opts.date ? formatDateEnLong(opts.date) : "";
+  if (opts.status === "tba" || !opts.date) {
+    return named ? `on ${service}, date to be announced` : "streaming date to be announced";
+  }
+  if (opts.status === "estimated") {
+    return named ? `is expected on ${service} on ${when}` : `is expected digitally on ${when}`;
+  }
+  if (isPastReleaseDate(opts.date)) {
+    return named
+      ? `has been streaming on ${service} since ${when}`
+      : `has been streaming digitally since ${when}`;
+  }
+  return named ? `streams on ${service} on ${when}` : `streams digitally on ${when}`;
+}
+
+/** "Avengers: Endgame streams on Disney+ on November 13, 2026". */
 export function buildStreamingHeadlineEn(opts: {
   film: Film;
-  statusLabel: string;
-  datePart: string;
   date?: string;
+  status?: string;
+  platform?: string;
+  note?: string;
 }): string {
-  const { film, statusLabel, datePart } = opts;
-  const title = filmTitleEn(film);
-  if (statusLabel === "TBA") return `${title} · TBA`;
-  if (statusLabel === "Expected") {
-    return datePart ? `${title} · Expected ${datePart}` : `${title} · Expected`;
-  }
-  if (datePart) {
-    return opts.date && isPastReleaseDate(opts.date)
-      ? `${title} · Streaming since ${datePart}`
-      : `${title} · Streaming ${datePart}`;
-  }
-  return title;
+  const title = filmTitleEn(opts.film);
+  const clause = streamingClause(opts);
+  if (clause === "streaming date to be announced") return `${title}, ${clause}`;
+  return `${title} ${clause}`;
+}
+
+/** Film-page line, same facts as the headline, without repeating the title. */
+export function streamingWhenWhereEn(opts: {
+  date?: string;
+  status?: string;
+  platform?: string;
+  note?: string;
+}): string {
+  const clause = streamingClause(opts);
+  return clause.charAt(0).toUpperCase() + clause.slice(1);
 }
 
 /** English streaming body: notes are untranslated Chinese boilerplate. */

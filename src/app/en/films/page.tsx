@@ -16,6 +16,12 @@ export const metadata: Metadata = {
     description: "Every film page on this site, sorted by title.",
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Screen News" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "All films",
+    description: "Every film page on this site, sorted by title.",
+    images: ["/og.png"],
+  },
 };
 
 export const dynamic = "force-static";

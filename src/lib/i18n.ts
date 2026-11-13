@@ -58,6 +58,20 @@ const MONTHS_EN = [
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec",
 ];
 
+const MONTHS_EN_FULL = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+/** "2026-11-21" -> "November 21, 2026". Headlines always spell the month and the year. */
+export function formatDateEnLong(date?: string): string {
+  if (!date) return "a date to be announced";
+  const [y, m, d] = date.split("-");
+  const month = MONTHS_EN_FULL[Number(m) - 1];
+  if (!y || !month || !d) return date;
+  return `${month} ${Number(d)}, ${y}`;
+}
+
 /** "2026-11-21" -> "Nov 21" (current year) or "Nov 21, 2025" (other years). */
 export function formatDateEn(date?: string, now = new Date()): string {
   if (!date) return "TBA";
@@ -451,7 +465,7 @@ export const PERSON_NAME_EN: Record<string, string> = {
   "阿方索·卡隆": "Alfonso Cuarón",
   "雷娜特·莱因斯维": "Renate Reinsve",
   "露皮塔·尼永奥": "Lupita Nyong'o",
-  "青木崇高": "Takahiro Aoki",
+  "青木崇高": "Munetaka Aoki",
   "马特·达蒙": "Matt Damon",
   "鲁妮·玛拉": "Rooney Mara",
   "余香凝": "Jennifer Yu",
@@ -468,6 +482,61 @@ export const PERSON_NAME_EN: Record<string, string> = {
   "中山裕介": "Yusuke Nakamura",
   "出口夏希": "Natsuki Deguchi",
   "安娜·考尔德-马歇尔": "Anna Calder-Marshall",
+  "奥斯汀·艾布拉姆斯": "Austin Abrams",
+  "保罗·沃尔特·豪泽": "Paul Walter Hauser",
+  "扎克·切利": "Zach Cherry",
+  "扎克·克雷格": "Zach Cregger",
+  "卡莉·瑞斯": "Kali Reis",
+  "约翰诺·威尔逊": "Johnno Wilson",
+  "荒川良良": "Yoshiyoshi Arakawa",
+  "渡边一惠": "Ikkei Watanabe",
+  "杰西卡·查斯坦": "Jessica Chastain",
+  "杰伊·杜普拉斯": "Jay Duplass",
+  "查宁·塔图姆": "Channing Tatum",
+  "吉玛·陈": "Gemma Chan",
+  "鲁伯特·格林特": "Rupert Grint",
+  "艾米·亚当斯": "Amy Adams",
+  "玛丽昂·科蒂亚尔": "Marion Cotillard",
+  "拉米·马雷克": "Rami Malek",
+  "帕梅拉·安德森": "Pamela Anderson",
+  "莱莉·基奥": "Riley Keough",
+  "艾丽·范宁": "Elle Fanning",
+  "穆雷·巴特利特": "Murray Bartlett",
+  "杰米·贝尔": "Jamie Bell",
+  "巴勃罗·拉雷恩": "Pablo Larraín",
+  "罗布·萨维奇": "Rob Savage",
+  "戴夫·博伊尔": "Dave Boyle",
+  "凯伦·阿兰": "Karen Allen",
+  "奎恩·谢法德": "Quinn Shephard",
+  "索菲亚·怀利": "Sofia Wylie",
+  "艾拉·萨克斯": "Ira Sachs",
+  "沃里克·桑顿": "Warwick Thornton",
+  "卡勒姆·特纳": "Callum Turner",
+  "丹·列维": "Dan Levy",
+  "丽贝卡·豪尔": "Rebecca Hall",
+  "伯努瓦·马吉梅": "Benoît Magimel",
+  "妮科尔·加西亚": "Nicole Garcia",
+  "安格拉·沙内莱克": "Angela Schanelec",
+  "尼克·塔拉贝": "Nick Tarabay",
+  "巴斯蒂安·布永": "Bastien Bouillon",
+  "尼尔斯·施奈德": "Niels Schneider",
+  "爱德华·费尔南德斯": "Eduard Fernández",
+  "阿黛尔·埃克萨科波洛斯": "Adèle Exarchopoulos",
+  "哈维尔·卡马拉": "Javier Cámara",
+  "卡里姆·艾诺兹": "Karim Aïnouz",
+  "夏尔·贝尔林": "Charles Berling",
+  "梅拉尼·蒂埃里": "Mélanie Thierry",
+  "洛尔·卡拉米": "Laure Calamy",
+  "蕾切尔·索尔": "Rachel Szor",
+  "马哈马特-萨利赫·哈龙": "Mahamat-Saleh Haroun",
+  "阿兰·戈米斯": "Alain Gomis",
+  "耶希姆·乌斯塔奥卢": "Yeşim Ustaoğlu",
+  "金诗雅": "Kim Si-a",
+  "戴立忍": "Leon Dai",
+  "柯震东": "Kai Ko",
+  "王净": "Gingle Wang",
+  "阿拉贝拉·奥利维娅·克拉克": "Arabella Olivia Clark",
+  "迪辰·拉克曼": "Dichen Lachman",
 };
 
 export function personNameEn(name: string): string {
@@ -584,6 +653,10 @@ export function isIndexableFilmEn(film: Film): boolean {
 /* UI strings for /en/ pages and locale-aware components               */
 /* ------------------------------------------------------------------ */
 
+/** Homepage and default social description. Written for English readers, not a gloss of the Chinese slogan. */
+export const SITE_DESCRIPTION_EN =
+  "Screen News follows when auteur films and acclaimed new releases hit streaming, and when those films become available to watch. A guide to what to stream tonight, not a theatrical box-office report.";
+
 export const UI_EN = {
   siteName: "Screen News",
   siteTagline: "Release dates · new film updates",
@@ -591,7 +664,7 @@ export const UI_EN = {
   navAbout: "About",
   footerTagline: "New film streaming dates · new film updates",
   footerNote:
-    "Only when a film hits streaming, and when it goes on release; no box-office popcorn. Data ships with the repo, not scraped live.",
+    "When auteur films and acclaimed new releases hit streaming, and when they become available to watch. Data ships with the repo, not scraped live.",
   footerOriginal: "Original",
   footerAllFilms: "All films",
   footerAbout: "About",
@@ -627,8 +700,8 @@ export const UI_EN = {
   collapseFilmHistory: "Collapse this film's history",
   sourcePrefix: "Source",
   guide: "🎞️ Guide",
-  guideTitle: "View the guide on 观影导赏",
-  guideInGuide: "🎞️ Read the guide on 观影导赏",
+  guideTitle: "Read the viewing guide",
+  guideInGuide: "🎞️ Read the viewing guide",
   weibo: "Weibo",
   weiboTitle: "View the original Weibo post",
   loadingSlow: "Loading slowly",

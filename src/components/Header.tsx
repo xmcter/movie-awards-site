@@ -110,7 +110,7 @@ function LangLink({ href, en }: { href: string; en: boolean }) {
     <Link
       href={href}
       className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
-      aria-label={en ? "切换到中文" : "Switch to English"}
+      aria-label={en ? "Switch to Chinese" : "Switch to English"}
     >
       {en ? "中文" : "EN"}
     </Link>

@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Timeline from "@/components/Timeline";
 import PullToRefresh from "@/components/PullToRefresh";
 import { getTimelineEvents } from "@/lib/data";
-import { bilingualAlternatesEn } from "@/lib/i18n";
+import { bilingualAlternatesEn, SITE_DESCRIPTION_EN } from "@/lib/i18n";
 
 export const metadata: Metadata = {
   title: "Screen News — New film streaming dates & release updates",
   description:
-    "Only two things: when auteur and acclaimed new films hit streaming, and new release updates. What to watch tonight — no box-office popcorn.",
+    SITE_DESCRIPTION_EN,
   keywords: [
     "streaming dates",
     "new film releases",
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     siteName: "Screen News",
     title: "Screen News — New film streaming dates & release updates",
     description:
-      "Only two things: when auteur and acclaimed new films hit streaming, and new release updates. What to watch tonight — no box-office popcorn.",
+      SITE_DESCRIPTION_EN,
     images: [{ url: "/og.png", width: 1200, height: 630, alt: "Screen News" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Screen News — New film streaming dates & release updates",
     description:
-      "Only two things: when auteur and acclaimed new films hit streaming, and new release updates. What to watch tonight — no box-office popcorn.",
+      SITE_DESCRIPTION_EN,
     images: ["/og.png"],
   },
 };
@@ -48,7 +48,7 @@ export default function HomePageEn() {
     name: "Screen News",
     url: "https://news.readcine.com/en",
     description:
-      "Only two things: when auteur and acclaimed new films hit streaming, and new release updates. What to watch tonight — no box-office popcorn.",
+      SITE_DESCRIPTION_EN,
     inLanguage: "en-US",
   };
 

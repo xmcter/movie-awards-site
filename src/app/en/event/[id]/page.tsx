@@ -16,7 +16,7 @@ import {
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitleEn } from "@/lib/headlines-en";
 import LazyPoster from "@/components/LazyPoster";
-import { bilingualAlternatesEn, cleanGuideDirector, directorNamesEn, filmTitleEn, personNamesEn } from "@/lib/i18n";
+import { bilingualAlternatesEn, cleanGuideDirector, directorNamesEn, filmTitleEn, UI_EN } from "@/lib/i18n";
 
 export const dynamic = "force-static";
 
@@ -106,6 +106,7 @@ export default async function EventPageEn({
   const { plot, background } = film ? splitFilmCopy(film, "en") : { plot: "", background: "" };
   const directors =
     (film?.directors && film.directors.length > 0 ? directorNamesEn(film.directors) : directorNamesEn(event.directors)) || [];
+  const castEn = directorNamesEn(film?.cast);
   const colors = event.posterColors || ["#1a1a2e", "#334155"];
   const badge = event.badge;
   const pagerItems = timeline.map((e) => ({
@@ -231,9 +232,9 @@ export default async function EventPageEn({
         </div>
       </article>
 
-      {film && film.cast.length > 0 ? (
+      {castEn.length > 0 ? (
         <Section title="Cast">
-          <p>{personNamesEn(film.cast).join(", ")}</p>
+          <p>{castEn.join(", ")}</p>
         </Section>
       ) : null}
 
@@ -271,7 +272,7 @@ export default async function EventPageEn({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
-              <span>🎞️ Read the guide on 观影导赏</span>
+              <span>{UI_EN.guideInGuide}</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
             <WeiboLink href={event.weiboUrl} label={event.weiboLabel} locale="en" />
@@ -286,7 +287,7 @@ export default async function EventPageEn({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
             >
-              <span>🎞️ Read the guide on 观影导赏</span>
+              <span>{UI_EN.guideInGuide}</span>
               <span className="text-[10px] opacity-70">↗</span>
             </a>
             <WeiboLink href={event.weiboUrl} label={event.weiboLabel} locale="en" />

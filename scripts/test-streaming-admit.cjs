@@ -24,6 +24,7 @@ const {
   getComingSoonReleases,
   films,
   ceremonies,
+  FILM_ALIASES,
 } = require("../src/lib/data.ts");
 
 const NOW = new Date("2026-11-08T12:00:00+08:00");
@@ -152,6 +153,9 @@ assert.equal(isTimelineEligibleFilm(film({ genres: ["纪录片"] })), false);
 const soonIds = new Set(
   getComingSoonReleases(new Date("2026-11-13T12:00:00+08:00")).map((r) => r.filmId),
 );
-for (const [id] of ALLOWLISTED) assert.ok(soonIds.has(id), `${id} should be in coming-soon`);
+for (const [id] of ALLOWLISTED) {
+  const shown = FILM_ALIASES[id] || id;
+  assert.ok(soonIds.has(shown), `${id} should be in coming-soon as ${shown}`);
+}
 
 console.log("ok: shouldAdmitStreaming covers year window, auteur, award, MUBI, and score threshold");

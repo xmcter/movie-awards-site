@@ -83,6 +83,8 @@ export function diceCoefficient(a: string, b: string): number {
  * 只去尾部套话，不动片名本身；循环去，直到稳定。
  */
 const SCHEDULE_SUFFIX_RES: RegExp[] = [
+  // "streams on Netflix on November 30, 2026" / "has been streaming … since …" / "is out now as of …"
+  /\s+(?:has been streaming|streams|is expected|is out now|out now)\b.*$/i,
   // " · 11月21日上线" / " · Nov 18" / " · Streaming Nov 18" / " · TBA" / " · Expected Nov 18"
   /\s*[·•]\s*(?:\d{1,2}月\d{1,2}日|(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+\d{1,2}|Streaming\b|Expected\b|TBA\b|上线|已上线|定档|出源|窗口待定).*$/iu,
   // 尾部状态词："已上线" / "上线" / "窗口待定" / "预计11月21日" / "定档11月21日"

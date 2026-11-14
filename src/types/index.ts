@@ -176,6 +176,10 @@ export interface TimelineEvent {
   filmTitle: string;
   filmTitleEn?: string;
   filmYear?: number;
+  /** 影片中文名（英文站 filmTitle 是英文名时，跨站已看匹配仍用中文名）。 */
+  filmTitleZh?: string;
+  /** 豆瓣 subject id（可得时），跨站已看匹配用。 */
+  filmDoubanId?: string;
   /** 豆瓣评分。没有分就不设，时间线不占位。 */
   doubanScore?: number;
   poster?: string;

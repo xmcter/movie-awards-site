@@ -3,6 +3,7 @@ import LangSync from "@/components/LangSync";
 import type { Metadata, Viewport } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CrossSeenStyle } from "@/components/CrossSeen";
 import ThemeInit from "@/components/ThemeInit";
 import "./globals.css";
 
@@ -97,6 +98,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CrossSeenStyle />
 
       </body>
     </html>

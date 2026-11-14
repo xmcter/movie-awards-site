@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
+import { SeenMark } from "@/components/CrossSeen";
 import ReleaseLabel from "@/components/ReleaseLabel";
 import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
@@ -19,6 +20,7 @@ import {
   isIndexableFilm,
   splitFilmCopy,
   truncateDescription,
+  doubanIdOf,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy, stripStreamingBoilerplate } from "@/lib/headlines";
 import { bilingualAlternates, cleanGuideDirector } from "@/lib/i18n";
@@ -222,6 +224,7 @@ export default async function FilmPage({
 
   return (
     <div className="space-y-8">
+      <SeenMark film={{ id: film.id, title: film.title, titleEn: film.titleEn, year: film.year, doubanId: doubanIdOf(film) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [jsonLd, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "电影资讯", item: "https://news.readcine.com/" }, { "@type": "ListItem", position: 2, name: film.title, item: `https://news.readcine.com/film/${film.id}` }] }] }).replace(/</g, "\\u003c") }}

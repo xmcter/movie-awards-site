@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SeenMark } from "@/components/CrossSeen";
 import ReleaseLabel from "@/components/ReleaseLabel";
 import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
@@ -13,6 +14,7 @@ import {
   getTimelineEvents,
   splitFilmCopy,
   truncateDescription,
+  doubanIdOf,
 } from "@/lib/data";
 import { dedupeSubtitleAgainstTitle, scrubNegativeCopy } from "@/lib/headlines";
 import LazyPoster from "@/components/LazyPoster";
@@ -128,6 +130,7 @@ export default async function EventPage({
 
   return (
     <div className="space-y-6">
+      <SeenMark film={{ id: film?.id || event.filmId || `event-${event.id}`, title: film?.title || event.filmTitleZh || event.filmTitle, titleEn: film?.titleEn || event.filmTitleEn, year: film?.year || event.filmYear, doubanId: film ? doubanIdOf(film) : event.filmDoubanId }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org", "@graph": [
           { "@type": "Article", headline: event.headline || event.filmTitle,

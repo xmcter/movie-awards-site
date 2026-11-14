@@ -1,3 +1,4 @@
+import { doubanIdFromFilmId } from "@/lib/crossSeenKeys";
 import verifiedFilmAwards from "@/data/verified-film-awards.json";
 import fs from "fs";
 import { comparePublicationTime, publicationTime } from "@/lib/timelineOrder";
@@ -203,6 +204,13 @@ function usableDoubanRating(rating: Film["doubanRating"]): boolean {
  * 影片页要展示的豆瓣分。别名页会跳到规范页，规范页自己没分时，
  * 借用指向它的那条记录上的分数（分数仍写在各自所属的 catalog 里）。
  */
+/** 豆瓣 subject id：评分里带的，或 Peek 片的 movie-douban-<id> slug。跨站已看匹配用。 */
+export function doubanIdOf(film: Film): string | undefined {
+  const fromRating = film.doubanRating?.doubanId || doubanRatingOf(film)?.doubanId;
+  if (fromRating && /^\d+$/.test(fromRating)) return fromRating;
+  return doubanIdFromFilmId(film.id) || undefined;
+}
+
 export function doubanRatingOf(film: Film): Film["doubanRating"] | undefined {
   if (usableDoubanRating(film.doubanRating)) return film.doubanRating;
   for (const other of films) {
@@ -596,6 +604,8 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
         filmTitle: en ? filmTitleEn(canonicalFilm) : canonicalFilm.title,
         filmTitleEn: canonicalFilm.titleEn,
         filmYear: canonicalFilm.year,
+        filmTitleZh: canonicalFilm.title,
+        filmDoubanId: doubanIdOf(canonicalFilm),
         doubanScore: doubanRatingOf(canonicalFilm)?.score,
         poster: withBase(canonicalFilm.poster),
         posterColors: canonicalFilm.posterColors,
@@ -690,6 +700,8 @@ export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {
       filmTitle: en ? filmTitleEn(film) : film.title,
       filmTitleEn: film.titleEn,
       filmYear: film.year,
+      filmTitleZh: film.title,
+      filmDoubanId: doubanIdOf(film),
       doubanScore: doubanRatingOf(film)?.score,
       poster: withBase(film.poster),
       posterColors: film.posterColors,

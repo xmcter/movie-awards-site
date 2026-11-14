@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { FILM_ALIASES, doubanRatingOf, films } from "@/lib/data";
+import { seenTokens } from "@/lib/crossSeenKeys";
+import { FILM_ALIASES, doubanRatingOf, films, doubanIdOf } from "@/lib/data";
 import { bilingualAlternatesEn, filmTitleEn } from "@/lib/i18n";
 
 export const metadata: Metadata = {
@@ -53,6 +54,7 @@ export default function FilmsPageEn() {
           return (
           <li
             key={film.id}
+            data-rc-fk={seenTokens({ id: film.id, title: film.title, titleEn: film.titleEn, year: film.year, doubanId: doubanIdOf(film) }).join(" ")}
             className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3"
           >
             <Link

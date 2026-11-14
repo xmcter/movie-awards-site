@@ -16,6 +16,7 @@ import {
 } from "@/lib/lastSeen";
 import { absoluteDayLabel, absoluteDayLabelEn, groupByDay, relativeDayPrefix, relativeDayPrefixEn, shanghaiToday } from "@/lib/dayGroups";
 import { markClicked, readClicked } from "@/lib/readProgress";
+import { isCrossSeen, useCrossSeen } from "@/lib/crossSeen";
 import {
   DISMISS_EVENT_NAME,
   blockEvent,
@@ -457,6 +458,8 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
     }));
   };
 
+  const crossSeen = useCrossSeen();
+
   const blockedCount = useMemo(() => {
     return Object.keys(dismissStore.blocked || {}).length;
   }, [dismissStore]);
@@ -484,9 +487,25 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
     });
 
     // 不再推荐过滤
-    const afterDismiss = showBlocked
+    const afterBlocked = showBlocked
       ? matched
       : matched.filter((e) => !isBlockedOrSimilar(e, dismissStore));
+
+    // 跨站已看：本人在电影下载站打开过的片子直接隐藏（仅本人登录时有集合；搜索时不隐藏）
+    const afterDismiss =
+      crossSeen && !q
+        ? afterBlocked.filter(
+            (e) =>
+              !e.filmId ||
+              !isCrossSeen(crossSeen, {
+                id: e.filmId,
+                title: e.filmTitleZh || e.filmTitle,
+                titleEn: e.filmTitleEn,
+                year: e.filmYear,
+                doubanId: e.filmDoubanId,
+              }),
+          )
+        : afterBlocked;
 
     if (!dedupByFilm) {
       return afterDismiss.map((e) => ({ event: e, priorEvents: [] }));
@@ -513,7 +532,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
     }
 
     return result;
-  }, [events, filter, query, dismissStore, showBlocked, dedupByFilm]);
+  }, [events, filter, query, dismissStore, showBlocked, dedupByFilm, crossSeen]);
 
   const dayGroups = useMemo(
     () => groupByDay(grouped, (it) => publicationTime(it.event).slice(0, 10)),

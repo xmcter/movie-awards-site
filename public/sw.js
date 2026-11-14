@@ -9,7 +9,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v9-20261113';
+var CACHE_VERSION = 'v10-20261114-theme-system';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 

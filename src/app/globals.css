@@ -16,6 +16,22 @@
   --rc-accent: #fb7185;
 }
 
+/* 跟随系统：浅色系统用日间配色（CSS 先生效，无闪烁）；ThemeInit 再同步 theme-day/theme-night 类名 */
+@media (prefers-color-scheme: light) {
+  :root:not(.theme-night) {
+    color-scheme: light;
+    --rc-bg: #f4f5f2;
+    --rc-card: #ffffff;
+    --rc-elevated: #eef0eb;
+    --rc-border: #dcdfd9;
+    --rc-gold: #b8873a;
+    --rc-gold-light: #c9a227;
+    --rc-muted: #565f6b;
+    --rc-text: #14181f;
+    --rc-accent: #9f1239;
+  }
+}
+
 html.theme-day {
   color-scheme: light;
   --rc-bg: #f4f5f2;

@@ -125,7 +125,7 @@ export default function PrivacyPage() {
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 ThemeInit
               </code>{" "}
-              根据设备本地时间（06:00–18:00 为日间）在{" "}
+              跟随设备系统的浅色 / 深色外观（prefers-color-scheme）在{" "}
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 &lt;html&gt;
               </code>{" "}
@@ -137,7 +137,7 @@ export default function PrivacyPage() {
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 theme-night
               </code>{" "}
-              类名，不写入任何 localStorage 键值。
+              类名，不记住手动选择，不写入任何 localStorage 键值或 Cookie。
             </li>
           </ul>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">

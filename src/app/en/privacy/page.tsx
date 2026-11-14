@@ -146,7 +146,7 @@ export default function PrivacyPageEn() {
               <code className="rounded bg-cinema-elevated px-1.5 py-0.5 text-xs text-cinema-text">
                 &lt;html&gt;
               </code>{" "}
-              element automatically based on device local time (06:00–18:00 is day mode). It does not write any localStorage key.
+              element automatically to follow your device&rsquo;s light / dark appearance (prefers-color-scheme). No manual choice is remembered and it does not write any localStorage key or cookie.
             </li>
           </ul>
           <p className="text-sm leading-relaxed text-cinema-muted sm:text-base">

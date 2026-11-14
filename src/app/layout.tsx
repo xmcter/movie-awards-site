@@ -85,7 +85,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){function load(src,attrs){var s=document.createElement('script');s.src=src;s.defer=true;if(attrs){for(var k in attrs)s.setAttribute(k,attrs[k]);}(document.body||document.head).appendChild(s);}function go(){load('https://stats.readcine.com/script.js',{'data-website-id':'56c0a024-728b-4820-90da-8abdc821f822'});load('https://static.cloudflareinsights.com/beacon.min.js',{'data-cf-beacon':'{"token": "14344261ed76415c8ed6b3d387441550"}'});}if('requestIdleCallback' in window)requestIdleCallback(go,{timeout:4000});else window.addEventListener('load',function(){setTimeout(go,2000);});if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});load('https://readcine.com/shared/rc-push.js?v=20261114',{crossorigin:'anonymous'});});}})();`,
+            __html: `(function(){function load(src,attrs){var s=document.createElement('script');s.src=src;s.defer=true;if(attrs){for(var k in attrs)s.setAttribute(k,attrs[k]);}(document.body||document.head).appendChild(s);}function go(){load('https://stats.readcine.com/script.js',{'data-website-id':'56c0a024-728b-4820-90da-8abdc821f822'});load('https://static.cloudflareinsights.com/beacon.min.js',{'data-cf-beacon':'{"token": "14344261ed76415c8ed6b3d387441550"}'});}if('requestIdleCallback' in window)requestIdleCallback(go,{timeout:4000});else window.addEventListener('load',function(){setTimeout(go,2000);});if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('/sw.js').catch(function(){});});}})();`,
           }}
         />
       </head>

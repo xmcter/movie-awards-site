@@ -55,8 +55,6 @@ export default function Footer() {
             news.readcine.com
           </a>
         </p>
-        {/* 新内容推送开关：由 readcine.com/shared/rc-push.js 挂载，仅本人登录时显示 */}
-        <div data-rc-push="" className="text-cinema-muted" />
         <p className="mt-2 text-xs text-cinema-muted/70">
           © 2026 ReadCine {en ? "Editors" : "编辑部"}
         </p>

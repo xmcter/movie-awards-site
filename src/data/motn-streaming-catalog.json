@@ -894,6 +894,94 @@
         "updatedAt": "2026-11-13T11:04:52.136Z"
       },
       "synopsisEn": "After showing signs of clairvoyance, New York City paramedic Cassandra Webb must confront revelations about her past and protect three young women from a mysterious adversary who wants them dead."
+    },
+    {
+      "id": "clashing-through-the-snow",
+      "title": "Clashing Through the Snow",
+      "titleEn": "Clashing Through the Snow",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Carlson Young"
+      ],
+      "cast": [
+        "Christopher Briney",
+        "Michelle Randolph",
+        "Lukas Gage",
+        "Paris Hilton",
+        "Julia Fox",
+        "P.J. Byrne",
+        "Andrew Schulz"
+      ],
+      "genres": [
+        "Comedy",
+        "Romance"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-14T10:03:41+08:00",
+          "platform": "prime",
+          "date": "2026-11-23",
+          "status": "announced",
+          "region": "美国",
+          "note": "Prime Video 美国区定档，以平台官方为准",
+          "source": "https://www.movieofthenight.com/",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/clashing-through-the-snow.jpg"
+    },
+    {
+      "id": "the-first-snow-of-fraggle-rock",
+      "title": "The First Snow of Fraggle Rock",
+      "titleEn": "The First Snow of Fraggle Rock",
+      "year": 2025,
+      "synopsis": "When the holidays are filled with unexpected adventures and challenges, the Fraggles learn to appreciate each day for being unique and special, like a snowflake.",
+      "directors": [
+        "Jonathan A. Rosenbaum"
+      ],
+      "cast": [
+        "John Tartaglia",
+        "Karen Prell",
+        "Donna Kimball",
+        "Jordan Lockhart",
+        "Dave Goelz",
+        "Frank Meschkuleit",
+        "Lilli Cooper"
+      ],
+      "genres": [
+        "Comedy",
+        "Family"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-14T10:03:43+08:00",
+          "platform": "apple-tv",
+          "date": "2026-12-04",
+          "status": "announced",
+          "region": "美国",
+          "note": "Apple TV 美国区定档，以平台官方为准",
+          "source": "https://tv.apple.com/us/movie/fraggle-rock-a-holiday-gift/umc.cmc.1w4haw75eryfelk71js2doeog",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/the-first-snow-of-fraggle-rock.jpg"
     }
   ],
   "ceremonies": []

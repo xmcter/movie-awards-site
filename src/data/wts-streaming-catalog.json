@@ -1090,6 +1090,74 @@
       ],
       "poster": "/posters/maddies-secret.jpg",
       "synopsisEn": "Maddie's Secret. Streaming date from When To Stream (US)."
+    },
+    {
+      "id": "california-schemin",
+      "title": "加州骗局",
+      "titleEn": "California Schemin'",
+      "year": 2026,
+      "synopsis": "California Schemin'。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "James McAvoy"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-24",
+          "status": "announced",
+          "region": "美国",
+          "note": "数字平台 · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/james-mcavoys-california-schemin-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-14T10:03:00+08:00"
+        }
+      ],
+      "poster": "/posters/california-schemin.jpg"
+    },
+    {
+      "id": "your-mother-your-mother-your-mother",
+      "title": "为了你的母亲",
+      "titleEn": "Your Mother Your Mother Your Mother",
+      "year": 2026,
+      "synopsis": "Your Mother Your Mother Your Mother。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Bassam Tariq"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-08",
+          "status": "announced",
+          "region": "美国",
+          "note": "MGM+ · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/your-mother-your-mother-your-mother-gets-mgm-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-14T10:03:00+08:00"
+        }
+      ],
+      "poster": "/posters/your-mother-your-mother-your-mother.jpg"
     }
   ],
   "ceremonies": []

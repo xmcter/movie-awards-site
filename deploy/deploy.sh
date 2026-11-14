@@ -87,4 +87,8 @@ else
 fi
 NOTIFY
 
+# 2026-11-14 Web Push：新影片先登记待推（等 25 分钟，期间若电影资源站已有同一部就不推）；
+# 已在电影资源站的片直接跳过。幂等，失败不影响部署。到期的待推由 movie 采集 ticker 放出。
+ssh "${SSH_OPTS[@]}" "${USER}@${HOST}" 'if [ -x /usr/local/bin/readcine-push-check ]; then timeout 120 /usr/local/bin/readcine-push-check news || echo "web-push news failed (non-fatal)"; fi' || true
+
 echo "Deployed to ${USER}@${HOST}:${REMOTE_DIR}"

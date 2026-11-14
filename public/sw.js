@@ -9,7 +9,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v10-20261114-theme-system';
+var CACHE_VERSION = 'v11-20261114-push';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 
@@ -163,3 +163,58 @@ self.addEventListener('fetch', function (event) {
     event.respondWith(staleWhileRevalidate(event, STATIC_CACHE, req.url));
   }
 });
+
+/* ---- ReadCine Web Push (2026-11-14) ----
+ * 服务器每站每轮只发一条；同站 tag 相同，新通知会合并旧的未读条数，安卓桌面角标随通知显示。
+ */
+self.addEventListener('push', function (event) {
+  var d = {};
+  try { d = event.data ? event.data.json() : {}; } catch (e) { d = { title: 'ReadCine', body: event.data ? event.data.text() : '' }; }
+  var tag = d.tag || 'rc-push';
+  event.waitUntil(
+    self.registration.getNotifications({ tag: tag }).then(function (old) {
+      var prev = 0, prevItems = [];
+      old.forEach(function (n) {
+        if (n.data && !n.data.test) { prev += n.data.count || 0; prevItems = prevItems.concat(n.data.items || []); }
+      });
+      var count = (d.count || 0) + (d.test ? 0 : prev);
+      var items = (d.items || []).concat(d.test ? [] : prevItems).slice(0, 8);
+      var title = d.title || 'ReadCine';
+      var body = d.body || '';
+      var url = d.url || '/';
+      if (!d.test && prev > 0 && count > 1) {
+        title = (d.label || 'ReadCine') + ' · ' + count + ' 条' + (d.noun || '新内容');
+        body = items.slice(0, 3).map(function (i) { return i.title; }).join('、') + (count > 3 ? ' 等 ' + count + ' 条' : '');
+        url = (d.origin || self.location.origin) + '/';
+      }
+      return self.registration.showNotification(title, {
+        body: body,
+        tag: tag,
+        renotify: true,
+        icon: d.icon || '/icon-192.png',
+        badge: d.icon || '/icon-192.png',
+        timestamp: d.ts || Date.now(),
+        data: { url: url, count: count, items: items, test: !!d.test }
+      });
+    })
+  );
+});
+
+self.addEventListener('notificationclick', function (event) {
+  event.notification.close();
+  var url = (event.notification.data && event.notification.data.url) || '/';
+  event.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(function (list) {
+      for (var i = 0; i < list.length; i++) {
+        var c = list[i];
+        try {
+          if (new URL(c.url).origin === self.location.origin && 'focus' in c) {
+            return c.focus().then(function (w) { return w && w.navigate ? w.navigate(url).catch(function () { return self.clients.openWindow(url); }) : self.clients.openWindow(url); });
+          }
+        } catch (e) {}
+      }
+      return self.clients.openWindow(url);
+    })
+  );
+});
+/* ---- end ReadCine Web Push ---- */

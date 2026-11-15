@@ -42,6 +42,13 @@ CATALOGS = [
 # Existing curated catalog calls this film 可能的爱情; preserve its canonical ID.
 # 36808876 is 《奥德赛》; the curated catalog already has it as the-odyssey.
 KNOWN_FILM_IDS = {"36847425": "possible-love", "36808876": "the-odyssey"}
+# Detail-page Douban mismatches confirmed by editorial review: the download
+# site's detail page pairs these Douban IDs with a different film's resource.
+# 36011202 is 《复仇者联盟5：毁灭日》 (2026-12-18) but the detail page pairs
+# it with a 《复仇者联盟4：终局之战》 (2019) resource; the 2019 original is
+# outside the new-film year window and the Encore cut already has a WTS entry.
+# Skip until the detail page is corrected. (2026-11-15)
+BLOCKED_DOUBAN_IDS = {"36011202"}
 RESOURCE = re.compile(r"出资源|已出源|已上线|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出", re.I)
 EXCLUDED = re.compile(r"纪录|documentary|docuseries|剧集|电视剧|连续剧|迷你剧|限定剧|TV\s*series|miniseries", re.I)
 ENGLISH_ONLY = re.compile(r"英字|英文字幕|无中字|无字幕|生肉", re.I)
@@ -270,6 +277,9 @@ def plan_ingest(peek, details, data_dir, day, min_year, *, failed_detail_titles=
             continue
         title = clean_title(safe_text(meta.get("title")))
         douban = str(meta.get("douban_id") or "")
+        if douban in BLOCKED_DOUBAN_IDS:
+            skip("known detail-page Douban mismatch; held for editorial review")
+            continue
         year_string = str(meta.get("year") or "")
         if not title or not douban.isdigit() or not re.fullmatch(r"\d{4}", year_string) or not meta.get("genres"):
             skip("unverified film identity/year/type; needs editorial review")

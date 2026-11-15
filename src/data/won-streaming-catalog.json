@@ -1538,6 +1538,42 @@
         "synopsis"
       ],
       "poster": "/posters/give-me-some-sugah.jpg"
+    },
+    {
+      "id": "the-ghost-and-the-gun",
+      "title": "The Ghost and the Gun",
+      "titleEn": "The Ghost and the Gun",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Anshul Tiwari"
+      ],
+      "cast": [],
+      "genres": [],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-15T09:58:43+08:00",
+          "platform": "netflix",
+          "date": "2026-11-28",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "Netflix上新日历"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/the-ghost-and-the-gun.jpg"
     }
   ],
   "ceremonies": []

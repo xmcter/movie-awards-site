@@ -539,5 +539,20 @@
     "weiboUrl": "https://m.weibo.cn/detail/RrbUzmjJ5",
     "weiboLabel": "微博·爱看剧的小马达",
     "summaryEn": "Tazza: The Song of Beelzebub is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-36323221-first-resource",
+    "filmId": "movie-douban-36323221",
+    "publishedAt": "2026-11-15T12:39:09+08:00",
+    "sourcePublishedAt": "2026-11-15T12:39:09+08:00",
+    "date": "2026-11-15",
+    "kind": "release",
+    "summary": "《圣母玛利亚》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrtRKlEBV",
+    "weiboUrl": "https://m.weibo.cn/detail/RrtRKlEBV",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Mother Mary is now streaming"
   }
 ]

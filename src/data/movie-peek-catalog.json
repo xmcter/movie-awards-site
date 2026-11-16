@@ -725,7 +725,43 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-37407810.jpg",
-      "runtime": 105
+      "runtime": 105,
+      "synopsisEn": "Director Jung Seung-oh, who drew attention with his debut feature \"Mudem\" — a work blending melancholy and humor — returns with his second feature. The film revolves around three characters: Cheol-taek, a father diagnosed with terminal cancer; Jeong-mi, a daughter who shoulders both work and caregiving duties; and Hyeon-suk, who longs to break free from her family role and pursue freedom — once again bringing a large family's story to the screen. The distinctive narrative approach that gives the film its unique flavor has grown more mature and substantial. It embraces the complexity of human relationships with a gentle touch, while occasionally adding a sharp edge to the story through ironic and witty episodes from everyday life. \"The Year of Maturity\" does not confine the concept of \"family\" to a single narrative, but weaves into it the marks of the times, generational divides, and individual desires. The film stands out particularly in its ability to connect numerous characters and storylines, and its inclusive perspective on such real-world issues as illness, aging, caregiving, and mutual support is equally impressive. Through each character's life experience, the film conveys a reassuring sense of solidity."
+    },
+    {
+      "id": "movie-douban-37170532",
+      "title": "人为何要写情书",
+      "year": 2026,
+      "synopsis": "影片以2000年3月发生的营团地铁日比谷线中目黑站脱轨相撞事故为背景。事故中遇难的其中一人是少年富久信介。常与他搭乘同一班通勤电车的少女对少年萌生了爱慕之情。但事故突然发生。20年后，一封陌生来信寄到了信介曾训练的大桥拳击馆会长大桥秀行手中。",
+      "directors": [
+        "石井裕也"
+      ],
+      "cast": [
+        "绫濑遥",
+        "当真亚美",
+        "细田佳央太",
+        "妻夫木聪",
+        "菅田将晖",
+        "佐藤浩市",
+        "音尾琢真",
+        "富田望生",
+        "西川爱莉",
+        "笠原秀幸",
+        "津田宽治",
+        "原日出子"
+      ],
+      "genres": [
+        "剧情",
+        "爱情",
+        "奇幻"
+      ],
+      "country": [
+        "日本"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-37170532.jpg",
+      "runtime": 121,
+      "synopsisEn": "The film is set against the March 2000 derailment and collision at Nakameguro Station on the Eidan Subway Hibiya Line. One of those who died in the accident was a boy named Tomihisa Shinsuke. A girl who often rode the same commuter train as him developed feelings for the boy. But the accident struck suddenly. Twenty years later, a letter from a stranger arrives at the hands of Ohashi Hideyuki, chairman of the Ohashi Boxing Gym where Shinsuke once trained."
     }
   ],
   "ceremonies": []

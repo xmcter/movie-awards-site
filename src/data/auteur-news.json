@@ -554,5 +554,19 @@
     "weiboUrl": "https://m.weibo.cn/detail/RrtRKlEBV",
     "weiboLabel": "微博·华坚冯力士v",
     "summaryEn": "Mother Mary is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-37407810-first-resource",
+    "filmId": "movie-douban-37407810",
+    "publishedAt": "2026-11-16T11:15:29+08:00",
+    "sourcePublishedAt": "2026-11-16T11:15:29+08:00",
+    "date": "2026-11-16",
+    "kind": "release",
+    "summary": "《懂事之年 철들 무렵 : 郑承旿 :》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrCKhAmR2",
+    "weiboUrl": "https://m.weibo.cn/detail/RrCKhAmR2",
+    "weiboLabel": "微博·丶眼泪君"
   }
 ]

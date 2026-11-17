@@ -597,7 +597,8 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RrM8DpNQ7",
     "weiboUrl": "https://m.weibo.cn/detail/RrM8DpNQ7",
-    "weiboLabel": "微博·不爱吃饭的大马猴"
+    "weiboLabel": "微博·不爱吃饭的大马猴",
+    "summaryEn": "Das geträumte Abenteuer is now streaming."
   },
   {
     "id": "movie-peek-movie-douban-36549564-first-resource",
@@ -611,6 +612,67 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RrLUPqHcG",
     "weiboUrl": "https://m.weibo.cn/detail/RrLUPqHcG",
-    "weiboLabel": "微博·丶眼泪君"
+    "weiboLabel": "微博·丶眼泪君",
+    "summaryEn": "Nacktgeld is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-36395045-first-resource",
+    "filmId": "movie-douban-36395045",
+    "publishedAt": "2026-11-17T18:33:25+08:00",
+    "sourcePublishedAt": "2026-11-17T18:33:25+08:00",
+    "date": "2026-11-17",
+    "kind": "release",
+    "summary": "《瓦利斯岛的歌谣》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrP2xomyg",
+    "weiboUrl": "https://m.weibo.cn/detail/RrP2xomyg",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "The Ballad of Wallis Island is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-38614043-first-resource",
+    "filmId": "movie-douban-38614043",
+    "publishedAt": "2026-11-17T15:26:29+08:00",
+    "sourcePublishedAt": "2026-11-17T15:26:29+08:00",
+    "date": "2026-11-17",
+    "kind": "release",
+    "summary": "《警督巴比塔・辛格 बबीता सिंह रिपोर्टिंग 印度》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrNOF63t8",
+    "weiboUrl": "https://m.weibo.cn/detail/RrNOF63t8",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Inspector Babita Singh Reporting (India) is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-37250106-first-resource",
+    "filmId": "movie-douban-37250106",
+    "publishedAt": "2026-11-17T14:04:42+08:00",
+    "sourcePublishedAt": "2026-11-17T14:04:42+08:00",
+    "date": "2026-11-17",
+    "kind": "release",
+    "summary": "《多萝西娅》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrNht14ul",
+    "weiboUrl": "https://m.weibo.cn/detail/RrNht14ul",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Dorothea is now streaming"
+  },
+  {
+    "id": "movie-peek-the-dreamed-adventure-first-resource",
+    "filmId": "the-dreamed-adventure",
+    "publishedAt": "2026-11-17T11:10:11+08:00",
+    "sourcePublishedAt": "2026-11-17T11:10:11+08:00",
+    "date": "2026-11-17",
+    "kind": "release",
+    "summary": "《向往的冒险》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrM8DpNQ7",
+    "weiboUrl": "https://m.weibo.cn/detail/RrM8DpNQ7",
+    "weiboLabel": "微博·不爱吃饭的大马猴",
+    "summaryEn": "The Dreamed Adventure is now streaming"
   }
 ]

@@ -790,7 +790,8 @@
         "奥地利"
       ],
       "streaming": [],
-      "runtime": 167
+      "runtime": 167,
+      "synopsisEn": "An archaeologist arrives to work in a small border town in Bulgaria and, after a chance encounter with someone she hasn't seen in years, gradually becomes entangled in a criminal network lurking beneath the placid surface—while her own shadowy past resurfaces... This is a regional excavation that uses archaeology as metaphor, blending realistic observation with crime suspense to strip away the illusion of heroism and restore the presence of women. Its delicate handling won the Jury Prize at the Cannes Film Festival."
     },
     {
       "id": "movie-douban-36549564",
@@ -815,7 +816,111 @@
         "瑞士"
       ],
       "streaming": [],
-      "runtime": 90
+      "runtime": 90,
+      "synopsisEn": "Nacktgeld (2025) Director: Thomas Imbach Screenwriter: Thomas Imbach Starring: Katharina Schüttler / Milan Peschel / Deleila Piasko / Jan Bülow / Claudia Hübschmann Genre: Drama Production Country/Region: Switzerland"
+    },
+    {
+      "id": "movie-douban-36395045",
+      "title": "瓦利斯岛的歌谣",
+      "year": 2025,
+      "synopsis": "性格孤僻却热爱音乐的彩票中奖者查尔斯（提姆·科伊 饰），独自生活在偏远的瓦利斯岛上。多年来，他始终希望最喜爱的双人音乐组合兼昔日恋人麦圭尔（汤姆·巴斯登 饰）与莫蒂默（凯瑞·穆里根 饰）能够再次同台。当梦想中的两人接受邀请，来到岛上进行一场私人演出时，查尔斯终于等来了梦寐以求的时刻。然而，随着尘封已久的情感与矛盾重新浮现，这场看似完美的重聚逐渐失去控制。为了守住自己精心筹备的一切，查尔斯不得不想办法让这场演出继续下去。",
+      "directors": [
+        "詹姆斯·格里菲斯"
+      ],
+      "cast": [
+        "提姆·科伊",
+        "汤姆·巴斯登",
+        "凯瑞·穆里根",
+        "阿克姆吉·恩迪福尼恩",
+        "茜安·克利福德",
+        "史蒂夫·马什",
+        "卢卡·唐尼",
+        "凯瑞·托马森",
+        "亚伦·龙"
+      ],
+      "genres": [
+        "剧情",
+        "喜剧",
+        "爱情"
+      ],
+      "country": [
+        "英国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36395045.jpg",
+      "runtime": 99,
+      "synopsisEn": "Charles (Tim Key), an eccentric lottery winner who loves music, lives alone on the remote island of Wallis. For years he has hoped that his favorite duo—and former lover—McGuire (Tom Basden) and Mortimer (Carey Mulligan) would perform together again. When the pair accept his invitation to come to the island for a private concert, Charles finally gets the moment he has dreamed of. But as long-buried feelings and conflicts resurface, the seemingly perfect reunion gradually spins out of control. To protect everything he has carefully arranged, Charles must find a way to keep the show going."
+    },
+    {
+      "id": "movie-douban-38614043",
+      "title": "警督巴比塔・辛格 बबीता सिंह रिपोर्टिंग 印度",
+      "year": 2026,
+      "synopsis": "故事发生在印度一座小镇。被停职的女警官巴比塔（昵称贝比），一生总在迁就他人、优先顾及别人的感受。童年好友惨遭谋杀，巨大悲痛驱使她执意追查凶案真相，这场调查也意外开启了她的自我找寻之旅。以一桩谋杀案调查为叙事外壳，影片落地现实质感，刻画复杂家庭关系，讲述一名女性直面人生抉择、重新夺回自我话语权的故事。",
+      "directors": [
+        "Ambiecka Pandit"
+      ],
+      "cast": [
+        "Nimisha Sajayan",
+        "Barun Sobti",
+        "Anshuman Pushkar"
+      ],
+      "genres": [
+        "剧情",
+        "犯罪"
+      ],
+      "country": [
+        "印度"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-38614043.jpg",
+      "synopsisEn": "The story takes place in a small town in India. Babita (nicknamed Baby), a suspended female police officer, has spent her life accommodating others and putting their feelings first. When her childhood friend is brutally murdered, her grief drives her to pursue the truth of the case, and the investigation unexpectedly sets her on a journey of self-discovery. Using a murder investigation as its narrative shell, the film grounds itself in realism, portraying complex family relationships and telling the story of a woman who confronts life's choices and reclaims her own voice."
+    },
+    {
+      "id": "movie-douban-37250106",
+      "title": "多萝西娅",
+      "year": 2025,
+      "synopsis": "美国80年代，看似慈祥的“奶奶”多萝西娅·普恩特，以寄宿公寓为诱饵，下药、杀害、掩埋数十位弱势老年与残疾租客，将花园变成埋尸地。狱中濒死的她，回溯自己从受虐者到连环杀手的黑暗一生，用温柔表象包裹极致贪婪与残忍。",
+      "directors": [
+        "查德·菲林"
+      ],
+      "cast": [
+        "苏珊·普里弗",
+        "Pat McNeely",
+        "以斯拉·巴兹顿",
+        "Robert Rhine",
+        "金格·林恩·爱伦",
+        "Katie Silverman",
+        "威廉·萨利尔斯",
+        "卢·坦普尔",
+        "塞瑞尔·奥莱利",
+        "布伦达·詹姆斯",
+        "卡桑德拉·加瓦",
+        "布琳克·史蒂文斯",
+        "Neb Chupin",
+        "罗伯特·米亚诺",
+        "Ken May",
+        "Kurt Bonzell",
+        "查德·菲林",
+        "西尔维娅·斯普罗斯",
+        "Brandon Kirk",
+        "里克·E.安德森",
+        "Sara Ballantine",
+        "埃莉娜·麦迪逊",
+        "鲍勃·班尼特",
+        "乔·卡斯特罗"
+      ],
+      "genres": [
+        "惊悚",
+        "恐怖",
+        "犯罪"
+      ],
+      "country": [
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-37250106.jpg",
+      "runtime": 90,
+      "synopsisEn": "In 1980s America, the seemingly kindly \"grandmother\" Dorothea Puente lured dozens of vulnerable elderly and disabled tenants to her boarding house, where she drugged, killed, and buried them, turning her garden into a burial ground. Near death in prison, she looks back on her dark life from abuse victim to serial killer, wrapping extreme greed and cruelty in a gentle facade."
     }
   ],
   "ceremonies": []

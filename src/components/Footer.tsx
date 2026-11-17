@@ -34,6 +34,20 @@ export default function Footer() {
           </Link>
           <span className="mx-2 opacity-40">·</span>
           <Link
+            href={`${prefix}/about`}
+            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
+          >
+            {en ? "About" : "关于"}
+          </Link>
+          <span className="mx-2 opacity-40">·</span>
+          <Link
+            href={`${prefix}/contact`}
+            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
+          >
+            {en ? "Contact" : "联系"}
+          </Link>
+          <span className="mx-2 opacity-40">·</span>
+          <Link
             href={`${prefix}/privacy`}
             className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
           >

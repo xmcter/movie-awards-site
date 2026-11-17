@@ -790,8 +790,7 @@
         "奥地利"
       ],
       "streaming": [],
-      "runtime": 167,
-      "poster": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2932693157.jpg"
+      "runtime": 167
     },
     {
       "id": "movie-douban-36549564",
@@ -816,7 +815,6 @@
         "瑞士"
       ],
       "streaming": [],
-      "poster": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2928190209.jpg",
       "runtime": 90
     }
   ],

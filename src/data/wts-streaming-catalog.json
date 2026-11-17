@@ -1160,6 +1160,76 @@
       ],
       "poster": "/posters/your-mother-your-mother-your-mother.jpg",
       "synopsisEn": "Your Mother Your Mother Your Mother. Streaming release date via When To Stream (US)."
+    },
+    {
+      "id": "breeder",
+      "title": "繁殖者",
+      "titleEn": "Breeder",
+      "year": 2026,
+      "synopsis": "Breeder。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Alex Goyette"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-24",
+          "status": "announced",
+          "region": "美国",
+          "note": "数字平台 · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/horror-thriller-breeder-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-17T11:08:32+08:00"
+        }
+      ],
+      "poster": "/posters/breeder.jpg",
+      "synopsisEn": "Breeder. Streaming release date via When To Stream (US)."
+    },
+    {
+      "id": "mutiny",
+      "title": "叛变",
+      "titleEn": "Mutiny",
+      "year": 2026,
+      "synopsis": "Mutiny。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Jean-François Richet"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "Starz · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/jason-stathams-mutiny-sets-starz-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-17T11:08:32+08:00"
+        }
+      ],
+      "poster": "/posters/mutiny.jpg",
+      "synopsisEn": "Mutiny. Streaming release date via When To Stream (US)."
     }
   ],
   "ceremonies": []

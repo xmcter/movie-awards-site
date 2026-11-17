@@ -762,6 +762,36 @@
       "poster": "/posters/movie-douban-37170532.jpg",
       "runtime": 121,
       "synopsisEn": "The film is set against the March 2000 derailment and collision at Nakameguro Station on the Eidan Subway Hibiya Line. One of those who died in the accident was a boy named Tomihisa Shinsuke. A girl who often rode the same commuter train as him developed feelings for the boy. But the accident struck suddenly. Twenty years later, a letter from a stranger arrives at the hands of Ohashi Hideyuki, chairman of the Ohashi Boxing Gym where Shinsuke once trained."
+    },
+    {
+      "id": "movie-douban-35954702",
+      "title": "向往的冒险 Das geträumte Abenteuer :",
+      "year": 2026,
+      "synopsis": "考古学家来到保加利亚边境小镇工作，偶遇多年未见的故人后，逐步卷入藏于平静表面下的犯罪网络，自己的幽微过往也随之浮现…… 这是一场以考古为喻的地域探查，写实观察混入犯罪悬疑，拆开英雄假象，重见女性存在。细腻拿捏一举拿下戛纳电影节评审团奖。",
+      "directors": [
+        "瓦莱斯卡·格里策巴赫"
+      ],
+      "cast": [
+        "亚娜·拉德娃",
+        "Syuleyman Alilov Letifov",
+        "Velko Frandev",
+        "Stoicho Kostadinov",
+        "Nikolay Shekerdjiev",
+        "Denislava Yordanova",
+        "Tiana Georgieva"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "德国",
+        "法国",
+        "保加利亚",
+        "奥地利"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-35954702.jpg",
+      "runtime": 167
     }
   ],
   "ceremonies": []

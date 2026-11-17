@@ -598,5 +598,19 @@
     "source": "https://m.weibo.cn/detail/RrM8DpNQ7",
     "weiboUrl": "https://m.weibo.cn/detail/RrM8DpNQ7",
     "weiboLabel": "微博·不爱吃饭的大马猴"
+  },
+  {
+    "id": "movie-peek-movie-douban-36549564-first-resource",
+    "filmId": "movie-douban-36549564",
+    "publishedAt": "2026-11-17T10:36:10+08:00",
+    "sourcePublishedAt": "2026-11-17T10:36:10+08:00",
+    "date": "2026-11-17",
+    "kind": "release",
+    "summary": "《裸金》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrLUPqHcG",
+    "weiboUrl": "https://m.weibo.cn/detail/RrLUPqHcG",
+    "weiboLabel": "微博·丶眼泪君"
   }
 ]

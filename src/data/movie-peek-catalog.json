@@ -790,7 +790,34 @@
         "奥地利"
       ],
       "streaming": [],
-      "runtime": 167
+      "runtime": 167,
+      "poster": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2932693157.jpg"
+    },
+    {
+      "id": "movie-douban-36549564",
+      "title": "裸金",
+      "year": 2025,
+      "synopsis": "裸金 Nacktgeld (2025) 导演: 托马斯·因巴赫 Thomas Imbach 编剧: 托马斯·因巴赫 主演: 卡塔琳娜·舒特勒 Katharina Schüttler / 米兰·佩舍尔 Milan Peschel / Deleila Piasko Deleila Piasko / 简·比洛 / Claudia Hübschmann 类型: 剧情 制片国家/地区: 瑞",
+      "directors": [
+        "托马斯·因巴赫"
+      ],
+      "cast": [
+        "卡塔琳娜·舒特勒",
+        "德蕾拉·皮亚斯科",
+        "米兰·佩舍尔",
+        "简·比洛",
+        "Anabella Mori",
+        "Claudia Hübschmann"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "瑞士"
+      ],
+      "streaming": [],
+      "poster": "https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2928190209.jpg",
+      "runtime": 90
     }
   ],
   "ceremonies": []

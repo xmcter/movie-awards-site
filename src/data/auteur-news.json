@@ -674,5 +674,19 @@
     "weiboUrl": "https://m.weibo.cn/detail/RrM8DpNQ7",
     "weiboLabel": "微博·不爱吃饭的大马猴",
     "summaryEn": "The Dreamed Adventure is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-36486147-first-resource",
+    "filmId": "movie-douban-36486147",
+    "publishedAt": "2026-11-18T13:20:26+08:00",
+    "sourcePublishedAt": "2026-11-18T13:20:26+08:00",
+    "date": "2026-11-18",
+    "kind": "release",
+    "summary": "《总统的蛋糕 مملكة القصب》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrWpZzXW0",
+    "weiboUrl": "https://m.weibo.cn/detail/RrWpZzXW0",
+    "weiboLabel": "微博·华坚冯力士v"
   }
 ]

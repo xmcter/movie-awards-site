@@ -921,6 +921,43 @@
       "poster": "/posters/movie-douban-37250106.jpg",
       "runtime": 90,
       "synopsisEn": "In 1980s America, the seemingly kindly \"grandmother\" Dorothea Puente lured dozens of vulnerable elderly and disabled tenants to her boarding house, where she drugged, killed, and buried them, turning her garden into a burial ground. Near death in prison, she looks back on her dark life from abuse victim to serial killer, wrapping extreme greed and cruelty in a gentle facade."
+    },
+    {
+      "id": "movie-douban-36486147",
+      "title": "总统的蛋糕 مملكة القصب",
+      "year": 2025,
+      "synopsis": "人人都中头奖，难道人人都想中头奖？九十年代伊拉克经历军事及经济制裁，独裁者萨达姆无惧动乱，勒令全国为自己庆祝生日。九岁女孩「喜获头奖」成为学校代表，被迫接下为总统炮制生日蛋糕的国家级重任。然而通货膨胀、物资匮乏，鸡蛋面粉都是奢侈品，女孩带着宠物公鸡，从沼泽向城市出发搜罗食材，完成这项国家交给她的任务！首有伊拉克电影进军戛纳，编导借小女孩充满稚气却坚韧的目光，展现伊拉克从未被记录过的一面，献给在战乱下仍能找到爱与友谊的小孩。戛纳电影节金摄像机最佳首作。",
+      "directors": [
+        "哈桑·哈迪"
+      ],
+      "cast": [
+        "巴尼恩·艾哈迈德·纳耶夫",
+        "瓦希德·萨比特·赫雷巴特",
+        "萨贾德·穆罕默德·卡西姆",
+        "穆萨纳·马拉吉",
+        "艾哈迈德·卡西姆·赛万",
+        "迈萨姆·穆雷迪",
+        "拉希姆·哈吉",
+        "萨伊尔·萨利姆",
+        "阿里·哈拉夫",
+        "法蒂玛·阿布哈伦",
+        "马哈茂德·马赞·拉赞",
+        "阿基尔·瓦迪",
+        "穆罕默德·雷梅",
+        "罗基亚·阿尔瓦迪",
+        "阿里·萨达姆·纳杰姆"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "伊拉克",
+        "美国",
+        "卡塔尔"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36486147.jpg",
+      "runtime": 105
     }
   ],
   "ceremonies": []

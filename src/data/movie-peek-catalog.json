@@ -958,6 +958,47 @@
       "streaming": [],
       "poster": "/posters/movie-douban-36486147.jpg",
       "runtime": 105
+    },
+    {
+      "id": "movie-douban-36423237",
+      "title": "马登",
+      "year": 2026,
+      "synopsis": "基于真实故事，讲述脾气火爆的前NFL主教练约翰·马登在奥克兰突袭者队被迫退役后，与温文尔雅的哈佛程序员、艺电公司创始人特里普·霍金斯合作，通过打造世界上第一个橄榄球视频游戏来改写他日渐式微的资产。随后他步入体育解说界，为ABC、CBS、FOX、NBC等播出的橄榄球比赛担任解说员，延续传奇职业生涯。",
+      "directors": [
+        "大卫·O·拉塞尔"
+      ],
+      "cast": [
+        "尼古拉斯·凯奇",
+        "克里斯蒂安·贝尔",
+        "约翰·木兰尼",
+        "凯瑟琳·哈恩",
+        "西耶娜·米勒",
+        "马特·梅德拉诺",
+        "Buck Watkins",
+        "乔尔·默里",
+        "肖恩·吉利斯",
+        "哈萨尼·维贝兹·科默",
+        "Derek Carver",
+        "大卫·伦格尔",
+        "朗·罗格",
+        "桑迪·E·斯科特",
+        "Tyrell Crawford",
+        "伊莱·比尔德纳",
+        "Dante Ayala",
+        "塞尔吉奥·杜克",
+        "Cade Tropeano",
+        "Kyle Leatherberry"
+      ],
+      "genres": [
+        "传记",
+        "运动"
+      ],
+      "country": [
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36423237.jpg",
+      "runtime": 110
     }
   ],
   "ceremonies": []

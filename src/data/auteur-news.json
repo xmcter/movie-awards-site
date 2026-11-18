@@ -688,5 +688,33 @@
     "source": "https://m.weibo.cn/detail/RrWpZzXW0",
     "weiboUrl": "https://m.weibo.cn/detail/RrWpZzXW0",
     "weiboLabel": "微博·华坚冯力士v"
+  },
+  {
+    "id": "movie-peek-gentle-monster-first-resource",
+    "filmId": "gentle-monster",
+    "publishedAt": "2026-11-18T19:22:29+08:00",
+    "sourcePublishedAt": "2026-11-18T19:22:29+08:00",
+    "date": "2026-11-18",
+    "kind": "release",
+    "summary": "《温柔的怪物》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrYMX8eM6",
+    "weiboUrl": "https://m.weibo.cn/detail/RrYMX8eM6",
+    "weiboLabel": "微博·不爱吃饭的大马猴"
+  },
+  {
+    "id": "movie-peek-movie-douban-36423237-first-resource",
+    "filmId": "movie-douban-36423237",
+    "publishedAt": "2026-11-18T17:43:02+08:00",
+    "sourcePublishedAt": "2026-11-18T17:43:02+08:00",
+    "date": "2026-11-18",
+    "kind": "release",
+    "summary": "《马登》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RrY8Aaiux",
+    "weiboUrl": "https://m.weibo.cn/detail/RrY8Aaiux",
+    "weiboLabel": "微博·OtisMilburn_"
   }
 ]

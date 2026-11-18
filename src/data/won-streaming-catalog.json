@@ -1610,6 +1610,42 @@
         "synopsis"
       ],
       "poster": "/posters/418.jpg"
+    },
+    {
+      "id": "longlegs",
+      "title": "Longlegs",
+      "titleEn": "Longlegs",
+      "year": 2024,
+      "synopsis": "",
+      "directors": [
+        "Osgood Perkins"
+      ],
+      "cast": [],
+      "genres": [],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-18T10:01:45+08:00",
+          "platform": "netflix",
+          "date": "2026-12-10",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（What's on Netflix；须以平台官方为准） · 来源 https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "source": "https://www.whats-on-netflix.com/coming-soon/calendar/",
+          "sourceLabel": "Netflix上新日历"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/longlegs.jpg"
     }
   ],
   "ceremonies": []

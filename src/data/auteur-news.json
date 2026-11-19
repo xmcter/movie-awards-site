@@ -764,5 +764,20 @@
     "weiboUrl": "https://m.weibo.cn/detail/Rs7AwCDDl",
     "weiboLabel": "微博·丶眼泪君",
     "summaryEn": "Sad Girl is now available"
+  },
+  {
+    "id": "movie-peek-movie-douban-36440127-first-resource",
+    "filmId": "movie-douban-36440127",
+    "publishedAt": "2026-11-19T21:32:11+08:00",
+    "sourcePublishedAt": "2026-11-19T21:32:11+08:00",
+    "date": "2026-11-19",
+    "kind": "release",
+    "summary": "《蚊子帮的夏天》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rs945Es81",
+    "weiboUrl": "https://m.weibo.cn/detail/Rs945Es81",
+    "weiboLabel": "微博·不爱吃饭的大马猴",
+    "summaryEn": "《蚊子帮的夏天》 is now available to stream"
   }
 ]

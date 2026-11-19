@@ -1264,6 +1264,108 @@
         }
       ],
       "synopsisEn": "The Social Reckoning. Streaming date set per When To Stream (US region)."
+    },
+    {
+      "id": "the-mongoose",
+      "title": "猫鼬",
+      "titleEn": "The Mongoose",
+      "year": 2026,
+      "synopsis": "The Mongoose。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Mark Vanselow"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-20",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/liam-neesons-the-mongoose-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-19T23:09:46+08:00"
+        }
+      ],
+      "synopsisEn": "The Mongoose. Streaming release date via When To Stream (US)."
+    },
+    {
+      "id": "by-any-means",
+      "title": "不择手段",
+      "titleEn": "By Any Means",
+      "year": 2026,
+      "synopsis": "By Any Means。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Elegance Bratton"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-03",
+          "status": "announced",
+          "region": "美国",
+          "note": "Paramount+ · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/crime-thriller-by-any-means-gets-paramount-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-19T23:09:46+08:00"
+        }
+      ],
+      "synopsisEn": "By Any Means. Streaming release date via When To Stream (US)."
+    },
+    {
+      "id": "i-want-your-sex",
+      "title": "我要你的性",
+      "titleEn": "I Want Your Sex",
+      "year": 2026,
+      "synopsis": "I Want Your Sex。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Gregg Araki"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "max",
+          "date": "2026-12-04",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/gregg-arakis-i-want-your-sex-gets-hbo-max-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-19T23:09:46+08:00"
+        }
+      ],
+      "synopsisEn": "I Want Your Sex. Streaming release date via When To Stream (US)."
     }
   ],
   "ceremonies": []

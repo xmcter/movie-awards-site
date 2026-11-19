@@ -8,7 +8,7 @@ import ThemeInit from "@/components/ThemeInit";
 import "./globals.css";
 
 const siteUrl = "https://news.readcine.com";
-const title = "电影资讯";
+const title = "银幕新讯 | 新片流媒体上线时间";
 const description =
   "只做两件事：作者向与高口碑新片的流媒体定档时间，以及新片发行动态。今晚看什么，不收院线爆米花。";
 

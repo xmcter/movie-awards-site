@@ -957,7 +957,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-36486147.jpg",
-      "runtime": 105
+      "runtime": 105,
+      "synopsisEn": "Does everyone who wins the jackpot actually want it? In 1990s Iraq, under military and economic sanctions, dictator Saddam Hussein defies the turmoil and orders the entire nation to celebrate his birthday. A nine-year-old girl \"wins the jackpot\" by being chosen as her school's representative, forced to take on the national mission of baking the president's birthday cake. But with hyperinflation and scarce supplies, eggs and flour are luxuries — so the girl sets off with her pet rooster from the marshes to the city to gather ingredients and complete the task her country has given her. The first Iraqi film to be selected for Cannes, its writer-director uses the girl's childish yet resilient gaze to reveal a side of Iraq never before captured on film — a tribute to children who can still find love and friendship amid war. Winner of the Caméra d'Or for Best First Feature at the Cannes Film Festival."
     },
     {
       "id": "movie-douban-36423237",
@@ -998,7 +999,134 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-36423237.jpg",
-      "runtime": 110
+      "runtime": 110,
+      "synopsisEn": "Based on a true story, it follows hot-tempered former NFL head coach John Madden who, after being forced into retirement from the Oakland Raiders, teams up with mild-mannered Harvard programmer and Electronic Arts founder Trip Hawkins to rewrite his fading fortunes by creating the world's first football video game. He then moves into sports commentary, calling football games for ABC, CBS, FOX, NBC and others, extending his legendary career."
+    },
+    {
+      "id": "movie-douban-35010610",
+      "title": "挽救计划（2026）",
+      "year": 2026,
+      "synopsis": "太阳正在被“吃”掉，绝望吞噬地球。一名“平凡”的中学教师格雷斯（瑞恩·高斯林 饰）背负全人类的希望，踏上“太空不归路”。末路孤旅中，他意外遇到一位外星萌友，一个同样身陷绝境的外星工程师，这对“宇宙搭子”成了两个文明最后的救命稻草。他们能否在资源紧缺的情况下攻克重重科学谜 题，寻回唯一的希望火种？ 影片改编自安迪·威尔的同名畅销科幻小说。",
+      "directors": [
+        "菲尔·罗德",
+        "克里斯托弗·米勒"
+      ],
+      "cast": [
+        "瑞恩·高斯林",
+        "桑德拉·惠勒",
+        "詹姆斯·奥尔蒂斯",
+        "莱昂内尔·博伊斯",
+        "梁振邦",
+        "米拉娜·薇恩翠",
+        "普里亚·坎萨拉",
+        "利兹·金斯曼",
+        "马拉基·卡比",
+        "梅丽尔·斯特里普",
+        "尤妮斯·胡特哈特",
+        "雷·波特",
+        "达米安·德·弗罗贝维尔",
+        "米娅·索特里乌",
+        "亚伦·尼尔",
+        "奥赖恩·李",
+        "迈克尔·阿金绥尔",
+        "安妮勒·奥拉莱",
+        "玛雅·伊娃·侯赛因",
+        "巴斯蒂安·安东尼奥·富恩特斯",
+        "爱丽丝·布里塔因",
+        "特拉维斯·杰",
+        "杰弗里·兰布",
+        "保罗·兰伯特",
+        "米歇尔·格里尼奇",
+        "伯恩哈德·舒茨"
+      ],
+      "genres": [
+        "剧情",
+        "科幻",
+        "惊悚"
+      ],
+      "country": [
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-35010610.jpg",
+      "runtime": 156,
+      "synopsisEn": "The sun is being \"eaten,\" and despair devours the Earth. An \"ordinary\" middle school teacher, Grace (Ryan Gosling), carries the hopes of all humanity and embarks on a one-way journey into space. On this lonely final voyage, he unexpectedly meets an alien companion — an alien engineer also stranded in a desperate situation — and this \"cosmic duo\" becomes the last lifeline for two civilizations. Can they overcome countless scientific mysteries despite scarce resources and recover the sole spark of hope? The film is adapted from Andy Weir's bestselling sci-fi novel of the same name."
+    },
+    {
+      "id": "movie-douban-36236921",
+      "title": "天才谋杀法",
+      "year": 2026,
+      "synopsis": "爱德华打断了海史密斯在瑞士阿尔卑斯山孤独的晚年生活。爱德华是一位年轻的文学经纪人，受出版公司的委托，说服她为人气很高的雷普利系列（其中包括经典的《天才雷普利》）写最后一部小说。海史密斯用她出名的恐怖想象力把爱德华吓跑了，不过在他们意识到之前，一场合作已经开始了，这让两人难以区分他们构建的世界和他们生活的世界。",
+      "directors": [
+        "安东·寇班"
+      ],
+      "cast": [
+        "海伦·米伦",
+        "阿尔登·埃伦瑞奇",
+        "奥利维亚·库克",
+        "茱丽叶特·斯蒂文森",
+        "詹姆斯·福克纳",
+        "布里德·布伦南",
+        "阿尔玛·莱贝格",
+        "马达莱娜·瓦莱基·威廉姆斯",
+        "尼古拉·谢利科夫斯基",
+        "Norbert Ortner",
+        "Enrico Mutti",
+        "Luca Ferrini"
+      ],
+      "genres": [
+        "剧情",
+        "惊悚",
+        "犯罪"
+      ],
+      "country": [
+        "瑞士",
+        "澳大利亚",
+        "意大利",
+        "美国",
+        "英国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36236921.jpg",
+      "runtime": 106,
+      "synopsisEn": "Edward interrupts Highsmith's solitary late years in the Swiss Alps. Edward is a young literary agent tasked by a publishing house with persuading her to write one final novel for the popular Ripley series (which includes the classic The Talented Mr. Ripley). Highsmith scares Edward off with her famously macabre imagination, but before they know it, a collaboration has begun, making it hard for the two to distinguish between the worlds they construct and the worlds they inhabit."
+    },
+    {
+      "id": "movie-douban-35503140",
+      "title": "悲伤女孩",
+      "year": 2026,
+      "synopsis": "宝拉和拉玛埃斯特拉是十六岁的墨西哥少女，既是挚友，也是各自游泳队里势均力敌的对手。然而，当宝拉在派对上遭遇强奸后，体育竞争便退居次席。得知袭击事件的拉玛埃斯特拉决意用自己的方式为朋友复仇，事态却急转直下。",
+      "directors": [
+        "费尔南达·托瓦尔"
+      ],
+      "cast": [
+        "Rocio Guzmán",
+        "Darana Álvarez",
+        "Tatsumi Milori",
+        "Tomás García Agraz",
+        "莫妮卡·德尔·卡门",
+        "Raúl Villegas",
+        "Lucio Lemus",
+        "路易莎·阿尔玛格尔",
+        "Andrea Camacho",
+        "Áyax",
+        "Óscar Lever",
+        "Mario Flores",
+        "Héctor Kuri",
+        "Daniel Aranzubia"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "墨西哥",
+        "西班牙",
+        "法国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-35503140.jpg",
+      "runtime": 90,
+      "synopsisEn": "Paula and Rama Estela are sixteen-year-old Mexican girls who are both best friends and evenly matched rivals on their respective swim teams. But when Paula is raped at a party, athletic competition takes a back seat. Upon learning of the assault, Rama Estela resolves to take revenge on her friend's behalf in her own way — yet events spiral quickly out of control."
     }
   ],
   "ceremonies": []

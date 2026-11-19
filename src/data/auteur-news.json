@@ -687,7 +687,8 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RrWpZzXW0",
     "weiboUrl": "https://m.weibo.cn/detail/RrWpZzXW0",
-    "weiboLabel": "微博·华坚冯力士v"
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "The President's Cake is now streaming."
   },
   {
     "id": "movie-peek-gentle-monster-first-resource",
@@ -701,7 +702,8 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RrYMX8eM6",
     "weiboUrl": "https://m.weibo.cn/detail/RrYMX8eM6",
-    "weiboLabel": "微博·不爱吃饭的大马猴"
+    "weiboLabel": "微博·不爱吃饭的大马猴",
+    "summaryEn": "Gentle Monster is now streaming."
   },
   {
     "id": "movie-peek-movie-douban-36423237-first-resource",
@@ -715,6 +717,52 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RrY8Aaiux",
     "weiboUrl": "https://m.weibo.cn/detail/RrY8Aaiux",
-    "weiboLabel": "微博·OtisMilburn_"
+    "weiboLabel": "微博·OtisMilburn_",
+    "summaryEn": "Madden is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-35010610-first-resource",
+    "filmId": "movie-douban-35010610",
+    "publishedAt": "2026-11-19T11:08:03+08:00",
+    "sourcePublishedAt": "2026-11-19T11:08:03+08:00",
+    "date": "2026-11-19",
+    "kind": "release",
+    "summary": "《挽救计划（2026）》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rs4YLne2r",
+    "weiboUrl": "https://m.weibo.cn/detail/Rs4YLne2r",
+    "weiboLabel": "微博·春天情书Haru",
+    "summaryEn": "Project Hail Mary (2026) is now available"
+  },
+  {
+    "id": "movie-peek-movie-douban-36236921-first-resource",
+    "filmId": "movie-douban-36236921",
+    "publishedAt": "2026-11-19T18:10:03+08:00",
+    "sourcePublishedAt": "2026-11-19T18:10:03+08:00",
+    "date": "2026-11-19",
+    "kind": "release",
+    "summary": "《天才谋杀法》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rs7K34GVD",
+    "weiboUrl": "https://m.weibo.cn/detail/Rs7K34GVD",
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "The Genius Murder Method is now available"
+  },
+  {
+    "id": "movie-peek-movie-douban-35503140-first-resource",
+    "filmId": "movie-douban-35503140",
+    "publishedAt": "2026-11-19T17:46:36+08:00",
+    "sourcePublishedAt": "2026-11-19T17:46:36+08:00",
+    "date": "2026-11-19",
+    "kind": "release",
+    "summary": "《悲伤女孩》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rs7AwCDDl",
+    "weiboUrl": "https://m.weibo.cn/detail/Rs7AwCDDl",
+    "weiboLabel": "微博·丶眼泪君",
+    "summaryEn": "Sad Girl is now available"
   }
 ]

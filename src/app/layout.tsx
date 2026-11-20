@@ -64,6 +64,9 @@ export const metadata: Metadata = {
     apple: { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
   },
   manifest: "/manifest.json",
+  other: {
+    sogou_site_verification: "AoAFOYOxlP",
+  },
   appleWebApp: {
     capable: true,
     title: "电影资讯",

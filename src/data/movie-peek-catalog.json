@@ -1190,7 +1190,32 @@
         "西班牙"
       ],
       "streaming": [],
-      "poster": "/posters/movie-douban-37812253.jpg"
+      "poster": "/posters/movie-douban-37812253.jpg",
+      "synopsisEn": "Welcome to Tahoe City, where power, privilege and deadly secrets hide beneath a flawless facade. Jude Derry arrives at this elite university with a hidden mission: to infiltrate the Cash brothers' circle and uncover the truth behind her brother's death. The three heirs to the family empire — the charismatic and calculating eldest, Egan, the enigmatic middle brother, Adric, and the rebellious, unpredictable youngest, Alexandre — rule Tahoe City with an irresistible charm. As Jude is drawn into the tangled dynamics of the Cash family, her personal vendetta turns into a dangerous triangle of temptation, forbidden attraction and lies. With every clue she uncovers, she draws closer to a truth that could destroy this powerful family... or reveal secrets about herself she may not be ready to face."
+    },
+    {
+      "id": "movie-douban-38521163",
+      "title": "仲夏惊魂夜",
+      "year": 2026,
+      "synopsis": "仲夏惊魂夜 Summerween 2026 自压官方中英双字 最新 故事发生在盛夏“夏日万圣节”的狂欢夜晚，独居女主搬进城郊一栋老式独栋住宅，本打算趁着特色节日放松独处时光。一名妆容破败、面部带有撕裂伤痕的变态小丑杀手盯上了这栋偏僻屋子......",
+      "directors": [
+        "瑞恩·埃伯特"
+      ],
+      "cast": [
+        "Clint Morrison",
+        "Sophia Sabol",
+        "Cole Chapleski"
+      ],
+      "genres": [
+        "恐怖"
+      ],
+      "country": [
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-38521163.jpg",
+      "runtime": 86,
+      "synopsisEn": "Summerween 2026, official Chinese-English subtitles, latest release. The story takes place on a midsummer \"Summer Halloween\" night of revelry, when a woman living alone moves into an old detached house on the outskirts of the city, planning to enjoy some solitary time during the distinctive holiday. A deranged clown killer with ruined makeup and torn, scarred features sets his sights on the isolated house..."
     }
   ],
   "ceremonies": []

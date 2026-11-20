@@ -308,7 +308,9 @@
       "titleEn": "Rolling Loud: The Movie",
       "year": 2026,
       "synopsis": "Rolling Loud: The Movie。流媒体定档来自 When To Stream（美国区）。",
-      "directors": [],
+      "directors": [
+        "Jeremy Garelick"
+      ],
       "cast": [],
       "genres": [
         "剧情"
@@ -323,7 +325,7 @@
       "streaming": [
         {
           "platform": "other",
-          "date": "2026-11-03",
+          "date": "2026-11-17",
           "status": "announced",
           "region": "美国",
           "note": "PVOD/VOD · 地区：美国（定档来源；须以平台官方为准）",
@@ -518,6 +520,16 @@
           "source": "https://whentostream.com/connor-storrie-sci-fi-thriller-april-x-sets-digital-streaming-release-date/",
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-05T13:56:39+08:00"
+        },
+        {
+          "platform": "max",
+          "date": "2026-12-18",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/connor-storrie-sci-fi-thriller-april-x-gets-hbo-max-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-20T22:02:00+08:00"
         }
       ],
       "poster": "/posters/april-x.jpg"
@@ -1366,6 +1378,74 @@
         }
       ],
       "synopsisEn": "I Want Your Sex. Streaming release date via When To Stream (US)."
+    },
+    {
+      "id": "the-rivals-of-amziah-king",
+      "title": "阿姆齐亚·金的对手们",
+      "titleEn": "The Rivals of Amziah King",
+      "year": 2026,
+      "synopsis": "The Rivals of Amziah King。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Andrew Patterson"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "hulu",
+          "date": "2026-12-27",
+          "status": "announced",
+          "region": "美国",
+          "note": "Hulu · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/matthew-mcconaugheys-the-rivals-of-amziah-king-sets-hulu-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-20T22:02:00+08:00"
+        }
+      ],
+      "synopsisEn": "The Rivals of Amziah King. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "i-love-boosters",
+      "title": "我爱扒手",
+      "titleEn": "I Love Boosters",
+      "year": 2026,
+      "synopsis": "I Love Boosters。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Boots Riley"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "hulu",
+          "date": "2026-12-18",
+          "status": "announced",
+          "region": "美国",
+          "note": "Hulu · 地区：美国（定档来源；须以平台官方为准）",
+          "source": "https://whentostream.com/boots-rileys-i-love-boosters-gets-hulu-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-20T22:02:00+08:00"
+        }
+      ],
+      "synopsisEn": "I Love Boosters. Streaming release date via When To Stream (US region)."
     }
   ],
   "ceremonies": []

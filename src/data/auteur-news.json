@@ -792,6 +792,22 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RsfxryF4R",
     "weiboUrl": "https://m.weibo.cn/detail/RsfxryF4R",
-    "weiboLabel": "微博·华坚冯力士v"
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "\"Perfect Liars\" is now available."
+  },
+  {
+    "id": "movie-peek-movie-douban-38521163-first-resource",
+    "filmId": "movie-douban-38521163",
+    "publishedAt": "2026-11-20T16:30:57+08:00",
+    "sourcePublishedAt": "2026-11-20T16:30:57+08:00",
+    "date": "2026-11-20",
+    "kind": "release",
+    "summary": "《仲夏惊魂夜》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsgwjBd7l",
+    "weiboUrl": "https://m.weibo.cn/detail/RsgwjBd7l",
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "\"Summerween\" is now available."
   }
 ]

@@ -779,5 +779,19 @@
     "weiboUrl": "https://m.weibo.cn/detail/Rs945Es81",
     "weiboLabel": "微博·不爱吃饭的大马猴",
     "summaryEn": "《蚊子帮的夏天》 is now available to stream"
+  },
+  {
+    "id": "movie-peek-movie-douban-37812253-first-resource",
+    "filmId": "movie-douban-37812253",
+    "publishedAt": "2026-11-20T14:00:59+08:00",
+    "sourcePublishedAt": "2026-11-20T14:00:59+08:00",
+    "date": "2026-11-20",
+    "kind": "release",
+    "summary": "《完美说谎者》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsfxryF4R",
+    "weiboUrl": "https://m.weibo.cn/detail/RsfxryF4R",
+    "weiboLabel": "微博·华坚冯力士v"
   }
 ]

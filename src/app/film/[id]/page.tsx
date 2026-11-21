@@ -7,6 +7,7 @@ import { SeenMark } from "@/components/CrossSeen";
 import ReleaseLabel from "@/components/ReleaseLabel";
 import FilmMeta from "@/components/FilmMeta";
 import WeiboLink from "@/components/WeiboLink";
+import OwnerQuarkLinks from "@/components/OwnerQuarkLinks";
 import { notFound } from "next/navigation";
 import { TypeBadge } from "@/components/Badge";
 import FilmPoster from "./FilmPoster";
@@ -274,6 +275,8 @@ export default async function FilmPage({
           </div>
         </div>
       </section>
+
+      <OwnerQuarkLinks filmId={film.id} />
 
       {film.cast.length > 0 || (film.directors.length > 0 && !plot) ? (
         <Section title={film.directors.length > 0 && !plot && film.cast.length > 0 ? "导演与主演" : film.directors.length > 0 && !plot ? "导演" : peopleLabel !== "导演" ? peopleLabel : "主演"}>

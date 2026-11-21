@@ -48,7 +48,10 @@ KNOWN_FILM_IDS = {"36847425": "possible-love", "36808876": "the-odyssey"}
 # it with a 《复仇者联盟4：终局之战》 (2019) resource; the 2019 original is
 # outside the new-film year window and the Encore cut already has a WTS entry.
 # Skip until the detail page is corrected. (2026-11-15)
-BLOCKED_DOUBAN_IDS = {"36011202"}
+# 34429795 is 《米奇17号》 (Mickey 17, 2025) but the detail page pairs it
+# with a 《编号24》 (Nr. 24, 2024) resource; title and metadata point to two
+# different films. Skip until the detail page is corrected. (2026-11-21)
+BLOCKED_DOUBAN_IDS = {"36011202", "34429795"}
 RESOURCE = re.compile(r"出资源|已出源|已上线|熟肉|网盘|可下|WEB-DL|BDRip|压制|数字版流出", re.I)
 EXCLUDED = re.compile(r"纪录|documentary|docuseries|剧集|电视剧|连续剧|迷你剧|限定剧|TV\s*series|miniseries", re.I)
 ENGLISH_ONLY = re.compile(r"英字|英文字幕|无中字|无字幕|生肉", re.I)

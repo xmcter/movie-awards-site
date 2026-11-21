@@ -1243,7 +1243,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-36950814.jpg",
-      "runtime": 93
+      "runtime": 93,
+      "synopsisEn": "A man learns that his wife has long had a lover, who has now died in an accident. Their marriage is on the brink of collapse. In a quiet, empty bungalow on the outskirts of town, they try to open up to each other through conversation."
     },
     {
       "id": "movie-douban-37383586",
@@ -1278,7 +1279,78 @@
         "加拿大"
       ],
       "streaming": [],
-      "poster": "/posters/movie-douban-37383586.jpg"
+      "poster": "/posters/movie-douban-37383586.jpg",
+      "synopsisEn": "Focusing on Cinderella's \"not-so-evil\" stepsisters, Lilith and Margot are portrayed as kind figures who have simply been misunderstood all along. At the royal ball, Lilith accidentally turns Margot into a frog with a stolen wand and delivers the kingdom into the hands of a petty girl hopelessly infatuated with the prince. Now Lilith must team up with Cinderella to save the kingdom, mend the fractured fairy tale, and prove that so-called villains deserve their chance at a happy ending too."
+    },
+    {
+      "id": "movie-douban-37066852",
+      "title": "坏兽",
+      "titleEn": "Bad Beast",
+      "year": 2026,
+      "synopsis": "以寄宿学校女孩雅典娜为中心，她得到进入新家庭的机会，却因害怕被替代而逐渐显露危险本能。",
+      "directors": [
+        "芭芭拉·法雷"
+      ],
+      "cast": [
+        "伊里娅·德尔·里奥",
+        "罗杰·卡萨马杰",
+        "Mauro Vélez",
+        "艾琳·巴尔梅斯",
+        "Maria Schwinning",
+        "Naira Oller Canadell",
+        "Mariona Pagès"
+      ],
+      "genres": [
+        "剧情",
+        "奇幻"
+      ],
+      "country": [
+        "西班牙"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-37066852.jpg",
+      "runtime": 94,
+      "synopsisEn": "Centering on Athena, a girl at a boarding school who gets the chance to join a new family, but whose fear of being replaced gradually brings out a dangerous instinct."
+    },
+    {
+      "id": "movie-douban-35765242",
+      "title": "茫然女王",
+      "titleEn": "Queen at Sea",
+      "year": 2026,
+      "synopsis": "阿尔茨海默病逐渐剥夺了一位女性表达自我的能力，也严重影响了她与他人的沟通。她的丈夫与女儿竭力为她谋求最大福祉——在爱与关怀、守护与自主之间的脆弱边界中艰难探寻平衡。",
+      "directors": [
+        "兰斯·汉默"
+      ],
+      "cast": [
+        "朱丽叶·比诺什",
+        "安娜·考尔德-马歇尔",
+        "汤姆·康特奈",
+        "弗洛伦斯·亨特",
+        "科迪·莫尔科",
+        "史蒂芬·克里",
+        "米歇尔·杰拉姆",
+        "洛拉贝尔·巴科斯",
+        "诺亚·亨特·巴斯登",
+        "默罕迈德·阿米里",
+        "雅思敏·坎贝尔",
+        "乔·霍斯福德",
+        "米歇尔·凯莉",
+        "艾莉森·帕吉特",
+        "简·裴柏顿",
+        "伊丽莎白·拉什布鲁克",
+        "利亚尼·塞缪尔"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "英国",
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-35765242.jpg",
+      "runtime": 121,
+      "synopsisEn": "Alzheimer's gradually strips a woman of her ability to express herself, severely affecting her communication with others. Her husband and daughter strive to secure her greatest wellbeing—navigating the fragile balance between love and care, protection and autonomy."
     }
   ],
   "ceremonies": []

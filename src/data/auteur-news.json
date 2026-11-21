@@ -822,7 +822,8 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RsmvofRma",
     "weiboUrl": "https://m.weibo.cn/detail/RsmvofRma",
-    "weiboLabel": "微博·不爱吃饭的大马猴"
+    "weiboLabel": "微博·不爱吃饭的大马猴",
+    "summaryEn": "\"Meine Frau weint: Angela Schanelec\" is now streaming"
   },
   {
     "id": "movie-peek-movie-douban-37383586-first-resource",
@@ -836,6 +837,37 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/Rsj3X5QpF",
     "weiboUrl": "https://m.weibo.cn/detail/Rsj3X5QpF",
-    "weiboLabel": "微博·OtisMilburn_"
+    "weiboLabel": "微博·OtisMilburn_",
+    "summaryEn": "\"Steps\" is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-37066852-first-resource",
+    "filmId": "movie-douban-37066852",
+    "publishedAt": "2026-11-21T18:19:38+08:00",
+    "sourcePublishedAt": "2026-11-21T18:19:38+08:00",
+    "date": "2026-11-21",
+    "kind": "release",
+    "summary": "《坏兽》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsqEVySzE",
+    "weiboUrl": "https://m.weibo.cn/detail/RsqEVySzE",
+    "weiboLabel": "微博·找片大师伊万",
+    "summaryEn": "Bad Beast is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-35765242-first-resource",
+    "filmId": "movie-douban-35765242",
+    "publishedAt": "2026-11-21T17:51:40+08:00",
+    "sourcePublishedAt": "2026-11-21T17:51:40+08:00",
+    "date": "2026-11-21",
+    "kind": "release",
+    "summary": "《茫然女王》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rol3CtZlm",
+    "weiboUrl": "https://m.weibo.cn/detail/Rol3CtZlm",
+    "weiboLabel": "微博·找片大师伊万",
+    "summaryEn": "Queen at Sea is now streaming."
   }
 ]

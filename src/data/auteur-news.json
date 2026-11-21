@@ -809,5 +809,33 @@
     "weiboUrl": "https://m.weibo.cn/detail/RsgwjBd7l",
     "weiboLabel": "微博·华坚冯力士v",
     "summaryEn": "\"Summerween\" is now available."
+  },
+  {
+    "id": "movie-peek-movie-douban-36950814-first-resource",
+    "filmId": "movie-douban-36950814",
+    "publishedAt": "2026-11-21T07:45:09+08:00",
+    "sourcePublishedAt": "2026-11-21T07:45:09+08:00",
+    "date": "2026-11-21",
+    "kind": "release",
+    "summary": "《我的妻子哭了 Meine Frau weint : 安格拉·夏》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsmvofRma",
+    "weiboUrl": "https://m.weibo.cn/detail/RsmvofRma",
+    "weiboLabel": "微博·不爱吃饭的大马猴"
+  },
+  {
+    "id": "movie-peek-movie-douban-37383586-first-resource",
+    "filmId": "movie-douban-37383586",
+    "publishedAt": "2026-11-20T22:59:18+08:00",
+    "sourcePublishedAt": "2026-11-20T22:59:18+08:00",
+    "date": "2026-11-21",
+    "kind": "release",
+    "summary": "《童话继姐妹 Steps》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rsj3X5QpF",
+    "weiboUrl": "https://m.weibo.cn/detail/Rsj3X5QpF",
+    "weiboLabel": "微博·OtisMilburn_"
   }
 ]

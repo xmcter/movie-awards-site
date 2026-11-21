@@ -1238,6 +1238,217 @@
         "synopsis"
       ],
       "poster": "/posters/ray-gunn.jpg"
+    },
+    {
+      "id": "nate-bargatze-good-for-nathan",
+      "title": "Nate Bargatze: Good for Nathan",
+      "titleEn": "Nate Bargatze: Good for Nathan",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Ryan Polito"
+      ],
+      "cast": [
+        "Nate Bargatze"
+      ],
+      "genres": [
+        "Comedy"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-21T10:03:04+08:00",
+          "platform": "netflix",
+          "date": "2026-11-24",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/81735281",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/nate-bargatze-good-for-nathan.jpg"
+    },
+    {
+      "id": "drishyam-the-conclusion",
+      "title": "Drishyam: The Conclusion",
+      "titleEn": "Drishyam: The Conclusion",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Abhishek Pathak"
+      ],
+      "cast": [
+        "Ajay Devgn",
+        "Jaideep Ahlawat",
+        "Tabu",
+        "Shriya Saran",
+        "Rajat Kapoor",
+        "Prakash Raj",
+        "Ishita Dutta"
+      ],
+      "genres": [
+        "Crime",
+        "Drama",
+        "Mystery"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-21T10:03:06+08:00",
+          "platform": "netflix",
+          "date": "2026-11-26",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/83074116",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/drishyam-the-conclusion.jpg"
+    },
+    {
+      "id": "sasquatch-sunset",
+      "title": "Sasquatch Sunset",
+      "titleEn": "Sasquatch Sunset",
+      "year": 2024,
+      "synopsis": "In the misty forests of North America, a family of Sasquatches, possibly the last of their enigmatic kind, embark on an absurdist, epic, hilarious and ultimately poignant journey over the course of one year. The shaggy and noble giants fight for survival as they find themselves on a collision course with the ever-changing world around them. Starring Jesse Eisenberg, Riley Keough, Christophe Zaj...",
+      "directors": [
+        "David Zellner",
+        "Nathan Zellner"
+      ],
+      "cast": [
+        "Riley Keough",
+        "Jesse Eisenberg",
+        "Nathan Zellner",
+        "Christophe Zajac-Denek"
+      ],
+      "genres": [
+        "Adventure",
+        "Comedy"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-21T10:03:07+08:00",
+          "platform": "netflix",
+          "date": "2026-11-30",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82087559",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/sasquatch-sunset.jpg"
+    },
+    {
+      "id": "the-perfect-christmas-date",
+      "title": "The Perfect Christmas Date",
+      "titleEn": "The Perfect Christmas Date",
+      "year": 2024,
+      "synopsis": "At speed dating, Marie swaps diaries with a stranger. As Christmas nears, can holiday magic help her find the right diary—and the right man?",
+      "directors": [
+        "Michael Kennedy"
+      ],
+      "cast": [
+        "Emily Alatalo",
+        "Andrew Bushell",
+        "Julia Knope",
+        "Paula Boudreau",
+        "Noah Berc",
+        "Nico DeCastris",
+        "D.J. Demers"
+      ],
+      "genres": [
+        "Romance"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-21T10:03:08+08:00",
+          "platform": "netflix",
+          "date": "2026-12-02",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82949084",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/the-perfect-christmas-date.jpg"
+    },
+    {
+      "id": "a-dance-with-death",
+      "title": "A Dance with Death",
+      "titleEn": "A Dance with Death",
+      "year": 2025,
+      "synopsis": "",
+      "directors": [
+        "Bruno Hernández",
+        "Damián Romay"
+      ],
+      "cast": [
+        "Eric Hanson",
+        "Lauren Pike",
+        "Andrew Fultz",
+        "Aubree Bouché",
+        "Katie Dallas",
+        "Damian Tanenbaum",
+        "Joseph R. Himes"
+      ],
+      "genres": [
+        "Thriller"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-21T10:03:10+08:00",
+          "platform": "netflix",
+          "date": "2026-12-03",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82949055",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/a-dance-with-death.jpg"
     }
   ],
   "ceremonies": []

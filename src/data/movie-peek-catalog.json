@@ -1216,6 +1216,69 @@
       "poster": "/posters/movie-douban-38521163.jpg",
       "runtime": 86,
       "synopsisEn": "Summerween 2026, official Chinese-English subtitles, latest release. The story takes place on a midsummer \"Summer Halloween\" night of revelry, when a woman living alone moves into an old detached house on the outskirts of the city, planning to enjoy some solitary time during the distinctive holiday. A deranged clown killer with ruined makeup and torn, scarred features sets his sights on the isolated house..."
+    },
+    {
+      "id": "movie-douban-36950814",
+      "title": "我的妻子哭了 Meine Frau weint : 安格拉·夏",
+      "year": 2026,
+      "synopsis": "一名男子得知妻子长期拥有一位情人，而这位情人如今已在意外中离世。两人的婚姻濒临破碎。在城郊一栋僻静的空置平房里，他们试图通过对话向彼此敞开心扉。",
+      "directors": [
+        "安格拉·夏娜莱克"
+      ],
+      "cast": [
+        "弗拉基米尔·武列维奇",
+        "阿加特·博尼策",
+        "碧尔特·施诺因克",
+        "克拉拉·戈斯汀斯基",
+        "洛尔-露西尔·西蒙",
+        "托尔比约恩·比约恩松",
+        "保利娜·雷布曼"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "德国",
+        "法国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36950814.jpg",
+      "runtime": 93
+    },
+    {
+      "id": "movie-douban-37383586",
+      "title": "童话继姐妹 Steps",
+      "year": 2026,
+      "synopsis": "聚焦灰姑娘那“不那么邪恶”的继姐妹，Lilith和Margot将被呈现为善良的形象，她们只是一直被误解。 在皇家舞会上，Lilith不慎用一根偷来的魔杖把Margot变成了一只青蛙，并让王国落到了一个疯狂迷恋王子的小气女孩手中。现在Lilith必须与Cinderella组队，一起拯救王国，修正已四分五裂的童话故事，并证明所谓的反派也值得一个HE结局的机会。",
+      "directors": [
+        "约翰·瑞帕",
+        "祖小云"
+      ],
+      "cast": [
+        "黄阿丽",
+        "阿曼达·塞弗里德",
+        "许玮伦",
+        "妮基·格拉瑟",
+        "丹尼尔·雷德克里夫",
+        "扬·马齐诺",
+        "彼特·丁拉基",
+        "贝特·米德勒",
+        "LaNisa Renee Frederick",
+        "布鲁斯·诺兹克",
+        "Emma Jagger"
+      ],
+      "genres": [
+        "喜剧",
+        "动画",
+        "歌舞"
+      ],
+      "country": [
+        "美国",
+        "澳大利亚",
+        "加拿大"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-37383586.jpg"
     }
   ],
   "ceremonies": []

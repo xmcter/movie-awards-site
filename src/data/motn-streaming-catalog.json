@@ -1451,6 +1451,52 @@
         "synopsis"
       ],
       "poster": "/posters/a-dance-with-death.jpg"
+    },
+    {
+      "id": "the-magic-faraway-tree",
+      "title": "The Magic Faraway Tree",
+      "titleEn": "The Magic Faraway Tree",
+      "year": 2026,
+      "synopsis": "Based on Enid Blyton's best-selling children's classic The Magic Faraway Tree follows Polly and Tim and their children Beth, Joe and Fran - a modern family who find themselves forced to relocate to the remote English countryside. Soon after the family's arrival in the countryside, the children discover a magical tree and its extraordinary and eccentric residents.",
+      "directors": [
+        "Ben Gregor"
+      ],
+      "cast": [
+        "Billie Gadsdon",
+        "Nicola Coughlan",
+        "Delilah Bennett-Cardy",
+        "Phoenix Laroche",
+        "Nonso Anozie",
+        "Andrew Garfield",
+        "Rebecca Ferguson"
+      ],
+      "genres": [
+        "Adventure",
+        "Family",
+        "Fantasy"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-22T10:02:35+08:00",
+          "platform": "max",
+          "date": "2026-11-27",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max 美国区定档，以平台官方为准",
+          "source": "https://play.hbomax.com/movie/05329aa2-ffc1-457e-b5a3-2f9b631345d8",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/the-magic-faraway-tree.jpg",
+      "synopsisEn": "Based on Enid Blyton's best-selling children's classic, The Magic Faraway Tree follows Polly and Tim and their children Beth, Joe and Fran — a modern family forced to relocate to the remote English countryside. Soon after arriving, the children discover a magical tree and its extraordinary, eccentric residents."
     }
   ],
   "ceremonies": []

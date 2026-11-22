@@ -1481,6 +1481,40 @@
         }
       ],
       "synopsisEn": "Onslaught. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "christmas-at-the-kringles",
+      "title": "圣诞邪邻",
+      "titleEn": "Christmas at the Kringles",
+      "year": 2026,
+      "synopsis": "Christmas at the Kringles。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Kevin Lewis"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#7f1d1d",
+        "#450a0a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/christmas-at-the-kringles-sets-digital-streaming-release-date/",
+          "source": "https://whentostream.com/christmas-at-the-kringles-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-22T10:00:05+08:00"
+        }
+      ],
+      "synopsisEn": "Christmas at the Kringles. Streaming release date via When To Stream (US region)."
     }
   ],
   "ceremonies": []

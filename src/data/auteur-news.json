@@ -883,5 +883,33 @@
     "source": "https://m.weibo.cn/detail/RsxfZl6Rw",
     "weiboUrl": "https://m.weibo.cn/detail/RsxfZl6Rw",
     "weiboLabel": "微博·华坚冯力士v"
+  },
+  {
+    "id": "movie-peek-movie-douban-37317906-first-resource",
+    "filmId": "movie-douban-37317906",
+    "publishedAt": "2026-11-22T21:46:27+08:00",
+    "sourcePublishedAt": "2026-11-22T21:46:27+08:00",
+    "date": "2026-11-22",
+    "kind": "release",
+    "summary": "《忘却之岛 Forgotten Island》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rp3UsBS5g",
+    "weiboUrl": "https://m.weibo.cn/detail/Rp3UsBS5g",
+    "weiboLabel": "微博·OtisMilburn_"
+  },
+  {
+    "id": "movie-peek-movie-douban-35742018-first-resource",
+    "filmId": "movie-douban-35742018",
+    "publishedAt": "2026-11-22T20:58:13+08:00",
+    "sourcePublishedAt": "2026-11-22T20:58:13+08:00",
+    "date": "2026-11-22",
+    "kind": "release",
+    "summary": "《长空匿迹 Grand Ciel : 畑明广 tt1543500》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsB7NjO9B",
+    "weiboUrl": "https://m.weibo.cn/detail/RsB7NjO9B",
+    "weiboLabel": "微博·不爱吃饭的大马猴"
   }
 ]

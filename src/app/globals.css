@@ -3,16 +3,19 @@
 @tailwind utilities;
 
 
+/* Surfaces match readcine.com/shared/rc-tokens.css so the portal, AI 情报站
+   and this site sit on the same paper. Gold stays the film accent; serif stays
+   on titles only. */
 :root {
   color-scheme: dark;
-  --rc-bg: #0c0f14;
-  --rc-card: #12161d;
-  --rc-elevated: #1c2330;
-  --rc-border: #262b33;
-  --rc-gold: #c9a227;
-  --rc-gold-light: #f0d36a;
-  --rc-muted: #b0b8bf;
-  --rc-text: #e7ebe6;
+  --rc-bg: #000000;
+  --rc-card: #1c1c1e;
+  --rc-elevated: #2c2c2e;
+  --rc-border: #38383a;
+  --rc-gold: #eab308;
+  --rc-gold-light: #fde68a;
+  --rc-muted: #98989d;
+  --rc-text: #f5f5f7;
   --rc-accent: #fb7185;
 }
 
@@ -20,34 +23,35 @@
 @media (prefers-color-scheme: light) {
   :root:not(.theme-night) {
     color-scheme: light;
-    --rc-bg: #f4f5f2;
+    --rc-bg: #f5f5f7;
     --rc-card: #ffffff;
-    --rc-elevated: #eef0eb;
-    --rc-border: #dcdfd9;
-    --rc-gold: #b8873a;
-    --rc-gold-light: #c9a227;
-    --rc-muted: #565f6b;
-    --rc-text: #14181f;
+    --rc-elevated: #f2f2f4;
+    --rc-border: #d2d2d7;
+    --rc-gold: #854d0e;
+    --rc-gold-light: #a16207;
+    --rc-muted: #6e6e73;
+    --rc-text: #1d1d1f;
     --rc-accent: #9f1239;
   }
 }
 
 html.theme-day {
   color-scheme: light;
-  --rc-bg: #f4f5f2;
+  --rc-bg: #f5f5f7;
   --rc-card: #ffffff;
-  --rc-elevated: #eef0eb;
-  --rc-border: #dcdfd9;
-  --rc-gold: #b8873a;
-  --rc-gold-light: #c9a227;
-  --rc-muted: #565f6b;
-  --rc-text: #14181f;
+  --rc-elevated: #f2f2f4;
+  --rc-border: #d2d2d7;
+  --rc-gold: #854d0e;
+  --rc-gold-light: #a16207;
+  --rc-muted: #6e6e73;
+  --rc-text: #1d1d1f;
   --rc-accent: #9f1239;
 }
 
-/* 页头保持中性阅读底，只用珊瑚红做底边强调线 */
+/* 顶栏跟门户 / AI 情报站同一条发丝线，不再用珊瑚红底边自成一派 */
 header.sticky {
-  box-shadow: inset 0 -2px 0 var(--rc-accent);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
 }
 
 html {

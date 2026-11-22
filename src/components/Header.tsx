@@ -164,7 +164,7 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 min-w-0 border-b border-cinema-border/80 bg-cinema-bg/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 min-w-0 border-b border-cinema-border/80 bg-cinema-bg/75 backdrop-blur-xl">
       <div className="mx-auto min-w-0 max-w-3xl px-4 sm:px-6">
         <div className="flex min-w-0 items-center justify-between gap-2 py-3">
           <Link href={homeHref} className="group flex min-w-0 items-center gap-2">
@@ -175,7 +175,7 @@ export default function Header() {
               alt=""
               className="h-8 w-8 shrink-0 rounded-[7px]"
             />
-            <span className="min-w-0 truncate font-display text-lg tracking-wide text-cinema-text group-hover:text-cinema-accent">
+            <span className="min-w-0 truncate text-[17px] font-semibold tracking-tight text-cinema-text group-hover:text-cinema-accent">
               {en ? "Screen News" : "银幕新讯"}
             </span>
             <span className="hidden shrink-0 rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold sm:inline-block">

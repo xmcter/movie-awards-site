@@ -1284,7 +1284,7 @@
     },
     {
       "id": "movie-douban-37066852",
-      "title": "坏兽",
+      "title": "坏兽 影片",
       "titleEn": "Bad Beast",
       "year": 2026,
       "synopsis": "以寄宿学校女孩雅典娜为中心，她得到进入新家庭的机会，却因害怕被替代而逐渐显露危险本能。",
@@ -1314,7 +1314,7 @@
     },
     {
       "id": "movie-douban-35765242",
-      "title": "茫然女王",
+      "title": "茫然女王 双字",
       "titleEn": "Queen at Sea",
       "year": 2026,
       "synopsis": "阿尔茨海默病逐渐剥夺了一位女性表达自我的能力，也严重影响了她与他人的沟通。她的丈夫与女儿竭力为她谋求最大福祉——在爱与关怀、守护与自主之间的脆弱边界中艰难探寻平衡。",
@@ -1351,6 +1351,42 @@
       "poster": "/posters/movie-douban-35765242.jpg",
       "runtime": 121,
       "synopsisEn": "Alzheimer's gradually strips a woman of her ability to express herself, severely affecting her communication with others. Her husband and daughter strive to secure her greatest wellbeing—navigating the fragile balance between love and care, protection and autonomy."
+    },
+    {
+      "id": "movie-douban-36344100",
+      "title": "街头霸王 Street Fighter",
+      "year": 2026,
+      "synopsis": "故事设定在1993年，昔日并肩作战却早已分道扬镳的街头格斗家隆（安德鲁·浩二 饰）与肯·马斯特斯（诺亚·琴蒂内奥 饰），因为受到一名神秘女子春丽（卡莉娜·梁 饰）的招募，再度参加下一届世界战士格斗大会，这是一场拳头、命运与怒火碰撞的残酷对决。但是在这场生死大决斗的背后，潜藏着一个致命阴谋，迫使他们不得不正面交锋，并且面对各自过去的心魔。如果他们无法克服这一切，那就会GAME OVER游戏结束！",
+      "directors": [
+        "樱井北尾"
+      ],
+      "cast": [
+        "诺亚·琴蒂内奥",
+        "安德鲁·浩二",
+        "卡莉娜·梁",
+        "大卫·达斯马齐连",
+        "安德鲁·舒尔茨",
+        "罗曼·雷恩斯",
+        "科迪·罗兹",
+        "杰森·莫玛",
+        "埃里克·安德烈",
+        "50分",
+        "马东锡",
+        "梅尔·贾森",
+        "奥维尔·佩克",
+        "后藤洋央纪",
+        "维德尤特·贾姆瓦尔"
+      ],
+      "genres": [
+        "动作"
+      ],
+      "country": [
+        "美国",
+        "日本"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36344100.jpg",
+      "runtime": 120
     }
   ],
   "ceremonies": []

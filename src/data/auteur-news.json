@@ -869,5 +869,19 @@
     "weiboUrl": "https://m.weibo.cn/detail/Rol3CtZlm",
     "weiboLabel": "微博·找片大师伊万",
     "summaryEn": "Queen at Sea is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-36344100-first-resource",
+    "filmId": "movie-douban-36344100",
+    "publishedAt": "2026-11-22T11:07:25+08:00",
+    "sourcePublishedAt": "2026-11-22T11:07:25+08:00",
+    "date": "2026-11-22",
+    "kind": "release",
+    "summary": "《街头霸王 Street Fighter》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsxfZl6Rw",
+    "weiboUrl": "https://m.weibo.cn/detail/RsxfZl6Rw",
+    "weiboLabel": "微博·华坚冯力士v"
   }
 ]

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import FilmIndex, { type FilmIndexItem } from "@/components/FilmIndex";
 import { seenTokens } from "@/lib/crossSeenKeys";
 import { FILM_ALIASES, doubanRatingOf, films, doubanIdOf } from "@/lib/data";
 import { bilingualAlternatesEn, filmTitleEn } from "@/lib/i18n";
@@ -27,10 +27,26 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-static";
 
+function initials(title: string): string {
+  const trimmed = title.trim();
+  if (!trimmed) return "?";
+  const latin = trimmed.match(/[A-Za-z]+/g);
+  if (latin && latin.length > 0) {
+    return latin.slice(0, 2).map((word) => word[0]!.toUpperCase()).join("");
+  }
+  return trimmed.slice(0, 1);
+}
+
+function thumbFor(poster?: string): string | undefined {
+  if (!poster || /^https?:\/\//i.test(poster)) return undefined;
+  const file = poster.split("/").pop()?.split(/[?#]/)[0] ?? "";
+  if (!file || file.includes("..")) return undefined;
+  const stem = file.replace(/\.[^.]+$/, "");
+  return stem ? `/thumbs/${stem}.webp` : undefined;
+}
+
 export default function FilmsPageEn() {
   const seen = new Set<string>();
-  // 显示口径与「纳入索引」分开：这里列全部有影片页的片子；isIndexableFilmEn
-  // 只留给 sitemap/robots 用。
   const list = films
     .filter((film) => !(film.id in FILM_ALIASES))
     .filter((film) => {
@@ -40,41 +56,39 @@ export default function FilmsPageEn() {
     })
     .sort((a, b) => filmTitleEn(a).localeCompare(filmTitleEn(b), "en"));
 
+  const items: FilmIndexItem[] = list.map((film) => {
+    const douban = doubanRatingOf(film);
+    const title = filmTitleEn(film);
+    const subtitle = film.title && film.title !== title ? film.title : undefined;
+    return {
+      id: film.id,
+      href: `/en/film/${encodeURIComponent(film.id)}`,
+      title,
+      subtitle,
+      year: film.year,
+      douban: douban ? douban.score.toFixed(1) : undefined,
+      thumb: thumbFor(film.poster),
+      color: film.posterColors?.[0] || "#1a1a2e",
+      initials: initials(film.titleEn || title),
+      seen: seenTokens({
+        id: film.id,
+        title: film.title,
+        titleEn: film.titleEn,
+        year: film.year,
+        doubanId: doubanIdOf(film),
+      }).join(" "),
+      search: [film.title, film.titleEn, title, film.year, ...film.directors, ...film.cast]
+        .filter(Boolean)
+        .join(" "),
+    };
+  });
+
   return (
     <div className="space-y-6">
       <header>
         <h1 className="font-display text-2xl text-cinema-text">All films</h1>
-        <p className="mt-2 text-sm text-cinema-muted">
-          {list.length} films · sorted by title
-        </p>
       </header>
-      <ul className="space-y-2">
-        {list.map((film) => {
-          const douban = doubanRatingOf(film);
-          return (
-          <li
-            key={film.id}
-            data-rc-fk={seenTokens({ id: film.id, title: film.title, titleEn: film.titleEn, year: film.year, doubanId: doubanIdOf(film) }).join(" ")}
-            className="rounded-xl border border-cinema-border bg-cinema-card px-4 py-3"
-          >
-            <Link
-              href={`/en/film/${encodeURIComponent(film.id)}`}
-              className="block text-sm text-cinema-text hover:text-cinema-gold"
-            >
-              {filmTitleEn(film)}
-              <span className="ml-2 text-xs text-cinema-muted">
-                {film.year}
-              </span>
-              {douban ? (
-                <span className="ml-2 text-xs tabular-nums text-cinema-muted" data-douban-rating={douban.score.toFixed(1)}>
-                  ⭐ {douban.score.toFixed(1)} Douban
-                </span>
-              ) : null}
-            </Link>
-          </li>
-          );
-        })}
-      </ul>
+      <FilmIndex items={items} locale="en" totalLabel="sorted by title" />
     </div>
   );
 }

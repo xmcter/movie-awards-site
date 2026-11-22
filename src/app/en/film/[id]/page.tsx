@@ -226,7 +226,7 @@ export default async function FilmPageEn({
       </p>
 
       <section className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <FilmPoster
             src={thumbForPoster(film.poster || "") || film.poster}
             fallbackSrc={film.poster && thumbForPoster(film.poster) ? film.poster : undefined}
@@ -284,18 +284,6 @@ export default async function FilmPageEn({
             </p>
           ) : null}
           <p data-film-plot>{plot}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
-            <a
-              href={guideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-            >
-              <span>{UI_EN.guideInGuide}</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
-            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
-          </div>
         </Section>
       ) : null}
 
@@ -320,37 +308,21 @@ export default async function FilmPageEn({
       {background ? (
         <Section title="Background">
           <p>{background}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
-            <a
-              href={guideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-            >
-              <span>{UI_EN.guideInGuide}</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
-            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
-          </div>
         </Section>
       ) : null}
 
-      {!plot && !background ? (
-        <Section title="Further reading">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <a
-              href={guideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-            >
-              <span>{UI_EN.guideInGuide}</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
-            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
-          </div>
-        </Section>
-      ) : null}
+      <div className="flex flex-wrap items-center gap-2.5">
+        <a
+          href={guideUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+        >
+          <span>{UI_EN.guideInGuide}</span>
+          <span className="text-[10px] opacity-70">↗</span>
+        </a>
+        <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} locale="en" />
+      </div>
 
       {(() => {
         const streaming = [

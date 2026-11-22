@@ -237,7 +237,7 @@ export default async function FilmPage({
       </p>
 
       <section className="overflow-hidden rounded-2xl border border-cinema-border bg-cinema-card">
-        <div className="flex flex-row items-start">
+        <div className="flex flex-row items-center">
           <FilmPoster
             src={thumb || film.poster}
             fallbackSrc={thumb ? film.poster : undefined}
@@ -263,9 +263,10 @@ export default async function FilmPage({
                 ⭐ 豆瓣 <span className="font-medium tabular-nums text-cinema-text">{douban.score.toFixed(1)}</span>
               </p>
             ) : null}
-            {film.runtime ? (
-              <p className="mt-3 text-xs text-cinema-muted/70">
+            {film.runtime || film.country?.length ? (
+              <p className="mt-3 text-xs text-cinema-muted/80">
                 {[
+                  film.country?.length ? film.country.join("、") : null,
                   film.runtime ? `${film.runtime} 分钟` : null,
                 ]
                   .filter(Boolean)
@@ -304,18 +305,6 @@ export default async function FilmPage({
             </p>
           ) : null}
           <p>{scrubNegativeCopy(plot)}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
-            <a
-              href={guideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-            >
-              <span>🎞️ 在「观影导赏」查看导赏</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
-            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
-          </div>
         </Section>
       ) : null}
 
@@ -340,37 +329,21 @@ export default async function FilmPage({
       {background ? (
         <Section title="创作背景">
           <p>{scrubNegativeCopy(background)}</p>
-          <div className="mt-4 flex flex-wrap items-center gap-2.5 pt-1">
-            <a
-              href={guideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-            >
-              <span>🎞️ 在「观影导赏」查看导赏</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
-            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
-          </div>
         </Section>
       ) : null}
 
-      {!plot && !background ? (
-        <Section title="延伸阅读">
-          <div className="flex flex-wrap items-center gap-2.5">
-            <a
-              href={guideUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
-            >
-              <span>🎞️ 在「观影导赏」查看导赏</span>
-              <span className="text-[10px] opacity-70">↗</span>
-            </a>
-            <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
-          </div>
-        </Section>
-      ) : null}
+      <div className="flex flex-wrap items-center gap-2.5">
+        <a
+          href={guideUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-full border border-cinema-border bg-cinema-card px-3 py-1.5 text-xs text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
+        >
+          <span>🎞️ 在「观影导赏」查看导赏</span>
+          <span className="text-[10px] opacity-70">↗</span>
+        </a>
+        <WeiboLink href={weiboEvent?.weiboUrl} label={weiboEvent?.weiboLabel} />
+      </div>
 
       {film.streaming.length > 0 ? (
         <section>

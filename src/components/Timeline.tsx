@@ -658,7 +658,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
                           ) : null;
                         })()}
                       {event.plot && dedupe(event.summary || "", event.plot) ? (
-                        <p data-film-plot className="mt-2 whitespace-pre-line break-words text-sm leading-relaxed text-cinema-muted">
+                        <p data-film-plot className="mt-2 line-clamp-3 break-words text-sm leading-relaxed text-cinema-muted">
                           {event.plot}
                         </p>
                       ) : null}
@@ -678,7 +678,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
                           ))}
                         </ul>
                       ) : null}
-                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 text-[11px] text-cinema-muted">
+                      <div className="mt-3 flex flex-col gap-2 text-[11px] text-cinema-muted sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-wrap items-center gap-2">
                           {event.filmId ? (
                             <Link
@@ -881,7 +881,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
         </div>
       ) : null}
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="sticky top-14 z-40 -mx-4 space-y-2 bg-cinema-bg/95 px-4 py-2 backdrop-blur-md sm:-mx-6 sm:px-6">
         <input
           type="search"
           value={query}
@@ -889,11 +889,12 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
             setQuery(e.target.value);
             setBatches(1);
           }}
-          placeholder={en ? "Search" : "搜索片名"}
+          placeholder={en ? "Search title or director" : "搜索片名、导演"}
           aria-label={en ? "Search" : "搜索片名"}
           autoComplete="off"
-          className="min-w-[8rem] flex-1 rounded-full border border-cinema-border/70 bg-cinema-card px-3 py-1.5 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold"
+          className="w-full rounded-full border border-cinema-border/70 bg-cinema-card px-3 py-2 text-sm text-cinema-text placeholder:text-cinema-muted/60 focus:border-cinema-gold/50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cinema-gold"
         />
+        <div className="flex gap-2 overflow-x-auto pb-0.5">
         {(
           [
             ["all", en ? "All" : "全部"],
@@ -910,7 +911,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
               setFilter(id);
               setBatches(1);
             }}
-            className={`rounded-full border px-2.5 py-1 text-xs font-medium transition ${
+            className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition ${
               filter === id
                 ? "border-cinema-gold/50 bg-cinema-gold/15 text-cinema-gold"
                 : "border-cinema-border/70 text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
@@ -921,10 +922,11 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
         ))}
         <Link
           href={en ? "/en/films" : "/films"}
-          className="shrink-0 text-xs text-cinema-gold hover:underline"
+          className="shrink-0 rounded-full border border-cinema-border/70 px-3 py-1.5 text-xs font-medium text-cinema-gold hover:border-cinema-gold/40"
         >
           {en ? "All films" : "全部影片"}
         </Link>
+        </div>
       </div>
 
       {grouped.length === 0 ? (

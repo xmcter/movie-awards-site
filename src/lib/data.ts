@@ -130,20 +130,56 @@ function resolvePoster(film: Film): string | undefined {
   return film.poster;
 }
 
+/** 资源站标题常把 imdb 号、字幕标记、导演粘在片名后面。只去掉这些，双语片名保留。 */
+export function cleanReleaseTitle(title: string, directors: string[] = []): string {
+  let t = (title || "").replace(/\s*tt\d{5,}\d*/gi, " ").replace(/\s+/g, " ").trim();
+  t = t.replace(/\s+(?:双字|中英双字|中字|无字|生肉|影片)\s*$/g, "").trim();
+  const parts = t.split(/\s+[:：]\s+/);
+  if (parts.length > 1) {
+    const kept = [parts[0] || ""];
+    for (const raw of parts.slice(1)) {
+      const part = raw.replace(/[:：\s]+$/g, "").trim();
+      if (!part) continue;
+      const directorish =
+        directors.some((d) => d === part || d.startsWith(part) || part.startsWith(d)) ||
+        (/^[\u4e00-\u9fff·]{2,8}$/.test(part) && !/[A-Za-z]/.test(part));
+      if (!directorish) kept.push(part);
+    }
+    t = kept.join(" ").trim();
+  }
+  return t.replace(/[:：\s]+$/g, "").replace(/\s+/g, " ").trim();
+}
+
+/** 资源说明不是剧情：去掉「自压…最新」前缀；整段都是压制参数或演职员表时不展示。 */
+export function cleanReleaseSynopsis(text: string): string {
+  let s = (text || "").replace(/\uFFFC/g, "").trim();
+  if (!s) return "";
+  s = s.replace(/^.*?自压(?:官方)?\S*双字\s*最新\s*/, "").trim();
+  if (/(WEB[-_ ]?DL|1080p|2160p|无字\s*[｜|])/i.test(s)) return "";
+  if (/导演\s*[:：]/.test(s) && /主演\s*[:：]/.test(s)) return "";
+  return s;
+}
+
 function applyCopy(film: Film): Film {
   const extraCopy = filmCopy[film.id];
   const local = resolvePoster(film);
-  if (!extraCopy) return { ...film, poster: local };
-  return {
-    ...film,
-    ...extraCopy,
-    directors: extraCopy.directors ?? film.directors,
-    cast: extraCopy.cast ?? film.cast,
-    genres: extraCopy.genres ?? film.genres,
-    country: extraCopy.country ?? film.country,
-    runtime: extraCopy.runtime ?? film.runtime,
-    poster: local,
-  };
+  const merged: Film = extraCopy
+    ? {
+        ...film,
+        ...extraCopy,
+        directors: extraCopy.directors ?? film.directors,
+        cast: extraCopy.cast ?? film.cast,
+        genres: extraCopy.genres ?? film.genres,
+        country: extraCopy.country ?? film.country,
+        runtime: extraCopy.runtime ?? film.runtime,
+        poster: local,
+      }
+    : { ...film, poster: local };
+  const directors = merged.directors || [];
+  const title = cleanReleaseTitle(merged.title, directors);
+  const titleEn = merged.titleEn ? cleanReleaseTitle(merged.titleEn, directors) : merged.titleEn;
+  const synopsis = cleanReleaseSynopsis(merged.synopsis || "");
+  return { ...merged, title, titleEn, synopsis };
 }
 
 export const films = [

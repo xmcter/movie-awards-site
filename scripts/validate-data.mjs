@@ -327,6 +327,29 @@ if (streamingErrors.length) {
   process.exit(1);
 }
 
+const releaseJunk = [];
+for (const film of filmsForStreaming) {
+  const title = film.title || "";
+  const synopsis = film.synopsis || "";
+  if (/tt\d{5,}/i.test(title) || /\s(?:双字|中英双字|影片)$/.test(title) || /\s[:：]\s*[\u4e00-\u9fff·]{2,8}\s*[:：]?\s*$/.test(title)) {
+    releaseJunk.push(`${film.id}: dirty title ${title}`);
+  }
+  if (/(WEB[-_ ]?DL|1080p|自压官方)/i.test(synopsis)) {
+    releaseJunk.push(`${film.id}: synopsis is a release dump`);
+  }
+}
+for (const item of news) {
+  const summary = `${item.summary || ""} ${item.summaryEn || ""}`;
+  if (/tt\d{5,}/i.test(summary) || /\s[:：]\s*[\u4e00-\u9fff·]{2,8}\s*[:：]?\s*》/.test(item.summary || "")) {
+    releaseJunk.push(`${item.id}: dirty news summary ${item.summary}`);
+  }
+}
+if (releaseJunk.length) {
+  for (const e of releaseJunk) console.error(`error: release copy: ${e}`);
+  console.error(`error: ${releaseJunk.length} release-copy error(s)`);
+  process.exit(1);
+}
+
 console.log(
   `ok: ${news.length} news items, ${ceremonies.length} ceremonies, ${films.size} films in catalog`,
 );

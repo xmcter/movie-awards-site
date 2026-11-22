@@ -562,7 +562,7 @@
     "sourcePublishedAt": "2026-11-16T11:15:29+08:00",
     "date": "2026-11-16",
     "kind": "release",
-    "summary": "《懂事之年 철들 무렵 : 郑承旿 :》已上线",
+    "summary": "《懂事之年》已上线",
     "detail": "",
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RrCKhAmR2",
@@ -817,13 +817,13 @@
     "sourcePublishedAt": "2026-11-21T07:45:09+08:00",
     "date": "2026-11-21",
     "kind": "release",
-    "summary": "《我的妻子哭了 Meine Frau weint : 安格拉·夏》已上线",
+    "summary": "《我的妻子哭了》已上线",
     "detail": "",
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RsmvofRma",
     "weiboUrl": "https://m.weibo.cn/detail/RsmvofRma",
     "weiboLabel": "微博·不爱吃饭的大马猴",
-    "summaryEn": "\"Meine Frau weint: Angela Schanelec\" is now streaming"
+    "summaryEn": "\"Meine Frau weint\" is now streaming"
   },
   {
     "id": "movie-peek-movie-douban-37383586-first-resource",
@@ -905,11 +905,12 @@
     "sourcePublishedAt": "2026-11-22T20:58:13+08:00",
     "date": "2026-11-22",
     "kind": "release",
-    "summary": "《长空匿迹 Grand Ciel : 畑明广 tt1543500》已上线",
+    "summary": "《长空匿迹》已上线",
     "detail": "",
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RsB7NjO9B",
     "weiboUrl": "https://m.weibo.cn/detail/RsB7NjO9B",
-    "weiboLabel": "微博·不爱吃饭的大马猴"
+    "weiboLabel": "微博·不爱吃饭的大马猴",
+    "summaryEn": "\"Grand Ciel\" is now streaming"
   }
 ]

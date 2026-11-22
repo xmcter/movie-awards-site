@@ -102,7 +102,24 @@ def weibo_url(value):
 def clean_title(value):
     value = str(value or "").strip(" 《》")
     value = re.sub(r"^[🔥✨🎬\s]+", "", value)
-    return re.split(r"\s+(?:英字|内嵌|内封|外挂|手慢无|HDR|4K|1080\+|1080[pP])", value, maxsplit=1)[0].strip()
+    value = re.split(r"\s+(?:英字|内嵌|内封|外挂|手慢无|HDR|4K|1080\+|1080[pP])", value, maxsplit=1)[0]
+    value = re.sub(r"\s*tt\d{5,}\d*", "", value, flags=re.I)
+    value = re.sub(r"\s+(?:双字|中英双字|中字|无字|生肉|影片)\s*$", "", value)
+    # 「片名 : 导演」是资源站粘贴，不是片名词。英文冒号副标题（含拉丁字母）保留。
+    value = re.sub(r"\s+[:：]\s*(?!.*[A-Za-z])[^:：]{1,12}\s*[:：]?\s*$", "", value)
+    return re.sub(r"\s+", " ", value).strip(" :：")
+
+
+def clean_synopsis(value):
+    text = safe_text(value).replace("\uFFFC", "").strip()
+    if not text:
+        return ""
+    text = re.sub(r"^.*?自压(?:官方)?\S*双字\s*最新\s*", "", text).strip()
+    if re.search(r"WEB[-_ ]?DL|1080p|2160p|无字\s*[｜|]", text, re.I):
+        return ""
+    if re.search(r"导演\s*[:：]", text) and re.search(r"主演\s*[:：]", text):
+        return ""
+    return text
 
 
 def normalized(value):
@@ -218,7 +235,7 @@ def localize_douban_poster(film_id: str, poster_url: str, identity: str, ssh_hos
 def film_from_meta(meta, film_id, title, year):
     film = {
         "id": film_id, "title": title, "year": year,
-        "synopsis": safe_text(meta.get("intro")),
+        "synopsis": clean_synopsis(meta.get("intro")),
         "directors": strings(meta.get("directors")),
         "cast": strings(meta.get("actors")), "genres": strings(meta.get("genres")),
         "country": strings(meta.get("countries")), "streaming": [],

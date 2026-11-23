@@ -1462,6 +1462,97 @@
       "poster": "/posters/movie-douban-35742018.jpg",
       "runtime": 92,
       "titleEn": "Grand Ciel"
+    },
+    {
+      "id": "movie-douban-37045402",
+      "title": "摩托GP大电影：极速传承 Ídolos",
+      "year": 2026,
+      "synopsis": "鲁莽的天才摩托手埃杜·塞拉获得Aspar Moto2车队的参赛机会，却必须接受疏离多年的父亲——曾因事故退役的前冠军车手安东尼奥·贝拉尔迪的训练。在竞速梦想、父子旧怨与意外爱情的三重拉扯中，他踏上自我蜕变与和解的赛道。",
+      "directors": [
+        "马特·怀克洛斯"
+      ],
+      "cast": [
+        "奥斯卡·卡萨斯",
+        "克劳迪奥·桑塔玛利亚",
+        "安娜·梅纳",
+        "恩里克·阿尔切",
+        "萨尔·南尼",
+        "Matteo Paolillo",
+        "马里奥·埃米托",
+        "Desirèe Pöpper",
+        "Adrian Grösser",
+        "Nadal Bin",
+        "Jorge Rueda",
+        "José Milán",
+        "Miguel Seguí",
+        "Ravina Raventós",
+        "Edith Martínez Val"
+      ],
+      "genres": [
+        "剧情",
+        "运动"
+      ],
+      "country": [
+        "英国",
+        "西班牙",
+        "意大利"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-37045402.jpg",
+      "runtime": 126
+    },
+    {
+      "id": "movie-douban-38215108",
+      "title": "替子道歉 Vicentina Pede Desculpas",
+      "year": 2026,
+      "synopsis": "当她的儿子驾驶的公交车从立交桥上坠落，导致数十人丧生后，维森蒂娜找到遇难者家属道歉，却发现了宽恕的极限。",
+      "directors": [
+        "加布里埃尔·马丁斯"
+      ],
+      "cast": [
+        "Rejane Faria",
+        "Maíra Azevedo",
+        "Giovanna Heliodora",
+        "塔尔马·代·弗雷塔斯",
+        "格蕾丝·帕索",
+        "Preto Amparo",
+        "Renato Novaes",
+        "Andréa Rodrigues",
+        "卡林·特莱斯"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "巴西"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-38215108.jpg",
+      "runtime": 148
+    },
+    {
+      "id": "movie-douban-38586131",
+      "title": "多萝西 Dorothy",
+      "year": 2026,
+      "synopsis": "故事背景设定在一个由种姓制度、暴力和有毒男性气质所塑造的世界中，两个童年好友在泰米尔纳德邦的乡村形影不离地长大。一位名叫多萝西的女性的到来改变了他们的生活，她的同情心悄然挑战了他们周围的世界。",
+      "directors": [
+        "Karthik Subbaraj"
+      ],
+      "cast": [
+        "Sananth",
+        "Rishikanth",
+        "凯瑟瑞·苏雷什",
+        "Jeeva Subramanian"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "印度"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-38586131.jpg",
+      "runtime": 150
     }
   ],
   "ceremonies": []

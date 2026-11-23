@@ -914,5 +914,61 @@
     "weiboUrl": "https://m.weibo.cn/detail/RsB7NjO9B",
     "weiboLabel": "微博·不爱吃饭的大马猴",
     "summaryEn": "\"Grand Ciel\" is now streaming"
+  },
+  {
+    "id": "movie-peek-the-social-reckoning-first-resource",
+    "filmId": "the-social-reckoning",
+    "publishedAt": "2026-11-23T19:09:10+08:00",
+    "sourcePublishedAt": "2026-11-23T19:09:10+08:00",
+    "date": "2026-11-23",
+    "kind": "release",
+    "summary": "《社交清算》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsJQ1ADPB",
+    "weiboUrl": "https://m.weibo.cn/detail/RsJQ1ADPB",
+    "weiboLabel": "微博·不爱吃饭的大马猴"
+  },
+  {
+    "id": "movie-peek-movie-douban-37045402-first-resource",
+    "filmId": "movie-douban-37045402",
+    "publishedAt": "2026-11-23T16:20:23+08:00",
+    "sourcePublishedAt": "2026-11-23T16:20:23+08:00",
+    "date": "2026-11-23",
+    "kind": "release",
+    "summary": "《摩托GP大电影：极速传承 Ídolos》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsIJwcDxQ",
+    "weiboUrl": "https://m.weibo.cn/detail/RsIJwcDxQ",
+    "weiboLabel": "微博·华坚冯力士v"
+  },
+  {
+    "id": "movie-peek-movie-douban-38215108-first-resource",
+    "filmId": "movie-douban-38215108",
+    "publishedAt": "2026-11-23T14:25:36+08:00",
+    "sourcePublishedAt": "2026-11-23T14:25:36+08:00",
+    "date": "2026-11-23",
+    "kind": "release",
+    "summary": "《替子道歉 Vicentina Pede Desculpas》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsHYVx6uX",
+    "weiboUrl": "https://m.weibo.cn/detail/RsHYVx6uX",
+    "weiboLabel": "微博·华坚冯力士v"
+  },
+  {
+    "id": "movie-peek-movie-douban-38586131-first-resource",
+    "filmId": "movie-douban-38586131",
+    "publishedAt": "2026-11-23T12:08:08+08:00",
+    "sourcePublishedAt": "2026-11-23T12:08:08+08:00",
+    "date": "2026-11-23",
+    "kind": "release",
+    "summary": "《多萝西 Dorothy》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsH58ePPx",
+    "weiboUrl": "https://m.weibo.cn/detail/RsH58ePPx",
+    "weiboLabel": "微博·华坚冯力士v"
   }
 ]

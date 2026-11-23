@@ -1542,6 +1542,182 @@
         "synopsis"
       ],
       "poster": "/posters/the-further-mis-adventures-of-cliff-booth.jpg"
+    },
+    {
+      "id": "mickeys-home-alone",
+      "title": "Mickey's Home Alone",
+      "titleEn": "Mickey's Home Alone",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Shane Prigmore"
+      ],
+      "cast": [
+        "Bret Iwan",
+        "Kaitlyn Robrock",
+        "Tony Anselmo",
+        "Tress MacNeille",
+        "Bill Farmer",
+        "April Winchell",
+        "Eric Bauza"
+      ],
+      "genres": [
+        "Animation",
+        "Family"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-23T22:00:09+08:00",
+          "platform": "disney-plus",
+          "date": "2026-11-27",
+          "status": "announced",
+          "region": "美国",
+          "note": "Disney+ 美国区定档，以平台官方为准",
+          "source": "https://www.disneyplus.com/browse/entity-f43cd3b1-6dff-42e3-b02b-ee9b720bf29c",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/mickeys-home-alone.jpg"
+    },
+    {
+      "id": "miraculous-world-tokyo-stellar-force",
+      "title": "Miraculous World: Tokyo, Stellar Force",
+      "titleEn": "Miraculous World: Tokyo, Stellar Force",
+      "year": 2025,
+      "synopsis": "Kagami drags Marinette to Tokyo to help the Stellars.",
+      "directors": [
+        "Jun Violet"
+      ],
+      "cast": [
+        "Anouck Hautbois",
+        "Clara Soares",
+        "Claire Baradat",
+        "Grégory Laisné",
+        "Benjamin Bollen",
+        "Marie Nonnenmacher",
+        "Jeanne Chartier"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Animation"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-23T22:00:11+08:00",
+          "platform": "netflix",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/83037465",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/miraculous-world-tokyo-stellar-force.jpg"
+    },
+    {
+      "id": "tales-from-the-void-into-the-unknown",
+      "title": "Tales from the Void: Into the Unknown",
+      "titleEn": "Tales from the Void: Into the Unknown",
+      "year": 2024,
+      "synopsis": "",
+      "directors": [
+        "Joe Lynch"
+      ],
+      "cast": [
+        "Mpho Koaho",
+        "Martin Roach",
+        "Joey Freddy Larsen",
+        "John Thomas Gauthier",
+        "Sean Simms",
+        "Brielle Leonard",
+        "Phil Popp"
+      ],
+      "genres": [
+        "Horror",
+        "Mystery"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-23T22:00:12+08:00",
+          "platform": "netflix",
+          "date": "2026-12-03",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/82972444",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/tales-from-the-void-into-the-unknown.jpg"
+    },
+    {
+      "id": "fraggle-rock-a-holiday-gift",
+      "title": "Fraggle Rock: A Holiday Gift",
+      "titleEn": "Fraggle Rock: A Holiday Gift",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "John Tartaglia"
+      ],
+      "cast": [
+        "Nicole Scherzinger",
+        "Donna Kimball",
+        "John Tartaglia",
+        "Dave Goelz",
+        "Karen Prell",
+        "Jordan Lockhart",
+        "Lilli Cooper"
+      ],
+      "genres": [
+        "Family"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-23T22:00:13+08:00",
+          "platform": "apple-tv",
+          "date": "2026-12-04",
+          "status": "announced",
+          "region": "美国",
+          "note": "Apple TV 美国区定档，以平台官方为准",
+          "source": "https://tv.apple.com/us/movie/fraggle-rock-a-holiday-gift/umc.cmc.1w4haw75eryfelk71js2doeog",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/fraggle-rock-a-holiday-gift.jpg"
     }
   ],
   "ceremonies": []

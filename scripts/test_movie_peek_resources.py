@@ -113,8 +113,11 @@ class ImporterTests(unittest.TestCase):
         self.assertEqual(self.plan([row], {row["title"]: detail})[2]["news_added"], 1)
 
     def test_skip_other_posting_date(self):
-        row = {**ROW, "posted_at": "2026-11-05 18:00:00"}
+        # Window is the 7 days ending on DAY (2026-11-06); 11-05 is still in range.
+        row = {**ROW, "posted_at": "2026-10-29 18:00:00"}
         self.assertEqual(self.plan([row])[2]["news_added"], 0)
+        in_window = {**ROW, "posted_at": "2026-11-05 18:00:00"}
+        self.assertEqual(self.plan([in_window])[2]["news_added"], 1)
 
     def test_weibo_allowlist(self):
         for url in [None, "javascript:alert(1)", "https://evil.com/", "https://weibo.com.evil.com/x", "https://a:b@m.weibo.cn/detail/x", "https://m.weibo.cn:444/x", "https://m.weibo.cn/"]:

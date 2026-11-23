@@ -278,6 +278,8 @@ def plan_ingest(peek, details, data_dir, day, min_year, *, failed_detail_titles=
         posted = str(row.get("posted_at", ""))
         # 时效窗：接受最近 7 天内（含当天）出源的片子，不要因只差一天就漏掉。
         # 2026-11-12 用户定：下载站抓取的时效性放宽；年份门槛（min_year）不变。
+        # 2026-11-23：min_year 默认为消息年份及前一年（近两年）。已在片库不是跳过理由，
+        # 片库正是稿源；更早年份的老片仍走下面的 year window skip。
         try:
             posted_day = date.fromisoformat(posted[:10])
             run_day = date.fromisoformat(day)

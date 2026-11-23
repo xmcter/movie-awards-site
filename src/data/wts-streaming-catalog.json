@@ -1515,6 +1515,40 @@
         }
       ],
       "synopsisEn": "Christmas at the Kringles. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "trust-me-i-m-a-doctor",
+      "title": "Trust Me, I'm a Doctor",
+      "titleEn": "Trust Me, I'm a Doctor",
+      "year": 2026,
+      "synopsis": "Trust Me, I'm a Doctor。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Thane Economou"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e293b",
+        "#0f172a"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/trust-me-im-a-doctor-sets-digital-streaming-release-date/",
+          "source": "https://whentostream.com/trust-me-im-a-doctor-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-23T23:07:20+08:00"
+        }
+      ],
+      "synopsisEn": "Trust Me, I'm a Doctor. Streaming release date via When To Stream (US region)."
     }
   ],
   "ceremonies": []

@@ -1549,6 +1549,74 @@
         }
       ],
       "synopsisEn": "Trust Me, I'm a Doctor. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "nimrods",
+      "title": "Nimrods",
+      "titleEn": "Nimrods",
+      "year": 2026,
+      "synopsis": "Nimrods。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Lee Kirk"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#14532d",
+        "#052e16"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-18",
+          "status": "announced",
+          "region": "美国",
+          "note": "Peacock · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/green-day-comedy-nimrods-sets-peacock-streaming-premiere-date/",
+          "source": "https://whentostream.com/green-day-comedy-nimrods-sets-peacock-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-24T10:00:38+08:00"
+        }
+      ],
+      "synopsisEn": "Nimrods. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "blue-film",
+      "title": "Blue Film",
+      "titleEn": "Blue Film",
+      "year": 2026,
+      "synopsis": "Blue Film。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Elliot Tuttle"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e3a8a",
+        "#172554"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-11",
+          "status": "announced",
+          "region": "美国",
+          "note": "Sundance Now · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/acclaimed-drama-blue-film-gets-sundance-now-streaming-premiere-date/",
+          "source": "https://whentostream.com/acclaimed-drama-blue-film-gets-sundance-now-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-24T10:00:38+08:00"
+        }
+      ],
+      "synopsisEn": "Blue Film. Streaming release date via When To Stream (US region)."
     }
   ],
   "ceremonies": []

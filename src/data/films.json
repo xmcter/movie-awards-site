@@ -345,7 +345,18 @@
       "#1e3a5f",
       "#334155"
     ],
-    "streaming": [],
+    "streaming": [
+      {
+        "publishedAt": "2026-11-24T22:00:04+08:00",
+        "platform": "mubi",
+        "date": "2026-12-25",
+        "status": "announced",
+        "region": "美国",
+        "note": "Mubi 美国区定档，以平台官方为准",
+        "source": "https://mubi.com/films/fatherland-2026",
+        "sourceLabel": "片夜定档"
+      }
+    ],
     "poster": "/posters/fatherland.jpg",
     "doubanRating": {
       "score": 7.7,

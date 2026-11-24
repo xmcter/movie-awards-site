@@ -974,5 +974,19 @@
     "weiboUrl": "https://m.weibo.cn/detail/RsH58ePPx",
     "weiboLabel": "微博·华坚冯力士v",
     "summaryEn": "Dorothy is now streaming"
+  },
+  {
+    "id": "movie-peek-fjord-first-resource",
+    "filmId": "fjord",
+    "publishedAt": "2026-11-24T20:28:21+08:00",
+    "sourcePublishedAt": "2026-11-24T20:28:21+08:00",
+    "date": "2026-11-24",
+    "kind": "release",
+    "summary": "《峡湾》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RsTMFlb7x",
+    "weiboUrl": "https://m.weibo.cn/detail/RsTMFlb7x",
+    "weiboLabel": "微博·找片大师伊万"
   }
 ]

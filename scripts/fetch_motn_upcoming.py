@@ -386,16 +386,25 @@ def load_catalog(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def iter_film_records() -> list[tuple[str, dict[str, Any], dict[str, Any]]]:
-    out: list[tuple[str, dict[str, Any], dict[str, Any]]] = []
+def iter_film_records() -> list[tuple[str, Any, dict[str, Any]]]:
+    out: list[tuple[str, Any, dict[str, Any]]] = []
     for name in CATALOG_FILES:
         path = DATA / name
         if not path.exists() and name == "motn-streaming-catalog.json":
             continue
         raw = load_catalog(path)
-        if isinstance(raw, list) or not isinstance(raw, dict):
+        # films.json is a top-level list, the rest are {"films": [...]} dicts.
+        # Skipping list roots (pre-2026-11-24 behaviour) blinded the index to
+        # every curated film in films.json, so MotN created a duplicate
+        # "fatherland" instead of upserting its MUBI date onto the existing
+        # record, failing validate. Index both shapes.
+        if isinstance(raw, list):
+            films = raw
+        elif isinstance(raw, dict):
+            films = raw.get("films") or []
+        else:
             continue
-        for film in raw.get("films") or []:
+        for film in films:
             if isinstance(film, dict) and film.get("id"):
                 out.append((name, raw, film))
     return out

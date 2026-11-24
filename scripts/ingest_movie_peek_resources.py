@@ -41,7 +41,9 @@ CATALOGS = [
 ]
 # Existing curated catalog calls this film 可能的爱情; preserve its canonical ID.
 # 36808876 is 《奥德赛》; the curated catalog already has it as the-odyssey.
-KNOWN_FILM_IDS = {"36847425": "possible-love", "36808876": "the-odyssey"}
+# 37168181 is 《峡湾》 (Fjord); the curated catalog already has it as fjord
+# (year 2026 there; detail page reports 2025, so title+year match misses).
+KNOWN_FILM_IDS = {"36847425": "possible-love", "36808876": "the-odyssey", "37168181": "fjord"}
 # Detail-page Douban mismatches confirmed by editorial review: the download
 # site's detail page pairs these Douban IDs with a different film's resource.
 # 36011202 is 《复仇者联盟5：毁灭日》 (2026-12-18) but the detail page pairs

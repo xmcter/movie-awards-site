@@ -1542,6 +1542,179 @@
         "synopsis"
       ],
       "poster": "/posters/the-further-mis-adventures-of-cliff-booth.jpg"
+    },
+    {
+      "id": "7-dogs",
+      "title": "7 Dogs",
+      "titleEn": "7 Dogs",
+      "year": 2026,
+      "synopsis": "",
+      "directors": [
+        "Adil El Arbi",
+        "Bilall Fallah"
+      ],
+      "cast": [
+        "Ahmad Ezz",
+        "Karim Abdel Aziz",
+        "Monica Bellucci",
+        "Nasser Al Qasabi",
+        "Sayed Ragab",
+        "Tara Emad",
+        "Giancarlo Esposito"
+      ],
+      "genres": [
+        "Action",
+        "Comedy",
+        "Crime"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-24T21:59:55+08:00",
+          "platform": "netflix",
+          "date": "2026-11-27",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix 美国区定档，以平台官方为准",
+          "source": "https://www.netflix.com/title/83198436",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/7-dogs.jpg"
+    },
+    {
+      "id": "a-star-is-born",
+      "title": "A Star Is Born",
+      "titleEn": "A Star Is Born",
+      "year": 2025,
+      "synopsis": "",
+      "directors": [
+        "B. Monét"
+      ],
+      "cast": [
+        "Ceonne Orio"
+      ],
+      "genres": [
+        "Comedy",
+        "Drama"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-24T21:59:56+08:00",
+          "platform": "max",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max 美国区定档，以平台官方为准",
+          "source": "https://play.hbomax.com/movie/7a3a7d11-9c80-4652-9664-b84688e1ea7a",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/a-star-is-born.jpg"
+    },
+    {
+      "id": "mechanic-rocky",
+      "title": "Mechanic Rocky",
+      "titleEn": "Mechanic Rocky",
+      "year": 2024,
+      "synopsis": "Rakesh, a happy-go-lucky young mechanic, must take on the ruthless land grabber to save his beloved ancestral car garage, uncovering unexpected truths.The film delves into how Rocky, despite facing overwhelming obstacles and personal losses, fights his way out of these struggles, revealing the true essence of his journey as a mechanic",
+      "directors": [
+        "Ravi Teja Mullapudi"
+      ],
+      "cast": [
+        "Vishwak Sen",
+        "Meenakshi Chaudhary",
+        "Shraddha Srinath",
+        "Sunil Varma",
+        "Naresh",
+        "Hyper Adhi",
+        "Harsha Chemudu"
+      ],
+      "genres": [
+        "Action",
+        "Drama"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-24T21:59:59+08:00",
+          "platform": "max",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max 美国区定档，以平台官方为准",
+          "source": "https://play.hbomax.com/movie/dab48683-4884-4356-8803-696415c468aa",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/mechanic-rocky.jpg"
+    },
+    {
+      "id": "batman-knightfall-part-1-knightfall",
+      "title": "Batman: Knightfall Part 1: Knightfall",
+      "titleEn": "Batman: Knightfall Part 1: Knightfall",
+      "year": 2026,
+      "synopsis": "Arkham Asylum has been destroyed, and all its inmates have been unleashed upon Gotham City. As Batman races to round up some of his greatest enemies, he is pushed to his physical and mental limits and into a final confrontation with a new threat: the man called Bane!",
+      "directors": [
+        "Jeff Wamester"
+      ],
+      "cast": [
+        "Anson Mount",
+        "Michael Mando",
+        "Pablo Schreiber",
+        "Jeff Bennett",
+        "Luis Bermudez",
+        "Bruce Boxleitner",
+        "Jessica Camacho"
+      ],
+      "genres": [
+        "Action",
+        "Adventure",
+        "Animation"
+      ],
+      "posterColors": [
+        "#0f172a",
+        "#1e3a5f"
+      ],
+      "streaming": [
+        {
+          "publishedAt": "2026-11-24T22:00:03+08:00",
+          "platform": "max",
+          "date": "2026-12-07",
+          "status": "announced",
+          "region": "美国",
+          "note": "HBO Max 美国区定档，以平台官方为准",
+          "source": "https://play.hbomax.com/movie/6378b5a5-38a6-4626-8de3-dff4ef9d95ae",
+          "sourceLabel": "片夜定档"
+        }
+      ],
+      "copyPending": [
+        "title",
+        "synopsis"
+      ],
+      "poster": "/posters/batman-knightfall-part-1-knightfall.jpg"
     }
   ],
   "ceremonies": []

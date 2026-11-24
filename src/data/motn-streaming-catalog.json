@@ -1669,7 +1669,8 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/mechanic-rocky.jpg"
+      "poster": "/posters/mechanic-rocky.jpg",
+      "synopsisEn": "Rakesh, a happy-go-lucky young mechanic, must take on the ruthless land grabber to save his beloved ancestral car garage, uncovering unexpected truths. The film delves into how Rocky, despite facing overwhelming obstacles and personal losses, fights his way out of these struggles, revealing the true essence of his journey as a mechanic."
     },
     {
       "id": "batman-knightfall-part-1-knightfall",
@@ -1714,7 +1715,8 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/batman-knightfall-part-1-knightfall.jpg"
+      "poster": "/posters/batman-knightfall-part-1-knightfall.jpg",
+      "synopsisEn": "Arkham Asylum has been destroyed, and all its inmates have been unleashed upon Gotham City. As Batman races to round up some of his greatest enemies, he is pushed to his physical and mental limits and into a final confrontation with a new threat: the man called Bane!"
     }
   ],
   "ceremonies": []

@@ -989,5 +989,33 @@
     "weiboUrl": "https://m.weibo.cn/detail/RsTMFlb7x",
     "weiboLabel": "微博·找片大师伊万",
     "summaryEn": "Fjord is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-36558610-first-resource",
+    "filmId": "movie-douban-36558610",
+    "publishedAt": "2026-11-25T17:27:52+08:00",
+    "sourcePublishedAt": "2026-11-25T17:27:52+08:00",
+    "date": "2026-11-25",
+    "kind": "release",
+    "summary": "《异梦 Dreams》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rt21U6cXe",
+    "weiboUrl": "https://m.weibo.cn/detail/Rt21U6cXe",
+    "weiboLabel": "微博·华坚冯力士v"
+  },
+  {
+    "id": "movie-peek-movie-douban-37305697-first-resource",
+    "filmId": "movie-douban-37305697",
+    "publishedAt": "2026-11-25T17:17:41+08:00",
+    "sourcePublishedAt": "2026-11-25T17:17:41+08:00",
+    "date": "2026-11-25",
+    "kind": "release",
+    "summary": "《蚊子杯：最后一役》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rt1XLxt4S",
+    "weiboUrl": "https://m.weibo.cn/detail/Rt1XLxt4S",
+    "weiboLabel": "微博·OtisMilburn_"
   }
 ]

@@ -1556,6 +1556,84 @@
       "poster": "/posters/movie-douban-38586131.jpg",
       "runtime": 150,
       "synopsisEn": "Set in a world shaped by caste, violence and toxic masculinity, two childhood friends grow up inseparable in rural Tamil Nadu. The arrival of a woman named Dorothy changes their lives, her compassion quietly challenging the world around them."
+    },
+    {
+      "id": "movie-douban-36558610",
+      "title": "异梦 Dreams",
+      "year": 2025,
+      "synopsis": "Fernando是一位来自墨西哥的年轻芭蕾舞演员，他梦想着在美国获得国际声誉和生活。他相信他的恋人Jennifer（一位社交名媛和慈善家）会支持他，于是他抛弃了一切，在穿越边境时险些丧命。然而，他的到来打乱了Jennifer精心打造的世界。她愿意做任何事情来保护他们共同的未来—以及她为自己建立的生活。",
+      "directors": [
+        "米歇尔·弗兰克"
+      ],
+      "cast": [
+        "杰西卡·查斯坦",
+        "伊萨克·埃尔南德斯",
+        "鲁伯特·弗兰德",
+        "马绍尔·贝尔",
+        "埃利希奥·梅兰德斯",
+        "梅赛德斯·埃尔南德斯",
+        "吉姆·安德森",
+        "Bobby August Jr.",
+        "李·布雷思韦特",
+        "塞德里克·卡布雷拉",
+        "Phillip Caires",
+        "奈萨·多尔蒂",
+        "尼古拉斯·古尔德",
+        "Scott Jordan",
+        "Jayden Leavitt",
+        "塔蒂亚娜·朗德罗斯",
+        "大卫·席夫利",
+        "雷切尔·图洛夫",
+        "特雷西·托德",
+        "Harris Warren"
+      ],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "墨西哥",
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36558610.jpg",
+      "runtime": 95
+    },
+    {
+      "id": "movie-douban-37305697",
+      "title": "蚊子杯：最后一役",
+      "year": 2026,
+      "synopsis": "二战中偷袭珍珠港时期，四个美国顶级大学生橄榄球员此前放弃名利加入了海军陆战队，在准备迎接日军袭击时，他们打了一场传奇性的橄榄球比赛，有一些历史上最好的球员加入。而这场赛事对很多人来说，将是他们人生的最后一场比赛。",
+      "directors": [
+        "彼得·博格"
+      ],
+      "cast": [
+        "尼古拉斯·加利齐纳",
+        "比尔·斯卡斯加德",
+        "雷·尼科尔森",
+        "汤姆·弗朗西斯",
+        "彼得·博格",
+        "史蒂文·麦考马克",
+        "史泰西·克劳森",
+        "艾拉·纽顿",
+        "萝拉·邦德",
+        "Brodie Henson",
+        "欧佳·佩斯塔",
+        "Asabi Goodman",
+        "多米尼克·博加特",
+        "Claudia Ware",
+        "雅各布·霍胡阿"
+      ],
+      "genres": [
+        "剧情",
+        "历史",
+        "战争"
+      ],
+      "country": [
+        "美国"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-37305697.jpg",
+      "runtime": 127
     }
   ],
   "ceremonies": []

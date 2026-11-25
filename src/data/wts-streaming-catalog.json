@@ -1617,6 +1617,108 @@
         }
       ],
       "synopsisEn": "Blue Film. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "long-days-journey-into-night",
+      "title": "Long Day's Journey Into Night",
+      "titleEn": "Long Day's Journey Into Night",
+      "year": 2026,
+      "synopsis": "Long Day's Journey Into Night。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Jonathan Kent"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#7c2d12",
+        "#431407"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-04",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/long-days-journey-into-night-sets-digital-streaming-release-date/",
+          "source": "https://whentostream.com/long-days-journey-into-night-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-25T11:08:04+08:00"
+        }
+      ],
+      "synopsisEn": "Long Day's Journey Into Night. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "fight-for-84",
+      "title": "Fight for '84",
+      "titleEn": "Fight for '84",
+      "year": 2027,
+      "synopsis": "Fight for '84。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Andrés Baiz"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#1e3a8a",
+        "#172554"
+      ],
+      "streaming": [
+        {
+          "platform": "netflix",
+          "date": "2027-02-19",
+          "status": "announced",
+          "region": "美国",
+          "note": "Netflix · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/netflix-unveils-first-look-at-jamie-foxx-boxing-drama-fight-for-84-sets-streaming-premiere-date/",
+          "source": "https://whentostream.com/netflix-unveils-first-look-at-jamie-foxx-boxing-drama-fight-for-84-sets-streaming-premiere-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-25T11:08:04+08:00"
+        }
+      ],
+      "synopsisEn": "Fight for '84. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "whalefall",
+      "title": "Whalefall",
+      "titleEn": "Whalefall",
+      "year": 2026,
+      "synopsis": "Whalefall。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Brian Duffield"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#0c4a6e",
+        "#082f49"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/survival-thriller-whalefall-sets-digital-streaming-release-date/",
+          "source": "https://whentostream.com/survival-thriller-whalefall-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-25T11:08:04+08:00"
+        }
+      ],
+      "synopsisEn": "Whalefall. Streaming release date via When To Stream (US region)."
     }
   ],
   "ceremonies": []

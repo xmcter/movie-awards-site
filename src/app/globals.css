@@ -76,3 +76,24 @@ body {
     overflow: hidden;
   }
 }
+
+/* iPad / tablet typography (2026-11-25)
+ * iPad mini (744 portrait / 1133 landscape) got the phone/desktop Tailwind sizes: body 14px,
+ * badges 10–11px. Tablet widths (700–1200px) and touch screens ≥700px get one step up;
+ * phones (<700px) and mouse desktops >1200px are unchanged. sm: variants always match ≥700px. */
+@media (min-width: 700px) and (max-width: 1200px), (min-width: 700px) and (pointer: coarse) {
+  .text-\[9px\], .text-\[10px\], .text-\[11px\] { font-size: 13px; }
+  .text-xs { font-size: 14px; }
+  .text-sm { font-size: 16px; }
+  .text-base { font-size: 17px; }
+  .text-\[17px\] { font-size: 18px; }
+  .text-\[1\.05rem\] { font-size: 18px; }
+  .text-lg { font-size: 19px; }
+  .text-xl { font-size: 1.25rem; }
+  .text-2xl { font-size: 1.5rem; }
+  .text-3xl { font-size: 1.875rem; }
+  .sm\:text-base { font-size: 17px; }
+  .sm\:text-lg { font-size: 19px; }
+  .sm\:text-2xl { font-size: 1.5rem; }
+  .sm\:text-3xl { font-size: 1.875rem; }
+}

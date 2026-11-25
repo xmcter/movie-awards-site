@@ -1002,7 +1002,8 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/Rt21U6cXe",
     "weiboUrl": "https://m.weibo.cn/detail/Rt21U6cXe",
-    "weiboLabel": "微博·华坚冯力士v"
+    "weiboLabel": "微博·华坚冯力士v",
+    "summaryEn": "Dreams is now streaming"
   },
   {
     "id": "movie-peek-movie-douban-37305697-first-resource",
@@ -1016,6 +1017,7 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/Rt1XLxt4S",
     "weiboUrl": "https://m.weibo.cn/detail/Rt1XLxt4S",
-    "weiboLabel": "微博·OtisMilburn_"
+    "weiboLabel": "微博·OtisMilburn_",
+    "summaryEn": "Mosquito Bowl: The Last Game is now streaming"
   }
 ]

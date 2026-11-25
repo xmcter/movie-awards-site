@@ -1596,7 +1596,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-36558610.jpg",
-      "runtime": 95
+      "runtime": 95,
+      "synopsisEn": "Fernando is a young ballet dancer from Mexico who dreams of international fame and a life in the United States. Believing that his lover Jennifer—a socialite and philanthropist—will support him, he abandons everything and nearly dies crossing the border. Yet his arrival disrupts the carefully constructed world Jennifer has built. She will do anything to protect their shared future—and the life she has made for herself."
     },
     {
       "id": "movie-douban-37305697",
@@ -1633,7 +1634,8 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-37305697.jpg",
-      "runtime": 127
+      "runtime": 127,
+      "synopsisEn": "During the attack on Pearl Harbor in World War II, four top American college football players had given up fame and fortune to join the Marine Corps. As they prepared to face the Japanese assault, they played a legendary football game joined by some of the best players in history. For many, it would be the last game of their lives."
     }
   ],
   "ceremonies": []

@@ -68,7 +68,7 @@ function LoginButton({ en }: { en: boolean }) {
       <button
         type="button"
         onClick={signOut}
-        className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
+        className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full border border-cinema-border/70 px-3 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
         title={`${session.email} · ${en ? "click to sign out" : "点击退出登录"}`}
       >
         {en ? "Signed in" : "已登录"}
@@ -81,7 +81,7 @@ function LoginButton({ en }: { en: boolean }) {
         type="button"
         onClick={signIn}
         disabled={busy}
-        className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent disabled:opacity-50"
+        className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full border border-cinema-border/70 px-3 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent disabled:opacity-50"
       >
         {en ? "Sign in" : "登录"}
       </button>
@@ -109,7 +109,7 @@ function LangLink({ href, en }: { href: string; en: boolean }) {
   return (
     <Link
       href={href}
-      className="rounded-full border border-cinema-border/70 px-2 py-0.5 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
+      className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full border border-cinema-border/70 px-3 text-xs font-medium text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
       aria-label={en ? "Switch to Chinese" : "Switch to English"}
     >
       {en ? "中文" : "EN"}
@@ -197,7 +197,7 @@ export default function Header() {
             <button
               ref={buttonRef}
               type="button"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cinema-border/70 text-sm text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-cinema-border/70 text-sm text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent"
               aria-expanded={open}
               aria-controls="site-header-menu"
               aria-label={open ? (en ? "Close menu" : "关闭菜单") : (en ? "Open menu" : "打开菜单")}

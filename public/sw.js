@@ -9,7 +9,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v12-20261125-tablet-type';
+var CACHE_VERSION = 'v13-20261126-perf';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 

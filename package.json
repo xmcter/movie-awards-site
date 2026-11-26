@@ -15,7 +15,7 @@
     "check:build": "NEXT_TELEMETRY_DISABLED=1 npm run build && npm run test:timeline -- --built && npm run test:built",
     "test": "npm run validate && npm run test:data && npm run test:timeline && npm run check:build",
     "fill-douban": "node scripts/fill-douban-ratings.mjs",
-    "prebuild": "node scripts/build-thumbnails.mjs",
+    "prebuild": "node scripts/publish-auteur-news.mjs && node scripts/build-thumbnails.mjs",
     "postbuild": "node scripts/fix-en-lang.mjs"
   },
   "repository": {

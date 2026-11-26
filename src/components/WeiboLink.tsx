@@ -35,10 +35,10 @@ export default function WeiboLink({
       target="_blank"
       rel="noopener noreferrer"
       title={title}
-      className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
+      className="inline-flex min-h-10 items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-3 text-[12px] text-cinema-muted transition hover:border-cinema-gold/40 hover:text-cinema-text"
     >
       <span>{locale === "en" ? "Weibo" : "微博"}</span>
-      <span className="text-[9px] opacity-70">↗</span>
+      <span className="text-[11px] opacity-70">↗</span>
     </a>
   );
 }

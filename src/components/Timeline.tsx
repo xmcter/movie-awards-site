@@ -721,7 +721,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
                             className="inline-flex items-center gap-1 rounded-full border border-cinema-border/70 bg-cinema-card px-2 py-0.5 text-[10px] text-cinema-gold transition hover:border-cinema-gold/40 hover:text-cinema-gold-light"
                           >
                             <span>{en ? "🎞️ Guide" : "🎞️ 导赏"}</span>
-                            <span className="text-[9px] opacity-70">↗</span>
+                            <span className="text-[11px] opacity-70">↗</span>
                           </a>
                           <WeiboLink href={event.weiboUrl} label={event.weiboLabel} locale={locale} />
                         </div>
@@ -911,7 +911,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
               setFilter(id);
               setBatches(1);
             }}
-            className={`shrink-0 rounded-full border px-3 py-1.5 text-xs font-medium transition ${
+            className={`inline-flex shrink-0 items-center justify-center min-h-10 rounded-full border px-3 text-xs font-medium transition ${
               filter === id
                 ? "border-cinema-gold/50 bg-cinema-gold/15 text-cinema-gold"
                 : "border-cinema-border/70 text-cinema-muted hover:border-cinema-gold/40 hover:text-cinema-text"
@@ -922,7 +922,7 @@ export default function Timeline({ events, locale = "zh" }: { events: TimelineEv
         ))}
         <Link
           href={en ? "/en/films" : "/films"}
-          className="shrink-0 rounded-full border border-cinema-border/70 px-3 py-1.5 text-xs font-medium text-cinema-gold hover:border-cinema-gold/40"
+          className="inline-flex shrink-0 items-center justify-center min-h-10 rounded-full border border-cinema-border/70 px-3 text-xs font-medium text-cinema-gold hover:border-cinema-gold/40"
         >
           {en ? "All films" : "全部影片"}
         </Link>

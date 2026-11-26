@@ -118,6 +118,9 @@ function LangLink({ href, en }: { href: string; en: boolean }) {
 }
 
 const navLinkClass = "text-xs tracking-wider text-cinema-muted hover:text-cinema-accent";
+// 回首页：与 ai / blog / 优惠页同一个 ⌂ 图标（这里沿用本站 EN/登录按钮的描边圆钮外观）
+const homeBtnClass =
+  "inline-flex h-10 w-10 items-center justify-center rounded-full border border-cinema-border/70 text-cinema-muted hover:border-cinema-accent/40 hover:text-cinema-accent";
 
 export default function Header() {
   const pathname = usePathname();
@@ -166,16 +169,16 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 min-w-0 border-b border-cinema-border/80 bg-cinema-bg/75 backdrop-blur-xl">
       <div className="mx-auto min-w-0 max-w-3xl px-4 sm:px-6">
-        <div className="flex min-w-0 items-center justify-between gap-2 py-3">
-          <Link href={homeHref} className="group flex min-w-0 items-center gap-2">
+        <div className="flex min-h-14 min-w-0 items-center justify-between gap-2 py-2">
+          <Link href={homeHref} className="group flex min-w-0 items-center gap-2.5">
             <img
               src="/apple-touch-icon.png?v=20261111-22"
-              width={32}
-              height={32}
+              width={36}
+              height={36}
               alt=""
-              className="h-8 w-8 shrink-0 rounded-[7px]"
+              className="h-9 w-9 shrink-0 rounded-[9px]"
             />
-            <span className="min-w-0 truncate text-[17px] font-semibold tracking-tight text-cinema-text group-hover:text-cinema-accent">
+            <span className="min-w-0 truncate text-[17px] font-bold tracking-tight text-cinema-text group-hover:text-cinema-accent">
               {en ? "Screen News" : "银幕新讯"}
             </span>
             <span className="hidden shrink-0 rounded-full border border-cinema-gold/30 bg-cinema-gold/10 px-2 py-0.5 text-[10px] font-medium text-cinema-gold sm:inline-block">
@@ -188,8 +191,13 @@ export default function Header() {
             </Link>
             <LangLink href={toggleHref} en={en} />
             <LoginButton en={en} />
-            <a href="https://readcine.com" className={navLinkClass}>
-              readcine.
+            <a
+              href="https://readcine.com/"
+              className={homeBtnClass}
+              aria-label={en ? "Back to ReadCine" : "返回 ReadCine 首页"}
+              title={en ? "Back to ReadCine" : "返回 ReadCine 首页"}
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7" /><path d="M5.5 9v11h4.5v-6h4v6h4.5V9" /></svg>
             </a>
           </nav>
           <div className="flex shrink-0 items-center gap-2 sm:hidden">
@@ -221,8 +229,9 @@ export default function Header() {
                 {en ? "Coming soon" : "即将上线"}
               </Link>
               <LoginButton en={en} />
-              <a href="https://readcine.com" className={navLinkClass}>
-                readcine.
+              <a href="https://readcine.com/" className={`${navLinkClass} inline-flex min-h-10 items-center gap-1.5`}>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7" /><path d="M5.5 9v11h4.5v-6h4v6h4.5V9" /></svg>
+                {en ? "Back to ReadCine" : "回 ReadCine 首页"}
               </a>
             </>
           ) : null}

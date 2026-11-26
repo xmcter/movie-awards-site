@@ -97,3 +97,28 @@ body {
   .sm\:text-2xl { font-size: 1.5rem; }
   .sm\:text-3xl { font-size: 1.875rem; }
 }
+
+/* 回到顶部：与 readcine.com/shared/rc-chrome.css 的 .rc-totop 同一规格（2026-11-26 ui-unify） */
+.rc-totop {
+  position: fixed; z-index: 90;
+  right: max(16px, calc(env(safe-area-inset-right, 0px) + 12px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: color-mix(in srgb, var(--rc-card) 72%, transparent); color: var(--rc-text);
+  -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .45), inset 0 0 0 .5px color-mix(in srgb, var(--rc-text) 10%, transparent);
+  cursor: pointer; -webkit-tap-highlight-color: transparent;
+  opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(12px);
+  transition: opacity .28s cubic-bezier(.2, .8, .2, 1), transform .28s cubic-bezier(.2, .8, .2, 1), visibility .28s, color .18s ease;
+}
+.rc-totop.is-visible { opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+.rc-totop:hover { color: var(--rc-accent); }
+.rc-totop:active { transform: scale(.94); }
+.rc-totop:focus-visible { outline: 2px solid var(--rc-accent); outline-offset: 2px; }
+@media (prefers-color-scheme: light) {
+  :root:not(.theme-night) .rc-totop { box-shadow: 0 2px 4px rgba(20, 23, 28, .06), 0 14px 36px rgba(20, 23, 28, .10), inset 0 0 0 .5px rgba(0, 0, 0, .08); }
+}
+html.theme-day .rc-totop { box-shadow: 0 2px 4px rgba(20, 23, 28, .06), 0 14px 36px rgba(20, 23, 28, .10), inset 0 0 0 .5px rgba(0, 0, 0, .08); }
+@media (prefers-reduced-motion: reduce) { .rc-totop { transition: none; } }
+@media print { .rc-totop { display: none !important; } }

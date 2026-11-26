@@ -56,10 +56,11 @@ export default function Footer() {
         </p>
         <p className="mt-2 text-xs text-cinema-muted/70">
           <a
-            href="https://readcine.com"
-            className="underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
+            href="https://readcine.com/"
+            className="inline-flex items-center gap-1 underline decoration-cinema-border underline-offset-2 hover:text-cinema-accent"
           >
-            readcine {en ? "nav" : "导航"}
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3.5 10.5 12 3.5l8.5 7" /><path d="M5.5 9v11h4.5v-6h4v6h4.5V9" /></svg>
+            {en ? "Back to ReadCine" : "回 ReadCine 首页"}
           </a>
           <span className="mx-2 opacity-40">·</span>
           <a

@@ -3,6 +3,7 @@ import LangSync from "@/components/LangSync";
 import type { Metadata, Viewport } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 import { CrossSeenStyle } from "@/components/CrossSeen";
 import ThemeInit from "@/components/ThemeInit";
 import "./globals.css";
@@ -74,8 +75,12 @@ export const metadata: Metadata = {
   },
 };
 
+// ReadCine 全家统一（2026-11-26 ui-unify）：浏览器顶栏颜色 = 页面底色（与 readcine.com / ai / blog 一致）
 export const viewport: Viewport = {
-  themeColor: "#e24b3b",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f5f5f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
 };
 
 export default function RootLayout({
@@ -101,6 +106,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <BackToTop />
         <CrossSeenStyle />
 
       </body>

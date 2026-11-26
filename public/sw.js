@@ -9,7 +9,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v13-20261126-perf';
+var CACHE_VERSION = 'v14-20261126-ui-unify';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 

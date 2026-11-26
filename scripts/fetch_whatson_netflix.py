@@ -89,6 +89,13 @@ SERIES_RE = re.compile(
     r"episode|docuseries)\b|剧集|迷你剧|连续剧|限定剧"
 )
 DOC_RE = re.compile(r"(?i)\bdocumentary\b|\bdocuseries\b|纪录片|档案纪录")
+
+# 手动剔除后不再采入：2026-11-25 22:51 轮已驳回的系列电视特辑，WON 日历仍每天返回，
+# 无此表下一轮又会原样加回。新增剔除项时把 slug 和原因追加到这里即可。
+MANUAL_REJECT_IDS = {
+    "miraculous-world-london-at-the-edge-of-time": "series TV special, 44 min",
+    "miraculous-world-tokyo-stellar-force": "series TV special, 51 min",
+}
 ROUNDUP_RE = re.compile(
     r"(?i)\b(what'?s coming|first look|this week|guide to|slate|round[- ]?up|"
     r"everything coming|new on netflix)\b"
@@ -235,6 +242,8 @@ def should_skip_movie(item: dict[str, Any], kinds: dict[str, str] | None = None)
     blob = f"{name} {desc}"
     if not name:
         return "empty_title"
+    if slugify(name) in MANUAL_REJECT_IDS:
+        return "manual_reject"
     if ROUNDUP_RE.search(name):
         return "roundup"
     if kinds:

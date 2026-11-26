@@ -1019,5 +1019,35 @@
     "weiboUrl": "https://m.weibo.cn/detail/Rt1XLxt4S",
     "weiboLabel": "微博·OtisMilburn_",
     "summaryEn": "Mosquito Bowl: The Last Game is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-36246195-first-resource",
+    "filmId": "movie-douban-36246195",
+    "publishedAt": "2026-11-26T19:58:40+08:00",
+    "sourcePublishedAt": "2026-11-26T19:58:40+08:00",
+    "date": "2026-11-26",
+    "kind": "release",
+    "summary": "《蜘蛛侠：崭新之日》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RtcrCkBWV",
+    "weiboUrl": "https://m.weibo.cn/detail/RtcrCkBWV",
+    "weiboLabel": "微博·便民影音馆",
+    "summaryEn": "Spider-Man: Brand New Day is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-36618556-first-resource",
+    "filmId": "movie-douban-36618556",
+    "publishedAt": "2026-11-26T17:03:31+08:00",
+    "sourcePublishedAt": "2026-11-26T17:03:31+08:00",
+    "date": "2026-11-26",
+    "kind": "release",
+    "summary": "《编个丈夫》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rtbiw8mnp",
+    "weiboUrl": "https://m.weibo.cn/detail/Rtbiw8mnp",
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "The Wicker Husband is now streaming"
   }
 ]

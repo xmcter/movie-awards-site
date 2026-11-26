@@ -1719,6 +1719,72 @@
         }
       ],
       "synopsisEn": "Whalefall. Streaming release date via When To Stream (US region)."
+    },
+    {
+      "id": "the-scout",
+      "title": "The Scout",
+      "titleEn": "The Scout",
+      "year": 2026,
+      "synopsis": "The Scout。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Paula González-Nasser"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#14532d",
+        "#052e16"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-11-27",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/acclaimed-drama-the-scout-sets-digital-streaming-release-date/",
+          "source": "https://whentostream.com/acclaimed-drama-the-scout-sets-digital-streaming-release-date/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-26T10:01:00+08:00"
+        }
+      ]
+    },
+    {
+      "id": "flywheel-ignition-of-the-soul",
+      "title": "Flywheel: Ignition of the Soul",
+      "titleEn": "Flywheel: Ignition of the Soul",
+      "year": 2026,
+      "synopsis": "Flywheel: Ignition of the Soul。流媒体定档来自 When To Stream（美国区）。",
+      "directors": [
+        "Alessandro Barros"
+      ],
+      "cast": [],
+      "genres": [
+        "剧情"
+      ],
+      "country": [
+        "美国"
+      ],
+      "posterColors": [
+        "#7c2d12",
+        "#431407"
+      ],
+      "streaming": [
+        {
+          "platform": "other",
+          "date": "2026-12-01",
+          "status": "announced",
+          "region": "美国",
+          "note": "PVOD/VOD · 地区：美国（When To Stream；须以平台官方为准） · 来源 https://whentostream.com/sony-affirm-sets-digital-streaming-release-date-for-inspirational-drama-flywheel-ignition-of-the-soul/",
+          "source": "https://whentostream.com/sony-affirm-sets-digital-streaming-release-date-for-inspirational-drama-flywheel-ignition-of-the-soul/",
+          "sourceLabel": "定档追踪",
+          "publishedAt": "2026-11-26T10:01:00+08:00"
+        }
+      ]
     }
   ],
   "ceremonies": []

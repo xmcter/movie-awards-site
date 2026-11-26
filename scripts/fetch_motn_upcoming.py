@@ -228,6 +228,14 @@ SERIES_RE = re.compile(
 )
 DOC_RE = re.compile(r"(?i)\bdocumentary\b|\bdocuseries\b|纪录片|档案纪录")
 
+# 手动剔除后不再采入：2026-11-25 commit 8fadab2 剔除的 3 项，MotN API 仍每天返回，
+# 无此表下一轮又会原样加回。新增剔除项时把 slug 和原因追加到这里即可。
+MANUAL_REJECT_IDS = {
+    "mickeys-home-alone": "short special, not a feature film",
+    "focker-in-law": "wrong MotN data",
+    "fraggle-rock-a-holiday-gift": "series special, not a feature film",
+}
+
 
 def log(msg: str) -> None:
     print(msg, flush=True)
@@ -368,6 +376,8 @@ def should_skip(change: dict[str, Any], show: dict[str, Any] | None) -> str | No
     title = (show.get("title") or show.get("originalTitle") or "").strip()
     if not title:
         return "empty_title"
+    if slugify(title) in MANUAL_REJECT_IDS:
+        return "manual_reject"
     year_raw = show.get("releaseYear")
     try:
         year_i = int(year_raw) if year_raw is not None else None

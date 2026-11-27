@@ -75,7 +75,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/being-heumann.jpg"
+      "poster": "/posters/being-heumann.jpg",
+      "tmdbRating": {
+        "score": 6.802,
+        "votes": 43,
+        "tmdbId": 1050981,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "stranger-things-fireplace",
@@ -107,7 +113,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/stranger-things-fireplace.jpg"
+      "poster": "/posters/stranger-things-fireplace.jpg",
+      "tmdbRating": {
+        "score": 8.624,
+        "votes": 85,
+        "tmdbId": 1594337,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "madden",
@@ -149,7 +161,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/madden.jpg"
+      "poster": "/posters/madden.jpg",
+      "tmdbRating": {
+        "score": 6.5,
+        "votes": 69,
+        "tmdbId": 1131943,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "perfect-liars",
@@ -189,7 +207,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/perfect-liars.jpg"
+      "poster": "/posters/perfect-liars.jpg",
+      "tmdbRating": {
+        "score": 7.2,
+        "votes": 45,
+        "tmdbId": 1568060,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "way-of-the-warrior-kid",
@@ -232,7 +256,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/way-of-the-warrior-kid.jpg"
+      "poster": "/posters/way-of-the-warrior-kid.jpg",
+      "tmdbRating": {
+        "score": 7.605,
+        "votes": 38,
+        "tmdbId": 1280115,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "barrio-triste",
@@ -276,7 +306,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/barrio-triste.jpg"
+      "poster": "/posters/barrio-triste.jpg",
+      "tmdbRating": {
+        "score": 5.8,
+        "votes": 5,
+        "tmdbId": 1310573,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "taxi-moto",
@@ -313,7 +349,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/taxi-moto.jpg"
+      "poster": "/posters/taxi-moto.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1614698,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "in-a-holidaze",
@@ -356,7 +398,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/in-a-holidaze.jpg"
+      "poster": "/posters/in-a-holidaze.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1588626,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "la-bola-negra",
@@ -406,6 +454,12 @@
         "count": 30820,
         "doubanId": "37215318",
         "updatedAt": "2026-11-13T10:00:34.891Z"
+      },
+      "tmdbRating": {
+        "score": 7.897,
+        "votes": 266,
+        "tmdbId": 1422041,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -450,7 +504,13 @@
           "publishedAt": "2026-11-05T21:10:59+08:00"
         }
       ],
-      "poster": "/posters/the-man-with-the-bag.jpg"
+      "poster": "/posters/the-man-with-the-bag.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1137888,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "hot-line",
@@ -493,7 +553,13 @@
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
       ],
-      "poster": "/posters/hot-line.jpg"
+      "poster": "/posters/hot-line.jpg",
+      "tmdbRating": {
+        "score": 5.7,
+        "votes": 3,
+        "tmdbId": 1462591,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "a-wisconsin-christmas-pie",
@@ -535,7 +601,13 @@
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
       ],
-      "poster": "/posters/a-wisconsin-christmas-pie.jpg"
+      "poster": "/posters/a-wisconsin-christmas-pie.jpg",
+      "tmdbRating": {
+        "score": 5.8,
+        "votes": 5,
+        "tmdbId": 1463182,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "gianmarco-soresi-thief-of-joy",
@@ -578,6 +650,12 @@
         "count": 1326,
         "doubanId": "37496194",
         "updatedAt": "2026-11-13T11:03:27.972Z"
+      },
+      "tmdbRating": {
+        "score": 8,
+        "votes": 7,
+        "tmdbId": 1547831,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -621,7 +699,13 @@
           "publishedAt": "2026-11-06T17:39:41+08:00"
         }
       ],
-      "poster": "/posters/my-crazy-feminist-girlfriend.jpg"
+      "poster": "/posters/my-crazy-feminist-girlfriend.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1591961,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "ezra",
@@ -664,7 +748,13 @@
           "sourceLabel": "片夜定档"
         }
       ],
-      "poster": "/posters/ezra.jpg"
+      "poster": "/posters/ezra.jpg",
+      "tmdbRating": {
+        "score": 6.86,
+        "votes": 132,
+        "tmdbId": 977262,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "daayra",
@@ -709,7 +799,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/daayra.jpg"
+      "poster": "/posters/daayra.jpg",
+      "tmdbRating": {
+        "score": 6.4,
+        "votes": 4,
+        "tmdbId": 1215889,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "ranabaali",
@@ -754,7 +850,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/ranabaali.jpg"
+      "poster": "/posters/ranabaali.jpg",
+      "tmdbRating": {
+        "score": 5.714,
+        "votes": 7,
+        "tmdbId": 1389379,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "bad-day",
@@ -798,7 +900,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/bad-day.jpg"
+      "poster": "/posters/bad-day.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1515392,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "in-waves",
@@ -842,7 +950,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/in-waves.jpg"
+      "poster": "/posters/in-waves.jpg",
+      "tmdbRating": {
+        "score": 7.3,
+        "votes": 41,
+        "tmdbId": 947502,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "madame-web",
@@ -893,7 +1007,13 @@
         "doubanId": "34846514",
         "updatedAt": "2026-11-13T11:04:52.136Z"
       },
-      "synopsisEn": "After showing signs of clairvoyance, New York City paramedic Cassandra Webb must confront revelations about her past and protect three young women from a mysterious adversary who wants them dead."
+      "synopsisEn": "After showing signs of clairvoyance, New York City paramedic Cassandra Webb must confront revelations about her past and protect three young women from a mysterious adversary who wants them dead.",
+      "tmdbRating": {
+        "score": 5.238,
+        "votes": 2781,
+        "tmdbId": 634492,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "clashing-through-the-snow",
@@ -937,7 +1057,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/clashing-through-the-snow.jpg"
+      "poster": "/posters/clashing-through-the-snow.jpg",
+      "tmdbRating": {
+        "score": 6.053,
+        "votes": 66,
+        "tmdbId": 1611767,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-first-snow-of-fraggle-rock",
@@ -982,7 +1108,13 @@
         "synopsis"
       ],
       "poster": "/posters/the-first-snow-of-fraggle-rock.jpg",
-      "synopsisEn": "When the holidays are filled with unexpected adventures and challenges, the Fraggles learn to appreciate each day for being unique and special, like a snowflake."
+      "synopsisEn": "When the holidays are filled with unexpected adventures and challenges, the Fraggles learn to appreciate each day for being unique and special, like a snowflake.",
+      "tmdbRating": {
+        "score": 6.625,
+        "votes": 16,
+        "tmdbId": 1566269,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "child-of-the-rouge",
@@ -1023,7 +1155,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/child-of-the-rouge.jpg"
+      "poster": "/posters/child-of-the-rouge.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1702009,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "haiku",
@@ -1067,7 +1205,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/haiku.jpg"
+      "poster": "/posters/haiku.jpg",
+      "tmdbRating": {
+        "score": 8,
+        "votes": 1,
+        "tmdbId": 1593350,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-roses",
@@ -1111,7 +1255,13 @@
         "synopsis"
       ],
       "poster": "/posters/the-roses.jpg",
-      "synopsisEn": "Life seems easy for a picture-perfect couple. But behind the façade of their supposedly ideal marriage, a storm is brewing. Soon, a tinderbox of fierce competition and hidden resentment ignites in this wonderfully wry dark comedy. Warning: Some flashing-lights scenes in this film may affect photosensitive viewers."
+      "synopsisEn": "Life seems easy for a picture-perfect couple. But behind the façade of their supposedly ideal marriage, a storm is brewing. Soon, a tinderbox of fierce competition and hidden resentment ignites in this wonderfully wry dark comedy. Warning: Some flashing-lights scenes in this film may affect photosensitive viewers.",
+      "tmdbRating": {
+        "score": 6.652,
+        "votes": 832,
+        "tmdbId": 1267905,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "gianmarco-soresi-god-forbid",
@@ -1148,7 +1298,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/gianmarco-soresi-god-forbid.jpg"
+      "poster": "/posters/gianmarco-soresi-god-forbid.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1818957,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "risa-and-the-wind-phone",
@@ -1237,7 +1393,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/ray-gunn.jpg"
+      "poster": "/posters/ray-gunn.jpg",
+      "tmdbRating": {
+        "score": 9,
+        "votes": 1,
+        "tmdbId": 940009,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "nate-bargatze-good-for-nathan",
@@ -1274,7 +1436,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/nate-bargatze-good-for-nathan.jpg"
+      "poster": "/posters/nate-bargatze-good-for-nathan.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1824177,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "drishyam-the-conclusion",
@@ -1319,7 +1487,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/drishyam-the-conclusion.jpg"
+      "poster": "/posters/drishyam-the-conclusion.jpg",
+      "tmdbRating": {
+        "score": 7.7,
+        "votes": 15,
+        "tmdbId": 1269325,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "sasquatch-sunset",
@@ -1362,7 +1536,13 @@
         "synopsis"
       ],
       "poster": "/posters/sasquatch-sunset.jpg",
-      "synopsisEn": "In the misty forests of North America, a family of Sasquatches, possibly the last of their enigmatic kind, embark on an absurdist, epic, hilarious and ultimately poignant journey over the course of one year. The shaggy and noble giants fight for survival as they find themselves on a collision course with the ever-changing world around them. Starring Jesse Eisenberg, Riley Keough, Christophe Zaj..."
+      "synopsisEn": "In the misty forests of North America, a family of Sasquatches, possibly the last of their enigmatic kind, embark on an absurdist, epic, hilarious and ultimately poignant journey over the course of one year. The shaggy and noble giants fight for survival as they find themselves on a collision course with the ever-changing world around them. Starring Jesse Eisenberg, Riley Keough, Christophe Zaj...",
+      "tmdbRating": {
+        "score": 5.621,
+        "votes": 116,
+        "tmdbId": 1015634,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-perfect-christmas-date",
@@ -1450,7 +1630,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/a-dance-with-death.jpg"
+      "poster": "/posters/a-dance-with-death.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1633502,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-magic-faraway-tree",
@@ -1496,7 +1682,13 @@
         "synopsis"
       ],
       "poster": "/posters/the-magic-faraway-tree.jpg",
-      "synopsisEn": "Based on Enid Blyton's best-selling children's classic, The Magic Faraway Tree follows Polly and Tim and their children Beth, Joe and Fran — a modern family forced to relocate to the remote English countryside. Soon after arriving, the children discover a magical tree and its extraordinary, eccentric residents."
+      "synopsisEn": "Based on Enid Blyton's best-selling children's classic, The Magic Faraway Tree follows Polly and Tim and their children Beth, Joe and Fran — a modern family forced to relocate to the remote English countryside. Soon after arriving, the children discover a magical tree and its extraordinary, eccentric residents.",
+      "tmdbRating": {
+        "score": 6.855,
+        "votes": 121,
+        "tmdbId": 1140521,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-further-mis-adventures-of-cliff-booth",
@@ -1541,7 +1733,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/the-further-mis-adventures-of-cliff-booth.jpg"
+      "poster": "/posters/the-further-mis-adventures-of-cliff-booth.jpg",
+      "tmdbRating": {
+        "score": 8,
+        "votes": 7,
+        "tmdbId": 1457866,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "7-dogs",
@@ -1587,7 +1785,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/7-dogs.jpg"
+      "poster": "/posters/7-dogs.jpg",
+      "tmdbRating": {
+        "score": 5.923,
+        "votes": 13,
+        "tmdbId": 1316427,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "a-star-is-born",
@@ -1625,7 +1829,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/a-star-is-born.jpg"
+      "poster": "/posters/a-star-is-born.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1649365,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "mechanic-rocky",
@@ -1670,7 +1880,13 @@
         "synopsis"
       ],
       "poster": "/posters/mechanic-rocky.jpg",
-      "synopsisEn": "Rakesh, a happy-go-lucky young mechanic, must take on the ruthless land grabber to save his beloved ancestral car garage, uncovering unexpected truths. The film delves into how Rocky, despite facing overwhelming obstacles and personal losses, fights his way out of these struggles, revealing the true essence of his journey as a mechanic."
+      "synopsisEn": "Rakesh, a happy-go-lucky young mechanic, must take on the ruthless land grabber to save his beloved ancestral car garage, uncovering unexpected truths. The film delves into how Rocky, despite facing overwhelming obstacles and personal losses, fights his way out of these struggles, revealing the true essence of his journey as a mechanic.",
+      "tmdbRating": {
+        "score": 5.9,
+        "votes": 9,
+        "tmdbId": 1102353,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "batman-knightfall-part-1-knightfall",
@@ -1716,7 +1932,13 @@
         "synopsis"
       ],
       "poster": "/posters/batman-knightfall-part-1-knightfall.jpg",
-      "synopsisEn": "Arkham Asylum has been destroyed, and all its inmates have been unleashed upon Gotham City. As Batman races to round up some of his greatest enemies, he is pushed to his physical and mental limits and into a final confrontation with a new threat: the man called Bane!"
+      "synopsisEn": "Arkham Asylum has been destroyed, and all its inmates have been unleashed upon Gotham City. As Batman races to round up some of his greatest enemies, he is pushed to his physical and mental limits and into a final confrontation with a new threat: the man called Bane!",
+      "tmdbRating": {
+        "score": 9.086,
+        "votes": 515,
+        "tmdbId": 1560520,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "j-o-mem-rias-p-stumas",
@@ -1751,7 +1973,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/j-o-mem-rias-p-stumas.jpg"
+      "poster": "/posters/j-o-mem-rias-p-stumas.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1780359,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     }
   ],
   "ceremonies": []

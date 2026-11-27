@@ -33,7 +33,13 @@
         "note": "片方公布 Netflix 拥有美国与拉美权益；上线日待定"
       }
     ],
-    "poster": "/posters/ink.jpg"
+    "poster": "/posters/ink.jpg",
+    "tmdbRating": {
+      "score": 0,
+      "votes": 0,
+      "tmdbId": 1532610,
+      "updatedAt": "2026-11-27T02:07:42.925Z"
+    }
   },
   {
     "id": "bucking-fastard",
@@ -233,6 +239,12 @@
       "count": 4933,
       "doubanId": "37168181",
       "updatedAt": "2026-11-13T10:00:24.263Z"
+    },
+    "tmdbRating": {
+      "score": 7.276,
+      "votes": 163,
+      "tmdbId": 1401459,
+      "updatedAt": "2026-11-27T02:07:42.925Z"
     }
   },
   {
@@ -363,6 +375,12 @@
       "count": 5107,
       "doubanId": "37487816",
       "updatedAt": "2026-11-13T10:00:39.942Z"
+    },
+    "tmdbRating": {
+      "score": 7.2,
+      "votes": 84,
+      "tmdbId": 1437696,
+      "updatedAt": "2026-11-27T02:07:42.925Z"
     }
   },
   {
@@ -503,6 +521,12 @@
       "count": 1264,
       "doubanId": "35740374",
       "updatedAt": "2026-11-13T10:05:38.035Z"
+    },
+    "tmdbRating": {
+      "score": 7,
+      "votes": 53,
+      "tmdbId": 1315657,
+      "updatedAt": "2026-11-27T02:07:42.925Z"
     }
   },
   {

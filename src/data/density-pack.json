@@ -182,7 +182,13 @@
         }
       ],
       "poster": "/posters/fourteenth.jpg",
-      "synopsisEn": "Ava DuVernay documentary following 13th. Examines recent assaults on principles tied to the Fourteenth Amendment of the US Constitution. World premiere as closing film of NYFF64; distributed by Netflix."
+      "synopsisEn": "Ava DuVernay documentary following 13th. Examines recent assaults on principles tied to the Fourteenth Amendment of the US Constitution. World premiere as closing film of NYFF64; distributed by Netflix.",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1732479,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "growth-of-the-soil",

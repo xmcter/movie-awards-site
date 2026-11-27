@@ -16,7 +16,7 @@ require.extensions[".ts"] = (mod, filename) => mod._compile(ts.transpileModule(f
 
 const {
   shouldAdmitStreaming,
-  streamingQualityScore,
+  hasTmdbScorePass,
   streamingNewFilmMinYear,
   STREAMING_ALLOWLIST,
   isAllowlistedStreamingFilm,
@@ -56,9 +56,8 @@ const dataSrc = fs.readFileSync(path.join(root, "src/lib/data.ts"), "utf8");
 assert.match(dataSrc, /auteur-directors\.json/);
 assert.doesNotMatch(dataSrc, /const AUTEUR_DIRECTORS = \[/);
 assert.doesNotMatch(dataSrc, /MAX_EVENTS_PER_DAY/);
-assert.match(dataSrc, /const CORE_FILM_IDS = new Set\(\(filmsData as Film\[\]\)\.map/);
-assert.match(dataSrc, /if \(CORE_FILM_IDS\.has\(film\.id\) \|\| film\.id in filmCopy\)/);
-assert.doesNotMatch(dataSrc, /function streamingQualityScore[\s\S]*?new Set\(/);
+assert.doesNotMatch(dataSrc, /streamingQualityScore/);
+assert.match(dataSrc, /r\.score >= 7 && r\.votes >= 50/);
 assert.ok(auteurEntries.every((entry) => Array.isArray(entry.names) && entry.names.length > 0 && typeof entry.note === "string"));
 assert.ok(auteurNames.includes("Lisandro Alonso"));
 assert.ok(auteurNames.includes("利桑德罗·阿隆索"));
@@ -88,20 +87,28 @@ const plain = film({ id: "unit-plain" });
 assert.equal(matchesAuteur(plain.directors), false);
 assert.equal(shouldAdmitStreaming(plain, "mubi", NOW), true);
 
-// 阈值：短路都不中时，分数不到 25 不收。核心片库只有 +20，仍低于门槛。
-assert.ok(streamingQualityScore(plain, "prime") < 25);
+// TMDB 评分兜底（用户 2026-11-27 定）：短路都不中时，无评分不收；
+// TMDB ≥7 且投票 ≥50 才收，任一不达标都不收。
 assert.equal(shouldAdmitStreaming(plain, "prime", NOW), false);
-assert.ok(streamingQualityScore(plain, "netflix") < streamingQualityScore(plain, "prime"));
 assert.equal(shouldAdmitStreaming(plain, "netflix", NOW), false);
-assert.ok(streamingQualityScore(film({ id: "unit-no-director", directors: [] }), "prime") < 25);
 assert.equal(shouldAdmitStreaming(film({ id: "unit-no-director", directors: [] }), "prime", NOW), false);
+
+const rated = (score, votes) =>
+  film({ id: "unit-rated", tmdbRating: { score, votes, tmdbId: 1, updatedAt: "2026-11-27T00:00:00.000Z" } });
+assert.equal(hasTmdbScorePass(rated(7, 50)), true);
+assert.equal(hasTmdbScorePass(rated(6.9, 500)), false);
+assert.equal(hasTmdbScorePass(rated(8.5, 49)), false);
+assert.equal(hasTmdbScorePass(plain), false);
+assert.equal(shouldAdmitStreaming(rated(7.2, 120), "prime", NOW), true);
+assert.equal(shouldAdmitStreaming(rated(7.2, 120), "netflix", NOW), true);
+assert.equal(shouldAdmitStreaming(rated(6.9, 500), "prime", NOW), false);
+assert.equal(shouldAdmitStreaming(rated(8.5, 49), "prime", NOW), false);
 
 const filler = film({
   id: "unit-filler",
   title: "圣诞壁炉",
   titleEn: "Christmas Fireplace",
 });
-assert.ok(streamingQualityScore(filler, "prime") < 25);
 assert.equal(shouldAdmitStreaming(filler, "prime", NOW), false);
 
 const filmsJson = JSON.parse(fs.readFileSync(path.join(root, "src/data/films.json"), "utf8"));
@@ -121,8 +128,12 @@ const coreFilm = film({
   year: core.year,
   directors: core.directors,
 });
-assert.equal(streamingQualityScore(coreFilm, "apple-tv"), 20);
+// 核心片库身份不再单独加分：无 TMDB 评分兜底就不收（带过线评分则收）。
 assert.equal(shouldAdmitStreaming(coreFilm, "apple-tv", NOW), false);
+assert.equal(
+  shouldAdmitStreaming({ ...coreFilm, tmdbRating: { score: 7.4, votes: 300, tmdbId: 1, updatedAt: "2026-11-27T00:00:00.000Z" } }, "apple-tv", NOW),
+  true,
+);
 
 // 人工放行名单：用户 2026-11-13 定，B.1 建议的 8 部全放行。分数不够也收，
 // 纪录片《第十四条》也进时间线与即将上线；未放行的纪录片仍排除。
@@ -140,7 +151,6 @@ const ALLOWLISTED = [
 for (const [id, platform] of ALLOWLISTED) {
   const f = films.find((item) => item.id === id);
   assert.ok(f, `${id} should be in the catalog`);
-  assert.ok(streamingQualityScore(f, platform) < 25, `${id} is expected to fail the score gate without the allowlist`);
   assert.equal(isAllowlistedStreamingFilm(f), true, `${id} allowlisted`);
   assert.equal(shouldAdmitStreaming(f, platform, NOW), true, `${id} admitted`);
   assert.equal(isTimelineEligibleFilm(f), true, `${id} timeline-eligible`);
@@ -158,4 +168,4 @@ for (const [id] of ALLOWLISTED) {
   assert.ok(soonIds.has(shown), `${id} should be in coming-soon as ${shown}`);
 }
 
-console.log("ok: shouldAdmitStreaming covers year window, auteur, award, MUBI, and score threshold");
+console.log("ok: shouldAdmitStreaming covers year window, auteur, award, MUBI, allowlist, and TMDB score fallback");

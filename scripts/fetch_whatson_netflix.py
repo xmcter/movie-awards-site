@@ -95,6 +95,7 @@ DOC_RE = re.compile(r"(?i)\bdocumentary\b|\bdocuseries\b|纪录片|档案纪录"
 MANUAL_REJECT_IDS = {
     "miraculous-world-london-at-the-edge-of-time": "series TV special, 44 min",
     "miraculous-world-tokyo-stellar-force": "series TV special, 51 min",
+    "hot-ones-extra-heat": "talk-show special episode, 30 min (2026-11-27)",
 }
 ROUNDUP_RE = re.compile(
     r"(?i)\b(what'?s coming|first look|this week|guide to|slate|round[- ]?up|"

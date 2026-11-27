@@ -110,6 +110,17 @@ const filler = film({
   titleEn: "Christmas Fireplace",
 });
 assert.equal(shouldAdmitStreaming(filler, "prime", NOW), false);
+// 填充片名硬拦（用户 2026-11-27 定）：评分过线、走 MUBI 直接通道也拦；
+// 只有人工放行名单能豁免（见下方 allowlist 用例）。
+const fillerRated = film({
+  id: "unit-filler-rated",
+  title: "怪奇物语：壁炉",
+  titleEn: "Stranger Things: Fireplace",
+  tmdbRating: { score: 8.6, votes: 500, tmdbId: 1, updatedAt: "2026-11-27T00:00:00.000Z" },
+});
+assert.equal(hasTmdbScorePass(fillerRated), true);
+assert.equal(shouldAdmitStreaming(fillerRated, "prime", NOW), false);
+assert.equal(shouldAdmitStreaming(fillerRated, "mubi", NOW), false);
 
 const filmsJson = JSON.parse(fs.readFileSync(path.join(root, "src/data/films.json"), "utf8"));
 const awardedIds = new Set(ceremonies.flatMap((ceremony) => (ceremony.nominations || []).map((nom) => nom.filmId)));
@@ -168,4 +179,4 @@ for (const [id] of ALLOWLISTED) {
   assert.ok(soonIds.has(shown), `${id} should be in coming-soon as ${shown}`);
 }
 
-console.log("ok: shouldAdmitStreaming covers year window, auteur, award, MUBI, allowlist, and TMDB score fallback");
+console.log("ok: shouldAdmitStreaming covers year window, auteur, award, MUBI, allowlist, filler hard block, and TMDB score fallback");

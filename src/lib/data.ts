@@ -454,6 +454,20 @@ function isClassicFranchiseFilm(film: Film): boolean {
   return CLASSIC_FRANCHISE_RE.test(titleBlob);
 }
 
+/**
+ * 填充片名硬拦（2026-11-27 用户定，恢复自旧综合分里的 −80 扣分项）：
+ * 圣诞填充片、壁炉视频、汪汪队这类片名命中即硬拒，不走任何直接通道；
+ * 人工放行名单仍可豁免。原正则里的 Batman.*Knight／蝙蝠侠：骑士 一项不恢复——
+ * 《蝙蝠侠：骑士陨落》TMDB 9.1，用户已批准按统一标准放行。
+ */
+const FILLER_TITLE_RE =
+  /圣诞|圣诞节|Christmas|Holiday|Tyler Perry|泰勒·?佩里|Paw Patrol|汪汪队|Warrior Kid|战士小子|Bag Man|提袋人|节日迷雾|威斯康星圣诞|快乐窃贼|完美骗子|壁炉|Super Troopers|Rolling Loud|Angel and the Badman|天使与坏蛋/i;
+
+function isFillerTitleFilm(film: Film): boolean {
+  const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
+  return FILLER_TITLE_RE.test(titleBlob);
+}
+
 function directorsBlob(film: Film): string {
   return (film.directors || []).join(" ");
 }
@@ -504,6 +518,8 @@ export function shouldAdmitStreaming(film: Film, platform: string, now = new Dat
   if (!isNewStreamingFilm(film, now)) return false;
   // 人工放行名单：评分不够也收（年窗仍硬卡）。
   if (isAllowlistedStreamingFilm(film)) return true;
+  // 填充片名硬拦：命中直接拒，不走任何直接通道（人工放行名单已在上方豁免）。
+  if (isFillerTitleFilm(film)) return false;
   // 作者 / 获奖 / 以前获奖（含提名）导演 / MUBI / 经典系列 IP 通道直接收
   if (isAuteurFilm(film) || isAwardedFilm(film) || isPriorAwardDirectorFilm(film) || platform === "mubi" || isClassicFranchiseFilm(film)) return true;
   // 兜底：TMDB 评分通道（≥7 分且投票 ≥50）

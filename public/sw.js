@@ -9,7 +9,7 @@
  */
 'use strict';
 
-var CACHE_VERSION = 'v14-20261126-ui-unify';
+var CACHE_VERSION = 'v15-20261127-ipad-type';
 var SHELL_CACHE = 'news-shell-' + CACHE_VERSION;
 var STATIC_CACHE = 'news-static-' + CACHE_VERSION;
 

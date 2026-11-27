@@ -77,25 +77,24 @@ body {
   }
 }
 
-/* iPad / tablet typography (2026-11-25)
- * iPad mini (744 portrait / 1133 landscape) got the phone/desktop Tailwind sizes: body 14px,
- * badges 10–11px. Tablet widths (700–1200px) and touch screens ≥700px get one step up;
- * phones (<700px) and mouse desktops >1200px are unchanged. sm: variants always match ≥700px. */
+/* iPad / tablet typography (2026-11-27, 第二档)
+ * 在 11-25 上调一档后再抬半档：正文/列表 17–18px，说明 16–17px，徽标 ≥14px。
+ * 手机 (<700px) 与鼠标桌面 (>1200px) 不变。sm: 变体在 ≥700px 触屏同样生效。 */
 @media (min-width: 700px) and (max-width: 1200px), (min-width: 700px) and (pointer: coarse) {
-  .text-\[9px\], .text-\[10px\], .text-\[11px\] { font-size: 13px; }
-  .text-xs { font-size: 14px; }
-  .text-sm { font-size: 16px; }
-  .text-base { font-size: 17px; }
-  .text-\[17px\] { font-size: 18px; }
-  .text-\[1\.05rem\] { font-size: 18px; }
-  .text-lg { font-size: 19px; }
-  .text-xl { font-size: 1.25rem; }
-  .text-2xl { font-size: 1.5rem; }
-  .text-3xl { font-size: 1.875rem; }
-  .sm\:text-base { font-size: 17px; }
-  .sm\:text-lg { font-size: 19px; }
-  .sm\:text-2xl { font-size: 1.5rem; }
-  .sm\:text-3xl { font-size: 1.875rem; }
+  .text-\[9px\], .text-\[10px\], .text-\[11px\] { font-size: 14px; }
+  .text-xs { font-size: 15px; }
+  .text-sm { font-size: 17px; }
+  .text-base { font-size: 18px; }
+  .text-\[17px\] { font-size: 19px; }
+  .text-\[1\.05rem\] { font-size: 19px; }
+  .text-lg { font-size: 20px; }
+  .text-xl { font-size: 1.35rem; }
+  .text-2xl { font-size: 1.6rem; }
+  .text-3xl { font-size: 2rem; }
+  .sm\:text-base { font-size: 18px; }
+  .sm\:text-lg { font-size: 20px; }
+  .sm\:text-2xl { font-size: 1.6rem; }
+  .sm\:text-3xl { font-size: 2rem; }
 }
 
 /* 回到顶部：与 readcine.com/shared/rc-chrome.css 的 .rc-totop 同一规格（2026-11-26 ui-unify） */

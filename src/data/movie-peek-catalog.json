@@ -1639,7 +1639,7 @@
     },
     {
       "id": "movie-douban-36246195",
-      "title": "蜘蛛侠：崭新之日",
+      "title": "蜘蛛侠：崭新之日 UHD 国英 特效 字幕、",
       "year": 2026,
       "synopsis": "彼得·帕克（汤姆·霍兰德 饰）自愿让全世界遗忘自己，转眼已是四年。失去挚友、挚爱与亲人的陪伴，他独自重返街头，以全职蜘蛛侠的身份坚守使命，守护整座城市。 然而，日益沉重的责任与无尽压力，意外引发了一场骇人的身体异变，直接威胁到蜘蛛侠的生命，迫使他向“绿巨人”班纳博士寻求帮助。与此同时，多方邪恶势力趁虚而入，纽约再度陷入危机。面对前所未有的强敌，蜘蛛侠能否绝境破局，完成破茧重生？",
       "directors": [
@@ -1681,7 +1681,7 @@
     },
     {
       "id": "movie-douban-36618556",
-      "title": "编个丈夫",
+      "title": "编个丈夫/柳条人",
       "year": 2026,
       "synopsis": "海边小镇上的一个打渔女（奥利维娅·科尔曼饰），委托篮匠大师（彼特·丁拉基 饰）用柳条编了一个丈夫（亚历山大·斯卡斯加德 饰），这段离经叛道的爱情在保守的小镇里引起了怒火、嫉妒和轩然大波。",
       "directors": [
@@ -1718,6 +1718,39 @@
       "poster": "/posters/movie-douban-36618556.jpg",
       "runtime": 103,
       "synopsisEn": "In a seaside town, a fisherwoman (Olivia Colman) commissions a master basket-weaver (Peter Dinklage) to weave her a husband (Alexander Skarsgård) out of willow branches — a scandalous romance that stirs up fury, jealousy and uproar in the conservative town."
+    },
+    {
+      "id": "movie-douban-35811064",
+      "title": "欢迎来龙餐",
+      "year": 2026,
+      "synopsis": "徐福（沈腾 饰）为养家还债远赴中东中餐馆当厨师，在当地结识了大堂经理马俊生（蒋奇明 饰）。他们以地道中国风味广招八方来客，龙餐馆声名鹊起。然而随着战争爆发，当地形势急转直下，没有人能够独善其身，徐福和马俊生也不例外，他们的命运将何去何从？战火中的龙餐馆又将如何维系？",
+      "directors": [
+        "文牧野"
+      ],
+      "cast": [
+        "沈腾",
+        "蒋奇明",
+        "奥马尔·谢里夫",
+        "李治廷",
+        "谢里夫·萨比",
+        "艾哈迈德·塞利姆",
+        "法鲁克·穆罕穆德",
+        "拉塞尔·希利",
+        "奈拉·阿克西姆",
+        "卡尔玛·哈齐姆",
+        "苇青",
+        "张熙唯"
+      ],
+      "genres": [
+        "剧情",
+        "战争"
+      ],
+      "country": [
+        "中国大陆"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-35811064.jpg",
+      "runtime": 140
     }
   ],
   "ceremonies": []

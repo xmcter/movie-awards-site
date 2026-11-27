@@ -1049,5 +1049,19 @@
     "weiboUrl": "https://m.weibo.cn/detail/Rtbiw8mnp",
     "weiboLabel": "微博·爱看剧的小马达",
     "summaryEn": "The Wicker Husband is now streaming"
+  },
+  {
+    "id": "movie-peek-movie-douban-35811064-first-resource",
+    "filmId": "movie-douban-35811064",
+    "publishedAt": "2026-11-27T15:21:33+08:00",
+    "sourcePublishedAt": "2026-11-27T15:21:33+08:00",
+    "date": "2026-11-28",
+    "kind": "release",
+    "summary": "《欢迎来龙餐》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/Rtk3CA0AV",
+    "weiboUrl": "https://m.weibo.cn/detail/Rtk3CA0AV",
+    "weiboLabel": "微博·爱看剧的小马达"
   }
 ]

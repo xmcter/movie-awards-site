@@ -87,6 +87,23 @@ export interface Film {
    * 没有评分就不写这个字段，页面也不显示占位。
    */
   doubanRating?: DoubanRating;
+  /**
+   * TMDB 评分。构建前由 scripts/fill-tmdb-ratings.mjs 补在影片所属 catalog 上。
+   * 流媒体质量闸的评分兜底（TMDB ≥7 且投票 ≥50）读这个字段；没有就不走评分通道。
+   */
+  tmdbRating?: TmdbRating;
+}
+
+/** TMDB 评分。只存分数相关字段。 */
+export interface TmdbRating {
+  /** TMDB 评分（10 分制） */
+  score: number;
+  /** 投票数 */
+  votes: number;
+  /** TMDB movie id */
+  tmdbId: number;
+  /** 抓取时间，ISO 8601 */
+  updatedAt: string;
 }
 
 /** 豆瓣评分。只存分数相关字段，不混入导演、演员或简介。 */

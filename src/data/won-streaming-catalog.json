@@ -32,7 +32,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.7,
+        "votes": 3,
+        "tmdbId": 1810711,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "high-end-the-watch-theft-ring",
@@ -66,7 +72,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.8,
+        "votes": 4,
+        "tmdbId": 1817773,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "one-year-to-live-buy-a-man",
@@ -100,7 +112,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 7.1,
+        "votes": 32,
+        "tmdbId": 1654940,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "overacting",
@@ -134,7 +152,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 5.9,
+        "votes": 6,
+        "tmdbId": 1630420,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "carolina-caroline",
@@ -208,7 +232,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.5,
+        "votes": 10,
+        "tmdbId": 1757386,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-left-foot-club",
@@ -275,7 +305,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.5,
+        "votes": 21,
+        "tmdbId": 1794569,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "misty-green",
@@ -309,7 +345,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.9,
+        "votes": 11,
+        "tmdbId": 1381221,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-good-lawyer",
@@ -343,7 +385,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.538,
+        "votes": 92,
+        "tmdbId": 1616419,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "reminders-of-him",
@@ -383,6 +431,12 @@
         "count": 407,
         "doubanId": "37062611",
         "updatedAt": "2026-11-13T10:53:52.815Z"
+      },
+      "tmdbRating": {
+        "score": 7.736,
+        "votes": 470,
+        "tmdbId": 1367642,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -417,7 +471,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 4.3,
+        "votes": 7,
+        "tmdbId": 1419036,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "rodeo-christmas-romance",
@@ -451,7 +511,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 5.429,
+        "votes": 7,
+        "tmdbId": 1564004,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-gospel-of-christmas",
@@ -485,7 +551,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.9,
+        "votes": 28,
+        "tmdbId": 1559980,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "a-christmas-castle-proposal-a-royal-in-paradise-2",
@@ -519,7 +591,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.9,
+        "votes": 16,
+        "tmdbId": 1231623,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "allen",
@@ -553,7 +631,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.479,
+        "votes": 72,
+        "tmdbId": 1518204,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "never-surrender",
@@ -587,7 +671,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.813,
+        "votes": 83,
+        "tmdbId": 1616687,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-christmas-switch",
@@ -621,7 +711,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.5,
+        "votes": 80,
+        "tmdbId": 1757174,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "brawlers",
@@ -689,7 +785,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.164,
+        "votes": 131,
+        "tmdbId": 1543469,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "sinterklaas-fireplace",
@@ -757,7 +859,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.4,
+        "votes": 5,
+        "tmdbId": 1374847,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "obsession",
@@ -791,7 +899,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 8.2,
+        "votes": 6752,
+        "tmdbId": 1339713,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "gentle-monster",
@@ -839,6 +953,12 @@
         "count": 642,
         "doubanId": "37269580",
         "updatedAt": "2026-11-13T10:57:43.222Z"
+      },
+      "tmdbRating": {
+        "score": 6.9,
+        "votes": 22,
+        "tmdbId": 1473148,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -873,7 +993,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.809,
+        "votes": 139,
+        "tmdbId": 1551025,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "on-behalf-of-my-son",
@@ -907,7 +1033,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 8,
+        "votes": 11,
+        "tmdbId": 1307474,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "steps",
@@ -941,7 +1073,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 7.11,
+        "votes": 109,
+        "tmdbId": 1595124,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "all-for-christmas",
@@ -975,7 +1113,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 5.5,
+        "votes": 2,
+        "tmdbId": 1599329,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "nfl-netflix-gameday-packers-vs-rams",
@@ -1043,7 +1187,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 7.2,
+        "votes": 30,
+        "tmdbId": 1458300,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-child",
@@ -1077,7 +1227,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1506401,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-hunchback-soul-of-paris",
@@ -1111,7 +1267,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1480665,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "pressure",
@@ -1151,6 +1313,12 @@
         "count": 72031,
         "doubanId": "36916000",
         "updatedAt": "2026-11-13T10:59:53.466Z"
+      },
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1433174,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -1219,7 +1387,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 6.5,
+        "votes": 2,
+        "tmdbId": 1574367,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "hb2me",
@@ -1253,7 +1427,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1737129,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-super-mario-galaxy-movie",
@@ -1293,6 +1473,12 @@
         "count": 53041,
         "doubanId": "36806351",
         "updatedAt": "2026-11-13T10:59:34.240Z"
+      },
+      "tmdbRating": {
+        "score": 8.168,
+        "votes": 4011,
+        "tmdbId": 1226863,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -1327,7 +1513,13 @@
       "copyPending": [
         "title",
         "synopsis"
-      ]
+      ],
+      "tmdbRating": {
+        "score": 9,
+        "votes": 3,
+        "tmdbId": 1274214,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "dancing-with-a-murderer",
@@ -1395,7 +1587,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/secrets.jpg"
+      "poster": "/posters/secrets.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1616675,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "you-me-tuscany",
@@ -1435,6 +1633,12 @@
         "count": 371,
         "doubanId": "37294215",
         "updatedAt": "2026-11-13T11:00:05.333Z"
+      },
+      "tmdbRating": {
+        "score": 7.319,
+        "votes": 127,
+        "tmdbId": 1455079,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -1469,7 +1673,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/permafrost.jpg"
+      "poster": "/posters/permafrost.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1625106,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "proxies",
@@ -1537,7 +1747,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/give-me-some-sugah.jpg"
+      "poster": "/posters/give-me-some-sugah.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1559982,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-ghost-and-the-gun",
@@ -1573,7 +1789,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/the-ghost-and-the-gun.jpg"
+      "poster": "/posters/the-ghost-and-the-gun.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1478484,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "418",
@@ -1609,7 +1831,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/418.jpg"
+      "poster": "/posters/418.jpg",
+      "tmdbRating": {
+        "score": 6.4,
+        "votes": 6,
+        "tmdbId": 1606527,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "longlegs",
@@ -1645,7 +1873,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/longlegs.jpg"
+      "poster": "/posters/longlegs.jpg",
+      "tmdbRating": {
+        "score": 6.519,
+        "votes": 3063,
+        "tmdbId": 1226578,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "la-ltima-semana-de-jes-s",
@@ -1679,7 +1913,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/la-ltima-semana-de-jes-s.jpg"
+      "poster": "/posters/la-ltima-semana-de-jes-s.jpg",
+      "tmdbRating": {
+        "score": 7.833,
+        "votes": 6,
+        "tmdbId": 1792069,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "merry-missed-connection",
@@ -1747,7 +1987,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/the-champs.jpg"
+      "poster": "/posters/the-champs.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1620662,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "saving-cherry",
@@ -1781,7 +2027,13 @@
         "title",
         "synopsis"
       ],
-      "poster": "/posters/saving-cherry.jpg"
+      "poster": "/posters/saving-cherry.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1730388,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "kungfu-international-cut",

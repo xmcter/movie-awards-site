@@ -67,7 +67,13 @@
           "publishedAt": "2026-11-05T20:29:58+08:00"
         }
       ],
-      "poster": "/posters/possible-love.jpg"
+      "poster": "/posters/possible-love.jpg",
+      "tmdbRating": {
+        "score": 7.158,
+        "votes": 101,
+        "tmdbId": 1483525,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "tonight-will-happen",
@@ -176,6 +182,12 @@
         "count": 1831,
         "doubanId": "38617828",
         "updatedAt": "2026-11-13T10:10:06.106Z"
+      },
+      "tmdbRating": {
+        "score": 8.026,
+        "votes": 371,
+        "tmdbId": 1232493,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -361,7 +373,13 @@
           "note": "金狮后艺术院线窗口待定"
         }
       ],
-      "poster": "/posters/woman-unknown.jpg"
+      "poster": "/posters/woman-unknown.jpg",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1511780,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "diane-in-the-loop",

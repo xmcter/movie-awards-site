@@ -104,9 +104,6 @@ const moviePeek = moviePeekCatalogData as unknown as CatalogSlice;
 const densityCeremonies = densityCeremoniesData as AwardCeremony[];
 const filmCopy = filmCopyData as Record<string, FilmCopy>;
 
-/** films.json 的 id。质量分里的核心片库命中只用这一份，避免每次打分都重建 Set。 */
-const CORE_FILM_IDS = new Set((filmsData as Film[]).map((f) => f.id));
-
 /** Build-time inventory of committed posters under public/posters */
 const LOCAL_POSTER_FILES = (() => {
   try {
@@ -449,16 +446,26 @@ const AWARDED_FILM_IDS = (() => {
   return ids;
 })();
 
-/** 口水/凑数定档：节日片、无导演商业流水线等，默认不进主列表。 */
-const FILLER_TITLE_RE =
-  /圣诞|圣诞节|Christmas|Holiday|Tyler Perry|泰勒·?佩里|Paw Patrol|汪汪队|Warrior Kid|战士小子|Bag Man|提袋人|节日迷雾|威斯康星圣诞|快乐窃贼|完美骗子|壁炉|Batman.*Knight|蝙蝠侠：骑士|Super Troopers|Rolling Loud|Angel and the Badman|天使与坏蛋/i;
-
-/** 经典系列 IP：续集本身即有受众，直接收，不看平台分。用户 2026-11-08 定：潜伏系列不拦。 */
+/** 经典系列 IP：续集本身即有受众，直接收，不看评分。用户 2026-11-08 定：潜伏系列不拦。 */
 const CLASSIC_FRANCHISE_RE = /Insidious|潜伏/i;
 
 function isClassicFranchiseFilm(film: Film): boolean {
   const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
   return CLASSIC_FRANCHISE_RE.test(titleBlob);
+}
+
+/**
+ * 填充片名硬拦（2026-11-27 用户定，恢复自旧综合分里的 −80 扣分项）：
+ * 圣诞填充片、壁炉视频、汪汪队这类片名命中即硬拒，不走任何直接通道；
+ * 人工放行名单仍可豁免。原正则里的 Batman.*Knight／蝙蝠侠：骑士 一项不恢复——
+ * 《蝙蝠侠：骑士陨落》TMDB 9.1，用户已批准按统一标准放行。
+ */
+const FILLER_TITLE_RE =
+  /圣诞|圣诞节|Christmas|Holiday|Tyler Perry|泰勒·?佩里|Paw Patrol|汪汪队|Warrior Kid|战士小子|Bag Man|提袋人|节日迷雾|威斯康星圣诞|快乐窃贼|完美骗子|壁炉|Super Troopers|Rolling Loud|Angel and the Badman|天使与坏蛋/i;
+
+function isFillerTitleFilm(film: Film): boolean {
+  const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
+  return FILLER_TITLE_RE.test(titleBlob);
 }
 
 function directorsBlob(film: Film): string {
@@ -495,34 +502,28 @@ export function isNewStreamingFilm(film: Film, now = new Date()): boolean {
   return y >= streamingNewFilmMinYear(now);
 }
 
-/** 质量分：越高越优先；负分硬过滤出时间线。先过新片年窗，再打分。 */
-export function streamingQualityScore(film: Film, platform?: string): number {
-  let score = 0;
-  if (isAuteurFilm(film)) score += 100;
-  if (isPriorAwardDirectorFilm(film)) score += 100;
-  if (isAwardedFilm(film)) score += 80;
-  if (platform === "mubi") score += 45;
-  if (platform === "apple-tv" && isAuteurFilm(film)) score += 10;
-  // 核心片库（非纯 MotN/WON 流水线）
-  if (CORE_FILM_IDS.has(film.id) || film.id in filmCopy) score += 20;
-  const titleBlob = `${film.title || ""} ${film.titleEn || ""}`;
-  if (FILLER_TITLE_RE.test(titleBlob)) score -= 80;
-  if (!(film.directors && film.directors.length)) score -= 35;
-  // Netflix 纯上新日历且无作者/奖项线索
-  if (platform === "netflix" && !isAuteurFilm(film) && !isAwardedFilm(film) && score < 40) {
-    score -= 15;
-  }
-  return score;
+/**
+ * TMDB 评分兜底（用户 2026-11-27 定，与公众号盘点入选门槛统一）：
+ * 直接通道都不中时，TMDB ≥7 分且投票数 ≥50 才收。
+ * 无 TMDB 评分数据的片子按「无评分」处理，不走评分通道。
+ * 评分由 scripts/fill-tmdb-ratings.mjs 在构建前补进 catalog 的 tmdbRating。
+ */
+export function hasTmdbScorePass(film: Film): boolean {
+  const r = film.tmdbRating;
+  return !!r && r.score >= 7 && r.votes >= 50;
 }
 
 export function shouldAdmitStreaming(film: Film, platform: string, now = new Date()): boolean {
   // 老片回档 / 经典上新：硬拒（即使作者或 MUBI）
   if (!isNewStreamingFilm(film, now)) return false;
-  // 人工放行名单：分数不够也收（年窗仍硬卡）。
+  // 人工放行名单：评分不够也收（年窗仍硬卡）。
   if (isAllowlistedStreamingFilm(film)) return true;
+  // 填充片名硬拦：命中直接拒，不走任何直接通道（人工放行名单已在上方豁免）。
+  if (isFillerTitleFilm(film)) return false;
   // 作者 / 获奖 / 以前获奖（含提名）导演 / MUBI / 经典系列 IP 通道直接收
   if (isAuteurFilm(film) || isAwardedFilm(film) || isPriorAwardDirectorFilm(film) || platform === "mubi" || isClassicFranchiseFilm(film)) return true;
-  return streamingQualityScore(film, platform) >= 25;
+  // 兜底：TMDB 评分通道（≥7 分且投票 ≥50）
+  return hasTmdbScorePass(film);
 }
 
 export function getTimelineEvents(locale: Locale = "zh"): TimelineEvent[] {

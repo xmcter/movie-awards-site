@@ -33,7 +33,13 @@
         }
       ],
       "poster": "/posters/the-sun-never-sets.jpg",
-      "synopsisEn": "The Sun Never Sets. Streaming date via When To Stream (US region)."
+      "synopsisEn": "The Sun Never Sets. Streaming date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 7.038,
+        "votes": 13,
+        "tmdbId": 1490214,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "angel-and-the-badman",
@@ -68,7 +74,13 @@
         }
       ],
       "poster": "/posters/angel-and-the-badman.jpg",
-      "synopsisEn": "Angel and the Badman. Streaming date via When To Stream (US region)."
+      "synopsisEn": "Angel and the Badman. Streaming date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 7.871,
+        "votes": 31,
+        "tmdbId": 1669915,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "batman-knightfall-part-2-knightquest",
@@ -103,7 +115,13 @@
         }
       ],
       "poster": "/posters/batman-knightfall-part-2-knightquest.jpg",
-      "synopsisEn": "Batman: Knightfall Part 2: Knightquest. Streaming date via When To Stream (US)."
+      "synopsisEn": "Batman: Knightfall Part 2: Knightquest. Streaming date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1389765,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "other-mommy",
@@ -144,6 +162,12 @@
         "count": 3926,
         "doubanId": "37317907",
         "updatedAt": "2026-11-13T10:45:33.040Z"
+      },
+      "tmdbRating": {
+        "score": 6.546,
+        "votes": 635,
+        "tmdbId": 1400837,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -185,6 +209,12 @@
         "count": 2003,
         "doubanId": "37247236",
         "updatedAt": "2026-11-13T10:45:39.732Z"
+      },
+      "tmdbRating": {
+        "score": 7.2,
+        "votes": 179,
+        "tmdbId": 1503762,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -224,6 +254,12 @@
         "count": 378,
         "doubanId": "26991057",
         "updatedAt": "2026-11-13T10:45:47.163Z"
+      },
+      "tmdbRating": {
+        "score": 6.3,
+        "votes": 94,
+        "tmdbId": 445466,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -265,6 +301,12 @@
         "count": 3730,
         "doubanId": "36791178",
         "updatedAt": "2026-11-13T10:45:55.009Z"
+      },
+      "tmdbRating": {
+        "score": 8.153,
+        "votes": 209,
+        "tmdbId": 1185806,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -300,7 +342,13 @@
         }
       ],
       "poster": "/posters/super-troopers-3.jpg",
-      "synopsisEn": "Super Troopers 3. Streaming date via When To Stream (US)."
+      "synopsisEn": "Super Troopers 3. Streaming date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 6.2,
+        "votes": 72,
+        "tmdbId": 675871,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "rolling-loud-the-movie",
@@ -335,7 +383,13 @@
         }
       ],
       "poster": "/posters/rolling-loud-the-movie.jpg",
-      "synopsisEn": "Rolling Loud: The Movie. Streaming date via When To Stream (US)."
+      "synopsisEn": "Rolling Loud: The Movie. Streaming date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 7.625,
+        "votes": 8,
+        "tmdbId": 1336166,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "gail-daughtry-and-the-celebrity-sex-pass",
@@ -375,6 +429,12 @@
         "count": 247,
         "doubanId": "37342631",
         "updatedAt": "2026-11-13T10:46:19.019Z"
+      },
+      "tmdbRating": {
+        "score": 6.308,
+        "votes": 78,
+        "tmdbId": 1476682,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -414,6 +474,12 @@
         "count": 1411,
         "doubanId": "37425363",
         "updatedAt": "2026-11-13T10:46:21.653Z"
+      },
+      "tmdbRating": {
+        "score": 7.689,
+        "votes": 440,
+        "tmdbId": 977942,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -455,6 +521,12 @@
         "count": 1546,
         "doubanId": "37002986",
         "updatedAt": "2026-11-13T10:46:25.026Z"
+      },
+      "tmdbRating": {
+        "score": 7.32,
+        "votes": 236,
+        "tmdbId": 1329016,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -488,7 +560,13 @@
         }
       ],
       "poster": "/posters/if-i-go-will-they-miss-me.jpg",
-      "synopsisEn": "If I Go Will They Miss Me. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "If I Go Will They Miss Me. Streaming release dates via When To Stream (US).",
+      "tmdbRating": {
+        "score": 7.7,
+        "votes": 13,
+        "tmdbId": 1596248,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "april-x",
@@ -532,7 +610,13 @@
           "publishedAt": "2026-11-20T22:02:00+08:00"
         }
       ],
-      "poster": "/posters/april-x.jpg"
+      "poster": "/posters/april-x.jpg",
+      "tmdbRating": {
+        "score": 5.8,
+        "votes": 6,
+        "tmdbId": 1403676,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "daniel-and-the-fiery-furnace",
@@ -565,7 +649,13 @@
         }
       ],
       "poster": "/posters/daniel-and-the-fiery-furnace.jpg",
-      "synopsisEn": "Daniel and the Fiery Furnace. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "Daniel and the Fiery Furnace. Streaming release dates via When To Stream (US).",
+      "tmdbRating": {
+        "score": 6.7,
+        "votes": 7,
+        "tmdbId": 1706702,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "forgotten-island",
@@ -604,6 +694,12 @@
         "count": 2255,
         "doubanId": "37317906",
         "updatedAt": "2026-11-13T10:47:29.442Z"
+      },
+      "tmdbRating": {
+        "score": 8,
+        "votes": 305,
+        "tmdbId": 1465063,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -639,7 +735,13 @@
         }
       ],
       "poster": "/posters/the-dog-stars.jpg",
-      "synopsisEn": "The Dog Stars. Streaming release dates via When To Stream (US)."
+      "synopsisEn": "The Dog Stars. Streaming release dates via When To Stream (US).",
+      "tmdbRating": {
+        "score": 7.157,
+        "votes": 1067,
+        "tmdbId": 1384216,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "finding-emily",
@@ -680,6 +782,12 @@
         "count": 13556,
         "doubanId": "36912404",
         "updatedAt": "2026-11-13T10:47:42.902Z"
+      },
+      "tmdbRating": {
+        "score": 7.036,
+        "votes": 112,
+        "tmdbId": 1339588,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -721,6 +829,12 @@
         "count": 1679,
         "doubanId": "36886420",
         "updatedAt": "2026-11-13T10:47:54.933Z"
+      },
+      "tmdbRating": {
+        "score": 6.1,
+        "votes": 67,
+        "tmdbId": 1376400,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -762,6 +876,12 @@
         "count": 424,
         "doubanId": "38548985",
         "updatedAt": "2026-11-13T10:48:01.285Z"
+      },
+      "tmdbRating": {
+        "score": 5.632,
+        "votes": 216,
+        "tmdbId": 1727734,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -802,6 +922,12 @@
         "count": 26206,
         "doubanId": "36318703",
         "updatedAt": "2026-11-13T10:48:07.933Z"
+      },
+      "tmdbRating": {
+        "score": 6.993,
+        "votes": 2586,
+        "tmdbId": 1101383,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -843,6 +969,12 @@
         "count": 12919,
         "doubanId": "37525017",
         "updatedAt": "2026-11-13T10:48:10.589Z"
+      },
+      "tmdbRating": {
+        "score": 7.6,
+        "votes": 1110,
+        "tmdbId": 1291595,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -878,7 +1010,13 @@
         }
       ],
       "synopsisEn": "The Last Temptation of Becky. Streaming date set, per When To Stream (US).",
-      "poster": "/posters/the-last-temptation-of-becky.jpg"
+      "poster": "/posters/the-last-temptation-of-becky.jpg",
+      "tmdbRating": {
+        "score": 7,
+        "votes": 21,
+        "tmdbId": 1642568,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "heart-of-the-beast",
@@ -919,6 +1057,12 @@
         "count": 31711,
         "doubanId": "36828393",
         "updatedAt": "2026-11-13T10:48:25.264Z"
+      },
+      "tmdbRating": {
+        "score": 7.883,
+        "votes": 1246,
+        "tmdbId": 1263337,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
       }
     },
     {
@@ -954,7 +1098,13 @@
         }
       ],
       "synopsisEn": "Ha Chan: Shake Your Booty!. Streaming release date via When To Stream (US).",
-      "poster": "/posters/ha-chan-shake-your-booty.jpg"
+      "poster": "/posters/ha-chan-shake-your-booty.jpg",
+      "tmdbRating": {
+        "score": 8.3,
+        "votes": 3,
+        "tmdbId": 1596249,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-samurai-and-the-prisoner",
@@ -989,7 +1139,13 @@
         }
       ],
       "poster": "/posters/the-samurai-and-the-prisoner.jpg",
-      "synopsisEn": "The Samurai and the Prisoner. Streaming date from When To Stream (US)."
+      "synopsisEn": "The Samurai and the Prisoner. Streaming date from When To Stream (US).",
+      "tmdbRating": {
+        "score": 7.5,
+        "votes": 23,
+        "tmdbId": 1620313,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "one-night-only",
@@ -1030,7 +1186,13 @@
         "doubanId": "37233476",
         "updatedAt": "2026-11-13T10:51:35.272Z"
       },
-      "synopsisEn": "One Night Only. Streaming date from When To Stream (US)."
+      "synopsisEn": "One Night Only. Streaming date from When To Stream (US).",
+      "tmdbRating": {
+        "score": 6.511,
+        "votes": 285,
+        "tmdbId": 1433367,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "avengers-endgame-encore",
@@ -1101,7 +1263,13 @@
         }
       ],
       "poster": "/posters/maddies-secret.jpg",
-      "synopsisEn": "Maddie's Secret. Streaming date from When To Stream (US)."
+      "synopsisEn": "Maddie's Secret. Streaming date from When To Stream (US).",
+      "tmdbRating": {
+        "score": 5.6,
+        "votes": 18,
+        "tmdbId": 1517868,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "california-schemin",
@@ -1136,7 +1304,13 @@
         }
       ],
       "poster": "/posters/california-schemin.jpg",
-      "synopsisEn": "California Schemin'. Streaming release date via When To Stream (US)."
+      "synopsisEn": "California Schemin'. Streaming release date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 6,
+        "votes": 9,
+        "tmdbId": 1193550,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "your-mother-your-mother-your-mother",
@@ -1171,7 +1345,13 @@
         }
       ],
       "poster": "/posters/your-mother-your-mother-your-mother.jpg",
-      "synopsisEn": "Your Mother Your Mother Your Mother. Streaming release date via When To Stream (US)."
+      "synopsisEn": "Your Mother Your Mother Your Mother. Streaming release date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 6.572,
+        "votes": 98,
+        "tmdbId": 1437396,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "breeder",
@@ -1206,7 +1386,13 @@
         }
       ],
       "poster": "/posters/breeder.jpg",
-      "synopsisEn": "Breeder. Streaming release date via When To Stream (US)."
+      "synopsisEn": "Breeder. Streaming release date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 7.457,
+        "votes": 35,
+        "tmdbId": 1496696,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "mutiny",
@@ -1241,7 +1427,13 @@
         }
       ],
       "poster": "/posters/mutiny.jpg",
-      "synopsisEn": "Mutiny. Streaming release date via When To Stream (US)."
+      "synopsisEn": "Mutiny. Streaming release date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 7.6,
+        "votes": 1134,
+        "tmdbId": 1288445,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-social-reckoning",
@@ -1275,7 +1467,13 @@
           "publishedAt": "2026-11-18T10:01:30+08:00"
         }
       ],
-      "synopsisEn": "The Social Reckoning. Streaming date set per When To Stream (US region)."
+      "synopsisEn": "The Social Reckoning. Streaming date set per When To Stream (US region).",
+      "tmdbRating": {
+        "score": 7,
+        "votes": 182,
+        "tmdbId": 1281331,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-mongoose",
@@ -1309,7 +1507,13 @@
           "publishedAt": "2026-11-19T23:09:46+08:00"
         }
       ],
-      "synopsisEn": "The Mongoose. Streaming release date via When To Stream (US)."
+      "synopsisEn": "The Mongoose. Streaming release date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 6.629,
+        "votes": 271,
+        "tmdbId": 1294189,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "by-any-means",
@@ -1343,7 +1547,13 @@
           "publishedAt": "2026-11-19T23:09:46+08:00"
         }
       ],
-      "synopsisEn": "By Any Means. Streaming release date via When To Stream (US)."
+      "synopsisEn": "By Any Means. Streaming release date via When To Stream (US).",
+      "tmdbRating": {
+        "score": 6.767,
+        "votes": 129,
+        "tmdbId": 1380417,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "i-want-your-sex",
@@ -1378,7 +1588,13 @@
         }
       ],
       "synopsisEn": "I Want Your Sex. Streaming release date via When To Stream (US).",
-      "poster": "/posters/i-want-your-sex.jpg"
+      "poster": "/posters/i-want-your-sex.jpg",
+      "tmdbRating": {
+        "score": 5.9,
+        "votes": 135,
+        "tmdbId": 1288059,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-rivals-of-amziah-king",
@@ -1412,7 +1628,13 @@
           "publishedAt": "2026-11-20T22:02:00+08:00"
         }
       ],
-      "synopsisEn": "The Rivals of Amziah King. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "The Rivals of Amziah King. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 6.677,
+        "votes": 144,
+        "tmdbId": 1124142,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "i-love-boosters",
@@ -1446,7 +1668,13 @@
           "publishedAt": "2026-11-20T22:02:00+08:00"
         }
       ],
-      "synopsisEn": "I Love Boosters. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "I Love Boosters. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 6.301,
+        "votes": 138,
+        "tmdbId": 1227877,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "onslaught",
@@ -1480,7 +1708,13 @@
           "publishedAt": "2026-11-21T10:01:07+08:00"
         }
       ],
-      "synopsisEn": "Onslaught. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Onslaught. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 5.684,
+        "votes": 166,
+        "tmdbId": 1284046,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "christmas-at-the-kringles",
@@ -1514,7 +1748,13 @@
           "publishedAt": "2026-11-22T10:00:05+08:00"
         }
       ],
-      "synopsisEn": "Christmas at the Kringles. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Christmas at the Kringles. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 6,
+        "votes": 6,
+        "tmdbId": 939541,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "trust-me-i-m-a-doctor",
@@ -1548,7 +1788,13 @@
           "publishedAt": "2026-11-23T23:07:20+08:00"
         }
       ],
-      "synopsisEn": "Trust Me, I'm a Doctor. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Trust Me, I'm a Doctor. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1249202,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "nimrods",
@@ -1582,7 +1828,13 @@
           "publishedAt": "2026-11-24T10:00:38+08:00"
         }
       ],
-      "synopsisEn": "Nimrods. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Nimrods. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 6.5,
+        "votes": 25,
+        "tmdbId": 1432474,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "blue-film",
@@ -1616,7 +1868,13 @@
           "publishedAt": "2026-11-24T10:00:38+08:00"
         }
       ],
-      "synopsisEn": "Blue Film. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Blue Film. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 6.75,
+        "votes": 24,
+        "tmdbId": 1398655,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "long-days-journey-into-night",
@@ -1650,7 +1908,13 @@
           "publishedAt": "2026-11-25T11:08:04+08:00"
         }
       ],
-      "synopsisEn": "Long Day's Journey Into Night. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Long Day's Journey Into Night. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1086037,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "fight-for-84",
@@ -1684,7 +1948,13 @@
           "publishedAt": "2026-11-25T11:08:04+08:00"
         }
       ],
-      "synopsisEn": "Fight for '84. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Fight for '84. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1481160,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "whalefall",
@@ -1718,7 +1988,13 @@
           "publishedAt": "2026-11-25T11:08:04+08:00"
         }
       ],
-      "synopsisEn": "Whalefall. Streaming release date via When To Stream (US region)."
+      "synopsisEn": "Whalefall. Streaming release date via When To Stream (US region).",
+      "tmdbRating": {
+        "score": 6.549,
+        "votes": 153,
+        "tmdbId": 1255833,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "the-scout",
@@ -1751,7 +2027,13 @@
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-26T10:01:00+08:00"
         }
-      ]
+      ],
+      "tmdbRating": {
+        "score": 0,
+        "votes": 0,
+        "tmdbId": 1403519,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     },
     {
       "id": "flywheel-ignition-of-the-soul",
@@ -1784,7 +2066,13 @@
           "sourceLabel": "定档追踪",
           "publishedAt": "2026-11-26T10:01:00+08:00"
         }
-      ]
+      ],
+      "tmdbRating": {
+        "score": 10,
+        "votes": 1,
+        "tmdbId": 1511171,
+        "updatedAt": "2026-11-27T02:07:42.925Z"
+      }
     }
   ],
   "ceremonies": []

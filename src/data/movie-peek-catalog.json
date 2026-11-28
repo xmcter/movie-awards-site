@@ -1776,7 +1776,40 @@
       ],
       "streaming": [],
       "poster": "/posters/movie-douban-37314519.jpg",
-      "runtime": 116
+      "runtime": 116,
+      "synopsisEn": "\"Who are you, and what makes you special?\" a producer asks Lea at a singing competition audition. She doesn't have an answer yet. The question sets her off in search of her own identity, a journey that leads her to the forest inn her family runs in the Thuringian countryside."
+    },
+    {
+      "id": "movie-douban-36415264",
+      "title": "误杀瞒天记3",
+      "year": 2026,
+      "synopsis": "多年过去，维杰一家安稳度日，当年的秘密却始终悬在头顶。心思缜密的新任警司盯上了他，不放过任何蛛丝马迹，誓要揭开尘封的命案。案件进入法庭博弈，双方围绕证据链层层攻防，反转接连袭来。维杰为守护家人，再度用智慧周旋，谎言的代价慢慢浮出水面。他不再只是单纯布局脱罪，直面长久以来的愧疚，在法律、执念与亲情之间，迎来这场漫长博弈的最终结局。",
+      "directors": [
+        "阿比谢克·帕塔克"
+      ],
+      "cast": [
+        "阿贾耶·德乌干",
+        "施芮娅·萨兰",
+        "塔布",
+        "阿克夏耶·坎纳",
+        "伊西塔·杜塔",
+        "沙鲁巴·舒克拉",
+        "拉贾特·卡普尔",
+        "莫伦诺·贾达夫",
+        "Kamlesh Sawant",
+        "Yogesh Soman"
+      ],
+      "genres": [
+        "惊悚",
+        "犯罪"
+      ],
+      "country": [
+        "印度"
+      ],
+      "streaming": [],
+      "poster": "/posters/movie-douban-36415264.jpg",
+      "runtime": 150,
+      "synopsisEn": "Years have passed and the Vijays have settled into a quiet life, but the secret from back then still hangs over them. A sharp new police superintendent sets his sights on Vijay, refusing to let any clue slip by as he vows to crack the long-buried murder case. The case moves into the courtroom, where both sides battle over the chain of evidence, layer by layer, and twists keep coming. To protect his family, Vijay once again relies on his wits, and the cost of his lies gradually surfaces. No longer merely scheming to escape conviction, he confronts the guilt he has carried for so long, and between the law, obsession and family, this long contest reaches its final outcome."
     }
   ],
   "ceremonies": []

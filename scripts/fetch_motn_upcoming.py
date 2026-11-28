@@ -234,6 +234,7 @@ MANUAL_REJECT_IDS = {
     "mickeys-home-alone": "short special, not a feature film",
     "focker-in-law": "wrong MotN data",
     "fraggle-rock-a-holiday-gift": "series special, not a feature film",
+    "gabriel-iglesias-legend-of-fluffy": "wrong MotN data: 2026-12-24 date belongs to Lone Star Fluffy; Legend of Fluffy premiered Jan 2025 and already streams",
 }
 
 

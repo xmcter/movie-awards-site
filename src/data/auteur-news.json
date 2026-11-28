@@ -1077,6 +1077,22 @@
     "sourceLabel": "片库·微博",
     "source": "https://m.weibo.cn/detail/RtrbbpmQ5",
     "weiboUrl": "https://m.weibo.cn/detail/RtrbbpmQ5",
-    "weiboLabel": "微博·OtisMilburn_"
+    "weiboLabel": "微博·OtisMilburn_",
+    "summaryEn": "\"Etwas ganz Besonderes\" is now streaming."
+  },
+  {
+    "id": "movie-peek-movie-douban-36415264-first-resource",
+    "filmId": "movie-douban-36415264",
+    "publishedAt": "2026-11-28T16:30:33+08:00",
+    "sourcePublishedAt": "2026-11-28T16:30:33+08:00",
+    "date": "2026-11-28",
+    "kind": "release",
+    "summary": "《误杀瞒天记3》已上线",
+    "detail": "",
+    "sourceLabel": "片库·微博",
+    "source": "https://m.weibo.cn/detail/RttW84Jfv",
+    "weiboUrl": "https://m.weibo.cn/detail/RttW84Jfv",
+    "weiboLabel": "微博·爱看剧的小马达",
+    "summaryEn": "\"Drishyam 3\" is now streaming."
   }
 ]
